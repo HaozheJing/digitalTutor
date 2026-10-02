@@ -1,4 +1,5 @@
 教辅数字员工后端环境交接
+后续会话优先阅读：docs/远程服务器与Git交接.md（包含远程环境与项目 Git 的完整交接）
 验收日期：2026-10-02（Asia/Shanghai）
 
 远程主目录：/root/autodl-tmp/digitalTutor
