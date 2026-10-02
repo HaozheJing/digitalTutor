@@ -4,6 +4,7 @@ import requests
 
 parser=argparse.ArgumentParser()
 parser.add_argument('--create',action='store_true')
+parser.add_argument('--verify',action='store_true')
 args=parser.parse_args()
 env=dict(os.environ,GIT_TERMINAL_PROMPT='0',GCM_INTERACTIVE='never')
 result=subprocess.run(['git','credential','fill'],input='protocol=https\nhost=github.com\n\n',text=True,capture_output=True,env=env,timeout=40)
@@ -18,6 +19,14 @@ if response.status_code!=200:
  print('GitHub authentication failed; status:',response.status_code);sys.exit(3)
 user=response.json()['login']
 print('GitHub account:',user)
+if args.verify:
+ response=session.get('https://api.github.com/repos/'+user+'/digitalTutor',timeout=30)
+ response.raise_for_status()
+ repo=response.json()
+ assert repo['private'] is True, 'Remote repository must be private'
+ branch=session.get('https://api.github.com/repos/'+user+'/digitalTutor/branches/main',timeout=30)
+ branch.raise_for_status()
+ print(json.dumps({'url':repo['html_url'],'private':repo['private'],'default_branch':repo['default_branch'],'main_sha':branch.json()['commit']['sha']},ensure_ascii=False))
 if args.create:
  response=session.post('https://api.github.com/user/repos',json={'name':'digitalTutor','description':'少年得到阅读营教辅数字员工：业务知识与后端部署','private':True,'auto_init':False},timeout=30)
  if response.status_code!=201:
