@@ -1,0 +1,35 @@
+# Credentials and local configuration
+.env
+.env.*
+!.env.example
+config/provider.json
+config/ov.conf
+config/ovcli.conf
+config/*-key
+*.pem
+*.key
+.ssh/
+.ssh_known_hosts
+
+# Runtime, downloaded vendors, logs and temporary artifacts
+state/
+runtime/
+vendor/
+cache/
+tmp/
+logs/
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+*.log
+ops/research/
+
+# Individual student and family exports remain local
+knowledge/*.xlsx
+!knowledge/数字教辅知识库整理模板.xlsx
+
+# Editor and operating-system files
+.DS_Store
+Thumbs.db
+.idea/

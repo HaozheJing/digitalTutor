@@ -1,0 +1,110 @@
+教辅数字员工后端环境交接
+验收日期：2026-10-02（Asia/Shanghai）
+
+远程主目录：/root/autodl-tmp/digitalTutor
+SSH：ssh -p 11385 root@connect.westc.seetacloud.com
+此文档不包含登录密码、模型 Key 或服务 Key。
+
+已部署
+Hermes Agent 0.21.5，Git tag v2026.9.24
+源码提交：f97608f178d1ffeca59860195ab7da295f7c8e5f
+OpenViking 0.4.22，Python 3.11.16，uv 0.12.21，Supervisor 4.3.0
+Hermes 与 OpenViking 使用独立虚拟环境，通过 HTTP 连接。
+Hermes headless serve：127.0.0.1:9119
+OpenViking：127.0.0.1:1933，api_key 鉴权模式
+对话、压缩与 OpenViking 内容理解：qwen3.8-flash
+Embedding：qwen3.7-text-embedding-flash，接口实测 1024 维
+qwen3.8-max 已记录在 provider.json，当前没有启用。
+
+目录
+vendor/hermes/                    固定版本源码（包含官方 uv.lock）
+vendor/hermes/venv/               Hermes 独立 Python 环境
+vendor/skills/openviking-memory/  官方 Skill 原文，作为集成参考
+runtime/python/                  项目内 Python
+runtime/openviking/               OpenViking 独立 Python 环境
+runtime/supervisor/               项目内进程管理器
+config/provider.json             模型配置源文件，权限 0600
+config/ov.conf                   OpenViking 服务配置
+config/ovcli.conf                 OpenViking CLI 配置
+config/runtime.env               集中路径与运行环境变量
+config/openviking-api-key        ROOT 管理密钥，不能用于数据 API
+config/openviking-admin-key      digitaltutor/deployment-admin 的管理密钥
+config/openviking-user-key       digitaltutor/teacher 的 USER 数据密钥
+state/hermes/                    Hermes 配置、会话、记忆与运行状态
+state/hermes/.env                Hermes 使用的模型与 OpenViking 用户凭据
+state/openviking/                OpenViking 持久数据
+logs/                            日志，已配置轮转
+scripts/                         配置、启动、停止、状态与验收脚本
+docs/                            锁定依赖、版本与验收结果
+cache/、tmp/                     项目内缓存与临时文件
+
+操作（在服务器执行）
+cd /root/autodl-tmp/digitalTutor
+./scripts/status.sh
+./scripts/start.sh
+./scripts/stop.sh
+./bin/hermes chat -q '你好' --oneshot
+./bin/hermes memory status
+./bin/ov --help
+
+Supervisor 会在进程意外退出后重启服务；SSH 断开不影响已启动服务。
+尚未设置服务器/AutoDL 容器开机自动启动；服务器重新启动后执行 scripts/start.sh。
+启动脚本先等待 OpenViking 就绪，再启动 Hermes。
+没有安装系统全局服务或更改现有服务器业务进程。
+无端口对外暴露；从本机访问可使用 SSH 隧道：
+ssh -p 11385 -L 9119:127.0.0.1:9119 -L 1933:127.0.0.1:1933 root@connect.westc.seetacloud.com
+Hermes 当前是 headless 后端，没有构建前端；不能把 9119 根页面视为已安装的聊天网页。
+
+修改配置
+修改 config/provider.json 后执行 runtime/openviking/bin/python scripts/configure.py。
+配置生成器保留现有额外配置，只更新本次接入涉及的字段。
+随后使用 runtime/supervisor/bin/supervisorctl -c config/supervisord.conf restart openviking hermes。
+变更向量模型或维度需要单独规划重建索引，不能仅改配置后复用旧索引。
+若 embedding 维度发生变化，需重新实测并更新 docs/provider-probe.json，再生成配置。
+ROOT 密钥仅用于管理 API；Hermes 使用 USER 密钥。
+当前 digitaltutor/teacher 是开发用服务身份，尚未设计或实现学生/家庭权限与记忆隔离。
+
+实际验收
+1. qwen3.8-flash 对话接口成功返回；embedding 接口返回 1024 维。
+2. 两个独立环境均通过 uv pip check。
+3. OpenViking /health、/ready 均成功；底层存储、向量库与 embedding 就绪。
+4. 合成测试资料完成语义理解与索引；Semantic 与 Embedding 队列无错误。
+5. OpenViking find 检索到资料中的代号“海豚星”。
+6. Hermes 使用 qwen3.8-flash 实际调用 viking_search，最终正确回答“海豚星”。
+7. scripts/stop.sh → scripts/start.sh 成功恢复两个服务；重启后知识检索成功。
+8. 原生 /api/ws 通过认证，收到 JSON-RPC event/gateway.ready。
+9. 模型、服务凭据文件权限为 0600。
+
+验收记录（远程 docs）
+provider-probe.json
+openviking-smoke.json
+hermes-smoke.jsonl
+hermes-api-smoke.json
+hermes-locked-requirements.txt、hermes-locked-dependencies.txt
+hermes-requirements.txt、openviking-requirements.txt
+
+边界
+已验证文本资料解析、检索与 Hermes 工具调用；尚未验收图片、音频或真实业务资料。
+OpenViking 官方 openviking-memory Skill 已安装到本地 Codex，并将原文复制到远程参考目录。
+Hermes 使用其内置 OpenViking provider；该 Skill 原文所需的 MCP 工具与 Hermes 工具名称不同，因此未重复启用它作为 Hermes 的运行 Skill。
+Hermes 内置 MEMORY.md/USER.md 仍是原生能力，业务记忆职责划分由后续设计落实。
+没有接入家长/孩子消息渠道；Hermes /api/status 的 messaging gateway 为 stopped，overall 可能为 degraded。
+该状态不代表已验证的 headless 后端或 OpenViking 故障；后续接入真实消息渠道后再验收 gateway。
+本次没有实现触发任务、排队、服务事项状态、教辅 System Prompt 或业务 Skill。
+没有部署业务生产服务，也没有发送家长消息。
+服务器没有 Docker；未构建 Docker 镜像。
+
+后续 Docker
+保留源码与版本记录，在镜像构建阶段重新安装依赖；不要直接复制主机 venv 作为可移植环境。
+凭据通过运行时配置/secret 注入；不要烘焙进镜像。
+state/、logs/ 作为挂载卷；cache/、tmp/ 不作为业务备份。
+Hermes 与 OpenViking 宜保留独立依赖环境或容器。
+备份 state/ 与必要 config/ 时需保护其中的密钥。
+
+官方参考
+https://docs.volcengine.com/docs/84313/2374478?lang=zh
+https://docs.volcengine.com/docs/84313/2693723?lang=zh
+https://github.com/volcengine/OpenViking/tree/main/agent-plugins/skills/openviking-memory
+https://docs.openviking.ai/en/agent-integrations/05-hermes
+https://github.com/volcengine/OpenViking/blob/v0.4.22/docs/en/guides/04-authentication.md
+https://github.com/NousResearch/hermes-agent/tree/v2026.9.24
