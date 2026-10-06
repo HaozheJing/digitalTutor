@@ -1,0 +1,200 @@
+[
+  {
+    "operation_id": "operation-ee633328b3234b7b88c1ac5593d9f7dd",
+    "payload": {
+      "action_kind": "reply",
+      "admitted_at": "2026-10-04T10:00:00+08:00",
+      "body": "好的，已经记下了：你们家通常晚饭后七点半方便聊阅读，也不喜欢连续问很多题。以后聊阅读我会按这个来，时间上以七点半前后为主，问题也会少而精，不搞连珠问。",
+      "business_date": "2026-10-04",
+      "channel": "mock_wechat",
+      "content_digest": "30e6954beb98bb770730114ed0bbdeee9e2037e10c50e0e509f2cf5147294ae7",
+      "decision_reply_refs": [],
+      "dispatch_count": 1,
+      "event_id": null,
+      "id": "operation-ee633328b3234b7b88c1ac5593d9f7dd",
+      "lesson_refs": [],
+      "occurred_at": "2026-10-04T10:00:00+08:00",
+      "part_id": null,
+      "prepared_family_version": 5,
+      "purpose_key": "83fc773c76de319d8421d9608b6abde856813d2c46dccfda6a0cd12e3ad7e330",
+      "receipts": [],
+      "recipient": "mock:4b1:a",
+      "reply_to": [
+        {
+          "intent_id": "intent-1",
+          "message_id": "msg-f4933850ee2f4378a48bafe82a817a4a"
+        }
+      ],
+      "request": {
+        "action_kind": "reply",
+        "body": "好的，已经记下了：你们家通常晚饭后七点半方便聊阅读，也不喜欢连续问很多题。以后聊阅读我会按这个来，时间上以七点半前后为主，问题也会少而精，不搞连珠问。",
+        "event_id": null,
+        "expected_family_version": 4,
+        "part_id": null,
+        "reply_to": [
+          {
+            "intent_id": "intent-1",
+            "message_id": "msg-f4933850ee2f4378a48bafe82a817a4a"
+          }
+        ],
+        "request_id": "send-001",
+        "step_id": null
+      },
+      "requirement_revision": null,
+      "run_id": "run-ecbeb65273eb48c2815c8b27eeac5cd2",
+      "send_capability": {
+        "commitment_id": null,
+        "current_step_key": null,
+        "event_id": null,
+        "job_id": "message:msg-f4933850ee2f4378a48bafe82a817a4a",
+        "job_kind": "service",
+        "mode": "full",
+        "no_contact": false,
+        "output_mode": "family_reply",
+        "reply_scope": {
+          "msg-f4933850ee2f4378a48bafe82a817a4a": [
+            "*"
+          ]
+        },
+        "run_id": "run-ecbeb65273eb48c2815c8b27eeac5cd2",
+        "schedule_revision": null
+      },
+      "simulated": true,
+      "stage": "dispatching",
+      "version": 2
+    },
+    "stage": "sent"
+  },
+  {
+    "operation_id": "operation-7aec0fa032664e0a8183d648f50aebdb",
+    "payload": {
+      "action_kind": "reply",
+      "admitted_at": "2026-10-04T10:00:00+08:00",
+      "body": "收到，已经改过来了：午饭后十二点半方便聊，晚上通常不方便；一次只聊一个问题，不连着问。之前记的晚饭后七点半已更正。",
+      "business_date": "2026-10-04",
+      "channel": "mock_wechat",
+      "content_digest": "111749e51746d6a7738ac3ec471c808a082993460eb4f0ea50b53e2dde1ecec1",
+      "decision_reply_refs": [],
+      "dispatch_count": 1,
+      "event_id": null,
+      "id": "operation-7aec0fa032664e0a8183d648f50aebdb",
+      "lesson_refs": [],
+      "occurred_at": "2026-10-04T10:00:00+08:00",
+      "part_id": null,
+      "prepared_family_version": 10,
+      "purpose_key": "c38eefd233991fc28d390812bb4dd2234426d1d2ede45c196a9c9d427e86b372",
+      "receipts": [],
+      "recipient": "mock:4b1:a",
+      "reply_to": [
+        {
+          "intent_id": "intent-corr-1",
+          "message_id": "msg-cedb6b8d25ff425794d797b111d0acd7"
+        }
+      ],
+      "request": {
+        "action_kind": "reply",
+        "body": "收到，已经改过来了：午饭后十二点半方便聊，晚上通常不方便；一次只聊一个问题，不连着问。之前记的晚饭后七点半已更正。",
+        "event_id": null,
+        "expected_family_version": 9,
+        "part_id": null,
+        "reply_to": [
+          {
+            "intent_id": "intent-corr-1",
+            "message_id": "msg-cedb6b8d25ff425794d797b111d0acd7"
+          }
+        ],
+        "request_id": "reply-corr-001",
+        "step_id": null
+      },
+      "requirement_revision": null,
+      "run_id": "run-5662b8901baf4dbe8cf0fa8ea43b09a1",
+      "send_capability": {
+        "commitment_id": null,
+        "current_step_key": null,
+        "event_id": null,
+        "job_id": "message:msg-cedb6b8d25ff425794d797b111d0acd7",
+        "job_kind": "service",
+        "mode": "full",
+        "no_contact": false,
+        "output_mode": "family_reply",
+        "reply_scope": {
+          "msg-cedb6b8d25ff425794d797b111d0acd7": [
+            "*"
+          ]
+        },
+        "run_id": "run-5662b8901baf4dbe8cf0fa8ea43b09a1",
+        "schedule_revision": null
+      },
+      "simulated": true,
+      "stage": "dispatching",
+      "version": 2
+    },
+    "stage": "sent"
+  },
+  {
+    "operation_id": "operation-fc398b6696d24f1bbf490c25aea6775a",
+    "payload": {
+      "action_kind": "reply",
+      "admitted_at": "2026-10-04T10:00:00+08:00",
+      "body": "我现在记住的您家阅读聊天偏好是：通常午饭后十二点半方便聊阅读，晚上通常不方便；不喜欢连续问很多题，一次只聊一个问题。这是您今天（2026-10-04）来信更正后的版本。如果还有要改的，随时告诉我。",
+      "business_date": "2026-10-04",
+      "channel": "mock_wechat",
+      "content_digest": "5b4b60a542d019fbba3bb7324268a7ed6395bd72899327d3e58dfa5766bbe13f",
+      "decision_reply_refs": [],
+      "dispatch_count": 1,
+      "event_id": null,
+      "id": "operation-fc398b6696d24f1bbf490c25aea6775a",
+      "lesson_refs": [],
+      "occurred_at": "2026-10-04T10:00:00+08:00",
+      "part_id": null,
+      "prepared_family_version": 14,
+      "purpose_key": "bafff8da9c39e514ca46b6823fada4bea6f8ff4e17d43b11046710ea2c3815c9",
+      "receipts": [],
+      "recipient": "mock:4b1:a",
+      "reply_to": [
+        {
+          "intent_id": "intent-memory-recall",
+          "message_id": "msg-57fd35eb9ad04eb382e454c537b1ec84"
+        }
+      ],
+      "request": {
+        "action_kind": "reply",
+        "body": "我现在记住的您家阅读聊天偏好是：通常午饭后十二点半方便聊阅读，晚上通常不方便；不喜欢连续问很多题，一次只聊一个问题。这是您今天（2026-10-04）来信更正后的版本。如果还有要改的，随时告诉我。",
+        "event_id": null,
+        "expected_family_version": 13,
+        "part_id": null,
+        "reply_to": [
+          {
+            "intent_id": "intent-memory-recall",
+            "message_id": "msg-57fd35eb9ad04eb382e454c537b1ec84"
+          }
+        ],
+        "request_id": "send-msg-57fd35eb-01",
+        "step_id": null
+      },
+      "requirement_revision": null,
+      "run_id": "run-5c062557b5ed4beaba0feb0c96d05bec",
+      "send_capability": {
+        "commitment_id": null,
+        "current_step_key": null,
+        "event_id": null,
+        "job_id": "message:msg-57fd35eb9ad04eb382e454c537b1ec84",
+        "job_kind": "service",
+        "mode": "full",
+        "no_contact": false,
+        "output_mode": "family_reply",
+        "reply_scope": {
+          "msg-57fd35eb9ad04eb382e454c537b1ec84": [
+            "*"
+          ]
+        },
+        "run_id": "run-5c062557b5ed4beaba0feb0c96d05bec",
+        "schedule_revision": null
+      },
+      "simulated": true,
+      "stage": "dispatching",
+      "version": 2
+    },
+    "stage": "sent"
+  }
+]

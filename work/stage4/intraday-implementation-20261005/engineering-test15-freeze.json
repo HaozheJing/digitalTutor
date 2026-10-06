@@ -1,0 +1,76 @@
+{
+  "manifest_count": 189,
+  "archive_files": 189,
+  "archive_matches_manifest": true,
+  "local_matches_manifest": true,
+  "bad_archive": [],
+  "bad_local": [],
+  "log_summary": "Ran 532 tests in 28.783s; OK",
+  "regression_success": true,
+  "groups": {
+    "test_decision_reply_identity": {
+      "count": 8,
+      "all_ok": true,
+      "lines": [
+        "test_accepted_confirmation_retries_keep_original_operation (test_decision_reply_identity.DecisionReplyIdentityTests.test_accepted_confirmation_retries_keep_original_operation) ... ok",
+        "test_only_existing_host_ack_preserves_legacy_confirmation (test_decision_reply_identity.DecisionReplyIdentityTests.test_only_existing_host_ack_preserves_legacy_confirmation) ... ok",
+        "test_phase_is_exact_source_bound_and_unavailable_in_legacy (test_decision_reply_identity.DecisionReplyIdentityTests.test_phase_is_exact_source_bound_and_unavailable_in_legacy) ... ok",
+        "test_queued_registration_cannot_be_relabelled_confirmation_after_decision (test_decision_reply_identity.DecisionReplyIdentityTests.test_queued_registration_cannot_be_relabelled_confirmation_after_decision) ... ok",
+        "test_sent_confirmation_retries_cannot_send_again_or_change_wording (test_decision_reply_identity.DecisionReplyIdentityTests.test_sent_confirmation_retries_cannot_send_again_or_change_wording) ... ok",
+        "test_single_pair_registration_then_real_decision_confirmation_are_distinct (test_decision_reply_identity.DecisionReplyIdentityTests.test_single_pair_registration_then_real_decision_confirmation_are_distinct) ... ok",
+        "test_unknown_confirmation_retries_keep_original_operation (test_decision_reply_identity.DecisionReplyIdentityTests.test_unknown_confirmation_retries_keep_original_operation) ... ok",
+        "test_unknown_registration_still_preoccupies_pair_after_admission (test_decision_reply_identity.DecisionReplyIdentityTests.test_unknown_registration_still_preoccupies_pair_after_admission) ... ok"
+      ]
+    },
+    "test_predecision_acceptance": {
+      "count": 18,
+      "all_ok": true,
+      "lines": [
+        "test_another_family_unanswered_blocks_global_exception (test_predecision_acceptance.PredecisionCoverageTests.test_another_family_unanswered_blocks_global_exception) ... ok",
+        "test_decided_but_unanswered_is_not_predecision_exception (test_predecision_acceptance.PredecisionCoverageTests.test_decided_but_unanswered_is_not_predecision_exception) ... ok",
+        "test_empty_set_does_not_claim_predecision_coverage (test_predecision_acceptance.PredecisionCoverageTests.test_empty_set_does_not_claim_predecision_coverage) ... ok",
+        "test_extra_uncovered_intent_cannot_borrow_pending (test_predecision_acceptance.PredecisionCoverageTests.test_extra_uncovered_intent_cannot_borrow_pending) ... ok",
+        "test_fake_pending_without_real_candidate_source_fails (test_predecision_acceptance.PredecisionCoverageTests.test_fake_pending_without_real_candidate_source_fails) ... ok",
+        "test_final_reply_is_not_partial_evidence (test_predecision_acceptance.PredecisionCoverageTests.test_final_reply_is_not_partial_evidence) ... ok",
+        "test_frozen_actual_pair_is_covered (test_predecision_acceptance.PredecisionCoverageTests.test_frozen_actual_pair_is_covered) ... ok",
+        "test_missing_admission_owner_fails (test_predecision_acceptance.PredecisionCoverageTests.test_missing_admission_owner_fails) ... ok",
+        "test_missing_intent_id_is_uncovered_not_exception (test_predecision_acceptance.PredecisionCoverageTests.test_missing_intent_id_is_uncovered_not_exception) ... ok",
+        "test_ordinary_question_cannot_borrow_future_pending (test_predecision_acceptance.PredecisionCoverageTests.test_ordinary_question_cannot_borrow_future_pending) ... ok",
+        "test_other_decision_revision_fails (test_predecision_acceptance.PredecisionCoverageTests.test_other_decision_revision_fails) ... ok",
+        "test_outdated_outcome_not_current_wait (test_predecision_acceptance.PredecisionCoverageTests.test_outdated_outcome_not_current_wait) ... ok",
+        "test_partial_without_independent_channel_fails (test_predecision_acceptance.PredecisionCoverageTests.test_partial_without_independent_channel_fails) ... ok",
+        "test_resolved_other_family_does_not_invalidate_exact_wait (test_predecision_acceptance.PredecisionCoverageTests.test_resolved_other_family_does_not_invalidate_exact_wait) ... ok",
+        "test_stale_observed_pending_version_fails (test_predecision_acceptance.PredecisionCoverageTests.test_stale_observed_pending_version_fails) ... ok",
+        "test_stale_source_digest_fails (test_predecision_acceptance.PredecisionCoverageTests.test_stale_source_digest_fails) ... ok",
+        "test_unknown_partial_is_not_confirmed_explanation (test_predecision_acceptance.PredecisionCoverageTests.test_unknown_partial_is_not_confirmed_explanation) ... ok",
+        "test_wrong_source_pair_fails (test_predecision_acceptance.PredecisionCoverageTests.test_wrong_source_pair_fails) ... ok"
+      ]
+    },
+    "test_decision_confirmation_acceptance": {
+      "count": 7,
+      "all_ok": true,
+      "lines": [
+        "test_ack_from_other_run_cannot_count (test_decision_confirmation_acceptance.DecisionConfirmationAcceptanceTests.test_ack_from_other_run_cannot_count) ... ok",
+        "test_actual_postdecision_receipt_and_channel (test_decision_confirmation_acceptance.DecisionConfirmationAcceptanceTests.test_actual_postdecision_receipt_and_channel) ... ok",
+        "test_empty_expected_set_is_not_success (test_decision_confirmation_acceptance.DecisionConfirmationAcceptanceTests.test_empty_expected_set_is_not_success) ... ok",
+        "test_missing_independent_channel_fails (test_decision_confirmation_acceptance.DecisionConfirmationAcceptanceTests.test_missing_independent_channel_fails) ... ok",
+        "test_predecision_partial_cannot_count_even_with_host_claim (test_decision_confirmation_acceptance.DecisionConfirmationAcceptanceTests.test_predecision_partial_cannot_count_even_with_host_claim) ... ok",
+        "test_stale_source_fails (test_decision_confirmation_acceptance.DecisionConfirmationAcceptanceTests.test_stale_source_fails) ... ok",
+        "test_wrong_committed_grant_fails (test_decision_confirmation_acceptance.DecisionConfirmationAcceptanceTests.test_wrong_committed_grant_fails) ... ok"
+      ]
+    }
+  },
+  "changed_from_test13": [
+    "backend/scripts/accept_stage4_daily.py",
+    "backend/scripts/stage4_behavior_checks.py",
+    "backend/scripts/stage4_decision_confirmation_checks.py",
+    "backend/scripts/stage4_predecision_checks.py",
+    "backend/tests/test_decision_confirmation_acceptance.py",
+    "backend/tests/test_decision_reply_identity.py",
+    "backend/tests/test_predecision_acceptance.py",
+    "backend/src/digital_tutor/request_responsibility.py",
+    "backend/src/digital_tutor/send_policy.py",
+    "backend/src/digital_tutor/wechat.py"
+  ],
+  "overall_gate_passed": false
+}

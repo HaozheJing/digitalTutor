@@ -1,0 +1,885 @@
+{
+  "index": 2,
+  "family_id": "synthetic-4b1-a",
+  "job_id": "step:5e42165612425333e1bbdac1c74430795cf30819814b5198610738c8bb1068db",
+  "job_kind": "step",
+  "recovery_only": false,
+  "decision": {
+    "wait": false,
+    "no_contact": false,
+    "outcome_id": "run-152c89788a934aff839425eb2e45d193",
+    "reason": "当前步骤（remind_makeup，execute_at 2026-10-04T10:00）已完成：补读提醒外发成功，操作 operation-8f6e358341a447e7b25092b5d2f6a2fe 回执阶段 sent，并已提交报告（report:makeup-reminder-sent-5e421656，revision 1）。步骤完成条件（提醒发出并留有操作回执）满足；父事项 LESSON-L2-FOX-D01 补读目标仍待家长安排与完成。",
+    "run_id": "run-152c89788a934aff839425eb2e45d193"
+  },
+  "native": {
+    "run_id": "run-152c89788a934aff839425eb2e45d193",
+    "completed": true,
+    "interrupted": false,
+    "error": "",
+    "final_response": "本步骤已按要求完成并记录结果：\n\n- **外发**：补读提醒已发送给家长（`operation-8f6e358341a447e7b25092b5d2f6a2fe`，回执阶段 sent），正文载明 LESSON-L2-FOX-D01 需在今天 18:00 截止前补读，并请家长反馈孩子方便的时间。\n- **报告**：`report:makeup-reminder-sent-5e421656`（revision 1）已绑定事项 `event-76992b96414c4b2bb260aab3c7a391a2`，明确评估：提醒发出≠补课完成，父事项目标未达成。\n- **结果记录**：`action_taken` 已保存（此前一次失败是因报告引用 ID 写法有误，改用宿主返回的完整记录 ID 后成功）。\n- **剩余欠项**：LESSON-L2-FOX-D01 补读目标达成（截止 2026-10-04T18:00:00+08:00）；等待家长回复，无控制暂停生效。",
+    "api_calls": 10,
+    "tools": [
+      "dt_context_read",
+      "dt_control_apply",
+      "dt_knowledge_list",
+      "dt_knowledge_read",
+      "dt_learning_query_sql",
+      "dt_learning_schema",
+      "dt_memory_delete",
+      "dt_memory_read",
+      "dt_memory_save",
+      "dt_message_interpret",
+      "dt_pending_propose_makeup",
+      "dt_pending_propose_service",
+      "dt_planning_record_pending",
+      "dt_progress_submit",
+      "dt_service_record_outcome",
+      "dt_skills_list",
+      "dt_skills_read",
+      "dt_state_read",
+      "dt_wechat_get_operation",
+      "dt_wechat_read_messages",
+      "dt_wechat_send_message"
+    ],
+    "tool_trace": [
+      {
+        "tool": "wechat.read_messages",
+        "arguments_digest": "e66b9b889228890d74db70af089efd2aab04839449fa8fc9dc8d48db02612456",
+        "ok": true,
+        "result_digest": "0fb9acd2c3f06dfc62260b98b212ace1055e07ba96a0f7b005c7b77507b4a020",
+        "error": null,
+        "at": "2026-10-04T10:00:00+08:00",
+        "arguments": {
+          "mode": "latest",
+          "limit": 10
+        },
+        "result": {
+          "ok": true,
+          "result": {
+            "mode": "latest",
+            "messages": [],
+            "returned_count": 0,
+            "matching_count": 0,
+            "has_more": false,
+            "has_older": false,
+            "next_cursor": 0,
+            "snapshot_watermark": 0,
+            "read_marks_answered": false,
+            "channel": "mock_wechat"
+          }
+        }
+      },
+      {
+        "tool": "wechat.send_message",
+        "arguments_digest": "f2a88737278fbf9bf2c92ac5d11c416fe7c90220d4fa0c4b925934237bda46ea",
+        "ok": false,
+        "result_digest": "d4c819e02c4849caac69b7de9ab999194816ee2e3b8dac6f16bb755d41e57131",
+        "error": "STALE_STEP",
+        "at": "2026-10-04T10:00:00+08:00",
+        "arguments": {
+          "action_kind": "remind_makeup",
+          "body": "家长您好，提醒一下：第1课 LESSON-L2-FOX-D01 还没有补读，需要在今天（10月4日）18:00 前完成。您看今天什么时间方便安排？如果时间上有困难，回我一声，我们再一起看怎么调整。",
+          "event_id": "event-76992b96414c4b2bb260aab3c7a391a2",
+          "expected_family_version": 6,
+          "request_id": "makeup-reminder-5e421656-d01"
+        },
+        "result": {
+          "ok": false,
+          "error": {
+            "code": "STALE_STEP",
+            "message": "主动发送须引用本轮已提交步骤"
+          }
+        }
+      },
+      {
+        "tool": "wechat.send_message",
+        "arguments_digest": "3146b0a344cb513e9eca7345a4c5d4aee54191553f5ba84e25458f1c36a312dc",
+        "ok": true,
+        "result_digest": "4f6335e72a19ae847e5062fb5abe6d385d97d26de29dfa773e75176110cccf4f",
+        "error": null,
+        "at": "2026-10-04T10:00:00+08:00",
+        "arguments": {
+          "action_kind": "remind_makeup",
+          "body": "家长您好，提醒一下：第1课 LESSON-L2-FOX-D01 还没有补读，需要在今天 18:00 截止前完成。您看孩子什么时间方便，安排补读就可以；有问题随时告诉我。",
+          "event_id": "event-76992b96414c4b2bb260aab3c7a391a2",
+          "expected_family_version": 6,
+          "request_id": "send:makeup-reminder-5e421656",
+          "step_id": "15ba5c3bff74cdee5e9185132d88e9412811b89d96eca2c0445bb013cfc78561"
+        },
+        "result": {
+          "ok": true,
+          "result": {
+            "request_id": "send:makeup-reminder-5e421656",
+            "outcome": "applied",
+            "data": {
+              "id": "operation-8f6e358341a447e7b25092b5d2f6a2fe",
+              "version": 3,
+              "action_kind": "remind_makeup",
+              "admitted_at": "2026-10-04T10:00:00+08:00",
+              "body": "家长您好，提醒一下：第1课 LESSON-L2-FOX-D01 还没有补读，需要在今天 18:00 截止前完成。您看孩子什么时间方便，安排补读就可以；有问题随时告诉我。",
+              "business_date": "2026-10-04",
+              "channel": "mock_wechat",
+              "content_digest": "26c25dd6c369dd8a80ced1c00b306fcf9e9b5c434bafa59a2f5b9123d8a41456",
+              "dispatch_count": 1,
+              "event_id": "event-76992b96414c4b2bb260aab3c7a391a2",
+              "lesson_refs": [
+                "LESSON-L2-FOX-D01"
+              ],
+              "occurred_at": "2026-10-04T10:00:00+08:00",
+              "part_id": null,
+              "prepared_family_version": 7,
+              "purpose_key": "30ebe43082a70f9bc707fd7b1f20e1ac988bfafdfee0a6bb637d74756600e115",
+              "receipts": [
+                {
+                  "observed_at": "2026-10-04T10:00:00+08:00",
+                  "source": "mock_transport",
+                  "stage": "sent"
+                }
+              ],
+              "recipient": "mock:4b1:a",
+              "reply_to": [],
+              "request": {
+                "action_kind": "remind_makeup",
+                "body": "家长您好，提醒一下：第1课 LESSON-L2-FOX-D01 还没有补读，需要在今天 18:00 截止前完成。您看孩子什么时间方便，安排补读就可以；有问题随时告诉我。",
+                "event_id": "event-76992b96414c4b2bb260aab3c7a391a2",
+                "expected_family_version": 6,
+                "part_id": null,
+                "reply_to": [],
+                "request_id": "send:makeup-reminder-5e421656",
+                "step_id": "15ba5c3bff74cdee5e9185132d88e9412811b89d96eca2c0445bb013cfc78561"
+              },
+              "requirement_revision": 1,
+              "run_id": "run-152c89788a934aff839425eb2e45d193",
+              "send_capability": {
+                "commitment_id": null,
+                "current_step_key": "15ba5c3bff74cdee5e9185132d88e9412811b89d96eca2c0445bb013cfc78561",
+                "event_id": "event-76992b96414c4b2bb260aab3c7a391a2",
+                "job_id": "step:5e42165612425333e1bbdac1c74430795cf30819814b5198610738c8bb1068db",
+                "job_kind": "step",
+                "mode": "full",
+                "no_contact": false,
+                "output_mode": "family_reply",
+                "reply_scope": {},
+                "run_id": "run-152c89788a934aff839425eb2e45d193",
+                "schedule_revision": null
+              },
+              "simulated": true,
+              "stage": "sent"
+            },
+            "record_versions": {
+              "family_input_version": 8
+            },
+            "error": null
+          }
+        }
+      },
+      {
+        "tool": "progress.submit",
+        "arguments_digest": "27b44b9ad3ed52b3f69e42b13fb702ccbd9735f6d175817bc524caf23d678f37",
+        "ok": false,
+        "result_digest": "db9e6a648d13aefc32e4e13168dd39d0e85c61d4b7252e165125516a097c9bc3",
+        "error": "INVALID_SCHEMA",
+        "at": "2026-10-04T10:00:00+08:00",
+        "arguments": {
+          "completion_assessments": [
+            {
+              "complete": false,
+              "criterion": "补读已确认原课节 LESSON-L2-FOX-D01（completion: goal, lesson_refs=[LESSON-L2-FOX-D01], required_stage=sent 针对原目标达成）",
+              "event_id": "event-76992b96414c4b2bb260aab3c7a391a2",
+              "evidence_refs": [
+                {
+                  "id": "operation-8f6e358341a447e7b25092b5d2f6a2fe",
+                  "kind": "operation",
+                  "version": 3
+                }
+              ],
+              "reason": "本步骤仅完成补课提醒外发并获sent回执；提醒本身不代表补课完成，LESSON-L2-FOX-D01 补读目标尚未达成，且家长尚未回复安排。",
+              "criterion_": null
+            }
+          ],
+          "event_ids": [
+            "event-76992b96414c4b2bb260aab3c7a391a2"
+          ],
+          "evidence_refs": [
+            {
+              "id": "operation-8f6e358341a447e7b25092b5d2f6a2fe",
+              "kind": "operation",
+              "version": 3
+            }
+          ],
+          "facts": [
+            "2026-10-04 10:00 按当日计划步骤向家长发出 LESSON-L2-FOX-D01 补读提醒，操作 operation-8f6e358341a447e7b25092b5d2f6a2fe 回执阶段为 sent。",
+            "提醒正文载明截止为今天 18:00，并请家长反馈孩子方便的时间。",
+            "尚未收到家长关于补读安排的回复，LESSON-L2-FOX-D01 补读本身未完成。"
+          ],
+          "remaining_work": [
+            "LESSON-L2-FOX-D01 补读目标达成（家长确认安排并完成补读）"
+          ],
+          "report_id": "report:makeup-reminder-sent-5e421656",
+          "request_id": "progress:makeup-reminder-5e421656",
+          "suggested_update": "补课提醒已发出（sent）；等待家长回复补读安排，原课节补读仍待完成，截止 2026-10-04T18:00:00+08:00。"
+        },
+        "result": {
+          "ok": false,
+          "error": {
+            "code": "INVALID_SCHEMA",
+            "details": [
+              {
+                "loc": [
+                  "completion_assessments",
+                  0,
+                  "criterion_"
+                ],
+                "type": "extra_forbidden",
+                "message": "Extra inputs are not permitted"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "tool": "progress.submit",
+        "arguments_digest": "edf6ce7678c6499a88f96ed2f42cc7373688f8f19924aa61dd29a393717b52a3",
+        "ok": true,
+        "result_digest": "1d1499a0a675f6d14a62a8859bb1df1f62d5a1bb48af2c142bedba7ccd64b168",
+        "error": null,
+        "at": "2026-10-04T10:00:00+08:00",
+        "arguments": {
+          "completion_assessments": [
+            {
+              "complete": false,
+              "criterion": "补读已确认原课节 LESSON-L2-FOX-D01",
+              "event_id": "event-76992b96414c4b2bb260aab3c7a391a2",
+              "evidence_refs": [
+                {
+                  "id": "operation-8f6e358341a447e7b25092b5d2f6a2fe",
+                  "kind": "operation",
+                  "version": 3
+                }
+              ],
+              "reason": "本步骤只完成补课提醒外发并取得 sent 回执；提醒本身不代表补课完成，LESSON-L2-FOX-D01 补读目标尚未达成，家长也尚未回复安排。"
+            }
+          ],
+          "event_ids": [
+            "event-76992b96414c4b2bb260aab3c7a391a2"
+          ],
+          "evidence_refs": [
+            {
+              "id": "operation-8f6e358341a447e7b25092b5d2f6a2fe",
+              "kind": "operation",
+              "version": 3
+            }
+          ],
+          "facts": [
+            "2026-10-04 10:00 按当日计划步骤向家长发出 LESSON-L2-FOX-D01 补读提醒，操作 operation-8f6e358341a447e7b25092b5d2f6a2fe 回执阶段为 sent。",
+            "提醒正文载明截止为今天 18:00，并请家长反馈孩子方便的时间。",
+            "尚未收到家长关于补读安排的回复，LESSON-L2-FOX-D01 补读本身未完成。"
+          ],
+          "remaining_work": [
+            "LESSON-L2-FOX-D01 补读目标达成"
+          ],
+          "report_id": "report:makeup-reminder-sent-5e421656",
+          "request_id": "progress:makeup-reminder-5e421656",
+          "suggested_update": "补课提醒已发出（sent）；等待家长回复补读安排，原课节补读仍待完成，截止 2026-10-04T18:00:00+08:00。"
+        },
+        "result": {
+          "ok": true,
+          "result": {
+            "request_id": "progress:makeup-reminder-5e421656",
+            "outcome": "applied",
+            "data": {
+              "id": "[\"synthetic-4b1-a\",\"report:makeup-reminder-sent-5e421656\",1]",
+              "version": 1,
+              "created_at": "2026-10-04T10:00:00+08:00",
+              "event_ids": [
+                "event-76992b96414c4b2bb260aab3c7a391a2"
+              ],
+              "origin_run_id": "run-152c89788a934aff839425eb2e45d193",
+              "payload": {
+                "completion_assessments": [
+                  {
+                    "complete": false,
+                    "criterion": "补读已确认原课节 LESSON-L2-FOX-D01",
+                    "event_id": "event-76992b96414c4b2bb260aab3c7a391a2",
+                    "evidence_refs": [
+                      {
+                        "id": "operation-8f6e358341a447e7b25092b5d2f6a2fe",
+                        "kind": "operation",
+                        "version": 3
+                      }
+                    ],
+                    "reason": "本步骤只完成补课提醒外发并取得 sent 回执；提醒本身不代表补课完成，LESSON-L2-FOX-D01 补读目标尚未达成，家长也尚未回复安排。"
+                  }
+                ],
+                "event_ids": [
+                  "event-76992b96414c4b2bb260aab3c7a391a2"
+                ],
+                "evidence_refs": [
+                  {
+                    "id": "operation-8f6e358341a447e7b25092b5d2f6a2fe",
+                    "kind": "operation",
+                    "version": 3
+                  }
+                ],
+                "facts": [
+                  "2026-10-04 10:00 按当日计划步骤向家长发出 LESSON-L2-FOX-D01 补读提醒，操作 operation-8f6e358341a447e7b25092b5d2f6a2fe 回执阶段为 sent。",
+                  "提醒正文载明截止为今天 18:00，并请家长反馈孩子方便的时间。",
+                  "尚未收到家长关于补读安排的回复，LESSON-L2-FOX-D01 补读本身未完成。"
+                ],
+                "remaining_work": [
+                  "LESSON-L2-FOX-D01 补读目标达成"
+                ],
+                "report_id": "report:makeup-reminder-sent-5e421656",
+                "revision": 1,
+                "suggested_update": "补课提醒已发出（sent）；等待家长回复补读安排，原课节补读仍待完成，截止 2026-10-04T18:00:00+08:00。",
+                "supersedes_revision": null
+              },
+              "report_id": "report:makeup-reminder-sent-5e421656",
+              "resolution": null,
+              "revision": 1,
+              "schema_version": 2,
+              "source_snapshots": [
+                {
+                  "message_digest": null,
+                  "ref": {
+                    "id": "operation-8f6e358341a447e7b25092b5d2f6a2fe",
+                    "kind": "operation",
+                    "version": 3
+                  }
+                }
+              ]
+            },
+            "record_versions": {
+              "family_input_version": 9
+            },
+            "error": null
+          }
+        }
+      },
+      {
+        "tool": "service.record_outcome",
+        "arguments_digest": "b90086d90493d76427d31e5f6d139f34641568fff7f523fa3aaba8542ab9ca45",
+        "ok": false,
+        "result_digest": "b17ebf54a363b8e52fadc9a578767b32f0754518998ca97b25e0240a0c0cf394",
+        "error": "INVALID_SCHEMA",
+        "at": "2026-10-04T10:00:00+08:00",
+        "arguments": {
+          "action_taken": "remind_makeup",
+          "outcome": "action_taken",
+          "reason": "当前步骤（remind_makeup，execute_at 2026-10-04T10:00）已完成：补读提醒外发成功，操作 operation-8f6e358341a447e7b25092b5d2f6a2fe 回执阶段 sent，并已提交报告 report:makeup-reminder-sent-5e421656 v1。步骤完成条件（提醒发出并留有回执）满足；父事项 LESSON-L2-FOX-D01 补读目标仍待家长安排与完成。",
+          "refs": [
+            {
+              "id": "operation-8f6e358341a447e7b25092b5d2f6a2fe",
+              "kind": "operation",
+              "version": 3
+            },
+            {
+              "id": "report:makeup-reminder-sent-5e421656",
+              "kind": "report",
+              "version": 1
+            },
+            {
+              "id": "event-76992b96414c4b2bb260aab3c7a391a2",
+              "kind": "event",
+              "version": 1
+            }
+          ],
+          "remaining_work": [
+            "LESSON-L2-FOX-D01 补读目标达成（截止 2026-10-04T18:00:00+08:00）"
+          ],
+          "request_id": "outcome:makeup-reminder-5e421656",
+          "resume_condition": "家长回复补读安排或完成补读后可再次核实；18:00 截止前若仍无回复，由后续计划步骤处理。"
+        },
+        "result": {
+          "ok": false,
+          "error": {
+            "code": "INVALID_SCHEMA",
+            "details": [
+              {
+                "loc": [
+                  "action_taken"
+                ],
+                "type": "extra_forbidden",
+                "message": "Extra inputs are not permitted"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "tool": "service.record_outcome",
+        "arguments_digest": "98bb3161b80c4d2e2651b3fc4561e333d21aa57fe6abf54d64146975c9f7bf64",
+        "ok": false,
+        "result_digest": "7b0444643be0e4c62830d0dc54df89f9618e0d7309fd8e6d72ad866f6cfe24e8",
+        "error": "RECORD_NOT_FOUND",
+        "at": "2026-10-04T10:00:00+08:00",
+        "arguments": {
+          "outcome": "action_taken",
+          "reason": "当前步骤（remind_makeup，execute_at 2026-10-04T10:00）已完成：补读提醒外发成功，操作 operation-8f6e358341a447e7b25092b5d2f6a2fe 回执阶段 sent，并已提交报告 report:makeup-reminder-sent-5e421656 v1。步骤完成条件（提醒发出并留有回执）满足；父事项 LESSON-L2-FOX-D01 补读目标仍待家长安排与完成。",
+          "refs": [
+            {
+              "id": "operation-8f6e358341a447e7b25092b5d2f6a2fe",
+              "kind": "operation",
+              "version": 3
+            },
+            {
+              "id": "report:makeup-reminder-sent-5e421656",
+              "kind": "report",
+              "version": 1
+            },
+            {
+              "id": "event-76992b96414c4b2bb260aab3c7a391a2",
+              "kind": "event",
+              "version": 1
+            }
+          ],
+          "remaining_work": [
+            "LESSON-L2-FOX-D01 补读目标达成（截止 2026-10-04T18:00:00+08:00）"
+          ],
+          "request_id": "outcome:makeup-reminder-5e421656",
+          "resume_condition": "家长回复补读安排或完成补读后可再次核实；18:00 截止前若仍无回复，由后续计划步骤处理。"
+        },
+        "result": {
+          "ok": false,
+          "error": {
+            "code": "RECORD_NOT_FOUND",
+            "message": "当前家庭中不存在该记录"
+          }
+        }
+      },
+      {
+        "tool": "state.read",
+        "arguments_digest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "ok": true,
+        "result_digest": "7b774bb871e22203d3609590ba4bd9a6460fdf8c107cf8b817670f456d4fa7ca",
+        "error": null,
+        "at": "2026-10-04T10:00:00+08:00",
+        "arguments": {},
+        "result": {
+          "ok": true,
+          "result": {
+            "family_version": 9,
+            "events": [
+              {
+                "id": "event-76992b96414c4b2bb260aab3c7a391a2",
+                "version": 1,
+                "goal_key": "makeup:9b210ec4803f6c07f9190c6fb79da39068f615bc3be8fd2ba07aa933fe432243",
+                "goal_text": "补读已确认原课节 LESSON-L2-FOX-D01",
+                "status": "pending",
+                "completion": {
+                  "kind": "goal",
+                  "lesson_refs": [
+                    "LESSON-L2-FOX-D01"
+                  ],
+                  "required_part_ids": [],
+                  "required_stage": "sent"
+                },
+                "completion_condition": null,
+                "completion_contract_version": 1,
+                "remaining_work": [
+                  "LESSON-L2-FOX-D01"
+                ],
+                "due_at": "2026-10-04T18:00:00+08:00",
+                "waiting": null,
+                "next_action": {
+                  "action_kind": "remind_makeup",
+                  "completion_condition": "补课提醒已发出并留有操作回执；提醒本身不代表补课完成，父事项完成仍以 LESSON-L2-FOX-D01 补读目标达成判定",
+                  "execute_at": "2026-10-04T10:00:00+08:00",
+                  "purpose": "就已确认原课节 LESSON-L2-FOX-D01 向家长发起补读提醒，目标在 18:00 截止前完成",
+                  "target_refs": [
+                    "LESSON-L2-FOX-D01"
+                  ]
+                },
+                "update_pending": true,
+                "requirement_revision": 1,
+                "proposed_change": null,
+                "deadline_history": [],
+                "evidence_refs": [],
+                "creation_source_refs": [
+                  {
+                    "id": "candidate-source:3a63b56c64b27aba222b22bc02c87f6126aba64935a2a81f7a1f7feaad62976c",
+                    "kind": "candidate_source",
+                    "version": 1
+                  },
+                  {
+                    "id": "course-binding:1aac169c6326f68e6a5a5278f50d657f73dd63d3ac2062ce67f0a0008bd86784",
+                    "kind": "course_binding",
+                    "version": 1
+                  }
+                ],
+                "source_identity": {
+                  "course_id": "simulation-L2-fox",
+                  "course_version": "simulation-v1",
+                  "family_id": "synthetic-4b1-a",
+                  "kind": "makeup",
+                  "lesson_refs": [
+                    "LESSON-L2-FOX-D01"
+                  ]
+                },
+                "original_deadline": "2026-10-04T18:00:00+08:00",
+                "requested_time": {
+                  "meaning": "confirmed_contract_deadline",
+                  "precision": "datetime",
+                  "source_text": "2026-10-04T18:00:00+08:00",
+                  "value": "2026-10-04T18:00:00+08:00"
+                },
+                "delivery_parts": [],
+                "execution": {
+                  "eligible_now": false,
+                  "blocked_by": "UPDATE_PENDING"
+                }
+              }
+            ],
+            "controls": [],
+            "plans": [
+              {
+                "id": "plan-2b0b35df0f9e456e8c9255ec3e452a0a",
+                "version": 1,
+                "business_date": "2026-10-04",
+                "items": [
+                  {
+                    "event_id": "event-76992b96414c4b2bb260aab3c7a391a2",
+                    "rank": 1,
+                    "authority": "baseline"
+                  }
+                ],
+                "baseline_committed": true,
+                "revision": 1
+              }
+            ],
+            "reports": [
+              {
+                "id": "[\"synthetic-4b1-a\",\"report:makeup-reminder-sent-5e421656\",1]",
+                "version": 1,
+                "report_id": "report:makeup-reminder-sent-5e421656",
+                "revision": 1,
+                "event_ids": [
+                  "event-76992b96414c4b2bb260aab3c7a391a2"
+                ],
+                "resolution": null,
+                "origin_run_id": "run-152c89788a934aff839425eb2e45d193",
+                "observation": {
+                  "facts": [
+                    "2026-10-04 10:00 按当日计划步骤向家长发出 LESSON-L2-FOX-D01 补读提醒，操作 operation-8f6e358341a447e7b25092b5d2f6a2fe 回执阶段为 sent。",
+                    "提醒正文载明截止为今天 18:00，并请家长反馈孩子方便的时间。",
+                    "尚未收到家长关于补读安排的回复，LESSON-L2-FOX-D01 补读本身未完成。"
+                  ],
+                  "remaining_work": [
+                    "LESSON-L2-FOX-D01 补读目标达成"
+                  ],
+                  "completion_assessments": [
+                    {
+                      "complete": false,
+                      "criterion": "补读已确认原课节 LESSON-L2-FOX-D01",
+                      "event_id": "event-76992b96414c4b2bb260aab3c7a391a2",
+                      "evidence_refs": [
+                        {
+                          "id": "operation-8f6e358341a447e7b25092b5d2f6a2fe",
+                          "kind": "operation",
+                          "version": 3
+                        }
+                      ],
+                      "reason": "本步骤只完成补课提醒外发并取得 sent 回执；提醒本身不代表补课完成，LESSON-L2-FOX-D01 补读目标尚未达成，家长也尚未回复安排。"
+                    }
+                  ],
+                  "evidence_refs": [
+                    {
+                      "id": "operation-8f6e358341a447e7b25092b5d2f6a2fe",
+                      "kind": "operation",
+                      "version": 3
+                    }
+                  ]
+                }
+              }
+            ],
+            "pending_inputs": [],
+            "messages": [],
+            "operations": [
+              {
+                "id": "operation-8f6e358341a447e7b25092b5d2f6a2fe",
+                "version": 3,
+                "action_kind": "remind_makeup",
+                "admitted_at": "2026-10-04T10:00:00+08:00",
+                "body": "家长您好，提醒一下：第1课 LESSON-L2-FOX-D01 还没有补读，需要在今天 18:00 截止前完成。您看孩子什么时间方便，安排补读就可以；有问题随时告诉我。",
+                "business_date": "2026-10-04",
+                "channel": "mock_wechat",
+                "content_digest": "26c25dd6c369dd8a80ced1c00b306fcf9e9b5c434bafa59a2f5b9123d8a41456",
+                "dispatch_count": 1,
+                "event_id": "event-76992b96414c4b2bb260aab3c7a391a2",
+                "lesson_refs": [
+                  "LESSON-L2-FOX-D01"
+                ],
+                "occurred_at": "2026-10-04T10:00:00+08:00",
+                "part_id": null,
+                "prepared_family_version": 7,
+                "purpose_key": "30ebe43082a70f9bc707fd7b1f20e1ac988bfafdfee0a6bb637d74756600e115",
+                "receipts": [
+                  {
+                    "observed_at": "2026-10-04T10:00:00+08:00",
+                    "source": "mock_transport",
+                    "stage": "sent"
+                  }
+                ],
+                "recipient": "mock:4b1:a",
+                "reply_to": [],
+                "request": {
+                  "action_kind": "remind_makeup",
+                  "body": "家长您好，提醒一下：第1课 LESSON-L2-FOX-D01 还没有补读，需要在今天 18:00 截止前完成。您看孩子什么时间方便，安排补读就可以；有问题随时告诉我。",
+                  "event_id": "event-76992b96414c4b2bb260aab3c7a391a2",
+                  "expected_family_version": 6,
+                  "part_id": null,
+                  "reply_to": [],
+                  "request_id": "send:makeup-reminder-5e421656",
+                  "step_id": "15ba5c3bff74cdee5e9185132d88e9412811b89d96eca2c0445bb013cfc78561"
+                },
+                "requirement_revision": 1,
+                "run_id": "run-152c89788a934aff839425eb2e45d193",
+                "send_capability": {
+                  "commitment_id": null,
+                  "current_step_key": "15ba5c3bff74cdee5e9185132d88e9412811b89d96eca2c0445bb013cfc78561",
+                  "event_id": "event-76992b96414c4b2bb260aab3c7a391a2",
+                  "job_id": "step:5e42165612425333e1bbdac1c74430795cf30819814b5198610738c8bb1068db",
+                  "job_kind": "step",
+                  "mode": "full",
+                  "no_contact": false,
+                  "output_mode": "family_reply",
+                  "reply_scope": {},
+                  "run_id": "run-152c89788a934aff839425eb2e45d193",
+                  "schedule_revision": null
+                },
+                "simulated": true,
+                "stage": "sent"
+              }
+            ],
+            "now": "2026-10-04T10:00:00+08:00",
+            "responsibility_index": [
+              {
+                "id": "event-76992b96414c4b2bb260aab3c7a391a2",
+                "version": 1,
+                "goal_text": "补读已确认原课节 LESSON-L2-FOX-D01",
+                "status": "pending",
+                "due_at": "2026-10-04T18:00:00+08:00",
+                "completion_condition": null
+              },
+              {
+                "id": "event-9dbd36e81f5347fea5a79beda3e878f1",
+                "version": 1,
+                "goal_text": "履行已确认文字反馈合同 simulation-weekly-feedback",
+                "status": "pending",
+                "due_at": "2026-10-04T18:00:00+08:00",
+                "completion_condition": null
+              }
+            ],
+            "execution_agenda": [
+              {
+                "id": "event-76992b96414c4b2bb260aab3c7a391a2",
+                "version": 1,
+                "goal_key": "makeup:9b210ec4803f6c07f9190c6fb79da39068f615bc3be8fd2ba07aa933fe432243",
+                "goal_text": "补读已确认原课节 LESSON-L2-FOX-D01",
+                "status": "pending",
+                "completion": {
+                  "kind": "goal",
+                  "lesson_refs": [
+                    "LESSON-L2-FOX-D01"
+                  ],
+                  "required_part_ids": [],
+                  "required_stage": "sent"
+                },
+                "completion_condition": null,
+                "completion_contract_version": 1,
+                "remaining_work": [
+                  "LESSON-L2-FOX-D01"
+                ],
+                "due_at": "2026-10-04T18:00:00+08:00",
+                "waiting": null,
+                "next_action": {
+                  "action_kind": "remind_makeup",
+                  "completion_condition": "补课提醒已发出并留有操作回执；提醒本身不代表补课完成，父事项完成仍以 LESSON-L2-FOX-D01 补读目标达成判定",
+                  "execute_at": "2026-10-04T10:00:00+08:00",
+                  "purpose": "就已确认原课节 LESSON-L2-FOX-D01 向家长发起补读提醒，目标在 18:00 截止前完成",
+                  "target_refs": [
+                    "LESSON-L2-FOX-D01"
+                  ]
+                },
+                "update_pending": true,
+                "requirement_revision": 1,
+                "proposed_change": null,
+                "deadline_history": [],
+                "evidence_refs": [],
+                "creation_source_refs": [
+                  {
+                    "id": "candidate-source:3a63b56c64b27aba222b22bc02c87f6126aba64935a2a81f7a1f7feaad62976c",
+                    "kind": "candidate_source",
+                    "version": 1
+                  },
+                  {
+                    "id": "course-binding:1aac169c6326f68e6a5a5278f50d657f73dd63d3ac2062ce67f0a0008bd86784",
+                    "kind": "course_binding",
+                    "version": 1
+                  }
+                ],
+                "source_identity": {
+                  "course_id": "simulation-L2-fox",
+                  "course_version": "simulation-v1",
+                  "family_id": "synthetic-4b1-a",
+                  "kind": "makeup",
+                  "lesson_refs": [
+                    "LESSON-L2-FOX-D01"
+                  ]
+                },
+                "original_deadline": "2026-10-04T18:00:00+08:00",
+                "requested_time": {
+                  "meaning": "confirmed_contract_deadline",
+                  "precision": "datetime",
+                  "source_text": "2026-10-04T18:00:00+08:00",
+                  "value": "2026-10-04T18:00:00+08:00"
+                },
+                "delivery_parts": [],
+                "execution": {
+                  "eligible_now": false,
+                  "blocked_by": "UPDATE_PENDING"
+                }
+              }
+            ],
+            "agenda_is_projection_not_queue": true
+          }
+        }
+      },
+      {
+        "tool": "service.record_outcome",
+        "arguments_digest": "993ae63827ff5347b57ca457cd8e3f4c8d909a19540fa3cd0db0bed0accabf5e",
+        "ok": false,
+        "result_digest": "7b0444643be0e4c62830d0dc54df89f9618e0d7309fd8e6d72ad866f6cfe24e8",
+        "error": "RECORD_NOT_FOUND",
+        "at": "2026-10-04T10:00:00+08:00",
+        "arguments": {
+          "outcome": "action_taken",
+          "reason": "当前步骤（remind_makeup，execute_at 2026-10-04T10:00）已完成：补读提醒外发成功，操作 operation-8f6e358341a447e7b25092b5d2f6a2fe 回执阶段 sent，并已提交报告 report:makeup-reminder-sent-5e421656（revision 1）。步骤完成条件（提醒发出并留有操作回执）满足；父事项 LESSON-L2-FOX-D01 补读目标仍待家长安排与完成。",
+          "refs": [
+            {
+              "kind": "operation",
+              "id": "operation-8f6e358341a447e7b25092b5d2f6a2fe",
+              "version": 3
+            },
+            {
+              "kind": "report",
+              "id": "report:makeup-reminder-sent-5e421656",
+              "version": 1
+            },
+            {
+              "kind": "event",
+              "id": "event-76992b96414c4b2bb260aab3c7a391a2",
+              "version": 1
+            }
+          ],
+          "remaining_work": [
+            "LESSON-L2-FOX-D01 补读目标达成（截止 2026-10-04T18:00:00+08:00）"
+          ],
+          "request_id": "outcome:makeup-reminder-5e421656",
+          "resume_condition": "家长回复补读安排或完成补读后可再次核实；18:00 截止前若仍无回复，由后续计划步骤处理。"
+        },
+        "result": {
+          "ok": false,
+          "error": {
+            "code": "RECORD_NOT_FOUND",
+            "message": "当前家庭中不存在该记录"
+          }
+        }
+      },
+      {
+        "tool": "service.record_outcome",
+        "arguments_digest": "cabc6d0e81798eba068de90f2868eaf0589b90983fcdf7e0b0d62951b9a4d7c3",
+        "ok": true,
+        "result_digest": "aef2823687dfc38ca8c736308e6725edab08308e48dae06d01dc5002c9ced5b1",
+        "error": null,
+        "at": "2026-10-04T10:00:00+08:00",
+        "arguments": {
+          "outcome": "action_taken",
+          "reason": "当前步骤（remind_makeup，execute_at 2026-10-04T10:00）已完成：补读提醒外发成功，操作 operation-8f6e358341a447e7b25092b5d2f6a2fe 回执阶段 sent，并已提交报告（report:makeup-reminder-sent-5e421656，revision 1）。步骤完成条件（提醒发出并留有操作回执）满足；父事项 LESSON-L2-FOX-D01 补读目标仍待家长安排与完成。",
+          "refs": [
+            {
+              "id": "operation-8f6e358341a447e7b25092b5d2f6a2fe",
+              "kind": "operation",
+              "version": 3
+            },
+            {
+              "id": "event-76992b96414c4b2bb260aab3c7a391a2",
+              "kind": "event",
+              "version": 1
+            },
+            {
+              "id": "[\"synthetic-4b1-a\",\"report:makeup-reminder-sent-5e421656\",1]",
+              "kind": "report",
+              "version": 1
+            }
+          ],
+          "remaining_work": [
+            "LESSON-L2-FOX-D01 补读目标达成（截止 2026-10-04T18:00:00+08:00）"
+          ],
+          "request_id": "outcome:makeup-reminder-5e421656-v2",
+          "resume_condition": "家长回复补读安排或完成补读后可再次核实；18:00 截止前若仍无回复，由后续计划步骤处理。"
+        },
+        "result": {
+          "ok": true,
+          "result": {
+            "id": "run-152c89788a934aff839425eb2e45d193",
+            "version": 1,
+            "awaiting_operation_ids": [],
+            "delegation_acknowledgements": [],
+            "draft": null,
+            "effective_control_scopes": {
+              "authority": "current_control_records",
+              "controls": [],
+              "meaning": "仅active控制生效。event_id为空的控制覆盖本家庭所有事项及以后事项中的action_kinds；有event_id仅覆盖该事项的这些动作。未列出的动作不因该控制暂停，仍须经过其他权限和发送检查。旧空白字符串范围按全家庭保守解释并标明legacy_invalid_scope，不修改原记录。自由文本不能缩小、扩大或解除控制。"
+            },
+            "job_id": "step:5e42165612425333e1bbdac1c74430795cf30819814b5198610738c8bb1068db",
+            "observed_job_operations": [
+              {
+                "id": "operation-8f6e358341a447e7b25092b5d2f6a2fe",
+                "stage": "sent",
+                "version": 3
+              }
+            ],
+            "observed_planning_inputs": [],
+            "outcome": "action_taken",
+            "payload_digest": "3e04cab039c39b4d74f34209b44109cc3e9094b5e780ab83da2a585c7b6d69fb",
+            "reason": "当前步骤（remind_makeup，execute_at 2026-10-04T10:00）已完成：补读提醒外发成功，操作 operation-8f6e358341a447e7b25092b5d2f6a2fe 回执阶段 sent，并已提交报告（report:makeup-reminder-sent-5e421656，revision 1）。步骤完成条件（提醒发出并留有操作回执）满足；父事项 LESSON-L2-FOX-D01 补读目标仍待家长安排与完成。",
+            "recorded_at": "2026-10-04T10:00:00+08:00",
+            "refs": [
+              {
+                "id": "operation-8f6e358341a447e7b25092b5d2f6a2fe",
+                "kind": "operation",
+                "version": 3
+              },
+              {
+                "id": "event-76992b96414c4b2bb260aab3c7a391a2",
+                "kind": "event",
+                "version": 1
+              },
+              {
+                "id": "[\"synthetic-4b1-a\",\"report:makeup-reminder-sent-5e421656\",1]",
+                "kind": "report",
+                "version": 1
+              }
+            ],
+            "remaining_work": [
+              "LESSON-L2-FOX-D01 补读目标达成（截止 2026-10-04T18:00:00+08:00）"
+            ],
+            "request_id": "outcome:makeup-reminder-5e421656-v2",
+            "resume_condition": "家长回复补读安排或完成补读后可再次核实；18:00 截止前若仍无回复，由后续计划步骤处理。",
+            "resume_condition_authority": "model_input_recovery_note_not_control_or_send_permission",
+            "run_id": "run-152c89788a934aff839425eb2e45d193",
+            "settled_delegated_request_refs": []
+          }
+        }
+      }
+    ],
+    "profile": "/root/autodl-tmp/digitalTutor/work/stage4/4c-development-l/state/backend-stage4/intraday-l-native06-intraday/daily-chain/runs/run-152c89788a934aff839425eb2e45d193/profile",
+    "cwd": "/root/autodl-tmp/digitalTutor/work/stage4/4c-development-l/state/backend-stage4/intraday-l-native06-intraday/daily-chain/runs/run-152c89788a934aff839425eb2e45d193",
+    "output_route": "internal",
+    "model": "qwen3.8-flash",
+    "generation_options": {
+      "temperature": 0.0
+    }
+  }
+}

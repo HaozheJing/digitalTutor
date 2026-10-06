@@ -1,0 +1,27 @@
+{
+  "assignments": [
+    {
+      "batch_id": "synthetic-4b1-snapshot",
+      "uid": "synthetic-4b1-uid-a",
+      "day": 1,
+      "source_row": 901,
+      "chapter": "synthetic_single_character_question",
+      "status": "submitted",
+      "submission_count": 1,
+      "submitted_at_raw": "2026-10-04 09:00",
+      "question_title": "合成单次人物信息题",
+      "question_text": "博吉斯养什么，喜欢吃什么？",
+      "ai_guidance": null,
+      "answer_text": "博吉斯养鸡，他喜欢吃水煮鸡。",
+      "answer_rounds": 1,
+      "voice_answers": 0,
+      "quality_flags": "{\"synthetic\": true, \"source_id\": \"synthetic-work-v1\", \"scope\": \"one_answer_only\"}"
+    }
+  ],
+  "imports": [
+    {
+      "batch_id": "synthetic-4b1-snapshot",
+      "metadata": "{\"batch_id\":\"synthetic-4b1-snapshot\",\"course_binding\":null,\"coverage_through\":\"2026-10-04T10:00:00+08:00\",\"imported_at\":\"2026-10-04T10:00:00+08:00\",\"source_timezone\":\"Asia/Shanghai\",\"synthetic\":true}"
+    }
+  ]
+}

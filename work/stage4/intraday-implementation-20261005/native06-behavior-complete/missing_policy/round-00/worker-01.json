@@ -1,0 +1,297 @@
+{
+  "worker": {
+    "ran": false
+  },
+  "business_time": "2026-10-04T10:00:00+08:00",
+  "records": {
+    "synthetic-4b1-a": {
+      "job": [
+        {
+          "id": "message:msg-bf30d5ebf1094e15bfe5c1796e99de28",
+          "version": 56,
+          "attempt": 1,
+          "claimed_at": "2026-10-05T20:48:48.945848+08:00",
+          "finished_at": "2026-10-05T20:51:31.152455+08:00",
+          "generation": 1,
+          "input_version": 5,
+          "kind": "service",
+          "lease_until": "2026-10-05T20:51:37.263112+08:00",
+          "message_id": "msg-bf30d5ebf1094e15bfe5c1796e99de28",
+          "not_before": null,
+          "reason": "第4天课节正文不在当前绑定材料中（仅有第1天 LESSON-L2-FOX-D01），SQL学情无第4天题目记录，请假/有效期延长无适用政策资料。已发送一条回复说明实际缺口并保留两个原未答意图（均标记resolves_intent=false，partial_reply_operation_refs已登记），未虚构答案或权益承诺。",
+          "recovery_only": false,
+          "run_id": "run-307574bd91a64c1ea1e3bf8227192ca0",
+          "status": "waiting",
+          "worker": "worker",
+          "yield_requested": false
+        }
+      ],
+      "message": [
+        {
+          "id": "msg-bf30d5ebf1094e15bfe5c1796e99de28",
+          "version": 3,
+          "body": "《了不起的狐狸爸爸》第4天的原题答案是什么？另外我临时请假，你们是不是一定能免费延长有效期？",
+          "direction": "inbound",
+          "external_id": "missing_policy-0-0",
+          "intents": [
+            {
+              "intent_id": "intent-d4-answers",
+              "partial_reply_operation_refs": [
+                "operation-9c4d3498888b47f68143cdd8b342ed15"
+              ],
+              "reply_operation_refs": [],
+              "requires_reply": true,
+              "service_authorization": null,
+              "service_kind": "reply",
+              "text": "询问《了不起的狐狸爸爸》第4天的原题答案"
+            },
+            {
+              "intent_id": "intent-leave-extension",
+              "partial_reply_operation_refs": [
+                "operation-9c4d3498888b47f68143cdd8b342ed15"
+              ],
+              "reply_operation_refs": [],
+              "requires_reply": true,
+              "service_authorization": null,
+              "service_kind": "reply",
+              "text": "临时请假，询问是否一定能免费延长有效期"
+            }
+          ],
+          "interpreted": true,
+          "occurred_at": "2026-10-04T10:00:00+08:00",
+          "received_at": "2026-10-04T10:00:00+08:00",
+          "source_kind": "mock_wechat"
+        },
+        {
+          "id": "msg-bcb34e15c2ea49449872eceff3cac8ff",
+          "version": 1,
+          "body": "您好，两件事我分别说一下：\n\n1）第4天的原题答案：我这边目前只核到 L2《了不起的狐狸爸爸》第1天的课程正文，第4天的课节内容没有拿到，所以不能凭印象给孩子报答案。方便的话，您可以把第4天的题目原文发我（拍照或打字都行），我核对题目所属课节后再逐题说；如果那节课的正文我这边确实取不到，我也会直接告诉您哪几题没有依据。\n\n2）临时请假能否免费延长有效期：这个我不能给您保证\"一定可以\"。请假和有效期延长要看具体产品和班期的规则，我当前手上的资料里没有查到适用的明确条款，所以不替您承诺。建议您直接联系咱们已有的官方客服入口，说明请假时间和孩子当前进度，请他们核实是否符合免费延长条件。\n\n第4天题目的事我先记着，您发来我就接着看。",
+          "direction": "outbound",
+          "external_id": "operation-9c4d3498888b47f68143cdd8b342ed15",
+          "intents": [],
+          "interpreted": true,
+          "occurred_at": "2026-10-04T10:00:00+08:00",
+          "operation_id": "operation-9c4d3498888b47f68143cdd8b342ed15",
+          "received_at": "2026-10-04T10:00:00+08:00",
+          "source_kind": "mock_wechat"
+        }
+      ],
+      "operation": [
+        {
+          "id": "operation-9c4d3498888b47f68143cdd8b342ed15",
+          "version": 3,
+          "action_kind": "reply",
+          "admitted_at": "2026-10-04T10:00:00+08:00",
+          "body": "您好，两件事我分别说一下：\n\n1）第4天的原题答案：我这边目前只核到 L2《了不起的狐狸爸爸》第1天的课程正文，第4天的课节内容没有拿到，所以不能凭印象给孩子报答案。方便的话，您可以把第4天的题目原文发我（拍照或打字都行），我核对题目所属课节后再逐题说；如果那节课的正文我这边确实取不到，我也会直接告诉您哪几题没有依据。\n\n2）临时请假能否免费延长有效期：这个我不能给您保证\"一定可以\"。请假和有效期延长要看具体产品和班期的规则，我当前手上的资料里没有查到适用的明确条款，所以不替您承诺。建议您直接联系咱们已有的官方客服入口，说明请假时间和孩子当前进度，请他们核实是否符合免费延长条件。\n\n第4天题目的事我先记着，您发来我就接着看。",
+          "business_date": "2026-10-04",
+          "channel": "mock_wechat",
+          "content_digest": "e3fda812d25bd8d674d8279774110cab1899693579a0266950aee9bcbc30f314",
+          "decision_reply_refs": [],
+          "dispatch_count": 1,
+          "event_id": null,
+          "lesson_refs": [],
+          "occurred_at": "2026-10-04T10:00:00+08:00",
+          "part_id": null,
+          "prepared_family_version": 4,
+          "purpose_key": "d1bd7ca71e00a384aada0ae53cc94fea714379d69a4ad3367ca87e7ddc6ba5aa",
+          "receipts": [
+            {
+              "observed_at": "2026-10-04T10:00:00+08:00",
+              "source": "mock_transport",
+              "stage": "sent"
+            }
+          ],
+          "recipient": "mock:4b1:a",
+          "reply_to": [
+            {
+              "intent_id": "intent-d4-answers",
+              "message_id": "msg-bf30d5ebf1094e15bfe5c1796e99de28",
+              "resolves_intent": false
+            },
+            {
+              "intent_id": "intent-leave-extension",
+              "message_id": "msg-bf30d5ebf1094e15bfe5c1796e99de28",
+              "resolves_intent": false
+            }
+          ],
+          "request": {
+            "action_kind": "reply",
+            "body": "您好，两件事我分别说一下：\n\n1）第4天的原题答案：我这边目前只核到 L2《了不起的狐狸爸爸》第1天的课程正文，第4天的课节内容没有拿到，所以不能凭印象给孩子报答案。方便的话，您可以把第4天的题目原文发我（拍照或打字都行），我核对题目所属课节后再逐题说；如果那节课的正文我这边确实取不到，我也会直接告诉您哪几题没有依据。\n\n2）临时请假能否免费延长有效期：这个我不能给您保证\"一定可以\"。请假和有效期延长要看具体产品和班期的规则，我当前手上的资料里没有查到适用的明确条款，所以不替您承诺。建议您直接联系咱们已有的官方客服入口，说明请假时间和孩子当前进度，请他们核实是否符合免费延长条件。\n\n第4天题目的事我先记着，您发来我就接着看。",
+            "event_id": null,
+            "expected_family_version": 3,
+            "part_id": null,
+            "reply_to": [
+              {
+                "intent_id": "intent-d4-answers",
+                "message_id": "msg-bf30d5ebf1094e15bfe5c1796e99de28",
+                "resolves_intent": false
+              },
+              {
+                "intent_id": "intent-leave-extension",
+                "message_id": "msg-bf30d5ebf1094e15bfe5c1796e99de28",
+                "resolves_intent": false
+              }
+            ],
+            "request_id": "send-run307574-001",
+            "step_id": null
+          },
+          "requirement_revision": null,
+          "run_id": "run-307574bd91a64c1ea1e3bf8227192ca0",
+          "send_capability": {
+            "commitment_id": null,
+            "current_step_key": null,
+            "event_id": null,
+            "job_id": "message:msg-bf30d5ebf1094e15bfe5c1796e99de28",
+            "job_kind": "service",
+            "mode": "full",
+            "no_contact": false,
+            "output_mode": "family_reply",
+            "reply_scope": {
+              "msg-bf30d5ebf1094e15bfe5c1796e99de28": [
+                "*"
+              ]
+            },
+            "run_id": "run-307574bd91a64c1ea1e3bf8227192ca0",
+            "schedule_revision": null
+          },
+          "simulated": true,
+          "stage": "sent"
+        }
+      ],
+      "event": [],
+      "report": [],
+      "plan": [],
+      "run_outcome": [
+        {
+          "id": "run-307574bd91a64c1ea1e3bf8227192ca0",
+          "version": 1,
+          "awaiting_operation_ids": [],
+          "delegation_acknowledgements": [],
+          "draft": null,
+          "effective_control_scopes": {
+            "authority": "current_control_records",
+            "controls": [],
+            "meaning": "仅active控制生效。event_id为空的控制覆盖本家庭所有事项及以后事项中的action_kinds；有event_id仅覆盖该事项的这些动作。未列出的动作不因该控制暂停，仍须经过其他权限和发送检查。旧空白字符串范围按全家庭保守解释并标明legacy_invalid_scope，不修改原记录。自由文本不能缩小、扩大或解除控制。"
+          },
+          "job_id": "message:msg-bf30d5ebf1094e15bfe5c1796e99de28",
+          "observed_job_operations": [
+            {
+              "id": "operation-9c4d3498888b47f68143cdd8b342ed15",
+              "stage": "sent",
+              "version": 3
+            }
+          ],
+          "observed_planning_inputs": [],
+          "outcome": "needs_input",
+          "payload_digest": "10819fe5a9e744c2a9e97cfd22e0aa1567c85510bde329a664b5940e69bb1837",
+          "reason": "第4天课节正文不在当前绑定材料中（仅有第1天 LESSON-L2-FOX-D01），SQL学情无第4天题目记录，请假/有效期延长无适用政策资料。已发送一条回复说明实际缺口并保留两个原未答意图（均标记resolves_intent=false，partial_reply_operation_refs已登记），未虚构答案或权益承诺。",
+          "recorded_at": "2026-10-04T10:00:00+08:00",
+          "refs": [
+            {
+              "id": "msg-bf30d5ebf1094e15bfe5c1796e99de28",
+              "kind": "message",
+              "version": 3
+            },
+            {
+              "id": "operation-9c4d3498888b47f68143cdd8b342ed15",
+              "kind": "operation",
+              "version": 3
+            }
+          ],
+          "remaining_work": [
+            "第4天原题答案仍待答：需第4天课节正文或家长提供的题目原文",
+            "请假免费延长有效期是否可行仍待答：需适用产品/班期规则条款"
+          ],
+          "request_id": "outcome-run307574-002",
+          "resume_condition": "家长发来第4天题目原文，或第4天课节正文及适用请假/有效期政策资料实际可读取后，再逐题回答并核实延长规则。",
+          "resume_condition_authority": "model_input_recovery_note_not_control_or_send_permission",
+          "run_id": "run-307574bd91a64c1ea1e3bf8227192ca0",
+          "settled_delegated_request_refs": []
+        }
+      ],
+      "control": [],
+      "pending": [],
+      "memory": []
+    }
+  },
+  "independent_channel": [
+    {
+      "operation_id": "operation-9c4d3498888b47f68143cdd8b342ed15",
+      "payload": {
+        "action_kind": "reply",
+        "admitted_at": "2026-10-04T10:00:00+08:00",
+        "body": "您好，两件事我分别说一下：\n\n1）第4天的原题答案：我这边目前只核到 L2《了不起的狐狸爸爸》第1天的课程正文，第4天的课节内容没有拿到，所以不能凭印象给孩子报答案。方便的话，您可以把第4天的题目原文发我（拍照或打字都行），我核对题目所属课节后再逐题说；如果那节课的正文我这边确实取不到，我也会直接告诉您哪几题没有依据。\n\n2）临时请假能否免费延长有效期：这个我不能给您保证\"一定可以\"。请假和有效期延长要看具体产品和班期的规则，我当前手上的资料里没有查到适用的明确条款，所以不替您承诺。建议您直接联系咱们已有的官方客服入口，说明请假时间和孩子当前进度，请他们核实是否符合免费延长条件。\n\n第4天题目的事我先记着，您发来我就接着看。",
+        "business_date": "2026-10-04",
+        "channel": "mock_wechat",
+        "content_digest": "e3fda812d25bd8d674d8279774110cab1899693579a0266950aee9bcbc30f314",
+        "decision_reply_refs": [],
+        "dispatch_count": 1,
+        "event_id": null,
+        "id": "operation-9c4d3498888b47f68143cdd8b342ed15",
+        "lesson_refs": [],
+        "occurred_at": "2026-10-04T10:00:00+08:00",
+        "part_id": null,
+        "prepared_family_version": 4,
+        "purpose_key": "d1bd7ca71e00a384aada0ae53cc94fea714379d69a4ad3367ca87e7ddc6ba5aa",
+        "receipts": [],
+        "recipient": "mock:4b1:a",
+        "reply_to": [
+          {
+            "intent_id": "intent-d4-answers",
+            "message_id": "msg-bf30d5ebf1094e15bfe5c1796e99de28",
+            "resolves_intent": false
+          },
+          {
+            "intent_id": "intent-leave-extension",
+            "message_id": "msg-bf30d5ebf1094e15bfe5c1796e99de28",
+            "resolves_intent": false
+          }
+        ],
+        "request": {
+          "action_kind": "reply",
+          "body": "您好，两件事我分别说一下：\n\n1）第4天的原题答案：我这边目前只核到 L2《了不起的狐狸爸爸》第1天的课程正文，第4天的课节内容没有拿到，所以不能凭印象给孩子报答案。方便的话，您可以把第4天的题目原文发我（拍照或打字都行），我核对题目所属课节后再逐题说；如果那节课的正文我这边确实取不到，我也会直接告诉您哪几题没有依据。\n\n2）临时请假能否免费延长有效期：这个我不能给您保证\"一定可以\"。请假和有效期延长要看具体产品和班期的规则，我当前手上的资料里没有查到适用的明确条款，所以不替您承诺。建议您直接联系咱们已有的官方客服入口，说明请假时间和孩子当前进度，请他们核实是否符合免费延长条件。\n\n第4天题目的事我先记着，您发来我就接着看。",
+          "event_id": null,
+          "expected_family_version": 3,
+          "part_id": null,
+          "reply_to": [
+            {
+              "intent_id": "intent-d4-answers",
+              "message_id": "msg-bf30d5ebf1094e15bfe5c1796e99de28",
+              "resolves_intent": false
+            },
+            {
+              "intent_id": "intent-leave-extension",
+              "message_id": "msg-bf30d5ebf1094e15bfe5c1796e99de28",
+              "resolves_intent": false
+            }
+          ],
+          "request_id": "send-run307574-001",
+          "step_id": null
+        },
+        "requirement_revision": null,
+        "run_id": "run-307574bd91a64c1ea1e3bf8227192ca0",
+        "send_capability": {
+          "commitment_id": null,
+          "current_step_key": null,
+          "event_id": null,
+          "job_id": "message:msg-bf30d5ebf1094e15bfe5c1796e99de28",
+          "job_kind": "service",
+          "mode": "full",
+          "no_contact": false,
+          "output_mode": "family_reply",
+          "reply_scope": {
+            "msg-bf30d5ebf1094e15bfe5c1796e99de28": [
+              "*"
+            ]
+          },
+          "run_id": "run-307574bd91a64c1ea1e3bf8227192ca0",
+          "schedule_revision": null
+        },
+        "simulated": true,
+        "stage": "dispatching",
+        "version": 2
+      },
+      "stage": "sent"
+    }
+  ]
+}

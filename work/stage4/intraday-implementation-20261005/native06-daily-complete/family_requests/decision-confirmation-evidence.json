@@ -1,0 +1,28 @@
+{
+  "accepted_delivery_has_decision_confirmation": true,
+  "expected_pending_ids": [
+    "pending:cbf28ba4b3d056f6145b96d49bc018776683a7f0718745ae1ad8f4b44242603b"
+  ],
+  "matched": [
+    {
+      "pending_id": "pending:cbf28ba4b3d056f6145b96d49bc018776683a7f0718745ae1ad8f4b44242603b",
+      "confirmations": [
+        {
+          "operation_id": "operation-fb59bbc1e4bd4e79af6a9c8c153da119",
+          "run_id": "run-58b94db804a34ff3acac973550196f97",
+          "admitted_at": "2026-10-04T08:00:00+08:00",
+          "phase": {
+            "decision_revision": 1,
+            "decision_request_id": "req-admission-run-47f81ed5-weekly-summary",
+            "event_id": "event-369924db35a74295b23b429811264d09",
+            "pending_id": "pending:cbf28ba4b3d056f6145b96d49bc018776683a7f0718745ae1ad8f4b44242603b",
+            "source_message_id": "msg-c2e5b7608eae43a6b961c6c7f385c090",
+            "source_intent_id": "intent-weekly-summary",
+            "commitment_id": "commitment:b058c9282724f8dea36d688b9d74f3bd3222a2aba8e57b57f7c9d1535af2ec79"
+          }
+        }
+      ]
+    }
+  ],
+  "missing": []
+}

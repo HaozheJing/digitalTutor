@@ -1,0 +1,589 @@
+{
+  "index": 1,
+  "family_id": "synthetic-4b1-a",
+  "job_id": "message:msg-2fed9dccaa424736bff3297cae241907",
+  "job_kind": "service",
+  "recovery_only": false,
+  "decision": {
+    "wait": true,
+    "no_contact": false,
+    "outcome_id": "run-ac280b87060e4815b78e748614ae32c8",
+    "reason": "已核对家长原消息并登记未来文字服务需求（本周阅读情况简短总结，明天10月5日下午四点前），已发送确认登记的回复；等待Planner对该pending的决定，原意图保留待安排确认。",
+    "run_id": "run-ac280b87060e4815b78e748614ae32c8"
+  },
+  "native": {
+    "run_id": "run-ac280b87060e4815b78e748614ae32c8",
+    "completed": true,
+    "interrupted": false,
+    "error": "",
+    "final_response": "本轮处理完成：\n\n- 已核对家长原消息（msg-2fed9dccaa424736bff3297cae241907），识别为未来文字交付需求（本周阅读情况简短总结，2026-10-05 16:00前），完成意图登记（intent-independent-need-1，future_delivery，含真实授权原文）。\n- 已通过 pending.propose_service 登记该需求（pending:151a009cf79d4675cb141bf68e2445bbad0c30b653beec3647afbf67dd38580c，disposition=pending，await_decision=true），保留原时间语义 before 2026-10-05T16:00+08:00，完成条件留空。\n- 已发送确认登记的回复（operation-01faf26f86654308af3a55a3bbbaab1a，stage=sent），未承诺具体安排，原意图保留未结清（resolves_intent=false）。\n- 结果记录为 waiting，等待 Planner 对该 pending 的安排决定；恢复条件与剩余工作已保存。",
+    "api_calls": 8,
+    "tools": [
+      "dt_context_read",
+      "dt_control_apply",
+      "dt_knowledge_list",
+      "dt_knowledge_read",
+      "dt_learning_query_sql",
+      "dt_learning_schema",
+      "dt_memory_delete",
+      "dt_memory_read",
+      "dt_memory_save",
+      "dt_message_interpret",
+      "dt_pending_propose_makeup",
+      "dt_pending_propose_service",
+      "dt_planning_record_pending",
+      "dt_progress_submit",
+      "dt_service_record_outcome",
+      "dt_skills_list",
+      "dt_skills_read",
+      "dt_state_read",
+      "dt_wechat_get_operation",
+      "dt_wechat_read_messages",
+      "dt_wechat_send_message"
+    ],
+    "tool_trace": [
+      {
+        "tool": "wechat.read_messages",
+        "arguments_digest": "2885692ece9ea50d7158a91914d0e89d4465c0e5af00a1c98d893a02d86bdbd3",
+        "ok": true,
+        "result_digest": "fbb38f57d6a27c59d2ba37723c107edd046a96bf1ce2bc8d1b3fd66fdc1d156c",
+        "error": null,
+        "at": "2026-10-04T10:00:00+08:00",
+        "arguments": {
+          "mode": "all"
+        },
+        "result": {
+          "ok": true,
+          "result": {
+            "mode": "all",
+            "messages": [
+              {
+                "seq": 1,
+                "id": "msg-2fed9dccaa424736bff3297cae241907",
+                "version": 1,
+                "body": "另外我想要一份这周阅读情况的简短文字总结，明天10月5日下午四点前需要。今天不用马上写，先记住这个需求和时间好吗？",
+                "direction": "inbound",
+                "external_id": "independent_need-0-0",
+                "intents": [],
+                "interpreted": false,
+                "occurred_at": "2026-10-04T10:00:00+08:00",
+                "received_at": "2026-10-04T10:00:00+08:00",
+                "source_kind": "mock_wechat"
+              }
+            ],
+            "returned_count": 1,
+            "matching_count": 1,
+            "has_more": false,
+            "has_older": false,
+            "next_cursor": 1,
+            "snapshot_watermark": 1,
+            "read_marks_answered": false,
+            "channel": "mock_wechat"
+          }
+        }
+      },
+      {
+        "tool": "message.interpret",
+        "arguments_digest": "2420212fd1a4530a073a92a24f90c39f9219937f08cde1b9c558c73afd0b2211",
+        "ok": true,
+        "result_digest": "067956a4e58e81ed06a1d1e24f35ec4fc9f6ea1cc12ea179f27541389ad564f8",
+        "error": null,
+        "at": "2026-10-04T10:00:00+08:00",
+        "arguments": {
+          "request_id": "interp-run-ac280b87060e4815b78e748614ae32c8-1",
+          "message_id": "msg-2fed9dccaa424736bff3297cae241907",
+          "expected_version": 1,
+          "intents": [
+            {
+              "intent_id": "intent-independent-need-1",
+              "text": "家长请求一份本周阅读情况的简短文字总结，明天10月5日下午四点前需要；今天不用马上写，先记住这个需求和时间",
+              "requires_reply": true,
+              "service_kind": "future_delivery",
+              "service_authorization": "今天不用马上写，先记住这个需求和时间好吗？"
+            }
+          ]
+        },
+        "result": {
+          "ok": true,
+          "result": {
+            "request_id": "interp-run-ac280b87060e4815b78e748614ae32c8-1",
+            "outcome": "applied",
+            "data": {
+              "id": "msg-2fed9dccaa424736bff3297cae241907",
+              "version": 2,
+              "body": "另外我想要一份这周阅读情况的简短文字总结，明天10月5日下午四点前需要。今天不用马上写，先记住这个需求和时间好吗？",
+              "direction": "inbound",
+              "external_id": "independent_need-0-0",
+              "intents": [
+                {
+                  "intent_id": "intent-independent-need-1",
+                  "reply_operation_refs": [],
+                  "requires_reply": true,
+                  "service_authorization": "今天不用马上写，先记住这个需求和时间好吗？",
+                  "service_kind": "future_delivery",
+                  "text": "家长请求一份本周阅读情况的简短文字总结，明天10月5日下午四点前需要；今天不用马上写，先记住这个需求和时间"
+                }
+              ],
+              "interpreted": true,
+              "occurred_at": "2026-10-04T10:00:00+08:00",
+              "received_at": "2026-10-04T10:00:00+08:00",
+              "source_kind": "mock_wechat"
+            },
+            "record_versions": {
+              "family_input_version": 3
+            },
+            "error": null
+          }
+        }
+      },
+      {
+        "tool": "pending.propose_service",
+        "arguments_digest": "43f39dd65aff3c9819ce1905ef24ae7a3b4ad173004e4f86514cb0d2bf96ca72",
+        "ok": true,
+        "result_digest": "cd986cd26ab139271246a7d2e56896f2ceab832c972966770a30d86c4356b885",
+        "error": null,
+        "at": "2026-10-04T10:00:00+08:00",
+        "arguments": {
+          "completion_condition": null,
+          "expected_family_version": 3,
+          "existing_event_id": null,
+          "request": "提供一份本周阅读情况的简短文字总结",
+          "request_id": "propose-run-ac280b87060e4815b78e748614ae32c8-1",
+          "requested_time": {
+            "end": "2026-10-05T16:00:00+08:00",
+            "meaning": "before",
+            "source_text": "明天10月5日下午四点前需要"
+          },
+          "source_excerpt": "另外我想要一份这周阅读情况的简短文字总结，明天10月5日下午四点前需要。今天不用马上写，先记住这个需求和时间好吗？",
+          "source_intent_id": "intent-independent-need-1",
+          "source_message_id": "msg-2fed9dccaa424736bff3297cae241907",
+          "source_version": 2
+        },
+        "result": {
+          "ok": true,
+          "result": {
+            "request_id": "propose-run-ac280b87060e4815b78e748614ae32c8-1",
+            "outcome": "applied",
+            "data": {
+              "id": "pending:151a009cf79d4675cb141bf68e2445bbad0c30b653beec3647afbf67dd38580c",
+              "version": 1,
+              "await_decision": true,
+              "candidate_source_id": "candidate-source:762dd1356870ebfea83d75a354174e7fe6a4dc68a46cd4fbb0501c53fef030f9",
+              "completion_condition": null,
+              "decision_revision": 1,
+              "disposition": "pending",
+              "done_work": [],
+              "event_id": null,
+              "original_deadline": "明天10月5日下午四点前需要",
+              "planning_requested": true,
+              "raised_at": "2026-10-04T10:00:00+08:00",
+              "remaining_work": [
+                "requested-text"
+              ],
+              "request": "提供一份本周阅读情况的简短文字总结",
+              "requested_time": {
+                "end": "2026-10-05T16:00:00+08:00",
+                "meaning": "before",
+                "source_text": "明天10月5日下午四点前需要",
+                "start": null
+              },
+              "source_intent_id": "intent-independent-need-1",
+              "source_kind": "source_bound_service_interpretation",
+              "source_message_id": "msg-2fed9dccaa424736bff3297cae241907",
+              "source_version": 2
+            },
+            "record_versions": {
+              "family_input_version": 4
+            },
+            "error": null
+          }
+        }
+      },
+      {
+        "tool": "wechat.send_message",
+        "arguments_digest": "a83394d166134fa368c3d9db920c59e417422d9e4c501af81a8f98395da1597e",
+        "ok": true,
+        "result_digest": "7b8cce07dc130ac7bcea48940f1581691e52d250d03a6df4612d62412f5d3280",
+        "error": null,
+        "at": "2026-10-04T10:00:00+08:00",
+        "arguments": {
+          "request_id": "send-run-ac280b87060e4815b78e748614ae32c8-1",
+          "expected_family_version": 4,
+          "body": "好的，已经记下了：您需要一份这周阅读情况的简短文字总结，时间是明天10月5日下午四点前。今天先不动笔，这个需求和时间我先帮您保留登记，具体安排确认后我再跟您对齐。",
+          "action_kind": "reply",
+          "reply_to": [
+            {
+              "message_id": "msg-2fed9dccaa424736bff3297cae241907",
+              "intent_id": "intent-independent-need-1",
+              "resolves_intent": false
+            }
+          ]
+        },
+        "result": {
+          "ok": true,
+          "result": {
+            "request_id": "send-run-ac280b87060e4815b78e748614ae32c8-1",
+            "outcome": "applied",
+            "data": {
+              "id": "operation-01faf26f86654308af3a55a3bbbaab1a",
+              "version": 3,
+              "action_kind": "reply",
+              "admitted_at": "2026-10-04T10:00:00+08:00",
+              "body": "好的，已经记下了：您需要一份这周阅读情况的简短文字总结，时间是明天10月5日下午四点前。今天先不动笔，这个需求和时间我先帮您保留登记，具体安排确认后我再跟您对齐。",
+              "business_date": "2026-10-04",
+              "channel": "mock_wechat",
+              "content_digest": "412d99dc61ff1cfcdb8ee93c472c58a10c8547aa36a30fc9455ff8a87b8ca6d4",
+              "decision_reply_refs": [],
+              "dispatch_count": 1,
+              "event_id": null,
+              "lesson_refs": [],
+              "occurred_at": "2026-10-04T10:00:00+08:00",
+              "part_id": null,
+              "prepared_family_version": 5,
+              "purpose_key": "ff7aaf01777eaa9129321d461a384c53f605c6aa1bd8dfcfc4ae7d5b95978aca",
+              "receipts": [
+                {
+                  "observed_at": "2026-10-04T10:00:00+08:00",
+                  "source": "mock_transport",
+                  "stage": "sent"
+                }
+              ],
+              "recipient": "mock:4b1:a",
+              "reply_to": [
+                {
+                  "intent_id": "intent-independent-need-1",
+                  "message_id": "msg-2fed9dccaa424736bff3297cae241907",
+                  "resolves_intent": false
+                }
+              ],
+              "request": {
+                "action_kind": "reply",
+                "body": "好的，已经记下了：您需要一份这周阅读情况的简短文字总结，时间是明天10月5日下午四点前。今天先不动笔，这个需求和时间我先帮您保留登记，具体安排确认后我再跟您对齐。",
+                "event_id": null,
+                "expected_family_version": 4,
+                "part_id": null,
+                "reply_to": [
+                  {
+                    "intent_id": "intent-independent-need-1",
+                    "message_id": "msg-2fed9dccaa424736bff3297cae241907",
+                    "resolves_intent": false
+                  }
+                ],
+                "request_id": "send-run-ac280b87060e4815b78e748614ae32c8-1",
+                "step_id": null
+              },
+              "requirement_revision": null,
+              "run_id": "run-ac280b87060e4815b78e748614ae32c8",
+              "send_capability": {
+                "commitment_id": null,
+                "current_step_key": null,
+                "event_id": null,
+                "job_id": "message:msg-2fed9dccaa424736bff3297cae241907",
+                "job_kind": "service",
+                "mode": "passive",
+                "no_contact": false,
+                "output_mode": "family_reply",
+                "reply_scope": {
+                  "msg-2fed9dccaa424736bff3297cae241907": [
+                    "*"
+                  ]
+                },
+                "run_id": "run-ac280b87060e4815b78e748614ae32c8",
+                "schedule_revision": null
+              },
+              "simulated": true,
+              "stage": "sent"
+            },
+            "record_versions": {
+              "family_input_version": 6
+            },
+            "error": null
+          }
+        }
+      },
+      {
+        "tool": "service.record_outcome",
+        "arguments_digest": "1bd09ff18032858845206e78571680776d10444bfddb0b463727642bcd64be22",
+        "ok": false,
+        "result_digest": "d5783c103541a25315034e6312d7757aa8662e47f80def7c96677cc034ede67f",
+        "error": "EVIDENCE_SUPERSEDED",
+        "at": "2026-10-04T10:00:00+08:00",
+        "arguments": {
+          "outcome": "waiting",
+          "reason": "已核对家长原消息并登记未来文字服务需求（本周阅读情况简短总结，明天10月5日下午四点前），已发送确认登记的回复；等待Planner对该pending的决定，原意图保留待安排确认。",
+          "request_id": "outcome-run-ac280b87060e4815b78e748614ae32c8-1",
+          "refs": [
+            {
+              "id": "msg-2fed9dccaa424736bff3297cae241907",
+              "kind": "message",
+              "version": 2
+            },
+            {
+              "id": "pending:151a009cf79d4675cb141bf68e2445bbad0c30b653beec3647afbf67dd38580c",
+              "kind": "pending",
+              "version": 1
+            },
+            {
+              "id": "operation-01faf26f86654308af3a55a3bbbaab1a",
+              "kind": "operation",
+              "version": 3
+            }
+          ],
+          "remaining_work": [
+            "等待Planner对pending:151a009cf79d4675cb141bf68e2445bbad0c30b653beec3647afbf67dd38580c的安排决定",
+            "按原时间（2026-10-05 16:00前）交付本周阅读情况简短文字总结"
+          ],
+          "resume_condition": "Planner对该pending作出安排决定后，沿原意图确认接受/拒绝或补充信息，并履行交付。"
+        },
+        "result": {
+          "ok": false,
+          "error": {
+            "code": "EVIDENCE_SUPERSEDED",
+            "message": "内部结果引用必须是当前真实记录"
+          }
+        }
+      },
+      {
+        "tool": "state.read",
+        "arguments_digest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "ok": true,
+        "result_digest": "5eee44dd2f5c297aed168aed35234556b9b65fc9c3319466e6c5a6a9c082f7e4",
+        "error": null,
+        "at": "2026-10-04T10:00:00+08:00",
+        "arguments": {},
+        "result": {
+          "ok": true,
+          "result": {
+            "family_version": 6,
+            "events": [],
+            "controls": [],
+            "plans": [],
+            "reports": [],
+            "pending_inputs": [
+              {
+                "id": "pending:151a009cf79d4675cb141bf68e2445bbad0c30b653beec3647afbf67dd38580c",
+                "version": 1,
+                "source_message_id": "msg-2fed9dccaa424736bff3297cae241907",
+                "source_intent_id": "intent-independent-need-1",
+                "request": "提供一份本周阅读情况的简短文字总结",
+                "completion_condition": null,
+                "original_deadline": "明天10月5日下午四点前需要",
+                "disposition": "pending",
+                "event_id": null,
+                "planning_requested": true,
+                "decision_revision": 1,
+                "await_decision": true
+              }
+            ],
+            "messages": [
+              {
+                "id": "msg-2fed9dccaa424736bff3297cae241907",
+                "version": 3,
+                "body": "另外我想要一份这周阅读情况的简短文字总结，明天10月5日下午四点前需要。今天不用马上写，先记住这个需求和时间好吗？",
+                "direction": "inbound",
+                "external_id": "independent_need-0-0",
+                "intents": [
+                  {
+                    "intent_id": "intent-independent-need-1",
+                    "partial_reply_operation_refs": [
+                      "operation-01faf26f86654308af3a55a3bbbaab1a"
+                    ],
+                    "reply_operation_refs": [],
+                    "requires_reply": true,
+                    "service_authorization": "今天不用马上写，先记住这个需求和时间好吗？",
+                    "service_kind": "future_delivery",
+                    "text": "家长请求一份本周阅读情况的简短文字总结，明天10月5日下午四点前需要；今天不用马上写，先记住这个需求和时间"
+                  }
+                ],
+                "interpreted": true,
+                "occurred_at": "2026-10-04T10:00:00+08:00",
+                "received_at": "2026-10-04T10:00:00+08:00",
+                "source_kind": "mock_wechat"
+              }
+            ],
+            "operations": [
+              {
+                "id": "operation-01faf26f86654308af3a55a3bbbaab1a",
+                "version": 3,
+                "action_kind": "reply",
+                "admitted_at": "2026-10-04T10:00:00+08:00",
+                "body": "好的，已经记下了：您需要一份这周阅读情况的简短文字总结，时间是明天10月5日下午四点前。今天先不动笔，这个需求和时间我先帮您保留登记，具体安排确认后我再跟您对齐。",
+                "business_date": "2026-10-04",
+                "channel": "mock_wechat",
+                "content_digest": "412d99dc61ff1cfcdb8ee93c472c58a10c8547aa36a30fc9455ff8a87b8ca6d4",
+                "decision_reply_refs": [],
+                "dispatch_count": 1,
+                "event_id": null,
+                "lesson_refs": [],
+                "occurred_at": "2026-10-04T10:00:00+08:00",
+                "part_id": null,
+                "prepared_family_version": 5,
+                "purpose_key": "ff7aaf01777eaa9129321d461a384c53f605c6aa1bd8dfcfc4ae7d5b95978aca",
+                "receipts": [
+                  {
+                    "observed_at": "2026-10-04T10:00:00+08:00",
+                    "source": "mock_transport",
+                    "stage": "sent"
+                  }
+                ],
+                "recipient": "mock:4b1:a",
+                "reply_to": [
+                  {
+                    "intent_id": "intent-independent-need-1",
+                    "message_id": "msg-2fed9dccaa424736bff3297cae241907",
+                    "resolves_intent": false
+                  }
+                ],
+                "request": {
+                  "action_kind": "reply",
+                  "body": "好的，已经记下了：您需要一份这周阅读情况的简短文字总结，时间是明天10月5日下午四点前。今天先不动笔，这个需求和时间我先帮您保留登记，具体安排确认后我再跟您对齐。",
+                  "event_id": null,
+                  "expected_family_version": 4,
+                  "part_id": null,
+                  "reply_to": [
+                    {
+                      "intent_id": "intent-independent-need-1",
+                      "message_id": "msg-2fed9dccaa424736bff3297cae241907",
+                      "resolves_intent": false
+                    }
+                  ],
+                  "request_id": "send-run-ac280b87060e4815b78e748614ae32c8-1",
+                  "step_id": null
+                },
+                "requirement_revision": null,
+                "run_id": "run-ac280b87060e4815b78e748614ae32c8",
+                "send_capability": {
+                  "commitment_id": null,
+                  "current_step_key": null,
+                  "event_id": null,
+                  "job_id": "message:msg-2fed9dccaa424736bff3297cae241907",
+                  "job_kind": "service",
+                  "mode": "passive",
+                  "no_contact": false,
+                  "output_mode": "family_reply",
+                  "reply_scope": {
+                    "msg-2fed9dccaa424736bff3297cae241907": [
+                      "*"
+                    ]
+                  },
+                  "run_id": "run-ac280b87060e4815b78e748614ae32c8",
+                  "schedule_revision": null
+                },
+                "simulated": true,
+                "stage": "sent"
+              }
+            ],
+            "now": "2026-10-04T10:00:00+08:00",
+            "responsibility_index": [],
+            "execution_agenda": [],
+            "agenda_is_projection_not_queue": true
+          }
+        }
+      },
+      {
+        "tool": "service.record_outcome",
+        "arguments_digest": "f8ec889c5aa7461ddf64df2232b9f475786716b5a082df9a8eb89dd39c3da470",
+        "ok": true,
+        "result_digest": "84dacad7c418d904cac978fb6af126e73b9279ae6eef2befd895092289b69474",
+        "error": null,
+        "at": "2026-10-04T10:00:00+08:00",
+        "arguments": {
+          "outcome": "waiting",
+          "reason": "已核对家长原消息并登记未来文字服务需求（本周阅读情况简短总结，明天10月5日下午四点前），已发送确认登记的回复；等待Planner对该pending的决定，原意图保留待安排确认。",
+          "refs": [
+            {
+              "id": "msg-2fed9dccaa424736bff3297cae241907",
+              "kind": "message",
+              "version": 3
+            },
+            {
+              "id": "pending:151a009cf79d4675cb141bf68e2445bbad0c30b653beec3647afbf67dd38580c",
+              "kind": "pending",
+              "version": 1
+            },
+            {
+              "id": "operation-01faf26f86654308af3a55a3bbbaab1a",
+              "kind": "operation",
+              "version": 3
+            }
+          ],
+          "remaining_work": [
+            "等待Planner对pending:151a009cf79d4675cb141bf68e2445bbad0c30b653beec3647afbf67dd38580c的安排决定",
+            "按原时间（2026-10-05 16:00前）交付本周阅读情况简短文字总结"
+          ],
+          "request_id": "outcome-run-ac280b87060e4815b78e748614ae32c8-2",
+          "resume_condition": "Planner对该pending作出安排决定后，沿原意图确认接受、拒绝或需要补充的信息，并履行交付。"
+        },
+        "result": {
+          "ok": true,
+          "result": {
+            "id": "run-ac280b87060e4815b78e748614ae32c8",
+            "version": 1,
+            "awaiting_operation_ids": [],
+            "delegation_acknowledgements": [],
+            "draft": null,
+            "effective_control_scopes": {
+              "authority": "current_control_records",
+              "controls": [],
+              "meaning": "仅active控制生效。event_id为空的控制覆盖本家庭所有事项及以后事项中的action_kinds；有event_id仅覆盖该事项的这些动作。未列出的动作不因该控制暂停，仍须经过其他权限和发送检查。旧空白字符串范围按全家庭保守解释并标明legacy_invalid_scope，不修改原记录。自由文本不能缩小、扩大或解除控制。"
+            },
+            "job_id": "message:msg-2fed9dccaa424736bff3297cae241907",
+            "observed_job_operations": [
+              {
+                "id": "operation-01faf26f86654308af3a55a3bbbaab1a",
+                "stage": "sent",
+                "version": 3
+              }
+            ],
+            "observed_planning_inputs": [
+              {
+                "await_decision": true,
+                "decision_revision": 1,
+                "id": "pending:151a009cf79d4675cb141bf68e2445bbad0c30b653beec3647afbf67dd38580c",
+                "source_intent_id": "intent-independent-need-1",
+                "version": 1
+              }
+            ],
+            "outcome": "waiting",
+            "payload_digest": "99ad9dc47dc5ef4cd66884c15401bedd8979a7912449e25fad207cdbdde4458e",
+            "reason": "已核对家长原消息并登记未来文字服务需求（本周阅读情况简短总结，明天10月5日下午四点前），已发送确认登记的回复；等待Planner对该pending的决定，原意图保留待安排确认。",
+            "recorded_at": "2026-10-04T10:00:00+08:00",
+            "refs": [
+              {
+                "id": "msg-2fed9dccaa424736bff3297cae241907",
+                "kind": "message",
+                "version": 3
+              },
+              {
+                "id": "pending:151a009cf79d4675cb141bf68e2445bbad0c30b653beec3647afbf67dd38580c",
+                "kind": "pending",
+                "version": 1
+              },
+              {
+                "id": "operation-01faf26f86654308af3a55a3bbbaab1a",
+                "kind": "operation",
+                "version": 3
+              }
+            ],
+            "remaining_work": [
+              "等待Planner对pending:151a009cf79d4675cb141bf68e2445bbad0c30b653beec3647afbf67dd38580c的安排决定",
+              "按原时间（2026-10-05 16:00前）交付本周阅读情况简短文字总结"
+            ],
+            "request_id": "outcome-run-ac280b87060e4815b78e748614ae32c8-2",
+            "resume_condition": "Planner对该pending作出安排决定后，沿原意图确认接受、拒绝或需要补充的信息，并履行交付。",
+            "resume_condition_authority": "model_input_recovery_note_not_control_or_send_permission",
+            "run_id": "run-ac280b87060e4815b78e748614ae32c8",
+            "settled_delegated_request_refs": []
+          }
+        }
+      }
+    ],
+    "profile": "/root/autodl-tmp/digitalTutor/work/stage4/4c-development-l/state/backend-stage4/intraday-l-native06-stage4_behavior/independent_need/runs/run-ac280b87060e4815b78e748614ae32c8/profile",
+    "cwd": "/root/autodl-tmp/digitalTutor/work/stage4/4c-development-l/state/backend-stage4/intraday-l-native06-stage4_behavior/independent_need/runs/run-ac280b87060e4815b78e748614ae32c8",
+    "output_route": "internal",
+    "model": "qwen3.8-flash",
+    "generation_options": {
+      "temperature": 0.0
+    }
+  }
+}

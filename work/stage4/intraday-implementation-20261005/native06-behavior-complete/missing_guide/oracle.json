@@ -1,0 +1,13 @@
+{
+  "case": "missing_guide",
+  "not_model_input": true,
+  "semantic_status": "not_reviewed",
+  "semantic_questions": [
+    "实际skills.read缺必读规范报错？",
+    "没有假称按完整规范完成、欠项可恢复？"
+  ],
+  "expected_deadline": null,
+  "required_effect": null,
+  "allow_unanswered": true,
+  "allow_waiting": true
+}

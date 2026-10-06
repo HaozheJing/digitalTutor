@@ -1,0 +1,15 @@
+# Native06 daily-chain 独立工程评审
+
+test15新运行16 native、111 API；83个运行指纹与冻结一致，业务/独立渠道闭合库immutable只读完整性ok、前后SHA不变。核心链检查通过，具体机器记录见 engineering-native06-daily-chain.json；完整4C关口不据此自动放行。
+
+首个真实daily创建原goal event-76992b96414c4b2bb260aab3c7a391a2、delivery event-9dbd36e81f5347fea5a79beda3e878f1，配置和实际Event completion_condition均null；Service自主complete assessment实际存在，原goal可信课程完成证据和delivery part/sent硬标准未消失。
+
+真实渠道始终只有两笔：补读提醒operation-8f6e358341a447e7b25092b5d2f6a2fe、文字反馈operation-42fc8d1b208045cf9baa1a6ecd9c8a6a，均sent、dispatch_count1，独立渠道正文/收件人/Event/实际时间一致。提醒后assessment=false，未把提醒当补读完成；delivery经实际报告/progress为done v2。
+
+goal记录轨迹为pending v1→in_progress v2/v3→waiting v4→可信完成done v5→源更正后的同ID in_progress v6→次日daily调整核实步骤v7→核实后排次日步骤v8。真实20:00源完成review及09:00更正review各提交原事项报告；7份报告全部revision1/applied，各progress job仅attempt1。更正报告消费之后model14的次日daily才成功，无删除报告绕门禁、无新建替代goal。
+
+运行量拆分为2daily、7progress、2review、5step，各Job attempt1、最终succeeded。部分工具参数曾被拒后在同一run纠正成功；不是首试全对，也不是重启原Job/失租引起的Planner重试风暴。
+
+有限重复核实须保留：17:30和18:00是两个不同的预定核实时点；更正09:00的review/progress已读取新源，随后daily又安排同一时刻verify_learning，model15再次读取同一更正批次并提交第7份报告，model16将下次核实排到10月6日09:00。该轮没有新外部事实，确有额外模型/报告和步骤版本变化，不能声称“完全没有重复核实”。它是Planner明确创建的有限计划动作，不是审计心跳无变化自唤醒；最终下一扫idle，Event保持v8。记录为计划效率/语义待评，不扩大为已证明无限风暴，也不隐去业务版本变化。
+
+本批未跑长期多天无新源的重复计划上界，不能据最后一次idle证明永远零调用。用户已接受稍晚发送，该变化仅影响时间体验评估，不放宽before/end、授权窗口或北京时间21点硬截止；本daily链没有新增逾窗外发。

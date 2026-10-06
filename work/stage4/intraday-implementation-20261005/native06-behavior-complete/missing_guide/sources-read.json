@@ -1,0 +1,50 @@
+[
+  {
+    "tool": "skills.list",
+    "arguments_digest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "ok": true,
+    "result_digest": "4902ecdbd05f0a0d727b5a06e24314af642f17c06be495757a8278752a1b964d",
+    "error": null,
+    "at": "2026-10-04T10:00:00+08:00",
+    "arguments": {},
+    "result": {
+      "ok": true,
+      "result": {
+        "skills": [
+          {
+            "skill_id": "explain-lesson",
+            "description": "回应家长代问或孩子直接提出的阅读课程问题，包括故事理解、阅读方法和表达练习。读取适用课节，提供给家长的解释和给孩子的讲法，并引导举一反三。课程安排、系统操作和投诉按对应服务路径处理。",
+            "required_guides": [
+              "service-basics",
+              "communication",
+              "qa"
+            ],
+            "sha256": "570277f0e056fe8561d8e8263b8a9fe3a869457b62ae7c5722f8d54c3f21664c",
+            "aliases": []
+          }
+        ],
+        "automatic_triggers_enabled": false
+      }
+    }
+  },
+  {
+    "tool": "skills.read",
+    "arguments_digest": "109948bd3f6684deeca5adb5bc6862264771e5100bc0f0893f5e8f8b45d94375",
+    "ok": false,
+    "result_digest": "165682b74f3e000dcee13294878a410dd0500b38af26a172f738a898ee08e7e3",
+    "error": "SKILL_MISSING",
+    "at": "2026-10-04T10:00:00+08:00",
+    "arguments": {
+      "skill_id": "explain-lesson"
+    },
+    "result": {
+      "ok": false,
+      "error": {
+        "code": "SKILL_MISSING",
+        "message": "所选Skill的必读规范缺失，未取得完整方法和必读规范"
+      },
+      "source_boundary": "本次读取失败，未取得所需资料，不得声称已读或据此作答。在成功取得回答所需正文和必读规范之前，对尚缺依据的部分只说明实际缺口并保留原未答责任；不继续讲解、提供教学建议、举例或设计陪聊问题，不借通用或假设标签引入内容。专业讲解所需的必读规范缺失时，课程正文即使可读也不能替代该规范；改称仅据正文、课程设计或未按Skill执行，不解除同一讲解意图的依赖，也不能结清它。其他具有独立可靠依据的意图照常处理；读取恢复不等于原问题已回答，后续仍须实际发送和回执。"
+    },
+    "server_result_sha256": "58b0f0de9db81745cd85befb38f055cba9e96039c7208f8d3779a2cfce31411d"
+  }
+]

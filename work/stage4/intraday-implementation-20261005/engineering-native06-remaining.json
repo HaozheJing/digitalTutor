@@ -1,0 +1,993 @@
+{
+  "family_requests": {
+    "checks": {
+      "fingerprints": true,
+      "db_integrity": true,
+      "unchanged": true,
+      "channel_exact": true,
+      "single_dispatch": true,
+      "only_reply": true,
+      "one_real_phase_ack": true,
+      "actual_commit_grant": true,
+      "host_ack_same_run": true,
+      "registration_not_confirmation": true,
+      "future_responsibility_retained": true,
+      "no_duplicate_events": true,
+      "unique_baseline": true
+    },
+    "source_count": 83,
+    "integrity": {
+      "business": "ok",
+      "channel": "ok",
+      "sha256": {
+        "database.redacted.sqlite": "a957c6169ca8fa240906b27770de47cbd37b0279e87f53818846064e749e890e",
+        "channel.redacted.sqlite": "e57b735397ca7590621f051746dfe60b80771e86e9f9a1cdf8aa6a84759a822b"
+      },
+      "unchanged": true
+    },
+    "native": 8,
+    "api": 54,
+    "channel_count": 5,
+    "details": {
+      "phase": {
+        "decision_request_id": "req-admission-run-47f81ed5-weekly-summary",
+        "decision_revision": 1,
+        "event_id": "event-369924db35a74295b23b429811264d09",
+        "source_message_id": "msg-c2e5b7608eae43a6b961c6c7f385c090",
+        "source_intent_id": "intent-weekly-summary",
+        "pending_id": "pending:cbf28ba4b3d056f6145b96d49bc018776683a7f0718745ae1ad8f4b44242603b",
+        "commitment_id": "commitment:b058c9282724f8dea36d688b9d74f3bd3222a2aba8e57b57f7c9d1535af2ec79"
+      },
+      "ack": [
+        {
+          "id": "operation-fb59bbc1e4bd4e79af6a9c8c153da119",
+          "version": 3,
+          "action_kind": "reply",
+          "admitted_at": "2026-10-04T08:00:00+08:00",
+          "body": "跟您确认一下：您要的\"本周阅读情况文字总结\"已经正式接纳安排了。我会在10月5日上午9点后、您要求的下午四点前，把这份文字总结发给您，内容只基于已经核实到的本周学习记录。这条需求现在由事项 event-369924db35a74295b23b429811264d09 跟踪，您不用重复提醒；到时间我会按这条履行。",
+          "business_date": "2026-10-04",
+          "channel": "mock_wechat",
+          "content_digest": "518d53db5213acda853f5cbf79abe484798c49e9f3a12097a69938498565f20d",
+          "decision_reply_refs": [
+            {
+              "commitment_id": "commitment:b058c9282724f8dea36d688b9d74f3bd3222a2aba8e57b57f7c9d1535af2ec79",
+              "decision_request_id": "req-admission-run-47f81ed5-weekly-summary",
+              "decision_revision": 1,
+              "event_id": "event-369924db35a74295b23b429811264d09",
+              "pending_id": "pending:cbf28ba4b3d056f6145b96d49bc018776683a7f0718745ae1ad8f4b44242603b",
+              "source_intent_id": "intent-weekly-summary",
+              "source_message_id": "msg-c2e5b7608eae43a6b961c6c7f385c090"
+            }
+          ],
+          "dispatch_count": 1,
+          "event_id": null,
+          "lesson_refs": [],
+          "occurred_at": "2026-10-04T08:00:00+08:00",
+          "part_id": null,
+          "prepared_family_version": 22,
+          "purpose_key": "9231208e1e4bee50cc58cbb03bd6d8b3f2907e27c41a46007afa1f789c3a9fc5",
+          "receipts": [
+            {
+              "observed_at": "2026-10-04T08:00:00+08:00",
+              "source": "mock_transport",
+              "stage": "sent"
+            }
+          ],
+          "recipient": "mock:4b1:a",
+          "reply_to": [
+            {
+              "intent_id": "intent-weekly-summary",
+              "message_id": "msg-c2e5b7608eae43a6b961c6c7f385c090",
+              "resolves_intent": false
+            }
+          ],
+          "request": {
+            "action_kind": "reply",
+            "body": "跟您确认一下：您要的\"本周阅读情况文字总结\"已经正式接纳安排了。我会在10月5日上午9点后、您要求的下午四点前，把这份文字总结发给您，内容只基于已经核实到的本周学习记录。这条需求现在由事项 event-369924db35a74295b23b429811264d09 跟踪，您不用重复提醒；到时间我会按这条履行。",
+            "event_id": null,
+            "expected_family_version": 21,
+            "part_id": null,
+            "reply_to": [
+              {
+                "intent_id": "intent-weekly-summary",
+                "message_id": "msg-c2e5b7608eae43a6b961c6c7f385c090",
+                "resolves_intent": false
+              }
+            ],
+            "request_id": "req-send-weekly-summary-arrival-confirm-2",
+            "step_id": null
+          },
+          "requirement_revision": null,
+          "run_id": "run-58b94db804a34ff3acac973550196f97",
+          "send_capability": {
+            "commitment_id": null,
+            "current_step_key": null,
+            "event_id": null,
+            "job_id": "message:msg-c2e5b7608eae43a6b961c6c7f385c090",
+            "job_kind": "service",
+            "mode": "daily",
+            "no_contact": false,
+            "output_mode": "family_reply",
+            "reply_scope": {
+              "msg-c2e5b7608eae43a6b961c6c7f385c090": [
+                "intent-weekly-summary"
+              ]
+            },
+            "run_id": "run-58b94db804a34ff3acac973550196f97",
+            "schedule_revision": null
+          },
+          "simulated": true,
+          "stage": "sent"
+        }
+      ],
+      "registration": [
+        {
+          "id": "operation-52706dccbb414752993db429f43dae4b",
+          "version": 3,
+          "action_kind": "reply",
+          "admitted_at": "2026-10-04T08:00:00+08:00",
+          "body": "收到～这份\"本周阅读情况文字总结\"的需求我已经记下了，您说的\"10月5日下午四点前需要\"也原样保留在这条请求里。目前它还在等待安排，还没有确定的结果；有安排后我会跟您确认。另外，第1天（LESSON-L2-FOX-D01）\"明天下午四点前补读\"的请求也仍在等待安排中，两条我都记着，您不用重复发。",
+          "business_date": "2026-10-04",
+          "channel": "mock_wechat",
+          "content_digest": "d804db9a0b2f62c7338c05e56fc00eb866d5639447a9280379961a1a3c5b586e",
+          "decision_reply_refs": [],
+          "dispatch_count": 1,
+          "event_id": null,
+          "lesson_refs": [],
+          "occurred_at": "2026-10-04T08:00:00+08:00",
+          "part_id": null,
+          "prepared_family_version": 15,
+          "purpose_key": "38104b4e1bf7301ad1299c01283f51fa38b54317fad3417faa9b9d15b51f6447",
+          "receipts": [
+            {
+              "observed_at": "2026-10-04T08:00:00+08:00",
+              "source": "mock_transport",
+              "stage": "sent"
+            }
+          ],
+          "recipient": "mock:4b1:a",
+          "reply_to": [
+            {
+              "intent_id": "intent-weekly-summary",
+              "message_id": "msg-c2e5b7608eae43a6b961c6c7f385c090",
+              "resolves_intent": false
+            }
+          ],
+          "request": {
+            "action_kind": "reply",
+            "body": "收到～这份\"本周阅读情况文字总结\"的需求我已经记下了，您说的\"10月5日下午四点前需要\"也原样保留在这条请求里。目前它还在等待安排，还没有确定的结果；有安排后我会跟您确认。另外，第1天（LESSON-L2-FOX-D01）\"明天下午四点前补读\"的请求也仍在等待安排中，两条我都记着，您不用重复发。",
+            "event_id": null,
+            "expected_family_version": 14,
+            "part_id": null,
+            "reply_to": [
+              {
+                "intent_id": "intent-weekly-summary",
+                "message_id": "msg-c2e5b7608eae43a6b961c6c7f385c090",
+                "resolves_intent": false
+              }
+            ],
+            "request_id": "req-send-weekly-summary-ack",
+            "step_id": null
+          },
+          "requirement_revision": null,
+          "run_id": "run-233d596f2695482e87c3dfeaf7e1db83",
+          "send_capability": {
+            "commitment_id": null,
+            "current_step_key": null,
+            "event_id": null,
+            "job_id": "message:msg-c2e5b7608eae43a6b961c6c7f385c090",
+            "job_kind": "service",
+            "mode": "passive",
+            "no_contact": false,
+            "output_mode": "family_reply",
+            "reply_scope": {
+              "msg-2196a1c9dfc5446c908f4a87f424de3d": [
+                "intent-makeup-d1"
+              ],
+              "msg-c2e5b7608eae43a6b961c6c7f385c090": [
+                "*"
+              ]
+            },
+            "run_id": "run-233d596f2695482e87c3dfeaf7e1db83",
+            "schedule_revision": null
+          },
+          "simulated": true,
+          "stage": "sent"
+        },
+        {
+          "id": "operation-206ed60b7e144cb1a3819ae50cc5b68c",
+          "version": 3,
+          "action_kind": "reply",
+          "admitted_at": "2026-10-04T08:00:00+08:00",
+          "body": "跟您同步一下进展：第1天（LESSON-L2-FOX-D01）的补读请求已经正式登记为一项事项，期限按您说的保留为2026-10-05（明天）下午四点前。目前这项事项还在待完成状态，补读本身还没有进行，完成之前我会按这条事项继续核对。另外，\"本周阅读情况文字总结\"这条需求目前仍在等待安排，还没有确定的结果；有安排后我再跟您确认。",
+          "business_date": "2026-10-04",
+          "channel": "mock_wechat",
+          "content_digest": "fe876e960308c00915768c64abfe97723430a2f8e9e1d21d31456eb7b02aa46b",
+          "decision_reply_refs": [],
+          "dispatch_count": 1,
+          "event_id": null,
+          "lesson_refs": [],
+          "occurred_at": "2026-10-04T08:00:00+08:00",
+          "part_id": null,
+          "prepared_family_version": 19,
+          "purpose_key": "30064f83fea429b479ed169737ff5f871a45f27fad03bc700edab3cf037dbece",
+          "receipts": [
+            {
+              "observed_at": "2026-10-04T08:00:00+08:00",
+              "source": "mock_transport",
+              "stage": "sent"
+            }
+          ],
+          "recipient": "mock:4b1:a",
+          "reply_to": [
+            {
+              "intent_id": "intent-makeup-d1",
+              "message_id": "msg-2196a1c9dfc5446c908f4a87f424de3d"
+            },
+            {
+              "intent_id": "intent-weekly-summary",
+              "message_id": "msg-c2e5b7608eae43a6b961c6c7f385c090",
+              "resolves_intent": false
+            }
+          ],
+          "request": {
+            "action_kind": "reply",
+            "body": "跟您同步一下进展：第1天（LESSON-L2-FOX-D01）的补读请求已经正式登记为一项事项，期限按您说的保留为2026-10-05（明天）下午四点前。目前这项事项还在待完成状态，补读本身还没有进行，完成之前我会按这条事项继续核对。另外，\"本周阅读情况文字总结\"这条需求目前仍在等待安排，还没有确定的结果；有安排后我再跟您确认。",
+            "event_id": null,
+            "expected_family_version": 18,
+            "part_id": null,
+            "reply_to": [
+              {
+                "intent_id": "intent-makeup-d1",
+                "message_id": "msg-2196a1c9dfc5446c908f4a87f424de3d"
+              },
+              {
+                "intent_id": "intent-weekly-summary",
+                "message_id": "msg-c2e5b7608eae43a6b961c6c7f385c090",
+                "resolves_intent": false
+              }
+            ],
+            "request_id": "req-send-run-deff-01",
+            "step_id": null
+          },
+          "requirement_revision": null,
+          "run_id": "run-deff36abb1fd4640a651f85a949cf678",
+          "send_capability": {
+            "commitment_id": null,
+            "current_step_key": null,
+            "event_id": null,
+            "job_id": "message:msg-2196a1c9dfc5446c908f4a87f424de3d",
+            "job_kind": "service",
+            "mode": "daily",
+            "no_contact": false,
+            "output_mode": "family_reply",
+            "reply_scope": {
+              "msg-2196a1c9dfc5446c908f4a87f424de3d": [
+                "intent-makeup-d1"
+              ],
+              "msg-c2e5b7608eae43a6b961c6c7f385c090": [
+                "intent-weekly-summary"
+              ]
+            },
+            "run_id": "run-deff36abb1fd4640a651f85a949cf678",
+            "schedule_revision": null
+          },
+          "simulated": true,
+          "stage": "sent"
+        }
+      ],
+      "jobs": [
+        {
+          "id": "message:msg-2196a1c9dfc5446c908f4a87f424de3d",
+          "version": 102,
+          "attempt": 2,
+          "claimed_at": "2026-10-05T20:52:43.103379+08:00",
+          "finished_at": "2026-10-05T20:55:51.093008+08:00",
+          "generation": 1,
+          "input_version": 20,
+          "kind": "service",
+          "lease_until": "2026-10-05T20:55:59.558074+08:00",
+          "message_id": "msg-2196a1c9dfc5446c908f4a87f424de3d",
+          "not_before": null,
+          "reason": "no_pending_input",
+          "recovery_only": false,
+          "run_id": "run-deff36abb1fd4640a651f85a949cf678",
+          "status": "succeeded",
+          "worker": "worker",
+          "yield_requested": false
+        },
+        {
+          "id": "admission:bdb32223a877048ee78953cc0c2b22c639a7d4b6cd0f624ff3d5d54bc79e3fd4",
+          "version": 16,
+          "attempt": 1,
+          "claimed_at": "2026-10-05T20:52:02.741775+08:00",
+          "decision_revision": 1,
+          "finished_at": "2026-10-05T20:52:43.076049+08:00",
+          "generation": 1,
+          "input_version": 18,
+          "kind": "daily",
+          "lease_until": "2026-10-05T20:52:50.867223+08:00",
+          "not_before": null,
+          "pending_id": "pending:59e576f5c8e4bbfe475f50fecd676cc3af452c119bdcf12ec8da7a94f8c7025d",
+          "planning_reason": "admission",
+          "reason": null,
+          "recovery_only": false,
+          "run_id": "run-9d24a3153bdf41038ad400e5c4498fd0",
+          "status": "succeeded",
+          "worker": "worker",
+          "yield_requested": false
+        },
+        {
+          "id": "message:msg-bae278895c0b4e069b3c94e39034a9b0",
+          "version": 45,
+          "attempt": 1,
+          "claimed_at": "2026-10-05T20:48:29.928931+08:00",
+          "finished_at": "2026-10-05T20:50:34.520458+08:00",
+          "generation": 1,
+          "input_version": 11,
+          "kind": "service",
+          "lease_until": "2026-10-05T20:50:42.055586+08:00",
+          "message_id": "msg-bae278895c0b4e069b3c94e39034a9b0",
+          "not_before": null,
+          "reason": "no_pending_input",
+          "recovery_only": false,
+          "run_id": "run-740e82f79ef24802b70032a1a7dee3f1",
+          "status": "succeeded",
+          "worker": "worker",
+          "yield_requested": false
+        },
+        {
+          "id": "message:msg-c2e5b7608eae43a6b961c6c7f385c090",
+          "version": 80,
+          "attempt": 2,
+          "claimed_at": "2026-10-05T20:56:28.263588+08:00",
+          "finished_at": "2026-10-05T20:58:44.258908+08:00",
+          "generation": 1,
+          "input_version": 23,
+          "kind": "service",
+          "lease_until": "2026-10-05T20:58:52.413213+08:00",
+          "message_id": "msg-c2e5b7608eae43a6b961c6c7f385c090",
+          "not_before": null,
+          "reason": "DELIVERY_DELEGATED",
+          "recovery_only": false,
+          "run_id": "run-58b94db804a34ff3acac973550196f97",
+          "status": "waiting",
+          "worker": "worker",
+          "yield_requested": false
+        },
+        {
+          "id": "admission:b058c9282724f8dea36d688b9d74f3bd3222a2aba8e57b57f7c9d1535af2ec79",
+          "version": 15,
+          "attempt": 1,
+          "claimed_at": "2026-10-05T20:55:51.119621+08:00",
+          "decision_revision": 1,
+          "finished_at": "2026-10-05T20:56:28.233844+08:00",
+          "generation": 1,
+          "input_version": 21,
+          "kind": "daily",
+          "lease_until": "2026-10-05T20:56:36.164079+08:00",
+          "not_before": null,
+          "pending_id": "pending:cbf28ba4b3d056f6145b96d49bc018776683a7f0718745ae1ad8f4b44242603b",
+          "planning_reason": "admission",
+          "reason": null,
+          "recovery_only": false,
+          "run_id": "run-47f81ed546374ba585b7f01f0bb8f0fb",
+          "status": "succeeded",
+          "worker": "worker",
+          "yield_requested": false
+        },
+        {
+          "id": "daily:220e47935d87f6bdda696ed71bdb4d05d2ca873337dc5139a479cbe5a9c49857",
+          "version": 10,
+          "attempt": 1,
+          "business_date": "2026-10-04",
+          "claimed_at": "2026-10-05T20:58:44.284361+08:00",
+          "finished_at": "2026-10-05T20:59:07.619645+08:00",
+          "generation": 1,
+          "input_version": 24,
+          "kind": "daily",
+          "lease_until": "2026-10-05T20:59:14.308470+08:00",
+          "not_before": null,
+          "reason": null,
+          "recovery_only": false,
+          "run_id": "run-6e18892dc74447bcb309812da39feb6b",
+          "status": "succeeded",
+          "worker": "worker",
+          "yield_requested": false
+        }
+      ],
+      "messages": [
+        {
+          "id": "msg-2196a1c9dfc5446c908f4a87f424de3d",
+          "version": 5,
+          "body": "请安排明天下午四点前补完第1天。",
+          "direction": "inbound",
+          "external_id": "family-request-0",
+          "intents": [
+            {
+              "intent_id": "intent-makeup-d1",
+              "partial_reply_operation_refs": [
+                "operation-bf7ca864027547c28795e6b80fa34483",
+                "operation-01b852806aa643b09bd5392a10d5e01b"
+              ],
+              "reply_operation_refs": [
+                "operation-206ed60b7e144cb1a3819ae50cc5b68c"
+              ],
+              "requires_reply": true,
+              "service_authorization": null,
+              "service_kind": "reply",
+              "text": "家长明确要求安排补完第1天，期望在此前一天（2026-10-05）下午四点前完成。"
+            }
+          ],
+          "interpreted": true,
+          "occurred_at": "2026-10-04T08:00:00+08:00",
+          "received_at": "2026-10-04T08:00:00+08:00",
+          "source_kind": "mock_wechat"
+        },
+        {
+          "id": "msg-bae278895c0b4e069b3c94e39034a9b0",
+          "version": 3,
+          "body": "请帮我明天补读第1天。",
+          "direction": "inbound",
+          "external_id": "family-request-1",
+          "intents": [
+            {
+              "intent_id": "intent-makeup-d1-again",
+              "reply_operation_refs": [
+                "operation-01b852806aa643b09bd5392a10d5e01b"
+              ],
+              "requires_reply": true,
+              "service_authorization": null,
+              "service_kind": "reply",
+              "text": "家长再次请求明天补读第1天，与已登记的补做请求（msg-2196a1c9dfc5446c908f4a87f424de3d / intent-makeup-d1，pending:59e576f5c8e4bbfe475f50fecd676cc3af452c119bdcf12ec8da7a94f8c7025d）为同一事项。"
+            }
+          ],
+          "interpreted": true,
+          "occurred_at": "2026-10-04T08:00:00+08:00",
+          "received_at": "2026-10-04T08:00:00+08:00",
+          "source_kind": "mock_wechat"
+        },
+        {
+          "id": "msg-c2e5b7608eae43a6b961c6c7f385c090",
+          "version": 5,
+          "body": "我还想要一份这周阅读情况的文字总结，10月5日下午四点前需要，先记下需求。",
+          "direction": "inbound",
+          "external_id": "family-request-2",
+          "intents": [
+            {
+              "intent_id": "intent-weekly-summary",
+              "partial_reply_operation_refs": [
+                "operation-52706dccbb414752993db429f43dae4b",
+                "operation-206ed60b7e144cb1a3819ae50cc5b68c",
+                "operation-fb59bbc1e4bd4e79af6a9c8c153da119"
+              ],
+              "reply_operation_refs": [],
+              "requires_reply": true,
+              "service_authorization": "我还想要一份这周阅读情况的文字总结，10月5日下午四点前需要，先记下需求。",
+              "service_kind": "future_delivery",
+              "text": "家长要求以后交付一份本周阅读情况的文字总结，期望时间为10月5日下午四点前，并明确要求先记下该需求。"
+            }
+          ],
+          "interpreted": true,
+          "occurred_at": "2026-10-04T08:00:00+08:00",
+          "received_at": "2026-10-04T08:00:00+08:00",
+          "source_kind": "mock_wechat"
+        }
+      ],
+      "restart": {
+        "scans": [
+          {
+            "ran": false
+          },
+          {
+            "ran": false
+          },
+          {
+            "ran": false
+          },
+          {
+            "ran": false
+          },
+          {
+            "ran": false
+          },
+          {
+            "ran": false
+          },
+          {
+            "ran": false
+          },
+          {
+            "ran": false
+          },
+          {
+            "ran": false
+          },
+          {
+            "ran": false
+          },
+          {
+            "ran": false
+          },
+          {
+            "ran": false
+          },
+          {
+            "ran": false
+          },
+          {
+            "ran": false
+          },
+          {
+            "ran": false
+          },
+          {
+            "ran": false
+          },
+          {
+            "ran": false
+          },
+          {
+            "ran": false
+          },
+          {
+            "ran": false
+          },
+          {
+            "ran": false
+          }
+        ],
+        "all_idle": true,
+        "unchanged": true,
+        "process_id": 306679,
+        "restart_kind": "new_python_process"
+      }
+    }
+  },
+  "independent_need": {
+    "checks": {
+      "fingerprints": true,
+      "db_integrity": true,
+      "unchanged": true,
+      "channel_exact": true,
+      "single_dispatch": true,
+      "only_reply": true,
+      "no_formal_records": true,
+      "model_service_only": true,
+      "all_pairs_wait": true,
+      "passive": true,
+      "planner_attempt0": true
+    },
+    "source_count": 83,
+    "integrity": {
+      "business": "ok",
+      "channel": "ok",
+      "sha256": {
+        "database.redacted.sqlite": "7ed4321f71c5339f5fc49f1b08c7c7a2795badb4f523843f677f260fd83f2f17",
+        "channel.redacted.sqlite": "3d566224faeb1feb1f5cc3e23e38033f1f35f0e9a26cbc859bf881c1333e9972"
+      },
+      "unchanged": true
+    },
+    "native": 1,
+    "api": 8,
+    "channel_count": 1,
+    "details": {
+      "coverage": {
+        "synthetic-4b1-a": {
+          "covered": [
+            {
+              "message_id": "msg-2fed9dccaa424736bff3297cae241907",
+              "intent_id": "intent-independent-need-1",
+              "pending_id": "pending:151a009cf79d4675cb141bf68e2445bbad0c30b653beec3647afbf67dd38580c",
+              "partial_operation_ids": [
+                "operation-01faf26f86654308af3a55a3bbbaab1a"
+              ],
+              "service_job_id": "message:msg-2fed9dccaa424736bff3297cae241907",
+              "outcome_id": "run-ac280b87060e4815b78e748614ae32c8"
+            }
+          ],
+          "uncovered": [],
+          "all_unresolved_covered": true
+        }
+      },
+      "unresolved": [
+        {
+          "message_id": "msg-2fed9dccaa424736bff3297cae241907",
+          "intent_id": "intent-independent-need-1",
+          "partial": [
+            "operation-01faf26f86654308af3a55a3bbbaab1a"
+          ]
+        }
+      ]
+    }
+  },
+  "memory_correction": {
+    "checks": {
+      "fingerprints": true,
+      "db_integrity": true,
+      "unchanged": true,
+      "channel_exact": true,
+      "single_dispatch": true,
+      "only_reply": true,
+      "no_formal_records": true,
+      "model_service_only": true,
+      "full": true,
+      "only_service_jobs": true,
+      "zero_planning_requested": true,
+      "read_before_send": true,
+      "assembly_correct_run": true,
+      "assembly_current_v2": true,
+      "same_id_history": true
+    },
+    "source_count": 83,
+    "integrity": {
+      "business": "ok",
+      "channel": "ok",
+      "sha256": {
+        "database.redacted.sqlite": "5378d1f6ababc7aaa40d6e1d4a6f428c97c1551e499686c69520e881e1719854",
+        "channel.redacted.sqlite": "62749f0e794b652df6ef34793d5418035a1a499465c41c96e1a188fc0d8b640f"
+      },
+      "unchanged": true
+    },
+    "native": 3,
+    "api": 27,
+    "channel_count": 3,
+    "details": {
+      "unresolved": [],
+      "memory": {
+        "assembly": {
+          "run_id": "run-5c062557b5ed4beaba0feb0c96d05bec",
+          "assembly_file": "/root/autodl-tmp/digitalTutor/work/stage4/4c-development-l/evaluations/backend-stage4/intraday-l-native06-stage4_behavior/memory_correction/assembly-03.json",
+          "assembly_sha256": "2619282664f110092a5f873277c8358cae77aa2c15f603b2028117fa958f68d0",
+          "prompt_sha256": "0de1f78d5fb17e78631b8d19b1060bd4cf213f8f145495103e22f7c76351dba7",
+          "context_before_model_execution": [
+            {
+              "context_path": "context.memory",
+              "value": {
+                "memories": [
+                  {
+                    "id": "memory-8a543c35a88f45babf5848513e55cefe",
+                    "version": 2,
+                    "body": "家庭偏好（家长2026-10-04来信更正）：通常午饭后十二点半方便聊阅读，晚上通常不方便；不喜欢连续问很多题，一次只聊一个问题。",
+                    "certainty": "user_reported",
+                    "event_id": null,
+                    "kind": "stated_preference",
+                    "occurred_at": "2026-10-04T10:00:00+08:00",
+                    "source_excerpt": "更正一下，刚才把时间说错了，是午饭后十二点半方便，晚上通常不方便。一次还是只聊一个问题。",
+                    "source_message_id": "msg-cedb6b8d25ff425794d797b111d0acd7",
+                    "source_version": 2,
+                    "status": "active",
+                    "updated_at": "2026-10-04T10:00:00+08:00",
+                    "valid_until": null
+                  }
+                ],
+                "has_more": false,
+                "matching_count": 1,
+                "authoritative_for_controls": false
+              }
+            }
+          ],
+          "top_level_keys": [
+            "run_contract",
+            "recipe",
+            "family_id",
+            "family_version",
+            "uid",
+            "now",
+            "timezone",
+            "service_window",
+            "allowed_event_ids",
+            "events",
+            "responsibility_index",
+            "controls",
+            "reports",
+            "evidence",
+            "operations",
+            "messages",
+            "plans",
+            "message_read_cursors",
+            "service_continuations",
+            "pending_inputs",
+            "memory",
+            "knowledge",
+            "skills",
+            "learning",
+            "run_capabilities",
+            "effective_service_config",
+            "coverage",
+            "source_rules",
+            "execution_agenda",
+            "agenda_is_projection_not_queue",
+            "service_evidence_contract",
+            "request_responsibilities"
+          ],
+          "evidence_kind": "exact_subset_of_saved_host_assembly_not_final_database"
+        },
+        "history": [
+          {
+            "version": 1,
+            "data": {
+              "body": "家庭偏好（家长2026-10-04来信明确说明）：通常晚饭后七点半方便聊阅读；不喜欢连续问很多题。",
+              "certainty": "user_reported",
+              "event_id": null,
+              "kind": "stated_preference",
+              "occurred_at": "2026-10-04T10:00:00+08:00",
+              "source_excerpt": "请记一下，我们家通常晚饭后七点半方便聊阅读，不喜欢连续问很多题。",
+              "source_message_id": "msg-f4933850ee2f4378a48bafe82a817a4a",
+              "source_version": 2,
+              "status": "active",
+              "updated_at": "2026-10-04T10:00:00+08:00",
+              "valid_until": null
+            }
+          },
+          {
+            "version": 2,
+            "data": {
+              "body": "家庭偏好（家长2026-10-04来信更正）：通常午饭后十二点半方便聊阅读，晚上通常不方便；不喜欢连续问很多题，一次只聊一个问题。",
+              "certainty": "user_reported",
+              "event_id": null,
+              "kind": "stated_preference",
+              "occurred_at": "2026-10-04T10:00:00+08:00",
+              "source_excerpt": "更正一下，刚才把时间说错了，是午饭后十二点半方便，晚上通常不方便。一次还是只聊一个问题。",
+              "source_message_id": "msg-cedb6b8d25ff425794d797b111d0acd7",
+              "source_version": 2,
+              "status": "active",
+              "updated_at": "2026-10-04T10:00:00+08:00",
+              "valid_until": null
+            }
+          }
+        ],
+        "read": {
+          "tool": "memory.read",
+          "arguments_digest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+          "ok": true,
+          "result_digest": "8149af436464b18ffac7b630586f48a7396f46b9b0ed8b06d68e9089e056338e",
+          "error": null,
+          "at": "2026-10-04T10:00:00+08:00",
+          "arguments": {},
+          "result": {
+            "ok": true,
+            "result": {
+              "memories": [
+                {
+                  "id": "memory-8a543c35a88f45babf5848513e55cefe",
+                  "version": 2,
+                  "body": "家庭偏好（家长2026-10-04来信更正）：通常午饭后十二点半方便聊阅读，晚上通常不方便；不喜欢连续问很多题，一次只聊一个问题。",
+                  "certainty": "user_reported",
+                  "event_id": null,
+                  "kind": "stated_preference",
+                  "occurred_at": "2026-10-04T10:00:00+08:00",
+                  "source_excerpt": "更正一下，刚才把时间说错了，是午饭后十二点半方便，晚上通常不方便。一次还是只聊一个问题。",
+                  "source_message_id": "msg-cedb6b8d25ff425794d797b111d0acd7",
+                  "source_version": 2,
+                  "status": "active",
+                  "updated_at": "2026-10-04T10:00:00+08:00",
+                  "valid_until": null
+                }
+              ],
+              "has_more": false,
+              "matching_count": 1,
+              "authoritative_for_controls": false
+            }
+          }
+        },
+        "send": {
+          "tool": "wechat.send_message",
+          "arguments_digest": "e4497faabc6e9686e97978e8cc782895338928a3839077fb24bcd120d8273b1c",
+          "ok": true,
+          "result_digest": "9e065388d01b9f0e1a049f7987a3ee962c3d22b180be7c6f7e77143c6204fe6c",
+          "error": null,
+          "at": "2026-10-04T10:00:00+08:00",
+          "arguments": {
+            "action_kind": "reply",
+            "body": "我现在记住的您家阅读聊天偏好是：通常午饭后十二点半方便聊阅读，晚上通常不方便；不喜欢连续问很多题，一次只聊一个问题。这是您今天（2026-10-04）来信更正后的版本。如果还有要改的，随时告诉我。",
+            "expected_family_version": 13,
+            "reply_to": [
+              {
+                "intent_id": "intent-memory-recall",
+                "message_id": "msg-57fd35eb9ad04eb382e454c537b1ec84",
+                "resolves_intent": true
+              }
+            ],
+            "request_id": "send-msg-57fd35eb-01"
+          },
+          "result": {
+            "ok": true,
+            "result": {
+              "request_id": "send-msg-57fd35eb-01",
+              "outcome": "applied",
+              "data": {
+                "id": "operation-fc398b6696d24f1bbf490c25aea6775a",
+                "version": 3,
+                "action_kind": "reply",
+                "admitted_at": "2026-10-04T10:00:00+08:00",
+                "body": "我现在记住的您家阅读聊天偏好是：通常午饭后十二点半方便聊阅读，晚上通常不方便；不喜欢连续问很多题，一次只聊一个问题。这是您今天（2026-10-04）来信更正后的版本。如果还有要改的，随时告诉我。",
+                "business_date": "2026-10-04",
+                "channel": "mock_wechat",
+                "content_digest": "5b4b60a542d019fbba3bb7324268a7ed6395bd72899327d3e58dfa5766bbe13f",
+                "decision_reply_refs": [],
+                "dispatch_count": 1,
+                "event_id": null,
+                "lesson_refs": [],
+                "occurred_at": "2026-10-04T10:00:00+08:00",
+                "part_id": null,
+                "prepared_family_version": 14,
+                "purpose_key": "bafff8da9c39e514ca46b6823fada4bea6f8ff4e17d43b11046710ea2c3815c9",
+                "receipts": [
+                  {
+                    "observed_at": "2026-10-04T10:00:00+08:00",
+                    "source": "mock_transport",
+                    "stage": "sent"
+                  }
+                ],
+                "recipient": "mock:4b1:a",
+                "reply_to": [
+                  {
+                    "intent_id": "intent-memory-recall",
+                    "message_id": "msg-57fd35eb9ad04eb382e454c537b1ec84"
+                  }
+                ],
+                "request": {
+                  "action_kind": "reply",
+                  "body": "我现在记住的您家阅读聊天偏好是：通常午饭后十二点半方便聊阅读，晚上通常不方便；不喜欢连续问很多题，一次只聊一个问题。这是您今天（2026-10-04）来信更正后的版本。如果还有要改的，随时告诉我。",
+                  "event_id": null,
+                  "expected_family_version": 13,
+                  "part_id": null,
+                  "reply_to": [
+                    {
+                      "intent_id": "intent-memory-recall",
+                      "message_id": "msg-57fd35eb9ad04eb382e454c537b1ec84"
+                    }
+                  ],
+                  "request_id": "send-msg-57fd35eb-01",
+                  "step_id": null
+                },
+                "requirement_revision": null,
+                "run_id": "run-5c062557b5ed4beaba0feb0c96d05bec",
+                "send_capability": {
+                  "commitment_id": null,
+                  "current_step_key": null,
+                  "event_id": null,
+                  "job_id": "message:msg-57fd35eb9ad04eb382e454c537b1ec84",
+                  "job_kind": "service",
+                  "mode": "full",
+                  "no_contact": false,
+                  "output_mode": "family_reply",
+                  "reply_scope": {
+                    "msg-57fd35eb9ad04eb382e454c537b1ec84": [
+                      "*"
+                    ]
+                  },
+                  "run_id": "run-5c062557b5ed4beaba0feb0c96d05bec",
+                  "schedule_revision": null
+                },
+                "simulated": true,
+                "stage": "sent"
+              },
+              "record_versions": {
+                "family_input_version": 15
+              },
+              "error": null
+            }
+          }
+        }
+      }
+    }
+  },
+  "missing_guide": {
+    "checks": {
+      "fingerprints": true,
+      "db_integrity": true,
+      "unchanged": true,
+      "channel_exact": true,
+      "single_dispatch": true,
+      "only_reply": true,
+      "no_formal_records": true,
+      "model_service_only": true,
+      "full": true,
+      "only_service_jobs": true,
+      "zero_planning_requested": true
+    },
+    "source_count": 83,
+    "integrity": {
+      "business": "ok",
+      "channel": "ok",
+      "sha256": {
+        "database.redacted.sqlite": "469dcb616af6e4456beda181c22427f2c413407077b1d4669ae41206d999cd77",
+        "channel.redacted.sqlite": "9f6b33d415b27e0fdc2a8914214d96a7f051ecb5474109b2267963b57c0ff599"
+      },
+      "unchanged": true
+    },
+    "native": 1,
+    "api": 8,
+    "channel_count": 1,
+    "details": {
+      "unresolved": [
+        {
+          "message_id": "msg-80b9c9b7a8904e8f8e1f3adab53ab399",
+          "intent_id": "intent-l2-day1-peidu",
+          "partial": [
+            "operation-7c054ecc9772497e8206b5d27657852d"
+          ]
+        }
+      ]
+    }
+  },
+  "missing_policy": {
+    "checks": {
+      "fingerprints": true,
+      "db_integrity": true,
+      "unchanged": true,
+      "channel_exact": true,
+      "single_dispatch": true,
+      "only_reply": true,
+      "no_formal_records": true,
+      "model_service_only": true,
+      "full": true,
+      "only_service_jobs": true,
+      "zero_planning_requested": true
+    },
+    "source_count": 83,
+    "integrity": {
+      "business": "ok",
+      "channel": "ok",
+      "sha256": {
+        "database.redacted.sqlite": "4fa2a2b4f1ab6f228fa797a759e6e4c95f8938531aec30c5836df833f22f51b6",
+        "channel.redacted.sqlite": "f8433021c6d6c7ece44f7dfacc72d0b77cacfa59bd4a4b8a6931e023816c5cef"
+      },
+      "unchanged": true
+    },
+    "native": 1,
+    "api": 15,
+    "channel_count": 1,
+    "details": {
+      "unresolved": [
+        {
+          "message_id": "msg-bf30d5ebf1094e15bfe5c1796e99de28",
+          "intent_id": "intent-d4-answers",
+          "partial": [
+            "operation-9c4d3498888b47f68143cdd8b342ed15"
+          ]
+        },
+        {
+          "message_id": "msg-bf30d5ebf1094e15bfe5c1796e99de28",
+          "intent_id": "intent-leave-extension",
+          "partial": [
+            "operation-9c4d3498888b47f68143cdd8b342ed15"
+          ]
+        }
+      ]
+    }
+  },
+  "work_sample": {
+    "checks": {
+      "fingerprints": true,
+      "db_integrity": true,
+      "unchanged": true,
+      "channel_exact": true,
+      "single_dispatch": true,
+      "only_reply": true,
+      "no_formal_records": true,
+      "model_service_only": true,
+      "full": true,
+      "only_service_jobs": true,
+      "zero_planning_requested": true
+    },
+    "source_count": 83,
+    "integrity": {
+      "business": "ok",
+      "channel": "ok",
+      "sha256": {
+        "database.redacted.sqlite": "190b3c9fde8c1c9a19f7d06084949b7b82523d56d98d230f1bf0e094e337e33b",
+        "channel.redacted.sqlite": "a3a9f4574fb61f65fd4af553e620f392c1b905209d7c9cd266bd0a4a23413725"
+      },
+      "unchanged": true
+    },
+    "native": 1,
+    "api": 16,
+    "channel_count": 1,
+    "details": {
+      "unresolved": []
+    }
+  }
+}

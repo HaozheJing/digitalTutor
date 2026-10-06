@@ -1,0 +1,12 @@
+{
+  "source_database": "/root/autodl-tmp/digitalTutor/work/stage4/4c-development-l/state/backend-stage4/intraday-l-native06-stage4_behavior/work_sample/business.sqlite",
+  "channel_database": "/root/autodl-tmp/digitalTutor/work/stage4/4c-development-l/state/backend-stage4/intraday-l-native06-stage4_behavior/work_sample/business.channel.sqlite",
+  "instruction": "Preserve this evidence. Continue only from a fresh isolated copy, never consume reports here.",
+  "families": {
+    "a": "synthetic-4b1-a"
+  },
+  "unconsumed_report_ids": [],
+  "original_event_ids": [],
+  "business_clock": "2026-10-04T10:00:00+08:00",
+  "source_manifest": "/root/autodl-tmp/digitalTutor/work/stage4/4c-development-l/evaluations/backend-stage4/intraday-l-native06-stage4_behavior/work_sample/manifest.json"
+}

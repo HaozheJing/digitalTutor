@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "synthetic": true,
+    "batch_id": "synthetic-live-progress-2",
+    "imported_at": "2026-10-05T09:00:00+08:00",
+    "coverage_through": "2026-10-05T09:00:00+08:00",
+    "source_timezone": "Asia/Shanghai",
+    "source_contract": {
+      "kind": "versioned_learning_snapshot",
+      "source_id": "synthetic-live-progress",
+      "revision": 2,
+      "supersedes_batch_id": "synthetic-live-progress-1",
+      "observed_at": "2026-10-05T09:00:00+08:00"
+    }
+  },
+  "sync": {
+    "changed": true,
+    "source": {
+      "id": "learning-source:7003506cf7549af70e6853f4dcec338ccd4007679cd7202656ae723da819b011",
+      "version": 2,
+      "batch_id": "synthetic-live-progress-2",
+      "binding_id": "course-binding:c1e490d345469fcb36f70f49462b9f956d02d50e947c58b09c105d592f9f5648",
+      "binding_version": 1,
+      "completion_status": "incomplete",
+      "correction_ids": [
+        "learning-correction:7e1d1bdda4341cbd5b02e6fb0597a78d07d0ce8dc518e9df4a03561f438a9b32"
+      ],
+      "course_id": "simulation-L2-fox",
+      "course_version": "simulation-v1",
+      "coverage_through": "2026-10-05T09:00:00+08:00",
+      "day": 1,
+      "evidence_ids": [],
+      "lesson_ref": "LESSON-L2-FOX-D01",
+      "locator": "synthetic-live-progress-2!row-2",
+      "observed_at": "2026-10-05T09:00:00+08:00",
+      "scope_id": "learning-source:7003506cf7549af70e6853f4dcec338ccd4007679cd7202656ae723da819b011",
+      "source_hash": "a4ae6a67ccf60ab9b03f23c8c01ca31f998fa0714ec66cda942291bfc2766c4d",
+      "source_id": "synthetic-live-progress",
+      "source_revision": 2,
+      "supersedes_batch_id": "synthetic-live-progress-1"
+    },
+    "evidence_ids": [],
+    "correction_ids": [
+      "learning-correction:7e1d1bdda4341cbd5b02e6fb0597a78d07d0ce8dc518e9df4a03561f438a9b32"
+    ],
+    "report_review_job_ids": []
+  }
+}

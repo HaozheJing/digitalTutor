@@ -1,0 +1,23 @@
+{
+  "case": "intraday-empty",
+  "checks": {
+    "committed_intraday_delivery": true,
+    "baseline_and_admission_same_date_container": true,
+    "future_not_delivered_early": true,
+    "planning_then_reply_observed": true,
+    "idle_before_due": true,
+    "original_delivery_done": true,
+    "service_completion_assessment": true,
+    "condition_propagated": true,
+    "reports_consumed": true,
+    "exactly_one_actual_delivery": true,
+    "independent_channel_exactly_once": true,
+    "idle_after_delivery": true,
+    "restart_idle": true
+  },
+  "program_passed": true,
+  "native_calls": 7,
+  "api_calls": 52,
+  "semantic_status": "not_reviewed",
+  "gate_passed": false
+}

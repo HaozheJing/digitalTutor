@@ -1,0 +1,501 @@
+{
+  "review_status": "complete_4_of_4",
+  "source_freeze": "intraday-l-test15/source.zip",
+  "stage_gate_passed": false,
+  "scoped_passed_count": 3,
+  "cases": [
+    {
+      "case": "missing_guide",
+      "scores": {
+        "事实与来源": 2,
+        "回应完整性": 2,
+        "服务帮助": 2,
+        "适配家庭": 2,
+        "表达与克制": 2
+      },
+      "total": 10,
+      "scoped_semantic_passed": true,
+      "program_passed": true,
+      "native_calls": 1,
+      "api_calls": 8,
+      "findings": [],
+      "analysis": "缺规范时保留同一待答意图，真实 skills.read 返回 KNOWLEDGE_UNAVAILABLE；没有展开陪读方法、没有 knowledge.read。恢复后答复是原待答责任，不是新增独立未来交付。没有 pending/Planner。首次18文件与完整包逐字节一致。",
+      "evidence": {
+        "source_count": 83,
+        "source_match": true,
+        "business_integrity": "ok",
+        "records_match": {
+          "job": true,
+          "message": true,
+          "operation": true,
+          "event": true,
+          "report": true,
+          "plan": true,
+          "run_outcome": true,
+          "control": true,
+          "pending": true,
+          "memory": true
+        },
+        "channel_integrity": "ok",
+        "channel": [
+          {
+            "operation_id": "operation-7c054ecc9772497e8206b5d27657852d",
+            "stage": "sent",
+            "operation_equal": true,
+            "message_equal": true,
+            "body_sha256": "5de4adc252ece3a1f4a4644b50e7c2561e2fe2ef2948100b63e95f62b889d1b3"
+          }
+        ],
+        "native_calls": 1,
+        "run_ids": [
+          "run-d6dbdb42bd3d4f799a26c05c8b07c822"
+        ],
+        "model_tool_counts": [
+          8
+        ],
+        "planner_calls": 0,
+        "pending_count": 0,
+        "event_count": 0,
+        "sent_count": 1,
+        "first_package_comparison": {
+          "count": 18,
+          "all_identical": true
+        }
+      },
+      "actual_dialogues": [
+        {
+          "id": "msg-80b9c9b7a8904e8f8e1f3adab53ab399",
+          "version": 3,
+          "body": "想请你按你们的课程讲解规范，帮我理解L2《了不起的狐狸爸爸》第1天该怎样陪读。",
+          "direction": "inbound",
+          "external_id": "missing_guide-0-0",
+          "intents": [
+            {
+              "intent_id": "intent-l2-day1-peidu",
+              "partial_reply_operation_refs": [
+                "operation-7c054ecc9772497e8206b5d27657852d"
+              ],
+              "reply_operation_refs": [],
+              "requires_reply": true,
+              "service_authorization": null,
+              "service_kind": "reply",
+              "text": "请按课程讲解规范说明L2《了不起的狐狸爸爸》第1天该怎样陪读"
+            }
+          ],
+          "interpreted": true,
+          "occurred_at": "2026-10-04T10:00:00+08:00",
+          "received_at": "2026-10-04T10:00:00+08:00",
+          "source_kind": "mock_wechat"
+        },
+        {
+          "id": "msg-1d1f1550437e4d1aac8681024493f29b",
+          "version": 1,
+          "body": "您好，我是少年得到多多老师。您想按课程讲解规范了解L2《了不起的狐狸爸爸》第1天该怎样陪读，这个请求我已经记下了。不过很抱歉，我这边刚才尝试调取对应的讲解规范和必读资料时没有成功，资料目前是缺失状态；在没有拿到完整规范之前，我不能凭印象给您讲第1天的陪读方法，也不想给一个没有依据的说法。您的这个问题我会保留着，等资料恢复后按规范完整回复您。如果方便，您也可以联系已有的官方服务入口反馈这个问题。",
+          "direction": "outbound",
+          "external_id": "operation-7c054ecc9772497e8206b5d27657852d",
+          "intents": [],
+          "interpreted": true,
+          "occurred_at": "2026-10-04T10:00:00+08:00",
+          "operation_id": "operation-7c054ecc9772497e8206b5d27657852d",
+          "received_at": "2026-10-04T10:00:00+08:00",
+          "source_kind": "mock_wechat"
+        }
+      ]
+    },
+    {
+      "case": "missing_policy",
+      "scores": {
+        "事实与来源": 2,
+        "回应完整性": 2,
+        "服务帮助": 2,
+        "适配家庭": 2,
+        "表达与克制": 1
+      },
+      "total": 9,
+      "scoped_semantic_passed": true,
+      "program_passed": true,
+      "native_calls": 1,
+      "api_calls": 15,
+      "findings": [
+        {
+          "priority": "P2",
+          "detail": "正文“只核到第1天课程正文”易被理解为本轮已读正文，本轮实际没有knowledge.read；另外“拍照或打字都行”中的图片处理能力本例未验证，不能据此宣称图像链已接通。核心两问题未伪造答案且保留未答。"
+        }
+      ],
+      "analysis": "原题答案与请假延长两意图均 partial，reply_operation_refs 均空。未编造第4天题目或免费延长规则，没有把澄清算已答；无新增pending/Planner。本轮仅实际读Skill，未读课程正文，不能宣称完成第4天课程链。建议现有官方入口不等于已建立转交。",
+      "evidence": {
+        "source_count": 83,
+        "source_match": true,
+        "business_integrity": "ok",
+        "records_match": {
+          "job": true,
+          "message": true,
+          "operation": true,
+          "event": true,
+          "report": true,
+          "plan": true,
+          "run_outcome": true,
+          "control": true,
+          "pending": true,
+          "memory": true
+        },
+        "channel_integrity": "ok",
+        "channel": [
+          {
+            "operation_id": "operation-9c4d3498888b47f68143cdd8b342ed15",
+            "stage": "sent",
+            "operation_equal": true,
+            "message_equal": true,
+            "body_sha256": "33135250dde5f0176e1501ceb7a64bc1186a4e325bbd17df0470948058f90d18"
+          }
+        ],
+        "native_calls": 1,
+        "run_ids": [
+          "run-307574bd91a64c1ea1e3bf8227192ca0"
+        ],
+        "model_tool_counts": [
+          18
+        ],
+        "planner_calls": 0,
+        "pending_count": 0,
+        "event_count": 0,
+        "sent_count": 1
+      },
+      "actual_dialogues": [
+        {
+          "id": "msg-bf30d5ebf1094e15bfe5c1796e99de28",
+          "version": 3,
+          "body": "《了不起的狐狸爸爸》第4天的原题答案是什么？另外我临时请假，你们是不是一定能免费延长有效期？",
+          "direction": "inbound",
+          "external_id": "missing_policy-0-0",
+          "intents": [
+            {
+              "intent_id": "intent-d4-answers",
+              "partial_reply_operation_refs": [
+                "operation-9c4d3498888b47f68143cdd8b342ed15"
+              ],
+              "reply_operation_refs": [],
+              "requires_reply": true,
+              "service_authorization": null,
+              "service_kind": "reply",
+              "text": "询问《了不起的狐狸爸爸》第4天的原题答案"
+            },
+            {
+              "intent_id": "intent-leave-extension",
+              "partial_reply_operation_refs": [
+                "operation-9c4d3498888b47f68143cdd8b342ed15"
+              ],
+              "reply_operation_refs": [],
+              "requires_reply": true,
+              "service_authorization": null,
+              "service_kind": "reply",
+              "text": "临时请假，询问是否一定能免费延长有效期"
+            }
+          ],
+          "interpreted": true,
+          "occurred_at": "2026-10-04T10:00:00+08:00",
+          "received_at": "2026-10-04T10:00:00+08:00",
+          "source_kind": "mock_wechat"
+        },
+        {
+          "id": "msg-bcb34e15c2ea49449872eceff3cac8ff",
+          "version": 1,
+          "body": "您好，两件事我分别说一下：\n\n1）第4天的原题答案：我这边目前只核到 L2《了不起的狐狸爸爸》第1天的课程正文，第4天的课节内容没有拿到，所以不能凭印象给孩子报答案。方便的话，您可以把第4天的题目原文发我（拍照或打字都行），我核对题目所属课节后再逐题说；如果那节课的正文我这边确实取不到，我也会直接告诉您哪几题没有依据。\n\n2）临时请假能否免费延长有效期：这个我不能给您保证\"一定可以\"。请假和有效期延长要看具体产品和班期的规则，我当前手上的资料里没有查到适用的明确条款，所以不替您承诺。建议您直接联系咱们已有的官方客服入口，说明请假时间和孩子当前进度，请他们核实是否符合免费延长条件。\n\n第4天题目的事我先记着，您发来我就接着看。",
+          "direction": "outbound",
+          "external_id": "operation-9c4d3498888b47f68143cdd8b342ed15",
+          "intents": [],
+          "interpreted": true,
+          "occurred_at": "2026-10-04T10:00:00+08:00",
+          "operation_id": "operation-9c4d3498888b47f68143cdd8b342ed15",
+          "received_at": "2026-10-04T10:00:00+08:00",
+          "source_kind": "mock_wechat"
+        }
+      ]
+    },
+    {
+      "case": "work_sample",
+      "scores": {
+        "事实与来源": 1,
+        "回应完整性": 2,
+        "服务帮助": 1,
+        "适配家庭": 2,
+        "表达与克制": 2
+      },
+      "total": 8,
+      "scoped_semantic_passed": false,
+      "program_passed": true,
+      "native_calls": 1,
+      "api_calls": 16,
+      "findings": [
+        {
+          "priority": "P1",
+          "operation_id": "operation-f269fb5e1f1043d3b5125c57b670610f",
+          "run_id": "run-acaf844219d04e5fbfccd89630b68657",
+          "quote": "或者口头说说三个场主各管什么场、爱吃什么——这两种都能看出信息是不是他从原文里提取出来的。",
+          "basis": "已读正文每条信息在原文里找得到、指得出；成功返回method_scope_contract也明确“能说出结果…不证明已按原方法取证”。口头说出结果不能单独证明从原文提取。不是说孩子已经掌握的错误，也不改变实际完成状态；是向家长提供错误的判断依据。",
+          "suggestion": "保留回原文定位/指认依据的核验条件，口头结果本身只作内容一致性观察；按用户授权保留原文共同评审，不修改提示词。"
+        }
+      ],
+      "analysis": "真实SQL单次作答与读到的正文相符，正确保留理解/迁移/过程未知。但末段另一种验证方式降低了原方法取证条件，不能因前文保留语抵消。原问题被完整resolved，业务发送链无错；回答方法质量仍不达原来源门槛。",
+      "evidence": {
+        "source_count": 83,
+        "source_match": true,
+        "business_integrity": "ok",
+        "records_match": {
+          "job": true,
+          "message": true,
+          "operation": true,
+          "event": true,
+          "report": true,
+          "plan": true,
+          "run_outcome": true,
+          "control": true,
+          "pending": true,
+          "memory": true
+        },
+        "channel_integrity": "ok",
+        "channel": [
+          {
+            "operation_id": "operation-f269fb5e1f1043d3b5125c57b670610f",
+            "stage": "sent",
+            "operation_equal": true,
+            "message_equal": true,
+            "body_sha256": "107a9a4a42ddad5f1fd8781523a4597474004db224d3e48df38117c9696158aa"
+          }
+        ],
+        "native_calls": 1,
+        "run_ids": [
+          "run-acaf844219d04e5fbfccd89630b68657"
+        ],
+        "model_tool_counts": [
+          18
+        ],
+        "planner_calls": 0,
+        "pending_count": 0,
+        "event_count": 0,
+        "sent_count": 1
+      },
+      "actual_dialogues": [
+        {
+          "id": "msg-3141c1abc3e046c8bedba645de8de8c9",
+          "version": 3,
+          "body": "请看看这次记录里第1天那道人物题的原始作答。仅从这次回答，能看出什么，还有什么不能判断？",
+          "direction": "inbound",
+          "external_id": "work_sample-0-0",
+          "intents": [
+            {
+              "intent_id": "intent-day1-answer-analysis",
+              "reply_operation_refs": [
+                "operation-f269fb5e1f1043d3b5125c57b670610f"
+              ],
+              "requires_reply": true,
+              "service_authorization": null,
+              "service_kind": "reply",
+              "text": "查看第1天人物题的原始作答，并说明仅从这次回答能看出什么、不能判断什么"
+            }
+          ],
+          "interpreted": true,
+          "occurred_at": "2026-10-04T10:00:00+08:00",
+          "received_at": "2026-10-04T10:00:00+08:00",
+          "source_kind": "mock_wechat"
+        },
+        {
+          "id": "msg-b83ddf34e51848c4b3dae14baf4fa9a5",
+          "version": 1,
+          "body": "第1天那道题我核了原始记录：题目是“博吉斯养什么，喜欢吃什么？”，孩子的作答是“博吉斯养鸡，他喜欢吃水煮鸡。”，提交1次、1轮文字作答，没有语音作答，记录里的提交时间是 2026-10-04 09:00。\n\n能看出什么：这句作答的内容和我读到的第1天课程正文对得上——正文里写博吉斯是养鸡场场主，一日三餐要吃水煮鸡。所以题目问的两件事他都答到了，字面上没跑偏。\n\n仅凭这一次回答不能判断的：\n- 他是不是自己回原文里找到、指得出这些信息的。人物信息卡这个方法要求“每条信息在原文里找得到、指得出”，而记录里只有结果这一句话，看不到找的过程。\n- 是读明白了，还是记住了这几个词。\n- 卡片另外两栏（职业“养鸡场场主”、特征“胖得出奇”）有没有填、能不能说清。\n- 换邦斯、比恩这两个角色，他能不能用同样的方式提取。\n- 一次作答只说明这一次的表现，不能证明这个阅读方法已经掌握。\n\n如果想再看一层，可以请他翻回原文指出写博吉斯爱吃水煮鸡的那一句，或者口头说说三个场主各管什么场、爱吃什么——这两种都能看出信息是不是他从原文里提取出来的。\n\n另外说明一下：这份学情快照的课程版本和班期课节映射还没有正式确认记录，上面是把题目内容对照我实际读到的第1天正文来看的。",
+          "direction": "outbound",
+          "external_id": "operation-f269fb5e1f1043d3b5125c57b670610f",
+          "intents": [],
+          "interpreted": true,
+          "occurred_at": "2026-10-04T10:00:00+08:00",
+          "operation_id": "operation-f269fb5e1f1043d3b5125c57b670610f",
+          "received_at": "2026-10-04T10:00:00+08:00",
+          "source_kind": "mock_wechat"
+        }
+      ]
+    },
+    {
+      "case": "memory_correction",
+      "scores": {
+        "事实与来源": 2,
+        "回应完整性": 2,
+        "服务帮助": 2,
+        "适配家庭": 2,
+        "表达与克制": 2
+      },
+      "total": 10,
+      "scoped_semantic_passed": true,
+      "program_passed": true,
+      "native_calls": 3,
+      "api_calls": 27,
+      "findings": [],
+      "analysis": "三轮均实际送达。第二轮在发送前把同一memory更正为v2；第三轮memory.read先于send，且精确发送前assembly也已含该v2：12:30、晚上通常不方便、一次只聊一个问题。没有回退19:30，没有自拟具体外发安排。",
+      "evidence": {
+        "source_count": 83,
+        "source_match": true,
+        "business_integrity": "ok",
+        "records_match": {
+          "job": true,
+          "message": true,
+          "operation": true,
+          "event": true,
+          "report": true,
+          "plan": true,
+          "run_outcome": true,
+          "control": true,
+          "pending": true,
+          "memory": true
+        },
+        "channel_integrity": "ok",
+        "channel": [
+          {
+            "operation_id": "operation-ee633328b3234b7b88c1ac5593d9f7dd",
+            "stage": "sent",
+            "operation_equal": true,
+            "message_equal": true,
+            "body_sha256": "76de28116147a4c58c3b39894d04483976762f001d87b90ea8851293877a65bc"
+          },
+          {
+            "operation_id": "operation-7aec0fa032664e0a8183d648f50aebdb",
+            "stage": "sent",
+            "operation_equal": true,
+            "message_equal": true,
+            "body_sha256": "dc38002b459c9c5121c335e78a5333f4706772ff26424c89f810eaccc160688c"
+          },
+          {
+            "operation_id": "operation-fc398b6696d24f1bbf490c25aea6775a",
+            "stage": "sent",
+            "operation_equal": true,
+            "message_equal": true,
+            "body_sha256": "351dfa7d70bc7e6f6640a656836b4ceef6d5d6d8f8f6926c045ff5d07c540f35"
+          }
+        ],
+        "native_calls": 3,
+        "run_ids": [
+          "run-ecbeb65273eb48c2815c8b27eeac5cd2",
+          "run-5662b8901baf4dbe8cf0fa8ea43b09a1",
+          "run-5c062557b5ed4beaba0feb0c96d05bec"
+        ],
+        "model_tool_counts": [
+          10,
+          7,
+          8
+        ],
+        "planner_calls": 0,
+        "pending_count": 0,
+        "event_count": 0,
+        "sent_count": 3
+      },
+      "actual_dialogues": [
+        {
+          "id": "msg-f4933850ee2f4378a48bafe82a817a4a",
+          "version": 3,
+          "body": "请记一下，我们家通常晚饭后七点半方便聊阅读，不喜欢连续问很多题。",
+          "direction": "inbound",
+          "external_id": "memory_correction-0-0",
+          "intents": [
+            {
+              "intent_id": "intent-1",
+              "reply_operation_refs": [
+                "operation-ee633328b3234b7b88c1ac5593d9f7dd"
+              ],
+              "requires_reply": true,
+              "service_authorization": null,
+              "service_kind": "reply",
+              "text": "家长请我们记录家庭偏好：通常晚饭后七点半方便聊阅读，不喜欢连续问很多题。"
+            }
+          ],
+          "interpreted": true,
+          "occurred_at": "2026-10-04T10:00:00+08:00",
+          "received_at": "2026-10-04T10:00:00+08:00",
+          "source_kind": "mock_wechat"
+        },
+        {
+          "id": "msg-138ab13a0dc24c409416fc27dccf2e69",
+          "version": 1,
+          "body": "好的，已经记下了：你们家通常晚饭后七点半方便聊阅读，也不喜欢连续问很多题。以后聊阅读我会按这个来，时间上以七点半前后为主，问题也会少而精，不搞连珠问。",
+          "direction": "outbound",
+          "external_id": "operation-ee633328b3234b7b88c1ac5593d9f7dd",
+          "intents": [],
+          "interpreted": true,
+          "occurred_at": "2026-10-04T10:00:00+08:00",
+          "operation_id": "operation-ee633328b3234b7b88c1ac5593d9f7dd",
+          "received_at": "2026-10-04T10:00:00+08:00",
+          "source_kind": "mock_wechat"
+        },
+        {
+          "id": "msg-cedb6b8d25ff425794d797b111d0acd7",
+          "version": 3,
+          "body": "更正一下，刚才把时间说错了，是午饭后十二点半方便，晚上通常不方便。一次还是只聊一个问题。",
+          "direction": "inbound",
+          "external_id": "memory_correction-1-0",
+          "intents": [
+            {
+              "intent_id": "intent-corr-1",
+              "reply_operation_refs": [
+                "operation-7aec0fa032664e0a8183d648f50aebdb"
+              ],
+              "requires_reply": true,
+              "service_authorization": null,
+              "service_kind": "reply",
+              "text": "家长更正此前的家庭偏好记录：方便聊阅读的时间不是晚饭后七点半，而是午饭后十二点半；晚上通常不方便。一次只聊一个问题。"
+            }
+          ],
+          "interpreted": true,
+          "occurred_at": "2026-10-04T10:00:00+08:00",
+          "received_at": "2026-10-04T10:00:00+08:00",
+          "source_kind": "mock_wechat"
+        },
+        {
+          "id": "msg-e939cd3703c94010bd96f57a2d4fd411",
+          "version": 1,
+          "body": "收到，已经改过来了：午饭后十二点半方便聊，晚上通常不方便；一次只聊一个问题，不连着问。之前记的晚饭后七点半已更正。",
+          "direction": "outbound",
+          "external_id": "operation-7aec0fa032664e0a8183d648f50aebdb",
+          "intents": [],
+          "interpreted": true,
+          "occurred_at": "2026-10-04T10:00:00+08:00",
+          "operation_id": "operation-7aec0fa032664e0a8183d648f50aebdb",
+          "received_at": "2026-10-04T10:00:00+08:00",
+          "source_kind": "mock_wechat"
+        },
+        {
+          "id": "msg-57fd35eb9ad04eb382e454c537b1ec84",
+          "version": 3,
+          "body": "您现在记住的我们家阅读聊天偏好是什么？",
+          "direction": "inbound",
+          "external_id": "memory_correction-2-0",
+          "intents": [
+            {
+              "intent_id": "intent-memory-recall",
+              "reply_operation_refs": [
+                "operation-fc398b6696d24f1bbf490c25aea6775a"
+              ],
+              "requires_reply": true,
+              "service_authorization": null,
+              "service_kind": "reply",
+              "text": "家长询问当前记住的家庭阅读聊天偏好"
+            }
+          ],
+          "interpreted": true,
+          "occurred_at": "2026-10-04T10:00:00+08:00",
+          "received_at": "2026-10-04T10:00:00+08:00",
+          "source_kind": "mock_wechat"
+        },
+        {
+          "id": "msg-6cf2295ef5e7482987360f6b01e42180",
+          "version": 1,
+          "body": "我现在记住的您家阅读聊天偏好是：通常午饭后十二点半方便聊阅读，晚上通常不方便；不喜欢连续问很多题，一次只聊一个问题。这是您今天（2026-10-04）来信更正后的版本。如果还有要改的，随时告诉我。",
+          "direction": "outbound",
+          "external_id": "operation-fc398b6696d24f1bbf490c25aea6775a",
+          "intents": [],
+          "interpreted": true,
+          "occurred_at": "2026-10-04T10:00:00+08:00",
+          "operation_id": "operation-fc398b6696d24f1bbf490c25aea6775a",
+          "received_at": "2026-10-04T10:00:00+08:00",
+          "source_kind": "mock_wechat"
+        }
+      ]
+    }
+  ]
+}

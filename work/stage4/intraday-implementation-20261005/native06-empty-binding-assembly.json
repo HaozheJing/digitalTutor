@@ -1,0 +1,47 @@
+{
+  "run_id": "run-e8c1bc8d2b0e42108098bcad4a51948f",
+  "assembly_file": "/root/autodl-tmp/digitalTutor/work/stage4/4c-development-l/evaluations/backend-stage4/intraday-l-native06-intraday/intraday-empty/assembly-06.json",
+  "assembly_sha256": "e142106e6f52639e2bb0c503650f46727356f1836167ea2ba12868f01bbf17ad",
+  "prompt_sha256": "3d25a607bb95d1babf275e4befcf2f1b3516dec94e68f1f7d3689ba7e895bdc6",
+  "context_before_model_execution": [
+    {
+      "context_path": "context.learning.course_binding",
+      "value": "unknown"
+    }
+  ],
+  "top_level_keys": [
+    "run_contract",
+    "recipe",
+    "family_id",
+    "family_version",
+    "uid",
+    "now",
+    "timezone",
+    "service_window",
+    "allowed_event_ids",
+    "events",
+    "responsibility_index",
+    "controls",
+    "reports",
+    "evidence",
+    "operations",
+    "messages",
+    "plans",
+    "message_read_cursors",
+    "service_continuations",
+    "pending_inputs",
+    "memory",
+    "knowledge",
+    "skills",
+    "learning",
+    "run_capabilities",
+    "effective_service_config",
+    "coverage",
+    "source_rules",
+    "execution_agenda",
+    "agenda_is_projection_not_queue",
+    "service_evidence_contract",
+    "request_responsibilities"
+  ],
+  "evidence_kind": "exact_subset_of_saved_host_assembly_not_final_database"
+}

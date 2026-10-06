@@ -1,0 +1,20 @@
+{
+  "case": "daily-chain",
+  "checks": {
+    "daily_created_goal_and_delivery": true,
+    "reminder_not_goal_completion": true,
+    "goal_done_after_real_source": true,
+    "correction_reopens_original": true,
+    "no_duplicate_events": true,
+    "reports_consumed": true,
+    "daily_resumed_day2": true,
+    "delivery_done": true,
+    "configured_null_condition_preserved": true,
+    "null_goal_and_delivery_assessed": true
+  },
+  "program_passed": true,
+  "native_calls": 16,
+  "api_calls": 111,
+  "semantic_status": "not_reviewed",
+  "gate_passed": false
+}

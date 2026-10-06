@@ -1,0 +1,88 @@
+{
+  "worker": {
+    "ran": true,
+    "kind": "daily",
+    "outcome": "succeeded"
+  },
+  "clock": "2026-10-04T10:00:00+08:00",
+  "records": {
+    "job": [
+      {
+        "id": "daily:220e47935d87f6bdda696ed71bdb4d05d2ca873337dc5139a479cbe5a9c49857",
+        "version": 8,
+        "attempt": 1,
+        "business_date": "2026-10-04",
+        "claimed_at": "2026-10-05T20:46:45.601091+08:00",
+        "finished_at": "2026-10-05T20:47:00.882211+08:00",
+        "generation": 1,
+        "input_version": 3,
+        "kind": "daily",
+        "lease_until": "2026-10-05T20:47:09.642179+08:00",
+        "not_before": null,
+        "reason": null,
+        "recovery_only": false,
+        "run_id": "run-39449c6ea7144ad4b7e481e13633ad14",
+        "status": "succeeded",
+        "worker": "worker",
+        "yield_requested": false
+      }
+    ],
+    "message": [],
+    "operation": [],
+    "event": [],
+    "report": [],
+    "plan": [
+      {
+        "id": "plan-2ce0d56e552744aeb0673b2ceb3c025a",
+        "version": 1,
+        "baseline_committed": true,
+        "business_date": "2026-10-04",
+        "created_at": "2026-10-04T10:00:00+08:00",
+        "items": [],
+        "revision": 1,
+        "revisions": [
+          {
+            "at": "2026-10-04T10:00:00+08:00",
+            "event_ids": [],
+            "reason": "baseline",
+            "request_id": "run-39449c6ea7144ad4b7e481e13633ad14-daily-baseline",
+            "revision": 1
+          }
+        ]
+      }
+    ],
+    "pending": [],
+    "candidate": [],
+    "candidate_source": [],
+    "candidate_decision": [],
+    "run_outcome": [],
+    "control": [],
+    "memory": [],
+    "evidence": [],
+    "learning_source": [],
+    "course_binding": [
+      {
+        "id": "course-binding:1aac169c6326f68e6a5a5278f50d657f73dd63d3ac2062ce67f0a0008bd86784",
+        "version": 1,
+        "batch_id": "synthetic-4b1-snapshot",
+        "cohort_id": null,
+        "confirmed_at": "2026-10-04T10:00:00+08:00",
+        "course_id": "simulation-L2-fox",
+        "course_version": "simulation-v1",
+        "coverage_through": "2026-10-04T07:30:00+08:00",
+        "lesson_map": [
+          {
+            "day": 1,
+            "lesson_ref": "LESSON-L2-FOX-D01"
+          }
+        ],
+        "level": null,
+        "source_kind": "trusted_host_confirmation",
+        "source_note": "Confirmed synthetic family/course fixture; no real learner record",
+        "source_timezone": "Asia/Shanghai",
+        "uid": "synthetic-4b1-uid-a"
+      }
+    ]
+  },
+  "channel": []
+}

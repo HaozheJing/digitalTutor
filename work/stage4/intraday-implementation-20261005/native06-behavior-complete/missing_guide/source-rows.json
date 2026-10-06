@@ -1,0 +1,41 @@
+[
+  {
+    "batch_id": "synthetic-4b1-snapshot",
+    "uid": "synthetic-4b1-uid-a",
+    "day": 1,
+    "attendance_status": "attended",
+    "completion_status": "completed",
+    "homework_status": "submitted",
+    "companion_status": "not_configured",
+    "checkin_status": "not_checked",
+    "source_date_label": "simulation day 1",
+    "source_learning_date": null,
+    "evidence_locator": "{\"day\":1,\"family_fixture\":\"a\",\"source\":\"frozen_inputs\",\"synthetic\":true}"
+  },
+  {
+    "batch_id": "synthetic-4b1-snapshot",
+    "uid": "synthetic-4b1-uid-a",
+    "day": 2,
+    "attendance_status": "attended",
+    "completion_status": "incomplete",
+    "homework_status": "not_submitted",
+    "companion_status": "not_configured",
+    "checkin_status": "not_checked",
+    "source_date_label": "simulation day 2",
+    "source_learning_date": null,
+    "evidence_locator": "{\"day\":2,\"family_fixture\":\"a\",\"source\":\"frozen_inputs\",\"synthetic\":true}"
+  },
+  {
+    "batch_id": "synthetic-4b1-snapshot",
+    "uid": "synthetic-4b1-uid-a",
+    "day": 3,
+    "attendance_status": "attended",
+    "completion_status": "unknown",
+    "homework_status": "unknown",
+    "companion_status": "not_configured",
+    "checkin_status": "not_checked",
+    "source_date_label": "simulation day 3",
+    "source_learning_date": null,
+    "evidence_locator": "{\"day\":3,\"family_fixture\":\"a\",\"source\":\"frozen_inputs\",\"synthetic\":true}"
+  }
+]

@@ -1,0 +1,9 @@
+{
+  "source_files": 189,
+  "sha_mismatches": [],
+  "batch_manifest_matches_freeze": true,
+  "closed_processes": 10,
+  "all_processes_exit_zero": true,
+  "active_scoped_acceptance_processes": [],
+  "scope": "test15 source and native06 batch only; no unrelated service or business state changed"
+}

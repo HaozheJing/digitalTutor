@@ -27,6 +27,11 @@ ops/research/
 
 # Individual student and family exports remain local
 knowledge/*.xlsx
+data/*.xlsx
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+*.egg-info/
 !knowledge/数字教辅知识库整理模板.xlsx
 
 # Editor and operating-system files

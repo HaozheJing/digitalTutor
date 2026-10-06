@@ -1,0 +1,47 @@
+{
+  "synthetic": true,
+  "imported_at": "2026-10-04T07:30:00+08:00",
+  "coverage_through": "2026-10-04T07:30:00+08:00",
+  "learning_days": [
+    {"day": 1, "attendance_status": "attended", "completion_status": "incomplete", "homework_status": "not_submitted"},
+    {"day": 2, "attendance_status": "attended", "completion_status": "completed", "homework_status": "submitted"}
+  ],
+  "course": {
+    "course_id": "simulation-L2-fox",
+    "course_version": "simulation-v1",
+    "lesson_map": [{"day": 1, "lesson_ref": "LESSON-L2-FOX-D01"}],
+    "coverage_through": "2026-10-04T07:30:00+08:00"
+  },
+  "rules": [
+    {
+      "source_id": "simulation-manual-makeup",
+      "source_kind": "makeup_rule",
+      "simulation": true,
+      "confirmed": true,
+      "enabled": true,
+      "rule_version": "manual-simulation-v1",
+      "active_from": "2026-10-04T08:00:00+08:00",
+      "active_until": "2026-10-07T20:00:00+08:00",
+      "due_at": "2026-10-06T20:00:00+08:00",
+      "batch_id": "synthetic-manual-daily-batch",
+      "day": 1,
+      "required_coverage_at": "2026-10-04T07:30:00+08:00"
+    },
+    {
+      "source_id": "simulation-manual-writing",
+      "source_kind": "periodic_text_delivery",
+      "simulation": true,
+      "confirmed": true,
+      "enabled": true,
+      "rule_version": "manual-simulation-v1",
+      "active_from": "2026-10-04T08:00:00+08:00",
+      "active_until": "2026-10-07T20:00:00+08:00",
+      "due_at": "2026-10-06T20:00:00+08:00",
+      "contract_id": "simulation-manual-written-feedback",
+      "period_start": "2026-09-28T00:00:00+08:00",
+      "period_end": "2026-10-04T07:30:00+08:00",
+      "parts": [{"part_id": "written-feedback", "media_type": "text", "purpose": "依据本周已覆盖学情整理简短文字反馈"}],
+      "required_stage": "sent"
+    }
+  ]
+}

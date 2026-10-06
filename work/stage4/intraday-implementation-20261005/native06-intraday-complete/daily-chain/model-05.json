@@ -1,0 +1,286 @@
+{
+  "index": 5,
+  "family_id": "synthetic-4b1-a",
+  "job_id": "progress:[\"synthetic-4b1-a\",\"report-learning-feedback-sent-46463a38\",1]",
+  "job_kind": "progress",
+  "recovery_only": false,
+  "decision": {
+    "run_id": "run-5bd7b22ece9b49029f3f04411533430e"
+  },
+  "native": {
+    "run_id": "run-5bd7b22ece9b49029f3f04411533430e",
+    "completed": true,
+    "interrupted": false,
+    "error": "",
+    "final_response": "进度提交已完成（outcome=applied）。内部核对结果：\n\n- 事项 event-9dbd36e81f5347fea5a79beda3e878f1：pending(v1) → done(v2)，截止 2026-10-04 18:00 前履行。\n- 完成依据：唯一必需部分 learning-feedback（文字）经微信工具实际发送，操作 operation-42fc8d1b208045cf9baa1a6ecd9c8a6a（version 3）回执 stage=sent，本次已按原操作号复读核实，未重复发送。\n- 反馈正文仅陈述批次 synthetic-4b1-snapshot 的SQL快照字段，并明确三条记录无可核对学习日期，未添加无来源结论。\n- remaining_work 已清空，next_action 已结清，无新增目标或改约；报告 revision 1 已消费。\n\n首次提交因 report_id 传入了带数组包裹的完整绑定串被拒（PROGRESS_SCOPE_VIOLATION），改用报告本体 ID report-learning-feedback-sent-46463a38 后成功，未产生其他副作用。",
+    "api_calls": 4,
+    "tools": [
+      "dt_context_read",
+      "dt_knowledge_list",
+      "dt_knowledge_read",
+      "dt_learning_query_sql",
+      "dt_learning_schema",
+      "dt_memory_read",
+      "dt_planner_commit_progress",
+      "dt_skills_list",
+      "dt_skills_read",
+      "dt_state_read",
+      "dt_wechat_get_operation",
+      "dt_wechat_read_messages"
+    ],
+    "tool_trace": [
+      {
+        "tool": "wechat.get_operation",
+        "arguments_digest": "2cfd35d6eb817882f333ad9ee129268ef50d7f2b0dd8d3e4c03376e6368dcfb9",
+        "ok": true,
+        "result_digest": "931fd78fc5eb1afd594e9f32140345510a8a0581d43e83e0572b0fafa9779f05",
+        "error": null,
+        "at": "2026-10-04T10:00:00+08:00",
+        "arguments": {
+          "operation_id": "operation-42fc8d1b208045cf9baa1a6ecd9c8a6a"
+        },
+        "result": {
+          "ok": true,
+          "result": {
+            "id": "operation-42fc8d1b208045cf9baa1a6ecd9c8a6a",
+            "version": 3,
+            "action_kind": "deliver_feedback",
+            "admitted_at": "2026-10-04T10:00:00+08:00",
+            "body": "家长您好，这是本周的学情反馈（数据截至10月4日早上7:30）。目前系统里能看到三天的课节记录：第1天已出勤，课程完成状态标为未完成，作业未提交；第2天已出勤，课程完成、作业已提交；第3天已出勤，完成和作业状态暂无记录。三天打卡均未见记录，伴学状态未配置。需要说明的是，这三条记录没有可核对的具体学习日期，所以只能按当前可见的三天来说，不能确认它们都发生在本周内。如需针对某天核对细节，随时告诉我。",
+            "business_date": "2026-10-04",
+            "channel": "mock_wechat",
+            "content_digest": "6895236066e21e1db49db0a9cb4491d3f746d1d38e64086a377cb685615afe76",
+            "dispatch_count": 1,
+            "event_id": "event-9dbd36e81f5347fea5a79beda3e878f1",
+            "lesson_refs": [],
+            "occurred_at": "2026-10-04T10:00:00+08:00",
+            "part_id": "learning-feedback",
+            "prepared_family_version": 11,
+            "purpose_key": "a86fb418f6e55f2b5cd12fb1e570fd6fb726725fa9b6c1ef80611f22887ff00b",
+            "receipts": [
+              {
+                "observed_at": "2026-10-04T10:00:00+08:00",
+                "source": "mock_transport",
+                "stage": "sent"
+              }
+            ],
+            "recipient": "mock:4b1:a",
+            "reply_to": [],
+            "request": {
+              "action_kind": "deliver_feedback",
+              "body": "家长您好，这是本周的学情反馈（数据截至10月4日早上7:30）。目前系统里能看到三天的课节记录：第1天已出勤，课程完成状态标为未完成，作业未提交；第2天已出勤，课程完成、作业已提交；第3天已出勤，完成和作业状态暂无记录。三天打卡均未见记录，伴学状态未配置。需要说明的是，这三条记录没有可核对的具体学习日期，所以只能按当前可见的三天来说，不能确认它们都发生在本周内。如需针对某天核对细节，随时告诉我。",
+              "event_id": "event-9dbd36e81f5347fea5a79beda3e878f1",
+              "expected_family_version": 10,
+              "part_id": "learning-feedback",
+              "reply_to": [],
+              "request_id": "deliver-feedback-46463a38-attempt2",
+              "step_id": "c9efef52365bdd3aeca645b8f467db28504a586346c98002c032069640c47003"
+            },
+            "requirement_revision": 1,
+            "run_id": "run-812712c5278d4cf18a1706f5676070a3",
+            "send_capability": {
+              "commitment_id": null,
+              "current_step_key": "c9efef52365bdd3aeca645b8f467db28504a586346c98002c032069640c47003",
+              "event_id": "event-9dbd36e81f5347fea5a79beda3e878f1",
+              "job_id": "step:46463a385bba19260a10761ab18f354ef95e04ae5ff5938089ee4777515d1ffa",
+              "job_kind": "step",
+              "mode": "full",
+              "no_contact": false,
+              "output_mode": "family_reply",
+              "reply_scope": {},
+              "run_id": "run-812712c5278d4cf18a1706f5676070a3",
+              "schedule_revision": null
+            },
+            "simulated": true,
+            "stage": "sent"
+          }
+        }
+      },
+      {
+        "tool": "planner.commit_progress",
+        "arguments_digest": "b563f492067ca81ecbfcaef8ba773d7a2dee20a516f0d0be2d9b5f6cd42327bf",
+        "ok": false,
+        "result_digest": "8b55715d51c13ac15629ff1977a1450fa7fd492c544a36554f4a9e2bc85b6261",
+        "error": "PROGRESS_SCOPE_VIOLATION",
+        "at": "2026-10-04T10:00:00+08:00",
+        "arguments": {
+          "request_id": "progress-commit-synthetic-4b1-a-report-learning-feedback-sent-46463a38-r1",
+          "expected_family_version": 13,
+          "report_id": "[\"synthetic-4b1-a\",\"report-learning-feedback-sent-46463a38\",1]",
+          "revision": 1,
+          "event_updates": [
+            {
+              "event_id": "event-9dbd36e81f5347fea5a79beda3e878f1",
+              "expected_version": 1,
+              "changes": {
+                "status": "done"
+              },
+              "evidence_refs": [
+                {
+                  "kind": "operation",
+                  "id": "operation-42fc8d1b208045cf9baa1a6ecd9c8a6a",
+                  "version": 3
+                }
+              ]
+            }
+          ]
+        },
+        "result": {
+          "ok": false,
+          "error": {
+            "code": "PROGRESS_SCOPE_VIOLATION",
+            "message": "报告不是此运行绑定版本"
+          }
+        }
+      },
+      {
+        "tool": "planner.commit_progress",
+        "arguments_digest": "a140bf5b83cd6097614eafdd8f67c3b6ca6a93bebe17c41bf8e7151653d36b8d",
+        "ok": true,
+        "result_digest": "b1202b0e2dd722e69fc47248a87dfaf5280a313dc884b1906e94752faba403ad",
+        "error": null,
+        "at": "2026-10-04T10:00:00+08:00",
+        "arguments": {
+          "event_updates": [
+            {
+              "changes": {
+                "status": "done"
+              },
+              "evidence_refs": [
+                {
+                  "id": "operation-42fc8d1b208045cf9baa1a6ecd9c8a6a",
+                  "kind": "operation",
+                  "version": 3
+                }
+              ],
+              "event_id": "event-9dbd36e81f5347fea5a79beda3e878f1",
+              "expected_version": 1
+            }
+          ],
+          "expected_family_version": 13,
+          "report_id": "report-learning-feedback-sent-46463a38",
+          "request_id": "progress-commit-synthetic-4b1-a-report-learning-feedback-sent-46463a38-r1",
+          "revision": 1
+        },
+        "result": {
+          "ok": true,
+          "result": {
+            "request_id": "progress-commit-synthetic-4b1-a-report-learning-feedback-sent-46463a38-r1",
+            "outcome": "applied",
+            "data": {
+              "events": [
+                {
+                  "id": "event-9dbd36e81f5347fea5a79beda3e878f1",
+                  "version": 2,
+                  "candidate_id": "candidate:419e8f1fa1dfbc043c1ed478f8fe8bd8046344005cda8a52eae6aab31f188c79",
+                  "candidate_ref": {
+                    "id": "candidate:419e8f1fa1dfbc043c1ed478f8fe8bd8046344005cda8a52eae6aab31f188c79",
+                    "version": 1
+                  },
+                  "completion": {
+                    "kind": "delivery",
+                    "lesson_refs": [],
+                    "required_part_ids": [
+                      "learning-feedback"
+                    ],
+                    "required_stage": "sent"
+                  },
+                  "completion_condition": null,
+                  "completion_contract_version": 1,
+                  "completion_history": [
+                    {
+                      "at": "2026-10-04T10:00:00+08:00",
+                      "evidence_refs": [
+                        {
+                          "id": "operation-42fc8d1b208045cf9baa1a6ecd9c8a6a",
+                          "kind": "operation",
+                          "version": 3
+                        }
+                      ],
+                      "service_assessments": [
+                        {
+                          "complete": true,
+                          "criterion": "completion.kind=delivery，required_part_ids=[learning-feedback]，required_stage=sent；步骤条件为文字部分已发送并有操作回执，仅依据已查询学情快照撰写",
+                          "event_id": "event-9dbd36e81f5347fea5a79beda3e878f1",
+                          "evidence_refs": [
+                            {
+                              "id": "operation-42fc8d1b208045cf9baa1a6ecd9c8a6a",
+                              "kind": "operation",
+                              "version": 3
+                            }
+                          ],
+                          "reason": "唯一必需 part learning-feedback 为文字类型，已实际发送并回执 stage=sent；正文仅陈述SQL快照字段并明确三条记录无可核对学习日期，未添加无来源结论"
+                        }
+                      ]
+                    }
+                  ],
+                  "creation_source_refs": [
+                    {
+                      "id": "candidate-source:80f0bf523965947a5c5fd05b2dce27d06f66ddd82084ed4e2023a865219a5baa",
+                      "kind": "candidate_source",
+                      "version": 1
+                    }
+                  ],
+                  "deadline_history": [],
+                  "delivery_parts": [
+                    {
+                      "media_type": "text",
+                      "part_id": "learning-feedback",
+                      "purpose": "据本周可用学情写一份简短文字反馈"
+                    }
+                  ],
+                  "due_at": "2026-10-04T18:00:00+08:00",
+                  "evidence_refs": [
+                    {
+                      "id": "operation-42fc8d1b208045cf9baa1a6ecd9c8a6a",
+                      "kind": "operation",
+                      "version": 3
+                    }
+                  ],
+                  "goal_key": "delivery:a1edccffb482def53ef90342a6167468eca9973e697e7a25db0bd663af4c4a21",
+                  "goal_text": "履行已确认文字反馈合同 simulation-weekly-feedback",
+                  "next_action": null,
+                  "original_deadline": "2026-10-04T18:00:00+08:00",
+                  "proposed_change": null,
+                  "remaining_work": [],
+                  "requested_time": {
+                    "meaning": "confirmed_contract_deadline",
+                    "precision": "datetime",
+                    "source_text": "2026-10-04T18:00:00+08:00",
+                    "value": "2026-10-04T18:00:00+08:00"
+                  },
+                  "requirement_revision": 1,
+                  "service_hint": null,
+                  "source_identity": {
+                    "contract_id": "simulation-weekly-feedback",
+                    "family_id": "synthetic-4b1-a",
+                    "kind": "periodic_text_delivery",
+                    "period_end": "2026-10-03T23:30:00+00:00",
+                    "period_start": "2026-09-27T16:00:00+00:00"
+                  },
+                  "status": "done",
+                  "uid": "synthetic-4b1-uid-a",
+                  "waiting": null,
+                  "update_pending": false
+                }
+              ],
+              "report_id": "report-learning-feedback-sent-46463a38",
+              "revision": 1
+            },
+            "record_versions": {
+              "family_input_version": 14
+            },
+            "error": null
+          }
+        }
+      }
+    ],
+    "profile": "/root/autodl-tmp/digitalTutor/work/stage4/4c-development-l/state/backend-stage4/intraday-l-native06-intraday/daily-chain/runs/run-5bd7b22ece9b49029f3f04411533430e/profile",
+    "cwd": "/root/autodl-tmp/digitalTutor/work/stage4/4c-development-l/state/backend-stage4/intraday-l-native06-intraday/daily-chain/runs/run-5bd7b22ece9b49029f3f04411533430e",
+    "output_route": "internal",
+    "model": "qwen3.8-flash",
+    "generation_options": {
+      "temperature": 0.0
+    }
+  }
+}

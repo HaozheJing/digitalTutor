@@ -1,0 +1,10 @@
+{
+  "planner_unavailable": false,
+  "planner_attempts": [],
+  "tool_faults": {
+    "before:skills.read": {
+      "fault": "required_guide_unavailable"
+    }
+  },
+  "send_outcomes": []
+}

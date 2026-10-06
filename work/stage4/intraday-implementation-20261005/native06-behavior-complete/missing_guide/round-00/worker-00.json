@@ -1,0 +1,269 @@
+{
+  "worker": {
+    "ran": true,
+    "kind": "service",
+    "outcome": "waiting"
+  },
+  "business_time": "2026-10-04T10:00:00+08:00",
+  "records": {
+    "synthetic-4b1-a": {
+      "job": [
+        {
+          "id": "message:msg-80b9c9b7a8904e8f8e1f3adab53ab399",
+          "version": 21,
+          "attempt": 1,
+          "claimed_at": "2026-10-05T20:47:52.869632+08:00",
+          "finished_at": "2026-10-05T20:48:48.541508+08:00",
+          "generation": 1,
+          "input_version": 5,
+          "kind": "service",
+          "lease_until": "2026-10-05T20:48:55.952846+08:00",
+          "message_id": "msg-80b9c9b7a8904e8f8e1f3adab53ab399",
+          "not_before": null,
+          "reason": "家长请求按课程讲解规范说明L2《了不起的狐狸爸爸》第1天陪读方法；实际加载explain-lesson失败（SKILL_MISSING，必读规范缺失），未取得完整方法和规范，因此未提供任何陪读讲解内容。已发送缺口说明（operation-7c054ecc9772497e8206b5d27657852d，stage=sent），原意图intent-l2-day1-peidu保留为待答。",
+          "recovery_only": false,
+          "run_id": "run-d6dbdb42bd3d4f799a26c05c8b07c822",
+          "status": "waiting",
+          "worker": "worker",
+          "yield_requested": false
+        }
+      ],
+      "message": [
+        {
+          "id": "msg-80b9c9b7a8904e8f8e1f3adab53ab399",
+          "version": 3,
+          "body": "想请你按你们的课程讲解规范，帮我理解L2《了不起的狐狸爸爸》第1天该怎样陪读。",
+          "direction": "inbound",
+          "external_id": "missing_guide-0-0",
+          "intents": [
+            {
+              "intent_id": "intent-l2-day1-peidu",
+              "partial_reply_operation_refs": [
+                "operation-7c054ecc9772497e8206b5d27657852d"
+              ],
+              "reply_operation_refs": [],
+              "requires_reply": true,
+              "service_authorization": null,
+              "service_kind": "reply",
+              "text": "请按课程讲解规范说明L2《了不起的狐狸爸爸》第1天该怎样陪读"
+            }
+          ],
+          "interpreted": true,
+          "occurred_at": "2026-10-04T10:00:00+08:00",
+          "received_at": "2026-10-04T10:00:00+08:00",
+          "source_kind": "mock_wechat"
+        },
+        {
+          "id": "msg-1d1f1550437e4d1aac8681024493f29b",
+          "version": 1,
+          "body": "您好，我是少年得到多多老师。您想按课程讲解规范了解L2《了不起的狐狸爸爸》第1天该怎样陪读，这个请求我已经记下了。不过很抱歉，我这边刚才尝试调取对应的讲解规范和必读资料时没有成功，资料目前是缺失状态；在没有拿到完整规范之前，我不能凭印象给您讲第1天的陪读方法，也不想给一个没有依据的说法。您的这个问题我会保留着，等资料恢复后按规范完整回复您。如果方便，您也可以联系已有的官方服务入口反馈这个问题。",
+          "direction": "outbound",
+          "external_id": "operation-7c054ecc9772497e8206b5d27657852d",
+          "intents": [],
+          "interpreted": true,
+          "occurred_at": "2026-10-04T10:00:00+08:00",
+          "operation_id": "operation-7c054ecc9772497e8206b5d27657852d",
+          "received_at": "2026-10-04T10:00:00+08:00",
+          "source_kind": "mock_wechat"
+        }
+      ],
+      "operation": [
+        {
+          "id": "operation-7c054ecc9772497e8206b5d27657852d",
+          "version": 3,
+          "action_kind": "reply",
+          "admitted_at": "2026-10-04T10:00:00+08:00",
+          "body": "您好，我是少年得到多多老师。您想按课程讲解规范了解L2《了不起的狐狸爸爸》第1天该怎样陪读，这个请求我已经记下了。不过很抱歉，我这边刚才尝试调取对应的讲解规范和必读资料时没有成功，资料目前是缺失状态；在没有拿到完整规范之前，我不能凭印象给您讲第1天的陪读方法，也不想给一个没有依据的说法。您的这个问题我会保留着，等资料恢复后按规范完整回复您。如果方便，您也可以联系已有的官方服务入口反馈这个问题。",
+          "business_date": "2026-10-04",
+          "channel": "mock_wechat",
+          "content_digest": "48855682458fc010cd3fb7c14e55996eac62d6be2f4b4c396d67f63c353d200f",
+          "decision_reply_refs": [],
+          "dispatch_count": 1,
+          "event_id": null,
+          "lesson_refs": [],
+          "occurred_at": "2026-10-04T10:00:00+08:00",
+          "part_id": null,
+          "prepared_family_version": 4,
+          "purpose_key": "4122cfe829f2ff2bb7359c25f0087340a183ac8a42dfa8ebfc98ae6f3fdc5169",
+          "receipts": [
+            {
+              "observed_at": "2026-10-04T10:00:00+08:00",
+              "source": "mock_transport",
+              "stage": "sent"
+            }
+          ],
+          "recipient": "mock:4b1:a",
+          "reply_to": [
+            {
+              "intent_id": "intent-l2-day1-peidu",
+              "message_id": "msg-80b9c9b7a8904e8f8e1f3adab53ab399",
+              "resolves_intent": false
+            }
+          ],
+          "request": {
+            "action_kind": "reply",
+            "body": "您好，我是少年得到多多老师。您想按课程讲解规范了解L2《了不起的狐狸爸爸》第1天该怎样陪读，这个请求我已经记下了。不过很抱歉，我这边刚才尝试调取对应的讲解规范和必读资料时没有成功，资料目前是缺失状态；在没有拿到完整规范之前，我不能凭印象给您讲第1天的陪读方法，也不想给一个没有依据的说法。您的这个问题我会保留着，等资料恢复后按规范完整回复您。如果方便，您也可以联系已有的官方服务入口反馈这个问题。",
+            "event_id": null,
+            "expected_family_version": 3,
+            "part_id": null,
+            "reply_to": [
+              {
+                "intent_id": "intent-l2-day1-peidu",
+                "message_id": "msg-80b9c9b7a8904e8f8e1f3adab53ab399",
+                "resolves_intent": false
+              }
+            ],
+            "request_id": "send-msg80b9-gap-v1",
+            "step_id": null
+          },
+          "requirement_revision": null,
+          "run_id": "run-d6dbdb42bd3d4f799a26c05c8b07c822",
+          "send_capability": {
+            "commitment_id": null,
+            "current_step_key": null,
+            "event_id": null,
+            "job_id": "message:msg-80b9c9b7a8904e8f8e1f3adab53ab399",
+            "job_kind": "service",
+            "mode": "full",
+            "no_contact": false,
+            "output_mode": "family_reply",
+            "reply_scope": {
+              "msg-80b9c9b7a8904e8f8e1f3adab53ab399": [
+                "*"
+              ]
+            },
+            "run_id": "run-d6dbdb42bd3d4f799a26c05c8b07c822",
+            "schedule_revision": null
+          },
+          "simulated": true,
+          "stage": "sent"
+        }
+      ],
+      "event": [],
+      "report": [],
+      "plan": [],
+      "run_outcome": [
+        {
+          "id": "run-d6dbdb42bd3d4f799a26c05c8b07c822",
+          "version": 1,
+          "awaiting_operation_ids": [],
+          "delegation_acknowledgements": [],
+          "draft": null,
+          "effective_control_scopes": {
+            "authority": "current_control_records",
+            "controls": [],
+            "meaning": "仅active控制生效。event_id为空的控制覆盖本家庭所有事项及以后事项中的action_kinds；有event_id仅覆盖该事项的这些动作。未列出的动作不因该控制暂停，仍须经过其他权限和发送检查。旧空白字符串范围按全家庭保守解释并标明legacy_invalid_scope，不修改原记录。自由文本不能缩小、扩大或解除控制。"
+          },
+          "job_id": "message:msg-80b9c9b7a8904e8f8e1f3adab53ab399",
+          "observed_job_operations": [
+            {
+              "id": "operation-7c054ecc9772497e8206b5d27657852d",
+              "stage": "sent",
+              "version": 3
+            }
+          ],
+          "observed_planning_inputs": [],
+          "outcome": "needs_input",
+          "payload_digest": "5232bcdbe81ae87bfd7805174bea03ded3e8b1f9409b2cb88ce64af47f9825ae",
+          "reason": "家长请求按课程讲解规范说明L2《了不起的狐狸爸爸》第1天陪读方法；实际加载explain-lesson失败（SKILL_MISSING，必读规范缺失），未取得完整方法和规范，因此未提供任何陪读讲解内容。已发送缺口说明（operation-7c054ecc9772497e8206b5d27657852d，stage=sent），原意图intent-l2-day1-peidu保留为待答。",
+          "recorded_at": "2026-10-04T10:00:00+08:00",
+          "refs": [
+            {
+              "id": "msg-80b9c9b7a8904e8f8e1f3adab53ab399",
+              "kind": "message",
+              "version": 3
+            },
+            {
+              "id": "operation-7c054ecc9772497e8206b5d27657852d",
+              "kind": "operation",
+              "version": 3
+            }
+          ],
+          "remaining_work": [
+            "重新加载explain-lesson Skill及全部必读规范",
+            "取得适用课节正文后按规范完整回复L2《了不起的狐狸爸爸》第1天陪读方法",
+            "实际发送并核实回执后结清intent-l2-day1-peidu"
+          ],
+          "request_id": "outcome-msg80b9-v2",
+          "resume_condition": "explain-lesson Skill及其必读规范（service-basics、communication、qa）可完整读取、且适用课节正文可成功取得时，可再次按原意图核实并回复。",
+          "resume_condition_authority": "model_input_recovery_note_not_control_or_send_permission",
+          "run_id": "run-d6dbdb42bd3d4f799a26c05c8b07c822",
+          "settled_delegated_request_refs": []
+        }
+      ],
+      "control": [],
+      "pending": [],
+      "memory": []
+    }
+  },
+  "independent_channel": [
+    {
+      "operation_id": "operation-7c054ecc9772497e8206b5d27657852d",
+      "payload": {
+        "action_kind": "reply",
+        "admitted_at": "2026-10-04T10:00:00+08:00",
+        "body": "您好，我是少年得到多多老师。您想按课程讲解规范了解L2《了不起的狐狸爸爸》第1天该怎样陪读，这个请求我已经记下了。不过很抱歉，我这边刚才尝试调取对应的讲解规范和必读资料时没有成功，资料目前是缺失状态；在没有拿到完整规范之前，我不能凭印象给您讲第1天的陪读方法，也不想给一个没有依据的说法。您的这个问题我会保留着，等资料恢复后按规范完整回复您。如果方便，您也可以联系已有的官方服务入口反馈这个问题。",
+        "business_date": "2026-10-04",
+        "channel": "mock_wechat",
+        "content_digest": "48855682458fc010cd3fb7c14e55996eac62d6be2f4b4c396d67f63c353d200f",
+        "decision_reply_refs": [],
+        "dispatch_count": 1,
+        "event_id": null,
+        "id": "operation-7c054ecc9772497e8206b5d27657852d",
+        "lesson_refs": [],
+        "occurred_at": "2026-10-04T10:00:00+08:00",
+        "part_id": null,
+        "prepared_family_version": 4,
+        "purpose_key": "4122cfe829f2ff2bb7359c25f0087340a183ac8a42dfa8ebfc98ae6f3fdc5169",
+        "receipts": [],
+        "recipient": "mock:4b1:a",
+        "reply_to": [
+          {
+            "intent_id": "intent-l2-day1-peidu",
+            "message_id": "msg-80b9c9b7a8904e8f8e1f3adab53ab399",
+            "resolves_intent": false
+          }
+        ],
+        "request": {
+          "action_kind": "reply",
+          "body": "您好，我是少年得到多多老师。您想按课程讲解规范了解L2《了不起的狐狸爸爸》第1天该怎样陪读，这个请求我已经记下了。不过很抱歉，我这边刚才尝试调取对应的讲解规范和必读资料时没有成功，资料目前是缺失状态；在没有拿到完整规范之前，我不能凭印象给您讲第1天的陪读方法，也不想给一个没有依据的说法。您的这个问题我会保留着，等资料恢复后按规范完整回复您。如果方便，您也可以联系已有的官方服务入口反馈这个问题。",
+          "event_id": null,
+          "expected_family_version": 3,
+          "part_id": null,
+          "reply_to": [
+            {
+              "intent_id": "intent-l2-day1-peidu",
+              "message_id": "msg-80b9c9b7a8904e8f8e1f3adab53ab399",
+              "resolves_intent": false
+            }
+          ],
+          "request_id": "send-msg80b9-gap-v1",
+          "step_id": null
+        },
+        "requirement_revision": null,
+        "run_id": "run-d6dbdb42bd3d4f799a26c05c8b07c822",
+        "send_capability": {
+          "commitment_id": null,
+          "current_step_key": null,
+          "event_id": null,
+          "job_id": "message:msg-80b9c9b7a8904e8f8e1f3adab53ab399",
+          "job_kind": "service",
+          "mode": "full",
+          "no_contact": false,
+          "output_mode": "family_reply",
+          "reply_scope": {
+            "msg-80b9c9b7a8904e8f8e1f3adab53ab399": [
+              "*"
+            ]
+          },
+          "run_id": "run-d6dbdb42bd3d4f799a26c05c8b07c822",
+          "schedule_revision": null
+        },
+        "simulated": true,
+        "stage": "dispatching",
+        "version": 2
+      },
+      "stage": "sent"
+    }
+  ]
+}

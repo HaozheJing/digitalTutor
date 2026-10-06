@@ -1,0 +1,23 @@
+{
+  "families": [
+    "a"
+  ],
+  "business_time": "2026-10-04T07:30:00+08:00",
+  "learning_source": {
+    "a": [
+      [
+        "incomplete",
+        "not_submitted"
+      ],
+      [
+        "completed",
+        "submitted"
+      ],
+      [
+        "unknown",
+        "unknown"
+      ]
+    ]
+  },
+  "scope": "all families, messages, works and learning rows synthetic; approved R material bytes unchanged"
+}

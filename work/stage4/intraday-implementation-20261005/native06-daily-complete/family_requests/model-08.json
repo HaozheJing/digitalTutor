@@ -1,0 +1,142 @@
+{
+  "index": 8,
+  "family_id": "synthetic-4b1-a",
+  "job_id": "daily:220e47935d87f6bdda696ed71bdb4d05d2ca873337dc5139a479cbe5a9c49857",
+  "job_kind": "daily",
+  "recovery_only": false,
+  "decision": {
+    "run_id": "run-6e18892dc74447bcb309812da39feb6b"
+  },
+  "native": {
+    "run_id": "run-6e18892dc74447bcb309812da39feb6b",
+    "completed": true,
+    "interrupted": false,
+    "error": "",
+    "final_response": "今日基线已提交成功（plan-906e4faf9f2d4a67bb4961b4542e2754，version 3，baseline_committed=true）。\n\n- 恢复既有责任 2 项，均为已承接事项，未新建、未重复登记：\n  1. event-5ad35642bcab42cfaffdc67f10f590b7 — 补读 LESSON-L2-FOX-D01，期限 2026-10-05 16:00 前保留；今日 09:00 已授权 remind_makeup 步骤待执行（提醒不等于孩子完成补读）。\n  2. event-369924db35a74295b23b429811264d09 — 本周阅读情况文字总结，deliver_feedback 已安排在 2026-10-05 09:00 后执行、10-05 16:00 前发送，内容仅基于届时已核实的本周记录。\n- 两个本次 ready 候选均以 linked 处置覆盖 candidate_decision_scope 全集；pending_inputs 为空，无需其他决定。\n- 本轮为规划运行，不向家庭发送消息；msg-bae278895c0b4e069b3c94e39034a9b0 的重复请求已由既有出站确认覆盖，原期限未变。",
+    "api_calls": 2,
+    "tools": [
+      "dt_context_read",
+      "dt_knowledge_list",
+      "dt_knowledge_read",
+      "dt_learning_query_sql",
+      "dt_learning_schema",
+      "dt_memory_read",
+      "dt_planner_commit_daily",
+      "dt_skills_list",
+      "dt_skills_read",
+      "dt_state_read",
+      "dt_wechat_get_operation",
+      "dt_wechat_read_messages"
+    ],
+    "tool_trace": [
+      {
+        "tool": "planner.commit_daily",
+        "arguments_digest": "9f68c78abad85b298987a02e8e4521d423f2c1f8f7bd89c6f66549ec51e2ae5e",
+        "ok": true,
+        "result_digest": "58dd5e85a1bf8c8c625e3859730acd2183db5225485826602fcb80a3cd082e11",
+        "error": null,
+        "at": "2026-10-04T08:00:00+08:00",
+        "arguments": {
+          "request_id": "req-daily-run-6e18892d-baseline-2026-10-04",
+          "business_date": "2026-10-04",
+          "expected_family_version": 23,
+          "new_events": [],
+          "event_updates": [],
+          "plan_refs": [
+            "event-5ad35642bcab42cfaffdc67f10f590b7",
+            "event-369924db35a74295b23b429811264d09"
+          ],
+          "pending_decisions": [],
+          "candidate_decisions": [
+            {
+              "candidate_id": "candidate:f717d32f8d4baa78934f4543bcd8356e19de49a3f999725dbf5871ea54055386",
+              "expected_version": 2,
+              "disposition": "linked",
+              "event_ref": "event-5ad35642bcab42cfaffdc67f10f590b7",
+              "reason": "候选对应已正式承接的补读事项 event-5ad35642bcab42cfaffdc67f10f590b7（原期限2026-10-05 16:00前保留，今日09:00有已授权remind_makeup步骤），今日基线不重复建项，仅恢复该既有责任。"
+            },
+            {
+              "candidate_id": "candidate:dacc9cf9e159974b35f506512ee3eeefa24a863111e1334e60bde989e2214558",
+              "expected_version": 2,
+              "disposition": "linked",
+              "event_ref": "event-369924db35a74295b23b429811264d09",
+              "reason": "候选对应已接纳的交付事项 event-369924db35a74295b23b429811264d09（deliver_feedback已安排在2026-10-05 09:00执行、10-05 16:00前发送），今日基线保留该既有责任，不新建重复事项。"
+            }
+          ]
+        },
+        "result": {
+          "ok": true,
+          "result": {
+            "request_id": "req-daily-run-6e18892d-baseline-2026-10-04",
+            "outcome": "applied",
+            "data": {
+              "plan": {
+                "id": "plan-906e4faf9f2d4a67bb4961b4542e2754",
+                "version": 3,
+                "baseline_committed": true,
+                "business_date": "2026-10-04",
+                "created_at": "2026-10-04T08:00:00+08:00",
+                "items": [
+                  {
+                    "authority": "baseline",
+                    "event_id": "event-5ad35642bcab42cfaffdc67f10f590b7",
+                    "rank": 1
+                  },
+                  {
+                    "authority": "baseline",
+                    "event_id": "event-369924db35a74295b23b429811264d09",
+                    "rank": 2
+                  }
+                ],
+                "revision": 3,
+                "revisions": [
+                  {
+                    "at": "2026-10-04T08:00:00+08:00",
+                    "event_ids": [
+                      "event-5ad35642bcab42cfaffdc67f10f590b7"
+                    ],
+                    "reason": "admission",
+                    "request_id": "req-admission-run-9d24a315-makeup-d1",
+                    "revision": 1
+                  },
+                  {
+                    "at": "2026-10-04T08:00:00+08:00",
+                    "event_ids": [
+                      "event-369924db35a74295b23b429811264d09"
+                    ],
+                    "reason": "admission",
+                    "request_id": "req-admission-run-47f81ed5-weekly-summary",
+                    "revision": 2
+                  },
+                  {
+                    "at": "2026-10-04T08:00:00+08:00",
+                    "event_ids": [
+                      "event-5ad35642bcab42cfaffdc67f10f590b7",
+                      "event-369924db35a74295b23b429811264d09"
+                    ],
+                    "reason": "baseline",
+                    "request_id": "req-daily-run-6e18892d-baseline-2026-10-04",
+                    "revision": 3
+                  }
+                ]
+              },
+              "event_ids": {},
+              "accepted_commitment_ids": []
+            },
+            "record_versions": {
+              "family_input_version": 24
+            },
+            "error": null
+          }
+        }
+      }
+    ],
+    "profile": "/root/autodl-tmp/digitalTutor/work/stage4/4c-development-l/state/backend-stage4/intraday-l-native06-stage4_daily/family_requests/runs/run-6e18892dc74447bcb309812da39feb6b/profile",
+    "cwd": "/root/autodl-tmp/digitalTutor/work/stage4/4c-development-l/state/backend-stage4/intraday-l-native06-stage4_daily/family_requests/runs/run-6e18892dc74447bcb309812da39feb6b",
+    "output_route": "internal",
+    "model": "qwen3.8-flash",
+    "generation_options": {
+      "temperature": 0.0
+    }
+  }
+}

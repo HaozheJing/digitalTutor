@@ -1,0 +1,25 @@
+{
+  "chain": "R",
+  "skills": [
+    "explain-lesson",
+    "plan-proactive-service"
+  ],
+  "files": {
+    "agent/skills/explain-lesson/SKILL.md": "570277f0e056fe8561d8e8263b8a9fe3a869457b62ae7c5722f8d54c3f21664c",
+    "agent/guides/service-basics.md": "4c52333f523144e9fa7958faac393ee35974e153784d4a91b4b0520a86b0d581",
+    "agent/guides/communication.md": "fea79c79e788fd313fdf636daab806bff2e730d3e67b3b61bd8f870868b5c59d",
+    "agent/guides/qa.md": "43ebdbac9f936860a457c59f28b14cb92c48ad832fce321beade72dfd653ea67",
+    "agent/skills/plan-proactive-service/SKILL.md": "55ad0988b98fd1bc664b8fa34da303fcbb2d8ab43647beb0bdf8f82dcb487d63"
+  },
+  "manifest_path": "build/openviking/courses/source-c764d8b325cc-nosplit-v2/access-map.json",
+  "manifest_sha256": "26a2aec0e7ae30719e0cdb2d8f8dbba28ad7f5948879a9eda07cab9ffc1c56db",
+  "knowledge_binding": {
+    "revision": "source-c764d8b325cc-nosplit-v2",
+    "allowed_unit_ids": [
+      "LESSON-L2-FOX-D01"
+    ],
+    "simulation": true
+  },
+  "knowledge_sha256": "5bae2236aa83e14bb33c7046dd85708a9e01149bbb09cfef2c72d73876716518",
+  "destination": "maas.qianwenaiapi.com"
+}

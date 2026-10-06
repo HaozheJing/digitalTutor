@@ -1,0 +1,1330 @@
+{
+  "index": 5,
+  "family_id": "synthetic-4b1-a",
+  "job_id": "message:msg-2196a1c9dfc5446c908f4a87f424de3d",
+  "job_kind": "service",
+  "recovery_only": false,
+  "decision": {
+    "wait": true,
+    "no_contact": false,
+    "outcome_id": "run-deff36abb1fd4640a651f85a949cf678",
+    "reason": "已本完整核对全部6条消息原文后发送一条进展说明（operation-206ed60b7e144cb1a3819ae50cc5b68c，stage=sent）：第1天补读请求已被实际接纳并创建事项 event-5ad35642bcab42cfaffdc67f10f590b7（pending:59e576f5... disposition=created，期限2026-10-05T16:00:00+08:00），据实告知家长已登记为事项、补读尚未进行，intent-makeup-d1已完整回答并结清；本周阅读总结的pending:cbf28ba4...仍await_decision，尚无接纳结果可确认，intent-weekly-summary保持未答（resolves_intent=false），本条记录为等待Planner决定。",
+    "run_id": "run-deff36abb1fd4640a651f85a949cf678"
+  },
+  "native": {
+    "run_id": "run-deff36abb1fd4640a651f85a949cf678",
+    "completed": true,
+    "interrupted": false,
+    "error": "",
+    "final_response": "本轮处理完成：\n\n- 已完整核对全部6条消息原文（含两条待答来信 msg-2196a1c9…/intent-makeup-d1 与 msg-c2e5b760…/intent-weekly-summary）。\n- 发出进展说明 operation-206ed60b7e144cb1a3819ae50cc5b68c（stage=sent）：告知第1天（LESSON-L2-FOX-D01）补读请求已实际接纳并创建事项 event-5ad35642bcab42cfaffdc67f10f590b7（期限保留 2026-10-05T16:00:00+08:00，补读尚未进行），intent-makeup-d1 已结清；本周阅读总结 pending:cbf28ba4… 仍 await_decision，如实说明\"仍在等待安排\"，intent-weekly-summary 保持未答。\n- 内部结果已保存（run-deff36…，outcome=waiting）：剩余欠项为 Planner 对总结 pending 的决定后向家长确认实质答复，以及第1天事项的实际补做核对；恢复条件为 pending:cbf28ba4… 决定变化。",
+    "api_calls": 8,
+    "tools": [
+      "dt_context_read",
+      "dt_control_apply",
+      "dt_knowledge_list",
+      "dt_knowledge_read",
+      "dt_learning_query_sql",
+      "dt_learning_schema",
+      "dt_memory_delete",
+      "dt_memory_read",
+      "dt_memory_save",
+      "dt_message_interpret",
+      "dt_pending_propose_makeup",
+      "dt_pending_propose_service",
+      "dt_planning_record_pending",
+      "dt_progress_submit",
+      "dt_service_record_outcome",
+      "dt_skills_list",
+      "dt_skills_read",
+      "dt_state_read",
+      "dt_wechat_get_operation",
+      "dt_wechat_read_messages",
+      "dt_wechat_send_message"
+    ],
+    "tool_trace": [
+      {
+        "tool": "wechat.read_messages",
+        "arguments_digest": "05b65a384030f920b43447baeea66374e946019ade6e91d453a44435055b3cdc",
+        "ok": true,
+        "result_digest": "4621c9c89ebff659e09ca5eb19a6a0f97918870f98da712fdfee90d006bddd90",
+        "error": null,
+        "at": "2026-10-04T08:00:00+08:00",
+        "arguments": {
+          "mode": "since",
+          "after_seq": 0,
+          "limit": 1000
+        },
+        "result": {
+          "ok": true,
+          "result": {
+            "mode": "since",
+            "messages": [
+              {
+                "seq": 1,
+                "id": "msg-2196a1c9dfc5446c908f4a87f424de3d",
+                "version": 4,
+                "body": "请安排明天下午四点前补完第1天。",
+                "direction": "inbound",
+                "external_id": "family-request-0",
+                "intents": [
+                  {
+                    "intent_id": "intent-makeup-d1",
+                    "partial_reply_operation_refs": [
+                      "operation-bf7ca864027547c28795e6b80fa34483",
+                      "operation-01b852806aa643b09bd5392a10d5e01b"
+                    ],
+                    "reply_operation_refs": [],
+                    "requires_reply": true,
+                    "service_authorization": null,
+                    "service_kind": "reply",
+                    "text": "家长明确要求安排补完第1天，期望在此前一天（2026-10-05）下午四点前完成。"
+                  }
+                ],
+                "interpreted": true,
+                "occurred_at": "2026-10-04T08:00:00+08:00",
+                "received_at": "2026-10-04T08:00:00+08:00",
+                "source_kind": "mock_wechat"
+              },
+              {
+                "seq": 2,
+                "id": "msg-1e21cf203bbd41339f33cceecb4b8751",
+                "version": 1,
+                "body": "收到，第1天（课程 LESSON-L2-FOX-D01）的补做请求我已经按您说的\"明天下午四点前\"登记好了。目前这条请求还在等待安排，还没有确定具体的补做时间，安排好后我这边会有记录。如果这个期限对您很重要，也可以告诉我您明天哪个时间段方便，我把它一并记进这条请求里。",
+                "direction": "outbound",
+                "external_id": "operation-bf7ca864027547c28795e6b80fa34483",
+                "intents": [],
+                "interpreted": true,
+                "occurred_at": "2026-10-04T08:00:00+08:00",
+                "operation_id": "operation-bf7ca864027547c28795e6b80fa34483",
+                "received_at": "2026-10-04T08:00:00+08:00",
+                "source_kind": "mock_wechat"
+              },
+              {
+                "seq": 3,
+                "id": "msg-bae278895c0b4e069b3c94e39034a9b0",
+                "version": 3,
+                "body": "请帮我明天补读第1天。",
+                "direction": "inbound",
+                "external_id": "family-request-1",
+                "intents": [
+                  {
+                    "intent_id": "intent-makeup-d1-again",
+                    "reply_operation_refs": [
+                      "operation-01b852806aa643b09bd5392a10d5e01b"
+                    ],
+                    "requires_reply": true,
+                    "service_authorization": null,
+                    "service_kind": "reply",
+                    "text": "家长再次请求明天补读第1天，与已登记的补做请求（msg-2196a1c9dfc5446c908f4a87f424de3d / intent-makeup-d1，pending:59e576f5c8e4bbfe475f50fecd676cc3af452c119bdcf12ec8da7a94f8c7025d）为同一事项。"
+                  }
+                ],
+                "interpreted": true,
+                "occurred_at": "2026-10-04T08:00:00+08:00",
+                "received_at": "2026-10-04T08:00:00+08:00",
+                "source_kind": "mock_wechat"
+              },
+              {
+                "seq": 4,
+                "id": "msg-bc7b788b6433499dbfc6438dd0a66eaa",
+                "version": 1,
+                "body": "收到～这条和刚才那条是同一个请求。第1天（课程 LESSON-L2-FOX-D01）\"明天（2026-10-05）下午四点前补读\"的需求已经登记好了，目前还在等待安排，还没有确定具体的补做时间；有安排结果后我会跟您确认。您不用重复发，原期限我都保留着。",
+                "direction": "outbound",
+                "external_id": "operation-01b852806aa643b09bd5392a10d5e01b",
+                "intents": [],
+                "interpreted": true,
+                "occurred_at": "2026-10-04T08:00:00+08:00",
+                "operation_id": "operation-01b852806aa643b09bd5392a10d5e01b",
+                "received_at": "2026-10-04T08:00:00+08:00",
+                "source_kind": "mock_wechat"
+              },
+              {
+                "seq": 5,
+                "id": "msg-c2e5b7608eae43a6b961c6c7f385c090",
+                "version": 3,
+                "body": "我还想要一份这周阅读情况的文字总结，10月5日下午四点前需要，先记下需求。",
+                "direction": "inbound",
+                "external_id": "family-request-2",
+                "intents": [
+                  {
+                    "intent_id": "intent-weekly-summary",
+                    "partial_reply_operation_refs": [
+                      "operation-52706dccbb414752993db429f43dae4b"
+                    ],
+                    "reply_operation_refs": [],
+                    "requires_reply": true,
+                    "service_authorization": "我还想要一份这周阅读情况的文字总结，10月5日下午四点前需要，先记下需求。",
+                    "service_kind": "future_delivery",
+                    "text": "家长要求以后交付一份本周阅读情况的文字总结，期望时间为10月5日下午四点前，并明确要求先记下该需求。"
+                  }
+                ],
+                "interpreted": true,
+                "occurred_at": "2026-10-04T08:00:00+08:00",
+                "received_at": "2026-10-04T08:00:00+08:00",
+                "source_kind": "mock_wechat"
+              },
+              {
+                "seq": 6,
+                "id": "msg-d94585c24ca14cbb8e1597995d60d515",
+                "version": 1,
+                "body": "收到～这份\"本周阅读情况文字总结\"的需求我已经记下了，您说的\"10月5日下午四点前需要\"也原样保留在这条请求里。目前它还在等待安排，还没有确定的结果；有安排后我会跟您确认。另外，第1天（LESSON-L2-FOX-D01）\"明天下午四点前补读\"的请求也仍在等待安排中，两条我都记着，您不用重复发。",
+                "direction": "outbound",
+                "external_id": "operation-52706dccbb414752993db429f43dae4b",
+                "intents": [],
+                "interpreted": true,
+                "occurred_at": "2026-10-04T08:00:00+08:00",
+                "operation_id": "operation-52706dccbb414752993db429f43dae4b",
+                "received_at": "2026-10-04T08:00:00+08:00",
+                "source_kind": "mock_wechat"
+              }
+            ],
+            "returned_count": 6,
+            "matching_count": 6,
+            "has_more": false,
+            "has_older": false,
+            "next_cursor": 6,
+            "snapshot_watermark": 6,
+            "read_marks_answered": false,
+            "channel": "mock_wechat"
+          }
+        }
+      },
+      {
+        "tool": "state.read",
+        "arguments_digest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "ok": true,
+        "result_digest": "527a465a34abcce5436acab09e1a2042a3f1445b012ba2ecda10ca711d7e821d",
+        "error": null,
+        "at": "2026-10-04T08:00:00+08:00",
+        "arguments": {},
+        "result": {
+          "ok": true,
+          "result": {
+            "family_version": 18,
+            "events": [],
+            "controls": [],
+            "plans": [],
+            "reports": [],
+            "pending_inputs": [
+              {
+                "id": "pending:59e576f5c8e4bbfe475f50fecd676cc3af452c119bdcf12ec8da7a94f8c7025d",
+                "version": 2,
+                "source_message_id": "msg-2196a1c9dfc5446c908f4a87f424de3d",
+                "source_intent_id": "intent-makeup-d1",
+                "request": "请安排明天下午四点前补完第1天。",
+                "completion_condition": null,
+                "original_deadline": "明天下午四点前",
+                "disposition": "created",
+                "event_id": "event-5ad35642bcab42cfaffdc67f10f590b7",
+                "planning_requested": true,
+                "decision_revision": 1,
+                "await_decision": false,
+                "decision_state": "created",
+                "decision_request_id": "req-admission-run-9d24a315-makeup-d1"
+              },
+              {
+                "id": "pending:cbf28ba4b3d056f6145b96d49bc018776683a7f0718745ae1ad8f4b44242603b",
+                "version": 1,
+                "source_message_id": "msg-c2e5b7608eae43a6b961c6c7f385c090",
+                "source_intent_id": "intent-weekly-summary",
+                "request": "家长希望收到一份本周阅读情况的文字总结，并要求先记下该需求。",
+                "completion_condition": null,
+                "original_deadline": "10月5日下午四点前需要",
+                "disposition": "pending",
+                "event_id": null,
+                "planning_requested": true,
+                "decision_revision": 1,
+                "await_decision": true
+              }
+            ],
+            "messages": [
+              {
+                "id": "msg-2196a1c9dfc5446c908f4a87f424de3d",
+                "version": 4,
+                "body": "请安排明天下午四点前补完第1天。",
+                "direction": "inbound",
+                "external_id": "family-request-0",
+                "intents": [
+                  {
+                    "intent_id": "intent-makeup-d1",
+                    "partial_reply_operation_refs": [
+                      "operation-bf7ca864027547c28795e6b80fa34483",
+                      "operation-01b852806aa643b09bd5392a10d5e01b"
+                    ],
+                    "reply_operation_refs": [],
+                    "requires_reply": true,
+                    "service_authorization": null,
+                    "service_kind": "reply",
+                    "text": "家长明确要求安排补完第1天，期望在此前一天（2026-10-05）下午四点前完成。"
+                  }
+                ],
+                "interpreted": true,
+                "occurred_at": "2026-10-04T08:00:00+08:00",
+                "received_at": "2026-10-04T08:00:00+08:00",
+                "source_kind": "mock_wechat"
+              },
+              {
+                "id": "msg-c2e5b7608eae43a6b961c6c7f385c090",
+                "version": 3,
+                "body": "我还想要一份这周阅读情况的文字总结，10月5日下午四点前需要，先记下需求。",
+                "direction": "inbound",
+                "external_id": "family-request-2",
+                "intents": [
+                  {
+                    "intent_id": "intent-weekly-summary",
+                    "partial_reply_operation_refs": [
+                      "operation-52706dccbb414752993db429f43dae4b"
+                    ],
+                    "reply_operation_refs": [],
+                    "requires_reply": true,
+                    "service_authorization": "我还想要一份这周阅读情况的文字总结，10月5日下午四点前需要，先记下需求。",
+                    "service_kind": "future_delivery",
+                    "text": "家长要求以后交付一份本周阅读情况的文字总结，期望时间为10月5日下午四点前，并明确要求先记下该需求。"
+                  }
+                ],
+                "interpreted": true,
+                "occurred_at": "2026-10-04T08:00:00+08:00",
+                "received_at": "2026-10-04T08:00:00+08:00",
+                "source_kind": "mock_wechat"
+              }
+            ],
+            "operations": [
+              {
+                "id": "operation-bf7ca864027547c28795e6b80fa34483",
+                "version": 3,
+                "action_kind": "reply",
+                "admitted_at": "2026-10-04T08:00:00+08:00",
+                "body": "收到，第1天（课程 LESSON-L2-FOX-D01）的补做请求我已经按您说的\"明天下午四点前\"登记好了。目前这条请求还在等待安排，还没有确定具体的补做时间，安排好后我这边会有记录。如果这个期限对您很重要，也可以告诉我您明天哪个时间段方便，我把它一并记进这条请求里。",
+                "business_date": "2026-10-04",
+                "channel": "mock_wechat",
+                "content_digest": "ae76eb1b2f8568852b9f8e49e005275576c23e400d168115fe63788ab39c3434",
+                "decision_reply_refs": [],
+                "dispatch_count": 1,
+                "event_id": "",
+                "lesson_refs": [],
+                "occurred_at": "2026-10-04T08:00:00+08:00",
+                "part_id": null,
+                "prepared_family_version": 6,
+                "purpose_key": "cbe583881c542d10e5dc5ff13dea1376b58cda1bd5207cfc8ea1895ce1e2116e",
+                "receipts": [
+                  {
+                    "observed_at": "2026-10-04T08:00:00+08:00",
+                    "source": "mock_transport",
+                    "stage": "sent"
+                  }
+                ],
+                "recipient": "mock:4b1:a",
+                "reply_to": [
+                  {
+                    "intent_id": "intent-makeup-d1",
+                    "message_id": "msg-2196a1c9dfc5446c908f4a87f424de3d",
+                    "resolves_intent": false
+                  }
+                ],
+                "request": {
+                  "action_kind": "reply",
+                  "body": "收到，第1天（课程 LESSON-L2-FOX-D01）的补做请求我已经按您说的\"明天下午四点前\"登记好了。目前这条请求还在等待安排，还没有确定具体的补做时间，安排好后我这边会有记录。如果这个期限对您很重要，也可以告诉我您明天哪个时间段方便，我把它一并记进这条请求里。",
+                  "event_id": "",
+                  "expected_family_version": 5,
+                  "part_id": null,
+                  "reply_to": [
+                    {
+                      "intent_id": "intent-makeup-d1",
+                      "message_id": "msg-2196a1c9dfc5446c908f4a87f424de3d",
+                      "resolves_intent": false
+                    }
+                  ],
+                  "request_id": "req-send-051d",
+                  "step_id": null
+                },
+                "requirement_revision": null,
+                "run_id": "run-02cc1454fc1f4b038449d8371e7e7ba0",
+                "send_capability": {
+                  "commitment_id": null,
+                  "current_step_key": null,
+                  "event_id": null,
+                  "job_id": "message:msg-2196a1c9dfc5446c908f4a87f424de3d",
+                  "job_kind": "service",
+                  "mode": "passive",
+                  "no_contact": false,
+                  "output_mode": "family_reply",
+                  "reply_scope": {
+                    "msg-2196a1c9dfc5446c908f4a87f424de3d": [
+                      "*"
+                    ]
+                  },
+                  "run_id": "run-02cc1454fc1f4b038449d8371e7e7ba0",
+                  "schedule_revision": null
+                },
+                "simulated": true,
+                "stage": "sent"
+              },
+              {
+                "id": "operation-01b852806aa643b09bd5392a10d5e01b",
+                "version": 3,
+                "action_kind": "reply",
+                "admitted_at": "2026-10-04T08:00:00+08:00",
+                "body": "收到～这条和刚才那条是同一个请求。第1天（课程 LESSON-L2-FOX-D01）\"明天（2026-10-05）下午四点前补读\"的需求已经登记好了，目前还在等待安排，还没有确定具体的补做时间；有安排结果后我会跟您确认。您不用重复发，原期限我都保留着。",
+                "business_date": "2026-10-04",
+                "channel": "mock_wechat",
+                "content_digest": "d50281fe5dd1923c43e5511625c272aac6198b9bb01ede87ff6139a02c284b83",
+                "decision_reply_refs": [],
+                "dispatch_count": 1,
+                "event_id": null,
+                "lesson_refs": [],
+                "occurred_at": "2026-10-04T08:00:00+08:00",
+                "part_id": null,
+                "prepared_family_version": 10,
+                "purpose_key": "2fb0a7bb59211952f0618bc2cb1082fd72165289ba8df2916efbd5c593baed61",
+                "receipts": [
+                  {
+                    "observed_at": "2026-10-04T08:00:00+08:00",
+                    "source": "mock_transport",
+                    "stage": "sent"
+                  }
+                ],
+                "recipient": "mock:4b1:a",
+                "reply_to": [
+                  {
+                    "intent_id": "intent-makeup-d1-again",
+                    "message_id": "msg-bae278895c0b4e069b3c94e39034a9b0"
+                  },
+                  {
+                    "intent_id": "intent-makeup-d1",
+                    "message_id": "msg-2196a1c9dfc5446c908f4a87f424de3d",
+                    "resolves_intent": false
+                  }
+                ],
+                "request": {
+                  "action_kind": "reply",
+                  "body": "收到～这条和刚才那条是同一个请求。第1天（课程 LESSON-L2-FOX-D01）\"明天（2026-10-05）下午四点前补读\"的需求已经登记好了，目前还在等待安排，还没有确定具体的补做时间；有安排结果后我会跟您确认。您不用重复发，原期限我都保留着。",
+                  "event_id": null,
+                  "expected_family_version": 9,
+                  "part_id": null,
+                  "reply_to": [
+                    {
+                      "intent_id": "intent-makeup-d1-again",
+                      "message_id": "msg-bae278895c0b4e069b3c94e39034a9b0"
+                    },
+                    {
+                      "intent_id": "intent-makeup-d1",
+                      "message_id": "msg-2196a1c9dfc5446c908f4a87f424de3d",
+                      "resolves_intent": false
+                    }
+                  ],
+                  "request_id": "req-send-bae2-01",
+                  "step_id": null
+                },
+                "requirement_revision": null,
+                "run_id": "run-740e82f79ef24802b70032a1a7dee3f1",
+                "send_capability": {
+                  "commitment_id": null,
+                  "current_step_key": null,
+                  "event_id": null,
+                  "job_id": "message:msg-bae278895c0b4e069b3c94e39034a9b0",
+                  "job_kind": "service",
+                  "mode": "passive",
+                  "no_contact": false,
+                  "output_mode": "family_reply",
+                  "reply_scope": {
+                    "msg-2196a1c9dfc5446c908f4a87f424de3d": [
+                      "intent-makeup-d1"
+                    ],
+                    "msg-bae278895c0b4e069b3c94e39034a9b0": [
+                      "*"
+                    ]
+                  },
+                  "run_id": "run-740e82f79ef24802b70032a1a7dee3f1",
+                  "schedule_revision": null
+                },
+                "simulated": true,
+                "stage": "sent"
+              },
+              {
+                "id": "operation-52706dccbb414752993db429f43dae4b",
+                "version": 3,
+                "action_kind": "reply",
+                "admitted_at": "2026-10-04T08:00:00+08:00",
+                "body": "收到～这份\"本周阅读情况文字总结\"的需求我已经记下了，您说的\"10月5日下午四点前需要\"也原样保留在这条请求里。目前它还在等待安排，还没有确定的结果；有安排后我会跟您确认。另外，第1天（LESSON-L2-FOX-D01）\"明天下午四点前补读\"的请求也仍在等待安排中，两条我都记着，您不用重复发。",
+                "business_date": "2026-10-04",
+                "channel": "mock_wechat",
+                "content_digest": "d804db9a0b2f62c7338c05e56fc00eb866d5639447a9280379961a1a3c5b586e",
+                "decision_reply_refs": [],
+                "dispatch_count": 1,
+                "event_id": null,
+                "lesson_refs": [],
+                "occurred_at": "2026-10-04T08:00:00+08:00",
+                "part_id": null,
+                "prepared_family_version": 15,
+                "purpose_key": "38104b4e1bf7301ad1299c01283f51fa38b54317fad3417faa9b9d15b51f6447",
+                "receipts": [
+                  {
+                    "observed_at": "2026-10-04T08:00:00+08:00",
+                    "source": "mock_transport",
+                    "stage": "sent"
+                  }
+                ],
+                "recipient": "mock:4b1:a",
+                "reply_to": [
+                  {
+                    "intent_id": "intent-weekly-summary",
+                    "message_id": "msg-c2e5b7608eae43a6b961c6c7f385c090",
+                    "resolves_intent": false
+                  }
+                ],
+                "request": {
+                  "action_kind": "reply",
+                  "body": "收到～这份\"本周阅读情况文字总结\"的需求我已经记下了，您说的\"10月5日下午四点前需要\"也原样保留在这条请求里。目前它还在等待安排，还没有确定的结果；有安排后我会跟您确认。另外，第1天（LESSON-L2-FOX-D01）\"明天下午四点前补读\"的请求也仍在等待安排中，两条我都记着，您不用重复发。",
+                  "event_id": null,
+                  "expected_family_version": 14,
+                  "part_id": null,
+                  "reply_to": [
+                    {
+                      "intent_id": "intent-weekly-summary",
+                      "message_id": "msg-c2e5b7608eae43a6b961c6c7f385c090",
+                      "resolves_intent": false
+                    }
+                  ],
+                  "request_id": "req-send-weekly-summary-ack",
+                  "step_id": null
+                },
+                "requirement_revision": null,
+                "run_id": "run-233d596f2695482e87c3dfeaf7e1db83",
+                "send_capability": {
+                  "commitment_id": null,
+                  "current_step_key": null,
+                  "event_id": null,
+                  "job_id": "message:msg-c2e5b7608eae43a6b961c6c7f385c090",
+                  "job_kind": "service",
+                  "mode": "passive",
+                  "no_contact": false,
+                  "output_mode": "family_reply",
+                  "reply_scope": {
+                    "msg-2196a1c9dfc5446c908f4a87f424de3d": [
+                      "intent-makeup-d1"
+                    ],
+                    "msg-c2e5b7608eae43a6b961c6c7f385c090": [
+                      "*"
+                    ]
+                  },
+                  "run_id": "run-233d596f2695482e87c3dfeaf7e1db83",
+                  "schedule_revision": null
+                },
+                "simulated": true,
+                "stage": "sent"
+              }
+            ],
+            "now": "2026-10-04T08:00:00+08:00",
+            "responsibility_index": [
+              {
+                "id": "event-5ad35642bcab42cfaffdc67f10f590b7",
+                "version": 2,
+                "goal_text": "补读已确认原课节 LESSON-L2-FOX-D01",
+                "status": "pending",
+                "due_at": "2026-10-05T16:00:00+08:00",
+                "completion_condition": null
+              }
+            ],
+            "execution_agenda": [],
+            "agenda_is_projection_not_queue": true
+          }
+        }
+      },
+      {
+        "tool": "wechat.send_message",
+        "arguments_digest": "31f88b7f746323b8b327a53f98c8573512d2208de2416523eabc30b95aea17c7",
+        "ok": true,
+        "result_digest": "d4a4a073dd4bd67b68c7ba5d0655b5776082a56e8dbe0e645bc0c0c353e94b51",
+        "error": null,
+        "at": "2026-10-04T08:00:00+08:00",
+        "arguments": {
+          "request_id": "req-send-run-deff-01",
+          "expected_family_version": 18,
+          "body": "跟您同步一下进展：第1天（LESSON-L2-FOX-D01）的补读请求已经正式登记为一项事项，期限按您说的保留为2026-10-05（明天）下午四点前。目前这项事项还在待完成状态，补读本身还没有进行，完成之前我会按这条事项继续核对。另外，\"本周阅读情况文字总结\"这条需求目前仍在等待安排，还没有确定的结果；有安排后我再跟您确认。",
+          "action_kind": "reply",
+          "reply_to": [
+            {
+              "message_id": "msg-2196a1c9dfc5446c908f4a87f424de3d",
+              "intent_id": "intent-makeup-d1",
+              "resolves_intent": true
+            },
+            {
+              "message_id": "msg-c2e5b7608eae43a6b961c6c7f385c090",
+              "intent_id": "intent-weekly-summary",
+              "resolves_intent": false
+            }
+          ]
+        },
+        "result": {
+          "ok": true,
+          "result": {
+            "request_id": "req-send-run-deff-01",
+            "outcome": "applied",
+            "data": {
+              "id": "operation-206ed60b7e144cb1a3819ae50cc5b68c",
+              "version": 3,
+              "action_kind": "reply",
+              "admitted_at": "2026-10-04T08:00:00+08:00",
+              "body": "跟您同步一下进展：第1天（LESSON-L2-FOX-D01）的补读请求已经正式登记为一项事项，期限按您说的保留为2026-10-05（明天）下午四点前。目前这项事项还在待完成状态，补读本身还没有进行，完成之前我会按这条事项继续核对。另外，\"本周阅读情况文字总结\"这条需求目前仍在等待安排，还没有确定的结果；有安排后我再跟您确认。",
+              "business_date": "2026-10-04",
+              "channel": "mock_wechat",
+              "content_digest": "fe876e960308c00915768c64abfe97723430a2f8e9e1d21d31456eb7b02aa46b",
+              "decision_reply_refs": [],
+              "dispatch_count": 1,
+              "event_id": null,
+              "lesson_refs": [],
+              "occurred_at": "2026-10-04T08:00:00+08:00",
+              "part_id": null,
+              "prepared_family_version": 19,
+              "purpose_key": "30064f83fea429b479ed169737ff5f871a45f27fad03bc700edab3cf037dbece",
+              "receipts": [
+                {
+                  "observed_at": "2026-10-04T08:00:00+08:00",
+                  "source": "mock_transport",
+                  "stage": "sent"
+                }
+              ],
+              "recipient": "mock:4b1:a",
+              "reply_to": [
+                {
+                  "intent_id": "intent-makeup-d1",
+                  "message_id": "msg-2196a1c9dfc5446c908f4a87f424de3d"
+                },
+                {
+                  "intent_id": "intent-weekly-summary",
+                  "message_id": "msg-c2e5b7608eae43a6b961c6c7f385c090",
+                  "resolves_intent": false
+                }
+              ],
+              "request": {
+                "action_kind": "reply",
+                "body": "跟您同步一下进展：第1天（LESSON-L2-FOX-D01）的补读请求已经正式登记为一项事项，期限按您说的保留为2026-10-05（明天）下午四点前。目前这项事项还在待完成状态，补读本身还没有进行，完成之前我会按这条事项继续核对。另外，\"本周阅读情况文字总结\"这条需求目前仍在等待安排，还没有确定的结果；有安排后我再跟您确认。",
+                "event_id": null,
+                "expected_family_version": 18,
+                "part_id": null,
+                "reply_to": [
+                  {
+                    "intent_id": "intent-makeup-d1",
+                    "message_id": "msg-2196a1c9dfc5446c908f4a87f424de3d"
+                  },
+                  {
+                    "intent_id": "intent-weekly-summary",
+                    "message_id": "msg-c2e5b7608eae43a6b961c6c7f385c090",
+                    "resolves_intent": false
+                  }
+                ],
+                "request_id": "req-send-run-deff-01",
+                "step_id": null
+              },
+              "requirement_revision": null,
+              "run_id": "run-deff36abb1fd4640a651f85a949cf678",
+              "send_capability": {
+                "commitment_id": null,
+                "current_step_key": null,
+                "event_id": null,
+                "job_id": "message:msg-2196a1c9dfc5446c908f4a87f424de3d",
+                "job_kind": "service",
+                "mode": "daily",
+                "no_contact": false,
+                "output_mode": "family_reply",
+                "reply_scope": {
+                  "msg-2196a1c9dfc5446c908f4a87f424de3d": [
+                    "intent-makeup-d1"
+                  ],
+                  "msg-c2e5b7608eae43a6b961c6c7f385c090": [
+                    "intent-weekly-summary"
+                  ]
+                },
+                "run_id": "run-deff36abb1fd4640a651f85a949cf678",
+                "schedule_revision": null
+              },
+              "simulated": true,
+              "stage": "sent"
+            },
+            "record_versions": {
+              "family_input_version": 20
+            },
+            "error": null
+          }
+        }
+      },
+      {
+        "tool": "service.record_outcome",
+        "arguments_digest": "97de36cb2da2ed7cc9a9fb35868e2797a44f6f257549ea8d82a5d71155f0fb2a",
+        "ok": false,
+        "result_digest": "d5783c103541a25315034e6312d7757aa8662e47f80def7c96677cc034ede67f",
+        "error": "EVIDENCE_SUPERSEDED",
+        "at": "2026-10-04T08:00:00+08:00",
+        "arguments": {
+          "outcome": "action_taken",
+          "reason": "已本完整核对全部6条消息原文后发送一条进展说明（operation-206ed60b7e144cb1a3819ae50cc5b68c，stage=sent）：第1天补读请求已被实际接纳并创建事项 event-5ad35642bcab42cfaffdc67f10f590b7（pending:59e576f5... disposition=created，期限2026-10-05T16:00:00+08:00），据实告知家长已登记为事项、补读尚未进行，intent-makeup-d1已完整回答并结清；本周阅读总结的pending:cbf28ba4...仍await_decision，无接纳结果可确认，intent-weekly-summary保持未答（resolves_intent=false），等待Planner决定变化后再向家长确认。",
+          "request_id": "req-outcome-run-deff-01",
+          "refs": [
+            {
+              "kind": "message",
+              "id": "msg-2196a1c9dfc5446c908f4a87f424de3d",
+              "version": 4
+            },
+            {
+              "kind": "message",
+              "id": "msg-c2e5b7608eae43a6b961c6c7f385c090",
+              "version": 3
+            },
+            {
+              "kind": "operation",
+              "id": "operation-206ed60b7e144cb1a3819ae50cc5b68c",
+              "version": 3
+            },
+            {
+              "kind": "event",
+              "id": "event-5ad35642bcab42cfaffdc67f10f590b7",
+              "version": 2
+            },
+            {
+              "kind": "pending",
+              "id": "pending:59e576f5c8e4bbfe475f50fecd676cc3af452c119bdcf12ec8da7a94f8c7025d",
+              "version": 2
+            },
+            {
+              "kind": "pending",
+              "id": "pending:cbf28ba4b3d056f6145b96d49bc018776683a7f0718745ae1ad8f4b44242603b",
+              "version": 1
+            }
+          ],
+          "remaining_work": [
+            "第1天 LESSON-L2-FOX-D01 事项 event-5ad35642bcab42cfaffdc67f10f590b7 尚未实际补做，原期限2026-10-05T16:00:00+08:00保留",
+            "等待Planner对本周阅读总结pending:cbf28ba4b3d056f6145b96d49bc018776683a7f0718745ae1ad8f4b44242603b作出决定；intent-weekly-summary仍欠实质答复"
+          ],
+          "resume_condition": "pending:cbf28ba4...的决定发生变化后，核实实际接纳/安排结果并向家长确认；补做事项按原期限继续核对。"
+        },
+        "result": {
+          "ok": false,
+          "error": {
+            "code": "EVIDENCE_SUPERSEDED",
+            "message": "内部结果引用必须是当前真实记录"
+          }
+        }
+      },
+      {
+        "tool": "state.read",
+        "arguments_digest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "ok": true,
+        "result_digest": "800a8facd7268b36b499ac444345def9fd1e78a721ee20a69474148c80a10c17",
+        "error": null,
+        "at": "2026-10-04T08:00:00+08:00",
+        "arguments": {},
+        "result": {
+          "ok": true,
+          "result": {
+            "family_version": 20,
+            "events": [],
+            "controls": [],
+            "plans": [],
+            "reports": [],
+            "pending_inputs": [
+              {
+                "id": "pending:59e576f5c8e4bbfe475f50fecd676cc3af452c119bdcf12ec8da7a94f8c7025d",
+                "version": 2,
+                "source_message_id": "msg-2196a1c9dfc5446c908f4a87f424de3d",
+                "source_intent_id": "intent-makeup-d1",
+                "request": "请安排明天下午四点前补完第1天。",
+                "completion_condition": null,
+                "original_deadline": "明天下午四点前",
+                "disposition": "created",
+                "event_id": "event-5ad35642bcab42cfaffdc67f10f590b7",
+                "planning_requested": true,
+                "decision_revision": 1,
+                "await_decision": false,
+                "decision_state": "created",
+                "decision_request_id": "req-admission-run-9d24a315-makeup-d1"
+              },
+              {
+                "id": "pending:cbf28ba4b3d056f6145b96d49bc018776683a7f0718745ae1ad8f4b44242603b",
+                "version": 1,
+                "source_message_id": "msg-c2e5b7608eae43a6b961c6c7f385c090",
+                "source_intent_id": "intent-weekly-summary",
+                "request": "家长希望收到一份本周阅读情况的文字总结，并要求先记下该需求。",
+                "completion_condition": null,
+                "original_deadline": "10月5日下午四点前需要",
+                "disposition": "pending",
+                "event_id": null,
+                "planning_requested": true,
+                "decision_revision": 1,
+                "await_decision": true
+              }
+            ],
+            "messages": [
+              {
+                "id": "msg-2196a1c9dfc5446c908f4a87f424de3d",
+                "version": 5,
+                "body": "请安排明天下午四点前补完第1天。",
+                "direction": "inbound",
+                "external_id": "family-request-0",
+                "intents": [
+                  {
+                    "intent_id": "intent-makeup-d1",
+                    "partial_reply_operation_refs": [
+                      "operation-bf7ca864027547c28795e6b80fa34483",
+                      "operation-01b852806aa643b09bd5392a10d5e01b"
+                    ],
+                    "reply_operation_refs": [
+                      "operation-206ed60b7e144cb1a3819ae50cc5b68c"
+                    ],
+                    "requires_reply": true,
+                    "service_authorization": null,
+                    "service_kind": "reply",
+                    "text": "家长明确要求安排补完第1天，期望在此前一天（2026-10-05）下午四点前完成。"
+                  }
+                ],
+                "interpreted": true,
+                "occurred_at": "2026-10-04T08:00:00+08:00",
+                "received_at": "2026-10-04T08:00:00+08:00",
+                "source_kind": "mock_wechat"
+              },
+              {
+                "id": "msg-c2e5b7608eae43a6b961c6c7f385c090",
+                "version": 4,
+                "body": "我还想要一份这周阅读情况的文字总结，10月5日下午四点前需要，先记下需求。",
+                "direction": "inbound",
+                "external_id": "family-request-2",
+                "intents": [
+                  {
+                    "intent_id": "intent-weekly-summary",
+                    "partial_reply_operation_refs": [
+                      "operation-52706dccbb414752993db429f43dae4b",
+                      "operation-206ed60b7e144cb1a3819ae50cc5b68c"
+                    ],
+                    "reply_operation_refs": [],
+                    "requires_reply": true,
+                    "service_authorization": "我还想要一份这周阅读情况的文字总结，10月5日下午四点前需要，先记下需求。",
+                    "service_kind": "future_delivery",
+                    "text": "家长要求以后交付一份本周阅读情况的文字总结，期望时间为10月5日下午四点前，并明确要求先记下该需求。"
+                  }
+                ],
+                "interpreted": true,
+                "occurred_at": "2026-10-04T08:00:00+08:00",
+                "received_at": "2026-10-04T08:00:00+08:00",
+                "source_kind": "mock_wechat"
+              }
+            ],
+            "operations": [
+              {
+                "id": "operation-bf7ca864027547c28795e6b80fa34483",
+                "version": 3,
+                "action_kind": "reply",
+                "admitted_at": "2026-10-04T08:00:00+08:00",
+                "body": "收到，第1天（课程 LESSON-L2-FOX-D01）的补做请求我已经按您说的\"明天下午四点前\"登记好了。目前这条请求还在等待安排，还没有确定具体的补做时间，安排好后我这边会有记录。如果这个期限对您很重要，也可以告诉我您明天哪个时间段方便，我把它一并记进这条请求里。",
+                "business_date": "2026-10-04",
+                "channel": "mock_wechat",
+                "content_digest": "ae76eb1b2f8568852b9f8e49e005275576c23e400d168115fe63788ab39c3434",
+                "decision_reply_refs": [],
+                "dispatch_count": 1,
+                "event_id": "",
+                "lesson_refs": [],
+                "occurred_at": "2026-10-04T08:00:00+08:00",
+                "part_id": null,
+                "prepared_family_version": 6,
+                "purpose_key": "cbe583881c542d10e5dc5ff13dea1376b58cda1bd5207cfc8ea1895ce1e2116e",
+                "receipts": [
+                  {
+                    "observed_at": "2026-10-04T08:00:00+08:00",
+                    "source": "mock_transport",
+                    "stage": "sent"
+                  }
+                ],
+                "recipient": "mock:4b1:a",
+                "reply_to": [
+                  {
+                    "intent_id": "intent-makeup-d1",
+                    "message_id": "msg-2196a1c9dfc5446c908f4a87f424de3d",
+                    "resolves_intent": false
+                  }
+                ],
+                "request": {
+                  "action_kind": "reply",
+                  "body": "收到，第1天（课程 LESSON-L2-FOX-D01）的补做请求我已经按您说的\"明天下午四点前\"登记好了。目前这条请求还在等待安排，还没有确定具体的补做时间，安排好后我这边会有记录。如果这个期限对您很重要，也可以告诉我您明天哪个时间段方便，我把它一并记进这条请求里。",
+                  "event_id": "",
+                  "expected_family_version": 5,
+                  "part_id": null,
+                  "reply_to": [
+                    {
+                      "intent_id": "intent-makeup-d1",
+                      "message_id": "msg-2196a1c9dfc5446c908f4a87f424de3d",
+                      "resolves_intent": false
+                    }
+                  ],
+                  "request_id": "req-send-051d",
+                  "step_id": null
+                },
+                "requirement_revision": null,
+                "run_id": "run-02cc1454fc1f4b038449d8371e7e7ba0",
+                "send_capability": {
+                  "commitment_id": null,
+                  "current_step_key": null,
+                  "event_id": null,
+                  "job_id": "message:msg-2196a1c9dfc5446c908f4a87f424de3d",
+                  "job_kind": "service",
+                  "mode": "passive",
+                  "no_contact": false,
+                  "output_mode": "family_reply",
+                  "reply_scope": {
+                    "msg-2196a1c9dfc5446c908f4a87f424de3d": [
+                      "*"
+                    ]
+                  },
+                  "run_id": "run-02cc1454fc1f4b038449d8371e7e7ba0",
+                  "schedule_revision": null
+                },
+                "simulated": true,
+                "stage": "sent"
+              },
+              {
+                "id": "operation-01b852806aa643b09bd5392a10d5e01b",
+                "version": 3,
+                "action_kind": "reply",
+                "admitted_at": "2026-10-04T08:00:00+08:00",
+                "body": "收到～这条和刚才那条是同一个请求。第1天（课程 LESSON-L2-FOX-D01）\"明天（2026-10-05）下午四点前补读\"的需求已经登记好了，目前还在等待安排，还没有确定具体的补做时间；有安排结果后我会跟您确认。您不用重复发，原期限我都保留着。",
+                "business_date": "2026-10-04",
+                "channel": "mock_wechat",
+                "content_digest": "d50281fe5dd1923c43e5511625c272aac6198b9bb01ede87ff6139a02c284b83",
+                "decision_reply_refs": [],
+                "dispatch_count": 1,
+                "event_id": null,
+                "lesson_refs": [],
+                "occurred_at": "2026-10-04T08:00:00+08:00",
+                "part_id": null,
+                "prepared_family_version": 10,
+                "purpose_key": "2fb0a7bb59211952f0618bc2cb1082fd72165289ba8df2916efbd5c593baed61",
+                "receipts": [
+                  {
+                    "observed_at": "2026-10-04T08:00:00+08:00",
+                    "source": "mock_transport",
+                    "stage": "sent"
+                  }
+                ],
+                "recipient": "mock:4b1:a",
+                "reply_to": [
+                  {
+                    "intent_id": "intent-makeup-d1-again",
+                    "message_id": "msg-bae278895c0b4e069b3c94e39034a9b0"
+                  },
+                  {
+                    "intent_id": "intent-makeup-d1",
+                    "message_id": "msg-2196a1c9dfc5446c908f4a87f424de3d",
+                    "resolves_intent": false
+                  }
+                ],
+                "request": {
+                  "action_kind": "reply",
+                  "body": "收到～这条和刚才那条是同一个请求。第1天（课程 LESSON-L2-FOX-D01）\"明天（2026-10-05）下午四点前补读\"的需求已经登记好了，目前还在等待安排，还没有确定具体的补做时间；有安排结果后我会跟您确认。您不用重复发，原期限我都保留着。",
+                  "event_id": null,
+                  "expected_family_version": 9,
+                  "part_id": null,
+                  "reply_to": [
+                    {
+                      "intent_id": "intent-makeup-d1-again",
+                      "message_id": "msg-bae278895c0b4e069b3c94e39034a9b0"
+                    },
+                    {
+                      "intent_id": "intent-makeup-d1",
+                      "message_id": "msg-2196a1c9dfc5446c908f4a87f424de3d",
+                      "resolves_intent": false
+                    }
+                  ],
+                  "request_id": "req-send-bae2-01",
+                  "step_id": null
+                },
+                "requirement_revision": null,
+                "run_id": "run-740e82f79ef24802b70032a1a7dee3f1",
+                "send_capability": {
+                  "commitment_id": null,
+                  "current_step_key": null,
+                  "event_id": null,
+                  "job_id": "message:msg-bae278895c0b4e069b3c94e39034a9b0",
+                  "job_kind": "service",
+                  "mode": "passive",
+                  "no_contact": false,
+                  "output_mode": "family_reply",
+                  "reply_scope": {
+                    "msg-2196a1c9dfc5446c908f4a87f424de3d": [
+                      "intent-makeup-d1"
+                    ],
+                    "msg-bae278895c0b4e069b3c94e39034a9b0": [
+                      "*"
+                    ]
+                  },
+                  "run_id": "run-740e82f79ef24802b70032a1a7dee3f1",
+                  "schedule_revision": null
+                },
+                "simulated": true,
+                "stage": "sent"
+              },
+              {
+                "id": "operation-52706dccbb414752993db429f43dae4b",
+                "version": 3,
+                "action_kind": "reply",
+                "admitted_at": "2026-10-04T08:00:00+08:00",
+                "body": "收到～这份\"本周阅读情况文字总结\"的需求我已经记下了，您说的\"10月5日下午四点前需要\"也原样保留在这条请求里。目前它还在等待安排，还没有确定的结果；有安排后我会跟您确认。另外，第1天（LESSON-L2-FOX-D01）\"明天下午四点前补读\"的请求也仍在等待安排中，两条我都记着，您不用重复发。",
+                "business_date": "2026-10-04",
+                "channel": "mock_wechat",
+                "content_digest": "d804db9a0b2f62c7338c05e56fc00eb866d5639447a9280379961a1a3c5b586e",
+                "decision_reply_refs": [],
+                "dispatch_count": 1,
+                "event_id": null,
+                "lesson_refs": [],
+                "occurred_at": "2026-10-04T08:00:00+08:00",
+                "part_id": null,
+                "prepared_family_version": 15,
+                "purpose_key": "38104b4e1bf7301ad1299c01283f51fa38b54317fad3417faa9b9d15b51f6447",
+                "receipts": [
+                  {
+                    "observed_at": "2026-10-04T08:00:00+08:00",
+                    "source": "mock_transport",
+                    "stage": "sent"
+                  }
+                ],
+                "recipient": "mock:4b1:a",
+                "reply_to": [
+                  {
+                    "intent_id": "intent-weekly-summary",
+                    "message_id": "msg-c2e5b7608eae43a6b961c6c7f385c090",
+                    "resolves_intent": false
+                  }
+                ],
+                "request": {
+                  "action_kind": "reply",
+                  "body": "收到～这份\"本周阅读情况文字总结\"的需求我已经记下了，您说的\"10月5日下午四点前需要\"也原样保留在这条请求里。目前它还在等待安排，还没有确定的结果；有安排后我会跟您确认。另外，第1天（LESSON-L2-FOX-D01）\"明天下午四点前补读\"的请求也仍在等待安排中，两条我都记着，您不用重复发。",
+                  "event_id": null,
+                  "expected_family_version": 14,
+                  "part_id": null,
+                  "reply_to": [
+                    {
+                      "intent_id": "intent-weekly-summary",
+                      "message_id": "msg-c2e5b7608eae43a6b961c6c7f385c090",
+                      "resolves_intent": false
+                    }
+                  ],
+                  "request_id": "req-send-weekly-summary-ack",
+                  "step_id": null
+                },
+                "requirement_revision": null,
+                "run_id": "run-233d596f2695482e87c3dfeaf7e1db83",
+                "send_capability": {
+                  "commitment_id": null,
+                  "current_step_key": null,
+                  "event_id": null,
+                  "job_id": "message:msg-c2e5b7608eae43a6b961c6c7f385c090",
+                  "job_kind": "service",
+                  "mode": "passive",
+                  "no_contact": false,
+                  "output_mode": "family_reply",
+                  "reply_scope": {
+                    "msg-2196a1c9dfc5446c908f4a87f424de3d": [
+                      "intent-makeup-d1"
+                    ],
+                    "msg-c2e5b7608eae43a6b961c6c7f385c090": [
+                      "*"
+                    ]
+                  },
+                  "run_id": "run-233d596f2695482e87c3dfeaf7e1db83",
+                  "schedule_revision": null
+                },
+                "simulated": true,
+                "stage": "sent"
+              },
+              {
+                "id": "operation-206ed60b7e144cb1a3819ae50cc5b68c",
+                "version": 3,
+                "action_kind": "reply",
+                "admitted_at": "2026-10-04T08:00:00+08:00",
+                "body": "跟您同步一下进展：第1天（LESSON-L2-FOX-D01）的补读请求已经正式登记为一项事项，期限按您说的保留为2026-10-05（明天）下午四点前。目前这项事项还在待完成状态，补读本身还没有进行，完成之前我会按这条事项继续核对。另外，\"本周阅读情况文字总结\"这条需求目前仍在等待安排，还没有确定的结果；有安排后我再跟您确认。",
+                "business_date": "2026-10-04",
+                "channel": "mock_wechat",
+                "content_digest": "fe876e960308c00915768c64abfe97723430a2f8e9e1d21d31456eb7b02aa46b",
+                "decision_reply_refs": [],
+                "dispatch_count": 1,
+                "event_id": null,
+                "lesson_refs": [],
+                "occurred_at": "2026-10-04T08:00:00+08:00",
+                "part_id": null,
+                "prepared_family_version": 19,
+                "purpose_key": "30064f83fea429b479ed169737ff5f871a45f27fad03bc700edab3cf037dbece",
+                "receipts": [
+                  {
+                    "observed_at": "2026-10-04T08:00:00+08:00",
+                    "source": "mock_transport",
+                    "stage": "sent"
+                  }
+                ],
+                "recipient": "mock:4b1:a",
+                "reply_to": [
+                  {
+                    "intent_id": "intent-makeup-d1",
+                    "message_id": "msg-2196a1c9dfc5446c908f4a87f424de3d"
+                  },
+                  {
+                    "intent_id": "intent-weekly-summary",
+                    "message_id": "msg-c2e5b7608eae43a6b961c6c7f385c090",
+                    "resolves_intent": false
+                  }
+                ],
+                "request": {
+                  "action_kind": "reply",
+                  "body": "跟您同步一下进展：第1天（LESSON-L2-FOX-D01）的补读请求已经正式登记为一项事项，期限按您说的保留为2026-10-05（明天）下午四点前。目前这项事项还在待完成状态，补读本身还没有进行，完成之前我会按这条事项继续核对。另外，\"本周阅读情况文字总结\"这条需求目前仍在等待安排，还没有确定的结果；有安排后我再跟您确认。",
+                  "event_id": null,
+                  "expected_family_version": 18,
+                  "part_id": null,
+                  "reply_to": [
+                    {
+                      "intent_id": "intent-makeup-d1",
+                      "message_id": "msg-2196a1c9dfc5446c908f4a87f424de3d"
+                    },
+                    {
+                      "intent_id": "intent-weekly-summary",
+                      "message_id": "msg-c2e5b7608eae43a6b961c6c7f385c090",
+                      "resolves_intent": false
+                    }
+                  ],
+                  "request_id": "req-send-run-deff-01",
+                  "step_id": null
+                },
+                "requirement_revision": null,
+                "run_id": "run-deff36abb1fd4640a651f85a949cf678",
+                "send_capability": {
+                  "commitment_id": null,
+                  "current_step_key": null,
+                  "event_id": null,
+                  "job_id": "message:msg-2196a1c9dfc5446c908f4a87f424de3d",
+                  "job_kind": "service",
+                  "mode": "daily",
+                  "no_contact": false,
+                  "output_mode": "family_reply",
+                  "reply_scope": {
+                    "msg-2196a1c9dfc5446c908f4a87f424de3d": [
+                      "intent-makeup-d1"
+                    ],
+                    "msg-c2e5b7608eae43a6b961c6c7f385c090": [
+                      "intent-weekly-summary"
+                    ]
+                  },
+                  "run_id": "run-deff36abb1fd4640a651f85a949cf678",
+                  "schedule_revision": null
+                },
+                "simulated": true,
+                "stage": "sent"
+              }
+            ],
+            "now": "2026-10-04T08:00:00+08:00",
+            "responsibility_index": [
+              {
+                "id": "event-5ad35642bcab42cfaffdc67f10f590b7",
+                "version": 2,
+                "goal_text": "补读已确认原课节 LESSON-L2-FOX-D01",
+                "status": "pending",
+                "due_at": "2026-10-05T16:00:00+08:00",
+                "completion_condition": null
+              }
+            ],
+            "execution_agenda": [],
+            "agenda_is_projection_not_queue": true
+          }
+        }
+      },
+      {
+        "tool": "service.record_outcome",
+        "arguments_digest": "7b25dd0566b20db692f352b9fcc273ae99509ce03da8b39d01a97f6d8e7b85e1",
+        "ok": false,
+        "result_digest": "a9104349c0bc5dcde98c84c95767a237a5a208acd1f547cc2a246f6a2dc4cd2c",
+        "error": "OUTCOME_INCOMPLETE",
+        "at": "2026-10-04T08:00:00+08:00",
+        "arguments": {
+          "outcome": "action_taken",
+          "reason": "已本完整核对全部6条消息原文后发送一条进展说明（operation-206ed60b7e144cb1a3819ae50cc5b68c，stage=sent）：第1天补读请求已被实际接纳并创建事项 event-5ad35642bcab42cfaffdc67f10f590b7（pending:59e576f5... disposition=created，期限2026-10-05T16:00:00+08:00），据实告知家长已登记为事项、补读尚未进行，intent-makeup-d1已完整回答并结清；本周阅读总结的pending:cbf28ba4...仍await_decision，无接纳结果可确认，intent-weekly-summary保持未答（resolves_intent=false），等待Planner决定变化后再向家长确认。",
+          "refs": [
+            {
+              "id": "msg-2196a1c9dfc5446c908f4a87f424de3d",
+              "kind": "message",
+              "version": 5
+            },
+            {
+              "id": "msg-c2e5b7608eae43a6b961c6c7f385c090",
+              "kind": "message",
+              "version": 4
+            },
+            {
+              "id": "operation-206ed60b7e144cb1a3819ae50cc5b68c",
+              "kind": "operation",
+              "version": 3
+            },
+            {
+              "id": "event-5ad35642bcab42cfaffdc67f10f590b7",
+              "kind": "event",
+              "version": 2
+            },
+            {
+              "id": "pending:59e576f5c8e4bbfe475f50fecd676cc3af452c119bdcf12ec8da7a94f8c7025d",
+              "kind": "pending",
+              "version": 2
+            },
+            {
+              "id": "pending:cbf28ba4b3d056f6145b96d49bc018776683a7f0718745ae1ad8f4b44242603b",
+              "kind": "pending",
+              "version": 1
+            }
+          ],
+          "remaining_work": [
+            "第1天 LESSON-L2-FOX-D01 事项 event-5ad35642bcab42cfaffdc67f10f590b7 尚未实际补做，原期限2026-10-05T16:00:00+08:00保留",
+            "等待Planner对本周阅读总结pending:cbf28ba4b3d056f6145b96d49bc018776683a7f0718745ae1ad8f4b44242603b作出决定；intent-weekly-summary仍欠实质答复"
+          ],
+          "request_id": "req-outcome-run-deff-02",
+          "resume_condition": "pending:cbf28ba4...的决定发生变化后，核实实际接纳/安排结果并向家长确认；补做事项按原期限继续核对。"
+        },
+        "result": {
+          "ok": false,
+          "error": {
+            "code": "OUTCOME_INCOMPLETE",
+            "message": "仍有未满足来信意图，须保存waiting或needs_input及恢复条件"
+          }
+        }
+      },
+      {
+        "tool": "service.record_outcome",
+        "arguments_digest": "63a25e826b3b3bfa64da443053329dbef8dba250348c1bcda25f3a46d2573a36",
+        "ok": true,
+        "result_digest": "4627974cafb0624c96d33d79174df04e594c63615d7320e2f951a0f4c2a22bb7",
+        "error": null,
+        "at": "2026-10-04T08:00:00+08:00",
+        "arguments": {
+          "reason": "已本完整核对全部6条消息原文后发送一条进展说明（operation-206ed60b7e144cb1a3819ae50cc5b68c，stage=sent）：第1天补读请求已被实际接纳并创建事项 event-5ad35642bcab42cfaffdc67f10f590b7（pending:59e576f5... disposition=created，期限2026-10-05T16:00:00+08:00），据实告知家长已登记为事项、补读尚未进行，intent-makeup-d1已完整回答并结清；本周阅读总结的pending:cbf28ba4...仍await_decision，尚无接纳结果可确认，intent-weekly-summary保持未答（resolves_intent=false），本条记录为等待Planner决定。",
+          "refs": [
+            {
+              "id": "msg-2196a1c9dfc5446c908f4a87f424de3d",
+              "kind": "message",
+              "version": 5
+            },
+            {
+              "id": "msg-c2e5b7608eae43a6b961c6c7f385c090",
+              "kind": "message",
+              "version": 4
+            },
+            {
+              "id": "operation-206ed60b7e144cb1a3819ae50cc5b68c",
+              "kind": "operation",
+              "version": 3
+            },
+            {
+              "id": "event-5ad35642bcab42cfaffdc67f10f590b7",
+              "kind": "event",
+              "version": 2
+            },
+            {
+              "id": "pending:59e576f5c8e4bbfe475f50fecd676cc3af452c119bdcf12ec8da7a94f8c7025d",
+              "kind": "pending",
+              "version": 2
+            },
+            {
+              "id": "pending:cbf28ba4b3d056f6145b96d49bc018776683a7f0718745ae1ad8f4b44242603b",
+              "kind": "pending",
+              "version": 1
+            }
+          ],
+          "remaining_work": [
+            "等待Planner对本周阅读总结pending:cbf28ba4b3d056f6145b96d49bc018776683a7f0718745ae1ad8f4b44242603b作出决定；intent-weekly-summary仍欠实质答复",
+            "第1天 LESSON-L2-FOX-D01 事项 event-5ad35642bcab42cfaffdc67f10f590b7 尚未实际补做，原期限2026-10-05T16:00:00+08:00保留"
+          ],
+          "request_id": "req-outcome-run-deff-02",
+          "resume_condition": "pending:cbf28ba4...的决定发生变化后，核实实际接纳/安排结果并向家长确认；补做事项按原期限继续核对实际进展。",
+          "outcome": "waiting"
+        },
+        "result": {
+          "ok": true,
+          "result": {
+            "id": "run-deff36abb1fd4640a651f85a949cf678",
+            "version": 1,
+            "awaiting_operation_ids": [],
+            "delegation_acknowledgements": [],
+            "draft": null,
+            "effective_control_scopes": {
+              "authority": "current_control_records",
+              "controls": [],
+              "meaning": "仅active控制生效。event_id为空的控制覆盖本家庭所有事项及以后事项中的action_kinds；有event_id仅覆盖该事项的这些动作。未列出的动作不因该控制暂停，仍须经过其他权限和发送检查。旧空白字符串范围按全家庭保守解释并标明legacy_invalid_scope，不修改原记录。自由文本不能缩小、扩大或解除控制。"
+            },
+            "job_id": "message:msg-2196a1c9dfc5446c908f4a87f424de3d",
+            "observed_job_operations": [
+              {
+                "id": "operation-206ed60b7e144cb1a3819ae50cc5b68c",
+                "stage": "sent",
+                "version": 3
+              },
+              {
+                "id": "operation-bf7ca864027547c28795e6b80fa34483",
+                "stage": "sent",
+                "version": 3
+              }
+            ],
+            "observed_planning_inputs": [
+              {
+                "await_decision": false,
+                "decision_revision": 1,
+                "id": "pending:59e576f5c8e4bbfe475f50fecd676cc3af452c119bdcf12ec8da7a94f8c7025d",
+                "source_intent_id": "intent-makeup-d1",
+                "version": 2
+              }
+            ],
+            "outcome": "waiting",
+            "payload_digest": "d08533eb23b75a81aa9c580b4c06e98df9e6e05c36312749ebbc4f5d14bb39e5",
+            "reason": "已本完整核对全部6条消息原文后发送一条进展说明（operation-206ed60b7e144cb1a3819ae50cc5b68c，stage=sent）：第1天补读请求已被实际接纳并创建事项 event-5ad35642bcab42cfaffdc67f10f590b7（pending:59e576f5... disposition=created，期限2026-10-05T16:00:00+08:00），据实告知家长已登记为事项、补读尚未进行，intent-makeup-d1已完整回答并结清；本周阅读总结的pending:cbf28ba4...仍await_decision，尚无接纳结果可确认，intent-weekly-summary保持未答（resolves_intent=false），本条记录为等待Planner决定。",
+            "recorded_at": "2026-10-04T08:00:00+08:00",
+            "refs": [
+              {
+                "id": "msg-2196a1c9dfc5446c908f4a87f424de3d",
+                "kind": "message",
+                "version": 5
+              },
+              {
+                "id": "msg-c2e5b7608eae43a6b961c6c7f385c090",
+                "kind": "message",
+                "version": 4
+              },
+              {
+                "id": "operation-206ed60b7e144cb1a3819ae50cc5b68c",
+                "kind": "operation",
+                "version": 3
+              },
+              {
+                "id": "event-5ad35642bcab42cfaffdc67f10f590b7",
+                "kind": "event",
+                "version": 2
+              },
+              {
+                "id": "pending:59e576f5c8e4bbfe475f50fecd676cc3af452c119bdcf12ec8da7a94f8c7025d",
+                "kind": "pending",
+                "version": 2
+              },
+              {
+                "id": "pending:cbf28ba4b3d056f6145b96d49bc018776683a7f0718745ae1ad8f4b44242603b",
+                "kind": "pending",
+                "version": 1
+              }
+            ],
+            "remaining_work": [
+              "等待Planner对本周阅读总结pending:cbf28ba4b3d056f6145b96d49bc018776683a7f0718745ae1ad8f4b44242603b作出决定；intent-weekly-summary仍欠实质答复",
+              "第1天 LESSON-L2-FOX-D01 事项 event-5ad35642bcab42cfaffdc67f10f590b7 尚未实际补做，原期限2026-10-05T16:00:00+08:00保留"
+            ],
+            "request_id": "req-outcome-run-deff-02",
+            "resume_condition": "pending:cbf28ba4...的决定发生变化后，核实实际接纳/安排结果并向家长确认；补做事项按原期限继续核对实际进展。",
+            "resume_condition_authority": "model_input_recovery_note_not_control_or_send_permission",
+            "run_id": "run-deff36abb1fd4640a651f85a949cf678",
+            "settled_delegated_request_refs": []
+          }
+        }
+      }
+    ],
+    "profile": "/root/autodl-tmp/digitalTutor/work/stage4/4c-development-l/state/backend-stage4/intraday-l-native06-stage4_daily/family_requests/runs/run-deff36abb1fd4640a651f85a949cf678/profile",
+    "cwd": "/root/autodl-tmp/digitalTutor/work/stage4/4c-development-l/state/backend-stage4/intraday-l-native06-stage4_daily/family_requests/runs/run-deff36abb1fd4640a651f85a949cf678",
+    "output_route": "internal",
+    "model": "qwen3.8-flash",
+    "generation_options": {
+      "temperature": 0.0
+    }
+  }
+}

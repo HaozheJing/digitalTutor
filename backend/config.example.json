@@ -1,0 +1,6 @@
+{
+  "database": "state/backend-stage1/demo.sqlite",
+  "service_start": 8,
+  "service_end": 21,
+  "channel": "mock_wechat"
+}

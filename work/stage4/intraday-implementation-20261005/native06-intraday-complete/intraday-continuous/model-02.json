@@ -1,0 +1,906 @@
+{
+  "index": 2,
+  "family_id": "synthetic-4b1-a",
+  "job_id": "message:msg-c3b4e49a4f3f4c3584bf87965734a4a1",
+  "job_kind": "service",
+  "recovery_only": false,
+  "decision": {
+    "wait": true,
+    "no_contact": false,
+    "outcome_id": "run-2f1ea79a65174f6181051407984c182d",
+    "reason": "第1天学情状态已按SQL快照如实回复，发送操作operation-ec0f6065a2474aa0afcbff8da6a4b102回执为sent。明天16:00的第1天文字学情总结需求已登记为pending:6fae95d5bc33e0a6d4efcb20dea1fce0639c9fda54f462c4699f46502c4aa4ab，等待Planner决定；intent-day1-summary-tomorrow保留未结清。",
+    "run_id": "run-2f1ea79a65174f6181051407984c182d"
+  },
+  "native": {
+    "run_id": "run-2f1ea79a65174f6181051407984c182d",
+    "completed": true,
+    "interrupted": false,
+    "error": "",
+    "final_response": "本轮处理完成：\n\n- **第1天状态查询（已答）**：读取SQL学情快照后确认，batch `synthetic-4b1-snapshot` 第1天记录为：已出勤、完成状态 incomplete、作业 not_submitted、未打卡。已发送回复（operation-ec0f6065a2474aa0afcbff8da6a4b102，回执 sent），该意图已结清。\n- **明天16:00文字学情总结（future_delivery）**：已按家长原话登记为 pending:6fae95d5…，时间解释为 2026-10-05T16:00+08:00（at），今天不发送。该意图保留未结清，等待 Planner 决定；决定变化后由宿主恢复处理并向家长同步安排。\n\n内部结果已记录为 waiting，引用消息 v3、操作 v3、pending v1。",
+    "api_calls": 12,
+    "tools": [
+      "dt_context_read",
+      "dt_control_apply",
+      "dt_knowledge_list",
+      "dt_knowledge_read",
+      "dt_learning_query_sql",
+      "dt_learning_schema",
+      "dt_memory_delete",
+      "dt_memory_read",
+      "dt_memory_save",
+      "dt_message_interpret",
+      "dt_pending_propose_makeup",
+      "dt_pending_propose_service",
+      "dt_planning_record_pending",
+      "dt_progress_submit",
+      "dt_service_record_outcome",
+      "dt_skills_list",
+      "dt_skills_read",
+      "dt_state_read",
+      "dt_wechat_get_operation",
+      "dt_wechat_read_messages",
+      "dt_wechat_send_message"
+    ],
+    "tool_trace": [
+      {
+        "tool": "wechat.read_messages",
+        "arguments_digest": "2885692ece9ea50d7158a91914d0e89d4465c0e5af00a1c98d893a02d86bdbd3",
+        "ok": true,
+        "result_digest": "72d1720647a547a0251e73c516011f082ce5cde665b8cbac90b0fa4b47e5f3f0",
+        "error": null,
+        "at": "2026-10-04T10:00:00+08:00",
+        "arguments": {
+          "mode": "all"
+        },
+        "result": {
+          "ok": true,
+          "result": {
+            "mode": "all",
+            "messages": [
+              {
+                "seq": 1,
+                "id": "msg-c3b4e49a4f3f4c3584bf87965734a4a1",
+                "version": 1,
+                "body": "请查一下这次记录第1天完成了吗？另外，请明天下午四点给我发一份第1天的文字学情总结，今天不用发。",
+                "direction": "inbound",
+                "external_id": "request",
+                "intents": [],
+                "interpreted": false,
+                "occurred_at": "2026-10-04T10:00:00+08:00",
+                "received_at": "2026-10-04T10:00:00+08:00",
+                "source_kind": "mock_wechat"
+              }
+            ],
+            "returned_count": 1,
+            "matching_count": 1,
+            "has_more": false,
+            "has_older": false,
+            "next_cursor": 1,
+            "snapshot_watermark": 1,
+            "read_marks_answered": false,
+            "channel": "mock_wechat"
+          }
+        }
+      },
+      {
+        "tool": "learning.schema",
+        "arguments_digest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "ok": true,
+        "result_digest": "cd896e87579bd7348635bae07bac2605a6eb951cd237b860d36a53770f0a4d4e",
+        "error": null,
+        "at": "2026-10-04T10:00:00+08:00",
+        "arguments": {},
+        "result": {
+          "ok": true,
+          "result": {
+            "tables": {
+              "learning_days": [
+                "batch_id",
+                "uid",
+                "day",
+                "attendance_status",
+                "completion_status",
+                "homework_status",
+                "companion_status",
+                "checkin_status",
+                "source_date_label",
+                "source_learning_date",
+                "evidence_locator"
+              ],
+              "assignments": [
+                "batch_id",
+                "uid",
+                "day",
+                "source_row",
+                "chapter",
+                "status",
+                "submission_count",
+                "submitted_at_raw",
+                "question_title",
+                "question_text",
+                "ai_guidance",
+                "answer_text",
+                "answer_rounds",
+                "voice_answers",
+                "quality_flags"
+              ],
+              "learning_batches": [
+                "batch_id",
+                "imported_at",
+                "coverage_through",
+                "source_timezone",
+                "course_binding"
+              ],
+              "learning_source_rows": [
+                "batch_id",
+                "uid",
+                "sheet_name",
+                "source_row",
+                "source_group",
+                "headers_json",
+                "values_json",
+                "metadata_json",
+                "evidence_locator"
+              ],
+              "learning_summaries": [
+                "batch_id",
+                "uid",
+                "source_group",
+                "metric",
+                "raw_value",
+                "numerator",
+                "denominator",
+                "quality_flags",
+                "evidence_locator"
+              ],
+              "assignment_details": [
+                "batch_id",
+                "uid",
+                "day",
+                "source_row",
+                "source_group",
+                "ai_expression_type",
+                "ai_expression_name",
+                "evidence_locator"
+              ],
+              "homework_days": [
+                "batch_id",
+                "uid",
+                "day",
+                "source_group",
+                "status",
+                "raw_status",
+                "source_date_label",
+                "question_title",
+                "quality_flags",
+                "evidence_locator"
+              ],
+              "course_bindings": [
+                "batch_id",
+                "uid",
+                "course_id",
+                "course_version",
+                "cohort_id",
+                "level",
+                "lesson_map_json",
+                "coverage_through",
+                "source_timezone",
+                "source_note",
+                "confirmed_at",
+                "binding_version",
+                "binding_status"
+              ]
+            },
+            "table_notes": {
+              "day": "各表的day是INTEGER类型的课程天次序号；不是日历日期。原来源日期见source_learning_date/source_date_label等日期字段，按各字段实际类型筛选。",
+              "learning_batches": "导入批次元数据；course_binding、imported_at、coverage_through和source_timezone可通过SQL读取。source_index的metadata_structure仅列可解析JSON对象的有界顶层字段名，不含值；数组或不可解析结构仍未知。非空只表示存在，空值仍未知。",
+              "course_bindings": "宿主已确认的课程身份、课节映射及覆盖字段；记录不存在或字段为空时不得推定已确认。",
+              "learning_days": "completion_status/homework_status描述batch_id、uid、day标识的学习快照；event.status及remaining_work描述独立业务责任，不能代替所问批次的原始字段。相同天次序号不建立二者的课程对应关系。"
+            },
+            "scope": "bound_family_uid",
+            "read_only": true
+          }
+        }
+      },
+      {
+        "tool": "learning.query_sql",
+        "arguments_digest": "d1e235c4c9fa123242cadf62c545eca533ef6d168e02ca9c70bbf62d03152f0a",
+        "ok": true,
+        "result_digest": "cb6383fb5e4d1ae99cf04176dcae793c6197e30b8cf0c2f5fb139b4fbc0f9798",
+        "error": null,
+        "at": "2026-10-04T10:00:00+08:00",
+        "arguments": {
+          "sql": "SELECT batch_id, uid, day, attendance_status, completion_status, homework_status, companion_status, checkin_status, source_date_label, source_learning_date, evidence_locator FROM learning_days WHERE uid = :uid AND day = :day",
+          "parameters": {
+            "uid": "synthetic-4b1-uid-a",
+            "day": 1
+          }
+        },
+        "result": {
+          "ok": true,
+          "result": {
+            "columns": [
+              "batch_id",
+              "uid",
+              "day",
+              "attendance_status",
+              "completion_status",
+              "homework_status",
+              "companion_status",
+              "checkin_status",
+              "source_date_label",
+              "source_learning_date",
+              "evidence_locator"
+            ],
+            "rows": [
+              {
+                "batch_id": "synthetic-4b1-snapshot",
+                "uid": "synthetic-4b1-uid-a",
+                "day": 1,
+                "attendance_status": "attended",
+                "completion_status": "incomplete",
+                "homework_status": "not_submitted",
+                "companion_status": "not_configured",
+                "checkin_status": "not_checked",
+                "source_date_label": "simulation day 1",
+                "source_learning_date": null,
+                "evidence_locator": "{\"day\":1,\"family_fixture\":\"a\",\"source\":\"frozen_inputs\",\"synthetic\":true}"
+              }
+            ],
+            "returned_count": 1,
+            "truncated": false,
+            "scope": "bound_family_uid",
+            "read_only": true,
+            "source_kind": "sqlite_snapshot",
+            "warning": "所查行是学情来源快照，不是业务事项状态。事项pending或remaining_work不能代替本批字段，同一天次序号不证明课节绑定。导入快照的课程绑定和覆盖未知时，不能判定当前履约。未完成、未提交只描述所选批次的字段，不能据此宣布现在需要补做、催课或安排补课；须另核当前绑定、覆盖及实际责任。不能用历史AI答复补足这些依据。跨批次查询请显式选择batch_id"
+          }
+        },
+        "returned_rows": 1,
+        "authorized_uid_only": true
+      },
+      {
+        "tool": "message.interpret",
+        "arguments_digest": "a04111cc837b90d17c9f4a786e95b5396b31e1213f67036ebf49734cae7a8a06",
+        "ok": true,
+        "result_digest": "108c6c7fdebee1145f9cf1587ac3831b49c32ae17742e93cb074f4279c9000d7",
+        "error": null,
+        "at": "2026-10-04T10:00:00+08:00",
+        "arguments": {
+          "request_id": "interpret-msg-c3b4-day1",
+          "message_id": "msg-c3b4e49a4f3f4c3584bf87965734a4a1",
+          "expected_version": 1,
+          "intents": [
+            {
+              "intent_id": "intent-day1-status",
+              "text": "查询本次记录第1天是否完成",
+              "requires_reply": true,
+              "service_kind": "reply"
+            },
+            {
+              "intent_id": "intent-day1-summary-tomorrow",
+              "text": "要求明天下午四点发送一份第1天的文字学情总结，今天不发",
+              "requires_reply": true,
+              "service_kind": "future_delivery",
+              "service_authorization": "请明天下午四点给我发一份第1天的文字学情总结，今天不用发。"
+            }
+          ]
+        },
+        "result": {
+          "ok": true,
+          "result": {
+            "request_id": "interpret-msg-c3b4-day1",
+            "outcome": "applied",
+            "data": {
+              "id": "msg-c3b4e49a4f3f4c3584bf87965734a4a1",
+              "version": 2,
+              "body": "请查一下这次记录第1天完成了吗？另外，请明天下午四点给我发一份第1天的文字学情总结，今天不用发。",
+              "direction": "inbound",
+              "external_id": "request",
+              "intents": [
+                {
+                  "intent_id": "intent-day1-status",
+                  "reply_operation_refs": [],
+                  "requires_reply": true,
+                  "service_authorization": null,
+                  "service_kind": "reply",
+                  "text": "查询本次记录第1天是否完成"
+                },
+                {
+                  "intent_id": "intent-day1-summary-tomorrow",
+                  "reply_operation_refs": [],
+                  "requires_reply": true,
+                  "service_authorization": "请明天下午四点给我发一份第1天的文字学情总结，今天不用发。",
+                  "service_kind": "future_delivery",
+                  "text": "要求明天下午四点发送一份第1天的文字学情总结，今天不发"
+                }
+              ],
+              "interpreted": true,
+              "occurred_at": "2026-10-04T10:00:00+08:00",
+              "received_at": "2026-10-04T10:00:00+08:00",
+              "source_kind": "mock_wechat"
+            },
+            "record_versions": {
+              "family_input_version": 5
+            },
+            "error": null
+          }
+        }
+      },
+      {
+        "tool": "pending.propose_service",
+        "arguments_digest": "35b7a77699e2f55e3667a8d0d82cf4aae82bbb24d12775d4b7e0783222170c84",
+        "ok": false,
+        "result_digest": "0e2c75ebcb2b01d5dcac79e251fcbce4a78c5b2704d2947eefdcf1d20933ef01",
+        "error": "INVALID_SCHEMA",
+        "at": "2026-10-04T10:00:00+08:00",
+        "arguments": {
+          "completion_condition": "第1天的文字学情总结",
+          "existing_event_id": "",
+          "expected_family_version": 4,
+          "request": "在明天下午四点向家长发送一份第1天的文字学情总结，今天不发",
+          "request_id": "propose-day1-summary",
+          "requested_time": {
+            "meaning": "at",
+            "source_text": "请明天下午四点给我发一份第1天的文字学情总结，今天不用发。",
+            "start": "2026-10-05T16:00:00+08:00"
+          },
+          "source_excerpt": "另外，请明天下午四点给我发一份第1天的文字学情总结，今天不用发。",
+          "source_intent_id": "intent-day1-summary-tomorrow",
+          "source_message_id": "msg-c3b4e49a4f3f4c3584bf87965734a4a1",
+          "source_version": 2
+        },
+        "result": {
+          "ok": false,
+          "error": {
+            "code": "INVALID_SCHEMA",
+            "details": [
+              {
+                "loc": [
+                  "existing_event_id"
+                ],
+                "type": "string_too_short",
+                "message": "String should have at least 1 character"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "tool": "pending.propose_service",
+        "arguments_digest": "cbd72ac638c436811c139726d71f06a87f19270c42eedb231c8f415323a3a5ff",
+        "ok": false,
+        "result_digest": "a717867a98a17b5bbe40f8b422470c5d2aab431d85145aaefcaeb8c0bedc4aac",
+        "error": "STALE_INPUT",
+        "at": "2026-10-04T10:00:00+08:00",
+        "arguments": {
+          "completion_condition": "第1天的文字学情总结",
+          "existing_event_id": null,
+          "expected_family_version": 4,
+          "request": "在明天下午四点向家长发送一份第1天的文字学情总结，今天不发",
+          "request_id": "propose-day1-summary",
+          "requested_time": {
+            "meaning": "at",
+            "source_text": "请明天下午四点给我发一份第1天的文字学情总结，今天不用发。",
+            "start": "2026-10-05T16:00:00+08:00"
+          },
+          "source_excerpt": "另外，请明天下午四点给我发一份第1天的文字学情总结，今天不用发。",
+          "source_intent_id": "intent-day1-summary-tomorrow",
+          "source_message_id": "msg-c3b4e49a4f3f4c3584bf87965734a4a1",
+          "source_version": 2
+        },
+        "result": {
+          "ok": false,
+          "error": {
+            "code": "STALE_INPUT",
+            "message": "读取后家庭相关输入已变化"
+          }
+        }
+      },
+      {
+        "tool": "pending.propose_service",
+        "arguments_digest": "31d5439525975d51a44d907fc3347731113bb792002845219b655b638550ae9b",
+        "ok": false,
+        "result_digest": "9d58886ba53731fb5a74d7b002540043e43d4dab3d7b85662edb28991e8b1227",
+        "error": "SOURCE_EXCERPT_INCOMPLETE",
+        "at": "2026-10-04T10:00:00+08:00",
+        "arguments": {
+          "completion_condition": "第1天的文字学情总结",
+          "expected_family_version": 5,
+          "request": "在明天下午四点向家长发送一份第1天的文字学情总结，今天不发",
+          "request_id": "propose-day1-summary",
+          "requested_time": {
+            "meaning": "at",
+            "source_text": "请明天下午四点给我发一份第1天的文字学情总结，今天不用发。",
+            "start": "2026-10-05T16:00:00+08:00"
+          },
+          "source_excerpt": "另外，请明天下午四点给我发一份第1天的文字学情总结，今天不用发。",
+          "source_intent_id": "intent-day1-summary-tomorrow",
+          "source_message_id": "msg-c3b4e49a4f3f4c3584bf87965734a4a1",
+          "source_version": 2
+        },
+        "result": {
+          "ok": false,
+          "error": {
+            "code": "SOURCE_EXCERPT_INCOMPLETE",
+            "message": "须先解释并引用完整来信"
+          }
+        }
+      },
+      {
+        "tool": "pending.propose_service",
+        "arguments_digest": "1359110b132d0f3545d38a565827302e406955410018e896de719bc7044d9780",
+        "ok": true,
+        "result_digest": "eadcd6d0bf915b8ad9cacc3bbdbc2c8973b561481db1d1f0af9b56734476cbe6",
+        "error": null,
+        "at": "2026-10-04T10:00:00+08:00",
+        "arguments": {
+          "completion_condition": "第1天的文字学情总结",
+          "expected_family_version": 5,
+          "request": "在明天下午四点向家长发送一份第1天的文字学情总结，今天不发",
+          "request_id": "propose-day1-summary",
+          "requested_time": {
+            "meaning": "at",
+            "source_text": "请明天下午四点给我发一份第1天的文字学情总结，今天不用发。",
+            "start": "2026-10-05T16:00:00+08:00"
+          },
+          "source_excerpt": "请查一下这次记录第1天完成了吗？另外，请明天下午四点给我发一份第1天的文字学情总结，今天不用发。",
+          "source_intent_id": "intent-day1-summary-tomorrow",
+          "source_message_id": "msg-c3b4e49a4f3f4c3584bf87965734a4a1",
+          "source_version": 2
+        },
+        "result": {
+          "ok": true,
+          "result": {
+            "request_id": "propose-day1-summary",
+            "outcome": "applied",
+            "data": {
+              "id": "pending:6fae95d5bc33e0a6d4efcb20dea1fce0639c9fda54f462c4699f46502c4aa4ab",
+              "version": 1,
+              "await_decision": true,
+              "candidate_source_id": "candidate-source:a3ec5cbc53c6f6aed7c182b297ab50cfc6a99d30f9796362df4316e76a10c7a8",
+              "completion_condition": "第1天的文字学情总结",
+              "decision_revision": 1,
+              "disposition": "pending",
+              "done_work": [],
+              "event_id": null,
+              "original_deadline": "请明天下午四点给我发一份第1天的文字学情总结，今天不用发。",
+              "planning_requested": true,
+              "raised_at": "2026-10-04T10:00:00+08:00",
+              "remaining_work": [
+                "requested-text"
+              ],
+              "request": "在明天下午四点向家长发送一份第1天的文字学情总结，今天不发",
+              "requested_time": {
+                "end": null,
+                "meaning": "at",
+                "source_text": "请明天下午四点给我发一份第1天的文字学情总结，今天不用发。",
+                "start": "2026-10-05T16:00:00+08:00"
+              },
+              "source_intent_id": "intent-day1-summary-tomorrow",
+              "source_kind": "source_bound_service_interpretation",
+              "source_message_id": "msg-c3b4e49a4f3f4c3584bf87965734a4a1",
+              "source_version": 2
+            },
+            "record_versions": {
+              "family_input_version": 6
+            },
+            "error": null
+          }
+        }
+      },
+      {
+        "tool": "wechat.send_message",
+        "arguments_digest": "e416dbb4ce60686dbc32ecf1f6bcb1b3a3a7d1ee84b60a62c3c9a13c7783ef8f",
+        "ok": true,
+        "result_digest": "f2655cba05c0f94d88f6e13f4604200fa23e1c00b0372bc90449d2dacbca9832",
+        "error": null,
+        "at": "2026-10-04T10:00:00+08:00",
+        "arguments": {
+          "request_id": "reply-day1-status",
+          "expected_family_version": 6,
+          "body": "您好，我是多多老师。刚查了本次记录里第1天的学情快照：出勤状态是已出勤，但完成状态记为未完成，作业是未提交，打卡也是未打卡。所以第1天目前还没有记为完成。另外，您希望明天下午四点发送第1天文字学情总结的需求我已经登记下来了，具体安排确认后我再跟您同步，今天不会发送。",
+          "action_kind": "reply",
+          "reply_to": [
+            {
+              "message_id": "msg-c3b4e49a4f3f4c3584bf87965734a4a1",
+              "intent_id": "intent-day1-status",
+              "resolves_intent": true
+            },
+            {
+              "message_id": "msg-c3b4e49a4f3f4c3584bf87965734a4a1",
+              "intent_id": "intent-day1-summary-tomorrow",
+              "resolves_intent": false
+            }
+          ]
+        },
+        "result": {
+          "ok": true,
+          "result": {
+            "request_id": "reply-day1-status",
+            "outcome": "applied",
+            "data": {
+              "id": "operation-ec0f6065a2474aa0afcbff8da6a4b102",
+              "version": 3,
+              "action_kind": "reply",
+              "admitted_at": "2026-10-04T10:00:00+08:00",
+              "body": "您好，我是多多老师。刚查了本次记录里第1天的学情快照：出勤状态是已出勤，但完成状态记为未完成，作业是未提交，打卡也是未打卡。所以第1天目前还没有记为完成。另外，您希望明天下午四点发送第1天文字学情总结的需求我已经登记下来了，具体安排确认后我再跟您同步，今天不会发送。",
+              "business_date": "2026-10-04",
+              "channel": "mock_wechat",
+              "content_digest": "ded48699b21f258452e52d3f5bc32e1c2deb390df8f5a5c76548bef105b31e11",
+              "decision_reply_refs": [],
+              "dispatch_count": 1,
+              "event_id": null,
+              "lesson_refs": [],
+              "occurred_at": "2026-10-04T10:00:00+08:00",
+              "part_id": null,
+              "prepared_family_version": 7,
+              "purpose_key": "0d13f21f58e59606eaa441dcdea1bd4f7390a34a2ff9060d5159ca12251c0c7d",
+              "receipts": [
+                {
+                  "observed_at": "2026-10-04T10:00:00+08:00",
+                  "source": "mock_transport",
+                  "stage": "sent"
+                }
+              ],
+              "recipient": "mock:4b1:a",
+              "reply_to": [
+                {
+                  "intent_id": "intent-day1-status",
+                  "message_id": "msg-c3b4e49a4f3f4c3584bf87965734a4a1"
+                },
+                {
+                  "intent_id": "intent-day1-summary-tomorrow",
+                  "message_id": "msg-c3b4e49a4f3f4c3584bf87965734a4a1",
+                  "resolves_intent": false
+                }
+              ],
+              "request": {
+                "action_kind": "reply",
+                "body": "您好，我是多多老师。刚查了本次记录里第1天的学情快照：出勤状态是已出勤，但完成状态记为未完成，作业是未提交，打卡也是未打卡。所以第1天目前还没有记为完成。另外，您希望明天下午四点发送第1天文字学情总结的需求我已经登记下来了，具体安排确认后我再跟您同步，今天不会发送。",
+                "event_id": null,
+                "expected_family_version": 6,
+                "part_id": null,
+                "reply_to": [
+                  {
+                    "intent_id": "intent-day1-status",
+                    "message_id": "msg-c3b4e49a4f3f4c3584bf87965734a4a1"
+                  },
+                  {
+                    "intent_id": "intent-day1-summary-tomorrow",
+                    "message_id": "msg-c3b4e49a4f3f4c3584bf87965734a4a1",
+                    "resolves_intent": false
+                  }
+                ],
+                "request_id": "reply-day1-status",
+                "step_id": null
+              },
+              "requirement_revision": null,
+              "run_id": "run-2f1ea79a65174f6181051407984c182d",
+              "send_capability": {
+                "commitment_id": null,
+                "current_step_key": null,
+                "event_id": null,
+                "job_id": "message:msg-c3b4e49a4f3f4c3584bf87965734a4a1",
+                "job_kind": "service",
+                "mode": "full",
+                "no_contact": false,
+                "output_mode": "family_reply",
+                "reply_scope": {
+                  "msg-c3b4e49a4f3f4c3584bf87965734a4a1": [
+                    "*"
+                  ]
+                },
+                "run_id": "run-2f1ea79a65174f6181051407984c182d",
+                "schedule_revision": null
+              },
+              "simulated": true,
+              "stage": "sent"
+            },
+            "record_versions": {
+              "family_input_version": 8
+            },
+            "error": null
+          }
+        }
+      },
+      {
+        "tool": "service.record_outcome",
+        "arguments_digest": "afd8b58029cafe5ba99699da8ffd7dd0d08316a3c38288ff99991b916d1be964",
+        "ok": false,
+        "result_digest": "d5783c103541a25315034e6312d7757aa8662e47f80def7c96677cc034ede67f",
+        "error": "EVIDENCE_SUPERSEDED",
+        "at": "2026-10-04T10:00:00+08:00",
+        "arguments": {
+          "outcome": "waiting",
+          "reason": "第1天学情状态已按SQL快照如实回复并发送成功（operation-ec0f6065a2474aa0afcbff8da6a4b102，stage=sent）。明天16:00的第1天文字学情总结需求已登记为pending:6fae95d5bc33e0a6d4efcb20dea1fce0639c9fda54f462c4699f46502c4aa4ab，等待Planner决定；intent-day1-summary-tomorrow保留未结清。",
+          "request_id": "outcome-day1",
+          "refs": [
+            {
+              "kind": "message",
+              "id": "msg-c3b4e49a4f3f4c3584bf87965734a4a1",
+              "version": 2
+            },
+            {
+              "kind": "operation",
+              "id": "operation-ec0f6065a2474aa0afcbff8da6a4b102",
+              "version": 3
+            },
+            {
+              "kind": "pending",
+              "id": "pending:6fae95d5bc33e0a6d4efcb20dea1fce0639c9fda54f462c4699f46502c4aa4ab",
+              "version": 1
+            }
+          ],
+          "remaining_work": [
+            "等待pending:6fae95d5bc33e0a6d4efcb20dea1fce0639c9fda54f462c4699f46502c4aa4ab的Planner决定后安排明天16:00的第1天文字学情总结"
+          ],
+          "resume_condition": "对应pending决定发生变化后恢复处理；决定确认后再向家长同步安排"
+        },
+        "result": {
+          "ok": false,
+          "error": {
+            "code": "EVIDENCE_SUPERSEDED",
+            "message": "内部结果引用必须是当前真实记录"
+          }
+        }
+      },
+      {
+        "tool": "state.read",
+        "arguments_digest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "ok": true,
+        "result_digest": "85cb5e8265ac945f86bc30c35c4b315329549245a6bc31cbfa1d2d782266354d",
+        "error": null,
+        "at": "2026-10-04T10:00:00+08:00",
+        "arguments": {},
+        "result": {
+          "ok": true,
+          "result": {
+            "family_version": 8,
+            "events": [],
+            "controls": [],
+            "plans": [],
+            "reports": [],
+            "pending_inputs": [
+              {
+                "id": "pending:6fae95d5bc33e0a6d4efcb20dea1fce0639c9fda54f462c4699f46502c4aa4ab",
+                "version": 1,
+                "source_message_id": "msg-c3b4e49a4f3f4c3584bf87965734a4a1",
+                "source_intent_id": "intent-day1-summary-tomorrow",
+                "request": "在明天下午四点向家长发送一份第1天的文字学情总结，今天不发",
+                "completion_condition": "第1天的文字学情总结",
+                "original_deadline": "请明天下午四点给我发一份第1天的文字学情总结，今天不用发。",
+                "disposition": "pending",
+                "event_id": null,
+                "planning_requested": true,
+                "decision_revision": 1,
+                "await_decision": true
+              }
+            ],
+            "messages": [
+              {
+                "id": "msg-c3b4e49a4f3f4c3584bf87965734a4a1",
+                "version": 3,
+                "body": "请查一下这次记录第1天完成了吗？另外，请明天下午四点给我发一份第1天的文字学情总结，今天不用发。",
+                "direction": "inbound",
+                "external_id": "request",
+                "intents": [
+                  {
+                    "intent_id": "intent-day1-status",
+                    "reply_operation_refs": [
+                      "operation-ec0f6065a2474aa0afcbff8da6a4b102"
+                    ],
+                    "requires_reply": true,
+                    "service_authorization": null,
+                    "service_kind": "reply",
+                    "text": "查询本次记录第1天是否完成"
+                  },
+                  {
+                    "intent_id": "intent-day1-summary-tomorrow",
+                    "partial_reply_operation_refs": [
+                      "operation-ec0f6065a2474aa0afcbff8da6a4b102"
+                    ],
+                    "reply_operation_refs": [],
+                    "requires_reply": true,
+                    "service_authorization": "请明天下午四点给我发一份第1天的文字学情总结，今天不用发。",
+                    "service_kind": "future_delivery",
+                    "text": "要求明天下午四点发送一份第1天的文字学情总结，今天不发"
+                  }
+                ],
+                "interpreted": true,
+                "occurred_at": "2026-10-04T10:00:00+08:00",
+                "received_at": "2026-10-04T10:00:00+08:00",
+                "source_kind": "mock_wechat"
+              }
+            ],
+            "operations": [
+              {
+                "id": "operation-ec0f6065a2474aa0afcbff8da6a4b102",
+                "version": 3,
+                "action_kind": "reply",
+                "admitted_at": "2026-10-04T10:00:00+08:00",
+                "body": "您好，我是多多老师。刚查了本次记录里第1天的学情快照：出勤状态是已出勤，但完成状态记为未完成，作业是未提交，打卡也是未打卡。所以第1天目前还没有记为完成。另外，您希望明天下午四点发送第1天文字学情总结的需求我已经登记下来了，具体安排确认后我再跟您同步，今天不会发送。",
+                "business_date": "2026-10-04",
+                "channel": "mock_wechat",
+                "content_digest": "ded48699b21f258452e52d3f5bc32e1c2deb390df8f5a5c76548bef105b31e11",
+                "decision_reply_refs": [],
+                "dispatch_count": 1,
+                "event_id": null,
+                "lesson_refs": [],
+                "occurred_at": "2026-10-04T10:00:00+08:00",
+                "part_id": null,
+                "prepared_family_version": 7,
+                "purpose_key": "0d13f21f58e59606eaa441dcdea1bd4f7390a34a2ff9060d5159ca12251c0c7d",
+                "receipts": [
+                  {
+                    "observed_at": "2026-10-04T10:00:00+08:00",
+                    "source": "mock_transport",
+                    "stage": "sent"
+                  }
+                ],
+                "recipient": "mock:4b1:a",
+                "reply_to": [
+                  {
+                    "intent_id": "intent-day1-status",
+                    "message_id": "msg-c3b4e49a4f3f4c3584bf87965734a4a1"
+                  },
+                  {
+                    "intent_id": "intent-day1-summary-tomorrow",
+                    "message_id": "msg-c3b4e49a4f3f4c3584bf87965734a4a1",
+                    "resolves_intent": false
+                  }
+                ],
+                "request": {
+                  "action_kind": "reply",
+                  "body": "您好，我是多多老师。刚查了本次记录里第1天的学情快照：出勤状态是已出勤，但完成状态记为未完成，作业是未提交，打卡也是未打卡。所以第1天目前还没有记为完成。另外，您希望明天下午四点发送第1天文字学情总结的需求我已经登记下来了，具体安排确认后我再跟您同步，今天不会发送。",
+                  "event_id": null,
+                  "expected_family_version": 6,
+                  "part_id": null,
+                  "reply_to": [
+                    {
+                      "intent_id": "intent-day1-status",
+                      "message_id": "msg-c3b4e49a4f3f4c3584bf87965734a4a1"
+                    },
+                    {
+                      "intent_id": "intent-day1-summary-tomorrow",
+                      "message_id": "msg-c3b4e49a4f3f4c3584bf87965734a4a1",
+                      "resolves_intent": false
+                    }
+                  ],
+                  "request_id": "reply-day1-status",
+                  "step_id": null
+                },
+                "requirement_revision": null,
+                "run_id": "run-2f1ea79a65174f6181051407984c182d",
+                "send_capability": {
+                  "commitment_id": null,
+                  "current_step_key": null,
+                  "event_id": null,
+                  "job_id": "message:msg-c3b4e49a4f3f4c3584bf87965734a4a1",
+                  "job_kind": "service",
+                  "mode": "full",
+                  "no_contact": false,
+                  "output_mode": "family_reply",
+                  "reply_scope": {
+                    "msg-c3b4e49a4f3f4c3584bf87965734a4a1": [
+                      "*"
+                    ]
+                  },
+                  "run_id": "run-2f1ea79a65174f6181051407984c182d",
+                  "schedule_revision": null
+                },
+                "simulated": true,
+                "stage": "sent"
+              }
+            ],
+            "now": "2026-10-04T10:00:00+08:00",
+            "responsibility_index": [],
+            "execution_agenda": [],
+            "agenda_is_projection_not_queue": true
+          }
+        }
+      },
+      {
+        "tool": "service.record_outcome",
+        "arguments_digest": "f6c74d0e409b152518b0d749c6217afefcdae40d28a0604880cf79fc1968c3ee",
+        "ok": true,
+        "result_digest": "b6e9313be98a77080aabd2078c5a84c498d8b0d77e1809ba039602384ca2dd60",
+        "error": null,
+        "at": "2026-10-04T10:00:00+08:00",
+        "arguments": {
+          "outcome": "waiting",
+          "reason": "第1天学情状态已按SQL快照如实回复，发送操作operation-ec0f6065a2474aa0afcbff8da6a4b102回执为sent。明天16:00的第1天文字学情总结需求已登记为pending:6fae95d5bc33e0a6d4efcb20dea1fce0639c9fda54f462c4699f46502c4aa4ab，等待Planner决定；intent-day1-summary-tomorrow保留未结清。",
+          "refs": [
+            {
+              "id": "msg-c3b4e49a4f3f4c3584bf87965734a4a1",
+              "kind": "message",
+              "version": 3
+            },
+            {
+              "id": "operation-ec0f6065a2474aa0afcbff8da6a4b102",
+              "kind": "operation",
+              "version": 3
+            },
+            {
+              "id": "pending:6fae95d5bc33e0a6d4efcb20dea1fce0639c9fda54f462c4699f46502c4aa4ab",
+              "kind": "pending",
+              "version": 1
+            }
+          ],
+          "remaining_work": [
+            "等待pending:6fae95d5bc33e0a6d4efcb20dea1fce0639c9fda54f462c4699f46502c4aa4ab的Planner决定后安排明天16:00的第1天文字学情总结"
+          ],
+          "request_id": "outcome-day1",
+          "resume_condition": "对应pending的Planner决定发生变化后恢复处理；决定确认后再向家长同步安排"
+        },
+        "result": {
+          "ok": true,
+          "result": {
+            "id": "run-2f1ea79a65174f6181051407984c182d",
+            "version": 1,
+            "awaiting_operation_ids": [],
+            "delegation_acknowledgements": [],
+            "draft": null,
+            "effective_control_scopes": {
+              "authority": "current_control_records",
+              "controls": [],
+              "meaning": "仅active控制生效。event_id为空的控制覆盖本家庭所有事项及以后事项中的action_kinds；有event_id仅覆盖该事项的这些动作。未列出的动作不因该控制暂停，仍须经过其他权限和发送检查。旧空白字符串范围按全家庭保守解释并标明legacy_invalid_scope，不修改原记录。自由文本不能缩小、扩大或解除控制。"
+            },
+            "job_id": "message:msg-c3b4e49a4f3f4c3584bf87965734a4a1",
+            "observed_job_operations": [
+              {
+                "id": "operation-ec0f6065a2474aa0afcbff8da6a4b102",
+                "stage": "sent",
+                "version": 3
+              }
+            ],
+            "observed_planning_inputs": [
+              {
+                "await_decision": true,
+                "decision_revision": 1,
+                "id": "pending:6fae95d5bc33e0a6d4efcb20dea1fce0639c9fda54f462c4699f46502c4aa4ab",
+                "source_intent_id": "intent-day1-summary-tomorrow",
+                "version": 1
+              }
+            ],
+            "outcome": "waiting",
+            "payload_digest": "562a41c4134df15574f98a77303dfba7b6d2cae00a01f8bcd05f83cb76a6cdff",
+            "reason": "第1天学情状态已按SQL快照如实回复，发送操作operation-ec0f6065a2474aa0afcbff8da6a4b102回执为sent。明天16:00的第1天文字学情总结需求已登记为pending:6fae95d5bc33e0a6d4efcb20dea1fce0639c9fda54f462c4699f46502c4aa4ab，等待Planner决定；intent-day1-summary-tomorrow保留未结清。",
+            "recorded_at": "2026-10-04T10:00:00+08:00",
+            "refs": [
+              {
+                "id": "msg-c3b4e49a4f3f4c3584bf87965734a4a1",
+                "kind": "message",
+                "version": 3
+              },
+              {
+                "id": "operation-ec0f6065a2474aa0afcbff8da6a4b102",
+                "kind": "operation",
+                "version": 3
+              },
+              {
+                "id": "pending:6fae95d5bc33e0a6d4efcb20dea1fce0639c9fda54f462c4699f46502c4aa4ab",
+                "kind": "pending",
+                "version": 1
+              }
+            ],
+            "remaining_work": [
+              "等待pending:6fae95d5bc33e0a6d4efcb20dea1fce0639c9fda54f462c4699f46502c4aa4ab的Planner决定后安排明天16:00的第1天文字学情总结"
+            ],
+            "request_id": "outcome-day1",
+            "resume_condition": "对应pending的Planner决定发生变化后恢复处理；决定确认后再向家长同步安排",
+            "resume_condition_authority": "model_input_recovery_note_not_control_or_send_permission",
+            "run_id": "run-2f1ea79a65174f6181051407984c182d",
+            "settled_delegated_request_refs": []
+          }
+        }
+      }
+    ],
+    "profile": "/root/autodl-tmp/digitalTutor/work/stage4/4c-development-l/state/backend-stage4/intraday-l-native06-intraday/intraday-continuous/runs/run-2f1ea79a65174f6181051407984c182d/profile",
+    "cwd": "/root/autodl-tmp/digitalTutor/work/stage4/4c-development-l/state/backend-stage4/intraday-l-native06-intraday/intraday-continuous/runs/run-2f1ea79a65174f6181051407984c182d",
+    "output_route": "internal",
+    "model": "qwen3.8-flash",
+    "generation_options": {
+      "temperature": 0.0
+    }
+  }
+}

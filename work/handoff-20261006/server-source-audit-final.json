@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-06",
+  "server_root": "/root/autodl-tmp/digitalTutor",
+  "source_files_checked": {
+    "H": 139,
+    "L": 189,
+    "pinned_materials": 31
+  },
+  "source_mismatches": [],
+  "documents_synced": 8,
+  "document_mismatches": [],
+  "optional_local_navigation_files": 56,
+  "optional_navigation_absent_on_server": 56,
+  "scope": "read-only H/L/pinned material comparison; root handoff documents updated; no model run or business state mutation"
+}

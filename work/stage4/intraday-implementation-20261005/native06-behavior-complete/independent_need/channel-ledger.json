@@ -1,0 +1,70 @@
+[
+  {
+    "operation_id": "operation-01faf26f86654308af3a55a3bbbaab1a",
+    "payload": {
+      "action_kind": "reply",
+      "admitted_at": "2026-10-04T10:00:00+08:00",
+      "body": "好的，已经记下了：您需要一份这周阅读情况的简短文字总结，时间是明天10月5日下午四点前。今天先不动笔，这个需求和时间我先帮您保留登记，具体安排确认后我再跟您对齐。",
+      "business_date": "2026-10-04",
+      "channel": "mock_wechat",
+      "content_digest": "412d99dc61ff1cfcdb8ee93c472c58a10c8547aa36a30fc9455ff8a87b8ca6d4",
+      "decision_reply_refs": [],
+      "dispatch_count": 1,
+      "event_id": null,
+      "id": "operation-01faf26f86654308af3a55a3bbbaab1a",
+      "lesson_refs": [],
+      "occurred_at": "2026-10-04T10:00:00+08:00",
+      "part_id": null,
+      "prepared_family_version": 5,
+      "purpose_key": "ff7aaf01777eaa9129321d461a384c53f605c6aa1bd8dfcfc4ae7d5b95978aca",
+      "receipts": [],
+      "recipient": "mock:4b1:a",
+      "reply_to": [
+        {
+          "intent_id": "intent-independent-need-1",
+          "message_id": "msg-2fed9dccaa424736bff3297cae241907",
+          "resolves_intent": false
+        }
+      ],
+      "request": {
+        "action_kind": "reply",
+        "body": "好的，已经记下了：您需要一份这周阅读情况的简短文字总结，时间是明天10月5日下午四点前。今天先不动笔，这个需求和时间我先帮您保留登记，具体安排确认后我再跟您对齐。",
+        "event_id": null,
+        "expected_family_version": 4,
+        "part_id": null,
+        "reply_to": [
+          {
+            "intent_id": "intent-independent-need-1",
+            "message_id": "msg-2fed9dccaa424736bff3297cae241907",
+            "resolves_intent": false
+          }
+        ],
+        "request_id": "send-run-ac280b87060e4815b78e748614ae32c8-1",
+        "step_id": null
+      },
+      "requirement_revision": null,
+      "run_id": "run-ac280b87060e4815b78e748614ae32c8",
+      "send_capability": {
+        "commitment_id": null,
+        "current_step_key": null,
+        "event_id": null,
+        "job_id": "message:msg-2fed9dccaa424736bff3297cae241907",
+        "job_kind": "service",
+        "mode": "passive",
+        "no_contact": false,
+        "output_mode": "family_reply",
+        "reply_scope": {
+          "msg-2fed9dccaa424736bff3297cae241907": [
+            "*"
+          ]
+        },
+        "run_id": "run-ac280b87060e4815b78e748614ae32c8",
+        "schedule_revision": null
+      },
+      "simulated": true,
+      "stage": "dispatching",
+      "version": 2
+    },
+    "stage": "sent"
+  }
+]

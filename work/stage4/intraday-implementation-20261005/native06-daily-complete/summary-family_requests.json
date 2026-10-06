@@ -1,0 +1,19 @@
+[
+  {
+    "case": "family_requests",
+    "program_checks": {
+      "before_0800_zero_calls": true,
+      "first_daily_committed": true,
+      "accepted_delivery_has_decision_confirmation": true,
+      "every_phase_stable": true,
+      "zero_active_sends": true,
+      "unique_day_plans": true,
+      "restart_no_new_model_send_or_version": true
+    },
+    "program_passed": true,
+    "model_runs": 8,
+    "api_calls": 54,
+    "semantic_status": "not_reviewed",
+    "gate_passed": false
+  }
+]

@@ -1,0 +1,80 @@
+{
+  "source": "intraday-l-test15/source.zip",
+  "stage_gate_passed": false,
+  "review_status": "complete_with_source_failure",
+  "cases": [
+    {
+      "case": "intraday-empty",
+      "native_calls": 7,
+      "api_calls": 52,
+      "program_passed": true,
+      "scoped_semantic_passed": false,
+      "review_status": "source_not_proven_before_send",
+      "scores": {
+        "事实与来源": 1,
+        "回应完整性": 2,
+        "服务帮助": 2,
+        "适配家庭": 2,
+        "表达与克制": 1
+      },
+      "provisional_total": 8,
+      "null_condition_covered": false,
+      "condition": "第1天的文字学情总结",
+      "reports_count": 1,
+      "event_id": "event-90bf0a02aa364cf7b9c5f95e46bc6648",
+      "total": 8,
+      "findings": [
+        {
+          "priority": "P1",
+          "operation_id": "operation-8beb9a98f4fc405380e7e7c46ab15d74",
+          "quote": "第1天对应课节 LESSON-L2-FOX-D01",
+          "detail": "发送前两份精确assembly摘录均未提供可信映射：learning.course_binding=unknown，Event/agenda lesson_refs=[]、evidence=[]；本run发送前SQL未读course_bindings。发送后的state.read及最终数据库正确绑定不能倒推模型发送前有依据。不是证明底层映射事实为假，而是此句当前来源门槛未达。"
+        }
+      ]
+    },
+    {
+      "case": "intraday-explicit",
+      "native_calls": 7,
+      "api_calls": 44,
+      "program_passed": true,
+      "scoped_semantic_passed": true,
+      "review_status": "complete",
+      "scores": {
+        "事实与来源": 2,
+        "回应完整性": 2,
+        "服务帮助": 2,
+        "适配家庭": 2,
+        "表达与克制": 2
+      },
+      "provisional_total": 10,
+      "null_condition_covered": false,
+      "condition": "总结要说清完成情况和作业提交情况。",
+      "reports_count": 1,
+      "event_id": "event-a015484647d84ca8bd1d84365f694ade"
+    },
+    {
+      "case": "intraday-continuous",
+      "native_calls": 7,
+      "api_calls": 49,
+      "program_passed": true,
+      "scoped_semantic_passed": true,
+      "review_status": "complete",
+      "scores": {
+        "事实与来源": 2,
+        "回应完整性": 2,
+        "服务帮助": 2,
+        "适配家庭": 2,
+        "表达与克制": 1
+      },
+      "provisional_total": 9,
+      "null_condition_covered": false,
+      "condition": "第1天的文字学情总结",
+      "reports_count": 1,
+      "event_id": "event-12c384c545ca414881c2fe9dfd4035a3"
+    }
+  ],
+  "actual_continuous_admission": "2026-10-05T16:01:55.146530+08:00",
+  "continuous_lag_seconds": 115.14653,
+  "supplement_assembly_sha256": "e142106e6f52639e2bb0c503650f46727356f1836167ea2ba12868f01bbf17ad",
+  "continuous_delay_user_accepted_nonblocking": true
+}

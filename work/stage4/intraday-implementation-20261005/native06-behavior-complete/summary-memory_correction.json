@@ -1,0 +1,56 @@
+{
+  "stage": "4B2",
+  "cases": [
+    {
+      "case": "memory_correction",
+      "program_checks": {
+        "actual_model_runs": true,
+        "planner_calls_zero": true,
+        "no_new_event": true,
+        "original_events_unchanged": true,
+        "no_plan_mutation": true,
+        "reports_not_consumed": true,
+        "reports_original_scope": true,
+        "unanswered_preserved_or_resolved": true,
+        "at_most_one_dispatch_per_operation": true,
+        "mock_channel_only": true,
+        "no_proactive_send": true,
+        "duplicate_inbound_stable": true,
+        "internal_result_recorded": true,
+        "no_failed_service_job": true,
+        "synthetic-4b1-a_all_jobs_settled": true,
+        "message:msg-f4933850ee2f4378a48bafe82a817a4a_outcome": true,
+        "message:msg-f4933850ee2f4378a48bafe82a817a4a_latest_run_outcome": true,
+        "message:msg-cedb6b8d25ff425794d797b111d0acd7_outcome": true,
+        "message:msg-cedb6b8d25ff425794d797b111d0acd7_latest_run_outcome": true,
+        "message:msg-57fd35eb9ad04eb382e454c537b1ec84_outcome": true,
+        "message:msg-57fd35eb9ad04eb382e454c537b1ec84_latest_run_outcome": true,
+        "ordinary_question_no_planning_request": true,
+        "ordinary_question_no_planner_job": true,
+        "source_backed_correction": true,
+        "injected_planner_not_called": true,
+        "twenty_idle_scans": true,
+        "idle_zero_new_model_or_send": true,
+        "idle_no_business_bump": true
+      },
+      "program_passed": true,
+      "semantic_status": "not_reviewed",
+      "gate_passed": false,
+      "model_runs": 3,
+      "api_calls": 27,
+      "unanswered_message_ids": [],
+      "unconsumed_reports": 0,
+      "message_read_modes": [
+        "all",
+        "since"
+      ]
+    }
+  ],
+  "message_read_modes": [
+    "all",
+    "since"
+  ],
+  "all_latest_since_observed": false,
+  "semantic_status": "not_reviewed",
+  "gate_passed": false
+}

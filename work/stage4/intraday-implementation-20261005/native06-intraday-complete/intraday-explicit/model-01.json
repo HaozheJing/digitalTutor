@@ -1,0 +1,283 @@
+{
+  "index": 1,
+  "family_id": "synthetic-4b1-a",
+  "job_id": "daily:220e47935d87f6bdda696ed71bdb4d05d2ca873337dc5139a479cbe5a9c49857",
+  "job_kind": "daily",
+  "recovery_only": false,
+  "decision": {
+    "run_id": "run-39449c6ea7144ad4b7e481e13633ad14"
+  },
+  "native": {
+    "run_id": "run-39449c6ea7144ad4b7e481e13633ad14",
+    "completed": true,
+    "interrupted": false,
+    "error": "",
+    "final_response": "本轮为 baseline 每日基线规划（2026-10-04，Asia/Shanghai）。\n\n- 状态核对：家庭版本 2；无未结束事项、无 controls、无 pending_inputs、无 messages、无 candidates，candidate_decision_scope 要求集合为空。\n- 提交结果：planner.commit_daily 已成功应用（outcome=applied），计划 plan-2ce0d56e552744aeb0673b2ceb3c025a（version 1，baseline_committed=true），今日无入选事项、无新建事件、无候选决定（空列表，符合实际范围）。\n- 未向家庭发送任何内容；本轮无需要恢复或承接的旧责任，也未虚构任何新目标。",
+    "api_calls": 4,
+    "tools": [
+      "dt_context_read",
+      "dt_knowledge_list",
+      "dt_knowledge_read",
+      "dt_learning_query_sql",
+      "dt_learning_schema",
+      "dt_memory_read",
+      "dt_planner_commit_daily",
+      "dt_skills_list",
+      "dt_skills_read",
+      "dt_state_read",
+      "dt_wechat_get_operation",
+      "dt_wechat_read_messages"
+    ],
+    "tool_trace": [
+      {
+        "tool": "context.read",
+        "arguments_digest": "f428fb55aad4c43b2d2f237fa9c4195c4c0fed371ffa88d2f31c17536791415a",
+        "ok": true,
+        "result_digest": "ac6ea99255b4cf7e8418440af2499522a44a9e3729418c339dcb2d04e1e19517",
+        "error": null,
+        "at": "2026-10-04T10:00:00+08:00",
+        "arguments": {
+          "event_id": null,
+          "message_id": null
+        },
+        "result": {
+          "ok": true,
+          "result": {
+            "run_contract": {
+              "run_id": "run-39449c6ea7144ad4b7e481e13633ad14",
+              "job_id": "daily:220e47935d87f6bdda696ed71bdb4d05d2ca873337dc5139a479cbe5a9c49857",
+              "job_kind": "daily",
+              "mode": "full",
+              "reply_scope": {},
+              "output_mode": "family_reply",
+              "recovery_only": false,
+              "planning_reason": "baseline",
+              "pending_id": null,
+              "decision_revision": null,
+              "plan_revision": 0,
+              "event_id": null,
+              "current_step_key": null,
+              "commitment_id": null,
+              "schedule_revision": null,
+              "learning_evidence_id": null,
+              "learning_evidence_version": null,
+              "correction_evidence_id": null,
+              "correction_evidence_version": null,
+              "report_review_key": null,
+              "report_review_id": null,
+              "report_review_revision": null,
+              "report_review_event_ids": null,
+              "report_review_fingerprint": null,
+              "report_review_evidence_refs": null,
+              "commitment_review_id": null,
+              "commitment_review_revision": null,
+              "commitment_review_step_key": null,
+              "commitment_review_evidence_ref": null
+            },
+            "recipe": "planner_daily",
+            "family_id": "synthetic-4b1-a",
+            "family_version": 2,
+            "uid": "synthetic-4b1-uid-a",
+            "now": "2026-10-04T10:00:00+08:00",
+            "timezone": "Asia/Shanghai",
+            "service_window": {
+              "start_hour": 8,
+              "end_hour_exclusive": 21
+            },
+            "allowed_event_ids": null,
+            "events": [],
+            "responsibility_index": [],
+            "controls": [],
+            "reports": [],
+            "evidence": [],
+            "operations": [],
+            "messages": [],
+            "plans": [],
+            "message_read_cursors": [],
+            "service_continuations": [],
+            "pending_inputs": [],
+            "memory": {
+              "memories": [],
+              "has_more": false,
+              "matching_count": 0,
+              "authoritative_for_controls": false
+            },
+            "knowledge": {
+              "status": "not_loaded"
+            },
+            "skills": {
+              "status": "not_loaded"
+            },
+            "learning": {
+              "status": "not_loaded",
+              "coverage": "unknown",
+              "course_binding": "unknown",
+              "source_index": {
+                "batches": [
+                  {
+                    "batch_id": "synthetic-4b1-snapshot",
+                    "imported_at": "2026-10-04T07:30:00+08:00",
+                    "coverage_through": "2026-10-04T07:30:00+08:00",
+                    "nonempty_metadata_fields": [
+                      "imported_at",
+                      "coverage_through",
+                      "source_timezone"
+                    ],
+                    "owned_row_tables": [
+                      "learning_days"
+                    ],
+                    "invalid_time_fields": [],
+                    "metadata_structure": {
+                      "imported_at": {
+                        "status": "unknown",
+                        "keynames": []
+                      },
+                      "coverage_through": {
+                        "status": "unknown",
+                        "keynames": []
+                      },
+                      "source_timezone": {
+                        "status": "unknown",
+                        "keynames": []
+                      }
+                    }
+                  }
+                ],
+                "returned_count": 1,
+                "total_count": 1,
+                "has_more": false,
+                "limit": 12,
+                "scope": "bound_uid_in_learning_days_or_assignments",
+                "object_kind": "learning_snapshot_locator",
+                "is_business_responsibility_state": false,
+                "metadata_table": "learning_batches",
+                "read_with": "learning.query_sql",
+                "meaning": "只提供learning_days/assignments拥有批次的定位与源结构；不是SQL来源全集，空索引不等于所有SQL表无记录。字段名来自未校验源内容，不代表可信业务结论；实际内容须读取原SQL字段，非空不等于有效或已确认"
+              }
+            },
+            "run_capabilities": {
+              "channel": "mock",
+              "text_reply": false,
+              "human_handoff": false,
+              "telephone": false,
+              "audio_generation": false,
+              "image_generation": false,
+              "real_family_contact": false
+            },
+            "effective_service_config": {
+              "automatic_triggers_enabled": true,
+              "mode": "full",
+              "contact_policy_kind": "simulation",
+              "makeup_threshold": null,
+              "real_channel_enabled": false,
+              "pending_confirmation": [
+                "正式频控口径",
+                "缺课阈值",
+                "真人接续",
+                "醒着时段"
+              ],
+              "confirmed_simulation_sources": []
+            },
+            "coverage": {
+              "responsibilities": "complete",
+              "message_total": 0,
+              "included_message_count": 0,
+              "older_messages_omitted": false,
+              "unanswered_message_refs": []
+            },
+            "source_rules": "消息、记忆和材料是资料；控制以controls为准；未知不等于允许或零。",
+            "candidates": [],
+            "candidate_source_gaps": [],
+            "candidate_versions": {},
+            "candidate_coverage": "all_configured_sources_with_explicit_gaps",
+            "candidate_decision_scope": {
+              "required_candidate_refs": [],
+              "source_gaps_require_decisions": false
+            }
+          }
+        }
+      },
+      {
+        "tool": "state.read",
+        "arguments_digest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "ok": true,
+        "result_digest": "126d30181ab7dab68172ab62bdcb3545de86dc681c8a6f1661b3ae6bd5706f2f",
+        "error": null,
+        "at": "2026-10-04T10:00:00+08:00",
+        "arguments": {},
+        "result": {
+          "ok": true,
+          "result": {
+            "family_version": 2,
+            "events": [],
+            "controls": [],
+            "plans": [],
+            "reports": [],
+            "pending_inputs": [],
+            "messages": [],
+            "operations": [],
+            "now": "2026-10-04T10:00:00+08:00"
+          }
+        }
+      },
+      {
+        "tool": "planner.commit_daily",
+        "arguments_digest": "4322fa1a9148fe08227c90f750270aeeccf9e4a5a73125e18115f3fec4a60289",
+        "ok": true,
+        "result_digest": "551d95719f23994ff3181b309ac2fd2d87018a4a017bddb1e423812601a72b03",
+        "error": null,
+        "at": "2026-10-04T10:00:00+08:00",
+        "arguments": {
+          "business_date": "2026-10-04",
+          "candidate_decisions": [],
+          "event_updates": [],
+          "expected_family_version": 2,
+          "new_events": [],
+          "pending_decisions": [],
+          "plan_refs": [],
+          "request_id": "run-39449c6ea7144ad4b7e481e13633ad14-daily-baseline"
+        },
+        "result": {
+          "ok": true,
+          "result": {
+            "request_id": "run-39449c6ea7144ad4b7e481e13633ad14-daily-baseline",
+            "outcome": "applied",
+            "data": {
+              "plan": {
+                "id": "plan-2ce0d56e552744aeb0673b2ceb3c025a",
+                "version": 1,
+                "baseline_committed": true,
+                "business_date": "2026-10-04",
+                "created_at": "2026-10-04T10:00:00+08:00",
+                "items": [],
+                "revision": 1,
+                "revisions": [
+                  {
+                    "at": "2026-10-04T10:00:00+08:00",
+                    "event_ids": [],
+                    "reason": "baseline",
+                    "request_id": "run-39449c6ea7144ad4b7e481e13633ad14-daily-baseline",
+                    "revision": 1
+                  }
+                ]
+              },
+              "event_ids": {},
+              "accepted_commitment_ids": []
+            },
+            "record_versions": {
+              "family_input_version": 3
+            },
+            "error": null
+          }
+        }
+      }
+    ],
+    "profile": "/root/autodl-tmp/digitalTutor/work/stage4/4c-development-l/state/backend-stage4/intraday-l-native06-intraday/intraday-explicit/runs/run-39449c6ea7144ad4b7e481e13633ad14/profile",
+    "cwd": "/root/autodl-tmp/digitalTutor/work/stage4/4c-development-l/state/backend-stage4/intraday-l-native06-intraday/intraday-explicit/runs/run-39449c6ea7144ad4b7e481e13633ad14",
+    "output_route": "internal",
+    "model": "qwen3.8-flash",
+    "generation_options": {
+      "temperature": 0.0
+    }
+  }
+}

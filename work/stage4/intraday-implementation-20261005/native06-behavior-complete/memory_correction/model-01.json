@@ -1,0 +1,605 @@
+{
+  "index": 1,
+  "family_id": "synthetic-4b1-a",
+  "job_id": "message:msg-f4933850ee2f4378a48bafe82a817a4a",
+  "job_kind": "service",
+  "recovery_only": false,
+  "decision": {
+    "wait": false,
+    "no_contact": false,
+    "outcome_id": "run-ecbeb65273eb48c2815c8b27eeac5cd2",
+    "reason": "已依据家长2026-10-04来信保存个性化偏好记忆，并发送确认回复（operation-ee633328b3234b7b88c1ac5593d9f7dd，回执stage=sent）。intent-1已完整答复。",
+    "run_id": "run-ecbeb65273eb48c2815c8b27eeac5cd2"
+  },
+  "native": {
+    "run_id": "run-ecbeb65273eb48c2815c8b27eeac5cd2",
+    "completed": true,
+    "interrupted": false,
+    "error": "",
+    "final_response": "本轮处理完成：\n\n- **读取并解释**：家长来信 msg-f4933850ee2f4378a48bafe82a817a4a（v1）已在首次发送前完整核对，识别单一意图 intent-1（记录家庭偏好，reply）。\n- **记忆保存**：新偏好记忆 memory-8a543c35a88f45babf5848513e55cefe（v1，active）——通常晚饭后七点半方便聊阅读、不喜欢连续问很多题，来源为家长原话（stated_preference）。此前两次调用因参数格式与来源版本过期被拒，改用消息当前版本 v2 后成功。\n- **外发确认**：回复 operation-ee633328b3234b7b88c1ac5593d9f7dd 实际回执 stage=sent，intent-1 标记已答复（resolves_intent=true）。\n- **结果记录**：service.record_outcome 以 action_taken 保存（引用消息 v3 与操作 v3；此前两次因引用过期版本被拒，经 dt_state_read 核实当前版本后成功），无剩余欠项、无待决操作。",
+    "api_calls": 11,
+    "tools": [
+      "dt_context_read",
+      "dt_control_apply",
+      "dt_knowledge_list",
+      "dt_knowledge_read",
+      "dt_learning_query_sql",
+      "dt_learning_schema",
+      "dt_memory_delete",
+      "dt_memory_read",
+      "dt_memory_save",
+      "dt_message_interpret",
+      "dt_pending_propose_makeup",
+      "dt_pending_propose_service",
+      "dt_planning_record_pending",
+      "dt_progress_submit",
+      "dt_service_record_outcome",
+      "dt_skills_list",
+      "dt_skills_read",
+      "dt_state_read",
+      "dt_wechat_get_operation",
+      "dt_wechat_read_messages",
+      "dt_wechat_send_message"
+    ],
+    "tool_trace": [
+      {
+        "tool": "wechat.read_messages",
+        "arguments_digest": "2885692ece9ea50d7158a91914d0e89d4465c0e5af00a1c98d893a02d86bdbd3",
+        "ok": true,
+        "result_digest": "0968c3b5b3c6c7a63b0b8c6b26feb55a7181bd6093723a36182147222c091685",
+        "error": null,
+        "at": "2026-10-04T10:00:00+08:00",
+        "arguments": {
+          "mode": "all"
+        },
+        "result": {
+          "ok": true,
+          "result": {
+            "mode": "all",
+            "messages": [
+              {
+                "seq": 1,
+                "id": "msg-f4933850ee2f4378a48bafe82a817a4a",
+                "version": 1,
+                "body": "请记一下，我们家通常晚饭后七点半方便聊阅读，不喜欢连续问很多题。",
+                "direction": "inbound",
+                "external_id": "memory_correction-0-0",
+                "intents": [],
+                "interpreted": false,
+                "occurred_at": "2026-10-04T10:00:00+08:00",
+                "received_at": "2026-10-04T10:00:00+08:00",
+                "source_kind": "mock_wechat"
+              }
+            ],
+            "returned_count": 1,
+            "matching_count": 1,
+            "has_more": false,
+            "has_older": false,
+            "next_cursor": 1,
+            "snapshot_watermark": 1,
+            "read_marks_answered": false,
+            "channel": "mock_wechat"
+          }
+        }
+      },
+      {
+        "tool": "message.interpret",
+        "arguments_digest": "ac1d2ef6071ae09aa0fc33fd6e7dd6224a941e023e9a55dab816d8446f9916b4",
+        "ok": true,
+        "result_digest": "91da710a0adc751739bee22817b14fa0beebdcfa02d8f52d8eb63273face1bba",
+        "error": null,
+        "at": "2026-10-04T10:00:00+08:00",
+        "arguments": {
+          "request_id": "interp-001",
+          "message_id": "msg-f4933850ee2f4378a48bafe82a817a4a",
+          "expected_version": 1,
+          "intents": [
+            {
+              "intent_id": "intent-1",
+              "text": "家长请我们记录家庭偏好：通常晚饭后七点半方便聊阅读，不喜欢连续问很多题。",
+              "requires_reply": true,
+              "service_kind": "reply"
+            }
+          ]
+        },
+        "result": {
+          "ok": true,
+          "result": {
+            "request_id": "interp-001",
+            "outcome": "applied",
+            "data": {
+              "id": "msg-f4933850ee2f4378a48bafe82a817a4a",
+              "version": 2,
+              "body": "请记一下，我们家通常晚饭后七点半方便聊阅读，不喜欢连续问很多题。",
+              "direction": "inbound",
+              "external_id": "memory_correction-0-0",
+              "intents": [
+                {
+                  "intent_id": "intent-1",
+                  "reply_operation_refs": [],
+                  "requires_reply": true,
+                  "service_authorization": null,
+                  "service_kind": "reply",
+                  "text": "家长请我们记录家庭偏好：通常晚饭后七点半方便聊阅读，不喜欢连续问很多题。"
+                }
+              ],
+              "interpreted": true,
+              "occurred_at": "2026-10-04T10:00:00+08:00",
+              "received_at": "2026-10-04T10:00:00+08:00",
+              "source_kind": "mock_wechat"
+            },
+            "record_versions": {
+              "family_input_version": 3
+            },
+            "error": null
+          }
+        }
+      },
+      {
+        "tool": "memory.save",
+        "arguments_digest": "25c5318427237d88279493984e02adf2ab885780e4f724d35bc9bd04591997df",
+        "ok": false,
+        "result_digest": "7936874fa1b5e994d91da49dd718f85478a73cf1ff506e02dcb8cbc8f83d2902",
+        "error": "INVALID_SCHEMA",
+        "at": "2026-10-04T10:00:00+08:00",
+        "arguments": {
+          "body": "家庭偏好（家长2026-10-04来信明确说明）：通常晚饭后七点半方便聊阅读；不喜欢连续问很多题。",
+          "expected_family_version": 3,
+          "kind": "stated_preference",
+          "memory_id": "",
+          "request_id": "mem-save-001",
+          "source_excerpt": "请记一下，我们家通常晚饭后七点半方便聊阅读，不喜欢连续问很多题。",
+          "source_message_id": "msg-f4933850ee2f4378a48bafe82a817a4a",
+          "source_version": 1
+        },
+        "result": {
+          "ok": false,
+          "error": {
+            "code": "INVALID_SCHEMA",
+            "details": [
+              {
+                "loc": [
+                  "memory_id"
+                ],
+                "type": "string_too_short",
+                "message": "String should have at least 1 character"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "tool": "memory.save",
+        "arguments_digest": "b5653de89e9a851c23b38064b8f7e03113260fc907c8bb6e8bbb2310310e19bd",
+        "ok": false,
+        "result_digest": "a0945ccb40b6b70df2e715d38ff72fbe44859de9d606a3c73c3040016bd820af",
+        "error": "EVIDENCE_SUPERSEDED",
+        "at": "2026-10-04T10:00:00+08:00",
+        "arguments": {
+          "body": "家庭偏好（家长2026-10-04来信明确说明）：通常晚饭后七点半方便聊阅读；不喜欢连续问很多题。",
+          "expected_family_version": 3,
+          "kind": "stated_preference",
+          "memory_id": null,
+          "request_id": "mem-save-002",
+          "source_excerpt": "请记一下，我们家通常晚饭后七点半方便聊阅读，不喜欢连续问很多题。",
+          "source_message_id": "msg-f4933850ee2f4378a48bafe82a817a4a",
+          "source_version": 1
+        },
+        "result": {
+          "ok": false,
+          "error": {
+            "code": "EVIDENCE_SUPERSEDED",
+            "message": "记忆依据必须是当前家庭的有效入站消息"
+          }
+        }
+      },
+      {
+        "tool": "memory.save",
+        "arguments_digest": "2e938ebf9536170e1753bec37c1e7cda8a48298a0cbfba550a154fe5c288a3a4",
+        "ok": true,
+        "result_digest": "b4ad72c0996e8fcebdc6c0ec919679282f55cdf3ae996ed756ebf011552f7202",
+        "error": null,
+        "at": "2026-10-04T10:00:00+08:00",
+        "arguments": {
+          "body": "家庭偏好（家长2026-10-04来信明确说明）：通常晚饭后七点半方便聊阅读；不喜欢连续问很多题。",
+          "expected_family_version": 3,
+          "kind": "stated_preference",
+          "memory_id": null,
+          "request_id": "mem-save-003",
+          "source_excerpt": "请记一下，我们家通常晚饭后七点半方便聊阅读，不喜欢连续问很多题。",
+          "source_message_id": "msg-f4933850ee2f4378a48bafe82a817a4a",
+          "source_version": 2
+        },
+        "result": {
+          "ok": true,
+          "result": {
+            "request_id": "mem-save-003",
+            "outcome": "applied",
+            "data": {
+              "memory_id": "memory-8a543c35a88f45babf5848513e55cefe",
+              "version": 1,
+              "status": "active"
+            },
+            "record_versions": {
+              "family_input_version": 4
+            },
+            "error": null
+          }
+        }
+      },
+      {
+        "tool": "wechat.send_message",
+        "arguments_digest": "6abf530a0bccd386f63aab4cfecf9b707497c4c1c42dc7dfc9e742a40a13d735",
+        "ok": true,
+        "result_digest": "c62bf5dc1d796b3a8687be02aa1ad1b37b78c0289015c167f735d30e6019044c",
+        "error": null,
+        "at": "2026-10-04T10:00:00+08:00",
+        "arguments": {
+          "action_kind": "reply",
+          "body": "好的，已经记下了：你们家通常晚饭后七点半方便聊阅读，也不喜欢连续问很多题。以后聊阅读我会按这个来，时间上以七点半前后为主，问题也会少而精，不搞连珠问。",
+          "expected_family_version": 4,
+          "reply_to": [
+            {
+              "intent_id": "intent-1",
+              "message_id": "msg-f4933850ee2f4378a48bafe82a817a4a",
+              "resolves_intent": true
+            }
+          ],
+          "request_id": "send-001"
+        },
+        "result": {
+          "ok": true,
+          "result": {
+            "request_id": "send-001",
+            "outcome": "applied",
+            "data": {
+              "id": "operation-ee633328b3234b7b88c1ac5593d9f7dd",
+              "version": 3,
+              "action_kind": "reply",
+              "admitted_at": "2026-10-04T10:00:00+08:00",
+              "body": "好的，已经记下了：你们家通常晚饭后七点半方便聊阅读，也不喜欢连续问很多题。以后聊阅读我会按这个来，时间上以七点半前后为主，问题也会少而精，不搞连珠问。",
+              "business_date": "2026-10-04",
+              "channel": "mock_wechat",
+              "content_digest": "30e6954beb98bb770730114ed0bbdeee9e2037e10c50e0e509f2cf5147294ae7",
+              "decision_reply_refs": [],
+              "dispatch_count": 1,
+              "event_id": null,
+              "lesson_refs": [],
+              "occurred_at": "2026-10-04T10:00:00+08:00",
+              "part_id": null,
+              "prepared_family_version": 5,
+              "purpose_key": "83fc773c76de319d8421d9608b6abde856813d2c46dccfda6a0cd12e3ad7e330",
+              "receipts": [
+                {
+                  "observed_at": "2026-10-04T10:00:00+08:00",
+                  "source": "mock_transport",
+                  "stage": "sent"
+                }
+              ],
+              "recipient": "mock:4b1:a",
+              "reply_to": [
+                {
+                  "intent_id": "intent-1",
+                  "message_id": "msg-f4933850ee2f4378a48bafe82a817a4a"
+                }
+              ],
+              "request": {
+                "action_kind": "reply",
+                "body": "好的，已经记下了：你们家通常晚饭后七点半方便聊阅读，也不喜欢连续问很多题。以后聊阅读我会按这个来，时间上以七点半前后为主，问题也会少而精，不搞连珠问。",
+                "event_id": null,
+                "expected_family_version": 4,
+                "part_id": null,
+                "reply_to": [
+                  {
+                    "intent_id": "intent-1",
+                    "message_id": "msg-f4933850ee2f4378a48bafe82a817a4a"
+                  }
+                ],
+                "request_id": "send-001",
+                "step_id": null
+              },
+              "requirement_revision": null,
+              "run_id": "run-ecbeb65273eb48c2815c8b27eeac5cd2",
+              "send_capability": {
+                "commitment_id": null,
+                "current_step_key": null,
+                "event_id": null,
+                "job_id": "message:msg-f4933850ee2f4378a48bafe82a817a4a",
+                "job_kind": "service",
+                "mode": "full",
+                "no_contact": false,
+                "output_mode": "family_reply",
+                "reply_scope": {
+                  "msg-f4933850ee2f4378a48bafe82a817a4a": [
+                    "*"
+                  ]
+                },
+                "run_id": "run-ecbeb65273eb48c2815c8b27eeac5cd2",
+                "schedule_revision": null
+              },
+              "simulated": true,
+              "stage": "sent"
+            },
+            "record_versions": {
+              "family_input_version": 6
+            },
+            "error": null
+          }
+        }
+      },
+      {
+        "tool": "service.record_outcome",
+        "arguments_digest": "1a54494c1221f0970455c9ea671d6538fcde68baa9eaeed0ac2e6d9a0c04ed8c",
+        "ok": false,
+        "result_digest": "d5783c103541a25315034e6312d7757aa8662e47f80def7c96677cc034ede67f",
+        "error": "EVIDENCE_SUPERSEDED",
+        "at": "2026-10-04T10:00:00+08:00",
+        "arguments": {
+          "refs": [
+            {
+              "id": "msg-f4933850ee2f4378a48bafe82a817a4a",
+              "kind": "message",
+              "version": 2
+            },
+            {
+              "id": "memory-8a543c35a88f45babf5848513e55cefe",
+              "kind": "memory",
+              "version": 1
+            },
+            {
+              "id": "operation-ee633328b3234b7b88c1ac5593d9f7dd",
+              "kind": "operation",
+              "version": 3
+            }
+          ],
+          "outcome": "action_taken",
+          "reason": "已依据家长2026-10-04来信保存个性化偏好记忆（memory-8a543c35a88f45babf5848513e55cefe v1），并发送确认回复（operation-ee633328b3234b7b88c1ac5593d9f7dd，回执stage=sent）。intent-1已完整答复。",
+          "request_id": "outcome-001"
+        },
+        "result": {
+          "ok": false,
+          "error": {
+            "code": "EVIDENCE_SUPERSEDED",
+            "message": "内部结果引用必须是当前真实记录"
+          }
+        }
+      },
+      {
+        "tool": "service.record_outcome",
+        "arguments_digest": "52c270b7d674391f9c06c98fb3da3112dbeef5ed8a2be8737481b834912fed73",
+        "ok": false,
+        "result_digest": "d5783c103541a25315034e6312d7757aa8662e47f80def7c96677cc034ede67f",
+        "error": "EVIDENCE_SUPERSEDED",
+        "at": "2026-10-04T10:00:00+08:00",
+        "arguments": {
+          "outcome": "action_taken",
+          "reason": "已依据家长2026-10-04来信保存个性化偏好记忆（memory-8a543c35a88f45babf5848513e55cefe v1），并发送确认回复（operation-ee633328b3234b7b88c1ac5593d9f7dd，回执stage=sent）。intent-1已完整答复。",
+          "refs": [
+            {
+              "id": "msg-f4933850ee2f4378a48bafe82a817a4a",
+              "kind": "message",
+              "version": 2
+            },
+            {
+              "id": "memory-8a543c35a88f45babf5848513e55cefe",
+              "kind": "memory",
+              "version": 1
+            },
+            {
+              "id": "operation-ee633328b3234b7b88c1ac5593d9f7dd",
+              "kind": "operation",
+              "version": 3
+            }
+          ],
+          "remaining_work": [],
+          "request_id": "outcome-002"
+        },
+        "result": {
+          "ok": false,
+          "error": {
+            "code": "EVIDENCE_SUPERSEDED",
+            "message": "内部结果引用必须是当前真实记录"
+          }
+        }
+      },
+      {
+        "tool": "state.read",
+        "arguments_digest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "ok": true,
+        "result_digest": "cf4eeca93f1216f099b20d0a4cb9050ae6da3c95ba5beec1d29b5ee556be4d4c",
+        "error": null,
+        "at": "2026-10-04T10:00:00+08:00",
+        "arguments": {},
+        "result": {
+          "ok": true,
+          "result": {
+            "family_version": 6,
+            "events": [],
+            "controls": [],
+            "plans": [],
+            "reports": [],
+            "pending_inputs": [],
+            "messages": [
+              {
+                "id": "msg-f4933850ee2f4378a48bafe82a817a4a",
+                "version": 3,
+                "body": "请记一下，我们家通常晚饭后七点半方便聊阅读，不喜欢连续问很多题。",
+                "direction": "inbound",
+                "external_id": "memory_correction-0-0",
+                "intents": [
+                  {
+                    "intent_id": "intent-1",
+                    "reply_operation_refs": [
+                      "operation-ee633328b3234b7b88c1ac5593d9f7dd"
+                    ],
+                    "requires_reply": true,
+                    "service_authorization": null,
+                    "service_kind": "reply",
+                    "text": "家长请我们记录家庭偏好：通常晚饭后七点半方便聊阅读，不喜欢连续问很多题。"
+                  }
+                ],
+                "interpreted": true,
+                "occurred_at": "2026-10-04T10:00:00+08:00",
+                "received_at": "2026-10-04T10:00:00+08:00",
+                "source_kind": "mock_wechat"
+              }
+            ],
+            "operations": [
+              {
+                "id": "operation-ee633328b3234b7b88c1ac5593d9f7dd",
+                "version": 3,
+                "action_kind": "reply",
+                "admitted_at": "2026-10-04T10:00:00+08:00",
+                "body": "好的，已经记下了：你们家通常晚饭后七点半方便聊阅读，也不喜欢连续问很多题。以后聊阅读我会按这个来，时间上以七点半前后为主，问题也会少而精，不搞连珠问。",
+                "business_date": "2026-10-04",
+                "channel": "mock_wechat",
+                "content_digest": "30e6954beb98bb770730114ed0bbdeee9e2037e10c50e0e509f2cf5147294ae7",
+                "decision_reply_refs": [],
+                "dispatch_count": 1,
+                "event_id": null,
+                "lesson_refs": [],
+                "occurred_at": "2026-10-04T10:00:00+08:00",
+                "part_id": null,
+                "prepared_family_version": 5,
+                "purpose_key": "83fc773c76de319d8421d9608b6abde856813d2c46dccfda6a0cd12e3ad7e330",
+                "receipts": [
+                  {
+                    "observed_at": "2026-10-04T10:00:00+08:00",
+                    "source": "mock_transport",
+                    "stage": "sent"
+                  }
+                ],
+                "recipient": "mock:4b1:a",
+                "reply_to": [
+                  {
+                    "intent_id": "intent-1",
+                    "message_id": "msg-f4933850ee2f4378a48bafe82a817a4a"
+                  }
+                ],
+                "request": {
+                  "action_kind": "reply",
+                  "body": "好的，已经记下了：你们家通常晚饭后七点半方便聊阅读，也不喜欢连续问很多题。以后聊阅读我会按这个来，时间上以七点半前后为主，问题也会少而精，不搞连珠问。",
+                  "event_id": null,
+                  "expected_family_version": 4,
+                  "part_id": null,
+                  "reply_to": [
+                    {
+                      "intent_id": "intent-1",
+                      "message_id": "msg-f4933850ee2f4378a48bafe82a817a4a"
+                    }
+                  ],
+                  "request_id": "send-001",
+                  "step_id": null
+                },
+                "requirement_revision": null,
+                "run_id": "run-ecbeb65273eb48c2815c8b27eeac5cd2",
+                "send_capability": {
+                  "commitment_id": null,
+                  "current_step_key": null,
+                  "event_id": null,
+                  "job_id": "message:msg-f4933850ee2f4378a48bafe82a817a4a",
+                  "job_kind": "service",
+                  "mode": "full",
+                  "no_contact": false,
+                  "output_mode": "family_reply",
+                  "reply_scope": {
+                    "msg-f4933850ee2f4378a48bafe82a817a4a": [
+                      "*"
+                    ]
+                  },
+                  "run_id": "run-ecbeb65273eb48c2815c8b27eeac5cd2",
+                  "schedule_revision": null
+                },
+                "simulated": true,
+                "stage": "sent"
+              }
+            ],
+            "now": "2026-10-04T10:00:00+08:00",
+            "responsibility_index": [],
+            "execution_agenda": [],
+            "agenda_is_projection_not_queue": true
+          }
+        }
+      },
+      {
+        "tool": "service.record_outcome",
+        "arguments_digest": "7f4da536b6edf05a84b2cefdd1d9c1b21358978391d85d51c15df619c761aca4",
+        "ok": true,
+        "result_digest": "1b7f9308b0c95afab86914f4f93493b6f058c8c31c30fec82335c6897b3fdfe0",
+        "error": null,
+        "at": "2026-10-04T10:00:00+08:00",
+        "arguments": {
+          "outcome": "action_taken",
+          "reason": "已依据家长2026-10-04来信保存个性化偏好记忆，并发送确认回复（operation-ee633328b3234b7b88c1ac5593d9f7dd，回执stage=sent）。intent-1已完整答复。",
+          "refs": [
+            {
+              "id": "msg-f4933850ee2f4378a48bafe82a817a4a",
+              "kind": "message",
+              "version": 3
+            },
+            {
+              "id": "operation-ee633328b3234b7b88c1ac5593d9f7dd",
+              "kind": "operation",
+              "version": 3
+            }
+          ],
+          "remaining_work": [],
+          "request_id": "outcome-003"
+        },
+        "result": {
+          "ok": true,
+          "result": {
+            "id": "run-ecbeb65273eb48c2815c8b27eeac5cd2",
+            "version": 1,
+            "awaiting_operation_ids": [],
+            "delegation_acknowledgements": [],
+            "draft": null,
+            "effective_control_scopes": {
+              "authority": "current_control_records",
+              "controls": [],
+              "meaning": "仅active控制生效。event_id为空的控制覆盖本家庭所有事项及以后事项中的action_kinds；有event_id仅覆盖该事项的这些动作。未列出的动作不因该控制暂停，仍须经过其他权限和发送检查。旧空白字符串范围按全家庭保守解释并标明legacy_invalid_scope，不修改原记录。自由文本不能缩小、扩大或解除控制。"
+            },
+            "job_id": "message:msg-f4933850ee2f4378a48bafe82a817a4a",
+            "observed_job_operations": [
+              {
+                "id": "operation-ee633328b3234b7b88c1ac5593d9f7dd",
+                "stage": "sent",
+                "version": 3
+              }
+            ],
+            "observed_planning_inputs": [],
+            "outcome": "action_taken",
+            "payload_digest": "61c1a57581b731921b4215b00ecb9338e8359574c3d91aa89b2e6701418a28da",
+            "reason": "已依据家长2026-10-04来信保存个性化偏好记忆，并发送确认回复（operation-ee633328b3234b7b88c1ac5593d9f7dd，回执stage=sent）。intent-1已完整答复。",
+            "recorded_at": "2026-10-04T10:00:00+08:00",
+            "refs": [
+              {
+                "id": "msg-f4933850ee2f4378a48bafe82a817a4a",
+                "kind": "message",
+                "version": 3
+              },
+              {
+                "id": "operation-ee633328b3234b7b88c1ac5593d9f7dd",
+                "kind": "operation",
+                "version": 3
+              }
+            ],
+            "remaining_work": [],
+            "request_id": "outcome-003",
+            "resume_condition": null,
+            "resume_condition_authority": "model_input_recovery_note_not_control_or_send_permission",
+            "run_id": "run-ecbeb65273eb48c2815c8b27eeac5cd2",
+            "settled_delegated_request_refs": []
+          }
+        }
+      }
+    ],
+    "profile": "/root/autodl-tmp/digitalTutor/work/stage4/4c-development-l/state/backend-stage4/intraday-l-native06-stage4_behavior/memory_correction/runs/run-ecbeb65273eb48c2815c8b27eeac5cd2/profile",
+    "cwd": "/root/autodl-tmp/digitalTutor/work/stage4/4c-development-l/state/backend-stage4/intraday-l-native06-stage4_behavior/memory_correction/runs/run-ecbeb65273eb48c2815c8b27eeac5cd2",
+    "output_route": "internal",
+    "model": "qwen3.8-flash",
+    "generation_options": {
+      "temperature": 0.0
+    }
+  }
+}

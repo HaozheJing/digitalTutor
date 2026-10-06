@@ -1,0 +1,13 @@
+{
+  "case": "work_sample",
+  "not_model_input": true,
+  "semantic_status": "not_reviewed",
+  "semantic_questions": [
+    "真实读取合成原始作答且结论范围仅当题？",
+    "没有凭单次作答判整体能力或进步？"
+  ],
+  "expected_deadline": null,
+  "required_effect": null,
+  "allow_unanswered": false,
+  "allow_waiting": false
+}

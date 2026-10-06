@@ -1,0 +1,344 @@
+{
+  "native06-behavior-complete/missing_guide": {
+    "source_count": 83,
+    "source_match": true,
+    "business_integrity": "ok",
+    "records_match": {
+      "job": true,
+      "message": true,
+      "operation": true,
+      "event": true,
+      "report": true,
+      "plan": true,
+      "run_outcome": true,
+      "control": true,
+      "pending": true,
+      "memory": true
+    },
+    "channel_integrity": "ok",
+    "channel": [
+      {
+        "operation_id": "operation-7c054ecc9772497e8206b5d27657852d",
+        "stage": "sent",
+        "operation_equal": true,
+        "message_equal": true,
+        "body_sha256": "5de4adc252ece3a1f4a4644b50e7c2561e2fe2ef2948100b63e95f62b889d1b3"
+      }
+    ],
+    "native_calls": 1,
+    "run_ids": [
+      "run-d6dbdb42bd3d4f799a26c05c8b07c822"
+    ],
+    "model_tool_counts": [
+      8
+    ],
+    "planner_calls": 0,
+    "pending_count": 0,
+    "event_count": 0,
+    "sent_count": 1,
+    "first_package_comparison": {
+      "count": 18,
+      "all_identical": true
+    }
+  },
+  "native06-behavior-complete/missing_policy": {
+    "source_count": 83,
+    "source_match": true,
+    "business_integrity": "ok",
+    "records_match": {
+      "job": true,
+      "message": true,
+      "operation": true,
+      "event": true,
+      "report": true,
+      "plan": true,
+      "run_outcome": true,
+      "control": true,
+      "pending": true,
+      "memory": true
+    },
+    "channel_integrity": "ok",
+    "channel": [
+      {
+        "operation_id": "operation-9c4d3498888b47f68143cdd8b342ed15",
+        "stage": "sent",
+        "operation_equal": true,
+        "message_equal": true,
+        "body_sha256": "33135250dde5f0176e1501ceb7a64bc1186a4e325bbd17df0470948058f90d18"
+      }
+    ],
+    "native_calls": 1,
+    "run_ids": [
+      "run-307574bd91a64c1ea1e3bf8227192ca0"
+    ],
+    "model_tool_counts": [
+      18
+    ],
+    "planner_calls": 0,
+    "pending_count": 0,
+    "event_count": 0,
+    "sent_count": 1
+  },
+  "native06-behavior-complete/work_sample": {
+    "source_count": 83,
+    "source_match": true,
+    "business_integrity": "ok",
+    "records_match": {
+      "job": true,
+      "message": true,
+      "operation": true,
+      "event": true,
+      "report": true,
+      "plan": true,
+      "run_outcome": true,
+      "control": true,
+      "pending": true,
+      "memory": true
+    },
+    "channel_integrity": "ok",
+    "channel": [
+      {
+        "operation_id": "operation-f269fb5e1f1043d3b5125c57b670610f",
+        "stage": "sent",
+        "operation_equal": true,
+        "message_equal": true,
+        "body_sha256": "107a9a4a42ddad5f1fd8781523a4597474004db224d3e48df38117c9696158aa"
+      }
+    ],
+    "native_calls": 1,
+    "run_ids": [
+      "run-acaf844219d04e5fbfccd89630b68657"
+    ],
+    "model_tool_counts": [
+      18
+    ],
+    "planner_calls": 0,
+    "pending_count": 0,
+    "event_count": 0,
+    "sent_count": 1
+  },
+  "native06-behavior-complete/memory_correction": {
+    "source_count": 83,
+    "source_match": true,
+    "business_integrity": "ok",
+    "records_match": {
+      "job": true,
+      "message": true,
+      "operation": true,
+      "event": true,
+      "report": true,
+      "plan": true,
+      "run_outcome": true,
+      "control": true,
+      "pending": true,
+      "memory": true
+    },
+    "channel_integrity": "ok",
+    "channel": [
+      {
+        "operation_id": "operation-ee633328b3234b7b88c1ac5593d9f7dd",
+        "stage": "sent",
+        "operation_equal": true,
+        "message_equal": true,
+        "body_sha256": "76de28116147a4c58c3b39894d04483976762f001d87b90ea8851293877a65bc"
+      },
+      {
+        "operation_id": "operation-7aec0fa032664e0a8183d648f50aebdb",
+        "stage": "sent",
+        "operation_equal": true,
+        "message_equal": true,
+        "body_sha256": "dc38002b459c9c5121c335e78a5333f4706772ff26424c89f810eaccc160688c"
+      },
+      {
+        "operation_id": "operation-fc398b6696d24f1bbf490c25aea6775a",
+        "stage": "sent",
+        "operation_equal": true,
+        "message_equal": true,
+        "body_sha256": "351dfa7d70bc7e6f6640a656836b4ceef6d5d6d8f8f6926c045ff5d07c540f35"
+      }
+    ],
+    "native_calls": 3,
+    "run_ids": [
+      "run-ecbeb65273eb48c2815c8b27eeac5cd2",
+      "run-5662b8901baf4dbe8cf0fa8ea43b09a1",
+      "run-5c062557b5ed4beaba0feb0c96d05bec"
+    ],
+    "model_tool_counts": [
+      10,
+      7,
+      8
+    ],
+    "planner_calls": 0,
+    "pending_count": 0,
+    "event_count": 0,
+    "sent_count": 3
+  },
+  "native06-daily-complete/family_requests": {
+    "source_count": 83,
+    "source_match": true,
+    "business_integrity": "ok",
+    "records_match": {
+      "job": true,
+      "message": true,
+      "operation": true,
+      "event": true,
+      "report": true,
+      "plan": true,
+      "run_outcome": true,
+      "control": true,
+      "pending": true,
+      "memory": true,
+      "candidate": true,
+      "candidate_source": true,
+      "candidate_decision": true,
+      "course_binding": true,
+      "runtime_cursor": true,
+      "runtime_message_read": true,
+      "runtime_material_wait": true
+    },
+    "channel_integrity": "ok",
+    "channel": [
+      {
+        "operation_id": "operation-bf7ca864027547c28795e6b80fa34483",
+        "stage": "sent",
+        "operation_equal": true,
+        "message_equal": true,
+        "body_sha256": "660324b4f61bda93097e3861441b64e6640e7d88f9faac62f2734ccf873610bc"
+      },
+      {
+        "operation_id": "operation-01b852806aa643b09bd5392a10d5e01b",
+        "stage": "sent",
+        "operation_equal": true,
+        "message_equal": true,
+        "body_sha256": "029a474d27f57dd5e148d3881ea767cc80bfeadd6732e18d9f34e4ac76b75a93"
+      },
+      {
+        "operation_id": "operation-52706dccbb414752993db429f43dae4b",
+        "stage": "sent",
+        "operation_equal": true,
+        "message_equal": true,
+        "body_sha256": "f4c019d82867091e809218a75aeb83d49a96769f3376b60f957ba7b2b06b8207"
+      },
+      {
+        "operation_id": "operation-206ed60b7e144cb1a3819ae50cc5b68c",
+        "stage": "sent",
+        "operation_equal": true,
+        "message_equal": true,
+        "body_sha256": "ac78bd1d255e502fe656ca9c1796b623757e3a7b02a1f55f955c0f0537df9af8"
+      },
+      {
+        "operation_id": "operation-fb59bbc1e4bd4e79af6a9c8c153da119",
+        "stage": "sent",
+        "operation_equal": true,
+        "message_equal": true,
+        "body_sha256": "a91dbda413ea86694fa4b732467a3e7239ad9eca36f7259a198801f5b9c2a2d2"
+      }
+    ],
+    "native_calls": 8,
+    "run_ids": [
+      "run-02cc1454fc1f4b038449d8371e7e7ba0",
+      "run-740e82f79ef24802b70032a1a7dee3f1",
+      "run-233d596f2695482e87c3dfeaf7e1db83",
+      "run-9d24a3153bdf41038ad400e5c4498fd0",
+      "run-deff36abb1fd4640a651f85a949cf678",
+      "run-47f81ed546374ba585b7f01f0bb8f0fb",
+      "run-58b94db804a34ff3acac973550196f97",
+      "run-6e18892dc74447bcb309812da39feb6b"
+    ],
+    "model_tool_counts": [
+      10,
+      7,
+      8,
+      5,
+      7,
+      4,
+      12,
+      1
+    ],
+    "planner_calls": 6,
+    "pending_count": 2,
+    "event_count": 2,
+    "sent_count": 5
+  },
+  "native06-intraday-complete/daily-chain": {
+    "source_count": 83,
+    "source_match": true,
+    "business_integrity": "ok",
+    "records_match": {
+      "job": true,
+      "message": true,
+      "operation": true,
+      "event": true,
+      "report": true,
+      "plan": true,
+      "pending": true,
+      "candidate": true,
+      "candidate_source": true,
+      "candidate_decision": true,
+      "run_outcome": true,
+      "control": true,
+      "memory": true,
+      "evidence": true,
+      "learning_source": true,
+      "course_binding": true
+    },
+    "channel_integrity": "ok",
+    "channel": [
+      {
+        "operation_id": "operation-8f6e358341a447e7b25092b5d2f6a2fe",
+        "stage": "sent",
+        "operation_equal": true,
+        "message_equal": true,
+        "body_sha256": "6977e90af0cdbbc072fd5699ebd0ac70e5210aae003bc4ea01fa64e294ea0d65"
+      },
+      {
+        "operation_id": "operation-42fc8d1b208045cf9baa1a6ecd9c8a6a",
+        "stage": "sent",
+        "operation_equal": true,
+        "message_equal": true,
+        "body_sha256": "23154804aea9abfd68666ab216755c9702805346aab577c24635e6d3a19d709a"
+      }
+    ],
+    "native_calls": 16,
+    "run_ids": [
+      "run-eea3d72a03364d63a0db7193a45bfcb9",
+      "run-152c89788a934aff839425eb2e45d193",
+      "run-f5945c43515547dca0439426a69633b9",
+      "run-812712c5278d4cf18a1706f5676070a3",
+      "run-5bd7b22ece9b49029f3f04411533430e",
+      "run-37226b692dab4fe0b30e503be643edd3",
+      "run-d344fb6ecae44155be5e2d93e9ff9856",
+      "run-706aad4baf7b406188134bcca8986859",
+      "run-fbe396bfd1fd4623b485c1e57bff28a5",
+      "run-6a684cd797eb492e9b58a00523894c12",
+      "run-89933ca3cf3946dcac57a1c3b54f03e2",
+      "run-1206c878bb6247ac90ce68467631f8b2",
+      "run-94d2eca285814f2096d6b612199eaa97",
+      "run-64ffa26dad8a429b8cae37d6c8e17582",
+      "run-1904d9ff955041db91e847859efa05bd",
+      "run-25ac2761cbe84338ac985ff4e90369ca"
+    ],
+    "model_tool_counts": [
+      8,
+      10,
+      3,
+      10,
+      3,
+      6,
+      6,
+      7,
+      3,
+      7,
+      8,
+      8,
+      8,
+      11,
+      9,
+      7
+    ],
+    "planner_calls": 21,
+    "pending_count": 0,
+    "event_count": 2,
+    "sent_count": 2
+  }
+}

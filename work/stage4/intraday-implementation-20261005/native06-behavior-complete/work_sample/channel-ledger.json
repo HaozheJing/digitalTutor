@@ -1,0 +1,68 @@
+[
+  {
+    "operation_id": "operation-f269fb5e1f1043d3b5125c57b670610f",
+    "payload": {
+      "action_kind": "reply",
+      "admitted_at": "2026-10-04T10:00:00+08:00",
+      "body": "第1天那道题我核了原始记录：题目是“博吉斯养什么，喜欢吃什么？”，孩子的作答是“博吉斯养鸡，他喜欢吃水煮鸡。”，提交1次、1轮文字作答，没有语音作答，记录里的提交时间是 2026-10-04 09:00。\n\n能看出什么：这句作答的内容和我读到的第1天课程正文对得上——正文里写博吉斯是养鸡场场主，一日三餐要吃水煮鸡。所以题目问的两件事他都答到了，字面上没跑偏。\n\n仅凭这一次回答不能判断的：\n- 他是不是自己回原文里找到、指得出这些信息的。人物信息卡这个方法要求“每条信息在原文里找得到、指得出”，而记录里只有结果这一句话，看不到找的过程。\n- 是读明白了，还是记住了这几个词。\n- 卡片另外两栏（职业“养鸡场场主”、特征“胖得出奇”）有没有填、能不能说清。\n- 换邦斯、比恩这两个角色，他能不能用同样的方式提取。\n- 一次作答只说明这一次的表现，不能证明这个阅读方法已经掌握。\n\n如果想再看一层，可以请他翻回原文指出写博吉斯爱吃水煮鸡的那一句，或者口头说说三个场主各管什么场、爱吃什么——这两种都能看出信息是不是他从原文里提取出来的。\n\n另外说明一下：这份学情快照的课程版本和班期课节映射还没有正式确认记录，上面是把题目内容对照我实际读到的第1天正文来看的。",
+      "business_date": "2026-10-04",
+      "channel": "mock_wechat",
+      "content_digest": "2666012ce5b6d886946159bd7d85f7ae9a874808d747ed83bcd34712fbef762d",
+      "decision_reply_refs": [],
+      "dispatch_count": 1,
+      "event_id": null,
+      "id": "operation-f269fb5e1f1043d3b5125c57b670610f",
+      "lesson_refs": [],
+      "occurred_at": "2026-10-04T10:00:00+08:00",
+      "part_id": null,
+      "prepared_family_version": 4,
+      "purpose_key": "b2a20761f6bb121a54ce4e5845a829d3254376597983373b8a77b1ef06e944db",
+      "receipts": [],
+      "recipient": "mock:4b1:a",
+      "reply_to": [
+        {
+          "intent_id": "intent-day1-answer-analysis",
+          "message_id": "msg-3141c1abc3e046c8bedba645de8de8c9"
+        }
+      ],
+      "request": {
+        "action_kind": "reply",
+        "body": "第1天那道题我核了原始记录：题目是“博吉斯养什么，喜欢吃什么？”，孩子的作答是“博吉斯养鸡，他喜欢吃水煮鸡。”，提交1次、1轮文字作答，没有语音作答，记录里的提交时间是 2026-10-04 09:00。\n\n能看出什么：这句作答的内容和我读到的第1天课程正文对得上——正文里写博吉斯是养鸡场场主，一日三餐要吃水煮鸡。所以题目问的两件事他都答到了，字面上没跑偏。\n\n仅凭这一次回答不能判断的：\n- 他是不是自己回原文里找到、指得出这些信息的。人物信息卡这个方法要求“每条信息在原文里找得到、指得出”，而记录里只有结果这一句话，看不到找的过程。\n- 是读明白了，还是记住了这几个词。\n- 卡片另外两栏（职业“养鸡场场主”、特征“胖得出奇”）有没有填、能不能说清。\n- 换邦斯、比恩这两个角色，他能不能用同样的方式提取。\n- 一次作答只说明这一次的表现，不能证明这个阅读方法已经掌握。\n\n如果想再看一层，可以请他翻回原文指出写博吉斯爱吃水煮鸡的那一句，或者口头说说三个场主各管什么场、爱吃什么——这两种都能看出信息是不是他从原文里提取出来的。\n\n另外说明一下：这份学情快照的课程版本和班期课节映射还没有正式确认记录，上面是把题目内容对照我实际读到的第1天正文来看的。",
+        "event_id": null,
+        "expected_family_version": 3,
+        "part_id": null,
+        "reply_to": [
+          {
+            "intent_id": "intent-day1-answer-analysis",
+            "message_id": "msg-3141c1abc3e046c8bedba645de8de8c9"
+          }
+        ],
+        "request_id": "send-msg3141-02",
+        "step_id": null
+      },
+      "requirement_revision": null,
+      "run_id": "run-acaf844219d04e5fbfccd89630b68657",
+      "send_capability": {
+        "commitment_id": null,
+        "current_step_key": null,
+        "event_id": null,
+        "job_id": "message:msg-3141c1abc3e046c8bedba645de8de8c9",
+        "job_kind": "service",
+        "mode": "full",
+        "no_contact": false,
+        "output_mode": "family_reply",
+        "reply_scope": {
+          "msg-3141c1abc3e046c8bedba645de8de8c9": [
+            "*"
+          ]
+        },
+        "run_id": "run-acaf844219d04e5fbfccd89630b68657",
+        "schedule_revision": null
+      },
+      "simulated": true,
+      "stage": "dispatching",
+      "version": 2
+    },
+    "stage": "sent"
+  }
+]

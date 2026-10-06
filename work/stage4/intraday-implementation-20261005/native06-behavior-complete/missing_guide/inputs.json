@@ -1,0 +1,34 @@
+{
+  "missing_guide": true,
+  "rounds": [
+    [
+      [
+        "a",
+        "想请你按你们的课程讲解规范，帮我理解L2《了不起的狐狸爸爸》第1天该怎样陪读。"
+      ]
+    ]
+  ],
+  "families": [
+    "a"
+  ],
+  "case": "missing_guide",
+  "business_time": "2026-10-04T10:00:00+08:00",
+  "classification": "synthetic_family_mock_channel",
+  "material_chain": "R_approved_only",
+  "learning_source": {
+    "a": [
+      [
+        "completed",
+        "submitted"
+      ],
+      [
+        "incomplete",
+        "not_submitted"
+      ],
+      [
+        "unknown",
+        "unknown"
+      ]
+    ]
+  }
+}

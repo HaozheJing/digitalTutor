@@ -1,0 +1,112 @@
+[
+  {
+    "role": "service",
+    "operation_id": "operation-8f6e358341a447e7b25092b5d2f6a2fe",
+    "at": "2026-10-04T10:00:00+08:00",
+    "stage": "sent",
+    "text": "家长您好，提醒一下：第1课 LESSON-L2-FOX-D01 还没有补读，需要在今天 18:00 截止前完成。您看孩子什么时间方便，安排补读就可以；有问题随时告诉我。",
+    "payload": {
+      "action_kind": "remind_makeup",
+      "admitted_at": "2026-10-04T10:00:00+08:00",
+      "body": "家长您好，提醒一下：第1课 LESSON-L2-FOX-D01 还没有补读，需要在今天 18:00 截止前完成。您看孩子什么时间方便，安排补读就可以；有问题随时告诉我。",
+      "business_date": "2026-10-04",
+      "channel": "mock_wechat",
+      "content_digest": "26c25dd6c369dd8a80ced1c00b306fcf9e9b5c434bafa59a2f5b9123d8a41456",
+      "dispatch_count": 1,
+      "event_id": "event-76992b96414c4b2bb260aab3c7a391a2",
+      "id": "operation-8f6e358341a447e7b25092b5d2f6a2fe",
+      "lesson_refs": [
+        "LESSON-L2-FOX-D01"
+      ],
+      "occurred_at": "2026-10-04T10:00:00+08:00",
+      "part_id": null,
+      "prepared_family_version": 7,
+      "purpose_key": "30ebe43082a70f9bc707fd7b1f20e1ac988bfafdfee0a6bb637d74756600e115",
+      "receipts": [],
+      "recipient": "mock:4b1:a",
+      "reply_to": [],
+      "request": {
+        "action_kind": "remind_makeup",
+        "body": "家长您好，提醒一下：第1课 LESSON-L2-FOX-D01 还没有补读，需要在今天 18:00 截止前完成。您看孩子什么时间方便，安排补读就可以；有问题随时告诉我。",
+        "event_id": "event-76992b96414c4b2bb260aab3c7a391a2",
+        "expected_family_version": 6,
+        "part_id": null,
+        "reply_to": [],
+        "request_id": "send:makeup-reminder-5e421656",
+        "step_id": "15ba5c3bff74cdee5e9185132d88e9412811b89d96eca2c0445bb013cfc78561"
+      },
+      "requirement_revision": 1,
+      "run_id": "run-152c89788a934aff839425eb2e45d193",
+      "send_capability": {
+        "commitment_id": null,
+        "current_step_key": "15ba5c3bff74cdee5e9185132d88e9412811b89d96eca2c0445bb013cfc78561",
+        "event_id": "event-76992b96414c4b2bb260aab3c7a391a2",
+        "job_id": "step:5e42165612425333e1bbdac1c74430795cf30819814b5198610738c8bb1068db",
+        "job_kind": "step",
+        "mode": "full",
+        "no_contact": false,
+        "output_mode": "family_reply",
+        "reply_scope": {},
+        "run_id": "run-152c89788a934aff839425eb2e45d193",
+        "schedule_revision": null
+      },
+      "simulated": true,
+      "stage": "dispatching",
+      "version": 2
+    }
+  },
+  {
+    "role": "service",
+    "operation_id": "operation-42fc8d1b208045cf9baa1a6ecd9c8a6a",
+    "at": "2026-10-04T10:00:00+08:00",
+    "stage": "sent",
+    "text": "家长您好，这是本周的学情反馈（数据截至10月4日早上7:30）。目前系统里能看到三天的课节记录：第1天已出勤，课程完成状态标为未完成，作业未提交；第2天已出勤，课程完成、作业已提交；第3天已出勤，完成和作业状态暂无记录。三天打卡均未见记录，伴学状态未配置。需要说明的是，这三条记录没有可核对的具体学习日期，所以只能按当前可见的三天来说，不能确认它们都发生在本周内。如需针对某天核对细节，随时告诉我。",
+    "payload": {
+      "action_kind": "deliver_feedback",
+      "admitted_at": "2026-10-04T10:00:00+08:00",
+      "body": "家长您好，这是本周的学情反馈（数据截至10月4日早上7:30）。目前系统里能看到三天的课节记录：第1天已出勤，课程完成状态标为未完成，作业未提交；第2天已出勤，课程完成、作业已提交；第3天已出勤，完成和作业状态暂无记录。三天打卡均未见记录，伴学状态未配置。需要说明的是，这三条记录没有可核对的具体学习日期，所以只能按当前可见的三天来说，不能确认它们都发生在本周内。如需针对某天核对细节，随时告诉我。",
+      "business_date": "2026-10-04",
+      "channel": "mock_wechat",
+      "content_digest": "6895236066e21e1db49db0a9cb4491d3f746d1d38e64086a377cb685615afe76",
+      "dispatch_count": 1,
+      "event_id": "event-9dbd36e81f5347fea5a79beda3e878f1",
+      "id": "operation-42fc8d1b208045cf9baa1a6ecd9c8a6a",
+      "lesson_refs": [],
+      "occurred_at": "2026-10-04T10:00:00+08:00",
+      "part_id": "learning-feedback",
+      "prepared_family_version": 11,
+      "purpose_key": "a86fb418f6e55f2b5cd12fb1e570fd6fb726725fa9b6c1ef80611f22887ff00b",
+      "receipts": [],
+      "recipient": "mock:4b1:a",
+      "reply_to": [],
+      "request": {
+        "action_kind": "deliver_feedback",
+        "body": "家长您好，这是本周的学情反馈（数据截至10月4日早上7:30）。目前系统里能看到三天的课节记录：第1天已出勤，课程完成状态标为未完成，作业未提交；第2天已出勤，课程完成、作业已提交；第3天已出勤，完成和作业状态暂无记录。三天打卡均未见记录，伴学状态未配置。需要说明的是，这三条记录没有可核对的具体学习日期，所以只能按当前可见的三天来说，不能确认它们都发生在本周内。如需针对某天核对细节，随时告诉我。",
+        "event_id": "event-9dbd36e81f5347fea5a79beda3e878f1",
+        "expected_family_version": 10,
+        "part_id": "learning-feedback",
+        "reply_to": [],
+        "request_id": "deliver-feedback-46463a38-attempt2",
+        "step_id": "c9efef52365bdd3aeca645b8f467db28504a586346c98002c032069640c47003"
+      },
+      "requirement_revision": 1,
+      "run_id": "run-812712c5278d4cf18a1706f5676070a3",
+      "send_capability": {
+        "commitment_id": null,
+        "current_step_key": "c9efef52365bdd3aeca645b8f467db28504a586346c98002c032069640c47003",
+        "event_id": "event-9dbd36e81f5347fea5a79beda3e878f1",
+        "job_id": "step:46463a385bba19260a10761ab18f354ef95e04ae5ff5938089ee4777515d1ffa",
+        "job_kind": "step",
+        "mode": "full",
+        "no_contact": false,
+        "output_mode": "family_reply",
+        "reply_scope": {},
+        "run_id": "run-812712c5278d4cf18a1706f5676070a3",
+        "schedule_revision": null
+      },
+      "simulated": true,
+      "stage": "dispatching",
+      "version": 2
+    }
+  }
+]

@@ -1,0 +1,7 @@
+{
+  "event_id": "event-a015484647d84ca8bd1d84365f694ade",
+  "condition": "总结要说清完成情况和作业提交情况。",
+  "explicit_separate_condition_input": true,
+  "null_condition_observed": false,
+  "note": "Legacy intraday-empty names the input without a separate criterion; it does not guarantee null output."
+}

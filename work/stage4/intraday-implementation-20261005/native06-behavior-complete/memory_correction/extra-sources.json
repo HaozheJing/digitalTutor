@@ -1,0 +1,9 @@
+{
+  "assignments": [],
+  "imports": [
+    {
+      "batch_id": "synthetic-4b1-snapshot",
+      "metadata": "{\"batch_id\":\"synthetic-4b1-snapshot\",\"course_binding\":null,\"coverage_through\":\"2026-10-04T10:00:00+08:00\",\"imported_at\":\"2026-10-04T10:00:00+08:00\",\"source_timezone\":\"Asia/Shanghai\",\"synthetic\":true}"
+    }
+  ]
+}

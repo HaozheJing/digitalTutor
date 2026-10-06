@@ -1,0 +1,109 @@
+{
+  "index": 5,
+  "family_id": "synthetic-4b1-a",
+  "job_id": "daily:bd9f5fe220e10f1a2c9500e7fc74918b3acf723ea1fb48e914c2d91ecaff13c4",
+  "job_kind": "daily",
+  "recovery_only": false,
+  "decision": {
+    "run_id": "run-173ac0857ed8445292dd2943dd765396"
+  },
+  "native": {
+    "run_id": "run-173ac0857ed8445292dd2943dd765396",
+    "completed": true,
+    "interrupted": false,
+    "error": "",
+    "final_response": "基线规划已提交成功（本次运行唯一一次 planner.commit_daily）。\n\n结果：\n- 计划 `plan-7d751ebf33714443b36109d3e4b31c22` v1，业务日 2026-10-05，outcome=applied，family_input_version 12→13。\n- 今日入选责任：`event-a015484647d84ca8bd1d84365f694ade`（rank 1，authority=baseline）——第1天文字学情总结，家长要求今日 16:00 发送，须说清完成情况和作业提交情况；完成标准 `required_part_ids=[requested-text]`、`required_stage=sent` 未改动。\n- 候选 `candidate:6665068…` v2 处置为 **linked**（指向已正式承接的原事项，commitment:6f6c2905… active，valid_from 2026-10-05T16:00），未换名重复建项；`candidate_source_gaps` 为空，pending_inputs 为空。\n- next_action 已存在且 `execute_at=2026-10-05T16:00+08:00` 已到达，事项状态保持 pending，交由 Service 在窗口内（16:00–21:00）执行发送；planner 未向家庭发送任何消息。\n\n未做的事：不假设总结内容已写好，学情快照口径需 Service 发送前按实际来源核对；本次未做交付，也无新增长期安排。",
+    "api_calls": 2,
+    "tools": [
+      "dt_context_read",
+      "dt_knowledge_list",
+      "dt_knowledge_read",
+      "dt_learning_query_sql",
+      "dt_learning_schema",
+      "dt_memory_read",
+      "dt_planner_commit_daily",
+      "dt_skills_list",
+      "dt_skills_read",
+      "dt_state_read",
+      "dt_wechat_get_operation",
+      "dt_wechat_read_messages"
+    ],
+    "tool_trace": [
+      {
+        "tool": "planner.commit_daily",
+        "arguments_digest": "68ed6093d405c64f3d5a357171b4b563a8de9a688b80f37501f774ec5ce90beb",
+        "ok": true,
+        "result_digest": "3057ccb22bd7cc73884294a1c4736628106f79f58d88cca8573a5e3f5c0c5ad7",
+        "error": null,
+        "at": "2026-10-05T16:00:00+08:00",
+        "arguments": {
+          "request_id": "daily:bd9f5fe220e10f1a2c9500e7fc74918b3acf723ea1fb48e914c2d91ecaff13c4",
+          "business_date": "2026-10-05",
+          "expected_family_version": 12,
+          "plan_refs": [
+            "event-a015484647d84ca8bd1d84365f694ade"
+          ],
+          "pending_decisions": [],
+          "candidate_decisions": [
+            {
+              "candidate_id": "candidate:6665068346fe9a5d631d3aceb51b9f375425fb506bfaff3e0857b1c7f16d1f50",
+              "expected_version": 2,
+              "disposition": "linked",
+              "event_ref": "event-a015484647d84ca8bd1d84365f694ade",
+              "reason": "该候选对应已正式承接的现有事项 event-a015484647d84ca8bd1d84365f694ade（commitment:6f6c2905… 已active，valid_from 2026-10-05T16:00）；家长要求于今日下午四点发送第1天文字学情总结，事项goal、completion（required_part_ids=[requested-text]、sent）与原话一致，next_action execute_at=2026-10-05T16:00+08:00 已到可执行时刻，沿用原事项不清除原标准，不重复建项。"
+            }
+          ],
+          "event_updates": []
+        },
+        "result": {
+          "ok": true,
+          "result": {
+            "request_id": "daily:bd9f5fe220e10f1a2c9500e7fc74918b3acf723ea1fb48e914c2d91ecaff13c4",
+            "outcome": "applied",
+            "data": {
+              "plan": {
+                "id": "plan-7d751ebf33714443b36109d3e4b31c22",
+                "version": 1,
+                "baseline_committed": true,
+                "business_date": "2026-10-05",
+                "created_at": "2026-10-05T16:00:00+08:00",
+                "items": [
+                  {
+                    "authority": "baseline",
+                    "event_id": "event-a015484647d84ca8bd1d84365f694ade",
+                    "rank": 1
+                  }
+                ],
+                "revision": 1,
+                "revisions": [
+                  {
+                    "at": "2026-10-05T16:00:00+08:00",
+                    "event_ids": [
+                      "event-a015484647d84ca8bd1d84365f694ade"
+                    ],
+                    "reason": "baseline",
+                    "request_id": "daily:bd9f5fe220e10f1a2c9500e7fc74918b3acf723ea1fb48e914c2d91ecaff13c4",
+                    "revision": 1
+                  }
+                ]
+              },
+              "event_ids": {},
+              "accepted_commitment_ids": []
+            },
+            "record_versions": {
+              "family_input_version": 13
+            },
+            "error": null
+          }
+        }
+      }
+    ],
+    "profile": "/root/autodl-tmp/digitalTutor/work/stage4/4c-development-l/state/backend-stage4/intraday-l-native06-intraday/intraday-explicit/runs/run-173ac0857ed8445292dd2943dd765396/profile",
+    "cwd": "/root/autodl-tmp/digitalTutor/work/stage4/4c-development-l/state/backend-stage4/intraday-l-native06-intraday/intraday-explicit/runs/run-173ac0857ed8445292dd2943dd765396",
+    "output_route": "internal",
+    "model": "qwen3.8-flash",
+    "generation_options": {
+      "temperature": 0.0
+    }
+  }
+}

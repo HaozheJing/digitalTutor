@@ -1,0 +1,3350 @@
+{
+  "created_date": "2026-10-06",
+  "source_head_before_backup": "5da9f78391f0f2d10f55c93e6534c3093b2e8b14",
+  "remote": "https://github.com/HaozheJing/digitalTutor.git",
+  "branch": "main",
+  "scope": "H source + immutable L test15 source + pinned knowledge + selected docs and sanitized evidence",
+  "frozen_l_files": 189,
+  "file_count": 831,
+  "files": {
+    ".gitattributes": {
+      "sha256": "7fdfe20f293ea1e560ece2d2b912dcaa5040ab28f839d8d695cca32f5d967056",
+      "bytes": 403
+    },
+    ".gitignore": {
+      "sha256": "5da03b480496078e2f20ffff4c3fa438ae0a376023060a5e8f7828c8318b3f15",
+      "bytes": 569
+    },
+    "agent/config/service.yaml": {
+      "sha256": "a0a19b9357abe5162d9e788de41244f1c5f808097d0b92f266435f2b9c75687a",
+      "bytes": 4278
+    },
+    "agent/guides/communication.md": {
+      "sha256": "fea79c79e788fd313fdf636daab806bff2e730d3e67b3b61bd8f870868b5c59d",
+      "bytes": 2123
+    },
+    "agent/guides/interaction.md": {
+      "sha256": "b78b2f3c9a91036bc70ac91cf72717734cdb5d1f020a6428df8907edadcd9414",
+      "bytes": 2021
+    },
+    "agent/guides/learning-feedback.md": {
+      "sha256": "66bbe9168fb5c818ff4e063144d5f03941289c94e56cca87b4da22f1733e70c6",
+      "bytes": 2494
+    },
+    "agent/guides/qa.md": {
+      "sha256": "43ebdbac9f936860a457c59f28b14cb92c48ad832fce321beade72dfd653ea67",
+      "bytes": 2923
+    },
+    "agent/guides/service-basics.md": {
+      "sha256": "4c52333f523144e9fa7958faac393ee35974e153784d4a91b4b0520a86b0d581",
+      "bytes": 3309
+    },
+    "agent/guides/supervision.md": {
+      "sha256": "b4504ee4849b237f3e60a3497a4f13ec52234c60ac4f5780feddaca06cb3333a",
+      "bytes": 1602
+    },
+    "agent/prompts/common.md": {
+      "sha256": "684b5ffdf14c3da44cf47b1de4d0c4da6cc6001e9da2d2d4b792a263f121e784",
+      "bytes": 3765
+    },
+    "agent/prompts/planner_daily.md": {
+      "sha256": "6c76e217785f1deadd95eae53eda028c3a344dad7d70cfc3d032bef4f0191285",
+      "bytes": 857
+    },
+    "agent/prompts/planner_progress.md": {
+      "sha256": "7d1e9ab30572ec3210047c16c587b0c3e59bc02e55e9a18213e9b7cfe07bc984",
+      "bytes": 774
+    },
+    "agent/prompts/service.md": {
+      "sha256": "3238f681c50e313fa237bf33608f752a1d132475ddf9df90f51408a75029f3db",
+      "bytes": 10314
+    },
+    "agent/runtime-material-approval.json": {
+      "sha256": "6be1403eec2984c8f77ea1629b09a10c1261e50cad47206d24f7d97948c7482e",
+      "bytes": 1119
+    },
+    "agent/skills/address-learning-concern/SKILL.md": {
+      "sha256": "489631974552b9d012d9fda42ea7609abebf0a7c6996bf3fa830f5bb63fd16f5",
+      "bytes": 3358
+    },
+    "agent/skills/answer-course-service-question/SKILL.md": {
+      "sha256": "b9be2971168e25aff7db73f1ebfcfc2e19640e5e48612fea68a5d66ad23b7754",
+      "bytes": 3033
+    },
+    "agent/skills/celebrate-important-day/SKILL.md": {
+      "sha256": "5ea2ca92c3225ccabb0d9adfa5a4ec373ae188201dd92c97d886652451557644",
+      "bytes": 2462
+    },
+    "agent/skills/celebrate-learning-streak/SKILL.md": {
+      "sha256": "5bc87b7b589ce2e63d4268f909361802a7dda6433c554ef66f50c27668aca3cc",
+      "bytes": 2034
+    },
+    "agent/skills/celebrate-lesson-completion/SKILL.md": {
+      "sha256": "bc3adc3289a139f397d6d9803bd319b9c42aeddce5ec89e08316bedb9f3b1b3f",
+      "bytes": 3143
+    },
+    "agent/skills/close-service-case/SKILL.md": {
+      "sha256": "b73ed5e9026af49211a5d101078f51daac4cdbcdfe364c1b6efef0ca46b9aef6",
+      "bytes": 3877
+    },
+    "agent/skills/close-week-reading-gap/SKILL.md": {
+      "sha256": "340df8bbef3d40241633432fb092fa1964da23b9451789ff5e58b8f30d7018e5",
+      "bytes": 1836
+    },
+    "agent/skills/connect-reading-to-life/SKILL.md": {
+      "sha256": "bdda33f39f151bce0aaeaee40228314cbac4c9792cd4e09f71be46cfde866a6b",
+      "bytes": 2590
+    },
+    "agent/skills/explain-lesson/SKILL.md": {
+      "sha256": "570277f0e056fe8561d8e8263b8a9fe3a869457b62ae7c5722f8d54c3f21664c",
+      "bytes": 3974
+    },
+    "agent/skills/follow-up-unanswered-question/SKILL.md": {
+      "sha256": "bbbdd2c6248504f4dd7d0a7ea6779b297c8f5d63f17106dc0205905c80f207a4",
+      "bytes": 4467
+    },
+    "agent/skills/handle-complaint-escalation/SKILL.md": {
+      "sha256": "9906ddc0a74b9ae2d08f525794464736930fecbb44c159328b1be85bc464a948",
+      "bytes": 2853
+    },
+    "agent/skills/highlight-book-completion/SKILL.md": {
+      "sha256": "1f24cd73df19a8169f8404f5c449970d1b3a7ce2c042db5010ec28f4195fd870",
+      "bytes": 2525
+    },
+    "agent/skills/highlight-course-start/SKILL.md": {
+      "sha256": "6082c293ddeec9168e0277eab7ad0930eb1300a245d92f3149eca91f07576aaf",
+      "bytes": 2266
+    },
+    "agent/skills/highlight-expressive-answer/SKILL.md": {
+      "sha256": "b63c7178662868430c06be4255c68a12384018c92dad66925c2736a1a337a89b",
+      "bytes": 2428
+    },
+    "agent/skills/highlight-first-perfect-answer/SKILL.md": {
+      "sha256": "3221c2a5b13b69ae76fc75606739c3921c4469b113025d2ad12d22fa9011fcd3",
+      "bytes": 2453
+    },
+    "agent/skills/highlight-quiz-ranking/SKILL.md": {
+      "sha256": "6a3ba3bf22dece9bdff4d2fb7a8b77833c6da01f2fdb52c5dc02e6266bfd6809",
+      "bytes": 2456
+    },
+    "agent/skills/highlight-ranking-progress/SKILL.md": {
+      "sha256": "df8b1deec230e19aab7bb9c4ce52b47aa1068b14c6253f5dcaea3eeb3a37d36a",
+      "bytes": 2419
+    },
+    "agent/skills/highlight-reading-birthday/SKILL.md": {
+      "sha256": "b5fd51aabf6484888ec84514aeacaf77b6f2117d2773145fc7d4e9d7ed0c2322",
+      "bytes": 2642
+    },
+    "agent/skills/highlight-reading-milestone/SKILL.md": {
+      "sha256": "ea2298e1d27e019fdc51093dcb212154d508f999c573ecbdc78641f6b4215512",
+      "bytes": 2603
+    },
+    "agent/skills/highlight-second-week-attendance/SKILL.md": {
+      "sha256": "c6659bcfd73980f93aae431c5a995fa0f3b03e0906aeb6231c61d4daaebedf7c",
+      "bytes": 2143
+    },
+    "agent/skills/highlight-seven-day-completion/SKILL.md": {
+      "sha256": "b34c367341df3197eb66fdfe721e34deb22b2b0cc52104f926136bf442e5e883",
+      "bytes": 2387
+    },
+    "agent/skills/plan-makeup-learning/SKILL.md": {
+      "sha256": "6c5386dd32ddf1a8dd60f89071caf3fee930f3ea58fcb9c0096246b4fcf675b2",
+      "bytes": 5192
+    },
+    "agent/skills/plan-proactive-service/SKILL.md": {
+      "sha256": "55ad0988b98fd1bc664b8fa34da303fcbb2d8ab43647beb0bdf8f82dcb487d63",
+      "bytes": 4023
+    },
+    "agent/skills/plan-weekend-makeup/SKILL.md": {
+      "sha256": "9a5c9c588862b67e165e7084dac35d1e26c34f77ffaf3c81addc04e66fcc4872",
+      "bytes": 2273
+    },
+    "agent/skills/practice-reading-method/SKILL.md": {
+      "sha256": "635aa39b7775b2ecd6dd88a376f043ef9b6ad68473a5e4d80a9e83d74ead7b9a",
+      "bytes": 3824
+    },
+    "agent/skills/prepare-growth-review-package/SKILL.md": {
+      "sha256": "82800d685df0862490b6b47833397ba4d1dea021bf53615a610d0f9d8a6d0f6a",
+      "bytes": 3140
+    },
+    "agent/skills/prepare-renewal-evidence/SKILL.md": {
+      "sha256": "063a711f94571e8c1f06e7bd28f4b35056edc0758b48effbd098a16bf5ca8b82",
+      "bytes": 4503
+    },
+    "agent/skills/produce-growth-video/SKILL.md": {
+      "sha256": "178e98d8844fdddaed2faa037a46852029ea9c3d6105fd3d359ed5a06db778e3",
+      "bytes": 2702
+    },
+    "agent/skills/prompt-backlog-makeup/SKILL.md": {
+      "sha256": "8834db95cdafb5bc697184260fb766b1c12e088888bc46e5ae6293a9de68ddfc",
+      "bytes": 2503
+    },
+    "agent/skills/quiz-course-knowledge/SKILL.md": {
+      "sha256": "43d428f4b4170775c92b975f047a0697124e1715c53ca9fd11b3832e149eaaf7",
+      "bytes": 2666
+    },
+    "agent/skills/rebuild-reading-rhythm/SKILL.md": {
+      "sha256": "0f94323ea79f82aa2b6d080a273879a899bccca7d6464fcea951989b5f74b9c4",
+      "bytes": 3697
+    },
+    "agent/skills/recommend-catch-up-reading/SKILL.md": {
+      "sha256": "9eb607413040a767870b008ace6d83100eb5b8b7e026c2f22c89cd67be6646de",
+      "bytes": 773
+    },
+    "agent/skills/reinforce-reading-streak/SKILL.md": {
+      "sha256": "7d9885937024ecd69cd6b08fe5a1e48060aae49469339bb4208a538c90a65a86",
+      "bytes": 858
+    },
+    "agent/skills/remind-reading/SKILL.md": {
+      "sha256": "f4e0bac402d28c1ab4a7745d09d99e36de02c50bb01fbf792dba0507336ed646",
+      "bytes": 4155
+    },
+    "agent/skills/respond-to-child-sharing-help/SKILL.md": {
+      "sha256": "47e90b84419a5b898f3dd8bbfcbb9c5546129f8b651bf4ad416f3c2b0d205cb5",
+      "bytes": 3258
+    },
+    "agent/skills/restore-course-sequence/SKILL.md": {
+      "sha256": "19e09c869160ebae3a68365b633e120c19b55f95d35e4da5a37b6e779c294950",
+      "bytes": 778
+    },
+    "agent/skills/review-learning-progress/SKILL.md": {
+      "sha256": "69686b437490e49c537d53b9f446c21ff401fbdaeb3bfadfa695e7e164b12320",
+      "bytes": 4163
+    },
+    "agent/skills/review-weekly-learning/SKILL.md": {
+      "sha256": "e6383a5f400a1c23906c2966b9605a67743b99f5e19f66108a1f519e9a4cb64a",
+      "bytes": 912
+    },
+    "agent/skills/share-reading-reflection/SKILL.md": {
+      "sha256": "9339e2174dc584e65922a94095b42296cd958b2ebf129d8f5283dca990aaaa48",
+      "bytes": 3057
+    },
+    "agent/skills/support-course-continuity/SKILL.md": {
+      "sha256": "9ab04860e90a013030e167ff298379039d1b032549a25171db8e2d95dea0c2fa",
+      "bytes": 1839
+    },
+    "agent/skills/weekly-learning-review/SKILL.md": {
+      "sha256": "5c56b5b8ad23b1ee05aff3b2fc861fb0b754da5c64baac407b48876e150a599a",
+      "bytes": 4323
+    },
+    "backend/config.example.json": {
+      "sha256": "08147ac971cf210cb6c631adee44c03aa8eebca658d8ee4ae2428628145837d2",
+      "bytes": 124
+    },
+    "backend/pyproject.toml": {
+      "sha256": "84a69dfdd151b0284b1c851d0afb6deaaa85b516dd7bcadcd00d9fb41f16c9ad",
+      "bytes": 424
+    },
+    "backend/README.md": {
+      "sha256": "7eef06af7c6aaf9c69f81f0edab73c0d52b30cb0da781928134fac9712038a37",
+      "bytes": 16104
+    },
+    "backend/requirements.lock": {
+      "sha256": "ea6fa4230f5952a2cb3aa674873d66c8cb0b237b8f444b531c581bf24fd47f82",
+      "bytes": 147
+    },
+    "backend/requirements.txt": {
+      "sha256": "8c4517ed3fc02aaf19eb980decd6e4bec4212dbf989c92e28a76ef922c746141",
+      "bytes": 33
+    },
+    "backend/scripts/accept_stage4_behavior.py": {
+      "sha256": "790538009f9fd8396c6292445e423019fcc646db301ada92951ab7f82cd5a40e",
+      "bytes": 13311
+    },
+    "backend/scripts/accept_stage4_passive.py": {
+      "sha256": "735281956cefb9662cbfee2dcf1550ca826cafd576976e261f6258eac921e979",
+      "bytes": 17313
+    },
+    "backend/scripts/demo_passive.py": {
+      "sha256": "8805919448f61d5a1374edfbebd87c5d7ad54141a4fe2ba5ec417d48752ffaab",
+      "bytes": 4530
+    },
+    "backend/scripts/manual_demo_runtime.py": {
+      "sha256": "3ec50ac7bd8ce2f2ecf1d74573028e5e2f12225de8884a44c0f7847f0a9c8bec",
+      "bytes": 13454
+    },
+    "backend/scripts/prepare.sh": {
+      "sha256": "53fca270721583e7da3f6701c06ad4d35be6b03fc487d5aa2127f15f76b004d9",
+      "bytes": 847
+    },
+    "backend/scripts/probe_native_cron.py": {
+      "sha256": "f5c0d6ef4e2bb270b4f0273ab5d02601ec1537845fcf579e72a78b0d1c269909",
+      "bytes": 4108
+    },
+    "backend/scripts/probe_native_materials.py": {
+      "sha256": "6d8452fdfb19e1e93afe61ef97ee5eb4db7d0266a8689774066b8bba39d9fabe",
+      "bytes": 3525
+    },
+    "backend/scripts/probe_native_model.py": {
+      "sha256": "053974296ded8557d6e4ff9f68d55d7b62d72eae66e3d85d54ee9d70a324f006",
+      "bytes": 9210
+    },
+    "backend/scripts/run-stage1.sh": {
+      "sha256": "6a4732e715421b4063cf019a666c4934dc38696cc3383a7f5814fca2b7b7c974",
+      "bytes": 609
+    },
+    "backend/scripts/stage4_behavior_checks.py": {
+      "sha256": "8d4f14ee6949b922361798bfa07d3c1d6d117438693ba7dbc0cdb28856726d4c",
+      "bytes": 10121
+    },
+    "backend/scripts/stage4_behavior_fixtures.py": {
+      "sha256": "9c71286fa0ccca90eca43c8fa5dd4018fcb4aba5a946e5d4b28517bf96f53242",
+      "bytes": 8219
+    },
+    "backend/scripts/stage4_passive_fixtures.py": {
+      "sha256": "66dde7ce947c550b7db01c92115c732eb1c742e6989799c62bb0588c32ad9862",
+      "bytes": 4866
+    },
+    "backend/scripts/stage4_sql_evidence.py": {
+      "sha256": "bf5dfd093bbcb79e8cc30f5bc85950906e0f4ce6846ae5c3cdf07ca7b1ad958a",
+      "bytes": 7016
+    },
+    "backend/scripts/test_stage1.py": {
+      "sha256": "0c210f6785db46ffe91ad262da7868773f0d8559ffa4d6b69d51fb8d9f2c6ec2",
+      "bytes": 1148
+    },
+    "backend/scripts/verify_stage1.py": {
+      "sha256": "7873499c47f7f6b4e38b47fe23665abb91bfbe51b19c43b0d0d771d2062f124b",
+      "bytes": 4766
+    },
+    "backend/scripts/verify_stage2.py": {
+      "sha256": "84838353c8856a44775896f467db3d64b516b2b304c978d335ebcacc28156836",
+      "bytes": 1332
+    },
+    "backend/scripts/verify_stage3.py": {
+      "sha256": "9e028c932ce536bbdb6068bc81f2833841da97f71b01760bc04e406dd452628c",
+      "bytes": 4463
+    },
+    "backend/scripts/worker.py": {
+      "sha256": "88348cd4d8b4fa19b39157ae4fa61babdccf76c7d26dafbf906a1bc760b61c9a",
+      "bytes": 1577
+    },
+    "backend/src/digital_tutor/__init__.py": {
+      "sha256": "6f7100b996104f3793d29fa1a0f524a273f3369aa8741ebf470207da36a31372",
+      "bytes": 107
+    },
+    "backend/src/digital_tutor/__main__.py": {
+      "sha256": "79ee6f134c5c5193377cf9b189cbdcc3e2095e49ba9cec310114441c15a917c4",
+      "bytes": 47
+    },
+    "backend/src/digital_tutor/application.py": {
+      "sha256": "24acff00c6117ac9122d34f1e0bdad18ad7b85659de23b4f07194bfce4a53607",
+      "bytes": 14396
+    },
+    "backend/src/digital_tutor/cli.py": {
+      "sha256": "d61f4896d9ef4391367e91f94c605de4647e0b432400c7c40aa024136e605ab2",
+      "bytes": 4347
+    },
+    "backend/src/digital_tutor/config.py": {
+      "sha256": "b5128aeaa37fd73312aa7aca1c6464b18c26f7446d73c78d19f561758dc8b591",
+      "bytes": 800
+    },
+    "backend/src/digital_tutor/context.py": {
+      "sha256": "824cf7fdcb9411aee626b4c77b4114247643d7d75ea7d741b6f30299a5a4a1f2",
+      "bytes": 9534
+    },
+    "backend/src/digital_tutor/course_binding.py": {
+      "sha256": "b449150ec07ac257897874c907d3e702af6398c3107f1f94e97ec1aa36a6f873",
+      "bytes": 4880
+    },
+    "backend/src/digital_tutor/demo.py": {
+      "sha256": "5949ae68f831be147c5fa25718157a303b4b9e54fb206eb26a1a914e78766280",
+      "bytes": 5858
+    },
+    "backend/src/digital_tutor/domain.py": {
+      "sha256": "0a29a5630117356c265aacb8e6820f081d839e01eda83007345aadf4311ffc30",
+      "bytes": 9489
+    },
+    "backend/src/digital_tutor/family_memory.py": {
+      "sha256": "3c7f73bac2f4e7e1ea2110f8b9b2c10c1593a17f0cc3c3c44a962bc278f7b509",
+      "bytes": 6212
+    },
+    "backend/src/digital_tutor/hermes_cron.py": {
+      "sha256": "ef83d9f46055ed863d28d102755bca35fcec11d02cc5c1633d33c2a568c192fb",
+      "bytes": 3838
+    },
+    "backend/src/digital_tutor/hermes_host.py": {
+      "sha256": "bc4a34747d5421aea9d2136c5a1407283341478eb1c6f15357aeaa6b60fa52c4",
+      "bytes": 7754
+    },
+    "backend/src/digital_tutor/hermes_runtime.py": {
+      "sha256": "fc984bc0a82ef839aade4459bdd0701b08b6ceb9ddf80f3322b53b2e21692ec6",
+      "bytes": 6477
+    },
+    "backend/src/digital_tutor/hermes_tools.py": {
+      "sha256": "3a6216174a22cdcdfa2d16f1911327ebd14d9318035a1685f80baf1a67f9b555",
+      "bytes": 2974
+    },
+    "backend/src/digital_tutor/jobs.py": {
+      "sha256": "0973ca386e25bee0762e4f7512bd2acf95555d672ea1a2d7d4ed0803c5e10b52",
+      "bytes": 17475
+    },
+    "backend/src/digital_tutor/knowledge.py": {
+      "sha256": "a460d310e41327b0029efd7b116c288e9682bb82ef6b719885fb9eb48d74abeb",
+      "bytes": 8124
+    },
+    "backend/src/digital_tutor/learning.py": {
+      "sha256": "162587c7854738984df2ecdf4a720570872f859b3864c6615e601fbfec42d0f2",
+      "bytes": 9277
+    },
+    "backend/src/digital_tutor/learning_import.py": {
+      "sha256": "a95e00217e3744597b6cd40d1316caf53bce9bf655ef498308fb30048bbf0fdf",
+      "bytes": 7529
+    },
+    "backend/src/digital_tutor/materials.py": {
+      "sha256": "fa50dc0bf253b34f22d93f36e376bf21881894ef485750070d8e23a115b9e989",
+      "bytes": 3917
+    },
+    "backend/src/digital_tutor/migrations.py": {
+      "sha256": "17571a8496bf63bde8703aed8277df390266734f66e7972307b972f851f98867",
+      "bytes": 700
+    },
+    "backend/src/digital_tutor/mock_channel.py": {
+      "sha256": "6406678aa09e77520253bd8b8502f4fe4f776bc695243b504d98b943db45139b",
+      "bytes": 1424
+    },
+    "backend/src/digital_tutor/outbox.py": {
+      "sha256": "9b4577d41aab5e2d5d2c21b44b58e40fec1c0ba868937214880e339bb788ceb3",
+      "bytes": 4249
+    },
+    "backend/src/digital_tutor/planning.py": {
+      "sha256": "dc4cc5f1617a9dd816a65a063ae526c97bd17ec3af0e68201a43a84e2b67c007",
+      "bytes": 11905
+    },
+    "backend/src/digital_tutor/receipt_state.py": {
+      "sha256": "95e6d04421d7d0b2e0e753b3d2f1f808a7df32acbf6a6d3c5897b89c0c14e8ef",
+      "bytes": 737
+    },
+    "backend/src/digital_tutor/runtime_assembly.py": {
+      "sha256": "381a099a6902a18f7479cd4732e7ba3ee891e8ad4d8055e4dca12b555dcd91bf",
+      "bytes": 3178
+    },
+    "backend/src/digital_tutor/runtime_config.py": {
+      "sha256": "312443ba5abc254ac5ad74e31c2d84ac9beaddd6ae98560b71874717dce5fee3",
+      "bytes": 1752
+    },
+    "backend/src/digital_tutor/runtime_hooks.py": {
+      "sha256": "342a8cfb18ec0c7ef7e57e00e169cb5f3b72c0b39d434b99c52dd4d389820fbd",
+      "bytes": 1314
+    },
+    "backend/src/digital_tutor/runtime_outcome.py": {
+      "sha256": "0458cd4703a1d41a56295ff7a972710f6fdf4eb0cf21a29ee0d62aaf91d1259c",
+      "bytes": 4931
+    },
+    "backend/src/digital_tutor/scheduler.py": {
+      "sha256": "8a72241c5480da672df3a04a4b08d6055d68fa257107047b62fc469d057b0d7a",
+      "bytes": 7782
+    },
+    "backend/src/digital_tutor/send_policy.py": {
+      "sha256": "602aea5410c4cea250a6d0801c1ff5157e203db575f8be47b9aa6243b68c559c",
+      "bytes": 5620
+    },
+    "backend/src/digital_tutor/simulation.py": {
+      "sha256": "4a67fa8a133cb07fce0ced14c8419464bd55362e5fbd3533bbc4a51701890d10",
+      "bytes": 10208
+    },
+    "backend/src/digital_tutor/skill_loader.py": {
+      "sha256": "45e9522608b601584e632b02d7898e96d9926f1c5ec8f31432154fcaa04a1e21",
+      "bytes": 8416
+    },
+    "backend/src/digital_tutor/source_rows.py": {
+      "sha256": "f72add9344dd9363449ea18e2c8c634b6f972d6cbf1cad45e61db9b1d4fd030e",
+      "bytes": 7573
+    },
+    "backend/src/digital_tutor/sql_bindings.py": {
+      "sha256": "7fe35124f47f5c994002e664c68ac7bd2bc1c34b0ae05b5fb22d297ba57c9f54",
+      "bytes": 8347
+    },
+    "backend/src/digital_tutor/storage.py": {
+      "sha256": "80af90b8001233667b945b4f6c956e350a2c6f2ae3017de8f11faf70f6040875",
+      "bytes": 7183
+    },
+    "backend/src/digital_tutor/tools.py": {
+      "sha256": "e27ddf5707710f215752115cad6339bc112ca5c3b8cb8ed578a71716d5bbd446",
+      "bytes": 7346
+    },
+    "backend/src/digital_tutor/wechat.py": {
+      "sha256": "11ce7bd9ea3431eddff37207e832f4e010d13d1a034ca69403886bfb8dd34dd4",
+      "bytes": 10697
+    },
+    "backend/tests/test_4b_message_cursor.py": {
+      "sha256": "5ace4df7f1650b4bf088a92e22b0f0b5c57a2db48444d88ef23b60f52839d603",
+      "bytes": 11613
+    },
+    "backend/tests/test_4b_source_index.py": {
+      "sha256": "d8ff8d6eba22645271186c291a4b44af139c871da941fa6b189e9491e949932a",
+      "bytes": 11884
+    },
+    "backend/tests/test_flash_only.py": {
+      "sha256": "187b21dfcdace797acedf92f1a28d28cef8b23ccb7f0da20b63e78207ef7b038",
+      "bytes": 903
+    },
+    "backend/tests/test_manual_demo_proposal.py": {
+      "sha256": "91e53503e788bacc8fac5355ef5cf4130af529fa0e21623e83ed0e0f2d8b3772",
+      "bytes": 18674
+    },
+    "backend/tests/test_manual_input_encoding.py": {
+      "sha256": "8c9d0dd587e1036f6e06aeefa1b5bd53525cdee66274e34c76693fd28147324c",
+      "bytes": 2418
+    },
+    "backend/tests/test_material_failure_receipt.py": {
+      "sha256": "7dfb8d224033630e28465228fb58f19fb65565c16812746498403648c8e8692c",
+      "bytes": 6059
+    },
+    "backend/tests/test_sql_bindings.py": {
+      "sha256": "05814f6b67d9759ff29b353dc0efd9528c8d93ebbcb889aadda64965a7901207",
+      "bytes": 11318
+    },
+    "backend/tests/test_stage1.py": {
+      "sha256": "b6c30b3b0a887b36e114fd8dff83268138a32edf9a48d5b7a9b69d02b59e9e4a",
+      "bytes": 26546
+    },
+    "backend/tests/test_stage2.py": {
+      "sha256": "5d8d99d3955560c7a4bc198cf69deecab640dcf17cb2be0fa016270c3d527217",
+      "bytes": 7521
+    },
+    "backend/tests/test_stage2_review.py": {
+      "sha256": "89e76acf3604ee8ebf06a916aff6be27bba462cf518ab59609dd083a2dfbeef1",
+      "bytes": 5292
+    },
+    "backend/tests/test_stage2_scenarios.py": {
+      "sha256": "f9521ad78efaeeae06fb8cee4492bb32d9be29cae2bb5ed06b706268c4c882da",
+      "bytes": 8294
+    },
+    "backend/tests/test_stage3_bridge.py": {
+      "sha256": "19cab4d7472618b16cda28b8bf06d9755e07bd8c501a975b60d3a10ab04748f1",
+      "bytes": 1703
+    },
+    "backend/tests/test_stage3_context.py": {
+      "sha256": "3a7237326367b7c63bdfff5b52707843b92e01f9bf71be65ecfba018834e61ec",
+      "bytes": 7273
+    },
+    "backend/tests/test_stage3_host.py": {
+      "sha256": "4fece78cec3aaba84f6001af68f37e70cc144a4a5add1b3a92db463e2a103884",
+      "bytes": 2252
+    },
+    "backend/tests/test_stage3_knowledge.py": {
+      "sha256": "cc114c5ecf2efa2431a76b06948bf95318a0a2e5a582e08d0af208b1a67580c3",
+      "bytes": 7995
+    },
+    "backend/tests/test_stage3_learning.py": {
+      "sha256": "9cd56c41f6a8532c819e8db6ffe1670b887b16c5abfc4bea2d6b7c25d0515c0e",
+      "bytes": 13621
+    },
+    "backend/tests/test_stage3_review.py": {
+      "sha256": "391c69742bb94997ec1405787549ea2bc719091f8fe9232a4e5fd8bdbc3f23e6",
+      "bytes": 3791
+    },
+    "backend/tests/test_stage4_behavior_fixtures.py": {
+      "sha256": "f854177927ac105ed70f325d072caccf60c065d8ea680f6510b6bdfd234ef977",
+      "bytes": 3524
+    },
+    "backend/tests/test_stage4_host.py": {
+      "sha256": "73fde3585116bbf4c9541003b8245ca0a636ac2c379db91c99a2777def007da6",
+      "bytes": 6924
+    },
+    "backend/tests/test_stage4_missing_source_scope.py": {
+      "sha256": "c9e6c735b9f8b2fd2bde8d32135d5458c5f47393168915af8457656216e86b6a",
+      "bytes": 3328
+    },
+    "backend/tests/test_stage4_partial_replies.py": {
+      "sha256": "8bd93aacccb43789fb8d0579dc9717c243720c9f51f3129d95729367b9eae464",
+      "bytes": 6122
+    },
+    "backend/tests/test_stage4_passive_gate.py": {
+      "sha256": "b9afa7b4499454c04a0819c6b951db6e25e3708db4a1246c4c1fa765df12820c",
+      "bytes": 2767
+    },
+    "backend/tests/test_stage4_receipt_snapshot.py": {
+      "sha256": "c5676bbd9d1cb3d48a9a8f8ffc206cbd7e160cd21ac978b51b0dad670ed2b0e7",
+      "bytes": 7436
+    },
+    "backend/tests/test_stage4_review.py": {
+      "sha256": "ba2e71d823238722e9f17c08b157a14d7a4b5f29923801e96778ab2549110007",
+      "bytes": 3521
+    },
+    "backend/tests/test_stage4_runtime.py": {
+      "sha256": "39c61c06aec315a698561ca6442d9394f2a87b978514ba925aee5b22bb1c5a4e",
+      "bytes": 23821
+    },
+    "backend/tests/test_stage4_sql_evidence.py": {
+      "sha256": "0caed627d778407a33e87529b8321ecb55a9acba1f8d3acdebdfed61d9a5069e",
+      "bytes": 6712
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/access-map.json": {
+      "sha256": "26a2aec0e7ae30719e0cdb2d8f8dbba28ad7f5948879a9eda07cab9ffc1c56db",
+      "bytes": 51263
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/content/week-01/ability-alignment/content.md": {
+      "sha256": "de6f230da20afa9b735bf36d0f5178fdaff4baff5f4c9ed604fde06bf25b0936",
+      "bytes": 3574
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/content/week-01/day-01/content.md": {
+      "sha256": "5bae2236aa83e14bb33c7046dd85708a9e01149bbb09cfef2c72d73876716518",
+      "bytes": 4754
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/content/week-01/day-02/content.md": {
+      "sha256": "4b8bb92c5a767cfa235144290c67775217721a5301cc0ae6214fb63bb185a7bb",
+      "bytes": 4361
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/content/week-01/day-03/content.md": {
+      "sha256": "909050f0d37c3d747c93a6c9452fe4a5c998af2a4c9a8b71509312c84e2610e4",
+      "bytes": 4376
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/content/week-01/day-04/content.md": {
+      "sha256": "9adf2c45197b40fe301a8ad26ac19221da0c99b3c526b90862684a13ba2c60ca",
+      "bytes": 4730
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/content/week-01/day-05/content.md": {
+      "sha256": "03c740b5b599f0b25dda52a184af07d10f82884e00e495c15916f37f345247b8",
+      "bytes": 4111
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/content/week-01/week-overview/content.md": {
+      "sha256": "9f484bba12a7e65dda4cb9f24d79b711b13df63494cbc4d8c41f3d7d7fdf35ba",
+      "bytes": 1847
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/content/week-02/ability-alignment/content.md": {
+      "sha256": "48b054b142a445ceb283c9707b73f7105afd68360d9a24b6d164590d977f0448",
+      "bytes": 3654
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/content/week-02/day-06/content.md": {
+      "sha256": "fa8d407332cab5fe7df48b7c27c587d95e81cbcdccc78dd1575a005bd9b2ad5e",
+      "bytes": 4864
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/content/week-02/day-07/content.md": {
+      "sha256": "e112a7f1e454bed3cbf84f0e3a095a41093c502e99371f82ff7fcb338288e9ef",
+      "bytes": 5245
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/content/week-02/day-08/content.md": {
+      "sha256": "652fe3cc85e9eabad6d76310961b1acf3cb5f4e094bb90e3e1bdc7bb580dc7b3",
+      "bytes": 5044
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/content/week-02/day-09/content.md": {
+      "sha256": "5e57801f98e775a2d4238ee44adc1d901a06fb844d74041f18dd29093691840a",
+      "bytes": 5108
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/content/week-02/day-10/content.md": {
+      "sha256": "1244c75ac503a9729cf671cdee3bfdd7690d007ac1aa5c2750fc3200106e933f",
+      "bytes": 4556
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/content/week-02/week-overview/content.md": {
+      "sha256": "fed679b79dcd8519149c63e8372b683c08642119c7d416f29e84b412d6a85fc0",
+      "bytes": 1903
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/content/week-03/ability-alignment/content.md": {
+      "sha256": "bd23ab34f5b4fa77d3aeba87597ea243ad19f8f58e16fc54203b45a11a4f1f0a",
+      "bytes": 3145
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/content/week-03/day-11/content.md": {
+      "sha256": "b0f0385bbf048cf5d24b76ca739cfada2b1253cec111453f8438a5c2fe274bc4",
+      "bytes": 4733
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/content/week-03/day-12/content.md": {
+      "sha256": "efe2c6acf2b8aa451d1328600c8f859617290dd914208f0b9c2553d69f86188f",
+      "bytes": 4718
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/content/week-03/day-13/content.md": {
+      "sha256": "0e7b212cc0a7564dc8c49a7d7176a831314bff318b625e90cf06400102340a97",
+      "bytes": 4911
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/content/week-03/day-14/content.md": {
+      "sha256": "9c888115a07d8aca911ed0c7205af3b47068a623d598eded91e914a9e26b67d0",
+      "bytes": 5147
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/content/week-03/day-15/content.md": {
+      "sha256": "f000af801ddbde22c4c756b041b7f6849b644e6ad68a8037abf55e532a463e4f",
+      "bytes": 4601
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/content/week-03/week-overview/content.md": {
+      "sha256": "cb20ecb3f701ac476e62d125eb9136b9528fce07c63a0a70dc04dbd1136821f4",
+      "bytes": 2025
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/content/week-04/ability-alignment/content.md": {
+      "sha256": "cb703eb30fce6182882102b032043af5d97d0dfb5cd5b30f222b2c73f1eb06a3",
+      "bytes": 2964
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/content/week-04/day-16/content.md": {
+      "sha256": "878d11b7cfe2c31f03acab619959b1c892e4df4379a0b71814de182bad0f8449",
+      "bytes": 4832
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/content/week-04/day-17/content.md": {
+      "sha256": "93d5c0c34e574075bdd142404d4c44f7086acb83141202e8611aa6d1e69f17d5",
+      "bytes": 4648
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/content/week-04/day-18/content.md": {
+      "sha256": "1c66528881a7500cdcebc298741be155e2e81b836038465280625547e989a9e6",
+      "bytes": 4633
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/content/week-04/day-19/content.md": {
+      "sha256": "0ad66a7848cf9ab1c2227fb104bacc61228f78972779eb4ed24dc0bc1174b1e2",
+      "bytes": 5037
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/content/week-04/day-20/content.md": {
+      "sha256": "78c4cd47de2d3af4b2023999f5c07e822c31a789108c3471ae127f73ac4c9ee7",
+      "bytes": 4502
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/content/week-04/week-overview/content.md": {
+      "sha256": "e09378535081e0e8df2198e22e1685d5823c3751e0a891724ccd8bc96562ec99",
+      "bytes": 2088
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/manifest.json": {
+      "sha256": "86e695fc9be00a99d4a220242db6bc485e9eedeeb565ac8a093e09fd379152d5",
+      "bytes": 33493
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/navigation/L2-FOX-W01-ABILITY_ALIGNMENT/abstract.md": {
+      "sha256": "b716ae91f7c08b592dde601c9b7a12b8f327739dcd98a22f6475c71475aba1a7",
+      "bytes": 308
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/navigation/L2-FOX-W01-ABILITY_ALIGNMENT/overview.md": {
+      "sha256": "8956624de296c0531cefa90d5b83860e121bfb60478ec0b369ec4579ce82c54a",
+      "bytes": 1023
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/navigation/L2-FOX-W01-WEEK_OVERVIEW/abstract.md": {
+      "sha256": "fa33c8a85d871a416c4e83dee32ee56e3d585ef8b608df5591ab0a21c43b56f2",
+      "bytes": 99
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/navigation/L2-FOX-W01-WEEK_OVERVIEW/overview.md": {
+      "sha256": "8a1043fbdb955b14acf91300987c362d5bbff3ab4e10a0116025f7871dc86516",
+      "bytes": 594
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/navigation/L2-FOX-W02-ABILITY_ALIGNMENT/abstract.md": {
+      "sha256": "5ce411a32ea17bd318ce65d2ca84bb364066d1e6e3537f2ce9946068949a7da9",
+      "bytes": 309
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/navigation/L2-FOX-W02-ABILITY_ALIGNMENT/overview.md": {
+      "sha256": "9a52e142c6e455c4d4df93c338578e79eb9d1f3eaf7785a4ba9957b6013e5f51",
+      "bytes": 1025
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/navigation/L2-FOX-W02-WEEK_OVERVIEW/abstract.md": {
+      "sha256": "fec21c9855368d6808523f0c1afa2890b75aefb6a83be03a0bdd38164706385c",
+      "bytes": 100
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/navigation/L2-FOX-W02-WEEK_OVERVIEW/overview.md": {
+      "sha256": "52f1593001b9ca0a5631d205cfba62bcf2c1f22f4aa2c810f69e314745d84650",
+      "bytes": 599
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/navigation/L2-FOX-W03-ABILITY_ALIGNMENT/abstract.md": {
+      "sha256": "f370d0e9169dc0cb57d378a6f9b666fed63772e47af2d83a60d986602efc07e6",
+      "bytes": 310
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/navigation/L2-FOX-W03-ABILITY_ALIGNMENT/overview.md": {
+      "sha256": "efdc0600f638d56c9ea56581704f04849b76d7b3bc535677cc599893a0b161c0",
+      "bytes": 1027
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/navigation/L2-FOX-W03-WEEK_OVERVIEW/abstract.md": {
+      "sha256": "f007b9c30b7ea9289cc67434c9b81c29b5a103ae2ef352144a0f2df7d4b6199d",
+      "bytes": 101
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/navigation/L2-FOX-W03-WEEK_OVERVIEW/overview.md": {
+      "sha256": "3937f35a0b316635c4259ed7888f29ecda85cf70a18ea2688c4896d47729169e",
+      "bytes": 601
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/navigation/L2-FOX-W04-ABILITY_ALIGNMENT/abstract.md": {
+      "sha256": "92be88d2efb854362fc792c07a603522c90f9a515387c9b87be50ee16de1ece5",
+      "bytes": 310
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/navigation/L2-FOX-W04-ABILITY_ALIGNMENT/overview.md": {
+      "sha256": "89928f1a834c3b9e52d5a7d068ac8f468f59ab8a288750e0e79a6ba63f99cb31",
+      "bytes": 1027
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/navigation/L2-FOX-W04-WEEK_OVERVIEW/abstract.md": {
+      "sha256": "7a77489b93a7cae65cf74045c2ab0a53f5c24d8282947cc549876bfe5f182164",
+      "bytes": 101
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/navigation/L2-FOX-W04-WEEK_OVERVIEW/overview.md": {
+      "sha256": "dbbec54ddc66315d61ad867fe4a9e8039041c36799aca0b16b50bea316ee02a7",
+      "bytes": 601
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/navigation/LESSON-L2-FOX-D01/abstract.md": {
+      "sha256": "cd31b1ea144865ee890ef40bbd55bb98eb8619bf993b6147d64e035a52f202b1",
+      "bytes": 249
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/navigation/LESSON-L2-FOX-D01/overview.md": {
+      "sha256": "74360184da78ca10ed75759ededc5c78d75486d43be4f74e5ca19f102c0f37e3",
+      "bytes": 891
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/navigation/LESSON-L2-FOX-D02/abstract.md": {
+      "sha256": "8b18df17279709c09fef459840dac9616c5381600f801f2137ac779a7e2a45ef",
+      "bytes": 278
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/navigation/LESSON-L2-FOX-D02/overview.md": {
+      "sha256": "0430edb87274ca0ea150db1efa562aa8890d7fe718fc77fb9c849d683bd296c2",
+      "bytes": 949
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/navigation/LESSON-L2-FOX-D03/abstract.md": {
+      "sha256": "60f073285d294e4bf82d5f843f4f964ce72ad617d75697661b2d474d18ffd7f7",
+      "bytes": 266
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/navigation/LESSON-L2-FOX-D03/overview.md": {
+      "sha256": "1590f7bbc66b706a016cad51b0b6439e8e1397298c9074e9df2380bd405e1688",
+      "bytes": 926
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/navigation/LESSON-L2-FOX-D04/abstract.md": {
+      "sha256": "0cd8fd73ca51294442819baedd68ebcd20c000cd8788d6b8c8170da8b94dc369",
+      "bytes": 227
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/navigation/LESSON-L2-FOX-D04/overview.md": {
+      "sha256": "307356664919406ee5e52a5e4a09c49f912e28d797f266a36fef8a30d550b240",
+      "bytes": 849
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/navigation/LESSON-L2-FOX-D05/abstract.md": {
+      "sha256": "6bef28f92cd390d500e7e8b1f96fb46fc9151ba8b53a07c5e3b1f499ae38bb23",
+      "bytes": 217
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/navigation/LESSON-L2-FOX-D05/overview.md": {
+      "sha256": "554d26fd28b68d35276881c90f9f2b78e98741872c36f180984f68170177fba5",
+      "bytes": 829
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/navigation/LESSON-L2-FOX-D06/abstract.md": {
+      "sha256": "3f6880837c9c7c884c6130de8c8b7e14a8a4f2b8c101b13739aaccd448e08c41",
+      "bytes": 223
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/navigation/LESSON-L2-FOX-D06/overview.md": {
+      "sha256": "41515f5c9db0baf9d2b8a046a6a12b0df9a018d24267701f8b64e5f86857a6bd",
+      "bytes": 841
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/navigation/LESSON-L2-FOX-D07/abstract.md": {
+      "sha256": "51149d61c9203647af60f84591bdcea2aae13d0e9bb00aad2b1af64b931c024d",
+      "bytes": 236
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/navigation/LESSON-L2-FOX-D07/overview.md": {
+      "sha256": "f294ed9b48010e968324b475492d0dc93c6d5bf74565a21239a409193d363da4",
+      "bytes": 867
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/navigation/LESSON-L2-FOX-D08/abstract.md": {
+      "sha256": "9efb1924a83865d05b502bd2da3435cd72c7418d8140b456dee9a30f1c8569d2",
+      "bytes": 233
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/navigation/LESSON-L2-FOX-D08/overview.md": {
+      "sha256": "51331652e6741d5dc5a185be29662f28b6b6cc66ad0c4908f743f1999c64b900",
+      "bytes": 861
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/navigation/LESSON-L2-FOX-D09/abstract.md": {
+      "sha256": "b97047b3d8b8b415250b3411b03b25f563e17306f08e681903dd958ecf8b654e",
+      "bytes": 244
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/navigation/LESSON-L2-FOX-D09/overview.md": {
+      "sha256": "dbb56ece5f7f130e3e32dbd0e710ae6d40cac085d57907e40ca07b7336f6fdfd",
+      "bytes": 883
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/navigation/LESSON-L2-FOX-D10/abstract.md": {
+      "sha256": "30891a8d4cc825c657b2ebdba1a856466bd7a78468b672f21d4f1c935b8fefb4",
+      "bytes": 236
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/navigation/LESSON-L2-FOX-D10/overview.md": {
+      "sha256": "dfe4faf9c956f38216bb87ba820a515a33a9a8f3dadaf4698194c47b7bae7812",
+      "bytes": 867
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/navigation/LESSON-L2-FOX-D11/abstract.md": {
+      "sha256": "2cd3a1fa73c1a630ce73cb99f891a065a92bcca2dbbe810b620c232eb8457c71",
+      "bytes": 267
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/navigation/LESSON-L2-FOX-D11/overview.md": {
+      "sha256": "dad4923c6f00ceb8aa342708f27322e9ac0739889224540b743d27d93131a880",
+      "bytes": 929
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/navigation/LESSON-L2-FOX-D12/abstract.md": {
+      "sha256": "a8c3adbf0821e7e185fa9905e67a4f3bda9f941fd7d861e97e818776dd1635a8",
+      "bytes": 267
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/navigation/LESSON-L2-FOX-D12/overview.md": {
+      "sha256": "90be36039cd33bd0aa6bea58c4b0282ae7a9cda579317f4e5848cd900d0ae704",
+      "bytes": 929
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/navigation/LESSON-L2-FOX-D13/abstract.md": {
+      "sha256": "44d49f1e985930e99dfd314dcbeed3cd25d26b65d44b13dfa6491450d607b6a1",
+      "bytes": 251
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/navigation/LESSON-L2-FOX-D13/overview.md": {
+      "sha256": "13fc5db6b293a19bff35577de1f5319cb4b6ee337a6e37a51d55aa42c91c2954",
+      "bytes": 897
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/navigation/LESSON-L2-FOX-D14/abstract.md": {
+      "sha256": "1f1e1e4b31e5ece656ab023de2501c9936a21c6abe4e92dd41be3f58482423f0",
+      "bytes": 282
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/navigation/LESSON-L2-FOX-D14/overview.md": {
+      "sha256": "d3b4f5fa2470b2fd3246267eac506476507d2cf9474461b77ee00dfb3ef257a8",
+      "bytes": 959
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/navigation/LESSON-L2-FOX-D15/abstract.md": {
+      "sha256": "d90e2979467ac24883e742a0ef123d2195d11b7036ba5d1eacc90a3ea11f1417",
+      "bytes": 309
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/navigation/LESSON-L2-FOX-D15/overview.md": {
+      "sha256": "11b6bd2db370bc950fad913350137e7ebcb01886867a1f75b5a484da3512d760",
+      "bytes": 1013
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/navigation/LESSON-L2-FOX-D16/abstract.md": {
+      "sha256": "73883e3c91738164121d69d266656400287a1dbf6bd09c4388a09af4e5753b37",
+      "bytes": 249
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/navigation/LESSON-L2-FOX-D16/overview.md": {
+      "sha256": "4d215339634ae8456032d1f81ca0f993eec86df2181a85145c44ea6b56bd0237",
+      "bytes": 893
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/navigation/LESSON-L2-FOX-D17/abstract.md": {
+      "sha256": "a27475a336f50684a69f1f0c6d5e87811eed00dd41a8cb34f30b532195940b04",
+      "bytes": 255
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/navigation/LESSON-L2-FOX-D17/overview.md": {
+      "sha256": "0dd87ffcdaafb5912695a55ca7bcbae20a28cd0ed0292d182f6a5773a2c109c8",
+      "bytes": 905
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/navigation/LESSON-L2-FOX-D18/abstract.md": {
+      "sha256": "f41f68a3b10679d58054dcdcb22da94db04202d06dc16157d7c8858beb45dfe8",
+      "bytes": 252
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/navigation/LESSON-L2-FOX-D18/overview.md": {
+      "sha256": "eef88e7050e7c9d188671b67f6fb9c3e0c0aaefdc7f6eaf29109f4ffdf1bf9d1",
+      "bytes": 899
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/navigation/LESSON-L2-FOX-D19/abstract.md": {
+      "sha256": "781d582c4a5ce25503cbecce17feda1a1238f69e6e0ce6b3504dfb7bfd97ccdd",
+      "bytes": 252
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/navigation/LESSON-L2-FOX-D19/overview.md": {
+      "sha256": "3babbd2673896cabdd05e214a3e9ffdfd7ad197b48af79814f1f36ff8898b297",
+      "bytes": 899
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/navigation/LESSON-L2-FOX-D20/abstract.md": {
+      "sha256": "342fa94e9e13833364001d79d9fb69bb58f5a930333d7ca5c5d56ee5b92ef76f",
+      "bytes": 285
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/navigation/LESSON-L2-FOX-D20/overview.md": {
+      "sha256": "c101fd54f476e57bd8d1f1d043ea640511e4977bc3822dcd643b3c09ae1b27e9",
+      "bytes": 965
+    },
+    "build/openviking/courses/source-c764d8b325cc-nosplit-v2/navigation.json": {
+      "sha256": "8d74f2c37bb37d60a97f2eccc424fcc29ec4aaf4f7c88605068dfaa222cb8ce4",
+      "bytes": 48017
+    },
+    "deployments/service-skills-20261003T013936Z.json": {
+      "sha256": "635081012c4d81c65a1684f9b6a1bc4afcb1f7c4a0a8363b16493c95ae16f410",
+      "bytes": 9567
+    },
+    "deployments/stage3-materials-files-20261004.json": {
+      "sha256": "c4f40466fb7aa640fc2e2794d68511c8b78b84f90629dd82b3a2a425e46b9f7d",
+      "bytes": 1301
+    },
+    "docs/OpenViking产品知识接入与维护.md": {
+      "sha256": "66c719e4ef2701d776a1da818a0567890a93044b5c5ad48d93602a777ad6158d",
+      "bytes": 9065
+    },
+    "docs/OpenViking服务FAQ扩展召回测试.md": {
+      "sha256": "3ad777d1b0e8e3ff0a3c8b2f7814044c3748388fc4a4d976d4241e8c785ecd53",
+      "bytes": 7756
+    },
+    "docs/OpenViking服务FAQ整理与接入记录.md": {
+      "sha256": "db7c82d5dcd2516b410e9571a0d89ecd1ebfc22aa39ffb6a168d7f7029d7586c",
+      "bytes": 8080
+    },
+    "docs/OpenViking服务FAQ知识建设方案.md": {
+      "sha256": "678ab5ab661063bc5e9d7d177ba3b7820fd2d5e77cc2c1a351a9b49e1de7ed79",
+      "bytes": 18490
+    },
+    "docs/OpenViking课程目录与回答对照实验.md": {
+      "sha256": "ef017ed93e0bfd9698388afe0538a29f0d9675c63e899b172be76017ed9cd472",
+      "bytes": 8139
+    },
+    "docs/OpenViking课程知识优化与测试.md": {
+      "sha256": "bbfcb7c349bd14aa2b366bd7cd9c4a8efcfb5e472d5fc766d72829adaa065f85",
+      "bytes": 11769
+    },
+    "docs/README.md": {
+      "sha256": "237ae788092ebe4dd8bb648bbf65a0202e2ac6d73e884118b3320e63220896d9",
+      "bytes": 8386
+    },
+    "docs/Skill元数据目录.md": {
+      "sha256": "241a5d464e31a5d2f2099a24b5624a11f30dee7ef40581c8ef56a54f56d2e180",
+      "bytes": 33819
+    },
+    "docs/Tool元数据目录.md": {
+      "sha256": "f927894e2a082e414c1edf491e8ccbc34ab25f06c1d4877c446dda0b1bea61fb",
+      "bytes": 28233
+    },
+    "docs/双智能体上下文组装设计.md": {
+      "sha256": "5603f54933223ce1467a769a15d9c34da31e3da1db75076bfd0f78c9c73ec8e8",
+      "bytes": 13297
+    },
+    "docs/持续教辅服务工作流与触发边界讨论稿.md": {
+      "sha256": "838e55cf60671b49deed5137c1a5ce98a71f65b9d17192cb269c29ef4b2b3803",
+      "bytes": 14928
+    },
+    "docs/教辅后端实施细化草案.md": {
+      "sha256": "300daed7ba645b0701c505bc34e0fdb7387d7af058a65bac701974bad52f8414",
+      "bytes": 31086
+    },
+    "docs/教辅后端开发任务清单.md": {
+      "sha256": "6279e6332db39a4ecb902d669e1236098678d615fb8930f1aa6c9ce8abb6e3e8",
+      "bytes": 26365
+    },
+    "docs/教辅后端数据与接口合同.md": {
+      "sha256": "0a2518440fd4b9f6ac9c4b293717ebbd0c12d287077abb0db131e4b260a4e996",
+      "bytes": 31894
+    },
+    "docs/教辅后端第一阶段交付记录.md": {
+      "sha256": "e39abf673b2ebd86d709315329975fc309bab0e34019bd02012a3e7ea72eae36",
+      "bytes": 5842
+    },
+    "docs/教辅后端第三阶段交付记录.md": {
+      "sha256": "2530a50a0c5ebae76602582a9b0d5b617468bb7aad5050ecbd156f16196b739a",
+      "bytes": 6750
+    },
+    "docs/教辅后端第二三阶段执行细化.md": {
+      "sha256": "d212255fe3a4c24967823ba906c91687e1f04193e2667923204a13b4ec2f9350",
+      "bytes": 3914
+    },
+    "docs/教辅后端第二阶段交付记录.md": {
+      "sha256": "fda156232d2ce038d27482225caae79f20ba4539504551fb9e8b7f7b1fbf30fd",
+      "bytes": 1653
+    },
+    "docs/教辅后端第四阶段交付记录.md": {
+      "sha256": "700be59af1de51949c6d4894a5a69d6f09a132606a218b543456c255a1cded09",
+      "bytes": 40099
+    },
+    "docs/教辅后端第四阶段开发与验收方案.md": {
+      "sha256": "c8c75abbe31ccfc08493737e233d61ccac8311842085ac32ce44b67dd9cdef3d",
+      "bytes": 51799
+    },
+    "docs/教辅数字员工智能体后端开发方案.md": {
+      "sha256": "cd71ffe3480fab235d094f422f893015b9b4aad4cd72948f7b3529dd572baec9",
+      "bytes": 10942
+    },
+    "docs/教辅数字员工服务状态与规划设计交接.md": {
+      "sha256": "40f5c1a05b8fae366d49e28147896835e9268e41a7ff950da7be4ef158ddd612",
+      "bytes": 25779
+    },
+    "docs/教辅输入对齐与学情映射.md": {
+      "sha256": "28e809b0ffcb453dc047a406f0995e87dfa39d1685107ec631003efc8cc22d70",
+      "bytes": 11445
+    },
+    "docs/日内承接与按时执行设计.md": {
+      "sha256": "81d556bf61f5a1ce2908c7f354697293fbdba341fc105534dfdb8e0938713af6",
+      "bytes": 18578
+    },
+    "docs/智能体后端工程与验收设计.md": {
+      "sha256": "3f8613cf89016936284c41a9bf4d000c743304d0f3a884b8a46a3b35e2b2ddfc",
+      "bytes": 21429
+    },
+    "docs/智能体方案多智能体评审记录.md": {
+      "sha256": "164b44600a8982aa122971f559b709eccac5ff45dcbd71d2df368a05ee6d8179",
+      "bytes": 36169
+    },
+    "docs/服务Skills开发总结与后续会话交接.md": {
+      "sha256": "6c0775af1570aad76370b28b5de959f06aa7516201c36f27af823e98d74b88fa",
+      "bytes": 11905
+    },
+    "docs/服务Skills核对与模拟测试报告.md": {
+      "sha256": "885cefc2973502f982349fe3b67cd789da0e3866dcee374d6e82bff935361b9b",
+      "bytes": 13798
+    },
+    "docs/服务Skills远端上传记录.md": {
+      "sha256": "d8f696059b02a06164373463827dc1595a8d696b1f4411857290d234a7c03284",
+      "bytes": 2130
+    },
+    "docs/第四阶段4B2重点核对记录.md": {
+      "sha256": "49aacde86a1f521accc93451665bba226503795e82fe847c676879e213aa8649",
+      "bytes": 5355
+    },
+    "docs/第四阶段4B亲测说明.md": {
+      "sha256": "d56d1f4663eda5ae4cdadc169c726fb0ee74d300735afd1b97504cc86bc0cbac",
+      "bytes": 5262
+    },
+    "docs/第四阶段4C实施进展.md": {
+      "sha256": "f9b957936baad8d29f696bb3b4ce0be573018b9e4c3a749134025def9c97252c",
+      "bytes": 4615
+    },
+    "docs/第四阶段4C手动验证说明.md": {
+      "sha256": "4dc2bd3f2056cdc54c79fbd7f7f6cae4595a30dfe1ec1f3348730883d332f405",
+      "bytes": 2738
+    },
+    "docs/第四阶段4C独立开发与4B遗留修复计划.md": {
+      "sha256": "e599de482a7804039ab13b258f0128426bebbc58a3efc6d1f0d9a1d55158c513",
+      "bytes": 21573
+    },
+    "docs/第四阶段4C联合复验J缺陷记录.md": {
+      "sha256": "5759a4d164488fcd7e5ea015836151d5140dd86c1388ee548aca8323cd420352",
+      "bytes": 3252
+    },
+    "docs/第四阶段4C隔离K交付与待决记录.md": {
+      "sha256": "ba126522fe3774965834eaafa7405e69933cf0a2acff19610dc8437693544cf5",
+      "bytes": 10373
+    },
+    "docs/第四阶段4D会话移交提示词.md": {
+      "sha256": "329ce67b84724e0dce04e98a19b93a2f6ef9dc0cd58b4803adea23e595895548",
+      "bytes": 16024
+    },
+    "docs/第四阶段4D持续执行开发与验收计划.md": {
+      "sha256": "93df3fa41a358936348863d3addf27857fcba8611969c3f3cdf5dfa80d4e3795",
+      "bytes": 23915
+    },
+    "docs/第四阶段4D移交与Git备份说明.md": {
+      "sha256": "9f5d33e0470aaebaf5890700a1cb86de3aecd6de75d29fa0e3ab9a9d9bfb232a",
+      "bytes": 4528
+    },
+    "docs/第四阶段日内承接与完成条件实施记录.md": {
+      "sha256": "495808ffd9f47ca0ce8029082c36ec4ef945eddf836c5646ae714abf70e1eb44",
+      "bytes": 28505
+    },
+    "docs/第四阶段模型表达与语义待评审清单.md": {
+      "sha256": "dd7fe3746feae97dd4f01b24cc73c7e9e17fc52dcc2c8dec9904ca665f5deff9",
+      "bytes": 8326
+    },
+    "docs/第四阶段计划与进展合同问题排查及原生Plan机制借鉴.md": {
+      "sha256": "1054d225c2e2a0ac20767f11cd2545d41fe5590d033eb29047b909d2afe0f0d0",
+      "bytes": 11148
+    },
+    "docs/第四阶段运行合同.md": {
+      "sha256": "ff12184a204d76a0894853f1f84b570881b29ff0b9216ff375ce28f09cfd6914",
+      "bytes": 4060
+    },
+    "docs/规划与执行运行机制设计.md": {
+      "sha256": "ca68ca841ab37aba368f8e3c36fd58682b774c6d3feb89ff677f36b3580dd356",
+      "bytes": 12076
+    },
+    "docs/远程服务器与Git交接.md": {
+      "sha256": "2111ee77d59a69cb5ce4648bedd6494a217733a699ff83080760d481868fd906",
+      "bytes": 12286
+    },
+    "ops/build_course_navigation.py": {
+      "sha256": "93e2cb24ebbc3dae6a06830a624e01adfd4e5b3b2071a5c7bcdd4b042e8d7e3e",
+      "bytes": 2392
+    },
+    "ops/course_cli.py": {
+      "sha256": "72ef47a72d26cf984c84b879edccd4a87fa92da3cd425842362903aa12c3418a",
+      "bytes": 3009
+    },
+    "ops/finalize_course_nosplit.py": {
+      "sha256": "30ba0b890cbeb911f491aa9ccc54bd69adb3d8e58fe63f5a41112bcc73f0d9d0",
+      "bytes": 6078
+    },
+    "ops/finalize_course_nosplit_local.py": {
+      "sha256": "a44e3077bbd5db2f255030ddf782dbaeb2ce4138e65c8ee35979863da4932899",
+      "bytes": 5004
+    },
+    "ops/finalize_course_resources.py": {
+      "sha256": "b5a89eaf0870718b28a5d6ee72649dfce2adb332311f87c9ef3a468997db998c",
+      "bytes": 7646
+    },
+    "ops/prepare_course_nosplit.py": {
+      "sha256": "34dfd6516111cf5a706ca4046d3054ebef4a0baf87f5887e9f03bfa10cd9435f",
+      "bytes": 2931
+    },
+    "ops/prepare_course_resources.py": {
+      "sha256": "7131444e4575dd6f5f11c538a262943be8506de9338221d314bbb8fded98d1b3",
+      "bytes": 4623
+    },
+    "ops/publish_course_navigation.py": {
+      "sha256": "c063cb9533fa7e272ba5305f3884caff14380274e003e7b45ef4cac4e85ceff8",
+      "bytes": 2362
+    },
+    "work/design-inputs/hermes-native-review.md": {
+      "sha256": "9745bea509e40fa7abdaddb5b9dcea1c393305c3de9f395f022626c111b21d75",
+      "bytes": 10120
+    },
+    "work/design-inputs/stage2-review.md": {
+      "sha256": "6e31c1f3235ffcc4e7d13a25bc5a375ea0c68f78c9b568fc2970bb9b2c46cef3",
+      "bytes": 4332
+    },
+    "work/design-inputs/stage2-scenarios-review.md": {
+      "sha256": "a110c15592c463e7ab639e6f9fa78cc01e71cbcf74a1f2b35c336cfcb576eb3e",
+      "bytes": 7970
+    },
+    "work/design-inputs/stage3-knowledge-readers.md": {
+      "sha256": "5d52d1ad5757b573b24392b0843df068cd04697e9b4ced28cce0ee80af82ac5b",
+      "bytes": 3805
+    },
+    "work/design-inputs/stage3-learning.md": {
+      "sha256": "1e1d329e0e063b5a730d7ff7883a1edf96bf08bd8d1bbba3f77142ef1ea4913e",
+      "bytes": 4933
+    },
+    "work/design-inputs/stage3-materials-review.md": {
+      "sha256": "98a8d59d19c19af83cf2600c11c215eeb0e0db6d7630000cd3434e01a5b8f66d",
+      "bytes": 3634
+    },
+    "work/design-inputs/stage3-native-integration-review.md": {
+      "sha256": "816e709ea1159c5eef1c445a6f3d8fe93791b9418d9b8091cecef124a42cd0e3",
+      "bytes": 6663
+    },
+    "work/design-inputs/stage3-review.md": {
+      "sha256": "ad9f7043a7ac075333d0401cf2944a8db40b2c82e32c6cbdf479c88655c871b8",
+      "bytes": 2509
+    },
+    "work/design-inputs/stage4-acceptance-review.md": {
+      "sha256": "2858dd1a08d9751ae160e0145e1a6fc4960c45fcd4deaa0de4155dd260b22b1e",
+      "bytes": 27902
+    },
+    "work/design-inputs/stage4-behavior-review.md": {
+      "sha256": "78481cf79695409e5570d0e9bcbdaf51d02e2ef0b88b28a6a0cf4b33e3e87179",
+      "bytes": 18428
+    },
+    "work/design-inputs/stage4-runtime-review.md": {
+      "sha256": "b34704a1f40a6b9daf3cc81d4d33408bdffa214ca5c60fda77e21da5b9d38383",
+      "bytes": 13081
+    },
+    "work/handoff-20261006/prepare_git_backup.py": {
+      "sha256": "514d4e8d8deb1f29ebfa4f3e70c2875a17cdc2d7364e6a453907b8b06ccf9d81",
+      "bytes": 7033
+    },
+    "work/handoff-20261006/server-source-audit-final.json": {
+      "sha256": "da73a6148a501eb51babd9f22b6db826571ce4999090e638bfb53937680bf869",
+      "bytes": 460
+    },
+    "work/handoff-20261006/server-source-audit-initial.json": {
+      "sha256": "dbc188ec1f69eb188f5084a8b22e5a894dac40c29f44d6a47aa1db6bbd3eab0f",
+      "bytes": 6343
+    },
+    "work/handoff-20261006/test15-unit-tests.txt": {
+      "sha256": "4379b27ef91f793c61dbaadde4c1d118c921e8091984901d6b7a8aaa2583c188",
+      "bytes": 89572
+    },
+    "work/handoff-20261006/verify_git_backup.py": {
+      "sha256": "caaf2976e1b15c42c520ed67bec6d61c3193d6b3b1f9ddf52f921c9bb2eac254",
+      "bytes": 4060
+    },
+    "work/stage4/4c-development-l/agent/config/service.yaml": {
+      "sha256": "a0a19b9357abe5162d9e788de41244f1c5f808097d0b92f266435f2b9c75687a",
+      "bytes": 4278
+    },
+    "work/stage4/4c-development-l/agent/guides/communication.md": {
+      "sha256": "fea79c79e788fd313fdf636daab806bff2e730d3e67b3b61bd8f870868b5c59d",
+      "bytes": 2123
+    },
+    "work/stage4/4c-development-l/agent/guides/interaction.md": {
+      "sha256": "b78b2f3c9a91036bc70ac91cf72717734cdb5d1f020a6428df8907edadcd9414",
+      "bytes": 2021
+    },
+    "work/stage4/4c-development-l/agent/guides/learning-feedback.md": {
+      "sha256": "66bbe9168fb5c818ff4e063144d5f03941289c94e56cca87b4da22f1733e70c6",
+      "bytes": 2494
+    },
+    "work/stage4/4c-development-l/agent/guides/qa.md": {
+      "sha256": "43ebdbac9f936860a457c59f28b14cb92c48ad832fce321beade72dfd653ea67",
+      "bytes": 2923
+    },
+    "work/stage4/4c-development-l/agent/guides/service-basics.md": {
+      "sha256": "4c52333f523144e9fa7958faac393ee35974e153784d4a91b4b0520a86b0d581",
+      "bytes": 3309
+    },
+    "work/stage4/4c-development-l/agent/guides/supervision.md": {
+      "sha256": "b4504ee4849b237f3e60a3497a4f13ec52234c60ac4f5780feddaca06cb3333a",
+      "bytes": 1602
+    },
+    "work/stage4/4c-development-l/agent/prompts/common.md": {
+      "sha256": "af14a484d3205bf3db551002685278d190f797d81255c43e909e7f4d7fffd8f2",
+      "bytes": 4107
+    },
+    "work/stage4/4c-development-l/agent/prompts/planner_daily.md": {
+      "sha256": "bb4671ce4d816086e5cadafa44b64c74d6267f403920aaca41f4dd69daadaea5",
+      "bytes": 3403
+    },
+    "work/stage4/4c-development-l/agent/prompts/planner_progress.md": {
+      "sha256": "1445502156357b574134d90436c7b30a876aa508f2680e154aacdcd8747debdd",
+      "bytes": 1499
+    },
+    "work/stage4/4c-development-l/agent/prompts/service.md": {
+      "sha256": "5e8fd152a0aa1564d8f82edd2279591dac12934bc0b4a33c9e372004e57d323e",
+      "bytes": 14338
+    },
+    "work/stage4/4c-development-l/agent/runtime-material-approval.json": {
+      "sha256": "6be1403eec2984c8f77ea1629b09a10c1261e50cad47206d24f7d97948c7482e",
+      "bytes": 1119
+    },
+    "work/stage4/4c-development-l/agent/skills/address-learning-concern/SKILL.md": {
+      "sha256": "489631974552b9d012d9fda42ea7609abebf0a7c6996bf3fa830f5bb63fd16f5",
+      "bytes": 3358
+    },
+    "work/stage4/4c-development-l/agent/skills/answer-course-service-question/SKILL.md": {
+      "sha256": "b9be2971168e25aff7db73f1ebfcfc2e19640e5e48612fea68a5d66ad23b7754",
+      "bytes": 3033
+    },
+    "work/stage4/4c-development-l/agent/skills/celebrate-important-day/SKILL.md": {
+      "sha256": "5ea2ca92c3225ccabb0d9adfa5a4ec373ae188201dd92c97d886652451557644",
+      "bytes": 2462
+    },
+    "work/stage4/4c-development-l/agent/skills/celebrate-learning-streak/SKILL.md": {
+      "sha256": "5bc87b7b589ce2e63d4268f909361802a7dda6433c554ef66f50c27668aca3cc",
+      "bytes": 2034
+    },
+    "work/stage4/4c-development-l/agent/skills/celebrate-lesson-completion/SKILL.md": {
+      "sha256": "bc3adc3289a139f397d6d9803bd319b9c42aeddce5ec89e08316bedb9f3b1b3f",
+      "bytes": 3143
+    },
+    "work/stage4/4c-development-l/agent/skills/close-service-case/SKILL.md": {
+      "sha256": "b73ed5e9026af49211a5d101078f51daac4cdbcdfe364c1b6efef0ca46b9aef6",
+      "bytes": 3877
+    },
+    "work/stage4/4c-development-l/agent/skills/close-week-reading-gap/SKILL.md": {
+      "sha256": "340df8bbef3d40241633432fb092fa1964da23b9451789ff5e58b8f30d7018e5",
+      "bytes": 1836
+    },
+    "work/stage4/4c-development-l/agent/skills/connect-reading-to-life/SKILL.md": {
+      "sha256": "bdda33f39f151bce0aaeaee40228314cbac4c9792cd4e09f71be46cfde866a6b",
+      "bytes": 2590
+    },
+    "work/stage4/4c-development-l/agent/skills/explain-lesson/SKILL.md": {
+      "sha256": "570277f0e056fe8561d8e8263b8a9fe3a869457b62ae7c5722f8d54c3f21664c",
+      "bytes": 3974
+    },
+    "work/stage4/4c-development-l/agent/skills/follow-up-unanswered-question/SKILL.md": {
+      "sha256": "bbbdd2c6248504f4dd7d0a7ea6779b297c8f5d63f17106dc0205905c80f207a4",
+      "bytes": 4467
+    },
+    "work/stage4/4c-development-l/agent/skills/handle-complaint-escalation/SKILL.md": {
+      "sha256": "9906ddc0a74b9ae2d08f525794464736930fecbb44c159328b1be85bc464a948",
+      "bytes": 2853
+    },
+    "work/stage4/4c-development-l/agent/skills/highlight-book-completion/SKILL.md": {
+      "sha256": "1f24cd73df19a8169f8404f5c449970d1b3a7ce2c042db5010ec28f4195fd870",
+      "bytes": 2525
+    },
+    "work/stage4/4c-development-l/agent/skills/highlight-course-start/SKILL.md": {
+      "sha256": "6082c293ddeec9168e0277eab7ad0930eb1300a245d92f3149eca91f07576aaf",
+      "bytes": 2266
+    },
+    "work/stage4/4c-development-l/agent/skills/highlight-expressive-answer/SKILL.md": {
+      "sha256": "b63c7178662868430c06be4255c68a12384018c92dad66925c2736a1a337a89b",
+      "bytes": 2428
+    },
+    "work/stage4/4c-development-l/agent/skills/highlight-first-perfect-answer/SKILL.md": {
+      "sha256": "3221c2a5b13b69ae76fc75606739c3921c4469b113025d2ad12d22fa9011fcd3",
+      "bytes": 2453
+    },
+    "work/stage4/4c-development-l/agent/skills/highlight-quiz-ranking/SKILL.md": {
+      "sha256": "6a3ba3bf22dece9bdff4d2fb7a8b77833c6da01f2fdb52c5dc02e6266bfd6809",
+      "bytes": 2456
+    },
+    "work/stage4/4c-development-l/agent/skills/highlight-ranking-progress/SKILL.md": {
+      "sha256": "df8b1deec230e19aab7bb9c4ce52b47aa1068b14c6253f5dcaea3eeb3a37d36a",
+      "bytes": 2419
+    },
+    "work/stage4/4c-development-l/agent/skills/highlight-reading-birthday/SKILL.md": {
+      "sha256": "b5fd51aabf6484888ec84514aeacaf77b6f2117d2773145fc7d4e9d7ed0c2322",
+      "bytes": 2642
+    },
+    "work/stage4/4c-development-l/agent/skills/highlight-reading-milestone/SKILL.md": {
+      "sha256": "ea2298e1d27e019fdc51093dcb212154d508f999c573ecbdc78641f6b4215512",
+      "bytes": 2603
+    },
+    "work/stage4/4c-development-l/agent/skills/highlight-second-week-attendance/SKILL.md": {
+      "sha256": "c6659bcfd73980f93aae431c5a995fa0f3b03e0906aeb6231c61d4daaebedf7c",
+      "bytes": 2143
+    },
+    "work/stage4/4c-development-l/agent/skills/highlight-seven-day-completion/SKILL.md": {
+      "sha256": "b34c367341df3197eb66fdfe721e34deb22b2b0cc52104f926136bf442e5e883",
+      "bytes": 2387
+    },
+    "work/stage4/4c-development-l/agent/skills/plan-makeup-learning/SKILL.md": {
+      "sha256": "6c5386dd32ddf1a8dd60f89071caf3fee930f3ea58fcb9c0096246b4fcf675b2",
+      "bytes": 5192
+    },
+    "work/stage4/4c-development-l/agent/skills/plan-proactive-service/SKILL.md": {
+      "sha256": "55ad0988b98fd1bc664b8fa34da303fcbb2d8ab43647beb0bdf8f82dcb487d63",
+      "bytes": 4023
+    },
+    "work/stage4/4c-development-l/agent/skills/plan-weekend-makeup/SKILL.md": {
+      "sha256": "9a5c9c588862b67e165e7084dac35d1e26c34f77ffaf3c81addc04e66fcc4872",
+      "bytes": 2273
+    },
+    "work/stage4/4c-development-l/agent/skills/practice-reading-method/SKILL.md": {
+      "sha256": "635aa39b7775b2ecd6dd88a376f043ef9b6ad68473a5e4d80a9e83d74ead7b9a",
+      "bytes": 3824
+    },
+    "work/stage4/4c-development-l/agent/skills/prepare-growth-review-package/SKILL.md": {
+      "sha256": "82800d685df0862490b6b47833397ba4d1dea021bf53615a610d0f9d8a6d0f6a",
+      "bytes": 3140
+    },
+    "work/stage4/4c-development-l/agent/skills/prepare-renewal-evidence/SKILL.md": {
+      "sha256": "063a711f94571e8c1f06e7bd28f4b35056edc0758b48effbd098a16bf5ca8b82",
+      "bytes": 4503
+    },
+    "work/stage4/4c-development-l/agent/skills/produce-growth-video/SKILL.md": {
+      "sha256": "178e98d8844fdddaed2faa037a46852029ea9c3d6105fd3d359ed5a06db778e3",
+      "bytes": 2702
+    },
+    "work/stage4/4c-development-l/agent/skills/prompt-backlog-makeup/SKILL.md": {
+      "sha256": "8834db95cdafb5bc697184260fb766b1c12e088888bc46e5ae6293a9de68ddfc",
+      "bytes": 2503
+    },
+    "work/stage4/4c-development-l/agent/skills/quiz-course-knowledge/SKILL.md": {
+      "sha256": "43d428f4b4170775c92b975f047a0697124e1715c53ca9fd11b3832e149eaaf7",
+      "bytes": 2666
+    },
+    "work/stage4/4c-development-l/agent/skills/rebuild-reading-rhythm/SKILL.md": {
+      "sha256": "0f94323ea79f82aa2b6d080a273879a899bccca7d6464fcea951989b5f74b9c4",
+      "bytes": 3697
+    },
+    "work/stage4/4c-development-l/agent/skills/recommend-catch-up-reading/SKILL.md": {
+      "sha256": "9eb607413040a767870b008ace6d83100eb5b8b7e026c2f22c89cd67be6646de",
+      "bytes": 773
+    },
+    "work/stage4/4c-development-l/agent/skills/reinforce-reading-streak/SKILL.md": {
+      "sha256": "7d9885937024ecd69cd6b08fe5a1e48060aae49469339bb4208a538c90a65a86",
+      "bytes": 858
+    },
+    "work/stage4/4c-development-l/agent/skills/remind-reading/SKILL.md": {
+      "sha256": "f4e0bac402d28c1ab4a7745d09d99e36de02c50bb01fbf792dba0507336ed646",
+      "bytes": 4155
+    },
+    "work/stage4/4c-development-l/agent/skills/respond-to-child-sharing-help/SKILL.md": {
+      "sha256": "47e90b84419a5b898f3dd8bbfcbb9c5546129f8b651bf4ad416f3c2b0d205cb5",
+      "bytes": 3258
+    },
+    "work/stage4/4c-development-l/agent/skills/restore-course-sequence/SKILL.md": {
+      "sha256": "19e09c869160ebae3a68365b633e120c19b55f95d35e4da5a37b6e779c294950",
+      "bytes": 778
+    },
+    "work/stage4/4c-development-l/agent/skills/review-learning-progress/SKILL.md": {
+      "sha256": "69686b437490e49c537d53b9f446c21ff401fbdaeb3bfadfa695e7e164b12320",
+      "bytes": 4163
+    },
+    "work/stage4/4c-development-l/agent/skills/review-weekly-learning/SKILL.md": {
+      "sha256": "e6383a5f400a1c23906c2966b9605a67743b99f5e19f66108a1f519e9a4cb64a",
+      "bytes": 912
+    },
+    "work/stage4/4c-development-l/agent/skills/share-reading-reflection/SKILL.md": {
+      "sha256": "9339e2174dc584e65922a94095b42296cd958b2ebf129d8f5283dca990aaaa48",
+      "bytes": 3057
+    },
+    "work/stage4/4c-development-l/agent/skills/support-course-continuity/SKILL.md": {
+      "sha256": "9ab04860e90a013030e167ff298379039d1b032549a25171db8e2d95dea0c2fa",
+      "bytes": 1839
+    },
+    "work/stage4/4c-development-l/agent/skills/weekly-learning-review/SKILL.md": {
+      "sha256": "5c56b5b8ad23b1ee05aff3b2fc861fb0b754da5c64baac407b48876e150a599a",
+      "bytes": 4323
+    },
+    "work/stage4/4c-development-l/backend/config.example.json": {
+      "sha256": "08147ac971cf210cb6c631adee44c03aa8eebca658d8ee4ae2428628145837d2",
+      "bytes": 124
+    },
+    "work/stage4/4c-development-l/backend/pyproject.toml": {
+      "sha256": "84a69dfdd151b0284b1c851d0afb6deaaa85b516dd7bcadcd00d9fb41f16c9ad",
+      "bytes": 424
+    },
+    "work/stage4/4c-development-l/backend/README.md": {
+      "sha256": "82bca861796a976a5602a14f72be0a29e49287f9c21f93f5dcaf4c174c1be727",
+      "bytes": 17055
+    },
+    "work/stage4/4c-development-l/backend/requirements.lock": {
+      "sha256": "ea6fa4230f5952a2cb3aa674873d66c8cb0b237b8f444b531c581bf24fd47f82",
+      "bytes": 147
+    },
+    "work/stage4/4c-development-l/backend/requirements.txt": {
+      "sha256": "8c4517ed3fc02aaf19eb980decd6e4bec4212dbf989c92e28a76ef922c746141",
+      "bytes": 33
+    },
+    "work/stage4/4c-development-l/backend/scripts/accept_intraday.py": {
+      "sha256": "b5c610444828bc5558a4ca6e7bd0ada8ef71027bd6a75954ae2b118b157f3a4f",
+      "bytes": 21886
+    },
+    "work/stage4/4c-development-l/backend/scripts/accept_stage4_behavior.py": {
+      "sha256": "ab92c79dbe635bcc35cc3f143315dbcfbadf4b344fdd6323f0aaac3c1c823d4d",
+      "bytes": 13731
+    },
+    "work/stage4/4c-development-l/backend/scripts/accept_stage4_daily.py": {
+      "sha256": "014497c534386cb6e098166f5af30c65e075b86dd2416fd138f78ec34beaaadd",
+      "bytes": 18160
+    },
+    "work/stage4/4c-development-l/backend/scripts/accept_stage4_passive.py": {
+      "sha256": "d7616eefb5831888436af7428ffed91a739bf6e14e04ea820ef642cc6cd43f84",
+      "bytes": 19322
+    },
+    "work/stage4/4c-development-l/backend/scripts/accept_stage4_source_recovery.py": {
+      "sha256": "8e58a9b9c2cc3960ed5c1774016d39d018bf008a880eb3c252b670b727f43ab4",
+      "bytes": 30805
+    },
+    "work/stage4/4c-development-l/backend/scripts/demo_daily.py": {
+      "sha256": "769af73a4253d71d02cbecbf48de2cd9775bd3afc11720f39fa7190d282823c3",
+      "bytes": 5172
+    },
+    "work/stage4/4c-development-l/backend/scripts/demo_passive.py": {
+      "sha256": "8805919448f61d5a1374edfbebd87c5d7ad54141a4fe2ba5ec417d48752ffaab",
+      "bytes": 4530
+    },
+    "work/stage4/4c-development-l/backend/scripts/manual_daily_runtime.py": {
+      "sha256": "a3e09e735bf8771528585b884dc10aa088ffd327d97218296e5eabb1f2938171",
+      "bytes": 16686
+    },
+    "work/stage4/4c-development-l/backend/scripts/manual_daily_sources.example.json": {
+      "sha256": "1fa8bbf689c0a7d7a397cd9839203e5f76c19419034b762eed10554224669e29",
+      "bytes": 1801
+    },
+    "work/stage4/4c-development-l/backend/scripts/manual_demo_runtime.py": {
+      "sha256": "3ec50ac7bd8ce2f2ecf1d74573028e5e2f12225de8884a44c0f7847f0a9c8bec",
+      "bytes": 13454
+    },
+    "work/stage4/4c-development-l/backend/scripts/prepare.sh": {
+      "sha256": "53fca270721583e7da3f6701c06ad4d35be6b03fc487d5aa2127f15f76b004d9",
+      "bytes": 847
+    },
+    "work/stage4/4c-development-l/backend/scripts/probe_native_cron.py": {
+      "sha256": "f5c0d6ef4e2bb270b4f0273ab5d02601ec1537845fcf579e72a78b0d1c269909",
+      "bytes": 4108
+    },
+    "work/stage4/4c-development-l/backend/scripts/probe_native_materials.py": {
+      "sha256": "6d8452fdfb19e1e93afe61ef97ee5eb4db7d0266a8689774066b8bba39d9fabe",
+      "bytes": 3525
+    },
+    "work/stage4/4c-development-l/backend/scripts/probe_native_model.py": {
+      "sha256": "053974296ded8557d6e4ff9f68d55d7b62d72eae66e3d85d54ee9d70a324f006",
+      "bytes": 9210
+    },
+    "work/stage4/4c-development-l/backend/scripts/run-stage1.sh": {
+      "sha256": "6a4732e715421b4063cf019a666c4934dc38696cc3383a7f5814fca2b7b7c974",
+      "bytes": 609
+    },
+    "work/stage4/4c-development-l/backend/scripts/stage4_behavior_checks.py": {
+      "sha256": "dd5a175334a69d796c76be7ec57408359cae8e445e09dc6f6cf7c81156fb4792",
+      "bytes": 12987
+    },
+    "work/stage4/4c-development-l/backend/scripts/stage4_behavior_fixtures.py": {
+      "sha256": "1ad5c5668e52e2eb4734a7a11feade2fed11f2df92279e59c692933920a133a1",
+      "bytes": 8296
+    },
+    "work/stage4/4c-development-l/backend/scripts/stage4_decision_confirmation_checks.py": {
+      "sha256": "bec5ed2874bbf3bec711bfd0bb923f44bdda917cae7f17b69fd503e29107cea6",
+      "bytes": 4406
+    },
+    "work/stage4/4c-development-l/backend/scripts/stage4_passive_fixtures.py": {
+      "sha256": "66dde7ce947c550b7db01c92115c732eb1c742e6989799c62bb0588c32ad9862",
+      "bytes": 4866
+    },
+    "work/stage4/4c-development-l/backend/scripts/stage4_predecision_checks.py": {
+      "sha256": "97eb9eb0cb41e8a3f95becfb9bca8911edc0487fb633dbeb10c7ae8b744ff330",
+      "bytes": 7451
+    },
+    "work/stage4/4c-development-l/backend/scripts/stage4_sql_evidence.py": {
+      "sha256": "bf5dfd093bbcb79e8cc30f5bc85950906e0f4ce6846ae5c3cdf07ca7b1ad958a",
+      "bytes": 7016
+    },
+    "work/stage4/4c-development-l/backend/scripts/test_stage1.py": {
+      "sha256": "0c210f6785db46ffe91ad262da7868773f0d8559ffa4d6b69d51fb8d9f2c6ec2",
+      "bytes": 1148
+    },
+    "work/stage4/4c-development-l/backend/scripts/verify_stage1.py": {
+      "sha256": "7873499c47f7f6b4e38b47fe23665abb91bfbe51b19c43b0d0d771d2062f124b",
+      "bytes": 4766
+    },
+    "work/stage4/4c-development-l/backend/scripts/verify_stage2.py": {
+      "sha256": "84838353c8856a44775896f467db3d64b516b2b304c978d335ebcacc28156836",
+      "bytes": 1332
+    },
+    "work/stage4/4c-development-l/backend/scripts/verify_stage3.py": {
+      "sha256": "9e028c932ce536bbdb6068bc81f2833841da97f71b01760bc04e406dd452628c",
+      "bytes": 4463
+    },
+    "work/stage4/4c-development-l/backend/scripts/worker.py": {
+      "sha256": "88348cd4d8b4fa19b39157ae4fa61babdccf76c7d26dafbf906a1bc760b61c9a",
+      "bytes": 1577
+    },
+    "work/stage4/4c-development-l/backend/src/digital_tutor/__init__.py": {
+      "sha256": "6f7100b996104f3793d29fa1a0f524a273f3369aa8741ebf470207da36a31372",
+      "bytes": 107
+    },
+    "work/stage4/4c-development-l/backend/src/digital_tutor/__main__.py": {
+      "sha256": "79ee6f134c5c5193377cf9b189cbdcc3e2095e49ba9cec310114441c15a917c4",
+      "bytes": 47
+    },
+    "work/stage4/4c-development-l/backend/src/digital_tutor/admission.py": {
+      "sha256": "af9394ac9d8451c4aeac97dabac413c8f7191323b2d08a67ce2977e6eb2d1e8d",
+      "bytes": 11616
+    },
+    "work/stage4/4c-development-l/backend/src/digital_tutor/application.py": {
+      "sha256": "eed39dc85e6f0bd69cb83bf04b20d7ef8c0aee31764f2c348a47c13f159d4846",
+      "bytes": 19189
+    },
+    "work/stage4/4c-development-l/backend/src/digital_tutor/candidates.py": {
+      "sha256": "f7e26093220f6617f850ceaaf6cc3f73dd4f1448631755d8b3038b3340090ddd",
+      "bytes": 19592
+    },
+    "work/stage4/4c-development-l/backend/src/digital_tutor/cli.py": {
+      "sha256": "d61f4896d9ef4391367e91f94c605de4647e0b432400c7c40aa024136e605ab2",
+      "bytes": 4347
+    },
+    "work/stage4/4c-development-l/backend/src/digital_tutor/commitment_review.py": {
+      "sha256": "5fe0e5e10e20f79f6647b72586290243f6c28d390e6b810323528c3bab888084",
+      "bytes": 9314
+    },
+    "work/stage4/4c-development-l/backend/src/digital_tutor/config.py": {
+      "sha256": "b5128aeaa37fd73312aa7aca1c6464b18c26f7446d73c78d19f561758dc8b591",
+      "bytes": 800
+    },
+    "work/stage4/4c-development-l/backend/src/digital_tutor/contact_capacity.py": {
+      "sha256": "237d416dc63f767b534403ad7e320aa505d66db756fb6613f2810be93c6b5522",
+      "bytes": 3527
+    },
+    "work/stage4/4c-development-l/backend/src/digital_tutor/context.py": {
+      "sha256": "537dc99416c525dcd369e04433c60df06734a36c74730053bbca8a7b0fe26d34",
+      "bytes": 16981
+    },
+    "work/stage4/4c-development-l/backend/src/digital_tutor/control_scope.py": {
+      "sha256": "9b9866f5df7c4aa3de895f4d336b4630d73de3628ad09a1c91df1d664aef084d",
+      "bytes": 484
+    },
+    "work/stage4/4c-development-l/backend/src/digital_tutor/course_binding.py": {
+      "sha256": "b449150ec07ac257897874c907d3e702af6398c3107f1f94e97ec1aa36a6f873",
+      "bytes": 4880
+    },
+    "work/stage4/4c-development-l/backend/src/digital_tutor/demo.py": {
+      "sha256": "5949ae68f831be147c5fa25718157a303b4b9e54fb206eb26a1a914e78766280",
+      "bytes": 5858
+    },
+    "work/stage4/4c-development-l/backend/src/digital_tutor/domain.py": {
+      "sha256": "98758d657646e80f21a4d15a914f6ea733ef8059984402583a5d3f247da05378",
+      "bytes": 12943
+    },
+    "work/stage4/4c-development-l/backend/src/digital_tutor/execution_projection.py": {
+      "sha256": "b1236f7ef3cbcee5fac383152e78cbc1453305aa0b42687918b3e20e6b9d6039",
+      "bytes": 5495
+    },
+    "work/stage4/4c-development-l/backend/src/digital_tutor/family_candidates.py": {
+      "sha256": "0514e0939387c217eafb4381bc6a71c0ef43fdd1f517492cc69b4ce7d4f42867",
+      "bytes": 13666
+    },
+    "work/stage4/4c-development-l/backend/src/digital_tutor/family_memory.py": {
+      "sha256": "3c7f73bac2f4e7e1ea2110f8b9b2c10c1593a17f0cc3c3c44a962bc278f7b509",
+      "bytes": 6212
+    },
+    "work/stage4/4c-development-l/backend/src/digital_tutor/hermes_cron.py": {
+      "sha256": "ef83d9f46055ed863d28d102755bca35fcec11d02cc5c1633d33c2a568c192fb",
+      "bytes": 3838
+    },
+    "work/stage4/4c-development-l/backend/src/digital_tutor/hermes_host.py": {
+      "sha256": "f3d58ad454fba87ed9af92f0f2052c2821e68e7ccacb5172ec1a1954f561a52d",
+      "bytes": 7956
+    },
+    "work/stage4/4c-development-l/backend/src/digital_tutor/hermes_runtime.py": {
+      "sha256": "0cd408aae1af073f7122bfe838e1f5408ff436f05bd45981e2d897f88bb90e53",
+      "bytes": 6555
+    },
+    "work/stage4/4c-development-l/backend/src/digital_tutor/hermes_tools.py": {
+      "sha256": "813e87761f5b04e4645010a50a57c8ed97042ed69c3e4b4d832a3118430c0890",
+      "bytes": 3186
+    },
+    "work/stage4/4c-development-l/backend/src/digital_tutor/jobs.py": {
+      "sha256": "2e91cfd49fd872480e650040936cfcf772488a3eeb785c2e96ea8d4ddc5143b1",
+      "bytes": 27734
+    },
+    "work/stage4/4c-development-l/backend/src/digital_tutor/knowledge.py": {
+      "sha256": "a460d310e41327b0029efd7b116c288e9682bb82ef6b719885fb9eb48d74abeb",
+      "bytes": 8124
+    },
+    "work/stage4/4c-development-l/backend/src/digital_tutor/learning.py": {
+      "sha256": "7a51f557a082efafb04bcab5255e5ecf9ce3eb30ddd84007473f480c33e365ac",
+      "bytes": 11201
+    },
+    "work/stage4/4c-development-l/backend/src/digital_tutor/learning_evidence.py": {
+      "sha256": "a838c9f93da9f8bae792f6fbfaf8a59f87eafe374652431cab9856880c001f71",
+      "bytes": 12574
+    },
+    "work/stage4/4c-development-l/backend/src/digital_tutor/learning_import.py": {
+      "sha256": "a95e00217e3744597b6cd40d1316caf53bce9bf655ef498308fb30048bbf0fdf",
+      "bytes": 7529
+    },
+    "work/stage4/4c-development-l/backend/src/digital_tutor/learning_review.py": {
+      "sha256": "c5613c6be4494857a5e296f71d169f687d4e08a5ae278526737ce748b95305b5",
+      "bytes": 6126
+    },
+    "work/stage4/4c-development-l/backend/src/digital_tutor/material_recovery.py": {
+      "sha256": "fb53b3248dd98b98a301b151a8df757eb9e507c6fec2415b2ad4480f7ef5b0db",
+      "bytes": 6093
+    },
+    "work/stage4/4c-development-l/backend/src/digital_tutor/materials.py": {
+      "sha256": "da5a6d1abae95e6a99c7a017f7556ea6cac4d461478152e74036e104a5338bc6",
+      "bytes": 5617
+    },
+    "work/stage4/4c-development-l/backend/src/digital_tutor/migrations.py": {
+      "sha256": "17571a8496bf63bde8703aed8277df390266734f66e7972307b972f851f98867",
+      "bytes": 700
+    },
+    "work/stage4/4c-development-l/backend/src/digital_tutor/mock_channel.py": {
+      "sha256": "6406678aa09e77520253bd8b8502f4fe4f776bc695243b504d98b943db45139b",
+      "bytes": 1424
+    },
+    "work/stage4/4c-development-l/backend/src/digital_tutor/outbox.py": {
+      "sha256": "9b4577d41aab5e2d5d2c21b44b58e40fec1c0ba868937214880e339bb788ceb3",
+      "bytes": 4249
+    },
+    "work/stage4/4c-development-l/backend/src/digital_tutor/planning.py": {
+      "sha256": "829b6395a97e518db65d282fc85fceab0ebb4809836a6892e51db42765003609",
+      "bytes": 12705
+    },
+    "work/stage4/4c-development-l/backend/src/digital_tutor/planning_records.py": {
+      "sha256": "4b6d0971018b946d636992efbef383635ad851cb75e0c9fb0b11f136982e38f8",
+      "bytes": 5050
+    },
+    "work/stage4/4c-development-l/backend/src/digital_tutor/receipt_state.py": {
+      "sha256": "95e6d04421d7d0b2e0e753b3d2f1f808a7df32acbf6a6d3c5897b89c0c14e8ef",
+      "bytes": 737
+    },
+    "work/stage4/4c-development-l/backend/src/digital_tutor/report_contract.py": {
+      "sha256": "90d1e1bb94f60e9c26581e3138c930818ba26155db524b5f76d7f0ed683c85ec",
+      "bytes": 6012
+    },
+    "work/stage4/4c-development-l/backend/src/digital_tutor/request_responsibility.py": {
+      "sha256": "7bb30d2e2785c95a9736aff64bb686dfe32f11c3d3dfb8750dcba51acf1ec41c",
+      "bytes": 22148
+    },
+    "work/stage4/4c-development-l/backend/src/digital_tutor/runtime_assembly.py": {
+      "sha256": "3e384472082aac0926aaeb0249269698f2d1cbfce8039cffa38ddaa7a47e145b",
+      "bytes": 3729
+    },
+    "work/stage4/4c-development-l/backend/src/digital_tutor/runtime_config.py": {
+      "sha256": "962bc28d00ef794bfdd85171665fd1cc5dd5f58b61ade8ecdb4752a4e5f745a8",
+      "bytes": 1916
+    },
+    "work/stage4/4c-development-l/backend/src/digital_tutor/runtime_hooks.py": {
+      "sha256": "aa68a3994075d065a21bf4d1ba9c7ac13142e9ef7601bd92f5c0818707a09ad9",
+      "bytes": 1414
+    },
+    "work/stage4/4c-development-l/backend/src/digital_tutor/runtime_outcome.py": {
+      "sha256": "d98d97a8fcb882c95a46beaa30563ec58da8801b539a77b353bf69ece43aa9e3",
+      "bytes": 9022
+    },
+    "work/stage4/4c-development-l/backend/src/digital_tutor/scheduler.py": {
+      "sha256": "f94861397bfe0c2eadbd25a876fa0665fed927ad6ee268d0b8140cf5e31db6ec",
+      "bytes": 10804
+    },
+    "work/stage4/4c-development-l/backend/src/digital_tutor/scheduling.py": {
+      "sha256": "fd5c70dc51100427aef44b0d3000ecd0de82928f1745a597c5dd13052d80d9f5",
+      "bytes": 11085
+    },
+    "work/stage4/4c-development-l/backend/src/digital_tutor/send_policy.py": {
+      "sha256": "82e5702b3a7179fada9fdf673dd9b323115ed1ca44862ebcf1c3318d31cba2cf",
+      "bytes": 6817
+    },
+    "work/stage4/4c-development-l/backend/src/digital_tutor/service_context.py": {
+      "sha256": "20405a807d9d73cab36c9634876ecb1ee7f9e163029da9f0b5552704e79f91b3",
+      "bytes": 10865
+    },
+    "work/stage4/4c-development-l/backend/src/digital_tutor/service_requests.py": {
+      "sha256": "0283779235c9f47f036a77f410e8889517e9626ebbf99ae6704aecf41ed351e5",
+      "bytes": 9381
+    },
+    "work/stage4/4c-development-l/backend/src/digital_tutor/simulation.py": {
+      "sha256": "4a67fa8a133cb07fce0ced14c8419464bd55362e5fbd3533bbc4a51701890d10",
+      "bytes": 10208
+    },
+    "work/stage4/4c-development-l/backend/src/digital_tutor/skill_loader.py": {
+      "sha256": "c718f1cd59260c1039d065d576ad57ab10911087bf5d4507776f0961d58a81cd",
+      "bytes": 8588
+    },
+    "work/stage4/4c-development-l/backend/src/digital_tutor/source_rows.py": {
+      "sha256": "f72add9344dd9363449ea18e2c8c634b6f972d6cbf1cad45e61db9b1d4fd030e",
+      "bytes": 7573
+    },
+    "work/stage4/4c-development-l/backend/src/digital_tutor/sql_bindings.py": {
+      "sha256": "7fe35124f47f5c994002e664c68ac7bd2bc1c34b0ae05b5fb22d297ba57c9f54",
+      "bytes": 8347
+    },
+    "work/stage4/4c-development-l/backend/src/digital_tutor/storage.py": {
+      "sha256": "80af90b8001233667b945b4f6c956e350a2c6f2ae3017de8f11faf70f6040875",
+      "bytes": 7183
+    },
+    "work/stage4/4c-development-l/backend/src/digital_tutor/tools.py": {
+      "sha256": "d463eaa349586992ae3ba59f019b1fed6de44155063c3f52a7ae86db279e587e",
+      "bytes": 8606
+    },
+    "work/stage4/4c-development-l/backend/src/digital_tutor/wechat.py": {
+      "sha256": "569457b0df43cd9196465f672424db37e45645ab9fc736ce73f0863e7f6a73b2",
+      "bytes": 11344
+    },
+    "work/stage4/4c-development-l/backend/tests/test_4b_message_cursor.py": {
+      "sha256": "57ae71171e32e88661d37eab20b19ff95ba9b157fb492ae3669f598eded087c3",
+      "bytes": 11871
+    },
+    "work/stage4/4c-development-l/backend/tests/test_4b_source_index.py": {
+      "sha256": "d8ff8d6eba22645271186c291a4b44af139c871da941fa6b189e9491e949932a",
+      "bytes": 11884
+    },
+    "work/stage4/4c-development-l/backend/tests/test_actual_delivery_hold.py": {
+      "sha256": "59bd6bf10e792a06e73309dacf4ba703b1b94700ad47d5bbbfde361c24f83703",
+      "bytes": 14331
+    },
+    "work/stage4/4c-development-l/backend/tests/test_commitment_expiration.py": {
+      "sha256": "27b8d30bfa782f1e47b80cb60f26bbca8a30c5e206ad5df9712c69653f677f94",
+      "bytes": 10608
+    },
+    "work/stage4/4c-development-l/backend/tests/test_control_empty_scope.py": {
+      "sha256": "08626273f0ce731d0e54dda3334e131f42c7b029aeabc965ec251e8b389c924d",
+      "bytes": 12145
+    },
+    "work/stage4/4c-development-l/backend/tests/test_decision_confirmation_acceptance.py": {
+      "sha256": "6fcf0e73e60ea19a075fce96a8efeb4571dfbcacb76c9518afac6fa486ff16d8",
+      "bytes": 4654
+    },
+    "work/stage4/4c-development-l/backend/tests/test_decision_reply_identity.py": {
+      "sha256": "8ae8b152fc4dfb007ac3c0cd4bd2204dd2071029d1b45146ba11e5b87973c0a7",
+      "bytes": 11934
+    },
+    "work/stage4/4c-development-l/backend/tests/test_flash_only.py": {
+      "sha256": "187b21dfcdace797acedf92f1a28d28cef8b23ccb7f0da20b63e78207ef7b038",
+      "bytes": 903
+    },
+    "work/stage4/4c-development-l/backend/tests/test_future_reply_invariant.py": {
+      "sha256": "fe3decdc5d0efcfd2c310c5096ebbde36f1d90e62ee6bd70435c3d158c1ddc35",
+      "bytes": 5922
+    },
+    "work/stage4/4c-development-l/backend/tests/test_intraday_acceptance_oracles.py": {
+      "sha256": "75a79b893d957df804767baf79ee505ad3a484b1ae5b27997b3247e7090ac477",
+      "bytes": 4726
+    },
+    "work/stage4/4c-development-l/backend/tests/test_intraday_contracts.py": {
+      "sha256": "4f7a7b298fd82d35c5bf8080ea0aaa3b22d8366ed6b5af300a177ecdabd1bd6c",
+      "bytes": 39471
+    },
+    "work/stage4/4c-development-l/backend/tests/test_intraday_runtime.py": {
+      "sha256": "3f1c3e35d4c9cff7beac21d30dec4732b02e4f22febb3ee49e82a1a646f28e96",
+      "bytes": 13670
+    },
+    "work/stage4/4c-development-l/backend/tests/test_learning_evidence_adapter.py": {
+      "sha256": "03fee72bd90ec71f3a9eb6d4005a605b48af26262ff4736ee0d978ce4902ab88",
+      "bytes": 19246
+    },
+    "work/stage4/4c-development-l/backend/tests/test_learning_report_revision.py": {
+      "sha256": "3b0c894cb34facc7595f6a4aa78f1221bf9c44b40ac5b8950735ae02b511463c",
+      "bytes": 10465
+    },
+    "work/stage4/4c-development-l/backend/tests/test_manual_daily.py": {
+      "sha256": "3207e97cc769a04986c22ddaabf3da28f534545df7dc744712beea52bb11cc7b",
+      "bytes": 8063
+    },
+    "work/stage4/4c-development-l/backend/tests/test_manual_demo_proposal.py": {
+      "sha256": "580a1a30a30207ec2568d4e98ecdd4600a663146d07100fdf67ca8b1e608e845",
+      "bytes": 18730
+    },
+    "work/stage4/4c-development-l/backend/tests/test_manual_input_encoding.py": {
+      "sha256": "8c9d0dd587e1036f6e06aeefa1b5bd53525cdee66274e34c76693fd28147324c",
+      "bytes": 2418
+    },
+    "work/stage4/4c-development-l/backend/tests/test_material_failure_receipt.py": {
+      "sha256": "7dfb8d224033630e28465228fb58f19fb65565c16812746498403648c8e8692c",
+      "bytes": 6059
+    },
+    "work/stage4/4c-development-l/backend/tests/test_operation_step_identity.py": {
+      "sha256": "9478e1b4f962026027d4ab5e1256f6768d7b74d030bed61ca60b0f739780e836",
+      "bytes": 4661
+    },
+    "work/stage4/4c-development-l/backend/tests/test_planner_candidate_recovery.py": {
+      "sha256": "0249330995224ab95e539afb30818de17095edc5791870aa8ffbb493c9f96545",
+      "bytes": 10150
+    },
+    "work/stage4/4c-development-l/backend/tests/test_predecision_acceptance.py": {
+      "sha256": "64e2f2afc502c939bd420838fc4250d3d7fd65f2934d1b2ba0f1b546c75f250f",
+      "bytes": 7598
+    },
+    "work/stage4/4c-development-l/backend/tests/test_predecision_reply.py": {
+      "sha256": "c4fa89031a86eba196c54528406ad5acc35693546ee4bd8a88b3b7c02a567ad4",
+      "bytes": 12205
+    },
+    "work/stage4/4c-development-l/backend/tests/test_redacted_export_lifecycle.py": {
+      "sha256": "989829f58a62c6169f34bd06b61c54c48c787914f1bce1dd1cce24897cc1797b",
+      "bytes": 5534
+    },
+    "work/stage4/4c-development-l/backend/tests/test_request_responsibility.py": {
+      "sha256": "0a443b24ba7321541428904ea830f1e8d28ffbb0c90db2860ad7de2f4698c377",
+      "bytes": 27349
+    },
+    "work/stage4/4c-development-l/backend/tests/test_requested_time_bounds.py": {
+      "sha256": "ca1142e0c05c8ce0681cf471d2de35a07f50dd8308d5f275344ed0b8cf0abc83",
+      "bytes": 7706
+    },
+    "work/stage4/4c-development-l/backend/tests/test_service_evidence_contract.py": {
+      "sha256": "bdda1257e6c66b0f686433a5ba0c60c7cb2997aa39ecc68abfc7465906477adc",
+      "bytes": 15696
+    },
+    "work/stage4/4c-development-l/backend/tests/test_service_request_authorization.py": {
+      "sha256": "821a54d2e1599fbfa772e4ad27fe73e412d96461d254fdab7ab626afe5347478",
+      "bytes": 7818
+    },
+    "work/stage4/4c-development-l/backend/tests/test_sql_bindings.py": {
+      "sha256": "05814f6b67d9759ff29b353dc0efd9528c8d93ebbcb889aadda64965a7901207",
+      "bytes": 11318
+    },
+    "work/stage4/4c-development-l/backend/tests/test_stage1.py": {
+      "sha256": "b6c30b3b0a887b36e114fd8dff83268138a32edf9a48d5b7a9b69d02b59e9e4a",
+      "bytes": 26546
+    },
+    "work/stage4/4c-development-l/backend/tests/test_stage2.py": {
+      "sha256": "5d8d99d3955560c7a4bc198cf69deecab640dcf17cb2be0fa016270c3d527217",
+      "bytes": 7521
+    },
+    "work/stage4/4c-development-l/backend/tests/test_stage2_review.py": {
+      "sha256": "89e76acf3604ee8ebf06a916aff6be27bba462cf518ab59609dd083a2dfbeef1",
+      "bytes": 5292
+    },
+    "work/stage4/4c-development-l/backend/tests/test_stage2_scenarios.py": {
+      "sha256": "f9521ad78efaeeae06fb8cee4492bb32d9be29cae2bb5ed06b706268c4c882da",
+      "bytes": 8294
+    },
+    "work/stage4/4c-development-l/backend/tests/test_stage3_bridge.py": {
+      "sha256": "19cab4d7472618b16cda28b8bf06d9755e07bd8c501a975b60d3a10ab04748f1",
+      "bytes": 1703
+    },
+    "work/stage4/4c-development-l/backend/tests/test_stage3_context.py": {
+      "sha256": "3a7237326367b7c63bdfff5b52707843b92e01f9bf71be65ecfba018834e61ec",
+      "bytes": 7273
+    },
+    "work/stage4/4c-development-l/backend/tests/test_stage3_host.py": {
+      "sha256": "4fece78cec3aaba84f6001af68f37e70cc144a4a5add1b3a92db463e2a103884",
+      "bytes": 2252
+    },
+    "work/stage4/4c-development-l/backend/tests/test_stage3_knowledge.py": {
+      "sha256": "cc114c5ecf2efa2431a76b06948bf95318a0a2e5a582e08d0af208b1a67580c3",
+      "bytes": 7995
+    },
+    "work/stage4/4c-development-l/backend/tests/test_stage3_learning.py": {
+      "sha256": "9cd56c41f6a8532c819e8db6ffe1670b887b16c5abfc4bea2d6b7c25d0515c0e",
+      "bytes": 13621
+    },
+    "work/stage4/4c-development-l/backend/tests/test_stage3_review.py": {
+      "sha256": "391c69742bb94997ec1405787549ea2bc719091f8fe9232a4e5fd8bdbc3f23e6",
+      "bytes": 3791
+    },
+    "work/stage4/4c-development-l/backend/tests/test_stage4_behavior_fixtures.py": {
+      "sha256": "f854177927ac105ed70f325d072caccf60c065d8ea680f6510b6bdfd234ef977",
+      "bytes": 3524
+    },
+    "work/stage4/4c-development-l/backend/tests/test_stage4_candidate_fixes.py": {
+      "sha256": "dd3a6eacb576cc3adc62567799ceba9372a9e5e43a6c20eb23dce2c2de46c343",
+      "bytes": 8071
+    },
+    "work/stage4/4c-development-l/backend/tests/test_stage4_candidates.py": {
+      "sha256": "a34c239c99fee6ef08af900166cb3d8e5c6bc67fd2e965a52cefd919d014964a",
+      "bytes": 26140
+    },
+    "work/stage4/4c-development-l/backend/tests/test_stage4_daily_gate.py": {
+      "sha256": "1fe2ea6e01e7f51c2204f73bde4098efe2acd1969f0ce133583141ab900e7555",
+      "bytes": 7325
+    },
+    "work/stage4/4c-development-l/backend/tests/test_stage4_family_candidates.py": {
+      "sha256": "23522cbadcbd33fad0b7d482390bc0f156bf4650ba0f756c335dbfb07f780fcd",
+      "bytes": 17599
+    },
+    "work/stage4/4c-development-l/backend/tests/test_stage4_host.py": {
+      "sha256": "c3ffef997b9285c3257e87f10cc91d7aa22c05e1d086dadb00429b612a050358",
+      "bytes": 7221
+    },
+    "work/stage4/4c-development-l/backend/tests/test_stage4_material_recovery.py": {
+      "sha256": "e283b6f3a0b538bfa17e47fdf16c74f6028f2fbd475b294c97baf4506571139c",
+      "bytes": 5673
+    },
+    "work/stage4/4c-development-l/backend/tests/test_stage4_missing_source_scope.py": {
+      "sha256": "c9e6c735b9f8b2fd2bde8d32135d5458c5f47393168915af8457656216e86b6a",
+      "bytes": 3328
+    },
+    "work/stage4/4c-development-l/backend/tests/test_stage4_partial_replies.py": {
+      "sha256": "9c8146ca6bb8bafb35cc26ccd66d98849abb7af92d943cb2b4af60228b4d9178",
+      "bytes": 6277
+    },
+    "work/stage4/4c-development-l/backend/tests/test_stage4_passive_gate.py": {
+      "sha256": "b9afa7b4499454c04a0819c6b951db6e25e3708db4a1246c4c1fa765df12820c",
+      "bytes": 2767
+    },
+    "work/stage4/4c-development-l/backend/tests/test_stage4_receipt_snapshot.py": {
+      "sha256": "c5676bbd9d1cb3d48a9a8f8ffc206cbd7e160cd21ac978b51b0dad670ed2b0e7",
+      "bytes": 7436
+    },
+    "work/stage4/4c-development-l/backend/tests/test_stage4_review.py": {
+      "sha256": "ba2e71d823238722e9f17c08b157a14d7a4b5f29923801e96778ab2549110007",
+      "bytes": 3521
+    },
+    "work/stage4/4c-development-l/backend/tests/test_stage4_runtime.py": {
+      "sha256": "e3d2264a4adc94e325e94cc324e03625d7c89f7e0a7c0b5ea1b86d9022017b4b",
+      "bytes": 24721
+    },
+    "work/stage4/4c-development-l/backend/tests/test_stage4_sql_evidence.py": {
+      "sha256": "0caed627d778407a33e87529b8321ecb55a9acba1f8d3acdebdfed61d9a5069e",
+      "bytes": 6712
+    },
+    "work/stage4/4c-development-l/docs/OpenViking产品知识接入与维护.md": {
+      "sha256": "66c719e4ef2701d776a1da818a0567890a93044b5c5ad48d93602a777ad6158d",
+      "bytes": 9065
+    },
+    "work/stage4/4c-development-l/docs/OpenViking服务FAQ扩展召回测试.md": {
+      "sha256": "3ad777d1b0e8e3ff0a3c8b2f7814044c3748388fc4a4d976d4241e8c785ecd53",
+      "bytes": 7756
+    },
+    "work/stage4/4c-development-l/docs/OpenViking服务FAQ整理与接入记录.md": {
+      "sha256": "db7c82d5dcd2516b410e9571a0d89ecd1ebfc22aa39ffb6a168d7f7029d7586c",
+      "bytes": 8080
+    },
+    "work/stage4/4c-development-l/docs/OpenViking服务FAQ知识建设方案.md": {
+      "sha256": "678ab5ab661063bc5e9d7d177ba3b7820fd2d5e77cc2c1a351a9b49e1de7ed79",
+      "bytes": 18490
+    },
+    "work/stage4/4c-development-l/docs/OpenViking课程目录与回答对照实验.md": {
+      "sha256": "ef017ed93e0bfd9698388afe0538a29f0d9675c63e899b172be76017ed9cd472",
+      "bytes": 8139
+    },
+    "work/stage4/4c-development-l/docs/OpenViking课程知识优化与测试.md": {
+      "sha256": "bbfcb7c349bd14aa2b366bd7cd9c4a8efcfb5e472d5fc766d72829adaa065f85",
+      "bytes": 11769
+    },
+    "work/stage4/4c-development-l/docs/README.md": {
+      "sha256": "c5e2a250dc56d32eeede1c9efb1892a774b2dff0b231fc4a292d3c1d6b5fa4e4",
+      "bytes": 7821
+    },
+    "work/stage4/4c-development-l/docs/Skill元数据目录.md": {
+      "sha256": "241a5d464e31a5d2f2099a24b5624a11f30dee7ef40581c8ef56a54f56d2e180",
+      "bytes": 33819
+    },
+    "work/stage4/4c-development-l/docs/Tool元数据目录.md": {
+      "sha256": "f927894e2a082e414c1edf491e8ccbc34ab25f06c1d4877c446dda0b1bea61fb",
+      "bytes": 28233
+    },
+    "work/stage4/4c-development-l/docs/双智能体上下文组装设计.md": {
+      "sha256": "5603f54933223ce1467a769a15d9c34da31e3da1db75076bfd0f78c9c73ec8e8",
+      "bytes": 13297
+    },
+    "work/stage4/4c-development-l/docs/教辅后端实施细化草案.md": {
+      "sha256": "300daed7ba645b0701c505bc34e0fdb7387d7af058a65bac701974bad52f8414",
+      "bytes": 31086
+    },
+    "work/stage4/4c-development-l/docs/教辅后端开发任务清单.md": {
+      "sha256": "492b4132095aa9b8a8fa0ad9d3c285b8b51b89cf4a3dbded3bccfa288b12a2b2",
+      "bytes": 25965
+    },
+    "work/stage4/4c-development-l/docs/教辅后端数据与接口合同.md": {
+      "sha256": "0a2518440fd4b9f6ac9c4b293717ebbd0c12d287077abb0db131e4b260a4e996",
+      "bytes": 31894
+    },
+    "work/stage4/4c-development-l/docs/教辅后端第一阶段交付记录.md": {
+      "sha256": "e39abf673b2ebd86d709315329975fc309bab0e34019bd02012a3e7ea72eae36",
+      "bytes": 5842
+    },
+    "work/stage4/4c-development-l/docs/教辅后端第三阶段交付记录.md": {
+      "sha256": "2530a50a0c5ebae76602582a9b0d5b617468bb7aad5050ecbd156f16196b739a",
+      "bytes": 6750
+    },
+    "work/stage4/4c-development-l/docs/教辅后端第二三阶段执行细化.md": {
+      "sha256": "d212255fe3a4c24967823ba906c91687e1f04193e2667923204a13b4ec2f9350",
+      "bytes": 3914
+    },
+    "work/stage4/4c-development-l/docs/教辅后端第二阶段交付记录.md": {
+      "sha256": "fda156232d2ce038d27482225caae79f20ba4539504551fb9e8b7f7b1fbf30fd",
+      "bytes": 1653
+    },
+    "work/stage4/4c-development-l/docs/教辅后端第四阶段交付记录.md": {
+      "sha256": "3cac66f7b1689bb6ed706d8d42c2ba9c720eae2beeff28c0ee2fe83c8d873a17",
+      "bytes": 39699
+    },
+    "work/stage4/4c-development-l/docs/教辅后端第四阶段开发与验收方案.md": {
+      "sha256": "3a5cc287be5691bafe027fcbfc2776cdf7608954f95d867225214788a393fcef",
+      "bytes": 51399
+    },
+    "work/stage4/4c-development-l/docs/教辅数字员工智能体后端开发方案.md": {
+      "sha256": "cd71ffe3480fab235d094f422f893015b9b4aad4cd72948f7b3529dd572baec9",
+      "bytes": 10942
+    },
+    "work/stage4/4c-development-l/docs/教辅数字员工服务状态与规划设计交接.md": {
+      "sha256": "40f5c1a05b8fae366d49e28147896835e9268e41a7ff950da7be4ef158ddd612",
+      "bytes": 25779
+    },
+    "work/stage4/4c-development-l/docs/教辅输入对齐与学情映射.md": {
+      "sha256": "28e809b0ffcb453dc047a406f0995e87dfa39d1685107ec631003efc8cc22d70",
+      "bytes": 11445
+    },
+    "work/stage4/4c-development-l/docs/日内承接与按时执行设计.md": {
+      "sha256": "81d556bf61f5a1ce2908c7f354697293fbdba341fc105534dfdb8e0938713af6",
+      "bytes": 18578
+    },
+    "work/stage4/4c-development-l/docs/智能体后端工程与验收设计.md": {
+      "sha256": "3f8613cf89016936284c41a9bf4d000c743304d0f3a884b8a46a3b35e2b2ddfc",
+      "bytes": 21429
+    },
+    "work/stage4/4c-development-l/docs/智能体方案多智能体评审记录.md": {
+      "sha256": "164b44600a8982aa122971f559b709eccac5ff45dcbd71d2df368a05ee6d8179",
+      "bytes": 36169
+    },
+    "work/stage4/4c-development-l/docs/服务Skills开发总结与后续会话交接.md": {
+      "sha256": "6c0775af1570aad76370b28b5de959f06aa7516201c36f27af823e98d74b88fa",
+      "bytes": 11905
+    },
+    "work/stage4/4c-development-l/docs/服务Skills核对与模拟测试报告.md": {
+      "sha256": "885cefc2973502f982349fe3b67cd789da0e3866dcee374d6e82bff935361b9b",
+      "bytes": 13798
+    },
+    "work/stage4/4c-development-l/docs/服务Skills远端上传记录.md": {
+      "sha256": "d8f696059b02a06164373463827dc1595a8d696b1f4411857290d234a7c03284",
+      "bytes": 2130
+    },
+    "work/stage4/4c-development-l/docs/第四阶段4B2重点核对记录.md": {
+      "sha256": "49aacde86a1f521accc93451665bba226503795e82fe847c676879e213aa8649",
+      "bytes": 5355
+    },
+    "work/stage4/4c-development-l/docs/第四阶段4B亲测说明.md": {
+      "sha256": "d56d1f4663eda5ae4cdadc169c726fb0ee74d300735afd1b97504cc86bc0cbac",
+      "bytes": 5262
+    },
+    "work/stage4/4c-development-l/docs/第四阶段4C实施进展.md": {
+      "sha256": "c312f6bb521bf25846d0e5090782d25cdc158b891db253086f2a203edc0e7fb3",
+      "bytes": 2493
+    },
+    "work/stage4/4c-development-l/docs/第四阶段4C独立开发与4B遗留修复计划.md": {
+      "sha256": "e599de482a7804039ab13b258f0128426bebbc58a3efc6d1f0d9a1d55158c513",
+      "bytes": 21573
+    },
+    "work/stage4/4c-development-l/docs/第四阶段日内承接与完成条件实施记录.md": {
+      "sha256": "495808ffd9f47ca0ce8029082c36ec4ef945eddf836c5646ae714abf70e1eb44",
+      "bytes": 28505
+    },
+    "work/stage4/4c-development-l/docs/第四阶段模型表达与语义待评审清单.md": {
+      "sha256": "dd7fe3746feae97dd4f01b24cc73c7e9e17fc52dcc2c8dec9904ca665f5deff9",
+      "bytes": 8326
+    },
+    "work/stage4/4c-development-l/docs/第四阶段运行合同.md": {
+      "sha256": "1bb2004d81d8f76364457daa2d50b4933b2af9b3eae4be3356443b00d3602a5f",
+      "bytes": 3691
+    },
+    "work/stage4/4c-development-l/docs/规划与执行运行机制设计.md": {
+      "sha256": "ca68ca841ab37aba368f8e3c36fd58682b774c6d3feb89ff677f36b3580dd356",
+      "bytes": 12076
+    },
+    "work/stage4/4c-development-l/docs/远程服务器与Git交接.md": {
+      "sha256": "7b9515716532c758c50b33f3f58e34d1e8329fa9ca4f3c606096106b0d5358e6",
+      "bytes": 11800
+    },
+    "work/stage4/intraday-design-20261005/business-review.md": {
+      "sha256": "d8e06983b8d23cda0d34733d40ac04d8fa31fd8b79aae9b7935de91ed9218961",
+      "bytes": 8049
+    },
+    "work/stage4/intraday-design-20261005/engineering-review.md": {
+      "sha256": "bcb558b3ef6483db5a50caef8c58c5202088c65fafcadf6d8a6f49bbbd84e000",
+      "bytes": 11915
+    },
+    "work/stage4/intraday-design-20261005/review-resolution.md": {
+      "sha256": "29ff58f0d26b3baa56afe18fc7bceb3700c9fe1c992816317b05f80531b1cfb4",
+      "bytes": 1943
+    },
+    "work/stage4/intraday-design-20261005/runtime-review.md": {
+      "sha256": "369dbb884066b35706517e0a78ed6c499d389d2967235c7cc8034124042e2fc5",
+      "bytes": 14539
+    },
+    "work/stage4/intraday-implementation-20261005/build_review_dialogues.py": {
+      "sha256": "9d1a1d614c1c318e7faf689129af92e1b80f81ebd6e3ad89657090f9c3875cbc",
+      "bytes": 2898
+    },
+    "work/stage4/intraday-implementation-20261005/engineering-native06-daily-chain.json": {
+      "sha256": "c28ccfd8ace1bd6d43f1c233fcc5c2d47754d0ef5ba94d408e87f78c917b4662",
+      "bytes": 12511
+    },
+    "work/stage4/intraday-implementation-20261005/engineering-native06-daily-chain.md": {
+      "sha256": "09cfab38cf66e12134b3ac92e9e14bfe4f81d0778feab85e9f633c36d33a6a23",
+      "bytes": 2538
+    },
+    "work/stage4/intraday-implementation-20261005/engineering-native06-first.json": {
+      "sha256": "faba40263a9e5b6daab38afea478192d999128b600fe2d4322a20acde819e0d5",
+      "bytes": 24207
+    },
+    "work/stage4/intraday-implementation-20261005/engineering-native06-first.md": {
+      "sha256": "ba2dfa84a00763b30f923feb6c143ee052024d21ca097e39ffb3a444036cfe2f",
+      "bytes": 1705
+    },
+    "work/stage4/intraday-implementation-20261005/engineering-native06-remaining.json": {
+      "sha256": "3a8e34b230d6a5c55dc3538b3ccb67f767ed39a2c5ab1fdf1e4f78b2991d1ba3",
+      "bytes": 39379
+    },
+    "work/stage4/intraday-implementation-20261005/engineering-native06-remaining.md": {
+      "sha256": "28b413455c957d30e2fe63d57121bf358e7560f16318192ffaa6376033a4fed3",
+      "bytes": 4962
+    },
+    "work/stage4/intraday-implementation-20261005/engineering-native06-three-chains-checks.json": {
+      "sha256": "90109a091b53068bec8d86425a14cbca93a07864e533cbe811b3ec96db538ae2",
+      "bytes": 17934
+    },
+    "work/stage4/intraday-implementation-20261005/engineering-native06-three-chains.md": {
+      "sha256": "a441dcc3d486a7567ad595bcbeb93f2e81110d517337fb57d96fcb2272953da9",
+      "bytes": 2285
+    },
+    "work/stage4/intraday-implementation-20261005/engineering-test15-freeze.json": {
+      "sha256": "38a6db0258b4e5a85f970dec8a7f3a0d7b3992f7b1940c5af425e7c6934e1182",
+      "bytes": 7042
+    },
+    "work/stage4/intraday-implementation-20261005/engineering-test15-freeze.md": {
+      "sha256": "e308f8c60e410b0677e5645bead8c2daef9dd353affc1d317086a69f679822d6",
+      "bytes": 1413
+    },
+    "work/stage4/intraday-implementation-20261005/export_evidence.py": {
+      "sha256": "e064fc6a4bbddf410a3d47a40685d8a826264d17d41c7cf9438f06fd5e65eec5",
+      "bytes": 3990
+    },
+    "work/stage4/intraday-implementation-20261005/implementation-scope-final-checks.json": {
+      "sha256": "426fa8f6829d12e2de3876777e8f275f98d3d2b32e7ff95e5b0bfc0df20c813e",
+      "bytes": 374
+    },
+    "work/stage4/intraday-implementation-20261005/implementation-scope-final.md": {
+      "sha256": "c6c1c3554e6d2133737acb371bcf9d12d067c5192b265267a1ecd079bb32527f",
+      "bytes": 5630
+    },
+    "work/stage4/intraday-implementation-20261005/intraday-l-test15/source-manifest.json": {
+      "sha256": "755ae960f3c35ba966655698c268057fe2c67e6e3248072e3ed48375a1661013",
+      "bytes": 21760
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/export-manifest.json": {
+      "sha256": "a2531f37923aba37cc5cc7d763def7688136f2dca11aab16a9db94568612eb27",
+      "bytes": 9619
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/independent_need/channel-ledger.json": {
+      "sha256": "1b516d2e3a6b594b23f6f867f5b396e1cf0f013bda1d55602084c5ea0c2a9c83",
+      "bytes": 2643
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/independent_need/continuation-for-4d.json": {
+      "sha256": "befd47d7ace6a451f5f4ffd398671d9507ea85306d9db7e0e141636e682cc580",
+      "bytes": 804
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/independent_need/extra-sources.json": {
+      "sha256": "11e472e931ce25038273280e43b713d04ef4b9aeb39633502bbdcb961e425068",
+      "bytes": 339
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/independent_need/faults.json": {
+      "sha256": "74d83af9c770b0746c9cd661a7815e2d55c44f087c7f67cdcb058df8cb264b06",
+      "bytes": 104
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/independent_need/historical-fixtures.json": {
+      "sha256": "7344e880f5f9e90b2aa4a6797496aa859354ac8e26459e9d9e85b508d52c8137",
+      "bytes": 33
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/independent_need/inputs.json": {
+      "sha256": "d0dcdd6fa8b30d0323903a138de20081b10fedb1a4ad8fb3a166c6ebdea9fe65",
+      "bytes": 656
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/independent_need/manifest.json": {
+      "sha256": "4cedda5744828c8a330713bef27e57764875bd622000cf695cac1693567e396b",
+      "bytes": 11316
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/independent_need/model-01.json": {
+      "sha256": "9b20b51331e99a20ffbf83e6412deb87eecfa53f6d5445237eecb144246b34b0",
+      "bytes": 27181
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/independent_need/oracle.json": {
+      "sha256": "0d51bcecf60703aa1aa5827d53eae24274f3d299d4a0b4a8cef6293217347668",
+      "bytes": 415
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/independent_need/records.json": {
+      "sha256": "28bb117713ec7c68794267c10e71ab65d269947d397ea5467fcbcc56030256fe",
+      "bytes": 10292
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/independent_need/result.json": {
+      "sha256": "c3084d7911b2c34701472b6a89866ca21fb94c4d02d9abe356d90920ccdb7ce7",
+      "bytes": 1392
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/independent_need/round-00/worker-00.json": {
+      "sha256": "d55b7da822125017c83270f045bb874d09d34c79dd5cb6cd0e8250190448055a",
+      "bytes": 13733
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/independent_need/round-00/worker-01.json": {
+      "sha256": "cb8e148589af7b0db0df3d6ebfab44a3020b1ce8ae5c9699878266de5949b1a6",
+      "bytes": 13685
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/independent_need/source-rows.json": {
+      "sha256": "bd01e17a4ef6ad33b2735cf2962074e035b43af72e68f2f00d04ef3b7350dbf0",
+      "bytes": 1440
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/independent_need/sources-read.json": {
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "bytes": 2
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/independent_need/tool-trace.json": {
+      "sha256": "27b2b5f1e6cb50d121e0365a6d71786938984d552ecd634b1a44605b56bab3fd",
+      "bytes": 22276
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/memory_correction/channel-ledger.json": {
+      "sha256": "e0a7296d028f7d356a383f14df9f45809be2885db16beecb90cff585cf945992",
+      "bytes": 7460
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/memory_correction/continuation-for-4d.json": {
+      "sha256": "9cb14721ceb7f5389edfd4596b1063c1c6a4ac5ef361b0df4f7485b81ff8c24a",
+      "bytes": 807
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/memory_correction/extra-sources.json": {
+      "sha256": "11e472e931ce25038273280e43b713d04ef4b9aeb39633502bbdcb961e425068",
+      "bytes": 339
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/memory_correction/faults.json": {
+      "sha256": "74d83af9c770b0746c9cd661a7815e2d55c44f087c7f67cdcb058df8cb264b06",
+      "bytes": 104
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/memory_correction/historical-fixtures.json": {
+      "sha256": "7344e880f5f9e90b2aa4a6797496aa859354ac8e26459e9d9e85b508d52c8137",
+      "bytes": 33
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/memory_correction/inputs.json": {
+      "sha256": "536a0fae3a6fb2eb8082172132a9dcdf53b55ad41cb72ce4bf2fb0eac1e10bb4",
+      "bytes": 883
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/memory_correction/manifest.json": {
+      "sha256": "97676121ed209e3b90f85ffe7185246942edd4ce634343a83d9d59b26e24ab50",
+      "bytes": 11315
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/memory_correction/model-01.json": {
+      "sha256": "8b938d278bfa2fa585f97b4dd1835e3edc1b5ec2b25a3a7afde1a412d8cb2d5e",
+      "bytes": 25501
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/memory_correction/model-02.json": {
+      "sha256": "47a85a523e1026a27a6524d2a46868b5faee48e18ca37d55454c99de46026e3a",
+      "bytes": 23047
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/memory_correction/model-03.json": {
+      "sha256": "1a664bbc7ab9fa7d67872774e3af30fec10296f31cdfd140b5cc0b6e8b562b14",
+      "bytes": 23620
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/memory_correction/oracle.json": {
+      "sha256": "1e9c8a784ca17cd6017830af2b28ef94af0253eee69f2e18780905588c294096",
+      "bytes": 402
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/memory_correction/records.json": {
+      "sha256": "6677f1fb590d41e3d688c030ed065aefcb37cf886b90e9231e348348baff3fc6",
+      "bytes": 23070
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/memory_correction/result.json": {
+      "sha256": "046a6f1d30f7056b4d479ddb2919ac0539a9da094031c2c2f3f79c29b1b39317",
+      "bytes": 1550
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/memory_correction/round-00/worker-00.json": {
+      "sha256": "ffeca3d132f6fb969daa14523c014a21298a1b414055b9b5b57b20cf7fbafe88",
+      "bytes": 11281
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/memory_correction/round-00/worker-01.json": {
+      "sha256": "c82d37f12f9ce1472d09e583983260f802d789ec14cb0e334e16d2c33c43f7b4",
+      "bytes": 11231
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/memory_correction/round-01/worker-00.json": {
+      "sha256": "c05d97e45fd0b65e1e2b2f0e407b0c2ec302cc1d7c7e2da037a4feaafbbf6a43",
+      "bytes": 21567
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/memory_correction/round-01/worker-01.json": {
+      "sha256": "0e815f9cc965d786d2c044eb9bd12840514f2fa4070e759c30ff3ed572f26b90",
+      "bytes": 21517
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/memory_correction/round-02/worker-00.json": {
+      "sha256": "cd4f933a1afaeeb17a6cf9a3fb44ea026533f155637ed581a1bddd902cac9f1a",
+      "bytes": 32188
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/memory_correction/round-02/worker-01.json": {
+      "sha256": "ba827b3ea2abea5ad26076ed9028ef1839c09fdb902a70a180e7f6654751e876",
+      "bytes": 32138
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/memory_correction/source-rows.json": {
+      "sha256": "bd01e17a4ef6ad33b2735cf2962074e035b43af72e68f2f00d04ef3b7350dbf0",
+      "bytes": 1440
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/memory_correction/sources-read.json": {
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "bytes": 2
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/memory_correction/tool-trace.json": {
+      "sha256": "efb8c3526038611c01fe823613568ce3c156b447c62be37f4d6ac403025b42bf",
+      "bytes": 58503
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/missing_guide/channel-ledger.json": {
+      "sha256": "5747613467c947efbba900bffd4e328b4185732f29a91267a6d0e7dd4a74654a",
+      "bytes": 3304
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/missing_guide/continuation-for-4d.json": {
+      "sha256": "ed782aa8c3d1d12c91373ba51c6987620442d2e875ebc6149de39926fd25ba04",
+      "bytes": 795
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/missing_guide/extra-sources.json": {
+      "sha256": "11e472e931ce25038273280e43b713d04ef4b9aeb39633502bbdcb961e425068",
+      "bytes": 339
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/missing_guide/faults.json": {
+      "sha256": "76568c24ccadef92ea530a7d66e5612a423d088a60fea05028aa3d8a5a4258e8",
+      "bytes": 185
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/missing_guide/historical-fixtures.json": {
+      "sha256": "7344e880f5f9e90b2aa4a6797496aa859354ac8e26459e9d9e85b508d52c8137",
+      "bytes": 33
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/missing_guide/inputs.json": {
+      "sha256": "9fe0123d00bc75fb3af24539e2ebe237adbb8b285755cb024f04307779e38507",
+      "bytes": 624
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/missing_guide/manifest.json": {
+      "sha256": "1770db2badb15a570d387e6b86616b6e3588fab34645f99bf3ad2a97a7cd53a6",
+      "bytes": 11307
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/missing_guide/model-01.json": {
+      "sha256": "962093bdb3542ff8150abcf7560b6f952033be27a8be846c6349a691c42970ef",
+      "bytes": 26865
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/missing_guide/oracle.json": {
+      "sha256": "607db641ad25128f39156f9c7a774688d0705545adbbc7c59fef394e40955e66",
+      "bytes": 343
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/missing_guide/records.json": {
+      "sha256": "7b7fbdf0ea38fd5a094dbdfb9da06b2da55034aeedb1dae10e697e048680c00c",
+      "bytes": 9442
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/missing_guide/result.json": {
+      "sha256": "9c760e4ac6dab020d706081ab8e581834edab348ef9e9a9637544bafaf56b18b",
+      "bytes": 1435
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/missing_guide/round-00/worker-00.json": {
+      "sha256": "54661549caff121929106a28b602d99e2a23998404fef512911c6ef2a1b60e1d",
+      "bytes": 13440
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/missing_guide/round-00/worker-01.json": {
+      "sha256": "dfd84fe893213b523a5ca7da86eed770782710a45041468bb118c7ed63eea4e4",
+      "bytes": 13392
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/missing_guide/source-rows.json": {
+      "sha256": "bd01e17a4ef6ad33b2735cf2962074e035b43af72e68f2f00d04ef3b7350dbf0",
+      "bytes": 1440
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/missing_guide/sources-read.json": {
+      "sha256": "46a200c3983a554d74b7e7efdae441baab67dbdf469d99cb3bae0ee452a41860",
+      "bytes": 2417
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/missing_guide/tool-trace.json": {
+      "sha256": "a946cf88855bad1d5c54d64d1616fec8b873e699c8584b7f1eb9a7dce555a789",
+      "bytes": 22265
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/missing_policy/channel-ledger.json": {
+      "sha256": "56b5778e9cf60044ca2b6ffac1e634ebfcb99e0795f7f130eaaaa6ac87a508f4",
+      "bytes": 4313
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/missing_policy/continuation-for-4d.json": {
+      "sha256": "c9da441c9a2d00cc53917fe365dd312fa01287bbcdf40043d4eb60e2fd1c532d",
+      "bytes": 798
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/missing_policy/extra-sources.json": {
+      "sha256": "11e472e931ce25038273280e43b713d04ef4b9aeb39633502bbdcb961e425068",
+      "bytes": 339
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/missing_policy/faults.json": {
+      "sha256": "74d83af9c770b0746c9cd661a7815e2d55c44f087c7f67cdcb058df8cb264b06",
+      "bytes": 104
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/missing_policy/historical-fixtures.json": {
+      "sha256": "7344e880f5f9e90b2aa4a6797496aa859354ac8e26459e9d9e85b508d52c8137",
+      "bytes": 33
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/missing_policy/inputs.json": {
+      "sha256": "545d1c9ec240931f2980396e19834e61df365bc98b1fa942bb71d0db3a9a50d8",
+      "bytes": 625
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/missing_policy/manifest.json": {
+      "sha256": "c73dcf3f6c112544a3591b7add59d1d274004ecededeec991fc39d8822783b5a",
+      "bytes": 11309
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/missing_policy/model-01.json": {
+      "sha256": "4d960379efaec14289cc292b6634443ebea7c6fbe814c6bd50c4f68498b6d81c",
+      "bytes": 57812
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/missing_policy/oracle.json": {
+      "sha256": "16d21b94fb82eee44a677aa609094824b91c52780b53d25130c462fe23e7982d",
+      "bytes": 358
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/missing_policy/records.json": {
+      "sha256": "c48a90c1b7332bbeb0f1ed97df8aa799a0bed1ac7fb9df1432e946ec0bc1863a",
+      "bytes": 11102
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/missing_policy/result.json": {
+      "sha256": "7f854e01599dfa161c378e1186d4aab0a3390acd07d9535887e54ce04c680338",
+      "bytes": 1415
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/missing_policy/round-00/worker-00.json": {
+      "sha256": "53e1969663117e7ac663820c4d10431e2f217da14f4364525d2f1ccbd39b311b",
+      "bytes": 16169
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/missing_policy/round-00/worker-01.json": {
+      "sha256": "ea5d7ece1d0e6f973ba375d59ae2dc5a264634161ecfb3565286de29524b80cf",
+      "bytes": 16121
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/missing_policy/source-rows.json": {
+      "sha256": "bd01e17a4ef6ad33b2735cf2962074e035b43af72e68f2f00d04ef3b7350dbf0",
+      "bytes": 1440
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/missing_policy/sources-read.json": {
+      "sha256": "3467c117df8a334ec085198219ec52654e62603b1e17b5c5e849525b7ca903cb",
+      "bytes": 23707
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/missing_policy/tool-trace.json": {
+      "sha256": "058200c500a289386bde6306b10bea09fde8054f40953ad28378fe41b3cea7c5",
+      "bytes": 50294
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/summary-independent_need.json": {
+      "sha256": "fdcefde776fbe0fb39f68a0f1bf30a447b50c5e0fe36c1dd5f07a6109e215bea",
+      "bytes": 1739
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/summary-memory_correction.json": {
+      "sha256": "e1ce19bd7559268877eff45269d14982cfe65dfe9e5c5503f5176e7a6199853f",
+      "bytes": 1918
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/summary-missing_guide.json": {
+      "sha256": "31e2114e1f74e82ab37e455aeca50492ae4238d1f22da458baa7aea093791880",
+      "bytes": 1790
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/summary-missing_policy.json": {
+      "sha256": "9876f572992d460cbb63a44ae78309859b37af5a0fc18d4ef3e87d23bdd859e0",
+      "bytes": 1766
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/summary-work_sample.json": {
+      "sha256": "91d348816fbdffac03a1d9fd85b343af603dc089e458749cb3a98688310a73dd",
+      "bytes": 1578
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/work_sample/channel-ledger.json": {
+      "sha256": "0480818b058ae985880660f95d905f6d188fa329e57fd189ef1e814b9cd6d796",
+      "bytes": 5094
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/work_sample/continuation-for-4d.json": {
+      "sha256": "99cdc73dc4df50a7cdb00929898d32d2c7e5080bb0fdf9199204784504a0e430",
+      "bytes": 789
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/work_sample/extra-sources.json": {
+      "sha256": "7f62a04c5f827be88c6a2879b8d11ef27d2425ef4f717acc0835a49cc15b111c",
+      "bytes": 1019
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/work_sample/faults.json": {
+      "sha256": "74d83af9c770b0746c9cd661a7815e2d55c44f087c7f67cdcb058df8cb264b06",
+      "bytes": 104
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/work_sample/historical-fixtures.json": {
+      "sha256": "7344e880f5f9e90b2aa4a6797496aa859354ac8e26459e9d9e85b508d52c8137",
+      "bytes": 33
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/work_sample/inputs.json": {
+      "sha256": "918fbedbfda07b46d39154dead475510162b53ed82fcdc13a598ac02a95c912b",
+      "bytes": 642
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/work_sample/manifest.json": {
+      "sha256": "2c1d53ba6af1cd0cb863318f6cc8b5a3cafcb738afe758cc33b97a69c9a9aab4",
+      "bytes": 11303
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/work_sample/model-01.json": {
+      "sha256": "d1c53657230bcba5841d7a678c965f1e735ce814b406defd4fe0fe97d1df0353",
+      "bytes": 63567
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/work_sample/oracle.json": {
+      "sha256": "e79fff0e54c19a56c28ad1e63e1f757b7cb99d65195896f94e8f645ca76e35d2",
+      "bytes": 353
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/work_sample/records.json": {
+      "sha256": "45d3aac4f2666b75d7df4eaee234a96e6945a2cb0c0ccfd9f8085ab4d123d3b7",
+      "bytes": 11971
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/work_sample/result.json": {
+      "sha256": "789c84f8d0a475e61811754be0376d265eca834214daa20a62775c1145bced1c",
+      "bytes": 1240
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/work_sample/round-00/worker-00.json": {
+      "sha256": "29d23c72fdf621ad7e377a0c80d71c055e1299c30d61f9220957d02005f1a794",
+      "bytes": 17743
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/work_sample/round-00/worker-01.json": {
+      "sha256": "ccf77a04e6b0b91e9562d3538a706f03f95ba6a3367768228d5363b138c43c94",
+      "bytes": 17693
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/work_sample/source-rows.json": {
+      "sha256": "bd01e17a4ef6ad33b2735cf2962074e035b43af72e68f2f00d04ef3b7350dbf0",
+      "bytes": 1440
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/work_sample/sources-read.json": {
+      "sha256": "a20d1f04452918cbcb5a6b9eb0855ac3039b296d212c1325f9690dc042473616",
+      "bytes": 19658
+    },
+    "work/stage4/intraday-implementation-20261005/native06-behavior-complete/work_sample/tool-trace.json": {
+      "sha256": "3fa7d7a851f372641b3f146dc11f017c8b0335e3056dbac21635a7c632af6afb",
+      "bytes": 56144
+    },
+    "work/stage4/intraday-implementation-20261005/native06-daily-complete/export-manifest.json": {
+      "sha256": "733e0658a386e14908fcb9b5b6c5f1b523312a2333a38216eb66ebb0d489362a",
+      "bytes": 3793
+    },
+    "work/stage4/intraday-implementation-20261005/native06-daily-complete/family_requests/before-daily.json": {
+      "sha256": "73b026bce1861d8f714cfb1da4ac5fded54fb0b477bc95f96104f5c9939ac9d5",
+      "bytes": 36233
+    },
+    "work/stage4/intraday-implementation-20261005/native06-daily-complete/family_requests/channel-ledger.json": {
+      "sha256": "3617d0c7001639e938c2cbc685158e75f30f5d183eb2614fb54edb0ff1941c25",
+      "bytes": 15858
+    },
+    "work/stage4/intraday-implementation-20261005/native06-daily-complete/family_requests/daily-first/worker-00.json": {
+      "sha256": "3faf12835376f51734d088e90ce95c0ce53bb7d8d0dfe2e419b230fe86587499",
+      "bytes": 48206
+    },
+    "work/stage4/intraday-implementation-20261005/native06-daily-complete/family_requests/daily-first/worker-01.json": {
+      "sha256": "ec8482e3294e48bc03f07fe08df51fe0de754c25d3e26c4940b5eb29741ca611",
+      "bytes": 60903
+    },
+    "work/stage4/intraday-implementation-20261005/native06-daily-complete/family_requests/daily-first/worker-02.json": {
+      "sha256": "f41ae7419eff1f418d5d28fc7e7041fa3589e30d45e8f2fb379fe01dc4ea8b13",
+      "bytes": 66325
+    },
+    "work/stage4/intraday-implementation-20261005/native06-daily-complete/family_requests/daily-first/worker-03.json": {
+      "sha256": "267819f1729d3d63e3e72fc8956bb5ce51445ea3a5415b4a92579af01c4b72af",
+      "bytes": 78379
+    },
+    "work/stage4/intraday-implementation-20261005/native06-daily-complete/family_requests/daily-first/worker-04.json": {
+      "sha256": "39a4ee8f77eccb51bfe79c5f69f4971b47254b17f78ca215997b9a57450a793d",
+      "bytes": 78730
+    },
+    "work/stage4/intraday-implementation-20261005/native06-daily-complete/family_requests/daily-first/worker-05.json": {
+      "sha256": "7cc66bb0f0cd47285f6c3ab0c9ab904f9d3de21c49aff83b0533043da1ca1005",
+      "bytes": 78682
+    },
+    "work/stage4/intraday-implementation-20261005/native06-daily-complete/family_requests/decision-confirmation-evidence.json": {
+      "sha256": "127ba0f00890a6b36dfa29c78afdbd150432bbcb72b8cb1c7128f3f0cccdbbb8",
+      "bytes": 1107
+    },
+    "work/stage4/intraday-implementation-20261005/native06-daily-complete/family_requests/external-sources.json": {
+      "sha256": "a80e316cf7fc74690eb6e6ee48f762991c47d946d223c45836d339f3239b391c",
+      "bytes": 1088
+    },
+    "work/stage4/intraday-implementation-20261005/native06-daily-complete/family_requests/injection.json": {
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "bytes": 2
+    },
+    "work/stage4/intraday-implementation-20261005/native06-daily-complete/family_requests/inputs.json": {
+      "sha256": "182b8911c43d652ff79d9ebd050e18865a6dd80903e99a1a4963a10a5c6af12a",
+      "bytes": 381
+    },
+    "work/stage4/intraday-implementation-20261005/native06-daily-complete/family_requests/manifest.json": {
+      "sha256": "5bf26009463d666e3ea2d379ece3557294125610277447b67d7e5b85e6320a81",
+      "bytes": 10877
+    },
+    "work/stage4/intraday-implementation-20261005/native06-daily-complete/family_requests/model-01.json": {
+      "sha256": "739d22bc875302db865a955c60df5770cb819072d38329e38ffcb108af7d8682",
+      "bytes": 30562
+    },
+    "work/stage4/intraday-implementation-20261005/native06-daily-complete/family_requests/model-02.json": {
+      "sha256": "048f5d9d4616948b0ba37574d2cc134e9ee11f2223a2fde4767f0dbb4d524c64",
+      "bytes": 33923
+    },
+    "work/stage4/intraday-implementation-20261005/native06-daily-complete/family_requests/model-03.json": {
+      "sha256": "46e4d0a26060a85f58e917c402ce7b3b639437e34ffadd187fbd4f5797e31358",
+      "bytes": 45601
+    },
+    "work/stage4/intraday-implementation-20261005/native06-daily-complete/family_requests/model-04.json": {
+      "sha256": "47aedad0a54e55496ee39a7e98f111bb88d34e9c2e27fe7fab35c294479610e8",
+      "bytes": 34740
+    },
+    "work/stage4/intraday-implementation-20261005/native06-daily-complete/family_requests/model-05.json": {
+      "sha256": "a15e9fa5fa469ee3ca18f7525a20e63d7276887260dbfc0391cd74902d17a2ec",
+      "bytes": 66671
+    },
+    "work/stage4/intraday-implementation-20261005/native06-daily-complete/family_requests/model-06.json": {
+      "sha256": "37a5ac691a5561f64f69ff6d6e4198e28dfc0e09e9df265b57b67c27ae40514a",
+      "bytes": 45251
+    },
+    "work/stage4/intraday-implementation-20261005/native06-daily-complete/family_requests/model-07.json": {
+      "sha256": "cd4b3abdaf01aaaffd1c468a2bc359dd770ddc12920ed560d2a5f33ee78ca302",
+      "bytes": 93224
+    },
+    "work/stage4/intraday-implementation-20261005/native06-daily-complete/family_requests/model-08.json": {
+      "sha256": "018db9fcb5093878d2ac6ae1f32ff047fc88c5b8da307ff70671142efac832de",
+      "bytes": 6487
+    },
+    "work/stage4/intraday-implementation-20261005/native06-daily-complete/family_requests/phases.json": {
+      "sha256": "d597dff35881590ff5c03208da2e307e735a774d031dcc5a4014925e89393e1d",
+      "bytes": 79716
+    },
+    "work/stage4/intraday-implementation-20261005/native06-daily-complete/family_requests/records.json": {
+      "sha256": "1b0ec39e2e448141fbd89fdf28eee4287d8cc334314390a29c36c4aa9dfc3856",
+      "bytes": 71918
+    },
+    "work/stage4/intraday-implementation-20261005/native06-daily-complete/family_requests/restart-child.json": {
+      "sha256": "4252bbf1a6b568af781ec1cee24e0658a0f888ca7ac55ab3fcf8082bb14932a6",
+      "bytes": 764
+    },
+    "work/stage4/intraday-implementation-20261005/native06-daily-complete/family_requests/restart.json": {
+      "sha256": "4252bbf1a6b568af781ec1cee24e0658a0f888ca7ac55ab3fcf8082bb14932a6",
+      "bytes": 764
+    },
+    "work/stage4/intraday-implementation-20261005/native06-daily-complete/family_requests/result.json": {
+      "sha256": "805b3a27539beb7c68ab3a82cf96d269120f7f758c54b98915d6b3bd625190cc",
+      "bytes": 453
+    },
+    "work/stage4/intraday-implementation-20261005/native06-daily-complete/family_requests/service-0/worker-00.json": {
+      "sha256": "ff76bbecd81deaf2437414ef709f30a4f597db3624f0021b9727320ade8a6cb9",
+      "bytes": 14335
+    },
+    "work/stage4/intraday-implementation-20261005/native06-daily-complete/family_requests/service-0/worker-01.json": {
+      "sha256": "0b2e81b9096ccf1b07531099ea12f761832be0df9a8b7f112e98198db283928d",
+      "bytes": 14287
+    },
+    "work/stage4/intraday-implementation-20261005/native06-daily-complete/family_requests/service-1/worker-00.json": {
+      "sha256": "63c9e666a16ca930d7398a487a9f919c4bdfd449b71b5891ad38a30400c4df2b",
+      "bytes": 27321
+    },
+    "work/stage4/intraday-implementation-20261005/native06-daily-complete/family_requests/service-1/worker-01.json": {
+      "sha256": "243fb5605b6aacabb4b52bab5eb91125409a9da89c76e7e7936592e6e022903c",
+      "bytes": 27273
+    },
+    "work/stage4/intraday-implementation-20261005/native06-daily-complete/family_requests/service-2/worker-00.json": {
+      "sha256": "f0d54298f150bfad0af4e080872b0e51d3def159697b44359d80a3240a3e1b0b",
+      "bytes": 42209
+    },
+    "work/stage4/intraday-implementation-20261005/native06-daily-complete/family_requests/service-2/worker-01.json": {
+      "sha256": "f097b82350deb86cdfe4ff58939892e6b24a7b82849b4f85289960d9b9f0dfc9",
+      "bytes": 42161
+    },
+    "work/stage4/intraday-implementation-20261005/native06-daily-complete/family_requests/source-rows.json": {
+      "sha256": "835b8c1045b8d5b29dbe230009f46f8e7038a6a21bab740abd3b8d5c47a63be0",
+      "bytes": 1859
+    },
+    "work/stage4/intraday-implementation-20261005/native06-daily-complete/family_requests/tool-trace.json": {
+      "sha256": "c0dfd9227ecb2a1ad4338baa7329b7685df8dbece44bc51fcc336204279ee7e9",
+      "bytes": 306178
+    },
+    "work/stage4/intraday-implementation-20261005/native06-daily-complete/summary-family_requests.json": {
+      "sha256": "07bd157de091722260386f4ca356f87f6b0152254191033a379fbbb5843a27e8",
+      "bytes": 491
+    },
+    "work/stage4/intraday-implementation-20261005/native06-empty-binding-assembly.json": {
+      "sha256": "3ca9845f4d1f012c17cf8f6d1475164a03069f295c81a2959c4fd3bcc28caf96",
+      "bytes": 1292
+    },
+    "work/stage4/intraday-implementation-20261005/native06-empty-execution-assembly.json": {
+      "sha256": "ccc66cb062c502e1f06ef944e1d9875611b9fb152ab3d7786193f32bb9183f01",
+      "bytes": 10808
+    },
+    "work/stage4/intraday-implementation-20261005/native06-final-server-audit.json": {
+      "sha256": "a0df6381759529f7f2306d5cbd2c131bf15d8b342b4ab58f584be4bef40a5f61",
+      "bytes": 295
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/daily-chain/daily-and-current-actions/00.json": {
+      "sha256": "75c5094e38392b2f088b405a7e39aef5c4e8eb822037d460019f844fe2aa7d94",
+      "bytes": 16364
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/daily-chain/daily-and-current-actions/01.json": {
+      "sha256": "3a5ff23d50584d02c00566ca3c31f9d27186153e5fdc09cd558774b5d6060e18",
+      "bytes": 28816
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/daily-chain/daily-and-current-actions/02.json": {
+      "sha256": "58262b18a494bc3664f2d1e1db7ba70aef16f9f25ef73e082a9925038b269404",
+      "bytes": 29672
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/daily-chain/daily-and-current-actions/03.json": {
+      "sha256": "da4526bda26cf67c47786dbf4d23308a64a0aeffeb8e0dfe565c5d3be0e96cca",
+      "bytes": 43211
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/daily-chain/daily-and-current-actions/04.json": {
+      "sha256": "d09c13ac7a31cdd4167886ffdcae33e214e9fd64f7df53fae9c679606b7ba9d6",
+      "bytes": 44734
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/daily-chain/daily-and-current-actions/05.json": {
+      "sha256": "d236b9a40cc0fec70bf6c809763cbbd2ad26750180afc57190ea1a4a079a782e",
+      "bytes": 44683
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/daily-chain/dialogue.json": {
+      "sha256": "72096800bd20122a49fcd220e4a7c9ab01f3c84f6f2add7bcdfe5c56befcd19f",
+      "bytes": 6415
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/daily-chain/final.json": {
+      "sha256": "85fd5a5d4841c325ad8ea70a68bcc48fe1bdf70fb2ece66423ffaad2fb9a4583",
+      "bytes": 104872
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/daily-chain/inputs.json": {
+      "sha256": "2ed3b3e1d1291fd43a5dc73cc18d50d8a58b1d1cc54c3daf5e6c80de375c5fc9",
+      "bytes": 407
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/daily-chain/manifest.json": {
+      "sha256": "5124254a125b2491a2d108e238f7513e4b097b78feb2c8efbf8035c1f015d7bc",
+      "bytes": 10849
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/daily-chain/model-01.json": {
+      "sha256": "6c8a9c2f4c1daedf53daf23cb8f281f5dd07e17d244cfd6a5b6b00106e9e4fad",
+      "bytes": 46008
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/daily-chain/model-02.json": {
+      "sha256": "bf6017ccff15f733d4cfb973f60efe4f047ec428ad391e6be1471c99e94a17ea",
+      "bytes": 40404
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/daily-chain/model-03.json": {
+      "sha256": "6718e88336ab13a675b1303994685a97b34de3449a3a8e48337ff92a1a72c8b6",
+      "bytes": 25174
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/daily-chain/model-04.json": {
+      "sha256": "2dbc01d8a53eca22a8b0909feeac3bb105c1698a235a9e4844871ed2b25dea38",
+      "bytes": 53288
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/daily-chain/model-05.json": {
+      "sha256": "b7c0e8bf0086488aadf6f2c982c4fb1bd85a1f8a2cc65b7561a2c5c427c6301e",
+      "bytes": 13618
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/daily-chain/model-06.json": {
+      "sha256": "69370f510b4bb172d3da87e0ae4834c5aee75e6182bb59132bf3e3616bb49697",
+      "bytes": 27644
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/daily-chain/model-07.json": {
+      "sha256": "e22f7e914df5cb24572228b331fd1aa6bbf20e7821cca5f0d071fafc12fba8ba",
+      "bytes": 48924
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/daily-chain/model-08.json": {
+      "sha256": "0354628de4a858231bbd0d4be9968330be49c2443cb03890425edf0a261089a7",
+      "bytes": 47483
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/daily-chain/model-09.json": {
+      "sha256": "661ac88fa1c3e5537c5635943e8b1dcb0a75927183f8a2bd7f4ef37b5f06b9b4",
+      "bytes": 44826
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/daily-chain/model-10.json": {
+      "sha256": "311b1e71c55143325068732593de3bcfec603b3160da2196d5ab7dc6377355ef",
+      "bytes": 54915
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/daily-chain/model-11.json": {
+      "sha256": "4ce5ff4fa9c53ec47b6f2c69fd631321e786112e3d893a8da053059d1980b7ae",
+      "bytes": 24201
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/daily-chain/model-12.json": {
+      "sha256": "57359445169282d70b6f9f88e3a2b0aa45129de0a34ceb170df36cf89bda224b",
+      "bytes": 56566
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/daily-chain/model-13.json": {
+      "sha256": "f0d48d17e93414f6c77ec5d2d73d35b39d3762ef70aba2ea0b6f5b5ccd28e745",
+      "bytes": 73418
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/daily-chain/model-14.json": {
+      "sha256": "37d580afc6828e8e1aeada582a4bfb373306f0d47320fc9d73506b7458fa4b14",
+      "bytes": 81200
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/daily-chain/model-15.json": {
+      "sha256": "88810344ec96f48d1b1efbb918e78dc72e82f2c49666248dda0868adc0156228",
+      "bytes": 67754
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/daily-chain/model-16.json": {
+      "sha256": "9008f51908612cccbc9cf224c34d60f22194aa22788e357dc10180e9455310e2",
+      "bytes": 26146
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/daily-chain/scheduled-0/00.json": {
+      "sha256": "eec963a037f1d5af1d6e76d006e42bfb26c83027135707ceeb56377ca3de8487",
+      "bytes": 52122
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/daily-chain/scheduled-0/01.json": {
+      "sha256": "c414111d6d332c60a2d616c3ef49e0b3c10d738712c54773a5b21583b55240e3",
+      "bytes": 53062
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/daily-chain/scheduled-0/02.json": {
+      "sha256": "56d8d11fcf87a526ddac09504e0be13a2340ea5a709158e0c94522e504e26ed9",
+      "bytes": 53011
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/daily-chain/scheduled-1/00.json": {
+      "sha256": "dc696c5e5755a95aba7aaa7177621f3fc4601753b3915ca40e42ea3210519060",
+      "bytes": 60752
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/daily-chain/scheduled-1/01.json": {
+      "sha256": "dedd1bf2853f88be5686fb1f9f116dba434c257b433bad31c94443d145779c54",
+      "bytes": 62230
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/daily-chain/scheduled-1/02.json": {
+      "sha256": "27323ef504e6b59c750c78cc823016efe339e564bdd8d5928ca05ff4e4a62468",
+      "bytes": 62179
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/daily-chain/source-1.json": {
+      "sha256": "d46f6293eeee8c080b1327b17ecb40e7e97479959052727acbcfd0858909859f",
+      "bytes": 1780
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/daily-chain/source-2.json": {
+      "sha256": "21bab64b2c69f21910d748f647a50bc8cfcec29e25f5e9a27d6fbaee32c7e6b9",
+      "bytes": 1831
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/daily-chain/source-completion/00.json": {
+      "sha256": "a0a663f336a7ab2656f4d2cbf3e5569bf662ca0b2f4d3e4f8be21ea403b3c93b",
+      "bytes": 75177
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/daily-chain/source-completion/01.json": {
+      "sha256": "204386ed4d77ac9e97d1b49f472176a4c26735179b325b6222c93106f409b3e2",
+      "bytes": 76184
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/daily-chain/source-completion/02.json": {
+      "sha256": "0f7bea5daf8ed2f774847c862d9dcfd0060c49a23337f63881d0736bfcf1c219",
+      "bytes": 76127
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/daily-chain/source-correction/00.json": {
+      "sha256": "1beb9de7ec410d31ce63638d050237b54ddde80227222b22bc55257ff3fcadeb",
+      "bytes": 88699
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/daily-chain/source-correction/01.json": {
+      "sha256": "9653e95758c78787f866f8736b05a72d80d402357ebfb1601ccd743bb8ae6448",
+      "bytes": 89834
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/daily-chain/source-correction/02.json": {
+      "sha256": "da141fa4b77b07de4fb3f2e01c2b7b5deda9e5bfc595f7578092fa60fb1b1be8",
+      "bytes": 92588
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/daily-chain/source-correction/03.json": {
+      "sha256": "8d4ad813a338d3defa5d17c2d42eac4419a9dd22ec3e298c52afb5e4a5e70cb3",
+      "bytes": 101662
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/daily-chain/source-correction/04.json": {
+      "sha256": "010baa6e1dd16d6261d03796d31dfc5bf2bd49ee96ac96100320c5d3a92ec880",
+      "bytes": 102491
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/daily-chain/source-correction/05.json": {
+      "sha256": "81d720794d6026e0a0f04dcad9573977021c69569676e1a09bde63ee25e8ecba",
+      "bytes": 102440
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/daily-chain/source-rows.json": {
+      "sha256": "313f6c20f00d22420af4e3cead7d7620aa9df3ef1952aaf9f8f57bfdfe2f807c",
+      "bytes": 3689
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/daily-chain/summary.json": {
+      "sha256": "2225529b8195f754fe0c26543fefd52ca858bebcf28962df678e59106130405e",
+      "bytes": 559
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/export-manifest.json": {
+      "sha256": "af0760285b105ad695eaec7705ce6b9b6267226f275abad62471387342cfd3e4",
+      "bytes": 13842
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-continuous/admission-and-confirmation/00.json": {
+      "sha256": "1f8a21c6324831f606bd95e185da8799e8a431b6c6f926814a0fdcb1db8f9b47",
+      "bytes": 19244
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-continuous/admission-and-confirmation/01.json": {
+      "sha256": "f6be60839fcbff787c0551918a5fe3bc9b5168e462aff157e4e42f3f74aff2c1",
+      "bytes": 27565
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-continuous/admission-and-confirmation/02.json": {
+      "sha256": "5401dc23eb81a1d0a2f256d8f2aae6e0983809e2522aefa2089ff4f984bd4677",
+      "bytes": 39010
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-continuous/admission-and-confirmation/03.json": {
+      "sha256": "3305acc0c942051b5894a9f0b8e7f7914775c9b140cd1f0c2f7339bc0f221036",
+      "bytes": 38650
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-continuous/baseline/00.json": {
+      "sha256": "ec559d6ae381069bbd349e15d1fcb622977527b9474b72a144fa28e08bdd7b7b",
+      "bytes": 2490
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-continuous/baseline/01.json": {
+      "sha256": "8e991a36a6392ac159bf61fc4aee1a0c09927ee435ce8bca5fab84b36b9cbff5",
+      "bytes": 2442
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-continuous/completion-condition-coverage.json": {
+      "sha256": "253acd61b7ff391021747e304a3d8eecc934d841807f5f5810be3c59003cc648",
+      "bytes": 303
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-continuous/continuous-clock.json": {
+      "sha256": "733fe52d7b0ecddd1650e9603c8f245836899b95158336154f1691c501434876",
+      "bytes": 1042
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-continuous/crossday-execution/00.json": {
+      "sha256": "f7cbcec55a4c0408366b91909377634df93e4243344225f831dc157ed48d721b",
+      "bytes": 41554
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-continuous/crossday-execution/01.json": {
+      "sha256": "7090bc7b608b9986247d3639750312e2458b1cd6f6e4f310d75ab36a84c2d671",
+      "bytes": 57612
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-continuous/crossday-execution/02.json": {
+      "sha256": "467bcf825dcad4b86334bc3e719a7693ea663af58ff75f99151477b560d54a1b",
+      "bytes": 60960
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-continuous/crossday-execution/03.json": {
+      "sha256": "8c54d2296bbe005fc37d291f86afc2d68980a0647c970b42c1d208c534ed2464",
+      "bytes": 60909
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-continuous/dialogue.json": {
+      "sha256": "b4c2284c8f3a82a15e63e793a94b96cb54650c61a39383f21ac1beb2ef1f9555",
+      "bytes": 12164
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-continuous/final.json": {
+      "sha256": "abb27f0ec2fdc5e892ad87a128a6bf11bfbc5457ec515fe545486ed4a70f8f22",
+      "bytes": 62078
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-continuous/idle-after-delivery.json": {
+      "sha256": "af6ad290013e53b49a40c7162a526b8141b85dc72fbd517d777e6762ee106a6a",
+      "bytes": 759
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-continuous/idle-before-due.json": {
+      "sha256": "7d95199a1840ceef8a50dc1575055f5fdd0d0d8f115a156398b66dd029181c7c",
+      "bytes": 759
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-continuous/inputs.json": {
+      "sha256": "2ed3b3e1d1291fd43a5dc73cc18d50d8a58b1d1cc54c3daf5e6c80de375c5fc9",
+      "bytes": 407
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-continuous/manifest.json": {
+      "sha256": "7fad69e69e68a5a14d652865f08d593feb283dc716854d98d97efed78fd9e1d3",
+      "bytes": 10857
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-continuous/model-01.json": {
+      "sha256": "e6e090696177338dc1c3c7771aa9cd8afb8995ab04b946b4f185a791db4cb6cf",
+      "bytes": 11092
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-continuous/model-02.json": {
+      "sha256": "df37cbbeb9be361e673b1f317f373ce70c8efac831cfe27b1149a6cca887b86a",
+      "bytes": 40969
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-continuous/model-03.json": {
+      "sha256": "5b92b5cdc9ea470a12c75b8c58cbce271097f7b98b179926881a59dc71689bed",
+      "bytes": 29222
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-continuous/model-04.json": {
+      "sha256": "7472cc084b17adab97fcb33637827ff8f015e51afa1753a41d16e971900564a1",
+      "bytes": 65684
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-continuous/model-05.json": {
+      "sha256": "dd7484d7fc62e5243038c2a158c88dfca4badd0594fd4e0a46446b3de167dac4",
+      "bytes": 30651
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-continuous/model-06.json": {
+      "sha256": "46d250fabbe10a6d5ae756a88c367caee154d2ad5a7e8345515436c8b6a73312",
+      "bytes": 113618
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-continuous/model-07.json": {
+      "sha256": "e59c1d1f5844f10ac8788747a7a38bf230c7e130a86f92f20fd5414fe5017759",
+      "bytes": 43415
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-continuous/restart.json": {
+      "sha256": "37eaf544812ee83ff59b30df1d0fee550e668b336720829517ab971e65d8662e",
+      "bytes": 122
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-continuous/source-rows.json": {
+      "sha256": "835b8c1045b8d5b29dbe230009f46f8e7038a6a21bab740abd3b8d5c47a63be0",
+      "bytes": 1859
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-continuous/summary.json": {
+      "sha256": "9e46aab583fe2a4534ea5124edb686dc5d4855ec80341f2d1dd448fe3d117ebe",
+      "bytes": 877
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-empty/admission-and-confirmation/00.json": {
+      "sha256": "e71f9a20ad4d74c37975f647673314dc7eda44ced09d69da7bb794502f94fd53",
+      "bytes": 19997
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-empty/admission-and-confirmation/01.json": {
+      "sha256": "39793261f859e372d77db387b84bcfbe164fcf7291c7211fcec84aee6a965105",
+      "bytes": 27808
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-empty/admission-and-confirmation/02.json": {
+      "sha256": "2e212940524ad0390f2aac9665a118898a5689cea77d94fa73eb67b3425021ff",
+      "bytes": 39212
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-empty/admission-and-confirmation/03.json": {
+      "sha256": "64f11c4f80c88a14f6d4d9f6816642b1c4a15825b5d2f78989ce11d157e45786",
+      "bytes": 38776
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-empty/baseline/00.json": {
+      "sha256": "b57966f9fba4b661359388ec310c815cc24e9d0757be09a3a79cbabdbcb5c57b",
+      "bytes": 2523
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-empty/baseline/01.json": {
+      "sha256": "f412668242d4a4e783186ebc129cf86cba696f43255ad804fceefc15309cff46",
+      "bytes": 2475
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-empty/completion-condition-coverage.json": {
+      "sha256": "2ea9490a45654415044b6e08d4ee3dea83b36a1207a1f41e8cb5188ffe685ca9",
+      "bytes": 303
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-empty/crossday-execution/00.json": {
+      "sha256": "098e35f258387bd18118af2f7398461b24061c618bface7145d68029864c6732",
+      "bytes": 41859
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-empty/crossday-execution/01.json": {
+      "sha256": "ded860ce5a345c52e4016c3f5ac5fca4593692771ccd5174f289e49e18aae994",
+      "bytes": 57583
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-empty/crossday-execution/02.json": {
+      "sha256": "375a808ee7a49e27a761bafd2eb94b50a5e01ef2ef447743162fccd5444fbdbf",
+      "bytes": 61036
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-empty/crossday-execution/03.json": {
+      "sha256": "74f6e7b441f94e30b2dcd38431e5d82ac37e877bbaec6bb7e01b198171e1cdeb",
+      "bytes": 60985
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-empty/dialogue.json": {
+      "sha256": "811cb347e4a235bb444250dd0ca361e6f8ba77cf2002ecff89c97d911578f0b5",
+      "bytes": 12543
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-empty/final.json": {
+      "sha256": "83e64bdf92acb270e967d7c08683606ca6f4b88062405fc0f3aee29f85630be8",
+      "bytes": 62154
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-empty/idle-after-delivery.json": {
+      "sha256": "af6ad290013e53b49a40c7162a526b8141b85dc72fbd517d777e6762ee106a6a",
+      "bytes": 759
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-empty/idle-before-due.json": {
+      "sha256": "7d95199a1840ceef8a50dc1575055f5fdd0d0d8f115a156398b66dd029181c7c",
+      "bytes": 759
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-empty/inputs.json": {
+      "sha256": "2ed3b3e1d1291fd43a5dc73cc18d50d8a58b1d1cc54c3daf5e6c80de375c5fc9",
+      "bytes": 407
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-empty/manifest.json": {
+      "sha256": "a55c30c6289774ff03016a327774d115180cc37a392c2f480302d7a806c7679a",
+      "bytes": 10852
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-empty/model-01.json": {
+      "sha256": "74cf7958b415587fbd6098869527271b3c4b76a3c351df8eae76d99b621a4fce",
+      "bytes": 11828
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-empty/model-02.json": {
+      "sha256": "d560f5cbde12ba9d894c88412a09e6184a2ae82a0fae17bd64a4051f830e48df",
+      "bytes": 47225
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-empty/model-03.json": {
+      "sha256": "271a668a4ebc9ae2a7a79ac11c546d42b49da977b0fc210af06df0730d1d0f7b",
+      "bytes": 22246
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-empty/model-04.json": {
+      "sha256": "4d31eac98cb3ed423634de084f9ddc65638d2af4a76c179e68c3a948e28cfd55",
+      "bytes": 65948
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-empty/model-05.json": {
+      "sha256": "fdc804448a394a18d0ba46ad617ff4ddd68a306386f06442bab78c0380b40398",
+      "bytes": 26602
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-empty/model-06.json": {
+      "sha256": "f8b98a3831b054d1f214caaf7d694ec35fef1f3e97ae70effd31af373d5ccf7d",
+      "bytes": 69379
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-empty/model-07.json": {
+      "sha256": "78ae56e0de0869e9d68e74b98ffd012698a6832ec178fbfad4952cca34b8106a",
+      "bytes": 48402
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-empty/restart.json": {
+      "sha256": "37eaf544812ee83ff59b30df1d0fee550e668b336720829517ab971e65d8662e",
+      "bytes": 122
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-empty/source-rows.json": {
+      "sha256": "835b8c1045b8d5b29dbe230009f46f8e7038a6a21bab740abd3b8d5c47a63be0",
+      "bytes": 1859
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-empty/summary.json": {
+      "sha256": "9e6bb9c08e1efa12be3985d90045fdae2a3df07c915015ffed5e20eae1e786d2",
+      "bytes": 672
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-explicit/admission-and-confirmation/00.json": {
+      "sha256": "23c8c28001158298b1b5580979a9e8531d442fdbafe3a842f47589ae7bbc6d15",
+      "bytes": 20135
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-explicit/admission-and-confirmation/01.json": {
+      "sha256": "0abba7e29df5c12c2474401cc382807cc335965b5c8f6b12e914395b373eba8f",
+      "bytes": 28385
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-explicit/admission-and-confirmation/02.json": {
+      "sha256": "c3755fe347c1bb2552acd3dbc1420558be80025ef3c5fbb45bd1813d7d8feaed",
+      "bytes": 39915
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-explicit/admission-and-confirmation/03.json": {
+      "sha256": "af4dc131c5ce742682556330c6d1bc3ec89d6c1ce28310ebfb1d2f186f7c4527",
+      "bytes": 39444
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-explicit/baseline/00.json": {
+      "sha256": "32536848ab5daf7bab7eba2026f952cd98240a7257f4e4f0473317529b72da4c",
+      "bytes": 2504
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-explicit/baseline/01.json": {
+      "sha256": "e11506489f53ddb19dc76689642aa592fb3ac76af091311052851e4c8aa0afce",
+      "bytes": 2456
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-explicit/completion-condition-coverage.json": {
+      "sha256": "9075bd55c0fa24fe960d44d261bd9024ac2251e584abe5cb85981b0107cbc642",
+      "bytes": 325
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-explicit/crossday-execution/00.json": {
+      "sha256": "ed938f7be7803e0ce13f390771f24e73c190e79982b5940969e8df7e1161502b",
+      "bytes": 42342
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-explicit/crossday-execution/01.json": {
+      "sha256": "a51a8c9cef8beeb0e95cbe2e2c059d77dea18274890f4e28e5cf590b0f43a585",
+      "bytes": 56041
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-explicit/crossday-execution/02.json": {
+      "sha256": "5a29fc9ee939620570d604cbb823e39f0e61a7272744ee63ac053acbd95a9084",
+      "bytes": 59320
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-explicit/crossday-execution/03.json": {
+      "sha256": "08dd3f516dc611a483e990d9bb73156c38c08089cb266955e7c2837c3a7ccab6",
+      "bytes": 59269
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-explicit/dialogue.json": {
+      "sha256": "55738893cc345631bc259fef494e6ac9e664cbc5e66d2c06faf6d73784ea527e",
+      "bytes": 11361
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-explicit/final.json": {
+      "sha256": "f6742f010392a7cae4e664d519f002c98261ed05ac5b9e9d089187c6965ee812",
+      "bytes": 60438
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-explicit/idle-after-delivery.json": {
+      "sha256": "af6ad290013e53b49a40c7162a526b8141b85dc72fbd517d777e6762ee106a6a",
+      "bytes": 759
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-explicit/idle-before-due.json": {
+      "sha256": "7d95199a1840ceef8a50dc1575055f5fdd0d0d8f115a156398b66dd029181c7c",
+      "bytes": 759
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-explicit/inputs.json": {
+      "sha256": "2ed3b3e1d1291fd43a5dc73cc18d50d8a58b1d1cc54c3daf5e6c80de375c5fc9",
+      "bytes": 407
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-explicit/manifest.json": {
+      "sha256": "f85ba0aa44d56f2364430ee76e8191a96041adb7544b216730515aecd229594e",
+      "bytes": 10855
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-explicit/model-01.json": {
+      "sha256": "9a88d5d0f13fb0586f499621c1ba69a95b9d218c771212e3eb9a0a3930c673f0",
+      "bytes": 11022
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-explicit/model-02.json": {
+      "sha256": "c172cd0401eaccc5199cc0066694f2e177d5ab28a58a1e43ff9467e5038cfaa8",
+      "bytes": 47355
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-explicit/model-03.json": {
+      "sha256": "ed5f5b69380c93f2e1a2fbc675f681d975652474542d09bd86219db0ecc960b1",
+      "bytes": 11805
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-explicit/model-04.json": {
+      "sha256": "f755b50a7af5a45345ee9787e8ba1c334c4ea04cd1e3ad62f687d4d4f49c2472",
+      "bytes": 73895
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-explicit/model-05.json": {
+      "sha256": "109d432241e6a34594e9b15b2086b0a1364f9f2449468480817b7d7fcd090e6b",
+      "bytes": 5392
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-explicit/model-06.json": {
+      "sha256": "b99445b90d53a3ae6a889f993806c3bebbab865e9b17aec2e3ba242e508d2c48",
+      "bytes": 34879
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-explicit/model-07.json": {
+      "sha256": "1d8d47ef6e5e8e6cc98e8cbbdc7415428e1947059a9056e7afcec93f7d1b2013",
+      "bytes": 56726
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-explicit/restart.json": {
+      "sha256": "37eaf544812ee83ff59b30df1d0fee550e668b336720829517ab971e65d8662e",
+      "bytes": 122
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-explicit/source-rows.json": {
+      "sha256": "835b8c1045b8d5b29dbe230009f46f8e7038a6a21bab740abd3b8d5c47a63be0",
+      "bytes": 1859
+    },
+    "work/stage4/intraday-implementation-20261005/native06-intraday-complete/intraday-explicit/summary.json": {
+      "sha256": "435a8f71e39eed8deab11c0064145cb355350ae296a20125ac174b2f44b69044",
+      "bytes": 724
+    },
+    "work/stage4/intraday-implementation-20261005/native06-memory-assembly.json": {
+      "sha256": "a7d87b1f14df427d40453043d645d04535085947f59b17545f4aede0840c36f3",
+      "bytes": 2288
+    },
+    "work/stage4/intraday-implementation-20261005/native06-processes.json": {
+      "sha256": "48d8843319c23e3620980f5f884d716f6aa36b492200e0ad759476a89cf1fa6a",
+      "bytes": 1457
+    },
+    "work/stage4/intraday-implementation-20261005/native06-source-manifest.json": {
+      "sha256": "b3e09fdd4970f6a44a31d7ae8ddd4855c3cb5e8f1591020a52e7b6365e75676f",
+      "bytes": 21568
+    },
+    "work/stage4/intraday-implementation-20261005/run_frozen.py": {
+      "sha256": "a1703d640df3787b2d1ecf3ed834bdc99f2d43305eea706a3fd3aa57a08c8eb5",
+      "bytes": 3409
+    },
+    "work/stage4/intraday-implementation-20261005/run_native06.sh": {
+      "sha256": "7fa51b041264570cbb3b040a71a1530f1eb12f47044ef4356aa969df18f31208",
+      "bytes": 219
+    },
+    "work/stage4/intraday-implementation-20261005/semantic-native06-daily-chain.json": {
+      "sha256": "3645a53bc5ef496bcc2aeb693aba912d152bfe596c26c02ad5b30a47d75fd81b",
+      "bytes": 40136
+    },
+    "work/stage4/intraday-implementation-20261005/semantic-native06-daily-chain.md": {
+      "sha256": "bfc396877635a80f44fc7105879495a8b5aa5c23cbe5eb5a47fedbe583952685",
+      "bytes": 29958
+    },
+    "work/stage4/intraday-implementation-20261005/semantic-native06-family-requests.json": {
+      "sha256": "27c4bf3075dac4a8be255b2804dc38604d86c287bbff9a101c30d8a2b6565306",
+      "bytes": 26971
+    },
+    "work/stage4/intraday-implementation-20261005/semantic-native06-family-requests.md": {
+      "sha256": "8f8b865846b5d5f72f28d3878c07ec6fa3e633751d4b0880ee4873913edde1fb",
+      "bytes": 20326
+    },
+    "work/stage4/intraday-implementation-20261005/semantic-native06-first-evidence.json": {
+      "sha256": "e1a81b93f8e64fbda97810185a5212103f0730730f38b3c8ed72f75fceed3360",
+      "bytes": 2116
+    },
+    "work/stage4/intraday-implementation-20261005/semantic-native06-independent.json": {
+      "sha256": "07e62e95717d48c71fc188ba0f1b196ada7e19762211b746927a5a7f725271bf",
+      "bytes": 3042
+    },
+    "work/stage4/intraday-implementation-20261005/semantic-native06-independent.md": {
+      "sha256": "f840d2759ec57b566b080520a606f34bebf747b20971d25fb1153ed0fe7593b6",
+      "bytes": 2337
+    },
+    "work/stage4/intraday-implementation-20261005/semantic-native06-intraday-evidence.json": {
+      "sha256": "6aecf44148fd541710f280101ca749dc5340b3be6a9e0ab897f33d5b98e59484",
+      "bytes": 10808
+    },
+    "work/stage4/intraday-implementation-20261005/semantic-native06-intraday.json": {
+      "sha256": "2b41215c5ee886ab3e488586b84357db04c291d26f53a20c328ad8eef8530b3f",
+      "bytes": 2853
+    },
+    "work/stage4/intraday-implementation-20261005/semantic-native06-intraday.md": {
+      "sha256": "4d329624316d1ddc176865457c22f9d0bda4b45c0986ef8a72150dd0c6cfb03d",
+      "bytes": 12312
+    },
+    "work/stage4/intraday-implementation-20261005/semantic-native06-ordinary.json": {
+      "sha256": "83ed9ae2d3a7cd6b65e9497111478cfa1d5978e3a772d477d5821e40ace8c240",
+      "bytes": 22855
+    },
+    "work/stage4/intraday-implementation-20261005/semantic-native06-ordinary.md": {
+      "sha256": "4b9047fe7615433e3f2c645452fedb47b41f4ecb209b93ebc4163b93647e7152",
+      "bytes": 9259
+    },
+    "work/stage4/intraday-implementation-20261005/semantic-native06-remaining-evidence.json": {
+      "sha256": "193adfd7a0d6e5eb5cd0763524721746e10b7ae56a1f05e0f1b980f7e3446868",
+      "bytes": 9623
+    },
+    "work/stage4/intraday-implementation-20261005/semantic-native06-summary.json": {
+      "sha256": "0ef54f7ea2dc164ab681ff1bbeefbb450488cda362bb25b4bbba4b74d79e4f42",
+      "bytes": 4122
+    },
+    "work/stage4/intraday-implementation-20261005/summarize_exports.py": {
+      "sha256": "01364a6cc420cab53be70863062780663e33af5d1302599c76d21a187aae357a",
+      "bytes": 1776
+    },
+    "work/stage4/intraday-implementation-20261005/sync_l.py": {
+      "sha256": "0e20d3ca6d8a3af3d22f3140bff91c8ad11aa0a345a9038c1364ee30be76da26",
+      "bytes": 2318
+    },
+    "work/stage4/intraday-implementation-20261005/test15-model-runs.json": {
+      "sha256": "f825f25c8bc5ac8f8658bd5ca29405dafbeb4dfd98d73098155e4cc694093788",
+      "bytes": 2553
+    },
+    "work/stage4/intraday-implementation-20261005/原文对话-test15.md": {
+      "sha256": "313065d66c1e06c79665cb3e12c3144afadf922b0c7ded6638f59eef15741684",
+      "bytes": 16084
+    },
+    "work/stage4/plan-research-20261005/codex-research.md": {
+      "sha256": "0c1929f2abb735c306247868013505b1dc10247f1d9577edd3e3652f2a468ba4",
+      "bytes": 4132
+    },
+    "work/stage4/plan-research-20261005/daily-root-cause.md": {
+      "sha256": "fe4cfa18427292deb552fac3da3a57fb52e548be34faa154d9aff878235928dc",
+      "bytes": 13018
+    },
+    "work/stage4/plan-research-20261005/hermes-research.md": {
+      "sha256": "099f73cb2f3a438ca9adbf89856d08084aecee65ffcc53e98199758310d973d8",
+      "bytes": 10864
+    },
+    "work/stage4/plan-research-20261005/report-root-cause.md": {
+      "sha256": "f90a748189301d61ec57baab73a974a15a15e25cd67b235a4693706b6c37e918",
+      "bytes": 12249
+    },
+    "work/stage4/remote.py": {
+      "sha256": "5b176030e95e9a7d9899b8bd96bb6b55c752c94d4f3dc97493527be12b9c5665",
+      "bytes": 2988
+    }
+  },
+  "self_excluded": "This manifest and scan/receipt files are excluded from their own content hashes.",
+  "not_backed_up": [
+    "credentials",
+    "runtime profiles",
+    "databases",
+    "real learning workbook",
+    "raw runtime logs",
+    "unreviewed archives",
+    "vendor and virtual environments",
+    "other historical untracked work"
+  ],
+  "test_log_copy": {
+    "source": "work/stage4/intraday-implementation-20261005/intraday-l-test15/tests.log",
+    "target": "work/handoff-20261006/test15-unit-tests.txt"
+  }
+}

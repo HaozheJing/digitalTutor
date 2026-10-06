@@ -1,0 +1,244 @@
+{
+  "index": 3,
+  "family_id": "synthetic-4b1-a",
+  "job_id": "admission:6f6c2905c44fabcb1831e0f1c401da2ec8a891c7a5ea007f5c9165893ad9e9fd",
+  "job_kind": "daily",
+  "recovery_only": false,
+  "decision": {
+    "run_id": "run-fb91f1bab208424f82b36eba21c5a0c6"
+  },
+  "native": {
+    "run_id": "run-fb91f1bab208424f82b36eba21c5a0c6",
+    "completed": true,
+    "interrupted": false,
+    "error": "",
+    "final_response": "接纳提交成功（本次为 admission，仅处理绑定的新需求）：\n\n- 新建事项 `event-a015484647d84ca8bd1d84365f694ade`：在 2026-10-05 16:00（Asia/Shanghai）向家长发送第1天文字学情总结，今天不发；完成标准为 `requested-text` 实际发送成功（sent），内容须说清完成情况和作业提交情况。\n- next_action：`deliver_feedback`，execute_at=2026-10-05T16:00:00+08:00，撰写依据为发送时可核对的实际学情记录。\n- pending `b59df70d…` 处置为 created；候选 `6665068…`（v1）已提交 candidate_decision；今日 plan 已更新至 revision 2（plan-2ce0d56e…）。\n- 家长原消息中的第1天完成情况查询（intent-day1-status）已由既有 reply operation `operation-fd73c371…` 承接，不属于本次接纳范围，未做变更。",
+    "api_calls": 3,
+    "tools": [
+      "dt_context_read",
+      "dt_knowledge_list",
+      "dt_knowledge_read",
+      "dt_learning_query_sql",
+      "dt_learning_schema",
+      "dt_memory_read",
+      "dt_planner_commit_admission",
+      "dt_skills_list",
+      "dt_skills_read",
+      "dt_state_read",
+      "dt_wechat_get_operation",
+      "dt_wechat_read_messages"
+    ],
+    "tool_trace": [
+      {
+        "tool": "planner.commit_admission",
+        "arguments_digest": "02d9ea5225bc24dce50167bbb23943029a54e70b97477b8ff0f3ac41c518b90d",
+        "ok": false,
+        "result_digest": "e4ba16fa0e42e0721ec3a19aea05f7695285b14ad6a5dcefc4cc5b344b2f01b7",
+        "error": "PROGRESS_SCOPE_VIOLATION",
+        "at": "2026-10-04T10:00:00+08:00",
+        "arguments": {
+          "request_id": "run-fb91f1bab208424f82b36eba21c5a0c6-admission-b59df70d",
+          "business_date": "2026-10-04",
+          "expected_family_version": 9,
+          "pending_id": "pending:b59df70de52f6c65ff530511b52fefda6890630607fc48fceb6e629f04a2f864",
+          "expected_plan_revision": 1,
+          "new_events": [
+            {
+              "client_ref": "evt-day1-summary-tomorrow",
+              "candidate_id": "candidate:6665068346fe9a5d631d3aceb51b9f375425fb506bfaff3e0857b1c7f16d1f50",
+              "goal_key": "delivery:77226144028b8394c1647c0d1196ac57f2e40a44a155bb425a5c46a72ed1eec4",
+              "goal_text": "在明天（2026-10-05）下午四点给家长发送一份第1天的文字学情总结，今天不发；总结须说清完成情况和作业提交情况",
+              "completion": {
+                "kind": "delivery",
+                "required_part_ids": [
+                  "requested-text"
+                ],
+                "required_stage": "sent",
+                "lesson_refs": []
+              },
+              "completion_condition": "总结要说清完成情况和作业提交情况。",
+              "status": "pending",
+              "due_at": null,
+              "delivery_parts": [
+                {
+                  "part_id": "requested-text",
+                  "media_type": "text",
+                  "purpose": "在明天（2026-10-05）下午四点给家长发送一份第1天的文字学情总结，今天不发；总结须说清完成情况和作业提交情况"
+                }
+              ],
+              "next_action": {
+                "action_kind": "deliver_feedback",
+                "target_refs": [
+                  "msg-0dffb3c2c3e447588cb610fd1edb4150",
+                  "pending:b59df70de52f6c65ff530511b52fefda6890630607fc48fceb6e629f04a2f864"
+                ],
+                "purpose": "在家长指定的明天（2026-10-05）下午四点发送第1天文字学情总结，内容须说清完成情况和作业提交情况；依据发送时实际可核对的学情记录撰写，今天不发送",
+                "execute_at": "2026-10-05T16:00:00+08:00",
+                "completion_condition": "总结文本实际发送成功（required_stage=sent），且内容覆盖完成情况与作业提交情况"
+              }
+            }
+          ],
+          "event_updates": [],
+          "plan_refs": [
+            "evt-day1-summary-tomorrow"
+          ],
+          "pending_decisions": [
+            {
+              "input_id": "pending:b59df70de52f6c65ff530511b52fefda6890630607fc48fceb6e629f04a2f864",
+              "disposition": "created",
+              "event_ref": "evt-day1-summary-tomorrow",
+              "reason": "家长在msg-0dffb3c2c3e447588cb610fd1edb4150明确要求明天（2026-10-05）下午四点发送第1天文字学情总结、今天不发；候选ready无缺口，按requested_time at=2026-10-05T16:00:00+08:00新建事项承接"
+            }
+          ],
+          "candidate_decisions": [
+            {
+              "candidate_id": "candidate:6665068346fe9a5d631d3aceb51b9f375425fb506bfaff3e0857b1c7f16d1f50",
+              "expected_version": 1,
+              "disposition": "created",
+              "event_ref": "evt-day1-summary-tomorrow",
+              "reason": "来源候选ready，goal、completion（delivery/requested-text/sent）、completion_condition、delivery_parts与时间要求均沿候选；无existing_event_id，新建事项承接"
+            }
+          ]
+        },
+        "result": {
+          "ok": false,
+          "error": {
+            "code": "PROGRESS_SCOPE_VIOLATION",
+            "message": "步骤超出目标"
+          }
+        }
+      },
+      {
+        "tool": "planner.commit_admission",
+        "arguments_digest": "c4cb838463e5f2656026f8c16abf37aadeda789aa53eddff9f560937683c37c2",
+        "ok": true,
+        "result_digest": "c1fc1e5e3912eca41c7dbad08f48fea83ef7e7b6decfd43ecfba9dc03646c2a6",
+        "error": null,
+        "at": "2026-10-04T10:00:00+08:00",
+        "arguments": {
+          "business_date": "2026-10-04",
+          "candidate_decisions": [
+            {
+              "candidate_id": "candidate:6665068346fe9a5d631d3aceb51b9f375425fb506bfaff3e0857b1c7f16d1f50",
+              "disposition": "created",
+              "event_ref": "evt-day1-summary-tomorrow",
+              "expected_version": 1,
+              "reason": "来源候选ready，goal、completion（delivery/requested-text/sent）、completion_condition、delivery_parts与时间要求均沿候选；无existing_event_id，新建事项承接"
+            }
+          ],
+          "event_updates": [],
+          "expected_family_version": 9,
+          "expected_plan_revision": 1,
+          "new_events": [
+            {
+              "candidate_id": "candidate:6665068346fe9a5d631d3aceb51b9f375425fb506bfaff3e0857b1c7f16d1f50",
+              "client_ref": "evt-day1-summary-tomorrow",
+              "completion": {
+                "kind": "delivery",
+                "lesson_refs": [],
+                "required_part_ids": [
+                  "requested-text"
+                ],
+                "required_stage": "sent"
+              },
+              "completion_condition": "总结要说清完成情况和作业提交情况。",
+              "delivery_parts": [
+                {
+                  "media_type": "text",
+                  "part_id": "requested-text",
+                  "purpose": "在明天（2026-10-05）下午四点给家长发送一份第1天的文字学情总结，今天不发；总结须说清完成情况和作业提交情况"
+                }
+              ],
+              "due_at": null,
+              "goal_key": "delivery:77226144028b8394c1647c0d1196ac57f2e40a44a155bb425a5c46a72ed1eec4",
+              "goal_text": "在明天（2026-10-05）下午四点给家长发送一份第1天的文字学情总结，今天不发；总结须说清完成情况和作业提交情况",
+              "next_action": {
+                "action_kind": "deliver_feedback",
+                "execute_at": "2026-10-05T16:00:00+08:00",
+                "purpose": "按家长要求于2026-10-05下午四点发送第1天文字学情总结，内容说清完成情况和作业提交情况",
+                "target_refs": [
+                  "requested-text"
+                ]
+              },
+              "status": "pending"
+            }
+          ],
+          "pending_decisions": [
+            {
+              "disposition": "created",
+              "event_ref": "evt-day1-summary-tomorrow",
+              "input_id": "pending:b59df70de52f6c65ff530511b52fefda6890630607fc48fceb6e629f04a2f864",
+              "reason": "家长在msg-0dffb3c2c3e447588cb610fd1edb4150明确要求明天（2026-10-05）下午四点发送第1天文字学情总结、今天不发；候选ready无缺口，按requested_time at=2026-10-05T16:00:00+08:00新建事项承接"
+            }
+          ],
+          "pending_id": "pending:b59df70de52f6c65ff530511b52fefda6890630607fc48fceb6e629f04a2f864",
+          "plan_refs": [
+            "evt-day1-summary-tomorrow"
+          ],
+          "request_id": "run-fb91f1bab208424f82b36eba21c5a0c6-admission-b59df70d"
+        },
+        "result": {
+          "ok": true,
+          "result": {
+            "request_id": "run-fb91f1bab208424f82b36eba21c5a0c6-admission-b59df70d",
+            "outcome": "applied",
+            "data": {
+              "plan": {
+                "id": "plan-2ce0d56e552744aeb0673b2ceb3c025a",
+                "version": 2,
+                "baseline_committed": true,
+                "business_date": "2026-10-04",
+                "created_at": "2026-10-04T10:00:00+08:00",
+                "items": [
+                  {
+                    "authority": "admission",
+                    "event_id": "event-a015484647d84ca8bd1d84365f694ade",
+                    "rank": 1
+                  }
+                ],
+                "revision": 2,
+                "revisions": [
+                  {
+                    "at": "2026-10-04T10:00:00+08:00",
+                    "event_ids": [],
+                    "reason": "baseline",
+                    "request_id": "run-39449c6ea7144ad4b7e481e13633ad14-daily-baseline",
+                    "revision": 1
+                  },
+                  {
+                    "at": "2026-10-04T10:00:00+08:00",
+                    "event_ids": [
+                      "event-a015484647d84ca8bd1d84365f694ade"
+                    ],
+                    "reason": "admission",
+                    "request_id": "run-fb91f1bab208424f82b36eba21c5a0c6-admission-b59df70d",
+                    "revision": 2
+                  }
+                ]
+              },
+              "event_ids": {
+                "evt-day1-summary-tomorrow": "event-a015484647d84ca8bd1d84365f694ade"
+              },
+              "pending_id": "pending:b59df70de52f6c65ff530511b52fefda6890630607fc48fceb6e629f04a2f864",
+              "accepted_commitment_ids": [
+                "commitment:6f6c2905c44fabcb1831e0f1c401da2ec8a891c7a5ea007f5c9165893ad9e9fd"
+              ],
+              "decision": "created"
+            },
+            "record_versions": {
+              "family_input_version": 10
+            },
+            "error": null
+          }
+        }
+      }
+    ],
+    "profile": "/root/autodl-tmp/digitalTutor/work/stage4/4c-development-l/state/backend-stage4/intraday-l-native06-intraday/intraday-explicit/runs/run-fb91f1bab208424f82b36eba21c5a0c6/profile",
+    "cwd": "/root/autodl-tmp/digitalTutor/work/stage4/4c-development-l/state/backend-stage4/intraday-l-native06-intraday/intraday-explicit/runs/run-fb91f1bab208424f82b36eba21c5a0c6",
+    "output_route": "internal",
+    "model": "qwen3.8-flash",
+    "generation_options": {
+      "temperature": 0.0
+    }
+  }
+}

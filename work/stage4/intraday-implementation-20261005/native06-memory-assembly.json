@@ -1,0 +1,68 @@
+{
+  "run_id": "run-5c062557b5ed4beaba0feb0c96d05bec",
+  "assembly_file": "/root/autodl-tmp/digitalTutor/work/stage4/4c-development-l/evaluations/backend-stage4/intraday-l-native06-stage4_behavior/memory_correction/assembly-03.json",
+  "assembly_sha256": "2619282664f110092a5f873277c8358cae77aa2c15f603b2028117fa958f68d0",
+  "prompt_sha256": "0de1f78d5fb17e78631b8d19b1060bd4cf213f8f145495103e22f7c76351dba7",
+  "context_before_model_execution": [
+    {
+      "context_path": "context.memory",
+      "value": {
+        "memories": [
+          {
+            "id": "memory-8a543c35a88f45babf5848513e55cefe",
+            "version": 2,
+            "body": "家庭偏好（家长2026-10-04来信更正）：通常午饭后十二点半方便聊阅读，晚上通常不方便；不喜欢连续问很多题，一次只聊一个问题。",
+            "certainty": "user_reported",
+            "event_id": null,
+            "kind": "stated_preference",
+            "occurred_at": "2026-10-04T10:00:00+08:00",
+            "source_excerpt": "更正一下，刚才把时间说错了，是午饭后十二点半方便，晚上通常不方便。一次还是只聊一个问题。",
+            "source_message_id": "msg-cedb6b8d25ff425794d797b111d0acd7",
+            "source_version": 2,
+            "status": "active",
+            "updated_at": "2026-10-04T10:00:00+08:00",
+            "valid_until": null
+          }
+        ],
+        "has_more": false,
+        "matching_count": 1,
+        "authoritative_for_controls": false
+      }
+    }
+  ],
+  "top_level_keys": [
+    "run_contract",
+    "recipe",
+    "family_id",
+    "family_version",
+    "uid",
+    "now",
+    "timezone",
+    "service_window",
+    "allowed_event_ids",
+    "events",
+    "responsibility_index",
+    "controls",
+    "reports",
+    "evidence",
+    "operations",
+    "messages",
+    "plans",
+    "message_read_cursors",
+    "service_continuations",
+    "pending_inputs",
+    "memory",
+    "knowledge",
+    "skills",
+    "learning",
+    "run_capabilities",
+    "effective_service_config",
+    "coverage",
+    "source_rules",
+    "execution_agenda",
+    "agenda_is_projection_not_queue",
+    "service_evidence_contract",
+    "request_responsibilities"
+  ],
+  "evidence_kind": "exact_subset_of_saved_host_assembly_not_final_database"
+}

@@ -1,0 +1,9 @@
+{
+  "read_only_local_verification": true,
+  "test15_manifest_files": 189,
+  "test15_local_changed": [],
+  "H_reference": "work/stage4/4c-plan-server-baseline-20261004.json",
+  "H_backend_agent_files_checked": 86,
+  "H_local_changed": [],
+  "vendor_scope": "No fresh vendor tree check in this task; refer to prior pin/status evidence, not source manifest coverage."
+}

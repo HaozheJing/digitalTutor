@@ -1,0 +1,80 @@
+[
+  {
+    "operation_id": "operation-9c4d3498888b47f68143cdd8b342ed15",
+    "payload": {
+      "action_kind": "reply",
+      "admitted_at": "2026-10-04T10:00:00+08:00",
+      "body": "您好，两件事我分别说一下：\n\n1）第4天的原题答案：我这边目前只核到 L2《了不起的狐狸爸爸》第1天的课程正文，第4天的课节内容没有拿到，所以不能凭印象给孩子报答案。方便的话，您可以把第4天的题目原文发我（拍照或打字都行），我核对题目所属课节后再逐题说；如果那节课的正文我这边确实取不到，我也会直接告诉您哪几题没有依据。\n\n2）临时请假能否免费延长有效期：这个我不能给您保证\"一定可以\"。请假和有效期延长要看具体产品和班期的规则，我当前手上的资料里没有查到适用的明确条款，所以不替您承诺。建议您直接联系咱们已有的官方客服入口，说明请假时间和孩子当前进度，请他们核实是否符合免费延长条件。\n\n第4天题目的事我先记着，您发来我就接着看。",
+      "business_date": "2026-10-04",
+      "channel": "mock_wechat",
+      "content_digest": "e3fda812d25bd8d674d8279774110cab1899693579a0266950aee9bcbc30f314",
+      "decision_reply_refs": [],
+      "dispatch_count": 1,
+      "event_id": null,
+      "id": "operation-9c4d3498888b47f68143cdd8b342ed15",
+      "lesson_refs": [],
+      "occurred_at": "2026-10-04T10:00:00+08:00",
+      "part_id": null,
+      "prepared_family_version": 4,
+      "purpose_key": "d1bd7ca71e00a384aada0ae53cc94fea714379d69a4ad3367ca87e7ddc6ba5aa",
+      "receipts": [],
+      "recipient": "mock:4b1:a",
+      "reply_to": [
+        {
+          "intent_id": "intent-d4-answers",
+          "message_id": "msg-bf30d5ebf1094e15bfe5c1796e99de28",
+          "resolves_intent": false
+        },
+        {
+          "intent_id": "intent-leave-extension",
+          "message_id": "msg-bf30d5ebf1094e15bfe5c1796e99de28",
+          "resolves_intent": false
+        }
+      ],
+      "request": {
+        "action_kind": "reply",
+        "body": "您好，两件事我分别说一下：\n\n1）第4天的原题答案：我这边目前只核到 L2《了不起的狐狸爸爸》第1天的课程正文，第4天的课节内容没有拿到，所以不能凭印象给孩子报答案。方便的话，您可以把第4天的题目原文发我（拍照或打字都行），我核对题目所属课节后再逐题说；如果那节课的正文我这边确实取不到，我也会直接告诉您哪几题没有依据。\n\n2）临时请假能否免费延长有效期：这个我不能给您保证\"一定可以\"。请假和有效期延长要看具体产品和班期的规则，我当前手上的资料里没有查到适用的明确条款，所以不替您承诺。建议您直接联系咱们已有的官方客服入口，说明请假时间和孩子当前进度，请他们核实是否符合免费延长条件。\n\n第4天题目的事我先记着，您发来我就接着看。",
+        "event_id": null,
+        "expected_family_version": 3,
+        "part_id": null,
+        "reply_to": [
+          {
+            "intent_id": "intent-d4-answers",
+            "message_id": "msg-bf30d5ebf1094e15bfe5c1796e99de28",
+            "resolves_intent": false
+          },
+          {
+            "intent_id": "intent-leave-extension",
+            "message_id": "msg-bf30d5ebf1094e15bfe5c1796e99de28",
+            "resolves_intent": false
+          }
+        ],
+        "request_id": "send-run307574-001",
+        "step_id": null
+      },
+      "requirement_revision": null,
+      "run_id": "run-307574bd91a64c1ea1e3bf8227192ca0",
+      "send_capability": {
+        "commitment_id": null,
+        "current_step_key": null,
+        "event_id": null,
+        "job_id": "message:msg-bf30d5ebf1094e15bfe5c1796e99de28",
+        "job_kind": "service",
+        "mode": "full",
+        "no_contact": false,
+        "output_mode": "family_reply",
+        "reply_scope": {
+          "msg-bf30d5ebf1094e15bfe5c1796e99de28": [
+            "*"
+          ]
+        },
+        "run_id": "run-307574bd91a64c1ea1e3bf8227192ca0",
+        "schedule_revision": null
+      },
+      "simulated": true,
+      "stage": "dispatching",
+      "version": 2
+    },
+    "stage": "sent"
+  }
+]

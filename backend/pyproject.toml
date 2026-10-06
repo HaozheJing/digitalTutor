@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "digital-tutor-backend"
+version = "0.3.0"
+description = "Digital tutor state, scheduling, scoped data and native Hermes adapters"
+requires-python = ">=3.11"
+dependencies = ["pydantic==2.13.5", "openpyxl==3.1.5"]
+
+[project.scripts]
+digital-tutor = "digital_tutor.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

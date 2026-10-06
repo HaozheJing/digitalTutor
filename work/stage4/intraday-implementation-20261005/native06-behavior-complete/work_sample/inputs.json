@@ -1,0 +1,34 @@
+{
+  "synthetic_work": true,
+  "rounds": [
+    [
+      [
+        "a",
+        "请看看这次记录里第1天那道人物题的原始作答。仅从这次回答，能看出什么，还有什么不能判断？"
+      ]
+    ]
+  ],
+  "families": [
+    "a"
+  ],
+  "case": "work_sample",
+  "business_time": "2026-10-04T10:00:00+08:00",
+  "classification": "synthetic_family_mock_channel",
+  "material_chain": "R_approved_only",
+  "learning_source": {
+    "a": [
+      [
+        "completed",
+        "submitted"
+      ],
+      [
+        "incomplete",
+        "not_submitted"
+      ],
+      [
+        "unknown",
+        "unknown"
+      ]
+    ]
+  }
+}

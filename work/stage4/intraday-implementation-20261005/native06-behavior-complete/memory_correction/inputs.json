@@ -1,0 +1,45 @@
+{
+  "rounds": [
+    [
+      [
+        "a",
+        "请记一下，我们家通常晚饭后七点半方便聊阅读，不喜欢连续问很多题。"
+      ]
+    ],
+    [
+      [
+        "a",
+        "更正一下，刚才把时间说错了，是午饭后十二点半方便，晚上通常不方便。一次还是只聊一个问题。"
+      ]
+    ],
+    [
+      [
+        "a",
+        "您现在记住的我们家阅读聊天偏好是什么？"
+      ]
+    ]
+  ],
+  "families": [
+    "a"
+  ],
+  "case": "memory_correction",
+  "business_time": "2026-10-04T10:00:00+08:00",
+  "classification": "synthetic_family_mock_channel",
+  "material_chain": "R_approved_only",
+  "learning_source": {
+    "a": [
+      [
+        "completed",
+        "submitted"
+      ],
+      [
+        "incomplete",
+        "not_submitted"
+      ],
+      [
+        "unknown",
+        "unknown"
+      ]
+    ]
+  }
+}

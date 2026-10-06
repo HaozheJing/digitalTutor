@@ -1,0 +1,83 @@
+{
+  "imports": [
+    {
+      "batch_id": "synthetic-4b1-snapshot",
+      "metadata": "{\"batch_id\":\"synthetic-4b1-snapshot\",\"course_binding\":null,\"coverage_through\":\"2026-10-04T07:30:00+08:00\",\"imported_at\":\"2026-10-04T07:30:00+08:00\",\"source_timezone\":\"Asia/Shanghai\",\"synthetic\":true}"
+    },
+    {
+      "batch_id": "synthetic-live-progress-1",
+      "metadata": "{\"batch_id\":\"synthetic-live-progress-1\",\"coverage_through\":\"2026-10-04T20:00:00+08:00\",\"imported_at\":\"2026-10-04T20:00:00+08:00\",\"source_contract\":{\"kind\":\"versioned_learning_snapshot\",\"observed_at\":\"2026-10-04T20:00:00+08:00\",\"revision\":1,\"source_id\":\"synthetic-live-progress\",\"supersedes_batch_id\":null},\"source_timezone\":\"Asia/Shanghai\",\"synthetic\":true}"
+    },
+    {
+      "batch_id": "synthetic-live-progress-2",
+      "metadata": "{\"batch_id\":\"synthetic-live-progress-2\",\"coverage_through\":\"2026-10-05T09:00:00+08:00\",\"imported_at\":\"2026-10-05T09:00:00+08:00\",\"source_contract\":{\"kind\":\"versioned_learning_snapshot\",\"observed_at\":\"2026-10-05T09:00:00+08:00\",\"revision\":2,\"source_id\":\"synthetic-live-progress\",\"supersedes_batch_id\":\"synthetic-live-progress-1\"},\"source_timezone\":\"Asia/Shanghai\",\"synthetic\":true}"
+    }
+  ],
+  "learning_days": [
+    {
+      "batch_id": "synthetic-4b1-snapshot",
+      "uid": "synthetic-4b1-uid-a",
+      "day": 1,
+      "attendance_status": "attended",
+      "completion_status": "incomplete",
+      "homework_status": "not_submitted",
+      "companion_status": "not_configured",
+      "checkin_status": "not_checked",
+      "source_date_label": "simulation day 1",
+      "source_learning_date": null,
+      "evidence_locator": "{\"day\":1,\"family_fixture\":\"a\",\"source\":\"frozen_inputs\",\"synthetic\":true}"
+    },
+    {
+      "batch_id": "synthetic-4b1-snapshot",
+      "uid": "synthetic-4b1-uid-a",
+      "day": 2,
+      "attendance_status": "attended",
+      "completion_status": "completed",
+      "homework_status": "submitted",
+      "companion_status": "not_configured",
+      "checkin_status": "not_checked",
+      "source_date_label": "simulation day 2",
+      "source_learning_date": null,
+      "evidence_locator": "{\"day\":2,\"family_fixture\":\"a\",\"source\":\"frozen_inputs\",\"synthetic\":true}"
+    },
+    {
+      "batch_id": "synthetic-4b1-snapshot",
+      "uid": "synthetic-4b1-uid-a",
+      "day": 3,
+      "attendance_status": "attended",
+      "completion_status": "unknown",
+      "homework_status": "unknown",
+      "companion_status": "not_configured",
+      "checkin_status": "not_checked",
+      "source_date_label": "simulation day 3",
+      "source_learning_date": null,
+      "evidence_locator": "{\"day\":3,\"family_fixture\":\"a\",\"source\":\"frozen_inputs\",\"synthetic\":true}"
+    },
+    {
+      "batch_id": "synthetic-live-progress-1",
+      "uid": "synthetic-4b1-uid-a",
+      "day": 1,
+      "attendance_status": "attended",
+      "completion_status": "completed",
+      "homework_status": "unknown",
+      "companion_status": "unknown",
+      "checkin_status": "unknown",
+      "source_date_label": null,
+      "source_learning_date": null,
+      "evidence_locator": "synthetic-live-progress-1!row-2"
+    },
+    {
+      "batch_id": "synthetic-live-progress-2",
+      "uid": "synthetic-4b1-uid-a",
+      "day": 1,
+      "attendance_status": "attended",
+      "completion_status": "incomplete",
+      "homework_status": "unknown",
+      "companion_status": "unknown",
+      "checkin_status": "unknown",
+      "source_date_label": null,
+      "source_learning_date": null,
+      "evidence_locator": "synthetic-live-progress-2!row-2"
+    }
+  ]
+}

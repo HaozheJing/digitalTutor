@@ -1,0 +1,394 @@
+{
+  "checks": {
+    "integrity": true,
+    "hash_unchanged": true,
+    "source_test15": true,
+    "actual_daily_created_two_kinds": true,
+    "exact_two_original_events": true,
+    "null_conditions_kept": true,
+    "both_autonomous_true_assessments": true,
+    "reminder_false_completion": true,
+    "goal_historical_done": true,
+    "same_goal_reopened": true,
+    "delivery_done": true,
+    "all_seven_reports_consumed_once": true,
+    "jobs_succeeded_single_attempt": true,
+    "day2_after_reports_consumed": true,
+    "only_two_sends": true,
+    "channel_exact": true,
+    "final_scan_idle_same_events": true
+  },
+  "source_count": 83,
+  "db_sha256": {
+    "redacted.sqlite": "0f677647309b6405091f0a9ddfe335fbc6adcd0133adc0b31a57282eea0fdb24",
+    "channel.redacted.sqlite": "d8e94660155a7212d054d9e50596c24fad492fc1fc64e5d3dc4d15ddd62a4ed6"
+  },
+  "native": 16,
+  "api": 111,
+  "kind_counts": {
+    "daily": 2,
+    "progress": 7,
+    "review": 2,
+    "step": 5
+  },
+  "goal_id": "event-76992b96414c4b2bb260aab3c7a391a2",
+  "delivery_id": "event-9dbd36e81f5347fea5a79beda3e878f1",
+  "goal_history": [
+    {
+      "version": 1,
+      "status": "pending",
+      "next_action": {
+        "action_kind": "remind_makeup",
+        "completion_condition": "补课提醒已发出并留有操作回执；提醒本身不代表补课完成，父事项完成仍以 LESSON-L2-FOX-D01 补读目标达成判定",
+        "execute_at": "2026-10-04T10:00:00+08:00",
+        "purpose": "就已确认原课节 LESSON-L2-FOX-D01 向家长发起补读提醒，目标在 18:00 截止前完成",
+        "target_refs": [
+          "LESSON-L2-FOX-D01"
+        ]
+      }
+    },
+    {
+      "version": 2,
+      "status": "in_progress",
+      "next_action": {
+        "action_kind": "verify_learning",
+        "completion_condition": "按实际学情记录确认 LESSON-L2-FOX-D01 补读完成；未确认时保留原课节补读责任并在截止前提示家长",
+        "execute_at": "2026-10-04T17:30:00+08:00",
+        "purpose": "补课提醒已发出（sent）后等待家长回复安排；在 18:00 截止前核对 LESSON-L2-FOX-D01 补读是否按实际学情记录完成",
+        "target_refs": [
+          "LESSON-L2-FOX-D01"
+        ]
+      }
+    },
+    {
+      "version": 3,
+      "status": "in_progress",
+      "next_action": {
+        "action_kind": "verify_learning",
+        "completion_condition": "按实际学情记录确认 LESSON-L2-FOX-D01 补读完成；截止时刻仍未确认则保留原课节补读责任，不新增无依据的完成结论",
+        "execute_at": "2026-10-04T18:00:00+08:00",
+        "purpose": "在 18:00 截止时刻再核对一次本家庭绑定批次 day=1（课程绑定映射 LESSON-L2-FOX-D01）的 completion_status/homework_status 是否已按实际学情记录变为完成，并确认家长是否有新的补读安排回复",
+        "target_refs": [
+          "LESSON-L2-FOX-D01"
+        ]
+      }
+    },
+    {
+      "version": 4,
+      "status": "waiting",
+      "next_action": {
+        "action_kind": "verify_learning",
+        "completion_condition": "按实际学情记录确认 LESSON-L2-FOX-D01 补读完成；截止时刻仍未确认则保留原课节补读责任，不新增无依据的完成结论",
+        "execute_at": "2026-10-04T18:00:00+08:00",
+        "purpose": "在 18:00 截止时刻再核对一次本家庭绑定批次 day=1（课程绑定映射 LESSON-L2-FOX-D01）的 completion_status/homework_status 是否已按实际学情记录变为完成，并确认家长是否有新的补读安排回复",
+        "target_refs": [
+          "LESSON-L2-FOX-D01"
+        ]
+      }
+    },
+    {
+      "version": 5,
+      "status": "done",
+      "next_action": null
+    },
+    {
+      "version": 6,
+      "status": "in_progress",
+      "next_action": {
+        "action_kind": "verify_learning",
+        "purpose": "复核 LESSON-L2-FOX-D01 补读是否完成：核对覆盖最新的绑定批次 day=1 completion_status 是否变为 completed；家长回复或提醒送达不替代完成证据",
+        "target_refs": [
+          "LESSON-L2-FOX-D01"
+        ]
+      }
+    },
+    {
+      "version": 7,
+      "status": "in_progress",
+      "next_action": {
+        "action_kind": "verify_learning",
+        "completion_condition": "覆盖最新的绑定批次 day=1 completion_status 变为 completed 时，本步骤核验通过；家长回复或提醒送达不替代完成证据",
+        "execute_at": "2026-10-05T09:00:00+08:00",
+        "purpose": "继续复核 LESSON-L2-FOX-D01 补读是否完成：宿主更正记录作废了此前判完依据，覆盖最新批次 synthetic-live-progress-2 中 day=1 completion_status 仍为 incomplete，原目标保留；按当前批次字段核实，不新增无依据结论",
+        "target_refs": [
+          "LESSON-L2-FOX-D01"
+        ]
+      }
+    },
+    {
+      "version": 8,
+      "status": "in_progress",
+      "next_action": {
+        "action_kind": "verify_learning",
+        "completion_condition": "覆盖最新的绑定批次 day=1 completion_status 变为 completed 时，本步骤核验通过；家长回复或提醒送达不替代完成证据",
+        "execute_at": "2026-10-06T09:00:00+08:00",
+        "purpose": "继续复核 LESSON-L2-FOX-D01 补读是否完成：本报告确认覆盖最新绑定批次 synthetic-live-progress-2（coverage_through=2026-10-05T09:00）中 day=1 completion_status 仍为 incomplete，此前判完依据已被宿主更正记录作废，原目标与原完成标准保留；待下一批次导入后按当前批次字段核实，不新增无依据结论，不改变原截止记录",
+        "target_refs": [
+          "LESSON-L2-FOX-D01"
+        ]
+      }
+    }
+  ],
+  "reports": [
+    {
+      "id": "[\"synthetic-4b1-a\",\"report:makeup-reminder-sent-5e421656\",1]",
+      "origin_run": "run-152c89788a934aff839425eb2e45d193",
+      "event_ids": [
+        "event-76992b96414c4b2bb260aab3c7a391a2"
+      ],
+      "refs": [
+        {
+          "id": "operation-8f6e358341a447e7b25092b5d2f6a2fe",
+          "kind": "operation",
+          "version": 3
+        }
+      ]
+    },
+    {
+      "id": "[\"synthetic-4b1-a\",\"report-learning-feedback-sent-46463a38\",1]",
+      "origin_run": "run-812712c5278d4cf18a1706f5676070a3",
+      "event_ids": [
+        "event-9dbd36e81f5347fea5a79beda3e878f1"
+      ],
+      "refs": [
+        {
+          "id": "operation-42fc8d1b208045cf9baa1a6ecd9c8a6a",
+          "kind": "operation",
+          "version": 3
+        }
+      ]
+    },
+    {
+      "id": "[\"synthetic-4b1-a\",\"report:verify-learning-d01-2026-10-04T17:30\",1]",
+      "origin_run": "run-37226b692dab4fe0b30e503be643edd3",
+      "event_ids": [
+        "event-76992b96414c4b2bb260aab3c7a391a2"
+      ],
+      "refs": [
+        {
+          "id": "msg-ebb19ebcf3fb446da7717adbcff8a4ed",
+          "kind": "message",
+          "version": 1
+        },
+        {
+          "id": "operation-8f6e358341a447e7b25092b5d2f6a2fe",
+          "kind": "operation",
+          "version": 3
+        }
+      ]
+    },
+    {
+      "id": "[\"synthetic-4b1-a\",\"report:verify-learning-d01-2026-10-04T18:00\",1]",
+      "origin_run": "run-706aad4baf7b406188134bcca8986859",
+      "event_ids": [
+        "event-76992b96414c4b2bb260aab3c7a391a2"
+      ],
+      "refs": [
+        {
+          "id": "msg-ebb19ebcf3fb446da7717adbcff8a4ed",
+          "kind": "message",
+          "version": 1
+        },
+        {
+          "id": "operation-8f6e358341a447e7b25092b5d2f6a2fe",
+          "kind": "operation",
+          "version": 3
+        }
+      ]
+    },
+    {
+      "id": "[\"synthetic-4b1-a\",\"report:verify-learning-d01-2026-10-04T20:00\",1]",
+      "origin_run": "run-6a684cd797eb492e9b58a00523894c12",
+      "event_ids": [
+        "event-76992b96414c4b2bb260aab3c7a391a2"
+      ],
+      "refs": [
+        {
+          "id": "learning-evidence:dc60f6db7b9f8687a956b60a3c53615c86bfbf8da31631273cb00adebb5a9686",
+          "kind": "evidence",
+          "version": 1
+        }
+      ]
+    },
+    {
+      "id": "[\"synthetic-4b1-a\",\"report:verify-learning-d01-correction-2026-10-05T09:00\",1]",
+      "origin_run": "run-1206c878bb6247ac90ce68467631f8b2",
+      "event_ids": [
+        "event-76992b96414c4b2bb260aab3c7a391a2"
+      ],
+      "refs": [
+        {
+          "id": "learning-correction:7e1d1bdda4341cbd5b02e6fb0597a78d07d0ce8dc518e9df4a03561f438a9b32",
+          "kind": "evidence",
+          "version": 1
+        },
+        {
+          "id": "msg-ebb19ebcf3fb446da7717adbcff8a4ed",
+          "kind": "message",
+          "version": 1
+        },
+        {
+          "id": "operation-8f6e358341a447e7b25092b5d2f6a2fe",
+          "kind": "operation",
+          "version": 3
+        }
+      ]
+    },
+    {
+      "id": "[\"synthetic-4b1-a\",\"report:verify-learning-d01-step-2026-10-05T09:00\",1]",
+      "origin_run": "run-1904d9ff955041db91e847859efa05bd",
+      "event_ids": [
+        "event-76992b96414c4b2bb260aab3c7a391a2"
+      ],
+      "refs": [
+        {
+          "id": "learning-correction:7e1d1bdda4341cbd5b02e6fb0597a78d07d0ce8dc518e9df4a03561f438a9b32",
+          "kind": "evidence",
+          "version": 1
+        },
+        {
+          "id": "msg-ebb19ebcf3fb446da7717adbcff8a4ed",
+          "kind": "message",
+          "version": 1
+        },
+        {
+          "id": "operation-8f6e358341a447e7b25092b5d2f6a2fe",
+          "kind": "operation",
+          "version": 3
+        }
+      ]
+    }
+  ],
+  "tool_errors": [
+    {
+      "index": 1,
+      "job_kind": "daily",
+      "errors": [
+        "INVALID_SCHEMA",
+        "PROGRESS_SCOPE_VIOLATION"
+      ]
+    },
+    {
+      "index": 2,
+      "job_kind": "step",
+      "errors": [
+        "STALE_STEP",
+        "INVALID_SCHEMA",
+        "INVALID_SCHEMA",
+        "RECORD_NOT_FOUND",
+        "RECORD_NOT_FOUND"
+      ]
+    },
+    {
+      "index": 3,
+      "job_kind": "progress",
+      "errors": [
+        "PROGRESS_SCOPE_VIOLATION"
+      ]
+    },
+    {
+      "index": 4,
+      "job_kind": "step",
+      "errors": [
+        "STALE_STEP",
+        "INVALID_SCHEMA",
+        "RECORD_NOT_FOUND"
+      ]
+    },
+    {
+      "index": 5,
+      "job_kind": "progress",
+      "errors": [
+        "PROGRESS_SCOPE_VIOLATION"
+      ]
+    },
+    {
+      "index": 6,
+      "job_kind": "step",
+      "errors": [
+        "RECORD_NOT_FOUND"
+      ]
+    },
+    {
+      "index": 7,
+      "job_kind": "progress",
+      "errors": [
+        "SQL_REJECTED"
+      ]
+    },
+    {
+      "index": 8,
+      "job_kind": "step",
+      "errors": [
+        "RECORD_NOT_FOUND"
+      ]
+    },
+    {
+      "index": 9,
+      "job_kind": "progress",
+      "errors": []
+    },
+    {
+      "index": 10,
+      "job_kind": "review",
+      "errors": [
+        "RECORD_NOT_FOUND"
+      ]
+    },
+    {
+      "index": 11,
+      "job_kind": "progress",
+      "errors": [
+        "SQL_FILTER_REQUIRES_PARAMETER",
+        "CONTEXT_SCOPE_VIOLATION",
+        "PROGRESS_SCOPE_VIOLATION",
+        "PROGRESS_SCOPE_VIOLATION"
+      ]
+    },
+    {
+      "index": 12,
+      "job_kind": "review",
+      "errors": [
+        "RECORD_NOT_FOUND"
+      ]
+    },
+    {
+      "index": 13,
+      "job_kind": "progress",
+      "errors": [
+        "CONTEXT_SCOPE_VIOLATION",
+        "PROGRESS_SCOPE_VIOLATION",
+        "PROGRESS_SCOPE_VIOLATION"
+      ]
+    },
+    {
+      "index": 14,
+      "job_kind": "daily",
+      "errors": [
+        "SQL_REJECTED",
+        "SQL_REJECTED",
+        "EVIDENCE_MISSING",
+        "RECORD_NOT_FOUND",
+        "PROGRESS_SCOPE_VIOLATION"
+      ]
+    },
+    {
+      "index": 15,
+      "job_kind": "step",
+      "errors": [
+        "SQL_FILTER_REQUIRES_PARAMETER",
+        "RECORD_NOT_FOUND"
+      ]
+    },
+    {
+      "index": 16,
+      "job_kind": "progress",
+      "errors": [
+        "SQL_FILTER_REQUIRES_PARAMETER",
+        "PROGRESS_SCOPE_VIOLATION"
+      ]
+    }
+  ],
+  "limited_duplicate_observation": "Model15 verifies same corrected source again after model12 review and model14 daily rescheduling; no new external fact, no new outbound. Finite planned extra step, followed by next-day schedule and idle, not original job retries.",
+  "overall_gate_passed": false
+}

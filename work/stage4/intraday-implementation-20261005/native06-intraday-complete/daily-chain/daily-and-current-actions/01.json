@@ -1,0 +1,720 @@
+{
+  "worker": {
+    "ran": true,
+    "kind": "step",
+    "outcome": "waiting"
+  },
+  "clock": "2026-10-04T10:00:00+08:00",
+  "records": {
+    "job": [
+      {
+        "id": "daily:220e47935d87f6bdda696ed71bdb4d05d2ca873337dc5139a479cbe5a9c49857",
+        "version": 24,
+        "attempt": 1,
+        "business_date": "2026-10-04",
+        "claimed_at": "2026-10-05T20:46:45.609901+08:00",
+        "finished_at": "2026-10-05T20:47:48.939493+08:00",
+        "generation": 1,
+        "input_version": 6,
+        "kind": "daily",
+        "lease_until": "2026-10-05T20:47:57.720012+08:00",
+        "not_before": null,
+        "reason": null,
+        "recovery_only": false,
+        "run_id": "run-eea3d72a03364d63a0db7193a45bfcb9",
+        "status": "succeeded",
+        "worker": "worker",
+        "yield_requested": false
+      },
+      {
+        "id": "step:5e42165612425333e1bbdac1c74430795cf30819814b5198610738c8bb1068db",
+        "version": 43,
+        "attempt": 1,
+        "claimed_at": "2026-10-05T20:47:48.964302+08:00",
+        "event_id": "event-76992b96414c4b2bb260aab3c7a391a2",
+        "event_version": 1,
+        "finished_at": "2026-10-05T20:49:52.056068+08:00",
+        "generation": 1,
+        "input_version": 9,
+        "kind": "step",
+        "lease_until": "2026-10-05T20:49:58.077485+08:00",
+        "not_before": null,
+        "reason": "REPORTS_PENDING",
+        "recovery_only": false,
+        "run_id": "run-152c89788a934aff839425eb2e45d193",
+        "status": "waiting",
+        "step_key": "15ba5c3bff74cdee5e9185132d88e9412811b89d96eca2c0445bb013cfc78561",
+        "step_wait_fingerprint": "f448e45eb6181275d4970d1e6869575db97c5747291d19547034610f55a28ffb",
+        "worker": "worker",
+        "yield_requested": false
+      },
+      {
+        "id": "step:46463a385bba19260a10761ab18f354ef95e04ae5ff5938089ee4777515d1ffa",
+        "version": 1,
+        "attempt": 0,
+        "event_id": "event-9dbd36e81f5347fea5a79beda3e878f1",
+        "event_version": 1,
+        "kind": "step",
+        "not_before": null,
+        "status": "ready",
+        "step_key": "c9efef52365bdd3aeca645b8f467db28504a586346c98002c032069640c47003"
+      },
+      {
+        "id": "progress:[\"synthetic-4b1-a\",\"report:makeup-reminder-sent-5e421656\",1]",
+        "version": 1,
+        "kind": "progress",
+        "report_key": "[\"synthetic-4b1-a\",\"report:makeup-reminder-sent-5e421656\",1]",
+        "status": "ready"
+      }
+    ],
+    "message": [
+      {
+        "id": "msg-ebb19ebcf3fb446da7717adbcff8a4ed",
+        "version": 1,
+        "body": "家长您好，提醒一下：第1课 LESSON-L2-FOX-D01 还没有补读，需要在今天 18:00 截止前完成。您看孩子什么时间方便，安排补读就可以；有问题随时告诉我。",
+        "direction": "outbound",
+        "external_id": "operation-8f6e358341a447e7b25092b5d2f6a2fe",
+        "intents": [],
+        "interpreted": true,
+        "occurred_at": "2026-10-04T10:00:00+08:00",
+        "operation_id": "operation-8f6e358341a447e7b25092b5d2f6a2fe",
+        "received_at": "2026-10-04T10:00:00+08:00",
+        "source_kind": "mock_wechat"
+      }
+    ],
+    "operation": [
+      {
+        "id": "operation-8f6e358341a447e7b25092b5d2f6a2fe",
+        "version": 3,
+        "action_kind": "remind_makeup",
+        "admitted_at": "2026-10-04T10:00:00+08:00",
+        "body": "家长您好，提醒一下：第1课 LESSON-L2-FOX-D01 还没有补读，需要在今天 18:00 截止前完成。您看孩子什么时间方便，安排补读就可以；有问题随时告诉我。",
+        "business_date": "2026-10-04",
+        "channel": "mock_wechat",
+        "content_digest": "26c25dd6c369dd8a80ced1c00b306fcf9e9b5c434bafa59a2f5b9123d8a41456",
+        "dispatch_count": 1,
+        "event_id": "event-76992b96414c4b2bb260aab3c7a391a2",
+        "lesson_refs": [
+          "LESSON-L2-FOX-D01"
+        ],
+        "occurred_at": "2026-10-04T10:00:00+08:00",
+        "part_id": null,
+        "prepared_family_version": 7,
+        "purpose_key": "30ebe43082a70f9bc707fd7b1f20e1ac988bfafdfee0a6bb637d74756600e115",
+        "receipts": [
+          {
+            "observed_at": "2026-10-04T10:00:00+08:00",
+            "source": "mock_transport",
+            "stage": "sent"
+          }
+        ],
+        "recipient": "mock:4b1:a",
+        "reply_to": [],
+        "request": {
+          "action_kind": "remind_makeup",
+          "body": "家长您好，提醒一下：第1课 LESSON-L2-FOX-D01 还没有补读，需要在今天 18:00 截止前完成。您看孩子什么时间方便，安排补读就可以；有问题随时告诉我。",
+          "event_id": "event-76992b96414c4b2bb260aab3c7a391a2",
+          "expected_family_version": 6,
+          "part_id": null,
+          "reply_to": [],
+          "request_id": "send:makeup-reminder-5e421656",
+          "step_id": "15ba5c3bff74cdee5e9185132d88e9412811b89d96eca2c0445bb013cfc78561"
+        },
+        "requirement_revision": 1,
+        "run_id": "run-152c89788a934aff839425eb2e45d193",
+        "send_capability": {
+          "commitment_id": null,
+          "current_step_key": "15ba5c3bff74cdee5e9185132d88e9412811b89d96eca2c0445bb013cfc78561",
+          "event_id": "event-76992b96414c4b2bb260aab3c7a391a2",
+          "job_id": "step:5e42165612425333e1bbdac1c74430795cf30819814b5198610738c8bb1068db",
+          "job_kind": "step",
+          "mode": "full",
+          "no_contact": false,
+          "output_mode": "family_reply",
+          "reply_scope": {},
+          "run_id": "run-152c89788a934aff839425eb2e45d193",
+          "schedule_revision": null
+        },
+        "simulated": true,
+        "stage": "sent"
+      }
+    ],
+    "event": [
+      {
+        "id": "event-76992b96414c4b2bb260aab3c7a391a2",
+        "version": 1,
+        "candidate_id": "candidate:9da8eb6d77b7149181946b32d122e9ef7aaa98855930ec61538e03f153426c36",
+        "candidate_ref": {
+          "id": "candidate:9da8eb6d77b7149181946b32d122e9ef7aaa98855930ec61538e03f153426c36",
+          "version": 1
+        },
+        "completion": {
+          "kind": "goal",
+          "lesson_refs": [
+            "LESSON-L2-FOX-D01"
+          ],
+          "required_part_ids": [],
+          "required_stage": "sent"
+        },
+        "completion_condition": null,
+        "completion_contract_version": 1,
+        "completion_history": [],
+        "creation_source_refs": [
+          {
+            "id": "candidate-source:3a63b56c64b27aba222b22bc02c87f6126aba64935a2a81f7a1f7feaad62976c",
+            "kind": "candidate_source",
+            "version": 1
+          },
+          {
+            "id": "course-binding:1aac169c6326f68e6a5a5278f50d657f73dd63d3ac2062ce67f0a0008bd86784",
+            "kind": "course_binding",
+            "version": 1
+          }
+        ],
+        "deadline_history": [],
+        "delivery_parts": [],
+        "due_at": "2026-10-04T18:00:00+08:00",
+        "evidence_refs": [],
+        "goal_key": "makeup:9b210ec4803f6c07f9190c6fb79da39068f615bc3be8fd2ba07aa933fe432243",
+        "goal_text": "补读已确认原课节 LESSON-L2-FOX-D01",
+        "next_action": {
+          "action_kind": "remind_makeup",
+          "completion_condition": "补课提醒已发出并留有操作回执；提醒本身不代表补课完成，父事项完成仍以 LESSON-L2-FOX-D01 补读目标达成判定",
+          "execute_at": "2026-10-04T10:00:00+08:00",
+          "purpose": "就已确认原课节 LESSON-L2-FOX-D01 向家长发起补读提醒，目标在 18:00 截止前完成",
+          "target_refs": [
+            "LESSON-L2-FOX-D01"
+          ]
+        },
+        "original_deadline": "2026-10-04T18:00:00+08:00",
+        "proposed_change": null,
+        "remaining_work": [
+          "LESSON-L2-FOX-D01"
+        ],
+        "requested_time": {
+          "meaning": "confirmed_contract_deadline",
+          "precision": "datetime",
+          "source_text": "2026-10-04T18:00:00+08:00",
+          "value": "2026-10-04T18:00:00+08:00"
+        },
+        "requirement_revision": 1,
+        "service_hint": null,
+        "source_identity": {
+          "course_id": "simulation-L2-fox",
+          "course_version": "simulation-v1",
+          "family_id": "synthetic-4b1-a",
+          "kind": "makeup",
+          "lesson_refs": [
+            "LESSON-L2-FOX-D01"
+          ]
+        },
+        "status": "pending",
+        "uid": "synthetic-4b1-uid-a",
+        "waiting": null
+      },
+      {
+        "id": "event-9dbd36e81f5347fea5a79beda3e878f1",
+        "version": 1,
+        "candidate_id": "candidate:419e8f1fa1dfbc043c1ed478f8fe8bd8046344005cda8a52eae6aab31f188c79",
+        "candidate_ref": {
+          "id": "candidate:419e8f1fa1dfbc043c1ed478f8fe8bd8046344005cda8a52eae6aab31f188c79",
+          "version": 1
+        },
+        "completion": {
+          "kind": "delivery",
+          "lesson_refs": [],
+          "required_part_ids": [
+            "learning-feedback"
+          ],
+          "required_stage": "sent"
+        },
+        "completion_condition": null,
+        "completion_contract_version": 1,
+        "completion_history": [],
+        "creation_source_refs": [
+          {
+            "id": "candidate-source:80f0bf523965947a5c5fd05b2dce27d06f66ddd82084ed4e2023a865219a5baa",
+            "kind": "candidate_source",
+            "version": 1
+          }
+        ],
+        "deadline_history": [],
+        "delivery_parts": [
+          {
+            "media_type": "text",
+            "part_id": "learning-feedback",
+            "purpose": "据本周可用学情写一份简短文字反馈"
+          }
+        ],
+        "due_at": "2026-10-04T18:00:00+08:00",
+        "evidence_refs": [],
+        "goal_key": "delivery:a1edccffb482def53ef90342a6167468eca9973e697e7a25db0bd663af4c4a21",
+        "goal_text": "履行已确认文字反馈合同 simulation-weekly-feedback",
+        "next_action": {
+          "action_kind": "deliver_feedback",
+          "completion_condition": "learning-feedback 文字部分已发送并有操作回执；发送前仅依据已查询学情快照撰写，不添加无来源结论",
+          "execute_at": "2026-10-04T10:00:00+08:00",
+          "purpose": "依据本周可用学情撰写并发送一份简短文字反馈",
+          "target_refs": [
+            "learning-feedback"
+          ]
+        },
+        "original_deadline": "2026-10-04T18:00:00+08:00",
+        "proposed_change": null,
+        "remaining_work": [
+          "learning-feedback"
+        ],
+        "requested_time": {
+          "meaning": "confirmed_contract_deadline",
+          "precision": "datetime",
+          "source_text": "2026-10-04T18:00:00+08:00",
+          "value": "2026-10-04T18:00:00+08:00"
+        },
+        "requirement_revision": 1,
+        "service_hint": null,
+        "source_identity": {
+          "contract_id": "simulation-weekly-feedback",
+          "family_id": "synthetic-4b1-a",
+          "kind": "periodic_text_delivery",
+          "period_end": "2026-10-03T23:30:00+00:00",
+          "period_start": "2026-09-27T16:00:00+00:00"
+        },
+        "status": "pending",
+        "uid": "synthetic-4b1-uid-a",
+        "waiting": null
+      }
+    ],
+    "report": [
+      {
+        "id": "[\"synthetic-4b1-a\",\"report:makeup-reminder-sent-5e421656\",1]",
+        "version": 1,
+        "created_at": "2026-10-04T10:00:00+08:00",
+        "event_ids": [
+          "event-76992b96414c4b2bb260aab3c7a391a2"
+        ],
+        "origin_run_id": "run-152c89788a934aff839425eb2e45d193",
+        "payload": {
+          "completion_assessments": [
+            {
+              "complete": false,
+              "criterion": "补读已确认原课节 LESSON-L2-FOX-D01",
+              "event_id": "event-76992b96414c4b2bb260aab3c7a391a2",
+              "evidence_refs": [
+                {
+                  "id": "operation-8f6e358341a447e7b25092b5d2f6a2fe",
+                  "kind": "operation",
+                  "version": 3
+                }
+              ],
+              "reason": "本步骤只完成补课提醒外发并取得 sent 回执；提醒本身不代表补课完成，LESSON-L2-FOX-D01 补读目标尚未达成，家长也尚未回复安排。"
+            }
+          ],
+          "event_ids": [
+            "event-76992b96414c4b2bb260aab3c7a391a2"
+          ],
+          "evidence_refs": [
+            {
+              "id": "operation-8f6e358341a447e7b25092b5d2f6a2fe",
+              "kind": "operation",
+              "version": 3
+            }
+          ],
+          "facts": [
+            "2026-10-04 10:00 按当日计划步骤向家长发出 LESSON-L2-FOX-D01 补读提醒，操作 operation-8f6e358341a447e7b25092b5d2f6a2fe 回执阶段为 sent。",
+            "提醒正文载明截止为今天 18:00，并请家长反馈孩子方便的时间。",
+            "尚未收到家长关于补读安排的回复，LESSON-L2-FOX-D01 补读本身未完成。"
+          ],
+          "remaining_work": [
+            "LESSON-L2-FOX-D01 补读目标达成"
+          ],
+          "report_id": "report:makeup-reminder-sent-5e421656",
+          "revision": 1,
+          "suggested_update": "补课提醒已发出（sent）；等待家长回复补读安排，原课节补读仍待完成，截止 2026-10-04T18:00:00+08:00。",
+          "supersedes_revision": null
+        },
+        "report_id": "report:makeup-reminder-sent-5e421656",
+        "resolution": null,
+        "revision": 1,
+        "schema_version": 2,
+        "source_snapshots": [
+          {
+            "message_digest": null,
+            "ref": {
+              "id": "operation-8f6e358341a447e7b25092b5d2f6a2fe",
+              "kind": "operation",
+              "version": 3
+            }
+          }
+        ]
+      }
+    ],
+    "plan": [
+      {
+        "id": "plan-2b0b35df0f9e456e8c9255ec3e452a0a",
+        "version": 1,
+        "baseline_committed": true,
+        "business_date": "2026-10-04",
+        "created_at": "2026-10-04T10:00:00+08:00",
+        "items": [
+          {
+            "authority": "baseline",
+            "event_id": "event-76992b96414c4b2bb260aab3c7a391a2",
+            "rank": 1
+          },
+          {
+            "authority": "baseline",
+            "event_id": "event-9dbd36e81f5347fea5a79beda3e878f1",
+            "rank": 2
+          }
+        ],
+        "revision": 1,
+        "revisions": [
+          {
+            "at": "2026-10-04T10:00:00+08:00",
+            "event_ids": [
+              "event-76992b96414c4b2bb260aab3c7a391a2",
+              "event-9dbd36e81f5347fea5a79beda3e878f1"
+            ],
+            "reason": "baseline",
+            "request_id": "daily-baseline-20261004-run-eea3d72a",
+            "revision": 1
+          }
+        ]
+      }
+    ],
+    "pending": [],
+    "candidate": [
+      {
+        "id": "candidate:9da8eb6d77b7149181946b32d122e9ef7aaa98855930ec61538e03f153426c36",
+        "version": 2,
+        "completion": {
+          "kind": "goal",
+          "lesson_refs": [
+            "LESSON-L2-FOX-D01"
+          ],
+          "required_part_ids": [],
+          "required_stage": "sent"
+        },
+        "completion_condition": null,
+        "coverage": {
+          "binding_through": "2026-10-04T07:30:00+08:00",
+          "source_through": "2026-10-04T07:30:00+08:00"
+        },
+        "delivery_parts": [],
+        "due_at": "2026-10-04T18:00:00+08:00",
+        "existing_event_id": "event-76992b96414c4b2bb260aab3c7a391a2",
+        "gaps": [],
+        "goal_key": "makeup:9b210ec4803f6c07f9190c6fb79da39068f615bc3be8fd2ba07aa933fe432243",
+        "goal_text": "补读已确认原课节 LESSON-L2-FOX-D01",
+        "original_deadline": "2026-10-04T18:00:00+08:00",
+        "requested_time": {
+          "meaning": "confirmed_contract_deadline",
+          "precision": "datetime",
+          "source_text": "2026-10-04T18:00:00+08:00",
+          "value": "2026-10-04T18:00:00+08:00"
+        },
+        "rule_version": "simulation-only-v1",
+        "source_fingerprint": "dba4cb3022e6d4723d9969bd598d06b8aed1a6710189644ab9ad7659623b0fbf",
+        "source_id": "candidate-source:3a63b56c64b27aba222b22bc02c87f6126aba64935a2a81f7a1f7feaad62976c",
+        "source_identity": {
+          "course_id": "simulation-L2-fox",
+          "course_version": "simulation-v1",
+          "family_id": "synthetic-4b1-a",
+          "kind": "makeup",
+          "lesson_refs": [
+            "LESSON-L2-FOX-D01"
+          ]
+        },
+        "source_kind": "makeup_rule",
+        "source_refs": [
+          {
+            "id": "candidate-source:3a63b56c64b27aba222b22bc02c87f6126aba64935a2a81f7a1f7feaad62976c",
+            "kind": "candidate_source",
+            "version": 1
+          },
+          {
+            "id": "course-binding:1aac169c6326f68e6a5a5278f50d657f73dd63d3ac2062ce67f0a0008bd86784",
+            "kind": "course_binding",
+            "version": 1
+          }
+        ],
+        "source_row": {
+          "batch_id": "synthetic-4b1-snapshot",
+          "completion_status": "incomplete",
+          "day": 1,
+          "evidence_locator": "{\"day\":1,\"family_fixture\":\"a\",\"source\":\"frozen_inputs\",\"synthetic\":true}"
+        },
+        "source_version": 1,
+        "status": "ready"
+      },
+      {
+        "id": "candidate:419e8f1fa1dfbc043c1ed478f8fe8bd8046344005cda8a52eae6aab31f188c79",
+        "version": 2,
+        "completion": {
+          "kind": "delivery",
+          "lesson_refs": [],
+          "required_part_ids": [
+            "learning-feedback"
+          ],
+          "required_stage": "sent"
+        },
+        "completion_condition": null,
+        "coverage": {
+          "period_end": "2026-10-04T07:30:00+08:00",
+          "period_start": "2026-09-28T00:00:00+08:00"
+        },
+        "delivery_parts": [
+          {
+            "media_type": "text",
+            "part_id": "learning-feedback",
+            "purpose": "据本周可用学情写一份简短文字反馈"
+          }
+        ],
+        "due_at": "2026-10-04T18:00:00+08:00",
+        "existing_event_id": "event-9dbd36e81f5347fea5a79beda3e878f1",
+        "gaps": [],
+        "goal_key": "delivery:a1edccffb482def53ef90342a6167468eca9973e697e7a25db0bd663af4c4a21",
+        "goal_text": "履行已确认文字反馈合同 simulation-weekly-feedback",
+        "original_deadline": "2026-10-04T18:00:00+08:00",
+        "requested_time": {
+          "meaning": "confirmed_contract_deadline",
+          "precision": "datetime",
+          "source_text": "2026-10-04T18:00:00+08:00",
+          "value": "2026-10-04T18:00:00+08:00"
+        },
+        "rule_version": "simulation-only-v1",
+        "source_fingerprint": "2d0e1cce937a61c9c742e899b9af7089366fff6932c5959eb71c3f4f5f8a93eb",
+        "source_id": "candidate-source:80f0bf523965947a5c5fd05b2dce27d06f66ddd82084ed4e2023a865219a5baa",
+        "source_identity": {
+          "contract_id": "simulation-weekly-feedback",
+          "family_id": "synthetic-4b1-a",
+          "kind": "periodic_text_delivery",
+          "period_end": "2026-10-03T23:30:00+00:00",
+          "period_start": "2026-09-27T16:00:00+00:00"
+        },
+        "source_kind": "periodic_text_delivery",
+        "source_refs": [
+          {
+            "id": "candidate-source:80f0bf523965947a5c5fd05b2dce27d06f66ddd82084ed4e2023a865219a5baa",
+            "kind": "candidate_source",
+            "version": 1
+          }
+        ],
+        "source_version": 1,
+        "status": "ready"
+      }
+    ],
+    "candidate_source": [
+      {
+        "id": "candidate-source:3a63b56c64b27aba222b22bc02c87f6126aba64935a2a81f7a1f7feaad62976c",
+        "version": 1,
+        "active_from": "2026-10-04T08:00:00+08:00",
+        "active_until": "2026-10-07T20:00:00+08:00",
+        "batch_id": "synthetic-4b1-snapshot",
+        "completion_condition": null,
+        "confirmed": true,
+        "contract_id": null,
+        "day": 1,
+        "due_at": "2026-10-04T18:00:00+08:00",
+        "enabled": true,
+        "parts": [],
+        "period_end": null,
+        "period_start": null,
+        "required_coverage_at": "2026-10-04T07:30:00+08:00",
+        "required_stage": "sent",
+        "rule_version": "simulation-only-v1",
+        "simulation": true,
+        "source_id": "simulation-makeup-day1",
+        "source_kind": "makeup_rule"
+      },
+      {
+        "id": "candidate-source:80f0bf523965947a5c5fd05b2dce27d06f66ddd82084ed4e2023a865219a5baa",
+        "version": 1,
+        "active_from": "2026-10-04T08:00:00+08:00",
+        "active_until": "2026-10-07T20:00:00+08:00",
+        "batch_id": null,
+        "completion_condition": null,
+        "confirmed": true,
+        "contract_id": "simulation-weekly-feedback",
+        "day": null,
+        "due_at": "2026-10-04T18:00:00+08:00",
+        "enabled": true,
+        "parts": [
+          {
+            "media_type": "text",
+            "part_id": "learning-feedback",
+            "purpose": "据本周可用学情写一份简短文字反馈"
+          }
+        ],
+        "period_end": "2026-10-04T07:30:00+08:00",
+        "period_start": "2026-09-28T00:00:00+08:00",
+        "required_coverage_at": null,
+        "required_stage": "sent",
+        "rule_version": "simulation-only-v1",
+        "simulation": true,
+        "source_id": "simulation-weekly-writing",
+        "source_kind": "periodic_text_delivery"
+      }
+    ],
+    "candidate_decision": [
+      {
+        "id": "candidate-decision:a4db43d9e44be7e4d024bf4c7bcb4c38adfb10748357633a79e1194b5919a8d5",
+        "version": 1,
+        "business_date": "2026-10-04",
+        "candidate_id": "candidate:9da8eb6d77b7149181946b32d122e9ef7aaa98855930ec61538e03f153426c36",
+        "disposition": "created",
+        "event_id": "event-76992b96414c4b2bb260aab3c7a391a2",
+        "event_ref": "evt-makeup-d01",
+        "expected_version": 1,
+        "plan_id": "plan-2b0b35df0f9e456e8c9255ec3e452a0a",
+        "reason": "已确认模拟补课规则来源：批次 synthetic-4b1-snapshot 中 day1 completion_status=incomplete，课程绑定 simulation-L2-fox/simulation-v1 已确认且覆盖至 2026-10-04T07:30，候选 ready 无缺口，按原截止 2026-10-04T18:00 新建补读事项。"
+      },
+      {
+        "id": "candidate-decision:cce1f50df7a7c8f33323719c8ce0da5f8a6e5294bcf1f6b20ec8c08a209d1119",
+        "version": 1,
+        "business_date": "2026-10-04",
+        "candidate_id": "candidate:419e8f1fa1dfbc043c1ed478f8fe8bd8046344005cda8a52eae6aab31f188c79",
+        "disposition": "created",
+        "event_id": "event-9dbd36e81f5347fea5a79beda3e878f1",
+        "event_ref": "evt-weekly-feedback",
+        "expected_version": 1,
+        "plan_id": "plan-2b0b35df0f9e456e8c9255ec3e452a0a",
+        "reason": "已确认周期文字反馈合同 simulation-weekly-feedback，期间 2026-09-28 至 2026-10-04T07:30，候选 ready 无缺口，按合同截止 2026-10-04T18:00 新建文字反馈交付事项。"
+      }
+    ],
+    "run_outcome": [
+      {
+        "id": "run-152c89788a934aff839425eb2e45d193",
+        "version": 1,
+        "awaiting_operation_ids": [],
+        "delegation_acknowledgements": [],
+        "draft": null,
+        "effective_control_scopes": {
+          "authority": "current_control_records",
+          "controls": [],
+          "meaning": "仅active控制生效。event_id为空的控制覆盖本家庭所有事项及以后事项中的action_kinds；有event_id仅覆盖该事项的这些动作。未列出的动作不因该控制暂停，仍须经过其他权限和发送检查。旧空白字符串范围按全家庭保守解释并标明legacy_invalid_scope，不修改原记录。自由文本不能缩小、扩大或解除控制。"
+        },
+        "job_id": "step:5e42165612425333e1bbdac1c74430795cf30819814b5198610738c8bb1068db",
+        "observed_job_operations": [
+          {
+            "id": "operation-8f6e358341a447e7b25092b5d2f6a2fe",
+            "stage": "sent",
+            "version": 3
+          }
+        ],
+        "observed_planning_inputs": [],
+        "outcome": "action_taken",
+        "payload_digest": "3e04cab039c39b4d74f34209b44109cc3e9094b5e780ab83da2a585c7b6d69fb",
+        "reason": "当前步骤（remind_makeup，execute_at 2026-10-04T10:00）已完成：补读提醒外发成功，操作 operation-8f6e358341a447e7b25092b5d2f6a2fe 回执阶段 sent，并已提交报告（report:makeup-reminder-sent-5e421656，revision 1）。步骤完成条件（提醒发出并留有操作回执）满足；父事项 LESSON-L2-FOX-D01 补读目标仍待家长安排与完成。",
+        "recorded_at": "2026-10-04T10:00:00+08:00",
+        "refs": [
+          {
+            "id": "operation-8f6e358341a447e7b25092b5d2f6a2fe",
+            "kind": "operation",
+            "version": 3
+          },
+          {
+            "id": "event-76992b96414c4b2bb260aab3c7a391a2",
+            "kind": "event",
+            "version": 1
+          },
+          {
+            "id": "[\"synthetic-4b1-a\",\"report:makeup-reminder-sent-5e421656\",1]",
+            "kind": "report",
+            "version": 1
+          }
+        ],
+        "remaining_work": [
+          "LESSON-L2-FOX-D01 补读目标达成（截止 2026-10-04T18:00:00+08:00）"
+        ],
+        "request_id": "outcome:makeup-reminder-5e421656-v2",
+        "resume_condition": "家长回复补读安排或完成补读后可再次核实；18:00 截止前若仍无回复，由后续计划步骤处理。",
+        "resume_condition_authority": "model_input_recovery_note_not_control_or_send_permission",
+        "run_id": "run-152c89788a934aff839425eb2e45d193",
+        "settled_delegated_request_refs": []
+      }
+    ],
+    "control": [],
+    "memory": [],
+    "evidence": [],
+    "learning_source": [],
+    "course_binding": [
+      {
+        "id": "course-binding:1aac169c6326f68e6a5a5278f50d657f73dd63d3ac2062ce67f0a0008bd86784",
+        "version": 1,
+        "batch_id": "synthetic-4b1-snapshot",
+        "cohort_id": null,
+        "confirmed_at": "2026-10-04T10:00:00+08:00",
+        "course_id": "simulation-L2-fox",
+        "course_version": "simulation-v1",
+        "coverage_through": "2026-10-04T07:30:00+08:00",
+        "lesson_map": [
+          {
+            "day": 1,
+            "lesson_ref": "LESSON-L2-FOX-D01"
+          }
+        ],
+        "level": null,
+        "source_kind": "trusted_host_confirmation",
+        "source_note": "Confirmed synthetic family/course fixture; no real learner record",
+        "source_timezone": "Asia/Shanghai",
+        "uid": "synthetic-4b1-uid-a"
+      }
+    ]
+  },
+  "channel": [
+    {
+      "operation_id": "operation-8f6e358341a447e7b25092b5d2f6a2fe",
+      "payload": {
+        "action_kind": "remind_makeup",
+        "admitted_at": "2026-10-04T10:00:00+08:00",
+        "body": "家长您好，提醒一下：第1课 LESSON-L2-FOX-D01 还没有补读，需要在今天 18:00 截止前完成。您看孩子什么时间方便，安排补读就可以；有问题随时告诉我。",
+        "business_date": "2026-10-04",
+        "channel": "mock_wechat",
+        "content_digest": "26c25dd6c369dd8a80ced1c00b306fcf9e9b5c434bafa59a2f5b9123d8a41456",
+        "dispatch_count": 1,
+        "event_id": "event-76992b96414c4b2bb260aab3c7a391a2",
+        "id": "operation-8f6e358341a447e7b25092b5d2f6a2fe",
+        "lesson_refs": [
+          "LESSON-L2-FOX-D01"
+        ],
+        "occurred_at": "2026-10-04T10:00:00+08:00",
+        "part_id": null,
+        "prepared_family_version": 7,
+        "purpose_key": "30ebe43082a70f9bc707fd7b1f20e1ac988bfafdfee0a6bb637d74756600e115",
+        "receipts": [],
+        "recipient": "mock:4b1:a",
+        "reply_to": [],
+        "request": {
+          "action_kind": "remind_makeup",
+          "body": "家长您好，提醒一下：第1课 LESSON-L2-FOX-D01 还没有补读，需要在今天 18:00 截止前完成。您看孩子什么时间方便，安排补读就可以；有问题随时告诉我。",
+          "event_id": "event-76992b96414c4b2bb260aab3c7a391a2",
+          "expected_family_version": 6,
+          "part_id": null,
+          "reply_to": [],
+          "request_id": "send:makeup-reminder-5e421656",
+          "step_id": "15ba5c3bff74cdee5e9185132d88e9412811b89d96eca2c0445bb013cfc78561"
+        },
+        "requirement_revision": 1,
+        "run_id": "run-152c89788a934aff839425eb2e45d193",
+        "send_capability": {
+          "commitment_id": null,
+          "current_step_key": "15ba5c3bff74cdee5e9185132d88e9412811b89d96eca2c0445bb013cfc78561",
+          "event_id": "event-76992b96414c4b2bb260aab3c7a391a2",
+          "job_id": "step:5e42165612425333e1bbdac1c74430795cf30819814b5198610738c8bb1068db",
+          "job_kind": "step",
+          "mode": "full",
+          "no_contact": false,
+          "output_mode": "family_reply",
+          "reply_scope": {},
+          "run_id": "run-152c89788a934aff839425eb2e45d193",
+          "schedule_revision": null
+        },
+        "simulated": true,
+        "stage": "dispatching",
+        "version": 2
+      },
+      "stage": "sent"
+    }
+  ]
+}

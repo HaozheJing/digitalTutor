@@ -1,0 +1,33 @@
+{
+  "rounds": [
+    [
+      [
+        "a",
+        "《了不起的狐狸爸爸》第4天的原题答案是什么？另外我临时请假，你们是不是一定能免费延长有效期？"
+      ]
+    ]
+  ],
+  "families": [
+    "a"
+  ],
+  "case": "missing_policy",
+  "business_time": "2026-10-04T10:00:00+08:00",
+  "classification": "synthetic_family_mock_channel",
+  "material_chain": "R_approved_only",
+  "learning_source": {
+    "a": [
+      [
+        "completed",
+        "submitted"
+      ],
+      [
+        "incomplete",
+        "not_submitted"
+      ],
+      [
+        "unknown",
+        "unknown"
+      ]
+    ]
+  }
+}

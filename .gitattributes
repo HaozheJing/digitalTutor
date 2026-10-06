@@ -3,4 +3,16 @@
 *.py text eol=lf
 *.md text eol=lf
 *.txt text eol=lf
+*.json text eol=lf
+*.yaml text eol=lf
+*.toml text eol=lf
+*.lock text eol=lf
 *.xlsx binary
+
+# Preserve mirrored sources and evidence bytes, including existing CRLF files.
+/backend/** -text
+/agent/** -text
+/docs/** -text
+/work/** -text
+/deployments/** -text
+/build/openviking/courses/source-c764d8b325cc-nosplit-v2/** -text

@@ -1,0 +1,101 @@
+{
+  "cases": [
+    {
+      "group": "native06-intraday-complete",
+      "case": "daily-chain",
+      "native_runs": 16,
+      "api_calls": 111,
+      "all_flash": true,
+      "program_passed": true,
+      "failed_checks": []
+    },
+    {
+      "group": "native06-intraday-complete",
+      "case": "intraday-continuous",
+      "native_runs": 7,
+      "api_calls": 49,
+      "all_flash": true,
+      "program_passed": true,
+      "failed_checks": []
+    },
+    {
+      "group": "native06-intraday-complete",
+      "case": "intraday-empty",
+      "native_runs": 7,
+      "api_calls": 52,
+      "all_flash": true,
+      "program_passed": true,
+      "failed_checks": []
+    },
+    {
+      "group": "native06-intraday-complete",
+      "case": "intraday-explicit",
+      "native_runs": 7,
+      "api_calls": 44,
+      "all_flash": true,
+      "program_passed": true,
+      "failed_checks": []
+    },
+    {
+      "group": "native06-daily-complete",
+      "case": "family_requests",
+      "native_runs": 8,
+      "api_calls": 54,
+      "all_flash": true,
+      "program_passed": true,
+      "failed_checks": []
+    },
+    {
+      "group": "native06-behavior-complete",
+      "case": "independent_need",
+      "native_runs": 1,
+      "api_calls": 8,
+      "all_flash": true,
+      "program_passed": true,
+      "failed_checks": []
+    },
+    {
+      "group": "native06-behavior-complete",
+      "case": "memory_correction",
+      "native_runs": 3,
+      "api_calls": 27,
+      "all_flash": true,
+      "program_passed": true,
+      "failed_checks": []
+    },
+    {
+      "group": "native06-behavior-complete",
+      "case": "missing_guide",
+      "native_runs": 1,
+      "api_calls": 8,
+      "all_flash": true,
+      "program_passed": true,
+      "failed_checks": []
+    },
+    {
+      "group": "native06-behavior-complete",
+      "case": "missing_policy",
+      "native_runs": 1,
+      "api_calls": 15,
+      "all_flash": true,
+      "program_passed": true,
+      "failed_checks": []
+    },
+    {
+      "group": "native06-behavior-complete",
+      "case": "work_sample",
+      "native_runs": 1,
+      "api_calls": 16,
+      "all_flash": true,
+      "program_passed": true,
+      "failed_checks": []
+    }
+  ],
+  "case_count": 10,
+  "native_runs": 52,
+  "api_calls": 384,
+  "raw_program_passed": 10,
+  "all_flash": true,
+  "gate_passed": false,
+  "note": "Raw program results only; test-contract adjudications and independent semantic decisions are separate."
+}

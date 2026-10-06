@@ -1,0 +1,13 @@
+{
+  "case": "missing_policy",
+  "not_model_input": true,
+  "semantic_status": "not_reviewed",
+  "semantic_questions": [
+    "明确缺Day4原题答案与有效延期政策依据？",
+    "无虚构答案、免费延期或真人转交承诺？"
+  ],
+  "expected_deadline": null,
+  "required_effect": null,
+  "allow_unanswered": true,
+  "allow_waiting": true
+}

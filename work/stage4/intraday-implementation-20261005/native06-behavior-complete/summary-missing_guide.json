@@ -1,0 +1,55 @@
+{
+  "stage": "4B2",
+  "cases": [
+    {
+      "case": "missing_guide",
+      "program_checks": {
+        "actual_model_runs": true,
+        "planner_calls_zero": true,
+        "no_new_event": true,
+        "original_events_unchanged": true,
+        "no_plan_mutation": true,
+        "reports_not_consumed": true,
+        "reports_original_scope": true,
+        "unanswered_preserved_or_resolved": true,
+        "at_most_one_dispatch_per_operation": true,
+        "mock_channel_only": true,
+        "no_proactive_send": true,
+        "duplicate_inbound_stable": true,
+        "internal_result_recorded": true,
+        "no_failed_service_job": true,
+        "synthetic-4b1-a_all_jobs_settled": true,
+        "message:msg-80b9c9b7a8904e8f8e1f3adab53ab399_outcome": true,
+        "message:msg-80b9c9b7a8904e8f8e1f3adab53ab399_latest_run_outcome": true,
+        "message:msg-80b9c9b7a8904e8f8e1f3adab53ab399_resumable": true,
+        "actual_missing_guide": true,
+        "no_successful_skill_read": true,
+        "unmet_requirement_preserved": true,
+        "ordinary_question_no_planning_request": true,
+        "ordinary_question_no_planner_job": true,
+        "injected_planner_not_called": true,
+        "twenty_idle_scans": true,
+        "idle_zero_new_model_or_send": true,
+        "idle_no_business_bump": true
+      },
+      "program_passed": true,
+      "semantic_status": "not_reviewed",
+      "gate_passed": false,
+      "model_runs": 1,
+      "api_calls": 8,
+      "unanswered_message_ids": [
+        "msg-80b9c9b7a8904e8f8e1f3adab53ab399"
+      ],
+      "unconsumed_reports": 0,
+      "message_read_modes": [
+        "all"
+      ]
+    }
+  ],
+  "message_read_modes": [
+    "all"
+  ],
+  "all_latest_since_observed": false,
+  "semantic_status": "not_reviewed",
+  "gate_passed": false
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "script": "accept_stage4_behavior.py",
+    "case": "independent_need",
+    "run": "intraday-l-native06-stage4_behavior",
+    "exit_code": 0
+  },
+  {
+    "script": "accept_stage4_behavior.py",
+    "case": "missing_guide",
+    "run": "intraday-l-native06-stage4_behavior",
+    "exit_code": 0
+  },
+  {
+    "script": "accept_stage4_behavior.py",
+    "case": "missing_policy",
+    "run": "intraday-l-native06-stage4_behavior",
+    "exit_code": 0
+  },
+  {
+    "script": "accept_stage4_behavior.py",
+    "case": "work_sample",
+    "run": "intraday-l-native06-stage4_behavior",
+    "exit_code": 0
+  },
+  {
+    "script": "accept_intraday.py",
+    "case": "intraday-continuous",
+    "run": "intraday-l-native06-intraday",
+    "exit_code": 0
+  },
+  {
+    "script": "accept_intraday.py",
+    "case": "intraday-empty",
+    "run": "intraday-l-native06-intraday",
+    "exit_code": 0
+  },
+  {
+    "script": "accept_intraday.py",
+    "case": "intraday-explicit",
+    "run": "intraday-l-native06-intraday",
+    "exit_code": 0
+  },
+  {
+    "script": "accept_stage4_behavior.py",
+    "case": "memory_correction",
+    "run": "intraday-l-native06-stage4_behavior",
+    "exit_code": 0
+  },
+  {
+    "script": "accept_stage4_daily.py",
+    "case": "family_requests",
+    "run": "intraday-l-native06-stage4_daily",
+    "exit_code": 0
+  },
+  {
+    "script": "accept_intraday.py",
+    "case": "daily-chain",
+    "run": "intraday-l-native06-intraday",
+    "exit_code": 0
+  }
+]

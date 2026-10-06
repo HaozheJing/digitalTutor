@@ -1,0 +1,87 @@
+{
+  "review_status": "complete_single_registration_case",
+  "case": "independent_need",
+  "source_freeze": "intraday-l-test15/source.zip",
+  "scoped_semantic_passed": true,
+  "stage_gate_passed": false,
+  "program_passed": true,
+  "native_calls": 1,
+  "api_calls": 8,
+  "scores": {
+    "事实与来源": 2,
+    "回应完整性": 2,
+    "服务帮助": 2,
+    "适配家庭": 2,
+    "表达与克制": 2
+  },
+  "total": 10,
+  "findings": [],
+  "evidence": {
+    "runtime_mode": "passive",
+    "source_count": 83,
+    "source_match": true,
+    "business_integrity": "ok",
+    "channel_integrity": "ok",
+    "records_match": {
+      "job": true,
+      "message": true,
+      "operation": true,
+      "event": true,
+      "report": true,
+      "plan": true,
+      "run_outcome": true,
+      "control": true,
+      "pending": true,
+      "memory": true
+    },
+    "channel": [
+      {
+        "operation_id": "operation-01faf26f86654308af3a55a3bbbaab1a",
+        "stage": "sent",
+        "operation_equal": true,
+        "message_equal": true,
+        "decision_reply_refs": []
+      }
+    ],
+    "runtime_material_wait": []
+  },
+  "actual_dialogues": [
+    {
+      "id": "msg-2fed9dccaa424736bff3297cae241907",
+      "version": 3,
+      "body": "另外我想要一份这周阅读情况的简短文字总结，明天10月5日下午四点前需要。今天不用马上写，先记住这个需求和时间好吗？",
+      "direction": "inbound",
+      "external_id": "independent_need-0-0",
+      "intents": [
+        {
+          "intent_id": "intent-independent-need-1",
+          "partial_reply_operation_refs": [
+            "operation-01faf26f86654308af3a55a3bbbaab1a"
+          ],
+          "reply_operation_refs": [],
+          "requires_reply": true,
+          "service_authorization": "今天不用马上写，先记住这个需求和时间好吗？",
+          "service_kind": "future_delivery",
+          "text": "家长请求一份本周阅读情况的简短文字总结，明天10月5日下午四点前需要；今天不用马上写，先记住这个需求和时间"
+        }
+      ],
+      "interpreted": true,
+      "occurred_at": "2026-10-04T10:00:00+08:00",
+      "received_at": "2026-10-04T10:00:00+08:00",
+      "source_kind": "mock_wechat"
+    },
+    {
+      "id": "msg-7cc8e4f06ca3443a8b2071004f55d729",
+      "version": 1,
+      "body": "好的，已经记下了：您需要一份这周阅读情况的简短文字总结，时间是明天10月5日下午四点前。今天先不动笔，这个需求和时间我先帮您保留登记，具体安排确认后我再跟您对齐。",
+      "direction": "outbound",
+      "external_id": "operation-01faf26f86654308af3a55a3bbbaab1a",
+      "intents": [],
+      "interpreted": true,
+      "occurred_at": "2026-10-04T10:00:00+08:00",
+      "operation_id": "operation-01faf26f86654308af3a55a3bbbaab1a",
+      "received_at": "2026-10-04T10:00:00+08:00",
+      "source_kind": "mock_wechat"
+    }
+  ]
+}

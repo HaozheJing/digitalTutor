@@ -1,0 +1,584 @@
+{
+  "index": 6,
+  "family_id": "synthetic-4b1-a",
+  "job_id": "step:6901846d4a0adc9f90af0abb92cad729b767d29959e8616224c80169d241d3c7",
+  "job_kind": "step",
+  "recovery_only": false,
+  "decision": {
+    "wait": false,
+    "no_contact": false,
+    "outcome_id": "run-37226b692dab4fe0b30e503be643edd3",
+    "reason": "按绑定步骤完成 verify_learning：实际读取本家庭微信消息（仅两条我方外发，无家长新回复）并查询 learning_days 原始字段，day=1（绑定映射 LESSON-L2-FOX-D01）completion_status 仍为 incomplete，未确认补读完成；已通过报告提交事实与未完成判断。本步骤范围仅核实事实，未新增外发动作，原 10:00 提醒 operation-8f6e358341a447e7b25092b5d2f6a2fe 保持 sent。",
+    "run_id": "run-37226b692dab4fe0b30e503be643edd3"
+  },
+  "native": {
+    "run_id": "run-37226b692dab4fe0b30e503be643edd3",
+    "completed": true,
+    "interrupted": false,
+    "error": "",
+    "final_response": "本轮 verify_learning 步骤已完成，内部结果记录如下：\n\n- **消息核对**：完整读取本家庭微信（2 条均为我方外发：10:00 补课提醒 operation-8f6e358341a447e7b25092b5d2f6a2fe 回执 sent、学情反馈），截至 17:30 无家长关于补读安排的新回复。\n- **学情核实**：查询绑定批次 synthetic-4b1-snapshot 的 learning_days 原始字段，day=1（课程绑定映射 LESSON-L2-FOX-D01）completion_status 仍为 incomplete、homework_status 为 not_submitted，**未确认补读完成**。\n- **报告提交**：已提交 report:verify-learning-d01-2026-10-04T17:30（v1），事项 event-76992b96414c4b2bb260aab3c7a391a2 判定 complete=false，保留 LESSON-L2-FOX-D01 补读责任（原截止 2026-10-04 18:00）。\n- **外发**：按 verify_learning 步骤范围仅核实事实，未新增外发动作；恢复条件为家长回复安排或快照 day=1 完成状态更新。",
+    "api_calls": 6,
+    "tools": [
+      "dt_context_read",
+      "dt_control_apply",
+      "dt_knowledge_list",
+      "dt_knowledge_read",
+      "dt_learning_query_sql",
+      "dt_learning_schema",
+      "dt_memory_delete",
+      "dt_memory_read",
+      "dt_memory_save",
+      "dt_message_interpret",
+      "dt_pending_propose_makeup",
+      "dt_pending_propose_service",
+      "dt_planning_record_pending",
+      "dt_progress_submit",
+      "dt_service_record_outcome",
+      "dt_skills_list",
+      "dt_skills_read",
+      "dt_state_read",
+      "dt_wechat_get_operation",
+      "dt_wechat_read_messages",
+      "dt_wechat_send_message"
+    ],
+    "tool_trace": [
+      {
+        "tool": "learning.schema",
+        "arguments_digest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "ok": true,
+        "result_digest": "cd896e87579bd7348635bae07bac2605a6eb951cd237b860d36a53770f0a4d4e",
+        "error": null,
+        "at": "2026-10-04T17:30:00+08:00",
+        "arguments": {},
+        "result": {
+          "ok": true,
+          "result": {
+            "tables": {
+              "learning_days": [
+                "batch_id",
+                "uid",
+                "day",
+                "attendance_status",
+                "completion_status",
+                "homework_status",
+                "companion_status",
+                "checkin_status",
+                "source_date_label",
+                "source_learning_date",
+                "evidence_locator"
+              ],
+              "assignments": [
+                "batch_id",
+                "uid",
+                "day",
+                "source_row",
+                "chapter",
+                "status",
+                "submission_count",
+                "submitted_at_raw",
+                "question_title",
+                "question_text",
+                "ai_guidance",
+                "answer_text",
+                "answer_rounds",
+                "voice_answers",
+                "quality_flags"
+              ],
+              "learning_batches": [
+                "batch_id",
+                "imported_at",
+                "coverage_through",
+                "source_timezone",
+                "course_binding"
+              ],
+              "learning_source_rows": [
+                "batch_id",
+                "uid",
+                "sheet_name",
+                "source_row",
+                "source_group",
+                "headers_json",
+                "values_json",
+                "metadata_json",
+                "evidence_locator"
+              ],
+              "learning_summaries": [
+                "batch_id",
+                "uid",
+                "source_group",
+                "metric",
+                "raw_value",
+                "numerator",
+                "denominator",
+                "quality_flags",
+                "evidence_locator"
+              ],
+              "assignment_details": [
+                "batch_id",
+                "uid",
+                "day",
+                "source_row",
+                "source_group",
+                "ai_expression_type",
+                "ai_expression_name",
+                "evidence_locator"
+              ],
+              "homework_days": [
+                "batch_id",
+                "uid",
+                "day",
+                "source_group",
+                "status",
+                "raw_status",
+                "source_date_label",
+                "question_title",
+                "quality_flags",
+                "evidence_locator"
+              ],
+              "course_bindings": [
+                "batch_id",
+                "uid",
+                "course_id",
+                "course_version",
+                "cohort_id",
+                "level",
+                "lesson_map_json",
+                "coverage_through",
+                "source_timezone",
+                "source_note",
+                "confirmed_at",
+                "binding_version",
+                "binding_status"
+              ]
+            },
+            "table_notes": {
+              "day": "各表的day是INTEGER类型的课程天次序号；不是日历日期。原来源日期见source_learning_date/source_date_label等日期字段，按各字段实际类型筛选。",
+              "learning_batches": "导入批次元数据；course_binding、imported_at、coverage_through和source_timezone可通过SQL读取。source_index的metadata_structure仅列可解析JSON对象的有界顶层字段名，不含值；数组或不可解析结构仍未知。非空只表示存在，空值仍未知。",
+              "course_bindings": "宿主已确认的课程身份、课节映射及覆盖字段；记录不存在或字段为空时不得推定已确认。",
+              "learning_days": "completion_status/homework_status描述batch_id、uid、day标识的学习快照；event.status及remaining_work描述独立业务责任，不能代替所问批次的原始字段。相同天次序号不建立二者的课程对应关系。"
+            },
+            "scope": "bound_family_uid",
+            "read_only": true
+          }
+        }
+      },
+      {
+        "tool": "wechat.read_messages",
+        "arguments_digest": "2885692ece9ea50d7158a91914d0e89d4465c0e5af00a1c98d893a02d86bdbd3",
+        "ok": true,
+        "result_digest": "2399ee185c04d5778fe69a2ba0cdfbc68a11ebeabde865dba61be7d96511c97b",
+        "error": null,
+        "at": "2026-10-04T17:30:00+08:00",
+        "arguments": {
+          "mode": "all"
+        },
+        "result": {
+          "ok": true,
+          "result": {
+            "mode": "all",
+            "messages": [
+              {
+                "seq": 1,
+                "id": "msg-ebb19ebcf3fb446da7717adbcff8a4ed",
+                "version": 1,
+                "body": "家长您好，提醒一下：第1课 LESSON-L2-FOX-D01 还没有补读，需要在今天 18:00 截止前完成。您看孩子什么时间方便，安排补读就可以；有问题随时告诉我。",
+                "direction": "outbound",
+                "external_id": "operation-8f6e358341a447e7b25092b5d2f6a2fe",
+                "intents": [],
+                "interpreted": true,
+                "occurred_at": "2026-10-04T10:00:00+08:00",
+                "operation_id": "operation-8f6e358341a447e7b25092b5d2f6a2fe",
+                "received_at": "2026-10-04T10:00:00+08:00",
+                "source_kind": "mock_wechat"
+              },
+              {
+                "seq": 2,
+                "id": "msg-a6d599c2f5a146eda72d9387df6578fe",
+                "version": 1,
+                "body": "家长您好，这是本周的学情反馈（数据截至10月4日早上7:30）。目前系统里能看到三天的课节记录：第1天已出勤，课程完成状态标为未完成，作业未提交；第2天已出勤，课程完成、作业已提交；第3天已出勤，完成和作业状态暂无记录。三天打卡均未见记录，伴学状态未配置。需要说明的是，这三条记录没有可核对的具体学习日期，所以只能按当前可见的三天来说，不能确认它们都发生在本周内。如需针对某天核对细节，随时告诉我。",
+                "direction": "outbound",
+                "external_id": "operation-42fc8d1b208045cf9baa1a6ecd9c8a6a",
+                "intents": [],
+                "interpreted": true,
+                "occurred_at": "2026-10-04T10:00:00+08:00",
+                "operation_id": "operation-42fc8d1b208045cf9baa1a6ecd9c8a6a",
+                "received_at": "2026-10-04T10:00:00+08:00",
+                "source_kind": "mock_wechat"
+              }
+            ],
+            "returned_count": 2,
+            "matching_count": 2,
+            "has_more": false,
+            "has_older": false,
+            "next_cursor": 2,
+            "snapshot_watermark": 2,
+            "read_marks_answered": false,
+            "channel": "mock_wechat"
+          }
+        }
+      },
+      {
+        "tool": "learning.query_sql",
+        "arguments_digest": "a27939d53c8b1b51ea4b9293ad384ad0c4d3bdf1d794af1fe30a88bfc496ee51",
+        "ok": true,
+        "result_digest": "6346d3acc35766ad6f5519a904923e575bdf1afca974238954df3cd166030a77",
+        "error": null,
+        "at": "2026-10-04T17:30:00+08:00",
+        "arguments": {
+          "sql": "SELECT batch_id, day, attendance_status, completion_status, homework_status, companion_status, checkin_status, source_date_label, source_learning_date FROM learning_days WHERE uid = :uid ORDER BY day",
+          "parameters": {
+            "uid": "synthetic-4b1-uid-a"
+          }
+        },
+        "result": {
+          "ok": true,
+          "result": {
+            "columns": [
+              "batch_id",
+              "day",
+              "attendance_status",
+              "completion_status",
+              "homework_status",
+              "companion_status",
+              "checkin_status",
+              "source_date_label",
+              "source_learning_date"
+            ],
+            "rows": [
+              {
+                "batch_id": "synthetic-4b1-snapshot",
+                "day": 1,
+                "attendance_status": "attended",
+                "completion_status": "incomplete",
+                "homework_status": "not_submitted",
+                "companion_status": "not_configured",
+                "checkin_status": "not_checked",
+                "source_date_label": "simulation day 1",
+                "source_learning_date": null
+              },
+              {
+                "batch_id": "synthetic-4b1-snapshot",
+                "day": 2,
+                "attendance_status": "attended",
+                "completion_status": "completed",
+                "homework_status": "submitted",
+                "companion_status": "not_configured",
+                "checkin_status": "not_checked",
+                "source_date_label": "simulation day 2",
+                "source_learning_date": null
+              },
+              {
+                "batch_id": "synthetic-4b1-snapshot",
+                "day": 3,
+                "attendance_status": "attended",
+                "completion_status": "unknown",
+                "homework_status": "unknown",
+                "companion_status": "not_configured",
+                "checkin_status": "not_checked",
+                "source_date_label": "simulation day 3",
+                "source_learning_date": null
+              }
+            ],
+            "returned_count": 3,
+            "truncated": false,
+            "scope": "bound_family_uid",
+            "read_only": true,
+            "source_kind": "sqlite_snapshot",
+            "warning": "所查行是学情来源快照，不是业务事项状态。事项pending或remaining_work不能代替本批字段，同一天次序号不证明课节绑定。导入快照的课程绑定和覆盖未知时，不能判定当前履约。未完成、未提交只描述所选批次的字段，不能据此宣布现在需要补做、催课或安排补课；须另核当前绑定、覆盖及实际责任。不能用历史AI答复补足这些依据。跨批次查询请显式选择batch_id"
+          }
+        },
+        "returned_rows": 3
+      },
+      {
+        "tool": "progress.submit",
+        "arguments_digest": "740e9d47117942662e011dc8c4fe413e08724e945d0f25139df954491b8da866",
+        "ok": true,
+        "result_digest": "f4ebae95e6aa6da957234defd5e0e5fec4b073c7cf38c00a0575386335b2641f",
+        "error": null,
+        "at": "2026-10-04T17:30:00+08:00",
+        "arguments": {
+          "request_id": "progress:verify-learning-d01-1730",
+          "report_id": "report:verify-learning-d01-2026-10-04T17:30",
+          "event_ids": [
+            "event-76992b96414c4b2bb260aab3c7a391a2"
+          ],
+          "facts": [
+            "2026-10-04 17:30 执行 verify_learning 步骤：查询本家庭绑定批次 synthetic-4b1-snapshot 的 learning_days 原始字段，day=1（课程绑定映射为 LESSON-L2-FOX-D01）completion_status 仍为 incomplete、homework_status 为 not_submitted，未确认 LESSON-L2-FOX-D01 补读完成。",
+            "本轮微信完整读取共 2 条消息，均为我方外发（seq1 补课提醒、seq2 学情反馈），截至 17:30 没有家长关于补读安排的新回复。",
+            "原 10:00 补课提醒操作 operation-8f6e358341a447e7b25092b5d2f6a2fe 回执阶段仍为 sent；本步骤按 verify_learning 范围只核实事实，未新增外发动作。"
+          ],
+          "remaining_work": [
+            "LESSON-L2-FOX-D01 补读目标达成（原截止 20-04 18:00 前，实际为 2026-10-04 18:00）"
+          ],
+          "completion_assessments": [
+            {
+              "event_id": "event-76992b96414c4b2bb260aab3c7a391a2",
+              "complete": false,
+              "criterion": "补读已确认原课节 LESSON-L2-FOX-D01",
+              "reason": "实际学情记录 day=1 completion_status=incomplete，且无家长回复或新的学习记录证明补读完成；仅提醒外发不构成补课完成。",
+              "evidence_refs": [
+                {
+                  "kind": "message",
+                  "id": "msg-ebb19ebcf3fb446da7717adbcff8a4ed",
+                  "version": 1
+                },
+                {
+                  "kind": "operation",
+                  "id": "operation-8f6e358341a447e7b25092b5d2f6a2fe",
+                  "version": 3
+                }
+              ]
+            }
+          ],
+          "evidence_refs": [
+            {
+              "kind": "message",
+              "id": "msg-ebb19ebcf3fb446da7717adbcff8a4ed",
+              "version": 1
+            },
+            {
+              "kind": "operation",
+              "id": "operation-8f6e358341a447e7b25092b5d2f6a2fe",
+              "version": 3
+            }
+          ]
+        },
+        "result": {
+          "ok": true,
+          "result": {
+            "request_id": "progress:verify-learning-d01-1730",
+            "outcome": "applied",
+            "data": {
+              "id": "[\"synthetic-4b1-a\",\"report:verify-learning-d01-2026-10-04T17:30\",1]",
+              "version": 1,
+              "created_at": "2026-10-04T17:30:00+08:00",
+              "event_ids": [
+                "event-76992b96414c4b2bb260aab3c7a391a2"
+              ],
+              "origin_run_id": "run-37226b692dab4fe0b30e503be643edd3",
+              "payload": {
+                "completion_assessments": [
+                  {
+                    "complete": false,
+                    "criterion": "补读已确认原课节 LESSON-L2-FOX-D01",
+                    "event_id": "event-76992b96414c4b2bb260aab3c7a391a2",
+                    "evidence_refs": [
+                      {
+                        "id": "msg-ebb19ebcf3fb446da7717adbcff8a4ed",
+                        "kind": "message",
+                        "version": 1
+                      },
+                      {
+                        "id": "operation-8f6e358341a447e7b25092b5d2f6a2fe",
+                        "kind": "operation",
+                        "version": 3
+                      }
+                    ],
+                    "reason": "实际学情记录 day=1 completion_status=incomplete，且无家长回复或新的学习记录证明补读完成；仅提醒外发不构成补课完成。"
+                  }
+                ],
+                "event_ids": [
+                  "event-76992b96414c4b2bb260aab3c7a391a2"
+                ],
+                "evidence_refs": [
+                  {
+                    "id": "msg-ebb19ebcf3fb446da7717adbcff8a4ed",
+                    "kind": "message",
+                    "version": 1
+                  },
+                  {
+                    "id": "operation-8f6e358341a447e7b25092b5d2f6a2fe",
+                    "kind": "operation",
+                    "version": 3
+                  }
+                ],
+                "facts": [
+                  "2026-10-04 17:30 执行 verify_learning 步骤：查询本家庭绑定批次 synthetic-4b1-snapshot 的 learning_days 原始字段，day=1（课程绑定映射为 LESSON-L2-FOX-D01）completion_status 仍为 incomplete、homework_status 为 not_submitted，未确认 LESSON-L2-FOX-D01 补读完成。",
+                  "本轮微信完整读取共 2 条消息，均为我方外发（seq1 补课提醒、seq2 学情反馈），截至 17:30 没有家长关于补读安排的新回复。",
+                  "原 10:00 补课提醒操作 operation-8f6e358341a447e7b25092b5d2f6a2fe 回执阶段仍为 sent；本步骤按 verify_learning 范围只核实事实，未新增外发动作。"
+                ],
+                "remaining_work": [
+                  "LESSON-L2-FOX-D01 补读目标达成（原截止 20-04 18:00 前，实际为 2026-10-04 18:00）"
+                ],
+                "report_id": "report:verify-learning-d01-2026-10-04T17:30",
+                "revision": 1,
+                "suggested_update": "",
+                "supersedes_revision": null
+              },
+              "report_id": "report:verify-learning-d01-2026-10-04T17:30",
+              "resolution": null,
+              "revision": 1,
+              "schema_version": 2,
+              "source_snapshots": [
+                {
+                  "message_digest": "f1d7b1c616cf178d382b55a5e40bd8a4eb8aa9287cf24443908943baf95ea6a1",
+                  "ref": {
+                    "id": "msg-ebb19ebcf3fb446da7717adbcff8a4ed",
+                    "kind": "message",
+                    "version": 1
+                  }
+                },
+                {
+                  "message_digest": null,
+                  "ref": {
+                    "id": "operation-8f6e358341a447e7b25092b5d2f6a2fe",
+                    "kind": "operation",
+                    "version": 3
+                  }
+                }
+              ]
+            },
+            "record_versions": {
+              "family_input_version": 15
+            },
+            "error": null
+          }
+        }
+      },
+      {
+        "tool": "service.record_outcome",
+        "arguments_digest": "5d07f3cd655ef79dfde894319ff28302aaea5f5f8c05c1d622b1a9cc3e6210f7",
+        "ok": false,
+        "result_digest": "7b0444643be0e4c62830d0dc54df89f9618e0d7309fd8e6d72ad866f6cfe24e8",
+        "error": "RECORD_NOT_FOUND",
+        "at": "2026-10-04T17:30:00+08:00",
+        "arguments": {
+          "outcome": "action_taken",
+          "refs": [
+            {
+              "id": "report:verify-learning-d01-2026-10-04T17:30",
+              "kind": "report",
+              "version": 1
+            },
+            {
+              "id": "event-76992b96414c4b2bb260aab3c7a391a2",
+              "kind": "event",
+              "version": 2
+            },
+            {
+              "id": "operation-8f6e358341a447e7b25092b5d2f6a2fe",
+              "kind": "operation",
+              "version": 3
+            },
+            {
+              "id": "msg-ebb19ebcf3fb446da7717adbcff8a4ed",
+              "kind": "message",
+              "version": 1
+            }
+          ],
+          "reason": "按绑定步骤完成 verify_learning：实际读取本家庭微信消息（仅两条我方外发，无家长新回复）并查询 learning_days 原始字段，day=1（绑定映射 LESSON-L2-FOX-D01）completion_status 仍为 incomplete，未确认补读完成；已通过报告 progress.submit 提交事实与未完成判断（report:verify-learning-d01-2026-10-04T17:30 v1）。本步骤范围仅核实事实，未新增外发动作，原 10:00 提醒 operation-8f6e358341a447e7b25092b5d2f6a2fe 保持 sent。",
+          "remaining_work": [
+            "LESSON-L2-FOX-D01 补读目标未确认达成，原截止 2026-10-04 18:00 前，事项 event-76992b96414c4b2bb260aab3c7a391a2 保留该课节补读责任"
+          ],
+          "resume_condition": "家长回复补读安排、或学习快照中 day=1 completion_status 更新为已完成时，可再次核实 LESSON-L2-FOX-D01 补读是否达成。",
+          "request_id": "outcome:verify-learning-d01-1730"
+        },
+        "result": {
+          "ok": false,
+          "error": {
+            "code": "RECORD_NOT_FOUND",
+            "message": "当前家庭中不存在该记录"
+          }
+        }
+      },
+      {
+        "tool": "service.record_outcome",
+        "arguments_digest": "0f50b7daa90b06b68568f84df9595fa0eac51706aae0647436ebfe83653b7b63",
+        "ok": true,
+        "result_digest": "9a656c22748216623e54f5e96b01c3332d198170ad3cc1bf0fcaed89393c0afa",
+        "error": null,
+        "at": "2026-10-04T17:30:00+08:00",
+        "arguments": {
+          "refs": [
+            {
+              "id": "[\"synthetic-4b1-a\",\"report:verify-learning-d01-2026-10-04T17:30\",1]",
+              "kind": "report",
+              "version": 1
+            },
+            {
+              "id": "event-76992b96414c4b2bb260aab3c7a391a2",
+              "kind": "event",
+              "version": 2
+            },
+            {
+              "id": "operation-8f6e358341a447e7b25092b5d2f6a2fe",
+              "kind": "operation",
+              "version": 3
+            },
+            {
+              "id": "msg-ebb19ebcf3fb446da7717adbcff8a4ed",
+              "kind": "message",
+              "version": 1
+            }
+          ],
+          "request_id": "outcome:verify-learning-d01-1730b",
+          "reason": "按绑定步骤完成 verify_learning：实际读取本家庭微信消息（仅两条我方外发，无家长新回复）并查询 learning_days 原始字段，day=1（绑定映射 LESSON-L2-FOX-D01）completion_status 仍为 incomplete，未确认补读完成；已通过报告提交事实与未完成判断。本步骤范围仅核实事实，未新增外发动作，原 10:00 提醒 operation-8f6e358341a447e7b25092b5d2f6a2fe 保持 sent。",
+          "outcome": "action_taken",
+          "remaining_work": [
+            "LESSON-L2-FOX-D01 补读目标未确认达成，原截止 2026-10-04 18:00，事项 event-76992b96414c4b2bb260aab3c7a391a2 保留该课节补读责任"
+          ],
+          "resume_condition": "家长回复补读安排、或学习快照 day=1 completion_status 更新为已完成时，可再次核实 LESSON-L2-FOX-D01 补读是否达成。"
+        },
+        "result": {
+          "ok": true,
+          "result": {
+            "id": "run-37226b692dab4fe0b30e503be643edd3",
+            "version": 1,
+            "awaiting_operation_ids": [],
+            "delegation_acknowledgements": [],
+            "draft": null,
+            "effective_control_scopes": {
+              "authority": "current_control_records",
+              "controls": [],
+              "meaning": "仅active控制生效。event_id为空的控制覆盖本家庭所有事项及以后事项中的action_kinds；有event_id仅覆盖该事项的这些动作。未列出的动作不因该控制暂停，仍须经过其他权限和发送检查。旧空白字符串范围按全家庭保守解释并标明legacy_invalid_scope，不修改原记录。自由文本不能缩小、扩大或解除控制。"
+            },
+            "job_id": "step:6901846d4a0adc9f90af0abb92cad729b767d29959e8616224c80169d241d3c7",
+            "observed_job_operations": [],
+            "observed_planning_inputs": [],
+            "outcome": "action_taken",
+            "payload_digest": "b9671a7a468640ba9dc51be60de45d66ee8747755e88db5abbf960ebb30fb884",
+            "reason": "按绑定步骤完成 verify_learning：实际读取本家庭微信消息（仅两条我方外发，无家长新回复）并查询 learning_days 原始字段，day=1（绑定映射 LESSON-L2-FOX-D01）completion_status 仍为 incomplete，未确认补读完成；已通过报告提交事实与未完成判断。本步骤范围仅核实事实，未新增外发动作，原 10:00 提醒 operation-8f6e358341a447e7b25092b5d2f6a2fe 保持 sent。",
+            "recorded_at": "2026-10-04T17:30:00+08:00",
+            "refs": [
+              {
+                "id": "[\"synthetic-4b1-a\",\"report:verify-learning-d01-2026-10-04T17:30\",1]",
+                "kind": "report",
+                "version": 1
+              },
+              {
+                "id": "event-76992b96414c4b2bb260aab3c7a391a2",
+                "kind": "event",
+                "version": 2
+              },
+              {
+                "id": "operation-8f6e358341a447e7b25092b5d2f6a2fe",
+                "kind": "operation",
+                "version": 3
+              },
+              {
+                "id": "msg-ebb19ebcf3fb446da7717adbcff8a4ed",
+                "kind": "message",
+                "version": 1
+              }
+            ],
+            "remaining_work": [
+              "LESSON-L2-FOX-D01 补读目标未确认达成，原截止 2026-10-04 18:00，事项 event-76992b96414c4b2bb260aab3c7a391a2 保留该课节补读责任"
+            ],
+            "request_id": "outcome:verify-learning-d01-1730b",
+            "resume_condition": "家长回复补读安排、或学习快照 day=1 completion_status 更新为已完成时，可再次核实 LESSON-L2-FOX-D01 补读是否达成。",
+            "resume_condition_authority": "model_input_recovery_note_not_control_or_send_permission",
+            "run_id": "run-37226b692dab4fe0b30e503be643edd3",
+            "settled_delegated_request_refs": []
+          }
+        }
+      }
+    ],
+    "profile": "/root/autodl-tmp/digitalTutor/work/stage4/4c-development-l/state/backend-stage4/intraday-l-native06-intraday/daily-chain/runs/run-37226b692dab4fe0b30e503be643edd3/profile",
+    "cwd": "/root/autodl-tmp/digitalTutor/work/stage4/4c-development-l/state/backend-stage4/intraday-l-native06-intraday/daily-chain/runs/run-37226b692dab4fe0b30e503be643edd3",
+    "output_route": "internal",
+    "model": "qwen3.8-flash",
+    "generation_options": {
+      "temperature": 0.0
+    }
+  }
+}

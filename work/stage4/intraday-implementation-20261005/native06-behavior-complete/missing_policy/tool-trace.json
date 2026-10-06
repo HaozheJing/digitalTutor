@@ -1,0 +1,1097 @@
+[
+  {
+    "tool": "wechat.read_messages",
+    "arguments_digest": "edef29f43c4292718517e968c16dff9bfcbdd7b78ae1cc41a8c84044fc958da3",
+    "ok": true,
+    "result_digest": "94379cb673de402c1e83fd9c931a67b1eae6c53e397b59cabdb02069aaff247a",
+    "error": null,
+    "at": "2026-10-04T10:00:00+08:00",
+    "arguments": {
+      "mode": "all",
+      "direction": "inbound"
+    },
+    "result": {
+      "ok": true,
+      "result": {
+        "mode": "all",
+        "messages": [
+          {
+            "seq": 1,
+            "id": "msg-bf30d5ebf1094e15bfe5c1796e99de28",
+            "version": 1,
+            "body": "《了不起的狐狸爸爸》第4天的原题答案是什么？另外我临时请假，你们是不是一定能免费延长有效期？",
+            "direction": "inbound",
+            "external_id": "missing_policy-0-0",
+            "intents": [],
+            "interpreted": false,
+            "occurred_at": "2026-10-04T10:00:00+08:00",
+            "received_at": "2026-10-04T10:00:00+08:00",
+            "source_kind": "mock_wechat"
+          }
+        ],
+        "returned_count": 1,
+        "matching_count": 1,
+        "has_more": false,
+        "has_older": false,
+        "next_cursor": 1,
+        "snapshot_watermark": 1,
+        "read_marks_answered": false,
+        "channel": "mock_wechat"
+      }
+    }
+  },
+  {
+    "tool": "knowledge.list",
+    "arguments_digest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "ok": true,
+    "result_digest": "3b01854340205deb79757905de55f15468e8a78fc28d592bc4356cdc66f5c279",
+    "error": null,
+    "at": "2026-10-04T10:00:00+08:00",
+    "arguments": {},
+    "result": {
+      "ok": true,
+      "result": {
+        "documents": [
+          {
+            "document_id": "LESSON-L2-FOX-D01",
+            "title": "L2《了不起的狐狸爸爸》第1天课程正文",
+            "provenance": {
+              "revision": "source-c764d8b325cc-nosplit-v2",
+              "record_type": "lesson",
+              "course_level": "L2",
+              "book_title": "了不起的狐狸爸爸",
+              "source_day": 1,
+              "source_week": 1,
+              "course_content_version": null,
+              "book_edition": null,
+              "product_version": null,
+              "business_review_status": "unverified",
+              "effective_from": null,
+              "verified_at": null,
+              "source_snapshot": "source-c764d8b325cc",
+              "source_lines": [
+                15,
+                50
+              ],
+              "source_sections": null,
+              "scope_note": null,
+              "source_declares_ai_generated": true,
+              "usage_status": "technical_pilot_business_unverified",
+              "retrieval_scope": null,
+              "simulation_binding": true,
+              "not_verified_current_entitlements": true
+            }
+          }
+        ],
+        "navigation_is_evidence": false
+      }
+    }
+  },
+  {
+    "tool": "skills.list",
+    "arguments_digest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "ok": true,
+    "result_digest": "4902ecdbd05f0a0d727b5a06e24314af642f17c06be495757a8278752a1b964d",
+    "error": null,
+    "at": "2026-10-04T10:00:00+08:00",
+    "arguments": {},
+    "result": {
+      "ok": true,
+      "result": {
+        "skills": [
+          {
+            "skill_id": "explain-lesson",
+            "description": "回应家长代问或孩子直接提出的阅读课程问题，包括故事理解、阅读方法和表达练习。读取适用课节，提供给家长的解释和给孩子的讲法，并引导举一反三。课程安排、系统操作和投诉按对应服务路径处理。",
+            "required_guides": [
+              "service-basics",
+              "communication",
+              "qa"
+            ],
+            "sha256": "570277f0e056fe8561d8e8263b8a9fe3a869457b62ae7c5722f8d54c3f21664c",
+            "aliases": []
+          }
+        ],
+        "automatic_triggers_enabled": false
+      }
+    }
+  },
+  {
+    "tool": "skills.read",
+    "arguments_digest": "109948bd3f6684deeca5adb5bc6862264771e5100bc0f0893f5e8f8b45d94375",
+    "ok": true,
+    "result_digest": "d20f4cb265411c4e1fb26edead4f5ae6b68c907e2f80f965b9e2530a69d03031",
+    "error": null,
+    "at": "2026-10-04T10:00:00+08:00",
+    "arguments": {
+      "skill_id": "explain-lesson"
+    },
+    "result": {
+      "ok": true,
+      "result": {
+        "requested_skill_id": "explain-lesson",
+        "canonical_skill_id": "explain-lesson",
+        "content": {
+          "server_retained": true,
+          "sha256": "570277f0e056fe8561d8e8263b8a9fe3a869457b62ae7c5722f8d54c3f21664c",
+          "characters": 1608
+        },
+        "sha256": "570277f0e056fe8561d8e8263b8a9fe3a869457b62ae7c5722f8d54c3f21664c",
+        "required_guides": [
+          {
+            "guide_id": "service-basics",
+            "content": {
+              "server_retained": true,
+              "sha256": "4c52333f523144e9fa7958faac393ee35974e153784d4a91b4b0520a86b0d581",
+              "characters": 1151
+            },
+            "sha256": "4c52333f523144e9fa7958faac393ee35974e153784d4a91b4b0520a86b0d581"
+          },
+          {
+            "guide_id": "communication",
+            "content": {
+              "server_retained": true,
+              "sha256": "fea79c79e788fd313fdf636daab806bff2e730d3e67b3b61bd8f870868b5c59d",
+              "characters": 827
+            },
+            "sha256": "fea79c79e788fd313fdf636daab806bff2e730d3e67b3b61bd8f870868b5c59d"
+          },
+          {
+            "guide_id": "qa",
+            "content": {
+              "server_retained": true,
+              "sha256": "43ebdbac9f936860a457c59f28b14cb92c48ad832fce321beade72dfd653ea67",
+              "characters": 1199
+            },
+            "sha256": "43ebdbac9f936860a457c59f28b14cb92c48ad832fce321beade72dfd653ea67"
+          }
+        ],
+        "runtime_constraints": "当前后端只有 daily 和绑定服务报告的 progress 两个规划入口。普通来信直接由 service 处理。只有 daily 可新增正式事项和确定今日成员；progress 仅更新绑定报告关联的原事项。service 通过 progress.submit 报告，不能直接关闭事项。Skill 不授权工具，不替代发送、暂停、完成证据校验。旧正文出现不符当前入口或写入方式的步骤时，以当前后端合同为准，独立新需求写待规划输入。方法要求仍来自成功读取的适用正文及规范；家庭偏好只适配参与方式与本次活动范围，不授权删除方法的依据或核验条件。",
+        "native_reader": "Hermes.skill_view(preprocess=False)",
+        "automatic_triggers_enabled": false,
+        "evidence_boundary": "宿主来源边界：本次读取的是通用资料，不是本家庭的活动或学情记录。可读取、完整正文、simulation绑定和本次材料使用批准，只代表当前允许参考该材料；均不构成正式业务审核、正式版本确认或班期课节映射确认。正文与provenance注明未知或未审核的状态保持未知或未审核。不能用资料标题、source_day、当前正文或临时措辞建立正式映射/权益/承诺；需相应的独立确认记录。解释已读内容时限定到这份资料即可；当前问题不涉及正式审核/绑定时无须附加内部流程说明，涉及则准确说明仍未确认，不自行指定替代口径。资料中的方法、示例和预期效果，不能证明孩子做过或没做某活动，也不能证明其理解、能力、心理状态或行为原因。家庭情况只引用家长明确陈述或核验过的学情、作品；没有提到某活动表示未知，不表示尚未进行。完整读取只表示该文档已读全，不表示整本书或后续课节已读。书内事实只以本次成功读取的正文为依据；书名引出的既有知识、相邻课和历史AI回复不能补足未读内容，不续写后续情节或安排。保留每条事实原本的主体与范围，不把部分成员的特点概括成全体共性。正文提到某些人物或事物，不代表它们之间的关系、意图或事件已经得到支持；问句及聊天转场隐含的前提也必须有正文依据。教学设计不是已发生的课堂记录，方法目的不是必然效果。亲切回应不能替未经核对的评价背书，也不能补造原因来安慰家长。",
+        "method_scope_contract": {
+          "authority": "successfully_read_applicable_body_and_required_guides",
+          "requirements_are_in_body": true,
+          "family_preference_changes_requirements": false,
+          "local_activity_proves_method_or_course_completion": false,
+          "meaning": "材料中列明的方法条件与核验依据须完整保留。家庭偏好可改变表达、参与方式和本次活动长度；不愿继续时可以结束本次活动，但不能把省略条件后的参与称为已完成原方法或达到原课程目标。能说出结果、列全栏目或配合某种动作，不证明已按原方法取证；对应该方法步骤须核到实际内容及其依据。"
+        }
+      }
+    },
+    "server_result_sha256": "b2565d4dd8d31f3fc4d9e4a4ffc5fd307e3c8d59e6461e0708a880534a19d2ea"
+  },
+  {
+    "tool": "learning.schema",
+    "arguments_digest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "ok": true,
+    "result_digest": "cd896e87579bd7348635bae07bac2605a6eb951cd237b860d36a53770f0a4d4e",
+    "error": null,
+    "at": "2026-10-04T10:00:00+08:00",
+    "arguments": {},
+    "result": {
+      "ok": true,
+      "result": {
+        "tables": {
+          "learning_days": [
+            "batch_id",
+            "uid",
+            "day",
+            "attendance_status",
+            "completion_status",
+            "homework_status",
+            "companion_status",
+            "checkin_status",
+            "source_date_label",
+            "source_learning_date",
+            "evidence_locator"
+          ],
+          "assignments": [
+            "batch_id",
+            "uid",
+            "day",
+            "source_row",
+            "chapter",
+            "status",
+            "submission_count",
+            "submitted_at_raw",
+            "question_title",
+            "question_text",
+            "ai_guidance",
+            "answer_text",
+            "answer_rounds",
+            "voice_answers",
+            "quality_flags"
+          ],
+          "learning_batches": [
+            "batch_id",
+            "imported_at",
+            "coverage_through",
+            "source_timezone",
+            "course_binding"
+          ],
+          "learning_source_rows": [
+            "batch_id",
+            "uid",
+            "sheet_name",
+            "source_row",
+            "source_group",
+            "headers_json",
+            "values_json",
+            "metadata_json",
+            "evidence_locator"
+          ],
+          "learning_summaries": [
+            "batch_id",
+            "uid",
+            "source_group",
+            "metric",
+            "raw_value",
+            "numerator",
+            "denominator",
+            "quality_flags",
+            "evidence_locator"
+          ],
+          "assignment_details": [
+            "batch_id",
+            "uid",
+            "day",
+            "source_row",
+            "source_group",
+            "ai_expression_type",
+            "ai_expression_name",
+            "evidence_locator"
+          ],
+          "homework_days": [
+            "batch_id",
+            "uid",
+            "day",
+            "source_group",
+            "status",
+            "raw_status",
+            "source_date_label",
+            "question_title",
+            "quality_flags",
+            "evidence_locator"
+          ],
+          "course_bindings": [
+            "batch_id",
+            "uid",
+            "course_id",
+            "course_version",
+            "cohort_id",
+            "level",
+            "lesson_map_json",
+            "coverage_through",
+            "source_timezone",
+            "source_note",
+            "confirmed_at",
+            "binding_version",
+            "binding_status"
+          ]
+        },
+        "table_notes": {
+          "day": "各表的day是INTEGER类型的课程天次序号；不是日历日期。原来源日期见source_learning_date/source_date_label等日期字段，按各字段实际类型筛选。",
+          "learning_batches": "导入批次元数据；course_binding、imported_at、coverage_through和source_timezone可通过SQL读取。source_index的metadata_structure仅列可解析JSON对象的有界顶层字段名，不含值；数组或不可解析结构仍未知。非空只表示存在，空值仍未知。",
+          "course_bindings": "宿主已确认的课程身份、课节映射及覆盖字段；记录不存在或字段为空时不得推定已确认。",
+          "learning_days": "completion_status/homework_status描述batch_id、uid、day标识的学习快照；event.status及remaining_work描述独立业务责任，不能代替所问批次的原始字段。相同天次序号不建立二者的课程对应关系。"
+        },
+        "scope": "bound_family_uid",
+        "read_only": true
+      }
+    }
+  },
+  {
+    "tool": "learning.query_sql",
+    "arguments_digest": "4e0da7b03b44acd4e9ab23c8340659a7d7c486dfcf4c31690eb1b39fa9b7f4fb",
+    "ok": true,
+    "result_digest": "f24e8fab18fe9cce30792f28f0be476de178374cff737aaff24566357027cd53",
+    "error": null,
+    "at": "2026-10-04T10:00:00+08:00",
+    "arguments": {
+      "sql": "SELECT batch_id, uid, day, source_row, chapter, status, submission_count, submitted_at_raw, question_title, question_text, ai_guidance, answer_text, answer_rounds, voice_answers, quality_flags FROM assignments WHERE uid = :uid AND day = :day",
+      "parameters": {
+        "uid": "synthetic-4b1-uid-a",
+        "day": 4
+      }
+    },
+    "result": {
+      "ok": true,
+      "result": {
+        "columns": [
+          "batch_id",
+          "uid",
+          "day",
+          "source_row",
+          "chapter",
+          "status",
+          "submission_count",
+          "submitted_at_raw",
+          "question_title",
+          "question_text",
+          "ai_guidance",
+          "answer_text",
+          "answer_rounds",
+          "voice_answers",
+          "quality_flags"
+        ],
+        "rows": [],
+        "returned_count": 0,
+        "truncated": false,
+        "scope": "bound_family_uid",
+        "read_only": true,
+        "source_kind": "sqlite_snapshot",
+        "warning": "所查行是学情来源快照，不是业务事项状态。事项pending或remaining_work不能代替本批字段，同一天次序号不证明课节绑定。导入快照的课程绑定和覆盖未知时，不能判定当前履约。未完成、未提交只描述所选批次的字段，不能据此宣布现在需要补做、催课或安排补课；须另核当前绑定、覆盖及实际责任。不能用历史AI答复补足这些依据。跨批次查询请显式选择batch_id"
+      }
+    },
+    "returned_rows": 0,
+    "authorized_uid_only": true
+  },
+  {
+    "tool": "learning.query_sql",
+    "arguments_digest": "72d54a6c80ec02b61ba71f2354ec8b4190560adfd722a25f0f8af5b0cd2f2178",
+    "ok": true,
+    "result_digest": "aae2ce8a46de6472300485c3ed1a81760bb29073214cecf766790202a5603564",
+    "error": null,
+    "at": "2026-10-04T10:00:00+08:00",
+    "arguments": {
+      "sql": "SELECT batch_id, uid, course_id, course_version, cohort_id, level, lesson_map_json, coverage_through, source_timezone, source_note, confirmed_at, binding_version, binding_status FROM course_bindings WHERE uid = :uid",
+      "parameters": {
+        "uid": "synthetic-4b1-uid-a"
+      }
+    },
+    "result": {
+      "ok": true,
+      "result": {
+        "columns": [
+          "batch_id",
+          "uid",
+          "course_id",
+          "course_version",
+          "cohort_id",
+          "level",
+          "lesson_map_json",
+          "coverage_through",
+          "source_timezone",
+          "source_note",
+          "confirmed_at",
+          "binding_version",
+          "binding_status"
+        ],
+        "rows": [],
+        "returned_count": 0,
+        "truncated": false,
+        "scope": "bound_family_uid",
+        "read_only": true,
+        "source_kind": "sqlite_snapshot",
+        "warning": "所查行是学情来源快照，不是业务事项状态。事项pending或remaining_work不能代替本批字段，同一天次序号不证明课节绑定。导入快照的课程绑定和覆盖未知时，不能判定当前履约。未完成、未提交只描述所选批次的字段，不能据此宣布现在需要补做、催课或安排补课；须另核当前绑定、覆盖及实际责任。不能用历史AI答复补足这些依据。跨批次查询请显式选择batch_id"
+      }
+    },
+    "returned_rows": 0,
+    "authorized_uid_only": true
+  },
+  {
+    "tool": "learning.query_sql",
+    "arguments_digest": "040d9df77f561581131f15f6abea3392ce1a1f1db5b3fc6c21d7a2b83670ac24",
+    "ok": true,
+    "result_digest": "5b8c5c20594545692ede4496cacd4735e4c2f09e9d3c7b92dad98c29bfc0326c",
+    "error": null,
+    "at": "2026-10-04T10:00:00+08:00",
+    "arguments": {
+      "parameters": {
+        "uid": "synthetic-4b1-uid-a"
+      },
+      "sql": "SELECT batch_id, uid, day, attendance_status, completion_status, homework_status, companion_status, checkin_status, source_date_label, source_learning_date, evidence_locator FROM learning_days WHERE uid = :uid"
+    },
+    "result": {
+      "ok": true,
+      "result": {
+        "columns": [
+          "batch_id",
+          "uid",
+          "day",
+          "attendance_status",
+          "completion_status",
+          "homework_status",
+          "companion_status",
+          "checkin_status",
+          "source_date_label",
+          "source_learning_date",
+          "evidence_locator"
+        ],
+        "rows": [
+          {
+            "batch_id": "synthetic-4b1-snapshot",
+            "uid": "synthetic-4b1-uid-a",
+            "day": 1,
+            "attendance_status": "attended",
+            "completion_status": "completed",
+            "homework_status": "submitted",
+            "companion_status": "not_configured",
+            "checkin_status": "not_checked",
+            "source_date_label": "simulation day 1",
+            "source_learning_date": null,
+            "evidence_locator": "{\"day\":1,\"family_fixture\":\"a\",\"source\":\"frozen_inputs\",\"synthetic\":true}"
+          },
+          {
+            "batch_id": "synthetic-4b1-snapshot",
+            "uid": "synthetic-4b1-uid-a",
+            "day": 2,
+            "attendance_status": "attended",
+            "completion_status": "incomplete",
+            "homework_status": "not_submitted",
+            "companion_status": "not_configured",
+            "checkin_status": "not_checked",
+            "source_date_label": "simulation day 2",
+            "source_learning_date": null,
+            "evidence_locator": "{\"day\":2,\"family_fixture\":\"a\",\"source\":\"frozen_inputs\",\"synthetic\":true}"
+          },
+          {
+            "batch_id": "synthetic-4b1-snapshot",
+            "uid": "synthetic-4b1-uid-a",
+            "day": 3,
+            "attendance_status": "attended",
+            "completion_status": "unknown",
+            "homework_status": "unknown",
+            "companion_status": "not_configured",
+            "checkin_status": "not_checked",
+            "source_date_label": "simulation day 3",
+            "source_learning_date": null,
+            "evidence_locator": "{\"day\":3,\"family_fixture\":\"a\",\"source\":\"frozen_inputs\",\"synthetic\":true}"
+          }
+        ],
+        "returned_count": 3,
+        "truncated": false,
+        "scope": "bound_family_uid",
+        "read_only": true,
+        "source_kind": "sqlite_snapshot",
+        "warning": "所查行是学情来源快照，不是业务事项状态。事项pending或remaining_work不能代替本批字段，同一天次序号不证明课节绑定。导入快照的课程绑定和覆盖未知时，不能判定当前履约。未完成、未提交只描述所选批次的字段，不能据此宣布现在需要补做、催课或安排补课；须另核当前绑定、覆盖及实际责任。不能用历史AI答复补足这些依据。跨批次查询请显式选择batch_id"
+      }
+    },
+    "returned_rows": 3,
+    "authorized_uid_only": true
+  },
+  {
+    "tool": "learning.query_sql",
+    "arguments_digest": "8e4b00cbe79dfeb8ef73cb31d7550d66e49287b0fdc33d8cbe890894d7344408",
+    "ok": true,
+    "result_digest": "6e5dc6d6b8f52d66137ff57936981df254986ca44467f953a414a576dd108c38",
+    "error": null,
+    "at": "2026-10-04T10:00:00+08:00",
+    "arguments": {
+      "parameters": {
+        "day": 4,
+        "uid": "synthetic-4b1-uid-a"
+      },
+      "sql": "SELECT batch_id, uid, day, source_group, status, raw_status, source_date_label, question_title, quality_flags FROM homework_days WHERE uid = :uid AND day = :day"
+    },
+    "result": {
+      "ok": true,
+      "result": {
+        "columns": [
+          "batch_id",
+          "uid",
+          "day",
+          "source_group",
+          "status",
+          "raw_status",
+          "source_date_label",
+          "question_title",
+          "quality_flags"
+        ],
+        "rows": [],
+        "returned_count": 0,
+        "truncated": false,
+        "scope": "bound_family_uid",
+        "read_only": true,
+        "source_kind": "sqlite_snapshot",
+        "warning": "所查行是学情来源快照，不是业务事项状态。事项pending或remaining_work不能代替本批字段，同一天次序号不证明课节绑定。导入快照的课程绑定和覆盖未知时，不能判定当前履约。未完成、未提交只描述所选批次的字段，不能据此宣布现在需要补做、催课或安排补课；须另核当前绑定、覆盖及实际责任。不能用历史AI答复补足这些依据。跨批次查询请显式选择batch_id"
+      }
+    },
+    "returned_rows": 0,
+    "authorized_uid_only": true
+  },
+  {
+    "tool": "learning.query_sql",
+    "arguments_digest": "21642c7c0b54d2161a6d92ef3c31ca74579af331b550951583282458a03bb254",
+    "ok": true,
+    "result_digest": "11ea178fb0ac1a335ef2429055cfe5987ce28b13e3c637dce0452c2f59b59a81",
+    "error": null,
+    "at": "2026-10-04T10:00:00+08:00",
+    "arguments": {
+      "parameters": {},
+      "sql": "SELECT batch_id, uid, day, source_row, chapter, status, question_title, question_text, answer_text, quality_flags FROM assignments ORDER BY batch_id, day, source_row"
+    },
+    "result": {
+      "ok": true,
+      "result": {
+        "columns": [
+          "batch_id",
+          "uid",
+          "day",
+          "source_row",
+          "chapter",
+          "status",
+          "question_title",
+          "question_text",
+          "answer_text",
+          "quality_flags"
+        ],
+        "rows": [],
+        "returned_count": 0,
+        "truncated": false,
+        "scope": "bound_family_uid",
+        "read_only": true,
+        "source_kind": "sqlite_snapshot",
+        "warning": "所查行是学情来源快照，不是业务事项状态。事项pending或remaining_work不能代替本批字段，同一天次序号不证明课节绑定。导入快照的课程绑定和覆盖未知时，不能判定当前履约。未完成、未提交只描述所选批次的字段，不能据此宣布现在需要补做、催课或安排补课；须另核当前绑定、覆盖及实际责任。不能用历史AI答复补足这些依据。跨批次查询请显式选择batch_id"
+      }
+    },
+    "returned_rows": 0,
+    "authorized_uid_only": true
+  },
+  {
+    "tool": "learning.query_sql",
+    "arguments_digest": "185a6b20d30df2f0470aaa571b725d81d4f932f240061a7646ab31c5c8439f0a",
+    "ok": true,
+    "result_digest": "19423f679288b306a7d2d879e858b1d81ac0a2345b7e476718e1c23011e38f36",
+    "error": null,
+    "at": "2026-10-04T10:00:00+08:00",
+    "arguments": {
+      "parameters": {},
+      "sql": "SELECT batch_id, sheet_name, source_row, source_group, evidence_locator FROM learning_source_rows ORDER BY source_row"
+    },
+    "result": {
+      "ok": true,
+      "result": {
+        "columns": [
+          "batch_id",
+          "sheet_name",
+          "source_row",
+          "source_group",
+          "evidence_locator"
+        ],
+        "rows": [],
+        "returned_count": 0,
+        "truncated": false,
+        "scope": "bound_family_uid",
+        "read_only": true,
+        "source_kind": "sqlite_snapshot",
+        "warning": "所查行是学情来源快照，不是业务事项状态。事项pending或remaining_work不能代替本批字段，同一天次序号不证明课节绑定。导入快照的课程绑定和覆盖未知时，不能判定当前履约。未完成、未提交只描述所选批次的字段，不能据此宣布现在需要补做、催课或安排补课；须另核当前绑定、覆盖及实际责任。不能用历史AI答复补足这些依据。跨批次查询请显式选择batch_id"
+      }
+    },
+    "returned_rows": 0
+  },
+  {
+    "tool": "message.interpret",
+    "arguments_digest": "95eeeba8426ba01a9e08d1563cc7b82699433dc463bb9bd9f2a3ded9fd15e4be",
+    "ok": true,
+    "result_digest": "486c6924067cff74984315fe7a68409dd5a985e7f6ba8b65e6df26de037c84db",
+    "error": null,
+    "at": "2026-10-04T10:00:00+08:00",
+    "arguments": {
+      "expected_version": 1,
+      "intents": [
+        {
+          "intent_id": "intent-d4-answers",
+          "requires_reply": true,
+          "service_kind": "reply",
+          "text": "询问《了不起的狐狸爸爸》第4天的原题答案"
+        },
+        {
+          "intent_id": "intent-leave-extension",
+          "requires_reply": true,
+          "service_kind": "reply",
+          "text": "临时请假，询问是否一定能免费延长有效期"
+        }
+      ],
+      "message_id": "msg-bf30d5ebf1094e15bfe5c1796e99de28",
+      "request_id": "interpret-run307574-001"
+    },
+    "result": {
+      "ok": true,
+      "result": {
+        "request_id": "interpret-run307574-001",
+        "outcome": "applied",
+        "data": {
+          "id": "msg-bf30d5ebf1094e15bfe5c1796e99de28",
+          "version": 2,
+          "body": "《了不起的狐狸爸爸》第4天的原题答案是什么？另外我临时请假，你们是不是一定能免费延长有效期？",
+          "direction": "inbound",
+          "external_id": "missing_policy-0-0",
+          "intents": [
+            {
+              "intent_id": "intent-d4-answers",
+              "reply_operation_refs": [],
+              "requires_reply": true,
+              "service_authorization": null,
+              "service_kind": "reply",
+              "text": "询问《了不起的狐狸爸爸》第4天的原题答案"
+            },
+            {
+              "intent_id": "intent-leave-extension",
+              "reply_operation_refs": [],
+              "requires_reply": true,
+              "service_authorization": null,
+              "service_kind": "reply",
+              "text": "临时请假，询问是否一定能免费延长有效期"
+            }
+          ],
+          "interpreted": true,
+          "occurred_at": "2026-10-04T10:00:00+08:00",
+          "received_at": "2026-10-04T10:00:00+08:00",
+          "source_kind": "mock_wechat"
+        },
+        "record_versions": {
+          "family_input_version": 3
+        },
+        "error": null
+      }
+    }
+  },
+  {
+    "tool": "wechat.send_message",
+    "arguments_digest": "0d9aab76bbfeba4394c15bf8f8c7af53368ecb4c4f9edd6f2e0e2796479d8e6b",
+    "ok": true,
+    "result_digest": "cf331c1efd5ee81aa3e8556b7dd1bf458c7a89fb902218f9bd17ef093dbb086a",
+    "error": null,
+    "at": "2026-10-04T10:00:00+08:00",
+    "arguments": {
+      "action_kind": "reply",
+      "body": "您好，两件事我分别说一下：\n\n1）第4天的原题答案：我这边目前只核到 L2《了不起的狐狸爸爸》第1天的课程正文，第4天的课节内容没有拿到，所以不能凭印象给孩子报答案。方便的话，您可以把第4天的题目原文发我（拍照或打字都行），我核对题目所属课节后再逐题说；如果那节课的正文我这边确实取不到，我也会直接告诉您哪几题没有依据。\n\n2）临时请假能否免费延长有效期：这个我不能给您保证\"一定可以\"。请假和有效期延长要看具体产品和班期的规则，我当前手上的资料里没有查到适用的明确条款，所以不替您承诺。建议您直接联系咱们已有的官方客服入口，说明请假时间和孩子当前进度，请他们核实是否符合免费延长条件。\n\n第4天题目的事我先记着，您发来我就接着看。",
+      "expected_family_version": 3,
+      "reply_to": [
+        {
+          "intent_id": "intent-d4-answers",
+          "message_id": "msg-bf30d5ebf1094e15bfe5c1796e99de28",
+          "resolves_intent": false
+        },
+        {
+          "intent_id": "intent-leave-extension",
+          "message_id": "msg-bf30d5ebf1094e15bfe5c1796e99de28",
+          "resolves_intent": false
+        }
+      ],
+      "request_id": "send-run307574-001"
+    },
+    "result": {
+      "ok": true,
+      "result": {
+        "request_id": "send-run307574-001",
+        "outcome": "applied",
+        "data": {
+          "id": "operation-9c4d3498888b47f68143cdd8b342ed15",
+          "version": 3,
+          "action_kind": "reply",
+          "admitted_at": "2026-10-04T10:00:00+08:00",
+          "body": "您好，两件事我分别说一下：\n\n1）第4天的原题答案：我这边目前只核到 L2《了不起的狐狸爸爸》第1天的课程正文，第4天的课节内容没有拿到，所以不能凭印象给孩子报答案。方便的话，您可以把第4天的题目原文发我（拍照或打字都行），我核对题目所属课节后再逐题说；如果那节课的正文我这边确实取不到，我也会直接告诉您哪几题没有依据。\n\n2）临时请假能否免费延长有效期：这个我不能给您保证\"一定可以\"。请假和有效期延长要看具体产品和班期的规则，我当前手上的资料里没有查到适用的明确条款，所以不替您承诺。建议您直接联系咱们已有的官方客服入口，说明请假时间和孩子当前进度，请他们核实是否符合免费延长条件。\n\n第4天题目的事我先记着，您发来我就接着看。",
+          "business_date": "2026-10-04",
+          "channel": "mock_wechat",
+          "content_digest": "e3fda812d25bd8d674d8279774110cab1899693579a0266950aee9bcbc30f314",
+          "decision_reply_refs": [],
+          "dispatch_count": 1,
+          "event_id": null,
+          "lesson_refs": [],
+          "occurred_at": "2026-10-04T10:00:00+08:00",
+          "part_id": null,
+          "prepared_family_version": 4,
+          "purpose_key": "d1bd7ca71e00a384aada0ae53cc94fea714379d69a4ad3367ca87e7ddc6ba5aa",
+          "receipts": [
+            {
+              "observed_at": "2026-10-04T10:00:00+08:00",
+              "source": "mock_transport",
+              "stage": "sent"
+            }
+          ],
+          "recipient": "mock:4b1:a",
+          "reply_to": [
+            {
+              "intent_id": "intent-d4-answers",
+              "message_id": "msg-bf30d5ebf1094e15bfe5c1796e99de28",
+              "resolves_intent": false
+            },
+            {
+              "intent_id": "intent-leave-extension",
+              "message_id": "msg-bf30d5ebf1094e15bfe5c1796e99de28",
+              "resolves_intent": false
+            }
+          ],
+          "request": {
+            "action_kind": "reply",
+            "body": "您好，两件事我分别说一下：\n\n1）第4天的原题答案：我这边目前只核到 L2《了不起的狐狸爸爸》第1天的课程正文，第4天的课节内容没有拿到，所以不能凭印象给孩子报答案。方便的话，您可以把第4天的题目原文发我（拍照或打字都行），我核对题目所属课节后再逐题说；如果那节课的正文我这边确实取不到，我也会直接告诉您哪几题没有依据。\n\n2）临时请假能否免费延长有效期：这个我不能给您保证\"一定可以\"。请假和有效期延长要看具体产品和班期的规则，我当前手上的资料里没有查到适用的明确条款，所以不替您承诺。建议您直接联系咱们已有的官方客服入口，说明请假时间和孩子当前进度，请他们核实是否符合免费延长条件。\n\n第4天题目的事我先记着，您发来我就接着看。",
+            "event_id": null,
+            "expected_family_version": 3,
+            "part_id": null,
+            "reply_to": [
+              {
+                "intent_id": "intent-d4-answers",
+                "message_id": "msg-bf30d5ebf1094e15bfe5c1796e99de28",
+                "resolves_intent": false
+              },
+              {
+                "intent_id": "intent-leave-extension",
+                "message_id": "msg-bf30d5ebf1094e15bfe5c1796e99de28",
+                "resolves_intent": false
+              }
+            ],
+            "request_id": "send-run307574-001",
+            "step_id": null
+          },
+          "requirement_revision": null,
+          "run_id": "run-307574bd91a64c1ea1e3bf8227192ca0",
+          "send_capability": {
+            "commitment_id": null,
+            "current_step_key": null,
+            "event_id": null,
+            "job_id": "message:msg-bf30d5ebf1094e15bfe5c1796e99de28",
+            "job_kind": "service",
+            "mode": "full",
+            "no_contact": false,
+            "output_mode": "family_reply",
+            "reply_scope": {
+              "msg-bf30d5ebf1094e15bfe5c1796e99de28": [
+                "*"
+              ]
+            },
+            "run_id": "run-307574bd91a64c1ea1e3bf8227192ca0",
+            "schedule_revision": null
+          },
+          "simulated": true,
+          "stage": "sent"
+        },
+        "record_versions": {
+          "family_input_version": 5
+        },
+        "error": null
+      }
+    }
+  },
+  {
+    "tool": "planning.record_pending",
+    "arguments_digest": "7f106dbd143f9c6b649ada138c3fac0367117d1d0387cde0796ac3360c86375f",
+    "ok": false,
+    "result_digest": "9ba539a7ea1e0e720957f482a26c29f4caadd5a10fe37f7bfba878994755bb89",
+    "error": "INVALID_SCHEMA",
+    "at": "2026-10-04T10:00:00+08:00",
+    "arguments": {
+      "done_work": [
+        "已读取当前来信并按两个意图分别解释",
+        "已核对绑定知识入口：仅 LESSON-L2-FOX-D01（第1天）正文可用，第4天课节正文未授权/未提供",
+        "已SQL核对 assignments、homework_days、learning_source_rows：无第4天题目或答案记录；course_bindings 无确认记录",
+        "已发送一条回复，两个意图均保持未答（resolves_intent=false）"
+      ],
+      "pending_id": "pending-run307574-d4",
+      "remaining_work": [
+        "取得第4天课节正文或家长发来的题目原文后，逐题核对并回答",
+        "核实请假及有效期延长适用的产品/班期规则条款，目前无资料依据"
+      ],
+      "request": "回答《了不起的狐狸爸爸》第4天原题答案：当前绑定材料仅有第1天正文（LESSON-L2-FOX-D01），第4天课节正文未读到，SQL学情中也无第4天题目记录，无法据实作答。已请家长提供题目原文，待第4天正文或题目到位后逐题回答。",
+      "request_id": "pending-record-run307574-001",
+      "source_message_id": "msg-bf30d5ebf1094e15bfe5c1796e99de28",
+      "source_version": 2
+    },
+    "result": {
+      "ok": false,
+      "error": {
+        "code": "INVALID_SCHEMA",
+        "details": [
+          {
+            "loc": [
+              "pending_id"
+            ],
+            "type": "extra_forbidden",
+            "message": "Extra inputs are not permitted"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "tool": "planning.record_pending",
+    "arguments_digest": "89c481a167cf34594f0b915e4242ecd87769eae838f45b12781ed14ee7be2394",
+    "ok": false,
+    "result_digest": "9b8edc004c5b70bef266ea1c159bc88284e51f7fb0ec1ce52c81f0204394d0aa",
+    "error": "EVIDENCE_SUPERSEDED",
+    "at": "2026-10-04T10:00:00+08:00",
+    "arguments": {
+      "done_work": [
+        "已读取当前来信并按两个意图分别解释",
+        "已核对绑定知识入口：仅 LESSON-L2-FOX-D01（第1天）正文可用，第4天课节正文未授权/未提供",
+        "已SQL核对 assignments、homework_days、learning_source_rows：无第4天题目或答案记录；course_bindings 无确认记录",
+        "已发送一条回复，两个意图均保持未答（resolves_intent=false）"
+      ],
+      "remaining_work": [
+        "取得第4天课节正文或家长发来的题目原文后，逐题核对并回答",
+        "核实请假及有效期延长适用的产品/班期规则条款，目前无资料依据"
+      ],
+      "request": "回答《了不起的狐狸爸爸》第4天原题答案：当前绑定材料仅有第1天正文（LESSON-L2-FOX-D01），第4天课节正文未读到，SQL学情中也无第4天题目记录，无法据实作答。已请家长提供题目原文，待第4天正文或题目到位后逐题回答。",
+      "request_id": "pending-record-run307574-001",
+      "source_message_id": "msg-bf30d5ebf1094e15bfe5c1796e99de28",
+      "source_version": 2
+    },
+    "result": {
+      "ok": false,
+      "error": {
+        "code": "EVIDENCE_SUPERSEDED",
+        "message": "来源消息无效"
+      }
+    }
+  },
+  {
+    "tool": "service.record_outcome",
+    "arguments_digest": "c891ab495fc44769bc336efe208031cb487ed5202ae448df2a051f87e53b7178",
+    "ok": false,
+    "result_digest": "d5783c103541a25315034e6312d7757aa8662e47f80def7c96677cc034ede67f",
+    "error": "EVIDENCE_SUPERSEDED",
+    "at": "2026-10-04T10:00:00+08:00",
+    "arguments": {
+      "reason": "第4天课节正文不在当前绑定材料中（仅有第1天 LESSON-L2-FOX-D01），SQL学情无第4天题目记录，请假/有效期延长无适用政策资料。已发送一条回复说明实际缺口并保留两个原未答意图，未虚构答案或权益承诺。",
+      "refs": [
+        {
+          "kind": "message",
+          "id": "msg-bf30d5ebf1094e15bfe5c1796e99de28",
+          "version": 2
+        },
+        {
+          "kind": "operation",
+          "id": "operation-9c4d3498888b47f68143cdd8b342ed15",
+          "version": 3
+        }
+      ],
+      "request_id": "outcome-run307574-001",
+      "resume_condition": "家长发来第4天题目原文，或第4天课节正文/适用请假及有效期政策资料实际可读取后，再逐题回答并核实延长规则。",
+      "outcome": "needs_input",
+      "remaining_work": [
+        "第4天原题答案仍待答：需第4天课节正文或家长提供的题目原文",
+        "请假免费延长有效期是否可行仍待答：需适用产品/班期规则条款"
+      ]
+    },
+    "result": {
+      "ok": false,
+      "error": {
+        "code": "EVIDENCE_SUPERSEDED",
+        "message": "内部结果引用必须是当前真实记录"
+      }
+    }
+  },
+  {
+    "tool": "state.read",
+    "arguments_digest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "ok": true,
+    "result_digest": "4e9a5fb8ca601c0c71f9e222d84da0888bb0153768299336d8ca2ef719c52b05",
+    "error": null,
+    "at": "2026-10-04T10:00:00+08:00",
+    "arguments": {},
+    "result": {
+      "ok": true,
+      "result": {
+        "family_version": 5,
+        "events": [],
+        "controls": [],
+        "plans": [],
+        "reports": [],
+        "pending_inputs": [],
+        "messages": [
+          {
+            "id": "msg-bf30d5ebf1094e15bfe5c1796e99de28",
+            "version": 3,
+            "body": "《了不起的狐狸爸爸》第4天的原题答案是什么？另外我临时请假，你们是不是一定能免费延长有效期？",
+            "direction": "inbound",
+            "external_id": "missing_policy-0-0",
+            "intents": [
+              {
+                "intent_id": "intent-d4-answers",
+                "partial_reply_operation_refs": [
+                  "operation-9c4d3498888b47f68143cdd8b342ed15"
+                ],
+                "reply_operation_refs": [],
+                "requires_reply": true,
+                "service_authorization": null,
+                "service_kind": "reply",
+                "text": "询问《了不起的狐狸爸爸》第4天的原题答案"
+              },
+              {
+                "intent_id": "intent-leave-extension",
+                "partial_reply_operation_refs": [
+                  "operation-9c4d3498888b47f68143cdd8b342ed15"
+                ],
+                "reply_operation_refs": [],
+                "requires_reply": true,
+                "service_authorization": null,
+                "service_kind": "reply",
+                "text": "临时请假，询问是否一定能免费延长有效期"
+              }
+            ],
+            "interpreted": true,
+            "occurred_at": "2026-10-04T10:00:00+08:00",
+            "received_at": "2026-10-04T10:00:00+08:00",
+            "source_kind": "mock_wechat"
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-9c4d3498888b47f68143cdd8b342ed15",
+            "version": 3,
+            "action_kind": "reply",
+            "admitted_at": "2026-10-04T10:00:00+08:00",
+            "body": "您好，两件事我分别说一下：\n\n1）第4天的原题答案：我这边目前只核到 L2《了不起的狐狸爸爸》第1天的课程正文，第4天的课节内容没有拿到，所以不能凭印象给孩子报答案。方便的话，您可以把第4天的题目原文发我（拍照或打字都行），我核对题目所属课节后再逐题说；如果那节课的正文我这边确实取不到，我也会直接告诉您哪几题没有依据。\n\n2）临时请假能否免费延长有效期：这个我不能给您保证\"一定可以\"。请假和有效期延长要看具体产品和班期的规则，我当前手上的资料里没有查到适用的明确条款，所以不替您承诺。建议您直接联系咱们已有的官方客服入口，说明请假时间和孩子当前进度，请他们核实是否符合免费延长条件。\n\n第4天题目的事我先记着，您发来我就接着看。",
+            "business_date": "2026-10-04",
+            "channel": "mock_wechat",
+            "content_digest": "e3fda812d25bd8d674d8279774110cab1899693579a0266950aee9bcbc30f314",
+            "decision_reply_refs": [],
+            "dispatch_count": 1,
+            "event_id": null,
+            "lesson_refs": [],
+            "occurred_at": "2026-10-04T10:00:00+08:00",
+            "part_id": null,
+            "prepared_family_version": 4,
+            "purpose_key": "d1bd7ca71e00a384aada0ae53cc94fea714379d69a4ad3367ca87e7ddc6ba5aa",
+            "receipts": [
+              {
+                "observed_at": "2026-10-04T10:00:00+08:00",
+                "source": "mock_transport",
+                "stage": "sent"
+              }
+            ],
+            "recipient": "mock:4b1:a",
+            "reply_to": [
+              {
+                "intent_id": "intent-d4-answers",
+                "message_id": "msg-bf30d5ebf1094e15bfe5c1796e99de28",
+                "resolves_intent": false
+              },
+              {
+                "intent_id": "intent-leave-extension",
+                "message_id": "msg-bf30d5ebf1094e15bfe5c1796e99de28",
+                "resolves_intent": false
+              }
+            ],
+            "request": {
+              "action_kind": "reply",
+              "body": "您好，两件事我分别说一下：\n\n1）第4天的原题答案：我这边目前只核到 L2《了不起的狐狸爸爸》第1天的课程正文，第4天的课节内容没有拿到，所以不能凭印象给孩子报答案。方便的话，您可以把第4天的题目原文发我（拍照或打字都行），我核对题目所属课节后再逐题说；如果那节课的正文我这边确实取不到，我也会直接告诉您哪几题没有依据。\n\n2）临时请假能否免费延长有效期：这个我不能给您保证\"一定可以\"。请假和有效期延长要看具体产品和班期的规则，我当前手上的资料里没有查到适用的明确条款，所以不替您承诺。建议您直接联系咱们已有的官方客服入口，说明请假时间和孩子当前进度，请他们核实是否符合免费延长条件。\n\n第4天题目的事我先记着，您发来我就接着看。",
+              "event_id": null,
+              "expected_family_version": 3,
+              "part_id": null,
+              "reply_to": [
+                {
+                  "intent_id": "intent-d4-answers",
+                  "message_id": "msg-bf30d5ebf1094e15bfe5c1796e99de28",
+                  "resolves_intent": false
+                },
+                {
+                  "intent_id": "intent-leave-extension",
+                  "message_id": "msg-bf30d5ebf1094e15bfe5c1796e99de28",
+                  "resolves_intent": false
+                }
+              ],
+              "request_id": "send-run307574-001",
+              "step_id": null
+            },
+            "requirement_revision": null,
+            "run_id": "run-307574bd91a64c1ea1e3bf8227192ca0",
+            "send_capability": {
+              "commitment_id": null,
+              "current_step_key": null,
+              "event_id": null,
+              "job_id": "message:msg-bf30d5ebf1094e15bfe5c1796e99de28",
+              "job_kind": "service",
+              "mode": "full",
+              "no_contact": false,
+              "output_mode": "family_reply",
+              "reply_scope": {
+                "msg-bf30d5ebf1094e15bfe5c1796e99de28": [
+                  "*"
+                ]
+              },
+              "run_id": "run-307574bd91a64c1ea1e3bf8227192ca0",
+              "schedule_revision": null
+            },
+            "simulated": true,
+            "stage": "sent"
+          }
+        ],
+        "now": "2026-10-04T10:00:00+08:00",
+        "responsibility_index": [],
+        "execution_agenda": [],
+        "agenda_is_projection_not_queue": true
+      }
+    }
+  },
+  {
+    "tool": "service.record_outcome",
+    "arguments_digest": "5e56d4521d1973249f6d69ed7d2215acef3c0d0ee3fa934e70a159f5915a975b",
+    "ok": true,
+    "result_digest": "e75c8fdea01d6d3c494d73563ce2202fc00ee03ade2dc336ce370a7be1ba89ad",
+    "error": null,
+    "at": "2026-10-04T10:00:00+08:00",
+    "arguments": {
+      "refs": [
+        {
+          "id": "msg-bf30d5ebf1094e15bfe5c1796e99de28",
+          "kind": "message",
+          "version": 3
+        },
+        {
+          "id": "operation-9c4d3498888b47f68143cdd8b342ed15",
+          "kind": "operation",
+          "version": 3
+        }
+      ],
+      "outcome": "needs_input",
+      "reason": "第4天课节正文不在当前绑定材料中（仅有第1天 LESSON-L2-FOX-D01），SQL学情无第4天题目记录，请假/有效期延长无适用政策资料。已发送一条回复说明实际缺口并保留两个原未答意图（均标记resolves_intent=false，partial_reply_operation_refs已登记），未虚构答案或权益承诺。",
+      "remaining_work": [
+        "第4天原题答案仍待答：需第4天课节正文或家长提供的题目原文",
+        "请假免费延长有效期是否可行仍待答：需适用产品/班期规则条款"
+      ],
+      "request_id": "outcome-run307574-002",
+      "resume_condition": "家长发来第4天题目原文，或第4天课节正文及适用请假/有效期政策资料实际可读取后，再逐题回答并核实延长规则。"
+    },
+    "result": {
+      "ok": true,
+      "result": {
+        "id": "run-307574bd91a64c1ea1e3bf8227192ca0",
+        "version": 1,
+        "awaiting_operation_ids": [],
+        "delegation_acknowledgements": [],
+        "draft": null,
+        "effective_control_scopes": {
+          "authority": "current_control_records",
+          "controls": [],
+          "meaning": "仅active控制生效。event_id为空的控制覆盖本家庭所有事项及以后事项中的action_kinds；有event_id仅覆盖该事项的这些动作。未列出的动作不因该控制暂停，仍须经过其他权限和发送检查。旧空白字符串范围按全家庭保守解释并标明legacy_invalid_scope，不修改原记录。自由文本不能缩小、扩大或解除控制。"
+        },
+        "job_id": "message:msg-bf30d5ebf1094e15bfe5c1796e99de28",
+        "observed_job_operations": [
+          {
+            "id": "operation-9c4d3498888b47f68143cdd8b342ed15",
+            "stage": "sent",
+            "version": 3
+          }
+        ],
+        "observed_planning_inputs": [],
+        "outcome": "needs_input",
+        "payload_digest": "10819fe5a9e744c2a9e97cfd22e0aa1567c85510bde329a664b5940e69bb1837",
+        "reason": "第4天课节正文不在当前绑定材料中（仅有第1天 LESSON-L2-FOX-D01），SQL学情无第4天题目记录，请假/有效期延长无适用政策资料。已发送一条回复说明实际缺口并保留两个原未答意图（均标记resolves_intent=false，partial_reply_operation_refs已登记），未虚构答案或权益承诺。",
+        "recorded_at": "2026-10-04T10:00:00+08:00",
+        "refs": [
+          {
+            "id": "msg-bf30d5ebf1094e15bfe5c1796e99de28",
+            "kind": "message",
+            "version": 3
+          },
+          {
+            "id": "operation-9c4d3498888b47f68143cdd8b342ed15",
+            "kind": "operation",
+            "version": 3
+          }
+        ],
+        "remaining_work": [
+          "第4天原题答案仍待答：需第4天课节正文或家长提供的题目原文",
+          "请假免费延长有效期是否可行仍待答：需适用产品/班期规则条款"
+        ],
+        "request_id": "outcome-run307574-002",
+        "resume_condition": "家长发来第4天题目原文，或第4天课节正文及适用请假/有效期政策资料实际可读取后，再逐题回答并核实延长规则。",
+        "resume_condition_authority": "model_input_recovery_note_not_control_or_send_permission",
+        "run_id": "run-307574bd91a64c1ea1e3bf8227192ca0",
+        "settled_delegated_request_refs": []
+      }
+    }
+  }
+]

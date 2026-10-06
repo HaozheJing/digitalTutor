@@ -1,0 +1,75 @@
+{
+  "before": [
+    4,
+    2,
+    12
+  ],
+  "after": [
+    4,
+    2,
+    12
+  ],
+  "scans": [
+    {
+      "ran": false
+    },
+    {
+      "ran": false
+    },
+    {
+      "ran": false
+    },
+    {
+      "ran": false
+    },
+    {
+      "ran": false
+    },
+    {
+      "ran": false
+    },
+    {
+      "ran": false
+    },
+    {
+      "ran": false
+    },
+    {
+      "ran": false
+    },
+    {
+      "ran": false
+    },
+    {
+      "ran": false
+    },
+    {
+      "ran": false
+    },
+    {
+      "ran": false
+    },
+    {
+      "ran": false
+    },
+    {
+      "ran": false
+    },
+    {
+      "ran": false
+    },
+    {
+      "ran": false
+    },
+    {
+      "ran": false
+    },
+    {
+      "ran": false
+    },
+    {
+      "ran": false
+    }
+  ],
+  "unchanged": true
+}

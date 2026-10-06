@@ -1,0 +1,91 @@
+# 服务规则小样，供阅读与评审；尚未接入调度器或真实渠道。
+# 数值在此维护，Skill 与共用规范引用对应项。
+automatic_triggers_enabled: false
+
+course_service_qa:
+  first_response_target_minutes: 10
+  note: "响应目标不是解决承诺；没有适用资料时保留核实责任。"
+
+learning_concern:
+  followup_target_hours: 48
+  note: "效果质疑后的二次跟进目标，与补课未履约的48小时不同。安排内部复核，实际联系还需核对暂停、约定及新回复，不擅自许诺改善或解除暂停。"
+
+child_sharing_help:
+  first_response_target_minutes: 10
+  voice_max_seconds: 60
+  note: "普通分享、情绪、求助分别回应；需要立即人工处理的风险不能等待目标时限。"
+
+lesson_qa:
+  first_response_target_minutes: 5
+  resolution_target_hours: 24
+  timing_note: "首次响应与问题闭环分别记录；未解决时保留跟进责任，不能到时自动记为已解决。"
+
+unanswered_question:
+  service_target_minutes_to_confirm: 30
+  timing_status: pending_confirmation
+  effective_deadline: null
+  clarification_needed: "确认30分钟针对首次响应、核实流转还是最终答复；不直接作为对外解决期限。"
+  promise_note: "实际接收人和可兑现的答复时限确认后，再向家长说明具体安排。"
+
+interaction:
+  weekly_invitation_limit: 2
+  feedback_target_hours: 2
+  feedback_clock: "醒着时段"
+  clock_status: pending_scope_confirmation
+  clarification_needed: "确认醒着时段的边界、跨休息时段计时方式，以及周范围；当前不补出固定联系时刻。"
+  rotation_forms: ["阅读感受交流", "趣味知识互动", "阅读方法练习", "阅读与生活联想"]
+  reply_note: "孩子表达后的反馈走即时响应，不因主动邀请额度或轮换安排而推迟。"
+
+method_practice:
+  planned_weekday: "周五"
+  rotation_slot_per_week: 1
+  rotation_note: "四种课程互动轮换，本周选中方法练习时才进入该主动评估；不是每种形式各一次。"
+  effective_contact_time: null
+
+learning_progress_review:
+  planned_time: "每月末"
+  regular_reports_per_month: 1
+  effective_contact_time: null
+  scope_note: "按本次明确的阶段和材料范围反馈；家长或老师请求的局部反馈不冒充整月报告。"
+  delivery_format: "家长私聊图文报告"
+
+makeup_learning:
+  trigger:
+    status: pending_confirmation
+    effective_condition: null
+    conditions_to_reconcile:
+      - "当周连续2天零完课"
+      - "连续3次计划课节未上课"
+    clarification_needed: "统一阈值、计划课节口径、请假处理和跨周计数。"
+  initial_contact:
+    per_risk_occurrence: 1
+    message_length_characters: [50, 100]
+    include: ["孩子昵称", "适用课程内容", "给家长的关心与补课建议", "给孩子的鼓励口信"]
+    note: "次数是初次触达限制，不代表命中就发送，也不允许重复命中后重新计次。"
+  human_followup:
+    status: pending_confirmation
+    unresponsive_path: "私信后未回应，保留真人电话协助路径。"
+    unfulfilled_after_hours_to_confirm: 48
+    effective_escalation_time: null
+    clarification_needed: "未回应与未履约分别判断；确认48小时的起点、约定变更影响及电话联系时机。"
+
+supervision:
+  same_lesson_reminder_limit:
+    maximum: 2
+    period: "周"
+    scope_note: "同一节课补读提醒合计，跨动作计数；周边界与全局频控口径接入前统一。"
+
+contact:
+  status: pending_scope_confirmation
+  nonessential_daily_limit_per_parent: 2
+  audience_note: "孩子通过家长渠道沟通，按家长汇总。"
+  exception_services_to_confirm:
+    - "今日阅读提醒"
+    - "当课完成鼓励"
+    - "学习效果沟通"
+    - "投诉受理与人工衔接"
+  channel_order: ["私聊文字", "图文", "语音", "视频", "电话"]
+  channel_scope_note: "孩子讲解有明确语音要求；全局顺序适用范围需与具体服务要求统一。"
+  merge_when_appropriate: true
+  clarification_needed: "确认非课堂必需消息、例外、合并计次、时间边界及即时回复的适用口径。"
+  reply_priority: "家长和孩子的当前问题优先回应，不进入主动任务队列等待。"

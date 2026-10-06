@@ -1,0 +1,7 @@
+{
+  "event_id": "event-90bf0a02aa364cf7b9c5f95e46bc6648",
+  "condition": "第1天的文字学情总结",
+  "explicit_separate_condition_input": false,
+  "null_condition_observed": false,
+  "note": "Legacy intraday-empty names the input without a separate criterion; it does not guarantee null output."
+}

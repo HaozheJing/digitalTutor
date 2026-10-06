@@ -1,0 +1,33 @@
+{
+  "rounds": [
+    [
+      [
+        "a",
+        "另外我想要一份这周阅读情况的简短文字总结，明天10月5日下午四点前需要。今天不用马上写，先记住这个需求和时间好吗？"
+      ]
+    ]
+  ],
+  "families": [
+    "a"
+  ],
+  "case": "independent_need",
+  "business_time": "2026-10-04T10:00:00+08:00",
+  "classification": "synthetic_family_mock_channel",
+  "material_chain": "R_approved_only",
+  "learning_source": {
+    "a": [
+      [
+        "completed",
+        "submitted"
+      ],
+      [
+        "incomplete",
+        "not_submitted"
+      ],
+      [
+        "unknown",
+        "unknown"
+      ]
+    ]
+  }
+}

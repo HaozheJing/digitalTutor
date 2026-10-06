@@ -1,0 +1,77 @@
+{
+  "independent_need": {
+    "runtime_mode": "passive",
+    "source_count": 83,
+    "source_match": true,
+    "business_integrity": "ok",
+    "channel_integrity": "ok",
+    "records_match": {
+      "job": true,
+      "message": true,
+      "operation": true,
+      "event": true,
+      "report": true,
+      "plan": true,
+      "run_outcome": true,
+      "control": true,
+      "pending": true,
+      "memory": true
+    },
+    "channel": [
+      {
+        "operation_id": "operation-01faf26f86654308af3a55a3bbbaab1a",
+        "stage": "sent",
+        "operation_equal": true,
+        "message_equal": true,
+        "decision_reply_refs": []
+      }
+    ],
+    "runtime_material_wait": []
+  },
+  "missing_guide": {
+    "runtime_mode": "full",
+    "source_count": 83,
+    "source_match": true,
+    "business_integrity": "ok",
+    "channel_integrity": "ok",
+    "records_match": {
+      "job": true,
+      "message": true,
+      "operation": true,
+      "event": true,
+      "report": true,
+      "plan": true,
+      "run_outcome": true,
+      "control": true,
+      "pending": true,
+      "memory": true
+    },
+    "channel": [
+      {
+        "operation_id": "operation-7c054ecc9772497e8206b5d27657852d",
+        "stage": "sent",
+        "operation_equal": true,
+        "message_equal": true,
+        "decision_reply_refs": []
+      }
+    ],
+    "runtime_material_wait": [
+      {
+        "id": "material:6d6b6f5971b86640f0df35a94417bb799867d310672a5cc1ff9650682786a263",
+        "version": 2,
+        "approval_fingerprint": "673f9bfa8ed2e639b4f62ca54803fac6d626bab8826e10de509382ece4d805d6",
+        "arguments": {
+          "skill_id": "explain-lesson"
+        },
+        "error": "KNOWLEDGE_UNAVAILABLE",
+        "job_id": "message:msg-80b9c9b7a8904e8f8e1f3adab53ab399",
+        "next_probe_at": "2026-10-05T20:49:18.553740+08:00",
+        "resume_count": 0,
+        "run_id": "run-d6dbdb42bd3d4f799a26c05c8b07c822",
+        "source_fingerprint": null,
+        "status": "unavailable",
+        "tool": "skills.read"
+      }
+    ]
+  }
+}

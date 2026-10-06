@@ -1,0 +1,15 @@
+{
+  "files": {
+    "docs/教辅后端第三阶段交付记录.md": "2530a50a0c5ebae76602582a9b0d5b617468bb7aad5050ecbd156f16196b739a",
+    "docs/教辅后端开发任务清单.md": "f17b46c33e710c78f4088796d647fee3389ff0cb5cf9a6bf321625a6ebd9a38c",
+    "docs/Tool元数据目录.md": "b1fa47a1fdabc4ccef3e6c72e3856cb8f0d0e1df741982934969708c1b6df61c",
+    "docs/Skill元数据目录.md": "c4ab2660fa39ba73f8dc0779c18c51094d0f75f5c9a14c5571d76934f712783f",
+    "docs/README.md": "7ac90427feb0f0569c081a849d41eac758134ebd6b48a854082b9f55fefd7bda",
+    "docs/教辅后端第二三阶段执行细化.md": "d212255fe3a4c24967823ba906c91687e1f04193e2667923204a13b4ec2f9350",
+    "backend/README.md": "0b8564d80dd4d66fbbc0b23a22df459d3cb0950c4b442bf54ee012481b2e27c6",
+    "work/design-inputs/stage3-materials-review.md": "98a8d59d19c19af83cf2600c11c215eeb0e0db6d7630000cd3434e01a5b8f66d",
+    "evaluations/backend-stage3/stage3-materials-20261004/acceptance.json": "048bf922857dd715b778d811761963efad272d679820f966ce7fa3f7496a0851",
+    "evaluations/backend-stage3/stage3-materials-20261004/manifest.json": "e25185db75de892c7fedac1777b5995dc6ea0ad6c6d88d21a0ba7f6f5af80549",
+    "evaluations/backend-stage3/latest.json": "12dc9ef4e5d8c2b82024f6182e6b5e5b51b5e1b678af31331ea821728d0fb866"
+  }
+}

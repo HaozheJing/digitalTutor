@@ -1,0 +1,17 @@
+{
+  "selected_files": 831,
+  "findings": [],
+  "scope": "Selected working-tree text and staged Git blobs; no credential values retained.",
+  "staged_verification": {
+    "checked_staged_files": 831,
+    "mismatches": [],
+    "findings": [],
+    "frozen_l_files": 189,
+    "frozen_l_mismatches": [],
+    "unexpected_staged_paths": [],
+    "git_diff_whitespace_check": false,
+    "whitespace_issue_count": 57,
+    "new_handoff_files_whitespace_check": true,
+    "historical_whitespace_policy": "Preserve immutable historical files; do not reformat snapshot evidence."
+  }
+}

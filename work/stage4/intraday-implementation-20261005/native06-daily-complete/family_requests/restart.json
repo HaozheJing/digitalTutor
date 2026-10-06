@@ -1,0 +1,68 @@
+{
+  "scans": [
+    {
+      "ran": false
+    },
+    {
+      "ran": false
+    },
+    {
+      "ran": false
+    },
+    {
+      "ran": false
+    },
+    {
+      "ran": false
+    },
+    {
+      "ran": false
+    },
+    {
+      "ran": false
+    },
+    {
+      "ran": false
+    },
+    {
+      "ran": false
+    },
+    {
+      "ran": false
+    },
+    {
+      "ran": false
+    },
+    {
+      "ran": false
+    },
+    {
+      "ran": false
+    },
+    {
+      "ran": false
+    },
+    {
+      "ran": false
+    },
+    {
+      "ran": false
+    },
+    {
+      "ran": false
+    },
+    {
+      "ran": false
+    },
+    {
+      "ran": false
+    },
+    {
+      "ran": false
+    }
+  ],
+  "all_idle": true,
+  "unchanged": true,
+  "process_id": 306679,
+  "restart_kind": "new_python_process"
+}

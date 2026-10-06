@@ -1,0 +1,13 @@
+{
+  "case": "memory_correction",
+  "not_model_input": true,
+  "semantic_status": "not_reviewed",
+  "semantic_questions": [
+    "后续仅使用新时间偏好且保留一次一个问题？",
+    "旧记忆确实更正，未留下互相冲突的两条有效偏好？"
+  ],
+  "expected_deadline": null,
+  "required_effect": "same_memory_corrected",
+  "allow_unanswered": false,
+  "allow_waiting": false
+}
