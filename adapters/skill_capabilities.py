@@ -94,6 +94,7 @@ def hidden():
 
 def guard(name,args=None):
     if name in hidden():raise __import__('agent_plan').ServiceValidationError('capability_not_open_in_current_skill_flow:'+name)
+    if name in ('send_message','reply_to_message'):require_amendment_receipt()
     if not enabled() or name not in ('workflow_commit','workflow_fulfill'):return
     current=owner()
     if not current or current['kind']!='dialogue':return
@@ -104,6 +105,19 @@ def guard(name,args=None):
         raise __import__('agent_plan').ServiceValidationError('workflow_context_purpose_mismatch')
     if purpose=='fulfill' and (task_identity(a.get('task_id'))!=task_identity(binding['task_id']) or type(a.get('revision')) is not int or a['revision']!=binding['revision']):
         raise __import__('agent_plan').ServiceValidationError('workflow_fulfillment_target_mismatch')
+
+def require_amendment_receipt():
+    """A dialogue in the amendment flow cannot acknowledge an uncommitted change."""
+    if not enabled():return
+    current=owner()
+    if not current or current['kind']!='dialogue':return
+    if not s.read("SELECT 1 FROM sqlite_master WHERE name='skill_workflow_grants'"):return
+    binding=s.read("SELECT context_token FROM skill_workflow_grants WHERE owner=? AND purpose='amend'",(current['key'],))
+    if not binding:return
+    receipts=s.read("SELECT result FROM service_workflow_commits WHERE run_id=? AND json_extract(body,'$[0]')=?",(current['run_id'],binding[0]['context_token'])) if s.read("SELECT 1 FROM sqlite_master WHERE name='service_workflow_commits'") else []
+    if any(json.loads(r['result']).get('status')=='committed' for r in receipts):return
+    raise __import__('agent_plan').ServiceValidationError('arrangement_amendment_not_committed：本轮已进入安排修改流程，但没有本次上下文的committed回执。先调用workflow_commit提交原话支持的修改或contact_constraint；暂停约束即使tasks为空也要保存。家长明确暂停全部才可scope={kind:"all"}，某类暂停仍用对应skill。不能用send_message先确认“今天不打扰”或“已暂停”。资料变化时重新读取purpose=amend；只查看或需澄清使用purpose=inspect，不能声称已改动。')
+
 
 def task_identity(value):
     return __import__('business').original(value) if s.read("SELECT 1 FROM sqlite_master WHERE name='business_ids'") else value
