@@ -8,7 +8,7 @@ completed 只覆盖 completion.scope 指定的事件或任务；no_contact、blo
 human_confirmation_required / pending_confirmation 只表示需要或等待人工，不是人工已接单或退款已办理。原始字段和回执仍是依据，缺少状态不能猜。
 '''
 
-KNOWLEDGE = {'knowledge_search', 'knowledge_read', 'course_search', 'course_browse', 'course_read', 'course_knowledge'}
+KNOWLEDGE = {'knowledge_browse', 'knowledge_search', 'knowledge_read', 'course_search', 'course_browse', 'course_read', 'course_knowledge'}
 DELIVERY = {'send_message', 'reply_to_message', 'reply_with_highlights', 'deliver_message', 'deliver_proactive', 'deliver_festival', 'send_image', 'workflow_highlight', 'workflow_fulfill'}
 FINISH = {'finish_event', 'service_task_finish'}
 
@@ -30,6 +30,18 @@ def annotate(name, args, value):
     result = copy.deepcopy(value)
     evidence = {'version': 1}
     status = value.get('status')
+    if name in KNOWLEDGE and isinstance(value.get('parts'),dict):
+        parts=value['parts']
+        states={k:('read' if item.get('status')=='ok' and isinstance(item.get('body'),str) and item['body'] else item.get('status','unknown')) for k,item in parts.items()}
+        read_count=sum(x=='read' for x in states.values())
+        state='read' if states and read_count==len(states) else 'partial' if read_count else status or 'unknown'
+        evidence['retrieval']={'state':state,'parts':states}
+        evidence['verification']={'state':'unknown','scope':'retrieved_material_only','parts':{k:review(v) for k,v in parts.items()},'note':'正文读取和版本一致不等于业务审核；审核状态逐项沿用来源。'}
+        result['result_evidence']=evidence
+        return result
+    if name=='knowledge_browse':
+        result['result_evidence']={'version':1,'retrieval':{'state':'catalog' if status=='catalog' else status or 'unknown'},'verification':{'state':'not_applicable','scope':'catalog_metadata_only'}}
+        return result
     if name in KNOWLEDGE:
         matches = value.get('matches', value.get('children'))
         if status in {'unavailable','changed','unknown','no_match','suppressed'}:
