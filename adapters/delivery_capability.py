@@ -20,7 +20,7 @@ def route(args):
         if task.get('kind')=='highlight':raise ap.ServiceValidationError('highlight_original_delivery_is_host_owned')
         if args.get('highlight_ids'):raise ap.ServiceValidationError('highlight_attachment_requires_passive_reply')
         if task.get('kind')=='s01':
-            if args.get('asset_id') or args.get('candidate_ids'):raise ap.ServiceValidationError('s01_media_and_lesson_are_host_bound')
+            if args.get('asset_id') or args.get('candidate_ids'):raise ap.ServiceValidationError('s01_media_and_lesson_are_host_bound: S01仅传body及原execution_token/generation_token；移除candidate_ids和asset_id，课次与导读单由宿主绑定。')
             return 'deliver_message',{**common,'day':task['day']}
         ids=args.get('candidate_ids') or ([business.token(task['candidate_id'])] if task.get('candidate_id') else [])
         if not isinstance(ids,list) or not 1<=len(ids)<=3 or any(not isinstance(i,str) or not i for i in ids):raise ap.ServiceValidationError('use_candidate_ids_from_current_task_material')
@@ -38,4 +38,4 @@ def route(args):
 def definition(schema,definitions):
     props={k:v for k,v in definitions['reply_to_message'][1]['properties'].items() if k in ('body','generation_token','emoji_refs','highlight_ids')}
     props.update(candidate_ids=definitions['deliver_proactive'][1]['properties']['candidate_ids'],asset_id={'type':'string'},execution_token={'type':'string'})
-    return ('send_message','向当前绑定的家长消息或服务任务交付文字/附件，不接受接收人或任意URL。普通回复仅body；主动沿用本任务candidate_ids与execution_token；节日另带已检查asset_id；被动高光可带highlight_ids。generation_token与execution_token仅放独立参数，禁止放进body。沿用generation_token，不凭accepted或unknown重发。家长要求现在完成已有安排时，先skill_read(name=manage-service-arrangements)并使用workflow_fulfill交付，不能用send_message代替。家长取消/暂停/修改安排时，先skill_read(name=manage-service-arrangements)完成事务；未取得committed回执不得确认已改动。',schema(props,['body']))
+    return ('send_message','向当前绑定的家长消息或服务任务交付文字/附件，不接受接收人或任意URL。普通回复仅body。S01阅读邀请仅传body及原execution_token/generation_token，不传candidate_ids、asset_id、highlight_ids或day；课次、日期与导读单由宿主绑定。其他主动任务沿用本任务candidate_ids与execution_token；节日另带已检查asset_id；被动高光可带highlight_ids。generation_token与execution_token仅放独立参数，禁止放进body。沿用generation_token，不凭accepted或unknown重发。家长要求现在完成已有安排时，先skill_read(name=manage-service-arrangements)并使用workflow_fulfill交付，不能用send_message代替。家长取消/暂停/修改安排时，先skill_read(name=manage-service-arrangements)完成事务；未取得committed回执不得确认已改动。',schema(props,['body']))

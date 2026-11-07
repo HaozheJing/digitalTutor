@@ -72,7 +72,7 @@ class ServiceHoursTests(unittest.TestCase):
         self.assertEqual(s.read('SELECT status FROM deliveries WHERE action_key=?',(key,))[0]['status'],'superseded')
 
     def test_cutoff_between_parts_preserves_first_receipt_without_replay(self):
-        at('2025-10-24T21:59:59+08:00');self.queue(body=('先说第一段。'*16)+'\n\n'+('再说第二段。'*16))
+        at('2025-10-24T21:59:59+08:00');self.queue(body='先说第一段。\n再说第二段。')
         def send(*args):
             at('2025-10-24T22:00:00+08:00');return {'errcode':0,'requestId':'first-part'}
         with patch.object(w,'http_send',side_effect=send) as transport:w.flush();self.assertEqual(transport.call_count,1)

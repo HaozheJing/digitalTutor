@@ -236,7 +236,7 @@ print(json.dumps(state))
     result = subprocess.check_output([sys.executable, '-B', '-c', init], cwd=workspace / 'adapters', text=True)
     state = json.loads(result)
     frozen = {}
-    for folder in ['adapters', 'app', 'skills', 'knowledge', 'config', 'runtime/fixtures']:
+    for folder in ['adapters', 'app', 'skills', 'knowledge', 'assets', 'config', 'runtime/fixtures']:
         for p in (workspace / folder).rglob('*'):
             if p.is_file() and '__pycache__' not in p.parts:
                 frozen[str(p.relative_to(workspace))] = digest(p.read_bytes())

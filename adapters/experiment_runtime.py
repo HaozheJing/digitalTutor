@@ -39,7 +39,7 @@ def verify():
     if value is None:
         return None
     actual = set()
-    for folder in ['adapters', 'app', 'skills', 'knowledge', 'config', 'runtime/fixtures']:
+    for folder in ['adapters', 'app', 'skills', 'knowledge', 'assets', 'config', 'runtime/fixtures']:
         for p in (s.R / folder).rglob('*'):
             if p.is_file() and '__pycache__' not in p.parts and p != s.R / 'config/experiment.json':
                 actual.add(str(p.relative_to(s.R)))

@@ -224,6 +224,8 @@ def prepare(task_id):
     if __import__('tool_surface').enabled('delivery'):instructions=instructions.replace('deliver_festival','send_image')
     if __import__('delivery_capability').enabled():
         for old in ('deliver_message','deliver_proactive','send_image'):instructions=instructions.replace(old,'send_message')
+        if row['kind']=='s01':
+            instructions+='S01的send_message仅传body及本任务原execution_token/generation_token，不传candidate_ids、asset_id、highlight_ids或day；课次、业务日期与导读单由宿主绑定，不能复用规划阶段opportunity_id作为发送候选。'
     instructions=__import__('tool_surface').current_instructions(instructions)
     facts=__import__('host_tool_steps').task_facts(row,facts)
     payload = b.project({'context_version': VERSION, 'business_time': tm.state()['as_of'],

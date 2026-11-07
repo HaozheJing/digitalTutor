@@ -53,6 +53,18 @@ class NativePreparationTests(unittest.TestCase):
             self.assertEqual(c.execute('SELECT COUNT(*) FROM deliveries').fetchone()[0],0)
         with self.assertRaisesRegex(ValueError,'future_or_invalid'):self.prepare(history=[{**row,'created_at':'2025-10-14T06:00:00+08:00'}])
 
+    def test_required_reading_guide_is_exported_frozen_and_tamper_rejected(self):
+        result=self.prepare();w=pathlib.Path(result['run_root'])/'workspace'
+        registry=json.loads((w/'adapters/s01_reading_guides.json').read_text())['assets']
+        frozen=json.loads((w/'config/experiment.json').read_text())['frozen_files']
+        for asset in registry:
+            self.assertTrue((w/asset['path']).is_file())
+            self.assertEqual(frozen[asset['path']],asset['sha256'])
+        (w/registry[0]['path']).write_bytes(b'tampered image')
+        check=subprocess.run([sys.executable,'-B',str(w/'adapters/experiment_runtime.py'),'verify'],capture_output=True,text=True)
+        self.assertNotEqual(check.returncode,0)
+        self.assertIn('experiment_configuration_changed:assets/reading-guides/',check.stderr)
+
     def test_execution_fixture_is_labeled_and_uses_same_task_contract(self):
         # S01 shares the 06:30 planning wake even when this experiment starts at 07:00.
         due=self.scene['as_of'][:10]+'T06:30:00+08:00'

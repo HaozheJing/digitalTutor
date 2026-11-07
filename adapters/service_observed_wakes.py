@@ -6,7 +6,7 @@ restart and the original execution/contact/receipt gates still own delivery.
 import hashlib,json
 import sql_tools as s
 
-PERIODIC={'support-zero-completion','rebuild-reading-rhythm','close-week-reading-gap','plan-weekend-makeup'}
+PERIODIC={'support-zero-completion','rebuild-reading-rhythm','close-week-reading-gap','plan-weekend-makeup','invite-reading-interaction'}
 
 def ensure(c,state):
     import service_workflow as wf,completion_planner as cp

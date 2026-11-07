@@ -75,7 +75,7 @@ class S01DeliveryTests(unittest.TestCase):
 
     def test_split_reminder_is_one_action_with_two_physical_texts(self):
         self.begin()
-        messages=['今天的阅读课可以找个方便的时间来读。'*5,'这节课的故事读完以后再接着后面的安排。'*5]
+        messages=['今天的阅读课可以找个方便的时间来读。','这节课的故事读完以后再接着后面的安排。']
         with patch.object(w,'http_send',side_effect=[{'errcode':0,'requestId':'split1'},{'errcode':0,'requestId':'split2'}]) as sender:
             self.assertEqual(s.deliver('2025-10-13','\n\n'.join(messages))['status'],'accepted')
             self.assertEqual([x.args[3] for x in sender.call_args_list],messages)
