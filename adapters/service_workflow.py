@@ -219,7 +219,7 @@ def context():
         token = uuid.uuid4().hex
         c.execute('INSERT INTO service_workflow_contexts VALUES(?,?,?,?,?,?)',
             (token, state['run_id'], s.encoded(who), digest(data), s.encoded(data), s.now()))
-    return __import__('working_context').model({**data, 'context_token': token})
+    return __import__('working_context').model(__import__('execution_contract').context_projection({**data, 'context_token': token}))
 
 def check_context(c, token):
     state = bound_state(c)

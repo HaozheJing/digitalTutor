@@ -179,6 +179,11 @@ class AgentPlanTests(unittest.TestCase):
             sender.assert_not_called()
 
     def test_real_action_delivery_linked_and_unknown_not_marked_done(self):
+        lookup=tm.highlight_lookup
+        def fixture_assets(*args,**kwargs):
+            value=lookup(*args,**kwargs)
+            return {**value,'highlights':[{**item,'share_txt':'孩子完成了这次阅读，留下了一份成长记录。'} for item in value['highlights']]}
+        self.enterContext(patch.object(tm,'highlight_lookup',side_effect=fixture_assets))
         task=self.begin('2025-10-13 20:30');self.finish_plan(task)
         for kind in ['s01','calendar']:
             job=ap.claim();self.assertEqual(job['kind'],kind);self.query()

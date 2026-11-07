@@ -79,3 +79,18 @@ def fulfillment_receipt(c, receipt):
     task = c.execute('SELECT status FROM service_tasks WHERE id=?', (receipt['task_id'],)).fetchone()
     return {**receipt, 'delivery': delivery[0] if delivery else 'unknown',
             'task_status': task[0] if task else 'unknown', 'retry_delivery': False}
+
+
+def context_projection(value):
+    """Join provider lesson numbers to the catalog without aliasing provider IDs."""
+    import sql_tools as s
+    from query_contract import schedule_coordinates
+    learning=value.get('facts',{}).get('learning',{})
+    profile=learning.get('profile',{})
+    catalog=s.R/'knowledge/curriculum/L2/catalog.json'
+    lessons=json.loads(catalog.read_text())['lessons'] if catalog.is_file() else []
+    result=schedule_coordinates(value,profile.get('class_type'),lessons)
+    result['knowledge_reference_policy']={
+        'provider_book_id_is_curriculum_book_id':False,
+        'guidance':'学情提供器的books[].id和课程库book_id属于不同编号体系，不能混用。优先用课节curriculum_ref中的level/week/day读取知识；没有正式映射时先knowledge_browse查目录，不猜book_id。'}
+    return result

@@ -13,5 +13,6 @@
   "adapters/test_skill_capabilities.py": "b9d7b18b4e8dbde028c687503dd9dea7f174bde8f3546840e5b64c447da9bc2a",
   "adapters/tool_result_contract.py": "06e870eb4db8a1845cf7efa8650633fa1de29743ea0ea997e8b287530fdffde0",
   "skills/manage-service-arrangements/SKILL.md": "0bf39ec22028932c7405b4c5c7cba4e830877c7d1cefb56d816108acf53b894d",
-  "adapters/native_experiments.py": "f22af4bbe91c606055f5cfa3b16091ad39ae2b4f8ef1e492cf0e92c60e1793a4"
+  "adapters/native_experiments.py": "f22af4bbe91c606055f5cfa3b16091ad39ae2b4f8ef1e492cf0e92c60e1793a4",
+  "adapters/test_agent_plan.py": "8bdf3a91e4625b9bdc35f73a89fcdc07a21038b258e69371394baf57d3d56e65"
 }

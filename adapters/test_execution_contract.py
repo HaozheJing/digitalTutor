@@ -7,6 +7,16 @@ import service_workflow as wf,sql_tools as s,agent_plan as ap,test_mode as tm
 
 
 class ProjectionTests(unittest.TestCase):
+    def test_provider_book_ids_are_not_used_as_knowledge_selectors(self):
+        value={'facts':{'learning':{'profile':{'class_type':'L2'},'books':[{'id':'provider-book'}],
+               'lessons':[{'lesson_no':19,'status':'completed'},{'lesson_no':999,'status':'unknown'}]}}}
+        result=contract.context_projection(value)
+        lessons=result['facts']['learning']['lessons']
+        self.assertEqual(lessons[0]['curriculum_ref'],{'lesson_id':'L2-W04-D4','level':'L2','week':4,'day':4})
+        self.assertIsNone(lessons[1]['curriculum_ref'])
+        self.assertFalse(result['knowledge_reference_policy']['provider_book_id_is_curriculum_book_id'])
+        self.assertNotIn('curriculum_ref',value['facts']['learning']['lessons'][0])
+
     def test_transport_states_do_not_invent_completion_or_retry(self):
         for rows,expected in [([],None),([{'status':'superseded'}],None),
             ([{'status':'sent'}],'done'),([{'status':'queued'},{'status':'sent'}],'awaiting_delivery'),
