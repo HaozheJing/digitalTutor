@@ -8,15 +8,43 @@ PAGE_CHARS = 60000
 ANCHOR_ROWS = 60
 
 
+
+def source_database():
+    """Read current workspace facts without enabling or initializing long-term memory."""
+    import sqlite3,contextlib
+    from pathlib import Path
+    @contextlib.contextmanager
+    def opened():
+        with contextlib.closing(sqlite3.connect(Path(s.DB).resolve().as_uri()+'?mode=ro',uri=True)) as c:
+            c.row_factory=sqlite3.Row;c.execute('BEGIN')
+            cfg=m.settings()
+            row=c.execute("SELECT value FROM metadata WHERE key='test_mode'").fetchone()
+            state=json.loads(row[0]) if row else None
+            namespace='test:'+state['run_id'] if state else 'live'
+            uid=state['uid'] if state else cfg.get('family_uid');contact=cfg.get('contact_id')
+            if not uid or not contact:raise ValueError('trusted_dialogue_identity_required')
+            if state and cfg.get('family_uid',uid)!=uid:raise ValueError('dialogue_family_mismatch')
+            tables={r[0] for r in c.execute("SELECT name FROM sqlite_master WHERE type='table'")}
+            if 'preference_bindings' in tables:
+                binding=c.execute('SELECT identity FROM preference_bindings WHERE namespace=?',(namespace,)).fetchone()
+                if binding and binding[0]!=s.encoded([uid,contact]):raise ValueError('dialogue_database_binding_changed')
+            current=s.encoded([namespace,uid]);legacy=s.encoded([namespace,uid,contact])
+            sc=current
+            if 'memory_checkpoints' in tables:
+                if not c.execute('SELECT 1 FROM memory_checkpoints WHERE scope=?',(current,)).fetchone() and c.execute('SELECT 1 FROM memory_checkpoints WHERE scope=?',(legacy,)).fetchone():sc=legacy
+            yield c,sc,tables,(current,legacy)
+    return opened()
+
 def window(day, offset=0, snapshot=None, max_chars=None, max_rows=None):
     max_chars = PAGE_CHARS if max_chars is None else max_chars
     if type(offset) is not int or offset < 0: raise ValueError('invalid_dialogue_offset')
     s.validate_day(day)
-    with m.database() as (c, sc):
-        checkpoint=c.execute('SELECT seq FROM memory_checkpoints WHERE scope=?',(sc,)).fetchone()[0]
-        forgotten={r[0] for r in c.execute('SELECT source_id FROM preference_forgotten WHERE scope=?',(sc,))}
+    with source_database() as (c, sc, tables, scopes):
+        checkpoint_row=c.execute('SELECT seq FROM memory_checkpoints WHERE scope=?',(sc,)).fetchone() if 'memory_checkpoints' in tables else None
+        checkpoint=checkpoint_row[0] if checkpoint_row else 0
+        forgotten={r[0] for r in c.execute('SELECT source_id FROM preference_forgotten WHERE scope IN (?,?)',scopes)} if 'preference_forgotten' in tables else set()
         processed={}
-        for r in c.execute("SELECT kind,source_id,body FROM memory_journal WHERE scope=? AND seq<=? AND kind IN ('message','delivery') ORDER BY seq",(sc,checkpoint)):
+        for r in (c.execute("SELECT kind,source_id,body FROM memory_journal WHERE scope=? AND seq<=? AND kind IN ('message','delivery') ORDER BY seq",(sc,checkpoint)) if 'memory_journal' in tables else []):
             processed[(r['kind'],r['source_id'])]=json.loads(r['body'])
         state=c.execute("SELECT value FROM metadata WHERE key='test_mode'").fetchone()
         state=json.loads(state[0]) if state else {}
@@ -33,7 +61,7 @@ def window(day, offset=0, snapshot=None, max_chars=None, max_rows=None):
                     rows.append({'kind':kind,**{k:v for k,v in item.items() if k!='row_number'}})
         rows.sort(key=lambda r:(m.stamp(r['created_at']),r['kind'],r.get('source_id',r.get('action_key',''))))
         fingerprint=m.digest([sc,day,checkpoint,rows])
-        if snapshot is not None and snapshot!=fingerprint: raise ValueError('dialogue_snapshot_changed_reload_conversation_window_read' if __import__('tool_surface').enabled('context') else 'dialogue_snapshot_changed_reload_daily_context')
+        if snapshot is not None and snapshot!=fingerprint: raise ValueError('dialogue_snapshot_changed_reload_conversation_read' if __import__('tool_surface').enabled('context') else 'dialogue_snapshot_changed_reload_daily_context')
         if offset and snapshot is None: raise ValueError('dialogue_snapshot_required')
         if offset>len(rows): raise ValueError('invalid_dialogue_offset')
         # Pages proceed newest to oldest. Never truncate the text of a row.
@@ -48,7 +76,7 @@ def window(day, offset=0, snapshot=None, max_chars=None, max_rows=None):
                 'conversation_window':{'snapshot':fingerprint,'offset':offset,'next_offset':end if end<len(rows) else None,
                     'has_more':end<len(rows),'total_rows':len(rows),'returned_rows':len(selected),'checkpoint':checkpoint,
                     'selection':'all_today_and_unconsolidated_plus_recent_60_per_kind',
-                    'guidance':'原文按时间保留；delivery只有sent才代表已发送，其他状态不能说已收到。has_more时用conversation_window_read传business_day、snapshot和next_offset读剩余原文；不得把本页当完整历史。当前原话优先于旧记忆。遗忘来源不重新装载。'},
+                    'guidance':'原文按时间保留；delivery只有sent才代表已发送，其他状态不能说已收到。has_more时用conversation_read传business_day、snapshot和next_offset读剩余原文；不得把本页当完整历史。当前原话优先于旧记忆。遗忘来源不重新装载。'},
                 'business_day':day}
 
 
