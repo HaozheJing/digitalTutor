@@ -20,7 +20,10 @@ def decisions(c,state,snapshot,raw):
             # Past course days only. Today's unfinished lesson is not overdue yet.
             past=[l for l in lessons if l['date']<stamp[:10]]
             calendar=[x for x in raw['course_calendar'] if registration['course_start_date']<=x['date']<stamp[:10] and (x.get('enrollment_id')==registration['id'] or len(raw['enrollments'])==1)]
-            coverage=known and bool(calendar) and all(type(x.get('new_lesson_count')) is int and x['new_lesson_count']==sum(l['date']==x['date'] for l in past) for x in calendar) and all(any(x['date']==l['date'] for x in calendar) for l in past)
+            # On the enrollment start date, an empty prior history is known zero.
+            # Treating it as unknown would suppress a later genuine return forever.
+            prior_history_known=bool(calendar) or (stamp[:10]==registration['course_start_date'] and not past)
+            coverage=known and prior_history_known and all(type(x.get('new_lesson_count')) is int and x['new_lesson_count']==sum(l['date']==x['date'] for l in past) for x in calendar) and all(any(x['date']==l['date'] for x in calendar) for l in past)
             before=[l for l in past if l['id'] not in completed]
             qualifies=coverage and len(before)>=5
             # A later threshold crossing during daily catch-up is still the same

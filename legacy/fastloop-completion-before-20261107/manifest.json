@@ -1,3 +1,6 @@
 {
-  "adapters/task_context.py": "a15b49f4cd153a8df082527fc59956865f05ea9eae5dc2c75e4e3b3fa44ec847"
+  "adapters/task_context.py": "a15b49f4cd153a8df082527fc59956865f05ea9eae5dc2c75e4e3b3fa44ec847",
+  "iterations/29bdb118/adapters/task_context.py": "161fb8dea363fa45c987636c0aef4f0b911ee000daaf99a6ecd89969324a4854",
+  "adapters/s11_service.py": "f4a23665aa195f4d6d46be004f4b1cfab8206fca786431536db1aaf9ef12ca3d",
+  "adapters/test_completion_trigger_regressions.py": null
 }
