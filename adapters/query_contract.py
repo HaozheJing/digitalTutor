@@ -52,9 +52,9 @@ class Knowledge:
 
     def browse(self,scope='curriculum',book_id=None):
         if scope=='curriculum':
-            if book_id is None:return {'status':'catalog','books':self.c.books(),'revision':self.c.data['search_root']}
+            if book_id is None:return {'status':'catalog','books':self.c.books(),'revision':self.c.data['search_root'],'selection_guidance':'先判断用户意图是否唯一定位书籍和课次。用户明确不确定哪本且目录有多个合理候选时，只用send_message列出正式书名请求确认，本轮不要knowledge_read，也不要给出任一候选答案。requires_read仅指唯一选定资料后需读取才能据其作答，不是要求读取所有候选。内容检索则可读取候选核验相关性；资料不属于当前家庭事实。'}
             if book_id not in {x['book_id'] for x in self.c.books()}:raise ValueError()
-            return {'status':'catalog','book':self.c.book(book_id),'revision':self.c.data['search_root']}
+            return {'status':'catalog','book':self.c.book(book_id),'revision':self.c.data['search_root'],'selection_guidance':'先判断用户意图是否唯一定位书籍和课次。用户明确不确定哪本且目录有多个合理候选时，只用send_message列出正式书名请求确认，本轮不要knowledge_read，也不要给出任一候选答案。requires_read仅指唯一选定资料后需读取才能据其作答，不是要求读取所有候选。内容检索则可读取候选核验相关性；资料不属于当前家庭事实。'}
         if scope not in ('faq','product') or book_id is not None:raise ValueError()
         return {'status':'catalog','documents':[{k:d[k] for k in ('id','title','kind','sha256') if k in d}
                 for d in self.catalog()['documents'] if d['kind']==scope]}
@@ -63,7 +63,7 @@ class Knowledge:
         if scope=='curriculum':
             if book_id is not None and book_id not in {x['book_id'] for x in self.c.books()}:raise ValueError()
             matches=[{**m,'read_args':{'target':{'document_id':m['document_id']}}} for m in self.c.search(query,limit,book_id,kind)]
-            return {'status':'candidates' if matches else 'no_match','matches':matches,'is_answer':False,'requires_read':True}
+            return {'status':'candidates' if matches else 'no_match','matches':matches,'is_answer':False,'requires_read':True,'selection_guidance':'先判断用户意图是否唯一定位书籍和课次。用户明确不确定哪本且目录有多个合理候选时，只用send_message列出正式书名请求确认，本轮不要knowledge_read，也不要给出任一候选答案。requires_read仅指唯一选定资料后需读取才能据其作答，不是要求读取所有候选。内容检索则可读取候选核验相关性；资料不属于当前家庭事实。'}
         if scope not in ('faq','product','emoji') or book_id is not None or kind is not None:raise ValueError()
         result=self.search_business(query,scope,limit)
         if scope=='emoji':return result
@@ -108,7 +108,7 @@ def definitions(schema):
     return [
       ('knowledge_browse','查看正式目录及书内课次映射，不加载正文。',schema({'scope':{'type':'string','enum':['curriculum','faq','product']},'book_id':s})),
       ('knowledge_search','检索候选；显式课程坐标精确匹配。候选不是答案，需读取正文。emoji沿用现行权限。',schema({'query':s,'scope':scope,'limit':{'type':'integer','minimum':1,'maximum':5},'book_id':s,'kind':{'type':'string','enum':list(PARTS)}},['query'])),
-      ('knowledge_read','按文档或L2/W/Day或书内课次精确读取。课次必填parts；文档直接使用搜索结果read_args，不需parts。逐项报告缺失和来源。',schema({'target':target,'document_id':s,'parts':{'type':'array','minItems':1,'uniqueItems':True,'items':{'type':'string','enum':list(PARTS)}}})),
+      ('knowledge_read','按文档或L2/W/Day或书内课次精确读取。用户不确定书名且存在多个候选时，本轮先send_message澄清，禁止读取候选答案。课次必填parts；文档直接使用搜索结果read_args，不需parts。逐项报告缺失和来源。',schema({'target':target,'document_id':s,'parts':{'type':'array','minItems':1,'uniqueItems':True,'items':{'type':'string','enum':list(PARTS)}}})),
       ('conversation_read','读取原话或窗口，两种选择互斥；续页保留snapshot和offset。',schema({'source_id':s,'business_day':s,'snapshot':s,'offset':{'type':'integer','minimum':0}}))]
 
 def install(server):
