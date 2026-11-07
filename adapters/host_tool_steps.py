@@ -43,7 +43,7 @@ def finish_event(event_id):
     if not enabled():return {'status':'not_enabled'}
     rows=s.read('SELECT kind,status FROM events WHERE id=?',(event_id,))
     if not rows or rows[0]['kind']=='memory_consolidation':return {'status':'not_owned'}
-    if rows[0]['status'] not in ('dispatched','awaiting_delivery'):return {'status':rows[0]['status']}
+    if rows[0]['status'] not in ('dispatched','awaiting_delivery'):return {'status':rows[0]['status'],'completion_scope':'current_message_event','business_issue_resolved':'not_established'}
     import business,observability as audit,test_mode as tm
     try:
         return audit.invoke('finish_event',{'event_id':event_id,'day':tm.clock().date().isoformat()},lambda:business.finish(event_id,tm.clock().date().isoformat()),origin='host')

@@ -553,7 +553,8 @@ def finish(task_id,outcome,reason):
         if not plans or json.loads(plans[0]['body']).get('planned_at','')<(task['started_at'] or ''):
             raise ServiceValidationError('先 save_plan 保存本任务制定的计划，空计划也需说明理由')
     links=s.read('SELECT d.* FROM service_links l JOIN deliveries d ON l.action_key=d.action_key WHERE l.task_id=? AND d.status<>"superseded"',(task_id,))
-    delivery_unconfirmed=any(r['status'] not in ('accepted','sent') for r in links)
+    delivery_projection=__import__('execution_contract').delivery_task_status(links)
+    delivery_unconfirmed=delivery_projection=='blocked'
     # Only a delivery-caused block may be resolved by a late provider receipt.
     # Preserve explicit model/business blocks even when they also have deliveries.
     delivery_block=delivery_unconfirmed and outcome!='blocked'
@@ -564,9 +565,9 @@ def finish(task_id,outcome,reason):
         raise ServiceValidationError('没有交付回执；有据不联系请使用 no_contact，无法执行请使用 blocked')
     status={'completed':'done','no_contact':'no_contact','blocked':'blocked','deferred':'deferred'}[outcome]
     if receipt_driven(task) and links and outcome in ('completed','deferred'):
-        if all(r['status']=='sent' for r in links):
+        if delivery_projection=='done':
             status='done';outcome='completed';reason='消息发送已确认，事项完成。'
-        elif all(r['status'] in ('accepted','sent') for r in links):
+        elif delivery_projection=='awaiting_delivery':
             status='awaiting_delivery';outcome='awaiting_delivery';reason='平台已受理，等待发送确认，不重新执行发送。'
     retry_at=task['due_at'];wall=0
     if status=='deferred':
@@ -581,7 +582,7 @@ def finish(task_id,outcome,reason):
     if delivery_block:result['code']='delivery_unconfirmed'
     with closing(sqlite3.connect(s.DB)) as c,c:
         c.execute('UPDATE service_tasks SET status=?,due_at=?,not_before_wall=?,finished_at=?,result=? WHERE id=?',
-                  (status,retry_at,wall,None if status=='awaiting_delivery' else s.now(),s.encoded(result),task_id))
+                  (status,retry_at,wall,None if status in ('awaiting_delivery','deferred') else s.now(),s.encoded(result),task_id))
         c.execute("DELETE FROM metadata WHERE key='active_service_task'")
     return {'task_id':task_id,'status':status,**result}
 

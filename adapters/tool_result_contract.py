@@ -25,7 +25,7 @@ def review(item):
 
 
 def annotate(name, args, value):
-    if not isinstance(value, dict) or name not in KNOWLEDGE | DELIVERY | FINISH | {'request_human_confirmation','workflow_commit','completion_plan_commit'}:
+    if not isinstance(value, dict) or name not in KNOWLEDGE | DELIVERY | FINISH | {'request_human_confirmation','workflow_commit','completion_plan_commit','service_case_review'}:
         return value
     result = copy.deepcopy(value)
     evidence = {'version': 1}
@@ -70,7 +70,10 @@ def annotate(name, args, value):
                 for item in result[field]:
                     if isinstance(item,dict):item['material_verification']={'state':review(item),'scope':'this_material_only'}
     elif name in DELIVERY:
-        evidence['operation'] = {'state':status or 'unknown','scope':'message_delivery'}
+        evidence['operation'] = {'state':status or 'unknown','scope':'task_delivery_binding' if name=='workflow_fulfill' else 'message_delivery'}
+        evidence['delivery'] = {'state':value.get('delivery',status if name!='workflow_fulfill' else 'unknown'),'scope':'message_delivery','retry_without_verification':False}
+        if name=='workflow_fulfill':
+            evidence['task']={'state':value.get('task_status','unknown'),'scope':'existing_service_task'}
         evidence['completion'] = {'state':'not_established','scope':'business_issue',
             'note':'本工具只报告消息交付；accepted 尚未确认发送成功，sent 也不证明对方已读或业务问题解决。'}
     elif name in FINISH:
@@ -83,8 +86,12 @@ def annotate(name, args, value):
             'note':'仅表示这个事件或任务的收尾结果，不证明退款完成、人工受理或家长疑虑解决。'}
     elif name == 'request_human_confirmation':
         evidence['operation'] = {'state':status or 'unknown','scope':'operator_alert'}
+        evidence['handoff'] = __import__('execution_contract').handoff_projection(value.get('alert',{}))
         evidence['completion'] = {'state':'not_established','scope':'human_resolution',
             'note':'提醒已建立/待确认不等于真人已接单；以人工后续记录为准。'}
+    elif name=='service_case_review':
+        evidence['operation']={'state':status or 'unknown','scope':'internal_case_review'}
+        evidence['completion']={'state':'not_established','scope':'business_issue'}
     else:
         evidence['operation'] = {'state':status or 'unknown','scope':'plan_update'}
         evidence['completion'] = {'state':'not_established','scope':'service_execution',

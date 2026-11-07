@@ -91,10 +91,12 @@ def bound_state(c):
     return value
 
 def task_rows(c, state):
-    return rows(c, '''SELECT t.*,v.case_id,v.uid,v.revision,v.skill_version,v.source,v.goal,
+    result = rows(c, '''SELECT t.*,v.case_id,v.uid,v.revision,v.skill_version,v.source,v.goal,
       v.window_start,v.dedupe_key,v.needs_revalidation FROM service_tasks t
       JOIN service_task_versions v ON v.task_id=t.id WHERE t.run_id=? AND v.uid=? ORDER BY t.due_at,t.id''',
       (state['run_id'], state['uid']))
+    from execution_contract import task_projection
+    return [{**task,'execution_state':task_projection(c,task)} for task in result]
 
 def messages(c):
     return rows(c, "SELECT rowid AS cursor,source_id,body,sha256 FROM messages WHERE speaker='user' AND visible=1 ORDER BY rowid DESC LIMIT 60")
@@ -204,8 +206,9 @@ def envelope(c, state, who):
     tasks = task_rows(c, state)
     return {'business_time': state['as_of'], 'owner': who, 'facts': facts(c, state, [r['skill'] for r in tasks]+[r['skill'] for r in skills]),
         'tasks': tasks, 'messages': messages(c), 'catalog': skills,
+        'human_handoffs':__import__('execution_contract').handoffs(c,state),
         'pause_targets':pause_targets(), 'pause_window_today':pause_window_today(state),
-        'deliveries': rows(c, 'SELECT l.task_id,d.action_key,d.status FROM service_links l JOIN deliveries d ON d.action_key=l.action_key ORDER BY l.task_id,d.action_key'),
+        'deliveries': rows(c, 'SELECT l.task_id,d.action_key,d.status FROM service_links l JOIN deliveries d ON d.action_key=l.action_key JOIN service_tasks t ON t.id=l.task_id WHERE t.run_id=? ORDER BY l.task_id,d.action_key', (state['run_id'],)),
         'gaps': ['学情仍由模拟提供器提供；完课使用统一POST。', '非完课的新高光/榜单/节点缺少独立事实通知；只在已有规划唤醒时观察，不另加周期巡检。', 'S05仅接初次关怀；48小时复约核验、真人交接及其他未具备数据/交付契约的动作不开放。']}
 
 def context():
@@ -418,7 +421,7 @@ def summary():
     with closing(sqlite3.connect(s.DB)) as c:
         state=bound_state(c)
         relevant=[r for r in task_rows(c,state) if r['day']==state['as_of'][:10] or (r['day']>state['as_of'][:10] and r['status'] not in FINAL)]
-        return {'mode':MODE,'tasks':[{k:r[k] for k in ('id','case_id','skill','goal','due_at','expires_at','status','revision','needs_revalidation')} for r in relevant[:40]],'more_tasks':len(relevant)>40,
+        return {'mode':MODE,'tasks':[{k:r[k] for k in ('id','case_id','skill','goal','due_at','expires_at','status','revision','needs_revalidation','execution_state')} for r in relevant[:40]],'more_tasks':len(relevant)>40,
             'message_cursor':facts(c,state)['message_cursor'],
             'workflow_guidance':__import__('tool_surface').current_instructions('这是每轮最新任务状态。修改需workflow_context/commit实际回执；固定时点不能随意改。暂停可独立保存，作用于原话明确的服务类别及有效期内现有和未来事项；以contact_constraint回执为准。完整履行已有事项须先加载manage-service-arrangements，再workflow_read(view=context,purpose=fulfill,task_id=实际事项ID)取得本轮专用入口；普通回复不自动完成任务。')}
 
@@ -498,14 +501,15 @@ def authorize_part(c,key,operation_id):
 
 def reconcile(c):
     if not enabled():return
-    for task_id, in c.execute('SELECT task_id FROM service_task_versions').fetchall():
+    state=bound_state(c)
+    for task_id, in c.execute('SELECT v.task_id FROM service_task_versions v JOIN service_tasks t ON t.id=v.task_id WHERE t.run_id=? AND v.uid=?',(state['run_id'],state['uid'])).fetchall():
         delivery_rows=c.execute('SELECT d.status,d.source FROM service_links l JOIN deliveries d ON d.action_key=l.action_key WHERE l.task_id=? AND d.status<>"superseded"',(task_id,)).fetchall()
         task=c.execute('SELECT status,result FROM service_tasks WHERE id=?',(task_id,)).fetchone()
         result=json.loads(task[1] or '{}') if task else {}
         if task and (task[0] in ('cancelled','expired','no_contact') or (task[0]=='blocked' and result.get('code')!='delivery_unconfirmed' and (result.get('outcome')=='blocked' or result.get('code') in ('human_confirmation_required','new_inbound_replan')))):continue
         statuses=[r[0] for r in delivery_rows]
         if not statuses:continue
-        status='done' if all(x=='sent' for x in statuses) else 'awaiting_delivery' if all(x in ('queued','accepted','sent') or (x=='partial' and source=='test_wechat_pending') for x,source in delivery_rows) else 'blocked'
+        status=__import__('execution_contract').delivery_task_status([{'status':status,'source':source} for status,source in delivery_rows])
         c.execute('UPDATE service_tasks SET status=?,finished_at=? WHERE id=? AND status<>?',(status,s.now() if status=='done' else None,task_id,status))
 
 def fulfill(request_id,context_token,task_id,revision,body,evidence,highlight_ids=None):
@@ -516,6 +520,7 @@ def fulfill(request_id,context_token,task_id,revision,body,evidence,highlight_id
     initialize()
     import wechat_test
     from message_text import parts
+    __import__('execution_contract').validate_body(body)
     parts(body)
     if not isinstance(request_id,str) or not 8<=len(request_id)<=160:raise ValueError('需要稳定请求ID')
     request_parts=[context_token,task_id,revision,body,evidence,highlight_ids]
@@ -527,7 +532,7 @@ def fulfill(request_id,context_token,task_id,revision,body,evidence,highlight_id
         prior=c.execute('SELECT body,result FROM service_workflow_commits WHERE run_id=? AND request_id=?',(state['run_id'],request_id)).fetchone()
         if prior:
             if prior[0]!=request_body:raise ValueError('请求ID内容冲突')
-            return {**json.loads(prior[1]),'duplicate':True}
+            return __import__('execution_contract').fulfillment_receipt(c,{**json.loads(prior[1]),'duplicate':True})
         state,who,data=check_context(c,context_token)
         if who['type']!='dialogue' or not evidence:raise ValueError('仅当前真实对话可履行任务，需说明完整覆盖依据')
         task=next((r for r in data['tasks'] if r['id']==task_id),None)
@@ -558,7 +563,8 @@ def fulfill(request_id,context_token,task_id,revision,body,evidence,highlight_id
         receipt={'status':'bound','action_key':key,'task_id':task_id}
         c.execute('INSERT INTO service_workflow_commits VALUES(?,?,?,?,?)',(state['run_id'],request_id,request_body,s.encoded(receipt),s.now()))
     wechat_test.flush()
-    return {**receipt,'delivery':s.read('SELECT status FROM deliveries WHERE action_key=?',(key,))[0]['status']}
+    with closing(sqlite3.connect(s.DB)) as c:
+        return __import__('execution_contract').fulfillment_receipt(c,receipt)
 
 def sync():
     initialize()

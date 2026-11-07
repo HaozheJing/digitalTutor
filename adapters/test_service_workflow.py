@@ -247,7 +247,7 @@ class WorkflowTests(unittest.TestCase):
     def test_sender_new_message_between_parts_stops_unsent_and_never_retries(self):
         import wechat_test as w
         tid=self.new_task();self.start_action(tid)
-        body='第一段完整服务内容。'*8+'\n\n'+'第二段完整服务内容。'*8
+        body='第一段完整服务内容。'*4+'\n\n'+'第二段完整服务内容。'*4
         with closing(sqlite3.connect(s.DB)) as c,c:
             wf.bind_delivery(c,'multipart',tid)
             c.execute("INSERT INTO deliveries VALUES('multipart',?,'queued',?,'test_wechat_pending')",(body,s.now()))
@@ -268,7 +268,7 @@ class WorkflowTests(unittest.TestCase):
         from threading import Event
         import time
         tid=self.new_task();self.start_action(tid)
-        body='第一段完整服务内容。'*8+'\n\n'+'第二段完整服务内容。'*8
+        body='第一段完整服务内容。'*4+'\n\n'+'第二段完整服务内容。'*4
         with closing(sqlite3.connect(s.DB)) as c,c:
             wf.bind_delivery(c,'parallel-parts',tid)
             c.execute("INSERT INTO deliveries VALUES('parallel-parts',?,'queued',?,'test_wechat_pending')",(body,s.now()))
@@ -332,6 +332,15 @@ class WorkflowTests(unittest.TestCase):
 
     def test_model_planned_highlight_preserves_original_caption_image_and_waits_all(self):
         import wechat_test as w
+        # This case verifies original-asset delivery, using a caption accepted
+        # by the current 50-character transport contract (not the old limit).
+        import proactive
+        evaluate=proactive.evaluate
+        def fixture_candidates(c,day):
+            return [{**item,'evidence':{**item['evidence'],'share_txt':'孩子完成了这次阅读，留下了一份成长记录。'}}
+                    if item.get('kind')=='highlight' or item.get('delivery_owner')=='host_highlights' else item
+                    for item in evaluate(c,day)]
+        self.enterContext(patch.object(proactive,'evaluate',side_effect=fixture_candidates))
         plan,ctx=self.begin_workflow('2025-11-07 20:30')
         con=next(x for x in ctx['catalog'] if x['kind']=='highlight' and x['opportunities'][0]['status']=='eligible')
         item=con['opportunities'][0];choices=self.plan(ctx)

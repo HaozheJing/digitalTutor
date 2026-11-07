@@ -1,0 +1,17 @@
+{
+  "adapters/agent_plan.py": "fc550999ff0a3a73c370de4fc8644a1793db134d0b50978422cbb50ba9094f1b",
+  "adapters/capability_surface.py": "eb381398803c7c30db1c67bfd1af7e09c3aa9bff6f22fad995cd6d45a63fccb3",
+  "adapters/execution_contract.py": null,
+  "adapters/host_tool_steps.py": "85f72bdea37ad06b1668b100fba5833c2b9444ff3e0fa3c6b639404075757dda",
+  "adapters/mcp_server.py": "9397ac0d395418cb5bdf2aec792e7ec925521e451afd8f979f42d4afad858d30",
+  "adapters/operator_alerts.py": "ee6a82ef8be31fe4c5b01b1c5077aaabf62025fdbf22c2d7c6d849b9b8214d59",
+  "adapters/service_ledger.py": "568966a4a4bdc5dfcaeb68703218ca6e0108ed3636f2e5607719cdc8a66d1a33",
+  "adapters/service_workflow.py": "dcc39b83e4e7ee3e8c0b83f8f621d11204b8a15da7e7b0e7ec572f8ec6e76af8",
+  "adapters/test_execution_contract.py": null,
+  "adapters/test_operator_alerts.py": "a79181cd117c66229ea88b3af8ff8b77a4036f09d8cbc592aeca4c897ffe2f0c",
+  "adapters/test_service_workflow.py": "898985d2a732dc103fc4f58f4d66199396b3ce67476fba84c8a42c158403461a",
+  "adapters/test_skill_capabilities.py": "b9d7b18b4e8dbde028c687503dd9dea7f174bde8f3546840e5b64c447da9bc2a",
+  "adapters/tool_result_contract.py": "06e870eb4db8a1845cf7efa8650633fa1de29743ea0ea997e8b287530fdffde0",
+  "skills/manage-service-arrangements/SKILL.md": "0bf39ec22028932c7405b4c5c7cba4e830877c7d1cefb56d816108acf53b894d",
+  "adapters/native_experiments.py": "f22af4bbe91c606055f5cfa3b16091ad39ae2b4f8ef1e492cf0e92c60e1793a4"
+}

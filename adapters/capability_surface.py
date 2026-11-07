@@ -66,7 +66,7 @@ def workflow_contract(value,args=None):
     purpose=(args or {}).get('purpose','inspect')
     if dialogue and purpose!='amend':
         contract.update(mode='dialogue_'+purpose,refresh='workflow_read(view=context,purpose='+purpose+')',
-            success_evidence='Reading changes nothing. Only actual sent receipts prove delivery; unknown must not be retried blindly.')
+            success_evidence='Reading changes nothing. Only actual sent receipts prove delivery; unknown must not be retried blindly.', completion_scope='service_delivery_only', delivery_path='workflow_fulfill owns the existing task and sends its reply; never call send_message for the same fulfillment.')
         if purpose=='fulfill':contract.update(target_task_id=(args or {}).get('task_id'),decisions='Only workflow_fulfill for this exact task_id, revision and context_token. Read its business Skill first; preserve original content/media and receipt requirements. No separate send_message for the same delivery. Refresh with the same task_id.')
         else:contract['decisions']='Inspect only; no workflow write capability is opened.'
     elif dialogue:
@@ -83,7 +83,7 @@ def install(server):
     server.base_mcp.TOOLS=[x for x in server.base_mcp.TOOLS if x[0] not in retired()]
     server.base_mcp.TOOLS += [
       ('skill_read','按需读取服务Skill目录、已发布正文或references分页。省略参数列目录；name读正文；name+path读附属材料。家长取消、暂停或调整安排时必须先读name=manage-service-arrangements，再提交实际事务；仅回复不会改变安排。沿用原业务版本审计。',schema({'name':string,'path':string,'start_line':{'type':'integer','minimum':1},'max_lines':{'type':'integer','minimum':1,'maximum':120}})),
-      ('workflow_read','读取当前家庭工作流。context返回事务上下文及并发令牌：purpose默认inspect仅开放修改，inspect只查看，fulfill需task_id且只开放履行该实际事项。tasks排期，cases持续事项，refresh重新装载当前任务事实。读取本身不发送。',schema({'view':{'type':'string','enum':['context','tasks','cases','refresh']},'purpose':{'type':'string','enum':['inspect','amend','fulfill']},'task_id':{'type':'string','description':'仅context且purpose=fulfill时必填；沿用本轮实际排期中的ID。'}})),
+      ('workflow_read','读取当前家庭工作流。context返回事务上下文及并发令牌：purpose默认inspect只查看；amend才开放修改，fulfill需task_id且只开放履行该实际事项。tasks排期，cases持续事项，refresh重新装载当前任务事实。读取本身不发送。',schema({'view':{'type':'string','enum':['context','tasks','cases','refresh']},'purpose':{'type':'string','enum':['inspect','amend','fulfill']},'task_id':{'type':'string','description':'仅context且purpose=fulfill时必填；沿用本轮实际排期中的ID。'}})),
       ('memory_read','读取当前家庭有效记忆、主体与遗忘规则。for_update=true仅在明确遗忘或媒体许可变更时读取原话证据和提交令牌；普通偏好夜间整理。',schema({'for_update':{'type':'boolean'}})),
     ]
     if __import__('delivery_capability').enabled():server.base_mcp.TOOLS.append(__import__('delivery_capability').definition(schema,definitions))

@@ -161,7 +161,11 @@ def business_call(name,args):
 
 
 def _generation_call(name,args):
-    a=dict(args);token=a.pop('generation_token',None)
+    a=dict(args)
+    if name in message_hooks.TOOLS:
+        try:__import__('execution_contract').validate_body(a.get('body'),[a.get('generation_token'),a.get('execution_token')])
+        except ValueError as error:raise agent_plan.ServiceValidationError(str(error))
+    token=a.pop('generation_token',None)
     if message_hooks.enabled() and name in message_hooks.TOOLS:
         try:
             with message_hooks.authority(token):

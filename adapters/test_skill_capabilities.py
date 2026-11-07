@@ -20,7 +20,7 @@ class ScopeTests(unittest.TestCase):
   caps.loaded('manage-service-arrangements',{'body':'真实已装载正文'});self.assertEqual(caps.visible(),{'workflow_read'})
   caps.read_complete('workflow_read',{'view':'tasks'},{'context_token':'not-a-context-view'});self.assertEqual(caps.visible(),{'workflow_read'})
   caps.read_complete('workflow_read',{'view':'context'},{'status':'unknown'});self.assertEqual(caps.visible(),{'workflow_read'})
-  value=caps.read_complete('workflow_read',{}, {'context_token':'actual-token'})
+  value=caps.read_complete('workflow_read',{'purpose':'amend'}, {'context_token':'actual-token'})
   self.assertEqual(set(value['flow_capabilities']),{'workflow_commit'})
   self.assertFalse({'preference_commit','generate_image','completion_plan_commit'}&caps.visible())
  def test_current_preferences_need_real_update_context(self):

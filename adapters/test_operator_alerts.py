@@ -15,6 +15,26 @@ import wechat_test as w
 
 
 class OperatorAlertTests(unittest.TestCase):
+    def test_final_human_receipt_consumes_original_batch_without_claiming_issue_resolution(self):
+        import message_hooks as hooks,execution_contract
+        alert=self.request()
+        with patch.object(hooks,'enabled',return_value=True):
+            with closing(sqlite3.connect(self.db)) as c,c:
+                hooks.tables(c)
+                c.execute("INSERT INTO message_hook_inbound VALUES('run-current','message-current',0,0)")
+                c.execute("INSERT INTO deliveries VALUES('reply:event-current','人工答复','sent',?,'receipt')",(s.now(),))
+                c.execute("UPDATE operator_alerts SET action_key='reply:event-current',status='accepted' WHERE id=?",(alert['id'],))
+            alerts.reconcile();alerts.reconcile()
+        self.assertEqual(s.read('SELECT handled FROM message_hook_inbound')[0]['handled'],1)
+        self.assertEqual(self.status('events','event-current'),'done')
+        view=alerts.list_alerts()['items'][0]['handling']
+        self.assertTrue(view['handling_complete']);self.assertFalse(view['auto_resume_original'])
+        self.assertEqual(view['business_issue_resolved'],'not_established')
+        with closing(sqlite3.connect(self.db)) as c:
+            self.assertEqual(execution_contract.handoffs(c,{'run_id':'other','uid':'00001'}),[])
+        with self.assertRaises(ValueError):alerts.guard_model_delivery('reply_to_message',{'event_id':'event-current'})
+        alerts.guard_model_delivery('reply_to_message',{'event_id':'new-event'})
+
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory(prefix='operator-alert-test-', dir=Path(__file__).resolve().parent)
         self.addCleanup(self.temp.cleanup)
@@ -238,7 +258,7 @@ class OperatorAlertTests(unittest.TestCase):
                 self.send(alert, recipient='arbitrary-contact')
             http.assert_not_called()
         with patch.object(w, 'http_send', return_value={'errcode': 0, 'requestId': 'provider-request'}) as http:
-            self.assertEqual(self.send(alert, body='甲' * 150 + '\n\n' + '乙' * 150)['status'], 'accepted')
+            self.assertEqual(self.send(alert, body='甲' * 50 + '\n\n' + '乙' * 50)['status'], 'accepted')
             self.assertEqual(http.call_count, 2)
 
     def test_other_delivery_or_hidden_original_cannot_be_overwritten(self):

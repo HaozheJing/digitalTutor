@@ -25,3 +25,10 @@ description: 家长要求取消、暂停、恢复或调整服务安排时，核�
 - conversation_read(source_id=消息引用) 读取原话；不传source_id则读窗口，续页保留snapshot和offset，不能混用两类参数。
 - workflow_read(view="context") 默认仅查看；明确修改已有安排时使用 purpose="amend"，履行已有事项时使用 purpose="fulfill"及task_id。读取不证明修改或交付完成。
 以上仅替换查询接口，不改变触发时机、联系权限、服务强度或业务停止条件。
+
+## 执行与回执边界
+
+- 查看时结合任务的 execution_state，分清已排期、等待发送回执、发送结果待核实及等待人工。wakeup 只描述既有事项，不授权新增服务时间。
+- workflow_fulfill 返回 bound 只说明原事项已绑定交付；检查 delivery 的实际状态。queued/accepted/partial/unknown 均不能当成发送完成。重复请求沿用原 request_id 和原参数，回执仍属于同一交付，不补调 send_message。
+- 固定时点不能因家长要求就擅自改写。改期不被当前契约允许时如实说明，不能自行创建替代任务、把请求改成取消或扩大暂停范围。
+- 人工转交后本轮停止模型发送；人工回复或撤回仅结束该转交，不证明业务问题解决，不自动重跑原事件。后续只按新事件和当前记录继续。

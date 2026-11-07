@@ -208,7 +208,7 @@ if data['mode']=='completion_action':
   args={'request_id':'experiment-completion-seed','context_token':context['context_token'],'decisions':choices}
   audit.invoke('completion_plan_commit',args,lambda:cp.commit(**args),origin='host')
   cp.finish_internal(task,'completed','isolated fixture created one actual eligible action')
-if data['mode'] in ('execution','case_review'):
+if data['mode'] in ('execution','case_review') or (data['mode']=='passive' and data.get('initial_tasks')):
  if not data.get('initial_tasks'):raise ValueError('execution_scenario_requires_explicit_initial_tasks')
  task=ap.claim();context=wf.context()
  choices=[{'skill':x['skill'],'decision':'skip','reason':'explicit expression-test fixture: not selected'} for x in context['catalog']]

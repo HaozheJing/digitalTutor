@@ -92,6 +92,7 @@ def _project(c, row):
         '已撤回人工回复' if value['status'] == 'dismissed' else
         '已提交发送，正文已冻结；请核对最终回执，不可重复发送')
     value['recipient'] = '当前绑定微信家庭'
+    value['handling'] = __import__('execution_contract').handoff_projection(value)
     return value
 
 
@@ -313,6 +314,7 @@ def reconcile():
             if row['event_id']:
                 c.execute("UPDATE events SET status='done',completed_at=? WHERE id=? AND status='needs_attention'",
                           (s.now(), row['event_id']))
+                __import__('message_hooks').handled(c,row['event_id'])
             if row['task_id']:
                 # A sent manual reply resolves this handoff, not an internal
                 # planning job whose non-messaging obligations are unfinished.

@@ -111,6 +111,10 @@ def view(run_id=None,connection=None):
             case['timeline']=rows('SELECT kind,at,body FROM service_case_timeline WHERE case_id=? ORDER BY at,id',(case['id'],))
             for entry in case['timeline']:entry['body']=json.loads(entry['body'])
             case['tasks']=rows('SELECT t.id,t.kind,t.due_at,t.status,t.result,l.event_id,l.code FROM service_case_tasks l JOIN service_tasks t ON l.task_id=t.id WHERE l.case_id=? ORDER BY t.created_at',(case['id'],))
+            case['completion_scope']='service_delivery'
+            case['business_issue_resolved']='not_established'
+            for task in case['tasks']:
+                task['execution_state']=__import__('execution_contract').task_projection(c,task)
             case['next_review']=next((t['due_at'] for t in case['tasks'] if t['kind']=='case_review' and t['status'] in ('planned','deferred')),None)
             case['title']={'makeup':'补读建议交付','S02':'首周完课鼓励','S04':'连续学习鼓励'}.get(case['kind'],case['kind'])
             case['targets']=[g['lesson_id'] for g in case['goals']]
