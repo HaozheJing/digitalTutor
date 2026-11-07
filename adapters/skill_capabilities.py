@@ -111,12 +111,31 @@ def require_amendment_receipt():
     if not enabled():return
     current=owner()
     if not current or current['kind']!='dialogue':return
-    if not s.read("SELECT 1 FROM sqlite_master WHERE name='skill_workflow_grants'"):return
-    binding=s.read("SELECT context_token FROM skill_workflow_grants WHERE owner=? AND purpose='amend'",(current['key'],))
-    if not binding:return
+    binding=s.read("SELECT context_token,purpose FROM skill_workflow_grants WHERE owner=?",(current['key'],)) if s.read("SELECT 1 FROM sqlite_master WHERE name='skill_workflow_grants'") else []
+    if not binding:
+        if current_pause_request():
+            raise __import__('agent_plan').ServiceValidationError('arrangement_pause_flow_required：当前家长消息包含联系暂停要求。先skill_read(name=manage-service-arrangements)，再workflow_read(view=context,purpose=amend)，按当前原话提交暂停并核对committed回执后才可确认。不得猜测范围、时间；需要澄清时可用purpose=inspect查看后提问，不能声称已暂停。')
+        return
+    if binding[0]['purpose']!='amend':return
     receipts=s.read("SELECT result FROM service_workflow_commits WHERE run_id=? AND json_extract(body,'$[0]')=?",(current['run_id'],binding[0]['context_token'])) if s.read("SELECT 1 FROM sqlite_master WHERE name='service_workflow_commits'") else []
     if any(json.loads(r['result']).get('status')=='committed' for r in receipts):return
     raise __import__('agent_plan').ServiceValidationError('arrangement_amendment_not_committed：本轮已进入安排修改流程，但没有本次上下文的committed回执。先调用workflow_commit提交原话支持的修改或contact_constraint；暂停约束即使tasks为空也要保存。家长明确暂停全部才可scope={kind:"all"}，某类暂停仍用对应skill。不能用send_message先确认“今天不打扰”或“已暂停”。资料变化时重新读取purpose=amend；只查看或需澄清使用purpose=inspect，不能声称已改动。')
+
+
+def current_pause_request():
+    """Route explicit current-message pause wording; never infer or write a constraint."""
+    import re
+    if not s.read("SELECT 1 FROM sqlite_master WHERE name='messages'"):return False
+    if 'payload' not in {x['name'] for x in s.read('PRAGMA table_info(events)')}:return False
+    rows=s.read("SELECT payload FROM events WHERE kind='passive' AND status='dispatched'")
+    if len(rows)!=1:return False
+    payload=json.loads(rows[0]['payload']);ids=payload.get('source_message_ids') or [payload.get('source_message_id')]
+    for ident in set(ids)-{None}:
+        for msg in s.read("SELECT body FROM messages WHERE source_id=? AND speaker='user'",(ident,)):
+            body=re.sub(r'(?:不要|不用|无需|不必|不想|不能|别|不)(?:再)?(?:暂停|停止|停发)', '', msg['body'])
+            contact=r'(?:主动|提醒|表扬|鼓励|联系|服务)'
+            if re.search(r'(?:暂停|停止|停发)[^。！？；\n]{0,24}'+contact+'|'+contact+r'[^。！？；\n]{0,24}(?:暂停|停止|停发)|(?:不要|不用|别)(?:再)?(?:提醒|联系|打扰|催)',body):return True
+    return False
 
 
 def task_identity(value):

@@ -5,5 +5,7 @@
   "adapters/test_completion_trigger_regressions.py": null,
   "adapters/skill_capabilities.py": "d3d408362838adced3fe5a449f0581165181e6d52a1320b12fb9175346736c5e",
   "adapters/test_amendment_receipt.py": null,
-  "skills/manage-service-arrangements/SKILL.md": "1f0a4a81d4204060d3126d77fc2ab4116803fd362a8e23d11e05b6f89de30083"
+  "skills/manage-service-arrangements/SKILL.md": "1f0a4a81d4204060d3126d77fc2ab4116803fd362a8e23d11e05b6f89de30083",
+  "iterations/82ed9169/adapters/skill_capabilities.py": "725203e1edbe7e2290569387ad7dc6365fdd676892f6e5491a00276f6be8d164",
+  "iterations/82ed9169/adapters/test_amendment_receipt.py": "ae0ed6f6af08b87a2bc9d2389c442e6c945c487ed9249f17bf27ae01faeb0d4d"
 }
