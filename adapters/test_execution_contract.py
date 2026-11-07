@@ -88,6 +88,19 @@ class WorkflowContractTests(unittest.TestCase):
         self.assertTrue(view['completion_confirmed']);self.assertEqual(view['business_issue_resolved'],'not_established')
         self.assertEqual(len(s.read('SELECT * FROM service_task_versions')),1)
 
+    def test_planned_and_created_times_are_not_delivery_time_evidence(self):
+        tid=self.new_task();self.start_action(tid)
+        with closing(sqlite3.connect(s.DB)) as c,c:
+            wf.bind_delivery(c,'early-send',tid)
+            c.execute("INSERT INTO deliveries VALUES('early-send','内容','sent',?,'receipt')",(s.now(),))
+            wf.reconcile(c)
+            task=wf.task_rows(c,tm.state())[0]
+        view=task['execution_state']
+        self.assertTrue(view['completion_confirmed'])
+        self.assertEqual(view['timing']['planned_due_at'],task['due_at'])
+        self.assertIsNone(view['timing']['delivered_at'])
+        self.assertEqual(view['timing']['delivery_time_evidence'],'not_recorded')
+
     def test_projection_is_readonly_and_respects_bound_run(self):
         tid=self.new_task()
         with closing(sqlite3.connect(s.DB)) as c,c:

@@ -44,11 +44,13 @@ def task_projection(c, task):
     return {'recorded_state': state, 'completion_scope': 'internal_task' if internal else 'service_delivery',
             'completion_confirmed': state == 'done' and (internal or transport == 'done'),
             'business_issue_resolved': 'not_established', 'deliveries': deliveries,
+            'timing': {'planned_due_at': task.get('due_at'), 'delivered_at': None,
+                       'delivery_time_evidence': 'not_recorded'},
             'waiting_for': waiting,
             'wakeup': {'kind': 'existing_task_due', 'at': task.get('due_at')}
                       if state in ('planned', 'deferred') and not deliveries and not human else None,
             'retry_delivery': False if deliveries or human else None,
-            'guidance': '按原事项与回执继续；等待条件仅描述既有状态，不授权创建跟进或改变联系节奏。'}
+            'guidance': '按原事项与回执继续；due_at只是原定时间，不能说成实际送达时间。sent可确认已发送，但当前回执未提供准确送达时刻，不从due_at或创建时间推算。等待条件仅描述既有状态，不授权创建跟进或改变联系节奏。'}
 
 
 def handoff_projection(value):
