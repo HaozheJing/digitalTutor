@@ -134,7 +134,7 @@ def prepare(config, scenario, *, source=ROOT, home=None, skill_source=None):
     for relative,body in runtime_contracts.items():
         target=workspace/relative;target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes(body)
     write_json(workspace / 'config/message-hooks.json', {'enabled': True})
-    write_json(workspace / 'config/tool-surface.json', {'version': 2, 'identity': True, 'schedule': True, 'knowledge': True, 'context': True, 'delivery': True, 'retire_legacy': True, 'memory_scope': True, 'host_steps': True, 'capabilities': True, 'capabilities_delivery': True, 'skill_scopes': True})
+    write_json(workspace / 'config/tool-surface.json', {'version': 2, 'identity': True, 'schedule': True, 'knowledge': True, 'context': True, 'delivery': True, 'retire_legacy': True, 'memory_scope': True, 'host_steps': True, 'capabilities_read': True, 'capabilities_delivery': True, 'skill_scopes': True})
     write_json(workspace / 'config/service-workflow.json', {'enabled': True})
     write_json(workspace / 'config/completion-planning.json', {'enabled': True})
     write_json(workspace / 'config/workbench.json', {'token': secrets.token_urlsafe(32)})
