@@ -27,5 +27,7 @@
   "assets/reading-guides/L2/M1/22cfb48ef3221069ac23c76290bb2062559b9caf0c8c971888a21c854ee4f92d.jpeg": null,
   "assets/reading-guides/L2/M1/af2b607f39eaf0fde679d52ae7dd525e3ad30165042609e5412913a7e73c582e.jpeg": null,
   "assets/reading-guides/L2/M1/3b946c01cc3e23ed7af659e17aa032e61eb818357c7d2b89b507f51297bdd12a.jpg": null,
-  "assets/reading-guides/L2/M1/d566de378f6dd374241e9a48e74d064f20258d9f98a9573c56da147453877314.jpeg": null
+  "assets/reading-guides/L2/M1/d566de378f6dd374241e9a48e74d064f20258d9f98a9573c56da147453877314.jpeg": null,
+  "adapters/course_navigation.py": "225d449d3c3d1e144387ccfc66c8fcb0388ce5e397087ad2dcf569d0dee2122a",
+  "adapters/test_knowledge_delivery_evidence.py": null
 }

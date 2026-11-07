@@ -127,13 +127,40 @@ def course_search(query,scope_uri=None,limit=5):
                 'reason':'课程检索暂时不可用'}
 
 
+def registered_course_material(result,class_type,lesson_no):
+    """Recognize unified reads by registered lesson/document identity and body hash."""
+    import sql_tools as s
+    path=s.R/'knowledge/curriculum'/class_type/'catalog.json'
+    if not path.is_file():return None
+    data=json.loads(path.read_text(encoding='utf8'))
+    lesson=next((l for l in data['lessons'] if l['level']==class_type and l['global_lesson_no']==lesson_no),None)
+    if not lesson:return None
+    ident=lesson.get('resources',{}).get('course')
+    doc=next((d for d in data['documents'] if d['document_id']==ident and d['kind']=='course' and d['lesson_id']==lesson['lesson_id']),None)
+    if not doc:return None
+    if 'parts' in result:
+        if result.get('status') not in ('ok','partial'):return None
+        if result.get('lesson_id')!=lesson['lesson_id'] or not isinstance(result['parts'],dict):return None
+        material=result['parts'].get('course')
+    else:material=result
+    if not isinstance(material,dict) or material.get('status')!='ok':return None
+    if any(material.get(k)!=doc[k] for k in ('document_id','lesson_id','kind','uri','sha256')):return None
+    body=material.get('body')
+    if not isinstance(body,str) or not body.strip() or hashlib.sha256(body.encode()).hexdigest()!=doc['sha256']:return None
+    return {**material,'class_type':class_type,'lesson_no':lesson_no,'detail':'full'}
+
+
 def matching_material(trace,class_type,lesson_no,full_only=False):
     """Accept either reader with the same lesson binding; summaries cannot replace full-only uses."""
     from course_service import entry
     item=entry(class_type,lesson_no)
-    if not item:return None
     for call in reversed(trace):
         args=call.get('arguments',{});result=call.get('result',{})
+        if call['name']=='knowledge_read':
+            material=registered_course_material(result,class_type,lesson_no)
+            if material:return material
+            continue
+        if not item:continue
         if call['name']=='course_knowledge' and args.get('class_type')==class_type and args.get('lesson_no')==lesson_no:
             return result
         if call['name']!='course_read':continue
