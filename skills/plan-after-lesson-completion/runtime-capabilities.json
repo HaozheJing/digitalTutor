@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "task_kinds": [
+    "completion_plan"
+  ],
+  "on_load": [],
+  "on_task": [
+    "completion_plan_commit",
+    "workflow_read"
+  ]
+}

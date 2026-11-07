@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "task_kinds": [
+    "highlight"
+  ],
+  "on_load": [
+    "highlight_lookup"
+  ],
+  "on_task": [
+    "highlight_lookup",
+    "workflow_highlight",
+    "workflow_read"
+  ]
+}

@@ -1,0 +1,205 @@
+{
+  "revision": "source-c764d8b325cc-nosplit-v2",
+  "courses": [
+    {
+      "class_type": "L2",
+      "lesson_no": 1,
+      "document_id": "LESSON-L2-FOX-D01",
+      "book_title": "了不起的狐狸爸爸",
+      "title": "L2《了不起的狐狸爸爸》第1天课程正文",
+      "uri": "viking://resources/digitaltutor/courses/L2/fantastic-mr-fox/source-c764d8b325cc-nosplit-v2/week-01/day-01/content.md",
+      "sha256": "5bae2236aa83e14bb33c7046dd85708a9e01149bbb09cfef2c72d73876716518",
+      "business_review_status": "unverified"
+    },
+    {
+      "class_type": "L2",
+      "lesson_no": 2,
+      "document_id": "LESSON-L2-FOX-D02",
+      "book_title": "了不起的狐狸爸爸",
+      "title": "L2《了不起的狐狸爸爸》第2天课程正文",
+      "uri": "viking://resources/digitaltutor/courses/L2/fantastic-mr-fox/source-c764d8b325cc-nosplit-v2/week-01/day-02/content.md",
+      "sha256": "4b8bb92c5a767cfa235144290c67775217721a5301cc0ae6214fb63bb185a7bb",
+      "business_review_status": "unverified"
+    },
+    {
+      "class_type": "L2",
+      "lesson_no": 3,
+      "document_id": "LESSON-L2-FOX-D03",
+      "book_title": "了不起的狐狸爸爸",
+      "title": "L2《了不起的狐狸爸爸》第3天课程正文",
+      "uri": "viking://resources/digitaltutor/courses/L2/fantastic-mr-fox/source-c764d8b325cc-nosplit-v2/week-01/day-03/content.md",
+      "sha256": "909050f0d37c3d747c93a6c9452fe4a5c998af2a4c9a8b71509312c84e2610e4",
+      "business_review_status": "unverified"
+    },
+    {
+      "class_type": "L2",
+      "lesson_no": 4,
+      "document_id": "LESSON-L2-FOX-D04",
+      "book_title": "了不起的狐狸爸爸",
+      "title": "L2《了不起的狐狸爸爸》第4天课程正文",
+      "uri": "viking://resources/digitaltutor/courses/L2/fantastic-mr-fox/source-c764d8b325cc-nosplit-v2/week-01/day-04/content.md",
+      "sha256": "9adf2c45197b40fe301a8ad26ac19221da0c99b3c526b90862684a13ba2c60ca",
+      "business_review_status": "unverified"
+    },
+    {
+      "class_type": "L2",
+      "lesson_no": 5,
+      "document_id": "LESSON-L2-FOX-D05",
+      "book_title": "了不起的狐狸爸爸",
+      "title": "L2《了不起的狐狸爸爸》第5天课程正文",
+      "uri": "viking://resources/digitaltutor/courses/L2/fantastic-mr-fox/source-c764d8b325cc-nosplit-v2/week-01/day-05/content.md",
+      "sha256": "03c740b5b599f0b25dda52a184af07d10f82884e00e495c15916f37f345247b8",
+      "business_review_status": "unverified"
+    },
+    {
+      "class_type": "L2",
+      "lesson_no": 6,
+      "document_id": "LESSON-L2-FOX-D06",
+      "book_title": "了不起的狐狸爸爸",
+      "title": "L2《了不起的狐狸爸爸》第6天课程正文",
+      "uri": "viking://resources/digitaltutor/courses/L2/fantastic-mr-fox/source-c764d8b325cc-nosplit-v2/week-02/day-06/content.md",
+      "sha256": "fa8d407332cab5fe7df48b7c27c587d95e81cbcdccc78dd1575a005bd9b2ad5e",
+      "business_review_status": "unverified"
+    },
+    {
+      "class_type": "L2",
+      "lesson_no": 7,
+      "document_id": "LESSON-L2-FOX-D07",
+      "book_title": "了不起的狐狸爸爸",
+      "title": "L2《了不起的狐狸爸爸》第7天课程正文",
+      "uri": "viking://resources/digitaltutor/courses/L2/fantastic-mr-fox/source-c764d8b325cc-nosplit-v2/week-02/day-07/content.md",
+      "sha256": "e112a7f1e454bed3cbf84f0e3a095a41093c502e99371f82ff7fcb338288e9ef",
+      "business_review_status": "unverified"
+    },
+    {
+      "class_type": "L2",
+      "lesson_no": 8,
+      "document_id": "LESSON-L2-FOX-D08",
+      "book_title": "了不起的狐狸爸爸",
+      "title": "L2《了不起的狐狸爸爸》第8天课程正文",
+      "uri": "viking://resources/digitaltutor/courses/L2/fantastic-mr-fox/source-c764d8b325cc-nosplit-v2/week-02/day-08/content.md",
+      "sha256": "652fe3cc85e9eabad6d76310961b1acf3cb5f4e094bb90e3e1bdc7bb580dc7b3",
+      "business_review_status": "unverified"
+    },
+    {
+      "class_type": "L2",
+      "lesson_no": 9,
+      "document_id": "LESSON-L2-FOX-D09",
+      "book_title": "了不起的狐狸爸爸",
+      "title": "L2《了不起的狐狸爸爸》第9天课程正文",
+      "uri": "viking://resources/digitaltutor/courses/L2/fantastic-mr-fox/source-c764d8b325cc-nosplit-v2/week-02/day-09/content.md",
+      "sha256": "5e57801f98e775a2d4238ee44adc1d901a06fb844d74041f18dd29093691840a",
+      "business_review_status": "unverified"
+    },
+    {
+      "class_type": "L2",
+      "lesson_no": 10,
+      "document_id": "LESSON-L2-FOX-D10",
+      "book_title": "了不起的狐狸爸爸",
+      "title": "L2《了不起的狐狸爸爸》第10天课程正文",
+      "uri": "viking://resources/digitaltutor/courses/L2/fantastic-mr-fox/source-c764d8b325cc-nosplit-v2/week-02/day-10/content.md",
+      "sha256": "1244c75ac503a9729cf671cdee3bfdd7690d007ac1aa5c2750fc3200106e933f",
+      "business_review_status": "unverified"
+    },
+    {
+      "class_type": "L2",
+      "lesson_no": 11,
+      "document_id": "LESSON-L2-FOX-D11",
+      "book_title": "了不起的狐狸爸爸",
+      "title": "L2《了不起的狐狸爸爸》第11天课程正文",
+      "uri": "viking://resources/digitaltutor/courses/L2/fantastic-mr-fox/source-c764d8b325cc-nosplit-v2/week-03/day-11/content.md",
+      "sha256": "b0f0385bbf048cf5d24b76ca739cfada2b1253cec111453f8438a5c2fe274bc4",
+      "business_review_status": "unverified"
+    },
+    {
+      "class_type": "L2",
+      "lesson_no": 12,
+      "document_id": "LESSON-L2-FOX-D12",
+      "book_title": "了不起的狐狸爸爸",
+      "title": "L2《了不起的狐狸爸爸》第12天课程正文",
+      "uri": "viking://resources/digitaltutor/courses/L2/fantastic-mr-fox/source-c764d8b325cc-nosplit-v2/week-03/day-12/content.md",
+      "sha256": "efe2c6acf2b8aa451d1328600c8f859617290dd914208f0b9c2553d69f86188f",
+      "business_review_status": "unverified"
+    },
+    {
+      "class_type": "L2",
+      "lesson_no": 13,
+      "document_id": "LESSON-L2-FOX-D13",
+      "book_title": "了不起的狐狸爸爸",
+      "title": "L2《了不起的狐狸爸爸》第13天课程正文",
+      "uri": "viking://resources/digitaltutor/courses/L2/fantastic-mr-fox/source-c764d8b325cc-nosplit-v2/week-03/day-13/content.md",
+      "sha256": "0e7b212cc0a7564dc8c49a7d7176a831314bff318b625e90cf06400102340a97",
+      "business_review_status": "unverified"
+    },
+    {
+      "class_type": "L2",
+      "lesson_no": 14,
+      "document_id": "LESSON-L2-FOX-D14",
+      "book_title": "了不起的狐狸爸爸",
+      "title": "L2《了不起的狐狸爸爸》第14天课程正文",
+      "uri": "viking://resources/digitaltutor/courses/L2/fantastic-mr-fox/source-c764d8b325cc-nosplit-v2/week-03/day-14/content.md",
+      "sha256": "9c888115a07d8aca911ed0c7205af3b47068a623d598eded91e914a9e26b67d0",
+      "business_review_status": "unverified"
+    },
+    {
+      "class_type": "L2",
+      "lesson_no": 15,
+      "document_id": "LESSON-L2-FOX-D15",
+      "book_title": "了不起的狐狸爸爸",
+      "title": "L2《了不起的狐狸爸爸》第15天课程正文",
+      "uri": "viking://resources/digitaltutor/courses/L2/fantastic-mr-fox/source-c764d8b325cc-nosplit-v2/week-03/day-15/content.md",
+      "sha256": "f000af801ddbde22c4c756b041b7f6849b644e6ad68a8037abf55e532a463e4f",
+      "business_review_status": "unverified"
+    },
+    {
+      "class_type": "L2",
+      "lesson_no": 16,
+      "document_id": "LESSON-L2-FOX-D16",
+      "book_title": "了不起的狐狸爸爸",
+      "title": "L2《了不起的狐狸爸爸》第16天课程正文",
+      "uri": "viking://resources/digitaltutor/courses/L2/fantastic-mr-fox/source-c764d8b325cc-nosplit-v2/week-04/day-16/content.md",
+      "sha256": "878d11b7cfe2c31f03acab619959b1c892e4df4379a0b71814de182bad0f8449",
+      "business_review_status": "unverified"
+    },
+    {
+      "class_type": "L2",
+      "lesson_no": 17,
+      "document_id": "LESSON-L2-FOX-D17",
+      "book_title": "了不起的狐狸爸爸",
+      "title": "L2《了不起的狐狸爸爸》第17天课程正文",
+      "uri": "viking://resources/digitaltutor/courses/L2/fantastic-mr-fox/source-c764d8b325cc-nosplit-v2/week-04/day-17/content.md",
+      "sha256": "93d5c0c34e574075bdd142404d4c44f7086acb83141202e8611aa6d1e69f17d5",
+      "business_review_status": "unverified"
+    },
+    {
+      "class_type": "L2",
+      "lesson_no": 18,
+      "document_id": "LESSON-L2-FOX-D18",
+      "book_title": "了不起的狐狸爸爸",
+      "title": "L2《了不起的狐狸爸爸》第18天课程正文",
+      "uri": "viking://resources/digitaltutor/courses/L2/fantastic-mr-fox/source-c764d8b325cc-nosplit-v2/week-04/day-18/content.md",
+      "sha256": "1c66528881a7500cdcebc298741be155e2e81b836038465280625547e989a9e6",
+      "business_review_status": "unverified"
+    },
+    {
+      "class_type": "L2",
+      "lesson_no": 19,
+      "document_id": "LESSON-L2-FOX-D19",
+      "book_title": "了不起的狐狸爸爸",
+      "title": "L2《了不起的狐狸爸爸》第19天课程正文",
+      "uri": "viking://resources/digitaltutor/courses/L2/fantastic-mr-fox/source-c764d8b325cc-nosplit-v2/week-04/day-19/content.md",
+      "sha256": "0ad66a7848cf9ab1c2227fb104bacc61228f78972779eb4ed24dc0bc1174b1e2",
+      "business_review_status": "unverified"
+    },
+    {
+      "class_type": "L2",
+      "lesson_no": 20,
+      "document_id": "LESSON-L2-FOX-D20",
+      "book_title": "了不起的狐狸爸爸",
+      "title": "L2《了不起的狐狸爸爸》第20天课程正文",
+      "uri": "viking://resources/digitaltutor/courses/L2/fantastic-mr-fox/source-c764d8b325cc-nosplit-v2/week-04/day-20/content.md",
+      "sha256": "78c4cd47de2d3af4b2023999f5c07e822c31a789108c3471ae127f73ac4c9ee7",
+      "business_review_status": "unverified"
+    }
+  ]
+}

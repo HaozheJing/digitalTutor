@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "task_kinds": [
+    "festival"
+  ],
+  "on_load": [],
+  "on_task": [
+    "generate_image",
+    "workflow_read"
+  ]
+}

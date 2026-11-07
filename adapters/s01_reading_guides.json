@@ -1,0 +1,686 @@
+{
+  "schema_version": 1,
+  "revision": "s01-reading-guides-20261029-v1",
+  "source": "knowledge/lesson/L2/M1/S01 课前提醒",
+  "assets": [
+    {
+      "id": "s01-L2-M1-day01",
+      "class_type": "L2",
+      "module": "M1",
+      "lesson_no": 1,
+      "book": "了不起的狐狸爸爸",
+      "name": "Day1.png",
+      "path": "assets/reading-guides/L2/M1/2b012547bd27d5e25a1ab7dc5ff2f790c662116569ef5e510e5605350320e446.png",
+      "sha256": "2b012547bd27d5e25a1ab7dc5ff2f790c662116569ef5e510e5605350320e446",
+      "size": 205510,
+      "mime": "image/png",
+      "printed_progress": "1/20",
+      "printed_progress_is_child_completion": false,
+      "recommended_pages": "1–5",
+      "approximate_characters": 400,
+      "questions": [
+        {
+          "id": "s01-L2-M1-day01-q1",
+          "text": "三个饲养场主分别叫什么？",
+          "answer_status": "pending",
+          "answer_ref": null
+        },
+        {
+          "id": "s01-L2-M1-day01-q2",
+          "text": "谁是最聪明的？",
+          "answer_status": "pending",
+          "answer_ref": null
+        }
+      ],
+      "reading_comprehension": "提取关键信息，完成人物信息卡。",
+      "expression": "看图说话：1. 完整介绍关键人物信息。2. 仿说句子。",
+      "transcription": "Visually checked against original image; punctuation and whitespace normalized; no answers supplied."
+    },
+    {
+      "id": "s01-L2-M1-day02",
+      "class_type": "L2",
+      "module": "M1",
+      "lesson_no": 2,
+      "book": "了不起的狐狸爸爸",
+      "name": "Day2.jpg",
+      "path": "assets/reading-guides/L2/M1/36e34846342d291f5933b0c361d1f30a29624780a57c8af42887e022a062bcea.jpg",
+      "sha256": "36e34846342d291f5933b0c361d1f30a29624780a57c8af42887e022a062bcea",
+      "size": 635666,
+      "mime": "image/jpeg",
+      "printed_progress": "2/20",
+      "printed_progress_is_child_completion": false,
+      "recommended_pages": "7–12",
+      "approximate_characters": 600,
+      "questions": [
+        {
+          "id": "s01-L2-M1-day02-q1",
+          "text": "狐狸先生的对手是谁？",
+          "answer_status": "pending",
+          "answer_ref": null
+        },
+        {
+          "id": "s01-L2-M1-day02-q2",
+          "text": "狐狸一家住在哪儿？",
+          "answer_status": "pending",
+          "answer_ref": null
+        }
+      ],
+      "reading_comprehension": "提取关键人物基本信息——狐狸爸爸",
+      "expression": "看图说话：1. 完整介绍关键人物信息。2. 仿说句子。",
+      "transcription": "Visually checked against original image; punctuation and whitespace normalized; no answers supplied."
+    },
+    {
+      "id": "s01-L2-M1-day03",
+      "class_type": "L2",
+      "module": "M1",
+      "lesson_no": 3,
+      "book": "了不起的狐狸爸爸",
+      "name": "Day3.png",
+      "path": "assets/reading-guides/L2/M1/2d02d8e0bbc109d75413c78b1aff1051d56a0418b4da683cd7147d3288d2255a.png",
+      "sha256": "2d02d8e0bbc109d75413c78b1aff1051d56a0418b4da683cd7147d3288d2255a",
+      "size": 209095,
+      "mime": "image/png",
+      "printed_progress": "3/20",
+      "printed_progress_is_child_completion": false,
+      "recommended_pages": "13–17",
+      "approximate_characters": 650,
+      "questions": [
+        {
+          "id": "s01-L2-M1-day03-q1",
+          "text": "三个坏家伙埋伏在哪儿？",
+          "answer_status": "pending",
+          "answer_ref": null
+        },
+        {
+          "id": "s01-L2-M1-day03-q2",
+          "text": "狐狸先生被抓住了吗？",
+          "answer_status": "pending",
+          "answer_ref": null
+        }
+      ],
+      "reading_comprehension": "提取关键信息，完成人物信息卡。",
+      "expression": "看图说话：1. 完整介绍关键人物信息。2. 仿说句子。",
+      "transcription": "Visually checked against original image; punctuation and whitespace normalized; no answers supplied."
+    },
+    {
+      "id": "s01-L2-M1-day04",
+      "class_type": "L2",
+      "module": "M1",
+      "lesson_no": 4,
+      "book": "了不起的狐狸爸爸",
+      "name": "Day4.jpeg",
+      "path": "assets/reading-guides/L2/M1/6a7ee15c9a1acb481f64f261665db707b0f16026a76d0be0ab0f6add5c5af5e7.jpeg",
+      "sha256": "6a7ee15c9a1acb481f64f261665db707b0f16026a76d0be0ab0f6add5c5af5e7",
+      "size": 111945,
+      "mime": "image/jpeg",
+      "printed_progress": "4/20",
+      "printed_progress_is_child_completion": false,
+      "recommended_pages": "23–27",
+      "approximate_characters": 460,
+      "questions": [
+        {
+          "id": "s01-L2-M1-day04-q1",
+          "text": "狐狸一家被抓了吗？",
+          "answer_status": "pending",
+          "answer_ref": null
+        },
+        {
+          "id": "s01-L2-M1-day04-q2",
+          "text": "三个饲养场主用什么工具挖洞？",
+          "answer_status": "pending",
+          "answer_ref": null
+        }
+      ],
+      "reading_comprehension": "通过人物对话，了解人物特点",
+      "expression": "看图说话：1. 观察图片，推测人物心情。2. 根据人物心情加上动作，有感情朗读",
+      "transcription": "Visually checked against original image; punctuation and whitespace normalized; no answers supplied."
+    },
+    {
+      "id": "s01-L2-M1-day05",
+      "class_type": "L2",
+      "module": "M1",
+      "lesson_no": 5,
+      "book": "了不起的狐狸爸爸",
+      "name": "Day5.jpg",
+      "path": "assets/reading-guides/L2/M1/4b1698264583c943b5de89e31bf8ad898daa0a93403e104f3d74bc0364c99ddf.jpg",
+      "sha256": "4b1698264583c943b5de89e31bf8ad898daa0a93403e104f3d74bc0364c99ddf",
+      "size": 284541,
+      "mime": "image/jpeg",
+      "printed_progress": "5/20",
+      "printed_progress_is_child_completion": false,
+      "recommended_pages": "28–31",
+      "approximate_characters": 560,
+      "questions": [
+        {
+          "id": "s01-L2-M1-day05-q1",
+          "text": "狐狸先生的特点是什么？",
+          "answer_status": "pending",
+          "answer_ref": null
+        },
+        {
+          "id": "s01-L2-M1-day05-q2",
+          "text": "狐狸为什么是“生存小能手”？",
+          "answer_status": "pending",
+          "answer_ref": null
+        }
+      ],
+      "reading_comprehension": "温故：提取关键信息，完成人物信息卡，目的是回顾本周故事内容及人物特点。知新：了解狐狸习性",
+      "expression": "看图说话：仿说句子“越来越……”表示事物在慢慢变化。",
+      "transcription": "Visually checked against original image; punctuation and whitespace normalized; no answers supplied."
+    },
+    {
+      "id": "s01-L2-M1-day06",
+      "class_type": "L2",
+      "module": "M1",
+      "lesson_no": 6,
+      "book": "了不起的狐狸爸爸",
+      "name": "Day6.jpg",
+      "path": "assets/reading-guides/L2/M1/979c74a71373e01fc0019f7e70204cef00d6ae908f6c1cfc5159d81901999e9c.jpg",
+      "sha256": "979c74a71373e01fc0019f7e70204cef00d6ae908f6c1cfc5159d81901999e9c",
+      "size": 632111,
+      "mime": "image/jpeg",
+      "printed_progress": "6/20",
+      "printed_progress_is_child_completion": false,
+      "recommended_pages": "32–35",
+      "approximate_characters": 600,
+      "questions": [
+        {
+          "id": "s01-L2-M1-day06-q1",
+          "text": "饲养场主改用什么工具挖洞？",
+          "answer_status": "pending",
+          "answer_ref": null
+        },
+        {
+          "id": "s01-L2-M1-day06-q2",
+          "text": "狐狸一家往哪里挖？",
+          "answer_status": "pending",
+          "answer_ref": null
+        }
+      ],
+      "reading_comprehension": "学会用对比图，对比双方的优势",
+      "expression": "仿说表达：1. 介绍故事主要内容。2. 仿说句子。",
+      "transcription": "Visually checked against original image; punctuation and whitespace normalized; no answers supplied."
+    },
+    {
+      "id": "s01-L2-M1-day07",
+      "class_type": "L2",
+      "module": "M1",
+      "lesson_no": 7,
+      "book": "了不起的狐狸爸爸",
+      "name": "Day7.jpeg",
+      "path": "assets/reading-guides/L2/M1/5d49fe4dfe99899d655efe880d5a07a885e7483bc28206bcf56398f4b0925af8.jpeg",
+      "sha256": "5d49fe4dfe99899d655efe880d5a07a885e7483bc28206bcf56398f4b0925af8",
+      "size": 108548,
+      "mime": "image/jpeg",
+      "printed_progress": "7/20",
+      "printed_progress_is_child_completion": false,
+      "recommended_pages": "36–42",
+      "approximate_characters": 590,
+      "questions": [
+        {
+          "id": "s01-L2-M1-day07-q1",
+          "text": "午饭时，饲养场主们在做什么？",
+          "answer_status": "pending",
+          "answer_ref": null
+        },
+        {
+          "id": "s01-L2-M1-day07-q2",
+          "text": "下午五点，小山变成了什么样？",
+          "answer_status": "pending",
+          "answer_ref": null
+        }
+      ],
+      "reading_comprehension": "学会用对比图，对比双方的劣势",
+      "expression": "仿说表达：1. 介绍故事主要内容。2. 仿说句子。",
+      "transcription": "Visually checked against original image; punctuation and whitespace normalized; no answers supplied."
+    },
+    {
+      "id": "s01-L2-M1-day08",
+      "class_type": "L2",
+      "module": "M1",
+      "lesson_no": 8,
+      "book": "了不起的狐狸爸爸",
+      "name": "Day8.jpeg",
+      "path": "assets/reading-guides/L2/M1/613c6ffd2d304828ff7c951d502f12a43e353fdee54115bbcad31882adf1367b.jpeg",
+      "sha256": "613c6ffd2d304828ff7c951d502f12a43e353fdee54115bbcad31882adf1367b",
+      "size": 112664,
+      "mime": "image/jpeg",
+      "printed_progress": "8/20",
+      "printed_progress_is_child_completion": false,
+      "recommended_pages": "43–50",
+      "approximate_characters": 760,
+      "questions": [
+        {
+          "id": "s01-L2-M1-day08-q1",
+          "text": "饲养场主们在几点停止挖洞？",
+          "answer_status": "pending",
+          "answer_ref": null
+        },
+        {
+          "id": "s01-L2-M1-day08-q2",
+          "text": "狐狸先生为什么不去吃洞口的鸡？",
+          "answer_status": "pending",
+          "answer_ref": null
+        }
+      ],
+      "reading_comprehension": "使用对比图，对比双方的优劣势，推测会发生什么",
+      "expression": "仿说表达：1. 介绍故事主要内容。2. 仿说句子。",
+      "transcription": "Visually checked against original image; punctuation and whitespace normalized; no answers supplied."
+    },
+    {
+      "id": "s01-L2-M1-day09",
+      "class_type": "L2",
+      "module": "M1",
+      "lesson_no": 9,
+      "book": "了不起的狐狸爸爸",
+      "name": "Day9.jpeg",
+      "path": "assets/reading-guides/L2/M1/8fe7431de8004f0371927c2b57f71833cf0f022b75e945ca5142e8f9563142df.jpeg",
+      "sha256": "8fe7431de8004f0371927c2b57f71833cf0f022b75e945ca5142e8f9563142df",
+      "size": 113362,
+      "mime": "image/jpeg",
+      "printed_progress": "9/20",
+      "printed_progress_is_child_completion": false,
+      "recommended_pages": "55–56",
+      "approximate_characters": 800,
+      "questions": [
+        {
+          "id": "s01-L2-M1-day09-q1",
+          "text": "狐狸一家多久没吃没喝了？",
+          "answer_status": "pending",
+          "answer_ref": null
+        },
+        {
+          "id": "s01-L2-M1-day09-q2",
+          "text": "推测狐狸先生的计划是什么？",
+          "answer_status": "pending",
+          "answer_ref": null
+        }
+      ],
+      "reading_comprehension": "使用对比图，对比狐狸一家当下的优劣势，推测会发生什么",
+      "expression": "仿说表达：1. 介绍故事主要内容。2. 仿说句子。",
+      "transcription": "Visually checked against original image; punctuation and whitespace normalized; no answers supplied."
+    },
+    {
+      "id": "s01-L2-M1-day10",
+      "class_type": "L2",
+      "module": "M1",
+      "lesson_no": 10,
+      "book": "了不起的狐狸爸爸",
+      "name": "Day10.jpeg",
+      "path": "assets/reading-guides/L2/M1/d7a7750ca3efd3ef85eff2f976d76cf03928c4df516937ccdc2079127cd1bcd8.jpeg",
+      "sha256": "d7a7750ca3efd3ef85eff2f976d76cf03928c4df516937ccdc2079127cd1bcd8",
+      "size": 119356,
+      "mime": "image/jpeg",
+      "printed_progress": "10/20",
+      "printed_progress_is_child_completion": false,
+      "recommended_pages": "57–64",
+      "approximate_characters": 890,
+      "questions": [
+        {
+          "id": "s01-L2-M1-day10-q1",
+          "text": "狐狸几天不喝水会有生命危险？",
+          "answer_status": "pending",
+          "answer_ref": null
+        },
+        {
+          "id": "s01-L2-M1-day10-q2",
+          "text": "为什么骆驼是“储水冠军”？",
+          "answer_status": "pending",
+          "answer_ref": null
+        }
+      ],
+      "reading_comprehension": "温故：提取关键信息，完成双方对比图。知新：安全知识——人、哺乳动物多久不喝水会有生命危险",
+      "expression": "仿说表达：1. 介绍故事主要内容。2. 仿说句子。",
+      "transcription": "Visually checked against original image; punctuation and whitespace normalized; no answers supplied."
+    },
+    {
+      "id": "s01-L2-M1-day11",
+      "class_type": "L2",
+      "module": "M1",
+      "lesson_no": 11,
+      "book": "了不起的狐狸爸爸",
+      "name": "Day11.jpeg",
+      "path": "assets/reading-guides/L2/M1/c4032225b90f5c9bef6564ef3d3a2571b44a508e584088d84dc99884c7efc0b7.jpeg",
+      "sha256": "c4032225b90f5c9bef6564ef3d3a2571b44a508e584088d84dc99884c7efc0b7",
+      "size": 112594,
+      "mime": "image/jpeg",
+      "printed_progress": "11/20",
+      "printed_progress_is_child_completion": false,
+      "recommended_pages": "65–70",
+      "approximate_characters": 700,
+      "questions": [
+        {
+          "id": "s01-L2-M1-day11-q1",
+          "text": "狐狸们来到了哪里？",
+          "answer_status": "pending",
+          "answer_ref": null
+        },
+        {
+          "id": "s01-L2-M1-day11-q2",
+          "text": "狐狸先生让谁往回送食物？",
+          "answer_status": "pending",
+          "answer_ref": null
+        }
+      ],
+      "reading_comprehension": "根据故事中的语气描写，发现人物情感态度",
+      "expression": "有感情朗读：1. 看图分析人物态度，有感情朗读。2. 仿说句子。",
+      "transcription": "Visually checked against original image; punctuation and whitespace normalized; no answers supplied."
+    },
+    {
+      "id": "s01-L2-M1-day12",
+      "class_type": "L2",
+      "module": "M1",
+      "lesson_no": 12,
+      "book": "了不起的狐狸爸爸",
+      "name": "Day12.jpeg",
+      "path": "assets/reading-guides/L2/M1/67d93a7c6f76e8a63f3ef6067d7b03bac0de8c7fe13f73bfc2f231fb1a7bda12.jpeg",
+      "sha256": "67d93a7c6f76e8a63f3ef6067d7b03bac0de8c7fe13f73bfc2f231fb1a7bda12",
+      "size": 112111,
+      "mime": "image/jpeg",
+      "printed_progress": "12/20",
+      "printed_progress_is_child_completion": false,
+      "recommended_pages": "72–78",
+      "approximate_characters": 840,
+      "questions": [
+        {
+          "id": "s01-L2-M1-day12-q1",
+          "text": "狐狸太太怎么样了？",
+          "answer_status": "pending",
+          "answer_ref": null
+        },
+        {
+          "id": "s01-L2-M1-day12-q2",
+          "text": "他们在地道里遇见了谁？",
+          "answer_status": "pending",
+          "answer_ref": null
+        }
+      ],
+      "reading_comprehension": "根据故事中的行为描写，发现人物情感态度",
+      "expression": "有感情朗读：1. 看图分析人物态度，有感情朗读。2. 仿说句子。",
+      "transcription": "Visually checked against original image; punctuation and whitespace normalized; no answers supplied."
+    },
+    {
+      "id": "s01-L2-M1-day13",
+      "class_type": "L2",
+      "module": "M1",
+      "lesson_no": 13,
+      "book": "了不起的狐狸爸爸",
+      "name": "Day13.jpeg",
+      "path": "assets/reading-guides/L2/M1/762396732f97fd616ae73997553ae7eb0b25342b2792c4822bdaddf05550f61d.jpeg",
+      "sha256": "762396732f97fd616ae73997553ae7eb0b25342b2792c4822bdaddf05550f61d",
+      "size": 113419,
+      "mime": "image/jpeg",
+      "printed_progress": "13/20",
+      "printed_progress_is_child_completion": false,
+      "recommended_pages": "79–86",
+      "approximate_characters": 890,
+      "questions": [
+        {
+          "id": "s01-L2-M1-day13-q1",
+          "text": "狐狸先生带着大家挖到了哪里？",
+          "answer_status": "pending",
+          "answer_ref": null
+        },
+        {
+          "id": "s01-L2-M1-day13-q2",
+          "text": "小狐狸们用什么运输食物？",
+          "answer_status": "pending",
+          "answer_ref": null
+        }
+      ],
+      "reading_comprehension": "根据故事中的行为描写，发现人物情感态度",
+      "expression": "有感情朗读：1. 看图分析人物态度，有感情朗读。2. 仿说句子。",
+      "transcription": "Visually checked against original image; punctuation and whitespace normalized; no answers supplied."
+    },
+    {
+      "id": "s01-L2-M1-day14",
+      "class_type": "L2",
+      "module": "M1",
+      "lesson_no": 14,
+      "book": "了不起的狐狸爸爸",
+      "name": "Day14.jpeg",
+      "path": "assets/reading-guides/L2/M1/f1626013b75415bba97242dbfcb2d0f92238aa06d1162085e798c9ec0f8348ad.jpeg",
+      "sha256": "f1626013b75415bba97242dbfcb2d0f92238aa06d1162085e798c9ec0f8348ad",
+      "size": 120059,
+      "mime": "image/jpeg",
+      "printed_progress": "14/20",
+      "printed_progress_is_child_completion": false,
+      "recommended_pages": "87–96",
+      "approximate_characters": 1000,
+      "questions": [
+        {
+          "id": "s01-L2-M1-day14-q1",
+          "text": "獾在挖洞时碰到了什么？",
+          "answer_status": "pending",
+          "answer_ref": null
+        },
+        {
+          "id": "s01-L2-M1-day14-q2",
+          "text": "獾对狐狸先生的态度有什么变化？",
+          "answer_status": "pending",
+          "answer_ref": null
+        }
+      ],
+      "reading_comprehension": "1. 根据故事中的语言描写，发现人物情感态度。2. 理解读书时遇到的人物，他们不止有一面",
+      "expression": "有感情朗读：1. 看图分析人物态度，有感情朗读。2. 仿说句子。",
+      "transcription": "Visually checked against original image; punctuation and whitespace normalized; no answers supplied."
+    },
+    {
+      "id": "s01-L2-M1-day15",
+      "class_type": "L2",
+      "module": "M1",
+      "lesson_no": 15,
+      "book": "了不起的狐狸爸爸",
+      "name": "Day15.jpg",
+      "path": "assets/reading-guides/L2/M1/ebbc711af7918f35be2a9b58a483ba528db582e73609848e8bd1a5c2d0a300f4.jpg",
+      "sha256": "ebbc711af7918f35be2a9b58a483ba528db582e73609848e8bd1a5c2d0a300f4",
+      "size": 687080,
+      "mime": "image/jpeg",
+      "printed_progress": "15/20",
+      "printed_progress_is_child_completion": false,
+      "recommended_pages": "97–109",
+      "approximate_characters": 1400,
+      "questions": [
+        {
+          "id": "s01-L2-M1-day15-q1",
+          "text": "狐狸是什么样的“小卫士”？",
+          "answer_status": "pending",
+          "answer_ref": null
+        },
+        {
+          "id": "s01-L2-M1-day15-q2",
+          "text": "谁是花朵的“快递员”？",
+          "answer_status": "pending",
+          "answer_ref": null
+        }
+      ],
+      "reading_comprehension": "温故：综合运用，发现人物态度及情感变化。知新：狐狸在生物链中的作用",
+      "expression": "有感情朗读：1. 看图分析人物态度，有感情朗读。2. 仿说句子。",
+      "transcription": "Visually checked against original image; punctuation and whitespace normalized; no answers supplied."
+    },
+    {
+      "id": "s01-L2-M1-day16",
+      "class_type": "L2",
+      "module": "M1",
+      "lesson_no": 16,
+      "book": "了不起的狐狸爸爸",
+      "name": "Day16.jpeg",
+      "path": "assets/reading-guides/L2/M1/21ec052abada49d6852fb54200ae5e76e3bc83a1f9978c1afbe7b3f545bd55fb.jpeg",
+      "sha256": "21ec052abada49d6852fb54200ae5e76e3bc83a1f9978c1afbe7b3f545bd55fb",
+      "size": 108908,
+      "mime": "image/jpeg",
+      "printed_progress": "16/20",
+      "printed_progress_is_child_completion": false,
+      "recommended_pages": "110–116",
+      "approximate_characters": 810,
+      "questions": [
+        {
+          "id": "s01-L2-M1-day16-q1",
+          "text": "狐狸先生他们挖到了哪里？",
+          "answer_status": "pending",
+          "answer_ref": null
+        },
+        {
+          "id": "s01-L2-M1-day16-q2",
+          "text": "他们遇到了谁？",
+          "answer_status": "pending",
+          "answer_ref": null
+        }
+      ],
+      "reading_comprehension": "寻找酒窖线索，绘制狐狸行进路线图",
+      "expression": "概括情节：1. 介绍故事情节。2. 介绍有趣的动物。",
+      "transcription": "Visually checked against original image; punctuation and whitespace normalized; no answers supplied."
+    },
+    {
+      "id": "s01-L2-M1-day17",
+      "class_type": "L2",
+      "module": "M1",
+      "lesson_no": 17,
+      "book": "了不起的狐狸爸爸",
+      "name": "Day17.jpeg",
+      "path": "assets/reading-guides/L2/M1/22cfb48ef3221069ac23c76290bb2062559b9caf0c8c971888a21c854ee4f92d.jpeg",
+      "sha256": "22cfb48ef3221069ac23c76290bb2062559b9caf0c8c971888a21c854ee4f92d",
+      "size": 108374,
+      "mime": "image/jpeg",
+      "printed_progress": "17/20",
+      "printed_progress_is_child_completion": false,
+      "recommended_pages": "117–126",
+      "approximate_characters": 960,
+      "questions": [
+        {
+          "id": "s01-L2-M1-day17-q1",
+          "text": "狐狸先生他们躲在哪里？",
+          "answer_status": "pending",
+          "answer_ref": null
+        },
+        {
+          "id": "s01-L2-M1-day17-q2",
+          "text": "大块头女人拿了什么？",
+          "answer_status": "pending",
+          "answer_ref": null
+        }
+      ],
+      "reading_comprehension": "标记躲避地点，补充躲避路线图",
+      "expression": "概括情节：1. 介绍故事情节。2. 介绍有趣的动物。",
+      "transcription": "Visually checked against original image; punctuation and whitespace normalized; no answers supplied."
+    },
+    {
+      "id": "s01-L2-M1-day18",
+      "class_type": "L2",
+      "module": "M1",
+      "lesson_no": 18,
+      "book": "了不起的狐狸爸爸",
+      "name": "Day18.jpeg",
+      "path": "assets/reading-guides/L2/M1/af2b607f39eaf0fde679d52ae7dd525e3ad30165042609e5412913a7e73c582e.jpeg",
+      "sha256": "af2b607f39eaf0fde679d52ae7dd525e3ad30165042609e5412913a7e73c582e",
+      "size": 111151,
+      "mime": "image/jpeg",
+      "printed_progress": "18/20",
+      "printed_progress_is_child_completion": false,
+      "recommended_pages": "127–133",
+      "approximate_characters": 980,
+      "questions": [
+        {
+          "id": "s01-L2-M1-day18-q1",
+          "text": "狐狸先生和獾为什么边跑边唱歌？",
+          "answer_status": "pending",
+          "answer_ref": null
+        },
+        {
+          "id": "s01-L2-M1-day18-q2",
+          "text": "宴会在什么地方举办？",
+          "answer_status": "pending",
+          "answer_ref": null
+        }
+      ],
+      "reading_comprehension": "标注食材来源，绘制宴会地点路线图",
+      "expression": "概括情节：1. 介绍故事情节。2. 介绍有趣的动物。",
+      "transcription": "Visually checked against original image; punctuation and whitespace normalized; no answers supplied."
+    },
+    {
+      "id": "s01-L2-M1-day19",
+      "class_type": "L2",
+      "module": "M1",
+      "lesson_no": 19,
+      "book": "了不起的狐狸爸爸",
+      "name": "Day19.jpg",
+      "path": "assets/reading-guides/L2/M1/3b946c01cc3e23ed7af659e17aa032e61eb818357c7d2b89b507f51297bdd12a.jpg",
+      "sha256": "3b946c01cc3e23ed7af659e17aa032e61eb818357c7d2b89b507f51297bdd12a",
+      "size": 638586,
+      "mime": "image/jpeg",
+      "printed_progress": "19/20",
+      "printed_progress_is_child_completion": false,
+      "recommended_pages": "134–141",
+      "approximate_characters": 570,
+      "questions": [
+        {
+          "id": "s01-L2-M1-day19-q1",
+          "text": "出去会有什么危险？",
+          "answer_status": "pending",
+          "answer_ref": null
+        },
+        {
+          "id": "s01-L2-M1-day19-q2",
+          "text": "“全新的设施”指的是什么？",
+          "answer_status": "pending",
+          "answer_ref": null
+        }
+      ],
+      "reading_comprehension": "提取关键情节，补充情节路线图",
+      "expression": "概括情节：1. 介绍故事情节。2. 介绍有趣的动物。",
+      "transcription": "Visually checked against original image; punctuation and whitespace normalized; no answers supplied."
+    },
+    {
+      "id": "s01-L2-M1-day20",
+      "class_type": "L2",
+      "module": "M1",
+      "lesson_no": 20,
+      "book": "了不起的狐狸爸爸",
+      "name": "Day20.jpeg",
+      "path": "assets/reading-guides/L2/M1/d566de378f6dd374241e9a48e74d064f20258d9f98a9573c56da147453877314.jpeg",
+      "sha256": "d566de378f6dd374241e9a48e74d064f20258d9f98a9573c56da147453877314",
+      "size": 115932,
+      "mime": "image/jpeg",
+      "printed_progress": "20/20",
+      "printed_progress_is_child_completion": false,
+      "recommended_pages": "142–150",
+      "approximate_characters": 810,
+      "questions": [
+        {
+          "id": "s01-L2-M1-day20-q1",
+          "text": "哪些动物是挖洞高手？",
+          "answer_status": "pending",
+          "answer_ref": null
+        },
+        {
+          "id": "s01-L2-M1-day20-q2",
+          "text": "谁把洞挖得像迷宫？",
+          "answer_status": "pending",
+          "answer_ref": null
+        }
+      ],
+      "reading_comprehension": "温故：用对比图分析一件事；完成整本书情节路线图。知新：了解会打洞的动物",
+      "expression": "概括情节：1. 介绍故事情节。2. 介绍有趣的动物。",
+      "transcription": "Visually checked against original image; punctuation and whitespace normalized; no answers supplied."
+    }
+  ],
+  "answer_status": "pending",
+  "selection": "Exact class_type and course lesson_no; not calendar day or completion count.",
+  "openviking_index": {
+    "uri": "viking://resources/digitaltutor-integration-reading-guides/s01-20261029-10fad0e0edb5",
+    "documents": [
+      "viking://resources/digitaltutor-integration-reading-guides/s01-20261029-10fad0e0edb5/S01_课前导读单原图与问题索引_1.md",
+      "viking://resources/digitaltutor-integration-reading-guides/s01-20261029-10fad0e0edb5/S01_课前导读单原图与问题索引_10.md",
+      "viking://resources/digitaltutor-integration-reading-guides/s01-20261029-10fad0e0edb5/S01_课前导读单原图与问题索引_2.md",
+      "viking://resources/digitaltutor-integration-reading-guides/s01-20261029-10fad0e0edb5/S01_课前导读单原图与问题索引_3.md",
+      "viking://resources/digitaltutor-integration-reading-guides/s01-20261029-10fad0e0edb5/S01_课前导读单原图与问题索引_4.md",
+      "viking://resources/digitaltutor-integration-reading-guides/s01-20261029-10fad0e0edb5/S01_课前导读单原图与问题索引_5.md",
+      "viking://resources/digitaltutor-integration-reading-guides/s01-20261029-10fad0e0edb5/S01_课前导读单原图与问题索引_6.md",
+      "viking://resources/digitaltutor-integration-reading-guides/s01-20261029-10fad0e0edb5/S01_课前导读单原图与问题索引_7.md",
+      "viking://resources/digitaltutor-integration-reading-guides/s01-20261029-10fad0e0edb5/S01_课前导读单原图与问题索引_8.md",
+      "viking://resources/digitaltutor-integration-reading-guides/s01-20261029-10fad0e0edb5/S01_课前导读单原图与问题索引_9.md"
+    ],
+    "verified": true,
+    "contents": "Original image metadata and 40 questions only; no answer key or family delivery evidence"
+  }
+}

@@ -1,0 +1,9 @@
+# Course lookup contract
+
+`course_schedule(date, class_type, cohort)` is the scheduling integration seam. The current provider reads `course_schedule_config.json`. L2 / cohort 61 starts on 2025-10-13 with lesson 1, incrementing one lesson each Monday-Friday, without public-holiday adjustments. Weekends return `no_lesson`; dates before opening return `not_started`; unsupported class/cohort return `unknown`. Replace the provider behind this function with the business API later; preserve the tool contract.
+
+Example: `{"date":"2025-10-13","class_type":"L2","cohort":"61"}` returns `scheduled`, `lesson_no:1`, `lesson_id:"L2-001"`. 2025-10-17 maps to 5; 2025-10-20 maps to 6. This schedule does not assert completion or move the clock.
+
+`course_knowledge(class_type, lesson_no)` resolves an exact curriculum index entry and reads OpenViking live. The pinned index comes from the existing `source-c764d8b325cc-nosplit-v2` manifest, L2 / Fantastic Mr Fox lessons 1-20. Match the SHA-256 of the whole document; return `changed`/`unavailable`/`no_match` rather than another lesson or local fallback. Existing AI-generated/unreviewed source metadata remains intact; the schedule mapping is operator-configured, not a claim that a real business cohort mapping was verified.
+
+S01 first matches the schedule and learning lesson IDs. Completed/no-lesson paths end before reading knowledge. For incomplete lessons the model reads the exact indexed knowledge and composes through reply-style. deliver_message rechecks current facts, task-scoped preparation, contact restrictions and duplicate delivery, preserving the draft or returning a repair reason. No separate unlock field or model-facing eligibility tool is needed. Failed knowledge reads permit a simple invitation; skipping the lookup does not. Model-facing context does not inject the historical first lesson as today's content. Operator automatic sending stays disabled until intentionally resumed.

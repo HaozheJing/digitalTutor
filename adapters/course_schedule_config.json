@@ -1,0 +1,25 @@
+{
+  "provider": "weekday_calendar",
+  "calendars": [
+    {
+      "class_type": "L2",
+      "cohort": "61",
+      "start_date": "2025-10-13",
+      "weekdays": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "known_until": "2025-11-09",
+      "lesson_count": 20
+    }
+  ],
+  "bindings": {
+    "00001": {
+      "class_type": "L2",
+      "cohort": "61"
+    }
+  }
+}

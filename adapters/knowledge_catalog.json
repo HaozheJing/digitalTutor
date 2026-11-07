@@ -1,0 +1,157 @@
+{
+  "faq": {
+    "revision": "source-1fb0918df52f-faq-8a790143",
+    "search_uri": "viking://resources/digitaltutor/faqs/reading-camp/source-1fb0918df52f-faq-8a790143/internal-navigation",
+    "tags": "knowledge_type=faq_navigation,usage_scope=internal_pilot"
+  },
+  "product": {
+    "revision": "source-52e8a8289d17-merged-v1",
+    "search_uri": "viking://resources/digitaltutor/products/reading-camp/source-52e8a8289d17-merged-v1/core",
+    "tags": "knowledge_type=product,retrieval_scope=core"
+  },
+  "documents": [
+    {
+      "id": "FAQ-TOPIC-SCHEDULE",
+      "title": "课程安排与补课",
+      "uri": "viking://resources/digitaltutor/faqs/reading-camp/source-1fb0918df52f-faq-8a790143/internal-navigation/schedule/content.md",
+      "sha256": "74e6f923b4f77216e1bfa4e1724d07451576fb8407ff342e6bb97312cd7c72cb",
+      "kind": "faq",
+      "revision": "source-1fb0918df52f-faq-8a790143",
+      "business_status": "unverified",
+      "publication_status": "internal_navigation_only",
+      "retrieval_scope": "navigation"
+    },
+    {
+      "id": "FAQ-TOPIC-BOOKS",
+      "title": "书籍随材与物流",
+      "uri": "viking://resources/digitaltutor/faqs/reading-camp/source-1fb0918df52f-faq-8a790143/internal-navigation/books/content.md",
+      "sha256": "0c90cd4cca783cc1a9c6d9c23f7b91cd7d86db93e78e15f0ebe4c53c94849bd3",
+      "kind": "faq",
+      "revision": "source-1fb0918df52f-faq-8a790143",
+      "business_status": "unverified",
+      "publication_status": "internal_navigation_only",
+      "retrieval_scope": "navigation"
+    },
+    {
+      "id": "FAQ-TOPIC-APP",
+      "title": "APP操作与故障",
+      "uri": "viking://resources/digitaltutor/faqs/reading-camp/source-1fb0918df52f-faq-8a790143/internal-navigation/app/content.md",
+      "sha256": "9020ef1517f030a955badca3cfd25895d805572ad91542c19594ddc244abb6b2",
+      "kind": "faq",
+      "revision": "source-1fb0918df52f-faq-8a790143",
+      "business_status": "unverified",
+      "publication_status": "internal_navigation_only",
+      "retrieval_scope": "navigation"
+    },
+    {
+      "id": "FAQ-TOPIC-PRACTICE",
+      "title": "阅读练习与家庭配合",
+      "uri": "viking://resources/digitaltutor/faqs/reading-camp/source-1fb0918df52f-faq-8a790143/internal-navigation/practice/content.md",
+      "sha256": "b0c09ff31ae31101ef527a306a4298d4b5ce4ac371af002c9e15f16a14ad2294",
+      "kind": "faq",
+      "revision": "source-1fb0918df52f-faq-8a790143",
+      "business_status": "unverified",
+      "publication_status": "internal_navigation_only",
+      "retrieval_scope": "navigation"
+    },
+    {
+      "id": "FAQ-TOPIC-TEACHER",
+      "title": "老师服务与班级沟通",
+      "uri": "viking://resources/digitaltutor/faqs/reading-camp/source-1fb0918df52f-faq-8a790143/internal-navigation/teacher/content.md",
+      "sha256": "883bca3640683467cabf9fd9ac4bc2dd861415a5bd6acd5571c6abb3f2784b16",
+      "kind": "faq",
+      "revision": "source-1fb0918df52f-faq-8a790143",
+      "business_status": "unverified",
+      "publication_status": "internal_navigation_only",
+      "retrieval_scope": "navigation"
+    },
+    {
+      "id": "FAQ-TOPIC-LIVE",
+      "title": "直播测评与报告",
+      "uri": "viking://resources/digitaltutor/faqs/reading-camp/source-1fb0918df52f-faq-8a790143/internal-navigation/live/content.md",
+      "sha256": "a53af1325a7d0b83a473e76a42a66c5bc4a33c44658fbe6167557c1740c7e17b",
+      "kind": "faq",
+      "revision": "source-1fb0918df52f-faq-8a790143",
+      "business_status": "unverified",
+      "publication_status": "internal_navigation_only",
+      "retrieval_scope": "navigation"
+    },
+    {
+      "id": "FAQ-TOPIC-ACTIVITIES",
+      "title": "活动积分与礼品",
+      "uri": "viking://resources/digitaltutor/faqs/reading-camp/source-1fb0918df52f-faq-8a790143/internal-navigation/activities/content.md",
+      "sha256": "93981fb3d147cd52f0773d925777559f3717c8be237121b2d1dedcccef785f22",
+      "kind": "faq",
+      "revision": "source-1fb0918df52f-faq-8a790143",
+      "business_status": "unverified",
+      "publication_status": "internal_navigation_only",
+      "retrieval_scope": "navigation"
+    },
+    {
+      "id": "FAQ-TOPIC-ORDERS",
+      "title": "订单权益与退费",
+      "uri": "viking://resources/digitaltutor/faqs/reading-camp/source-1fb0918df52f-faq-8a790143/internal-navigation/orders/content.md",
+      "sha256": "7e3b5533f744514a66d2e85eb98458e3f7bc9295d6511ecb1068e7fcef08d3ed",
+      "kind": "faq",
+      "revision": "source-1fb0918df52f-faq-8a790143",
+      "business_status": "unverified",
+      "publication_status": "internal_navigation_only",
+      "retrieval_scope": "navigation"
+    },
+    {
+      "id": "PRODUCT-READING-CAMP-OVERVIEW",
+      "title": "产品介绍与学习安排",
+      "uri": "viking://resources/digitaltutor/products/reading-camp/source-52e8a8289d17-merged-v1/core/overview/content.md",
+      "sha256": "bc80cf1beb625973a27449faa4840fa37c426394b1c9b26abc9167d23a66d0ee",
+      "kind": "product",
+      "revision": "source-52e8a8289d17-merged-v1",
+      "business_status": "unverified",
+      "publication_status": "reference_material",
+      "retrieval_scope": "core"
+    },
+    {
+      "id": "PRODUCT-READING-CAMP-LEVELS",
+      "title": "分级体系与选书介绍",
+      "uri": "viking://resources/digitaltutor/products/reading-camp/source-52e8a8289d17-merged-v1/core/levels-and-books/content.md",
+      "sha256": "c4748c45a53cc6aa37e85ab1ca8d3014b2751731699df9d602b59dbae0031e87",
+      "kind": "product",
+      "revision": "source-52e8a8289d17-merged-v1",
+      "business_status": "unverified",
+      "publication_status": "reference_material",
+      "retrieval_scope": "core"
+    },
+    {
+      "id": "PRODUCT-READING-CAMP-METHODS",
+      "title": "阅读能力与教学方法",
+      "uri": "viking://resources/digitaltutor/products/reading-camp/source-52e8a8289d17-merged-v1/core/reading-methods/content.md",
+      "sha256": "d600cd98673c625b741aec5562742c017b6a522915de777cb383c5331f6f2a32",
+      "kind": "product",
+      "revision": "source-52e8a8289d17-merged-v1",
+      "business_status": "unverified",
+      "publication_status": "reference_material",
+      "retrieval_scope": "core"
+    },
+    {
+      "id": "PRODUCT-READING-CAMP-FEATURES",
+      "title": "产品功能与伴学服务",
+      "uri": "viking://resources/digitaltutor/products/reading-camp/source-52e8a8289d17-merged-v1/core/features-and-service/content.md",
+      "sha256": "5c8219b8667fd35f5c60818b5a54e4c1a0ed592e1b52ebc4fbfde0ab4fe932ce",
+      "kind": "product",
+      "revision": "source-52e8a8289d17-merged-v1",
+      "business_status": "unverified",
+      "publication_status": "reference_material",
+      "retrieval_scope": "core"
+    },
+    {
+      "id": "PRODUCT-READING-CAMP-REFERENCE",
+      "title": "规划与历史参考",
+      "uri": "viking://resources/digitaltutor/products/reading-camp/source-52e8a8289d17-merged-v1/reference/plans-and-history/content.md",
+      "sha256": "db748b7a4ff00cb72aae5c38e3834d260826977d450c6a55a3e533eb9ca4f738",
+      "kind": "product",
+      "revision": "source-52e8a8289d17-merged-v1",
+      "business_status": "unverified",
+      "publication_status": "reference_material",
+      "retrieval_scope": "reference"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "task_kinds": [
+    "case_review"
+  ],
+  "on_load": [],
+  "on_task": [
+    "service_case_review",
+    "workflow_read"
+  ]
+}

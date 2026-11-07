@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "task_kinds": [],
+  "on_load": [
+    "generate_audio"
+  ],
+  "on_task": []
+}

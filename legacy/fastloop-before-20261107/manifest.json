@@ -1,0 +1,15 @@
+{
+  "adapters/mcp_server.py": "2d5c6872324c7aeb44233a564af564362dd9f7f9e14ccb15b0da8e1f22965ce7",
+  "adapters/capability_surface.py": "61a4205b2f422fc901994e9ec647e3199232fd5eb78c4d61294c250ad3a8d5b1",
+  "adapters/skill_capabilities.py": "9bc4ffff615118c3f9eebb1b9c4252f9908404632154673d509d138cd8aea5f6",
+  "adapters/tool_surface.py": "2591eeb8d484c0f7cd46b7d1111797ab6690acde5340777c4b5e95e4ab12410f",
+  "adapters/course_navigation.py": "225d449d3c3d1e144387ccfc66c8fcb0388ce5e397087ad2dcf569d0dee2122a",
+  "adapters/knowledge_search.py": "5b6c6228158baaf9186b17e71ec6f70d896b1b1068f5b878db6f9e16c36285d1",
+  "adapters/data_readers.py": "36f0db53a2cb71003f7466381716b2430bf5d58b33ccda98317bd1eac1fa0f56",
+  "adapters/dialogue_context.py": "dd9c69bf00106eea4f454f207612a943efbb9e584e897dac5cc3e16dcb631999",
+  "ops/curriculum_agent_tools.py": "1080b5e0df736685e826d04e4490f914c224111e1c2cd0fa28bc9d11b9388303",
+  "skills/manage-service-arrangements/SKILL.md": "6fc24015fdf1ad2f3e5e2ad6646730a2a4fd6663c6cd606b389800be05bd3752",
+  "skills/invite-reading-interaction/SKILL.md": "08273883fc19ea7c3a4b96e8a0a6ae81f3234b981c061295e1ea60c17c8d4338",
+  "skills/tutor-main/SKILL.md": "2770a8b9e99952346c8874bb88f6ec5d4a186397c74d106874d63e1053b5f54a",
+  "skills/rebuild-reading-rhythm/SKILL.md": "98131f1725bde099c8ac4ec0863da5c9bcfc367738e1ac5bc3eeaf828b800b8e"
+}

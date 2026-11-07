@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "task_kinds": [
+    "plan"
+  ],
+  "on_load": [
+    "workflow_read"
+  ],
+  "on_task": [
+    "workflow_read",
+    "workflow_commit"
+  ]
+}
