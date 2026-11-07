@@ -12,6 +12,15 @@ class QueryTests(unittest.TestCase):
   self.c=Curriculum(ROOT/'knowledge/curriculum/L2/catalog.json','unused')
   self.c.read=lambda ident:{**self.c.documents[ident],'body':'原文证据'}
   self.k=Knowledge(self.c,lambda:{'documents':[{'id':'faq-1','kind':'faq'}]},lambda ident:{'status':'ok','body':'导航','can_answer_directly':False},lambda *a:{'status':'ok','matches':[{'body':'导航','document_id':'faq-1','can_answer_directly':False}]})
+ def test_search_read_handoff(self):
+  r=self.k.search('L2 W1 Day1',scope='curriculum')
+  for hit in r['matches']:
+   self.assertEqual(self.k.call('knowledge_read',hit['read_args'])['status'],'ok')
+ def test_document_parts_must_match_registered_kind(self):
+  ident=next(k for k,v in self.c.documents.items() if v['kind']=='reading_qa')
+  self.assertEqual(self.k.call('knowledge_read',{'target':{'document_id':ident},'parts':['reading_qa']})['status'],'ok')
+  for parts in [[],['course'],['reading_qa','course'],['reading_qa','reading_qa']]:
+   self.assertEqual(self.k.call('knowledge_read',{'target':{'document_id':ident},'parts':parts})['status'],'invalid_request')
  def test_all_coordinates(self):
   for w in range(1,49):
    for d in range(1,6):

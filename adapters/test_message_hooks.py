@@ -154,7 +154,7 @@ class MessageHookTests(unittest.TestCase):
             self.assertEqual(w.flush()[0]['status'],'replan_required');http.assert_not_called()
 
     def test_partial_stops_remaining_and_preserves_late_receipt(self):
-        self.queue(body=('先说第一段。'*16)+'\n\n'+('再说第二段。'*16))
+        self.queue(body=('先说第一段。'*8)+'\n\n'+('再说第二段。'*8))
         def send(*args):
             self.inbound('collision');return {'errcode':0,'requestId':'accepted-one'}
         with patch.object(w,'http_send',side_effect=send) as http:

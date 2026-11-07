@@ -62,7 +62,7 @@ class Knowledge:
     def search(self,query,scope='faq',limit=3,book_id=None,kind=None):
         if scope=='curriculum':
             if book_id is not None and book_id not in {x['book_id'] for x in self.c.books()}:raise ValueError()
-            matches=self.c.search(query,limit,book_id,kind)
+            matches=[{**m,'read_args':{'target':{'document_id':m['document_id']}}} for m in self.c.search(query,limit,book_id,kind)]
             return {'status':'candidates' if matches else 'no_match','matches':matches,'is_answer':False,'requires_read':True}
         if scope not in ('faq','product','emoji') or book_id is not None or kind is not None:raise ValueError()
         result=self.search_business(query,scope,limit)
@@ -76,8 +76,8 @@ class Knowledge:
             target={'document_id':document_id}
         if not isinstance(target,dict):raise ValueError()
         if set(target)=={'document_id'}:
-            if parts is not None:raise ValueError()
             ident=target['document_id']
+            if parts is not None and (ident not in self.c.documents or parts != [self.c.documents[ident]['kind']]):raise ValueError()
             if ident in self.c.documents:return self.document(ident)
             if any(d['id']==ident for d in self.catalog()['documents']):return self.read_business(ident)
             return {'status':'not_found','reason':'document_not_registered'}
@@ -108,7 +108,7 @@ def definitions(schema):
     return [
       ('knowledge_browse','查看正式目录及书内课次映射，不加载正文。',schema({'scope':{'type':'string','enum':['curriculum','faq','product']},'book_id':s})),
       ('knowledge_search','检索候选；显式课程坐标精确匹配。候选不是答案，需读取正文。emoji沿用现行权限。',schema({'query':s,'scope':scope,'limit':{'type':'integer','minimum':1,'maximum':5},'book_id':s,'kind':{'type':'string','enum':list(PARTS)}},['query'])),
-      ('knowledge_read','按文档或L2/W/Day或书内课次精确读取。课次必填parts，逐项报告缺失和来源。',schema({'target':target,'document_id':s,'parts':{'type':'array','minItems':1,'uniqueItems':True,'items':{'type':'string','enum':list(PARTS)}}})),
+      ('knowledge_read','按文档或L2/W/Day或书内课次精确读取。课次必填parts；文档直接使用搜索结果read_args，不需parts。逐项报告缺失和来源。',schema({'target':target,'document_id':s,'parts':{'type':'array','minItems':1,'uniqueItems':True,'items':{'type':'string','enum':list(PARTS)}}})),
       ('conversation_read','读取原话或窗口，两种选择互斥；续页保留snapshot和offset。',schema({'source_id':s,'business_day':s,'snapshot':s,'offset':{'type':'integer','minimum':0}}))]
 
 def install(server):

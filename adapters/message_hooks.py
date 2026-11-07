@@ -149,7 +149,7 @@ def begin(owner_type, owner_id):
         audit(c, 'generation', {'token': token, 'owner_type': owner_type, 'owner_id': owner_id, 'cursor': cursor(c)})
     __import__('family_lab_bridge').begin(token,owner_type,owner_id)
     return {'ready': True, 'token': token, 'prompt': '\n工程发送授权 generation_token=' + token +
-            '。调用任何回复或交付工具必须携带此令牌；replan_required表示旧内容已拦截，本轮立即结束，等待系统合并新消息重新唤醒。' +
+            '。此令牌只放工具的generation_token参数，绝不能写入发给家长的body或可见正文。调用任何回复或交付工具必须携带此令牌；replan_required表示旧内容已拦截，本轮立即结束，等待系统合并新消息重新唤醒。' +
             '\n近期已经提交的交付分段（实际状态，accepted/unknown不可视作未发；不要盲目重复；被打断时仅重新评估尚未交付部分）：' + s.encoded(prior)}
 
 

@@ -1,4 +1,5 @@
 """One bounded message capability; original transports and guards own effects."""
+import re
 import agent_plan as ap,business,sql_tools as s
 
 REPLACED={'deliver_message','deliver_proactive','reply_to_message','send_image'}
@@ -10,6 +11,8 @@ def route(args):
     if not isinstance(args,dict) or set(args)-{'body','candidate_ids','asset_id','highlight_ids','execution_token','generation_token','emoji_refs'}:
         raise ap.ServiceValidationError('invalid_message_arguments')
     if not isinstance(args.get('body'),str) or not args['body'].strip():raise ap.ServiceValidationError('message_body_required')
+    if re.search(r'(?i)(?:generation_token|execution_token)\s*[:=]',args['body']) or any(isinstance(args.get(k),str) and len(args[k])>=8 and args[k] in args['body'] for k in ('generation_token','execution_token')):
+        raise ap.ServiceValidationError('internal_authority_in_body_remove_it_and_retry')
     common={k:args[k] for k in ('body','execution_token','generation_token','emoji_refs') if k in args}
     task=ap.active()
     if task:
@@ -35,4 +38,4 @@ def route(args):
 def definition(schema,definitions):
     props={k:v for k,v in definitions['reply_to_message'][1]['properties'].items() if k in ('body','generation_token','emoji_refs','highlight_ids')}
     props.update(candidate_ids=definitions['deliver_proactive'][1]['properties']['candidate_ids'],asset_id={'type':'string'},execution_token={'type':'string'})
-    return ('send_message','向当前绑定的家长消息或服务任务交付文字/附件，不接受接收人或任意URL。普通回复仅body；主动沿用本任务candidate_ids与execution_token；节日另带已检查asset_id；被动高光可带highlight_ids。沿用generation_token，不凭accepted或unknown重发。家长取消/暂停/修改安排时，先skill_read(name=manage-service-arrangements)完成事务；未取得committed回执不得确认已改动。',schema(props,['body']))
+    return ('send_message','向当前绑定的家长消息或服务任务交付文字/附件，不接受接收人或任意URL。普通回复仅body；主动沿用本任务candidate_ids与execution_token；节日另带已检查asset_id；被动高光可带highlight_ids。generation_token与execution_token仅放独立参数，禁止放进body。沿用generation_token，不凭accepted或unknown重发。家长取消/暂停/修改安排时，先skill_read(name=manage-service-arrangements)完成事务；未取得committed回执不得确认已改动。',schema(props,['body']))
