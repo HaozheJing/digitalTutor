@@ -12,7 +12,7 @@ SKILLS=('manage-service-arrangements','plan-service-day','plan-after-lesson-comp
 PRIVATE=frozenset({'workflow_read','workflow_commit','workflow_fulfill','preference_commit','completion_plan_commit','service_case_review','service_task_finish','workflow_highlight','highlight_lookup','generate_image','generate_audio','perceive_image'})
 INTERNAL_KINDS=frozenset({'plan','completion_plan','case_review'})
 INTERNAL_FORBIDDEN=frozenset({'send_message','workflow_fulfill','workflow_highlight','generate_image','generate_audio'})
-PUBLIC_CAPABILITY_SKILLS=[{'name':'manage-service-arrangements','description':'家长取消、暂停或调整已有安排时使用；必须实际提交成功后才能确认。'},{'name':'inspect-family-image','description':'理解已登记或授权图片，开放perceive_image。'},
+PUBLIC_CAPABILITY_SKILLS=[{'name':'manage-service-arrangements','description':'查看、调整或在当前回复中履行已有安排时使用；仅发普通回复不会完成原事项。'},{'name':'inspect-family-image','description':'理解已登记或授权图片，开放perceive_image。'},
                          {'name':'generate-reading-audio','description':'按明确需要生成音频素材；当前不支持语音交付。'}]
 
 def enabled():
@@ -131,7 +131,7 @@ def loaded(name,value):
     if not enabled() or not isinstance(value,dict) or not value.get('body'):return value
     policy=policies().get(name)
     names=grant(policy['on_load']) if policy else []
-    return {**value,'flow_capabilities':names,'capability_scope':'current_task_or_message_attempt_only','arrangement_changes':'如果家长要求取消、暂停或修改安排，应另读skill_read(name=manage-service-arrangements)执行事务；仅阅读业务Skill或发送回复不会修改排期。'}
+    return {**value,'flow_capabilities':names,'capability_scope':'current_task_or_message_attempt_only','arrangement_changes':'如果家长要求取消、暂停、修改安排，或现在完成已有服务，应另读skill_read(name=manage-service-arrangements)。现在完成已有服务必须查实际task_id，再以purpose=fulfill读取上下文并用workflow_fulfill交付；不能先send_message再补记完成。仅阅读业务Skill或发送普通回复不会修改或完成原事项。'}
 
 def read_complete(name,args,value):
     if not enabled() or not isinstance(value,dict):return value

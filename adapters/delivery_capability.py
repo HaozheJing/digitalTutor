@@ -38,4 +38,4 @@ def route(args):
 def definition(schema,definitions):
     props={k:v for k,v in definitions['reply_to_message'][1]['properties'].items() if k in ('body','generation_token','emoji_refs','highlight_ids')}
     props.update(candidate_ids=definitions['deliver_proactive'][1]['properties']['candidate_ids'],asset_id={'type':'string'},execution_token={'type':'string'})
-    return ('send_message','向当前绑定的家长消息或服务任务交付文字/附件，不接受接收人或任意URL。普通回复仅body；主动沿用本任务candidate_ids与execution_token；节日另带已检查asset_id；被动高光可带highlight_ids。generation_token与execution_token仅放独立参数，禁止放进body。沿用generation_token，不凭accepted或unknown重发。家长取消/暂停/修改安排时，先skill_read(name=manage-service-arrangements)完成事务；未取得committed回执不得确认已改动。',schema(props,['body']))
+    return ('send_message','向当前绑定的家长消息或服务任务交付文字/附件，不接受接收人或任意URL。普通回复仅body；主动沿用本任务candidate_ids与execution_token；节日另带已检查asset_id；被动高光可带highlight_ids。generation_token与execution_token仅放独立参数，禁止放进body。沿用generation_token，不凭accepted或unknown重发。家长要求现在完成已有安排时，先skill_read(name=manage-service-arrangements)并使用workflow_fulfill交付，不能用send_message代替。家长取消/暂停/修改安排时，先skill_read(name=manage-service-arrangements)完成事务；未取得committed回执不得确认已改动。',schema(props,['body']))

@@ -16,5 +16,10 @@
   "adapters/native_experiments.py": "f22af4bbe91c606055f5cfa3b16091ad39ae2b4f8ef1e492cf0e92c60e1793a4",
   "adapters/test_agent_plan.py": "8bdf3a91e4625b9bdc35f73a89fcdc07a21038b258e69371394baf57d3d56e65",
   "adapters/handoff_capability.py": null,
-  "adapters/test_handoff_capability.py": null
+  "adapters/test_handoff_capability.py": null,
+  "adapters/delivery_capability.py": "f4a00cd24d7171f16a1f1898b0c39543d7c5d48184a705c6c8ee27ce710a547a",
+  "adapters/skill_capabilities.py": "9e94266dd1cdb7da76defc5f30ddacfc9875a09808c710b54c27b7226d326d69",
+  "skills/invite-reading-interaction/SKILL.md": "9f5c36f5c6b10f2eff97729b89a06e3f330aede940e0a6d4ae3797738d8f997d",
+  "skills/service-policy/SKILL.md": "a574c25d0406becb2c3cafd6bde82780a8b718807910b6cee0b5efb50e376d62",
+  "skills/tutor-main/SKILL.md": "f3182a57768c664ca92e086e465173cf590cde1b321cf04f7d087c4e5aac1d5e"
 }

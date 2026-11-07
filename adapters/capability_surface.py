@@ -83,7 +83,7 @@ def install(server):
     server.base_mcp.TOOLS=[x for x in server.base_mcp.TOOLS if x[0] not in retired()]
     server.base_mcp.TOOLS=[__import__('handoff_capability').definition(schema) if x[0]=='request_human_confirmation' else x for x in server.base_mcp.TOOLS]
     server.base_mcp.TOOLS += [
-      ('skill_read','按需读取服务Skill目录、已发布正文或references分页。省略参数列目录；name读正文；name+path读附属材料。家长取消、暂停或调整安排时必须先读name=manage-service-arrangements，再提交实际事务；仅回复不会改变安排。沿用原业务版本审计。',schema({'name':string,'path':string,'start_line':{'type':'integer','minimum':1},'max_lines':{'type':'integer','minimum':1,'maximum':120}})),
+      ('skill_read','按需读取服务Skill目录、已发布正文或references分页。省略参数列目录；name读正文；name+path读附属材料。家长查看、调整或要求本轮完成已有安排时，先读name=manage-service-arrangements；完整履行已有事项走workflow_fulfill，普通回复不完成原事项。沿用原业务版本审计。',schema({'name':string,'path':string,'start_line':{'type':'integer','minimum':1},'max_lines':{'type':'integer','minimum':1,'maximum':120}})),
       ('workflow_read','读取当前家庭工作流。context返回事务上下文及并发令牌：purpose默认inspect只查看；amend才开放修改，fulfill需task_id且只开放履行该实际事项。tasks排期，cases持续事项，refresh重新装载当前任务事实。读取本身不发送。',schema({'view':{'type':'string','enum':['context','tasks','cases','refresh']},'purpose':{'type':'string','enum':['inspect','amend','fulfill']},'task_id':{'type':'string','description':'仅context且purpose=fulfill时必填；沿用本轮实际排期中的ID。'}})),
       ('memory_read','读取当前家庭有效记忆、主体与遗忘规则。for_update=true仅在明确遗忘或媒体许可变更时读取原话证据和提交令牌；普通偏好夜间整理。',schema({'for_update':{'type':'boolean'}})),
     ]
