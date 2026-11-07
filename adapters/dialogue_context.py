@@ -15,6 +15,13 @@ def source_database():
     from pathlib import Path
     @contextlib.contextmanager
     def opened():
+        if m.enabled():
+            # Preserve the existing persisted identity lock when memory is enabled.
+            with m.database() as (c,sc):
+                tables={r[0] for r in c.execute("SELECT name FROM sqlite_master WHERE type='table'")}
+                identity=json.loads(sc);legacy=s.encoded([identity[0],identity[1],m.settings()['contact_id']])
+                yield c,sc,tables,(sc,legacy)
+            return
         with contextlib.closing(sqlite3.connect(Path(s.DB).resolve().as_uri()+'?mode=ro',uri=True)) as c:
             c.row_factory=sqlite3.Row;c.execute('BEGIN')
             cfg=m.settings()

@@ -50,7 +50,7 @@ class WorkflowContractTests(unittest.TestCase):
  def test_dialogue_empty_tasks_does_not_become_a_daily_plan(self):
   from capability_surface import workflow_contract
   data={'context_token':'token','owner':{'type':'dialogue'},'tasks':[],'catalog':[{'skill':'x'}]}
-  value=workflow_contract(data)
+  value=workflow_contract(data,{'purpose':'amend'})
   self.assertEqual(value['operation_contract']['mode'],'dialogue_revision')
   self.assertEqual(value['tasks'],[])
   self.assertIn('never promise',value['operation_contract']['success_evidence'])
