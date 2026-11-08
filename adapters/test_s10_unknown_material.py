@@ -54,9 +54,12 @@ class S10UnknownMaterialTests(unittest.TestCase):
         self.start_workflow()
         self.assertEqual(wm.queue()['status'], 'queued')
         self.remove_calendar_evidence()
-        with self.assertRaisesRegex(ValueError, '学情'):
-            w.flush()
+        results = w.flush()
+        self.assertEqual(len(results), 1)
+        self.assertEqual(results[0]['status'], 'blocked')
         self.assertEqual(s.read('SELECT * FROM test_outbox'), [])
+        self.assertEqual(s.read('SELECT status FROM deliveries')[0]['status'], 'blocked')
+        self.assertEqual(w.flush(), [])
 
     def test_known_zero_still_receives_weekly_pdf(self):
         self.start_workflow(zero=True)
