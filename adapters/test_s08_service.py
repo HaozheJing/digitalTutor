@@ -47,7 +47,7 @@ class S08IntegrationTests(unittest.TestCase):
         return task
 
     def test_every_friday_wakes_without_prefiltering_and_only_friday(self):
-        for day in ['2025-10-17', '2025-10-24', '2025-10-31', '2025-11-07', '2025-11-14']:
+        for day in ['2025-10-17', '2025-10-24', '2025-10-31', '2025-11-07']:
             tm.activate(day + ' 19:00', False)
             ap.enable()
             tasks = [r for r in ap.tasks() if r['kind'] == 's08']
@@ -66,6 +66,8 @@ class S08IntegrationTests(unittest.TestCase):
             with closing(sqlite3.connect(s.DB)) as c, c:
                 c.execute("UPDATE service_tasks SET status='cancelled' WHERE kind='plan'")
             self.assertIsNone(ap.claim())  # Automatic execution remains off.
+        with self.assertRaisesRegex(ValueError, 'outside the first-month'):
+            tm.activate('2025-11-14 19:00', False)
         tm.activate('2025-11-06 19:00', False)
         ap.enable()
         self.assertFalse(any(r['kind'] == 's08' for r in ap.tasks()))

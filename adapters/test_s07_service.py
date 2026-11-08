@@ -29,7 +29,7 @@ class S07IntegrationTests(unittest.TestCase):
     set_context=fixtures.FixtureIntegrationTests.set_context
 
     def test_wednesday_wakes_even_when_no_contact(self):
-        for day in ['2025-10-15','2025-10-22','2025-10-29','2025-11-05','2025-11-12']:
+        for day in ['2025-10-15','2025-10-22','2025-10-29','2025-11-05']:
             tm.activate(day+' 19:00',False);ap.enable();ap.sync()
             tasks=[r for r in ap.tasks() if r['kind']=='s07']
             self.assertEqual(len(tasks),1)
@@ -41,7 +41,9 @@ class S07IntegrationTests(unittest.TestCase):
             self.assertIn(rhythm.eligibility(summary)[0],('eligible','not_eligible'))
             self.assertIn('learning_query',ap.prompt(tasks[0]['id'])['prompt'])
             ap.finish(tasks[0]['id'],'blocked','仅验证宿主装配，不执行外发')
-        tm.activate('2025-11-13 19:00',False);ap.enable()
+        with self.assertRaisesRegex(ValueError, 'outside the first-month'):
+            tm.activate('2025-11-12 19:00',False)
+        tm.activate('2025-11-06 19:00',False);ap.enable()
         self.assertFalse(any(r['kind']=='s07' for r in ap.tasks()))
 
     def test_missing_course_coverage_is_unknown(self):
