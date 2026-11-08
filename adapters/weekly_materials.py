@@ -65,6 +65,10 @@ def allowed(c,state):
     if not __import__('service_hours').is_open(__import__('service_hours').now(c)):return '每日22:00至次日06:30停止自动外发'
     if c.execute('SELECT 1 FROM contact_constraints WHERE day=?',(state['as_of'][:10],)).fetchone():return '家庭要求当天暂停联系'
     if wf.enabled(state) and wf.constraint_blocks(c,state,'weekly-learning-review',at=state['as_of']):return '家庭暂停主动服务'
+    if wf.enabled(state) and wf.planning_contract('weekly-learning-review').get('required_weekly_material'):
+        # Unknown participation cannot authorize a partial S10 delivery. Known zero remains eligible.
+        if __import__('s10_service').review(tm.snapshot())['band']=='unknown':
+            return '本周课表或学情覆盖不完整，暂停S10资料交付；不能把未知当作零完课'
     gate=c.execute("SELECT payload FROM task_state WHERE id='chat-gate'").fetchone();gate=json.loads(gate[0]) if gate else {}
     if gate.get('active') or gate.get('until',0)>time.time() or c.execute("SELECT 1 FROM events WHERE kind='passive' AND status IN ('pending','dispatched')").fetchone():return '等待当前家庭交流结束'
     import message_hooks
