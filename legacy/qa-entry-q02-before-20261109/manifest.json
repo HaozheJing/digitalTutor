@@ -1,0 +1,11 @@
+{
+  "base": "a7b0341b160b5af3e79f44b5dc31025deb9d29eb",
+  "purpose": "Preserved originals only; no automatic rollback",
+  "original_sha256": {
+    "skills/answer-family-question/SKILL.md": "256830e8faf9126bf7dc8ddb548c8a698f01ae8e3e8e7f1c421657a67ff3167c",
+    "skills/explain-reading-content/SKILL.md": "9c0cbad9be759cec67f099af794160faaae6b745e5ac55e42d655865fc6b7072",
+    "skills/answer-family-question/references/cases.md": "6e522dadced800e80819568ae92ea1493f552d471856c3da8a46a23938b9bce5",
+    "skills/explain-reading-content/references/examples.md": "a5623eeff89202732a584e39e8ebe565795144549a1838f500c5cd83b284aedc",
+    "skills/tutor-main/SKILL.md": "9714ce8ffc8dca8883562dee9adf6da3d5d7deb9116118c9c376f5a53c88addf"
+  }
+}
