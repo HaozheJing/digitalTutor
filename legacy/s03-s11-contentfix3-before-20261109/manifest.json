@@ -1,0 +1,9 @@
+{
+  "base": "69f727a891ff8d1d07e4be04b58022d3b5e427bc",
+  "purpose": "Preserved originals only; no automatic rollback",
+  "original_sha256": {
+    "skills/support-zero-completion/SKILL.md": "eaf59cb1083f6c6eab0e2e0ff28222e20a8cf675a5ca6ecb8d55868dd2338de1",
+    "skills/plan-weekend-makeup/SKILL.md": "a1f755eb078c409c02e95c9553bb2232c71331f28e00da7f5f174fcd7233e631",
+    "skills/weekly-learning-review/SKILL.md": "2088b0f783d6d96a1d225aba7d15a111e192d56ed8e728e05551af2c21854db1"
+  }
+}
