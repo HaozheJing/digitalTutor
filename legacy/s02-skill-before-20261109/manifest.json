@@ -1,0 +1,7 @@
+{
+  "base": "097fcc2262c46ec21db744b91d455a3168c11290",
+  "purpose": "Preserved originals only; no automatic rollback",
+  "original_sha256": {
+    "skills/celebrate-lesson-completion/SKILL.md": "0e9899a634fa3a71d93dbe0159d5c49c6028b6735125b3157062001e91aada90"
+  }
+}
