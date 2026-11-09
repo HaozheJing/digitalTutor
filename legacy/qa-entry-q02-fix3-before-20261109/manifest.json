@@ -1,0 +1,7 @@
+{
+  "base": "2b866a2d8926c3102d8aab2c0227499e81acb5a5",
+  "purpose": "Preserved originals only; no automatic rollback",
+  "original_sha256": {
+    "skills/explain-reading-content/SKILL.md": "e7534b8e61ef0a495e70907715e26a5f7bfd65151d14082876661e13e6e82d2c"
+  }
+}
