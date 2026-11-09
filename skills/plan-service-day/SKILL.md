@@ -8,10 +8,11 @@ description: 每天06:30在已发布服务范围内提交一次性事项计划�
 提交的 request_id 使用当前内部任务 ID 作为前缀；同一次提交重试保持相同 ID 和内容。新一次增量规划不能复用其他任务的请求 ID。
 
 只读取本次上下文中的已授权Skill、事实、任务与交付。内部规划不依赖service-policy。
+本阶段只决定既有机会是否排期，课程内容由到期执行任务按其Skill查询；不要在内部当日规划中调用knowledge_browse、knowledge_search或knowledge_read。通用工具可见不代表本阶段获准调用；事实不足时记录unknown，不为补齐规划而扩展查询或联系权限。
 一个动作实例对应一个事项和一个任务，不追加回访、七天复查或自行发明事项。
 06:30不能预测未来完课。完课事件继续由plan-after-lesson-completion专项规划。
 
-调用workflow_context取得当前资料与context_token，再调用workflow_commit原子提交。
+调用workflow_read(view="context")取得当前资料与context_token，再调用workflow_commit原子提交。
 内部规划不传顶层evidence；该字段只接收本轮家庭对话的source_message_id和quote。当前事实依据写入每项reason。
 decisions每项包含skill、decision、reason。每个catalog Skill至少给出一项判断。
 - create还需opportunity_id和run_at，只能来自当前eligible机会。
