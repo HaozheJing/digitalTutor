@@ -1,0 +1,15 @@
+{
+  "base": "570cf89b63d0d1a25c3469223ad2992c99479e88",
+  "purpose": "Preserved originals only; no automatic rollback",
+  "original_sha256": {
+    "skills/remind-historical-makeup/SKILL.md": "a7bd773fad152163616ed270bf5db44c0c9932d06691e1954e8493baf714bd77",
+    "skills/celebrate-learning-streak/SKILL.md": "0cf90bb4f43ad0639e6485bbce3f2ad6795db84ba0ecc8d362b1ffe04535b209",
+    "skills/support-zero-completion/SKILL.md": "a028c57e5b5d77f81393ac93dbb995c34af81a947073dfcba68c48fc2db1ded4",
+    "skills/prevent-lesson-skipping/SKILL.md": "7a72d65977243676eaf23d794ec5307a853244839ce80cea3122ea263a4dd7fb",
+    "skills/rebuild-reading-rhythm/SKILL.md": "8fa11e4986b7658dfce7dd1290a80637a0c82b89ef3503c11c5b3e1502a050b5",
+    "skills/close-week-reading-gap/SKILL.md": "4bd618de15d030cebae6eaa5d6136aa3c983025b926f72404e8368ed56b84a98",
+    "skills/plan-weekend-makeup/SKILL.md": "8b98be109e5580cddd314537e12458440f1fa2575e7ad0d2fb8c3f5f623209a5",
+    "skills/weekly-learning-review/SKILL.md": "6df4dfa4faab5dc8f52c0420e4a668763b4dfacc8350138844aab6b6cb7817e7",
+    "skills/welcome-back-to-reading/SKILL.md": "2d1f64f725827dcbc3d0715b2909cd454b1f7e371b37f52fa322936fcdfa88bd"
+  }
+}
