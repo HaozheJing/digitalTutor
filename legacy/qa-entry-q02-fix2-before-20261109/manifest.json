@@ -1,0 +1,8 @@
+{
+  "base": "c4a67b5e0329308848990ee400a4f678916805fe",
+  "purpose": "Preserved originals only; no automatic rollback",
+  "original_sha256": {
+    "skills/tutor-main/SKILL.md": "87d4e328ba3a3bacebb8e9bbd3a9d06c54951f16a2b4c2665cdc0d34957f9dca",
+    "skills/explain-reading-content/SKILL.md": "0c9202e08b921fd1fe63427079c1ce659d726c3716a8043b957a22c85740e6eb"
+  }
+}
