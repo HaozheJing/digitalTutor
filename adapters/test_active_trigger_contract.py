@@ -1,7 +1,7 @@
 """Deterministic trigger/host tests; no claim of native-model E2E coverage."""
 import sys
 from pathlib import Path
-if Path('/home/ubuntu/digitalTutor-fastloop-dev-20261107/adapters').is_dir():sys.path.insert(0,'/home/ubuntu/digitalTutor-fastloop-dev-20261107/adapters')
+sys.path.insert(0,str(Path(__file__).resolve().parent))
 import json,sqlite3,unittest
 from contextlib import closing
 from unittest.mock import patch

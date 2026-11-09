@@ -18,7 +18,7 @@ description: 家长要求取消、暂停、恢复或调整服务安排时，核�
 
 
 ## 第一批查询接口迁移说明（开发候选）
-旧 course_* 和 conversation_window_read 调用片段仅供历史理解；当前模型入口如下：
+当前模型查询入口如下；旧实现仅作兼容保留，不是本轮调用指令：
 - knowledge_browse(scope="curriculum") 查看正式书目；book_id 查看书内课次映射。简称由智能体判断，不登记别名。
 - knowledge_read(target={level:"L2",week:全课程周,day:周内日},parts=["reading_qa"或"course"]) 精确读取；各部分缺失分别处理。书内课次使用 target={book_id,book_lesson_no}。
 - knowledge_search(query=问题,scope="curriculum"或"faq"或"product") 返回候选，须用 knowledge_read(target={document_id}) 读取后判断依据。不得将未审核FAQ作为正式政策。

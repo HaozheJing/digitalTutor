@@ -13,7 +13,7 @@ description: Q05 意图明确但知识库无可靠非高风险答案时如实说
 
 ## 依赖
 
-先调用 `service_skill(name="service-policy")`，同轮同版本可复用；再调用 `service_reference(name="service-policy", path="references/qa.md", start_line=1, max_lines=120)`。表达遵循 `reply-style`。若需正式分层则用 `student_tier`，unknown 不推定为D层；课程L2/L3、答疑服务升级层与S/A/B/C/D分开。
+先调用 `skill_read(name="service-policy")`，同轮同版本可复用；再调用 `skill_read(name="service-policy", path="references/qa.md", start_line=1, max_lines=120)`。表达遵循 `reply-style`。若需正式分层只使用宿主已核实且适用的记录；当前未提供则为 unknown，不推定为D层；课程L2/L3、答疑服务升级层与S/A/B/C/D分开。
 
 ## 触发与事实
 
@@ -31,9 +31,9 @@ description: Q05 意图明确但知识库无可靠非高风险答案时如实说
 
 30分钟内先回应是目标，不是默认30分钟内问题必解决。实际承接、人工受理、按时回覆、用户解决分别记账；无人工回执不得记已升级完成。
 
-当前问题用 `reply_to_message(event_id, body)` 交付（每条文字≤50字），实际要求查看已有高光且素材可用时才 `reply_with_highlights`，随后 `finish_event(event_id, day)` 核验。平台accepted只是受理，最终sent才记已发；unknown不盲目重试。普通回复不为完成动作而强行重排当天计划。
+当前问题用 `send_message(body=body)` 交付（每条文字≤50字）；实际要求查看已有高光且素材可用时，同次传入已核实的 highlight_ids。当前 event_id 与接收家庭由宿主绑定，交付后由宿主核验并收尾。平台accepted只是受理，最终sent才记已发；unknown不盲目重试。普通回复不为完成动作而强行重排当天计划。
 完成、实质回应、明确解决分开记录；未兑现后续事项仍保留缺口，不能用一段安慰话宣布全部闭环。
 
 ## 案例
 
-原文没有标注本动作的专属完整案例；按需读 [examples.md](references/examples.md)：`service_reference(name="escalate-unanswered-question", path="references/examples.md", start_line=1, max_lines=120)`。其中仅为结构说明，不是知识库标准答案。
+原文没有标注本动作的专属完整案例；按需读 [examples.md](references/examples.md)：`skill_read(name="escalate-unanswered-question", path="references/examples.md", start_line=1, max_lines=120)`。其中仅为结构说明，不是知识库标准答案。

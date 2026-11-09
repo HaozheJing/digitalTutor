@@ -13,7 +13,7 @@ description: Q07 每次答疑结束后内部整理问答来源、知识命中与
 
 ## 依赖
 
-先调用 `service_skill(name="service-policy")`，同轮同版本可复用；再调用 `service_reference(name="service-policy", path="references/qa.md", start_line=1, max_lines=120)`。表达遵循 `reply-style`。若需正式分层则用 `student_tier`，unknown 不推定为D层；课程L2/L3、答疑服务升级层与S/A/B/C/D分开。
+先调用 `skill_read(name="service-policy")`，同轮同版本可复用；再调用 `skill_read(name="service-policy", path="references/qa.md", start_line=1, max_lines=120)`。表达遵循 `reply-style`。若需正式分层只使用宿主已核实且适用的记录；当前未提供则为 unknown，不推定为D层；课程L2/L3、答疑服务升级层与S/A/B/C/D分开。
 
 ## 触发与事实
 
@@ -23,7 +23,7 @@ description: Q07 每次答疑结束后内部整理问答来源、知识命中与
 
 读取本次事件、真实消息及实际检索/交付回执；必要时 `conversation_read` 取原话。整理问题与回答、意图、说话者、来源消息ID/时间、所用知识ID/版本/审核状态、命中/未命中原因、实际交付、真人接收及用户明示反馈。未知满意度保持unknown，不能以沉默填满意。
 
-每次答疑后做内部归档，不为归档另发家长消息。当前 `finish_event` 是当前事件处理结束回执，不等于自定义QA字段已归档；`service_task_finish` 只结束内部服务任务，不接受新造outcome值。只用已暴露且支持目标字段的接口写入；无专用接口保留待归档材料和能力缺口，不称已持久化完整问答对。
+每次答疑后做内部归档，不为归档另发家长消息。宿主事件收尾只证明当前事件处理结束，不等于自定义QA字段已归档；`service_task_finish` 只结束内部服务任务，不接受新造outcome值。只用已暴露且支持目标字段的接口写入；无专用接口保留待归档材料和能力缺口，不称已持久化完整问答对。
 
 `memory_remember` 当前只允许有原话依据的自报称呼，不用于FAQ、投诉或满意度。OpenViking知识通道只读，未命中问题的后续答案须真实审核后由有权限流程入库，不能把生成答案直接当批准知识。周命中率/转人工率需要明确定义、真实事件分母及人工接收回执；工具缺失不声称周报已经生成。
 
@@ -36,4 +36,4 @@ description: Q07 每次答疑结束后内部整理问答来源、知识命中与
 
 ## 案例
 
-原文没有标注本动作的专属完整案例；按需读 [examples.md](references/examples.md)：`service_reference(name="archive-question-outcome", path="references/examples.md", start_line=1, max_lines=120)`。其中仅为结构说明，不是知识库标准答案。
+原文没有标注本动作的专属完整案例；按需读 [examples.md](references/examples.md)：`skill_read(name="archive-question-outcome", path="references/examples.md", start_line=1, max_lines=120)`。其中仅为结构说明，不是知识库标准答案。

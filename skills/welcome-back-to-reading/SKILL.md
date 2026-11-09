@@ -15,7 +15,7 @@ metadata:
 
 使用本次实时装载的`facts.family_profile`、`facts.learning_query`和`facts.daily_context`，了解称呼、已完成的课和近期交流。`facts.return_to_learning`提供本次完课事件、完成时间、对应课节，以及恢复前的缺课依据和当前待补情况；`facts.action_candidates`对应这次事项。恢复前和现在的缺课数可能不同，不把刚补完的课再次算作待补。
 
-材料齐全就直接使用，需要补查或事实发生变化时，按本次`task.day`调用`learning_query`、`daily_context`、`action_candidates`，称呼缺失时查询`family_profile`。提到具体情节或阅读方法前，再按需读取对应课程正文。欢迎本身不必加故事介绍。
+材料齐全就直接使用，需要补查或事实发生变化时，按本次 `task.day` 调用 `learning_query` 补查学情，用 `workflow_read(view="refresh")` 刷新宿主绑定的档案、候选、上下文与执行令牌；称呼仍未知则中性表达。提到具体情节或阅读方法前，再按需读取对应课程正文。欢迎本身不必加故事介绍。
 
 ## 写一条欢迎回来的口信
 
@@ -44,6 +44,6 @@ metadata:
 
 ## 交付这一次欢迎
 
-调用`deliver_proactive(candidate_ids=[task.candidate_id], body=欢迎口信, execution_token=task.execution_token)`。使用任务提供的候选和执行令牌原值；选用表情包时同次附上`emoji_refs=[{"asset_id":素材标识,"version":素材版本}]`，标识与版本沿用实际检索结果。
+调用`send_message(candidate_ids=[task.candidate_id], body=欢迎口信, execution_token=task.execution_token)`。使用任务提供的候选和执行令牌原值；选用表情包时同次附上`emoji_refs=[{"asset_id":素材标识,"version":素材版本}]`，标识与版本沿用实际检索结果。
 
 接口要求修正文案时按原因修正，事实变化时重新读取。已有回执不重复发送，`accepted`只是受理，`sent`才是确认送达；消息送达不代表欠课已经补齐。明确暂停联系时尊重家庭需求。尚未交付且本事项不适用时，用`service_task_finish(task_id=task.id, execution_token=task.execution_token, outcome="no_contact", reason=简短依据)`记录；必要事实缺失用`blocked`。内部判断和接口状态不写给家庭。

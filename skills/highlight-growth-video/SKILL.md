@@ -5,13 +5,17 @@ description: H13 精剪成长高光视频；核验高价值/决策期适用资�
 
 # H13 精剪高光视频
 
+## 已有高光读取能力与视频业务的区别
+
+当前 runtime-capabilities.json 在加载本 Skill 后可开放 highlight_lookup，用于读取当前家庭已有的授权高光；这不证明 H13 资格成立，不创建 H13 事项，也不提供视频制作或投递能力。highlight 任务的原图原文交付由宿主负责，模型不调用 workflow_highlight 或另行发送。manifest 不覆盖全局工具退役及任务禁令。
+
 ## 目标
 
 用孩子真实音频与已有高光卡形成不超过 60 秒的成长视频，让已确认适用的家庭回看有据可查的学习过程。依据：《最新数字员工服务动作打样.md》第 162 行；完成/有效标准见第 168 行。
 
 ## 依赖与适用事实
 
-先调用 `service_skill(name="service-policy")`，再调用 `service_reference(name="service-policy", path="references/highlights.md")`；主动执行加载 `proactive-service`，家长文案加载 `reply-style`。共享四要素、频控、去重、通道和回执规则同样适用。
+先调用 `skill_read(name="service-policy")`，再调用 `skill_read(name="service-policy", path="references/highlights.md")`；主动执行加载 `proactive-service`，家长文案加载 `reply-style`。共享四要素、频控、去重、通道和回执规则同样适用。
 
 只依据业务接口明确确认的“高价值/决策期适用”资格、学期和家庭意愿，不从购买金额、焦虑或儿童 S/A/B/C/D 层次推断资格。缺资格证据返回 unknown，不发推销邀请探测资格。
 
@@ -23,7 +27,7 @@ description: H13 精剪成长高光视频；核验高价值/决策期适用资�
 
 ## 取证与执行工具
 
-1. 读取 `daily_context(day)`、`action_candidates(day)` 和已有高光素材；只有真实候选才可 `check_proactive(candidate_id)`。当前不存在视频候选时不能伪造候选 ID。
+1. 使用宿主已装载上下文、真实候选及条件核验结果，按已开放的 highlight_lookup 读取已有高光；活动任务需要更新时 workflow_read(view="refresh")。当前不存在视频候选时不能伪造候选 ID。
 2. 核对素材用途、来源和时长，整理不超过 60 秒的脚本/素材清单；调用已有图片接口取图，不调用生图替代素材。
 3. 检查是否已有登记的视频制作、成品查询和微信视频投递接口。当前 Harness 没有完整能力，明确记录 `blocked: video_production_and_delivery_unavailable`。可保存内部脚本和缺口，但不得称视频已制作/发送，也不得把普通文字、图片交付或定时任务当作视频能力。
 4. 未来真实能力接入后才使用其注册工具：取得制作 request_id、成品 ID、时长、素材清单，再在真实候选通过核验后投递，等待各环节最终回执。接口未接入前不虚构工具名称或自动安排“稍后完成”。
@@ -36,4 +40,4 @@ description: H13 精剪成长高光视频；核验高价值/决策期适用资�
 
 ## 案例
 
-文案和脚本组织时读取 [源文档短例与边界模拟](references/examples.md)，调用 `service_reference(name="highlight-growth-video", path="references/examples.md")`。示例脚本不是真实视频或完成回执。
+文案和脚本组织时读取 [源文档短例与边界模拟](references/examples.md)，调用 `skill_read(name="highlight-growth-video", path="references/examples.md")`。示例脚本不是真实视频或完成回执。

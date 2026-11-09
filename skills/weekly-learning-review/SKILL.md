@@ -17,7 +17,7 @@ metadata:
 
 以本周实际应学课数为分母：全部完成是`complete`；至少完成一节、但仍有未完成课是`partial`；确有应学课且一节未完成是`zero`。正常每周5节时，分别对应5节、1—4节、0节；特殊课表按真实应学数判断，不能机械要求5节。学情或课表缺失是未知，不是零完课；补读归原来所属周，不把历史补课加进本周完课数。
 
-必要时调用`learning_query(day=task.day)`、`daily_context(day=task.day)`、`family_profile`和`action_candidates(day=task.day)`补查，可以多次调用。事实变化时重新核对分支。已开始只代表可以接着读，不推断读到一半、只剩一点或还要几分钟。
+必要时调用 `learning_query(day=task.day)` 补查学情，使用 `workflow_read(view="refresh")` 刷新宿主绑定的档案、候选、上下文与执行令牌，可以按实际缺口补查。事实变化时重新核对分支。已开始只代表可以接着读，不推断读到一半、只剩一点或还要几分钟。
 
 ## 给孩子一条贴合这一周的口信
 
@@ -51,6 +51,6 @@ metadata:
 
 `facts.weekly_material`提供当周PDF的名称、课程周次和实际交付状态。程序为所有完课分支匹配并发送同一课程周的文件；不由模型选路径、拼链接或重复发送。它是本周复习资料，不是孩子的个性化学习报告。文件准备好时可以说“本周总结准备好啦”；只有`delivery_status=sent`时才说已发出、请查收。没有材料或发送尚未确认时，不声称附件已送达，也不借用别周文件。 文件已送达时只陈述“已发出”或“请查收”，不猜测附件在聊天界面的“上面”“下面”等位置；文件先行的回执不提供界面排版证据。
 
-使用本次S10候选，调用`deliver_proactive(candidate_ids=[候选ID], body=本周总结口信, execution_token=task.execution_token)`提交正文，引用和令牌使用原值。接口要求修正时按原因调整，事实变化时刷新。`accepted`只是受理，`sent`才是确认送达，送达不代表孩子完成补读或家长确认预约。
+使用本次S10候选，调用`send_message(candidate_ids=[候选ID], body=本周总结口信, execution_token=task.execution_token)`提交正文，引用和令牌使用原值。接口要求修正时按原因调整，事实变化时刷新。`accepted`只是受理，`sent`才是确认送达，送达不代表孩子完成补读或家长确认预约。
 
 明确暂停联系时尊重家庭需求；“每个家庭都总结”不覆盖已明确的暂停。尚未交付且本事项不适用时用`service_task_finish(task_id=task.id, execution_token=task.execution_token, outcome="no_contact", reason=简短依据)`记录，必要事实缺失用`blocked`。内部缺口和接口状态不写给家庭。

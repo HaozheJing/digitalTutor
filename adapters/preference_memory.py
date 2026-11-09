@@ -38,6 +38,15 @@ FAST_INSTRUCTION = ('即时回复依据本次原话、真实对话和已有记�
 
 
 
+def fast_instruction():
+    """Do not promise a nightly run when the optional scheduler is disabled."""
+    if settings().get('slow_enabled') is True:
+        return FAST_INSTRUCTION
+    return FAST_INSTRUCTION.replace(
+        '普通偏好、兴趣和服务观察由每天北京时间22点统一提取，本轮不整理、不写入、不声称已存为长期记忆。',
+        '夜间整理未启用；普通偏好、兴趣和服务观察本轮不写入，不承诺稍后自动提取或已存为长期记忆。')
+
+
 def settings():
     file = s.R / 'config/preference-memory.json'
     value = json.loads(file.read_text(encoding='utf8')) if file.exists() else {}
@@ -196,7 +205,7 @@ def context():
         c.execute('INSERT INTO preference_tokens VALUES(?,?,?,?,?)', (token, sc, rev, cursor(c), s.encoded(fingerprints)))
         return {'context_token': token, 'scope': sc, 'revision': rev, 'items': active(c, sc), 'sources': sources,'subjects':list(SUBJECTS),
                 'allowed_keys': KEYS, 'existing_memories':__import__('memory_maintenance').memories(c,sc),
-                'memory_instruction': FAST_INSTRUCTION}
+                'memory_instruction': fast_instruction()}
 
 
 

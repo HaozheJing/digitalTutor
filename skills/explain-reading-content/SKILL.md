@@ -22,7 +22,7 @@ description: Q02 孩子直接提问或家长代问课文、题目时读取对应
 
 ## 依赖
 
-先调用 `service_skill(name="service-policy")`，同轮同版本可复用；再调用 `service_reference(name="service-policy", path="references/qa.md", start_line=1, max_lines=120)`。表达遵循 `reply-style`。若需正式分层则用 `student_tier`，unknown 不推定为D层；课程L2/L3、答疑服务升级层与S/A/B/C/D分开。
+先调用 `skill_read(name="service-policy")`，同轮同版本可复用；再调用 `skill_read(name="service-policy", path="references/qa.md", start_line=1, max_lines=120)`。表达遵循 `reply-style`。若需正式分层只使用宿主已核实且适用的记录；当前未提供则为 unknown，不推定为D层；课程L2/L3、答疑服务升级层与S/A/B/C/D分开。
 
 ## 触发与事实
 
@@ -38,7 +38,7 @@ description: Q02 孩子直接提问或家长代问课文、题目时读取对应
 
 ## 工具执行
 
-读取当前提问、原题/课文和孩子原答案；用 `daily_context` 和对应 `knowledge_read(document_id)` 获取完整课程，必要时 `conversation_read` 回看确切问题。只有标题、答案截图不完整或题意缺失时，一次追问一个关键点，不凭记忆猜题；有据部分可先回应。
+读取当前提问、原题/课文和孩子原答案；结合宿主本轮上下文和对应 `knowledge_read(target={document_id:文档标识})` 获取完整课程，必要时 `conversation_read` 回看确切问题。只有标题、答案截图不完整或题意缺失时，一次追问一个关键点，不凭记忆猜题；有据部分可先回应。
 
 家长代问给双层输出：给家长的解释与可转述给孩子的短讲法；孩子直接问用儿童语态，先说明方法，再给1个对应举一反三例子，不扩展成一串测验。不能从一次作答推断正式层级或保证学会。
 
@@ -48,9 +48,9 @@ description: Q02 孩子直接提问或家长代问课文、题目时读取对应
 
 首次5分钟内、24小时内闭环是目标。已发解释不等于孩子理解；需真实反馈才能认定理解，缺材料/语音/后续跟进能力分别保留。
 
-当前问题用 `reply_to_message(event_id, body)` 交付（每条文字≤50字），实际要求查看已有高光且素材可用时才 `reply_with_highlights`，随后 `finish_event(event_id, day)` 核验。平台accepted只是受理，最终sent才记已发；unknown不盲目重试。普通回复不为完成动作而强行重排当天计划。
+当前问题用 `send_message(body=body)` 交付（每条文字≤50字）；实际要求查看已有高光且素材可用时，同次传入已核实的 highlight_ids。当前 event_id 与接收家庭由宿主绑定，交付后由宿主核验并收尾。平台accepted只是受理，最终sent才记已发；unknown不盲目重试。普通回复不为完成动作而强行重排当天计划。
 完成、实质回应、明确解决分开记录；未兑现后续事项仍保留缺口，不能用一段安慰话宣布全部闭环。
 
 ## 案例
 
-原文没有标注本动作的专属完整案例；按需读 [examples.md](references/examples.md)：`service_reference(name="explain-reading-content", path="references/examples.md", start_line=1, max_lines=120)`。其中仅为结构说明，不是知识库标准答案。
+原文没有标注本动作的专属完整案例；按需读 [examples.md](references/examples.md)：`skill_read(name="explain-reading-content", path="references/examples.md", start_line=1, max_lines=120)`。其中仅为结构说明，不是知识库标准答案。

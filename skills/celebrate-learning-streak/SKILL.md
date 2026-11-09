@@ -13,7 +13,7 @@ metadata:
 
 ## 看清这几天的真实积累
 
-使用本次实时装载的 `facts.learning_context`：`family` 提供称呼与身份，`candidate` 对应本次事项，`streak` 给出连续段的口径、起止日期和天数，`learning` 提供该段逐日和逐课的实际完成记录，`context` 提供近期原话、约定、联系限制及既有交付，`as_of` 是读取时的业务时间。每次装配都实际查询；资料缺失或事实变化时，用 `learning_context()` 刷新。
+使用本次实时装载的 `facts.learning_context`：`family` 提供称呼与身份，`candidate` 对应本次事项，`streak` 给出连续段的口径、起止日期和天数，`learning` 提供该段逐日和逐课的实际完成记录，`context` 提供近期原话、约定、联系限制及既有交付，`as_of` 是读取时的业务时间。每次装配都实际查询；资料缺失或事实变化时，用 `workflow_read(view="refresh")` 刷新。
 
 根据这段事实选一个值得肯定的行动：连续几天都完成了当天的课，一天一天把阅读接了起来。连续天数按资料中的口径表达；同一天补完几课是补读完成，不能当作连续几天。只有完成记录时，就夸这几次完成；听得更专注、答得更快或理解更好，需要对应表现和前后记录支持。把短期积累说得亲切、具体即可，不给孩子贴“习惯已经养成”或能力突出的标签。
 
@@ -35,6 +35,6 @@ metadata:
 
 ## 交付这一次鼓励
 
-调用 `deliver_proactive(candidate_ids=[task.candidate_id], body=鼓励正文, execution_token=task.execution_token)` 提交，候选引用和执行令牌使用任务提供的原值。选中表情包时，同次增加 `emoji_refs=[{"asset_id":素材标识,"version":素材版本}]`，两个值沿用本次检索结果。
+调用 `send_message(candidate_ids=[task.candidate_id], body=鼓励正文, execution_token=task.execution_token)` 提交，候选引用和执行令牌使用任务提供的原值。选中表情包时，同次增加 `emoji_refs=[{"asset_id":素材标识,"version":素材版本}]`，两个值沿用本次检索结果。
 
 接口要求修正文案时按原因修正；事实变化时刷新资料。家庭明确暂停或本事项不再适用时，用 `service_task_finish(task_id=task.id, execution_token=task.execution_token, outcome="no_contact", reason=简短依据)` 记录；必要事实缺失用 `blocked`。

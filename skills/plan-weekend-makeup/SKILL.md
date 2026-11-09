@@ -17,7 +17,7 @@ metadata:
 
 先分清本周未完成的课和更早落下的课，排除已完成、尚未到期和重复记录。已开始的课是接着读，不要求从头再上一遍。只有开始记录时，不能说读到一半、只剩一点或快读完，这些都需要真实进度依据。只有完整课表和学情表明本周有应学课、却一节也没完成时，才说零完课；数据缺失不当作没学。本周已补齐时结束本次事项，不仅因还有历史课就沿用本次触发。
 
-资料由本次执行时实时查询生成。缺失或事实变化时，按需调用`learning_query(day=task.day)`、`daily_context(day=task.day)`、`family_profile`和`action_candidates(day=task.day)`补查，可以多次调用工具；刷新后以新学情重新核对待补课，不沿用旧数量。无法确认具体课节时保留缺口，不编造安排。
+资料由本次执行时实时查询生成。缺失或事实变化时，按需调用 `learning_query(day=task.day)` 补查学情，使用 `workflow_read(view="refresh")` 刷新宿主绑定的档案、候选、上下文与执行令牌，可以按实际缺口补查；刷新后以新学情重新核对待补课，不沿用旧数量。无法确认具体课节时保留缺口，不编造安排。
 
 ## 和家长商量一个对应得上的安排
 
@@ -45,6 +45,6 @@ metadata:
 
 提交前再核对：称呼与身份一致，建议里的每节课确实仍待补，各时段不重复，节数合计正确，安排照顾近期原话；没有资料支持的时长不写。
 
-使用本次候选中的S09引用，调用`deliver_proactive(candidate_ids=[候选ID], body=家长口信, execution_token=task.execution_token)`，候选ID与令牌沿用提供的原值。接口要求修正文案时按原因调整；事实变化时重新查询并修改安排。已有发送回执不重复发送，`accepted`只是受理，`sent`才是确认送达；提出建议、家长答应与孩子实际补完课是三件不同的事。
+使用本次候选中的S09引用，调用`send_message(candidate_ids=[候选ID], body=家长口信, execution_token=task.execution_token)`，候选ID与令牌沿用提供的原值。接口要求修正文案时按原因调整；事实变化时重新查询并修改安排。已有发送回执不重复发送，`accepted`只是受理，`sent`才是确认送达；提出建议、家长答应与孩子实际补完课是三件不同的事。
 
 尚未交付且家庭明确暂停、本周已补齐或事项不再适用时，用`service_task_finish(task_id=task.id, execution_token=task.execution_token, outcome="no_contact", reason=简短依据)`记录；必要事实缺失用`blocked`。内部缺口与接口状态留在内部，不写给家长。

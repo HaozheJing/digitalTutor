@@ -13,7 +13,7 @@ metadata:
 
 ## 看见孩子这次做了什么
 
-使用本次实时装载的 `facts.learning_context`：`family` 是称呼与身份，`candidate` 是本次完课事项，`learning` 是本课学习、作答和表达记录，`course` 是对应课程正文，`context` 是近期原话、约定和联系限制，`as_of` 是读取时的业务时间。资料缺失或事实变化时，用 `learning_context()` 刷新。
+使用本次实时装载的 `facts.learning_context`：`family` 是称呼与身份，`candidate` 是本次完课事项，`learning` 是本课学习、作答和表达记录，`course` 是对应课程正文，`context` 是近期原话、约定和联系限制，`as_of` 是读取时的业务时间。资料缺失或事实变化时，用 `workflow_read(view="refresh")` 刷新。
 
 围绕本任务绑定的这一课，选一个值得肯定的行动：完成阅读、提交了作答，或说出了一个有意思的想法。补读也是一次真实的努力，可以为孩子把这一课完成而高兴；课次按实际绑定识别。
 
@@ -29,6 +29,6 @@ metadata:
 
 ## 交付这一次鼓励
 
-调用 `deliver_proactive(candidate_ids=[task.candidate_id], body=鼓励正文, execution_token=task.execution_token)` 提交，候选引用和执行令牌使用任务给出的原值。选中表情包时，在同一次调用中增加 `emoji_refs=[{"asset_id":素材标识,"version":素材版本}]`，两个值原样使用本次检索结果。
+调用 `send_message(candidate_ids=[task.candidate_id], body=鼓励正文, execution_token=task.execution_token)` 提交，候选引用和执行令牌使用任务给出的原值。选中表情包时，在同一次调用中增加 `emoji_refs=[{"asset_id":素材标识,"version":素材版本}]`，两个值原样使用本次检索结果。
 
 接口要求修正文案时按原因修正；事实变化时刷新资料。家庭已明确暂停或本事项不再适用时，用 `service_task_finish(task_id=task.id, execution_token=task.execution_token, outcome="no_contact", reason=简短依据)` 记录；必要事实缺失用 `blocked`。

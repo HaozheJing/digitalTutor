@@ -5,7 +5,9 @@ description: 每日规划或已有安排受到新事实影响时，选择必要�
 
 # 为今天安排必要的服务
 
-当任务标明agent-workflow-v1时，沿用本次装载的plan-service-day，通过workflow_context/commit提交；完课专项任务沿用plan-after-lesson-completion。下文旧排期接口只适用于尚使用旧模式的任务，不覆盖当前任务的执行契约。
+> 兼容旧模式说明：下文旧工具名仅适用于宿主明确选择旧模式且实际暴露这些接口的任务。当前 agent-workflow-v1 不执行下文旧排期步骤，任务标签仍叫 plan-today 也不改变这一点；按宿主已加载的 plan-service-day 执行。不得根据此文切换配置或申请更大的权限。
+
+当任务标明agent-workflow-v1时，沿用本次装载的plan-service-day，通过 workflow_read(view="context") 与 workflow_commit 提交；完课专项任务沿用plan-after-lesson-completion。下文旧排期接口只适用于尚使用旧模式的任务，不覆盖当前任务的执行契约。
 
 先读取 service-policy；用 service_catalog 逐项了解36动作的适用条件与依赖，再只对当前有证据的动作排期。目录完整不等于全部36项每天执行。相关分类规则通过 service_reference 读取，动作正文通过 service_skill 读取；旧版本读取回执不能替代新版约束。把缺少的数据或接口写入计划理由，不把“无适配候选”解释成“孩子不符合条件”。
 

@@ -5,11 +5,11 @@ description: 在明确自报称呼、更正称呼或指定历史整理时，提�
 
 # 保存后续服务需要的事实
 
-memory_remember 当前仅支持 key=speaker.self_reported_name，代表说话者自报称呼，不代表儿童昵称、监护人身份或法定姓名。其他长期字段尚无写入能力，不能拼接进该值，不能声称已永久保存偏好。
+按本轮宿主报告的配置与真实开放工具处理，不自行切换模式。治理记忆未启用且 memory_remember 实际开放时，只允许 key=speaker.self_reported_name，代表有精确原话证据的说话者自报称呼，不是儿童昵称、监护身份或任意偏好。治理记忆启用后不走该旧写入口；普通记忆只有同时启用 slow_enabled 才有夜间整理。夜间整理关闭时不承诺会自动保存。
 
 ## 判断是否写入
 
-从任务的 source_message_id 或 source_message_ids 定位原话，必要时调用 conversation_read。只使用用户原话，不以助手先前猜测为证据。读取 memory_recall，与当前有效记忆比较。
+从任务的 source_message_id 或 source_message_ids 定位原话，必要时调用 conversation_read。只使用用户原话，不以助手先前猜测为证据。读取 memory_read，与当前有效记忆比较。
 
 只在明确自我介绍或明确更正称呼时提取。“我是豆豆”可以支持说话者自报“豆豆”；“我是来问作业的”不是称呼。引述、故事对白、玩笑和假设不直接作为本人自报。明确来自不同说话者但无法区分归属时，不把新名字无条件覆盖为整个家庭称呼。
 
@@ -17,8 +17,8 @@ memory_remember 当前仅支持 key=speaker.self_reported_name，代表说话者
 
 ## 写入并核对
 
-memory_remember 传入 key、value、source_message_id 和精确 quote。证据不能改写，字段不能猜补。工具校验原话、时间和一致性；拒绝时不能换来源编号绕过验证。
+仅在上述旧窄入口实际开放的模式下，memory_remember 传入 key、value、source_message_id 和精确 quote。证据不能改写，字段不能猜补。工具校验原话、时间和一致性；拒绝时不能换来源编号绕过验证。
 
-调用 memory_recall 核对是否保存或已存在。指定历史整理事件使用 memory_review(event_id, note) 记录审查结果；没有可记事实说明原因，随后按主流程刷新计划。即时回复中的可选记忆维护不强制重新规划，只有新事实影响既有安排才进入 plan-today。
+调用 memory_read 核对实际结果。治理记忆开启时读取治理后的记录，旧未治理记录不能重新当成当前偏好。历史维护只按宿主明确内部任务执行，不在家庭回复中调用维护专用工具，也不因记忆读取触发 plan-today 或新增主动安排。
 
-family_profile 提供家庭档案，聊天称呼不修改档案。没有写入成功回执，不宣称已经记住。“今天别催”等短期联系要求由主流程调用 pause_contact 落实，不依赖称呼记忆，也不能变成永久画像。
+家庭档案由宿主绑定，聊天称呼不修改档案。没有写入成功回执不宣称已经记住。明确遗忘、删除或媒体许可变更，仅在治理能力可用时通过 memory_read(for_update=true) 取得真实上下文再 preference_commit；不可用就如实说明，不伪装为称呼写入。“今天别催”等业务约束即时进入 manage-service-arrangements，按原话范围用 workflow_read 与 workflow_commit 落实，不等待记忆整理、不变成永久画像。

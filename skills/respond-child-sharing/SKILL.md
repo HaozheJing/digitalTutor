@@ -19,7 +19,7 @@ description: Q06 孩子通过家长手机发来非学习分享、情绪或求助
 
 ## 依赖
 
-先调用 `service_skill(name="service-policy")`，同轮同版本可复用；再调用 `service_reference(name="service-policy", path="references/qa.md", start_line=1, max_lines=120)`。表达遵循 `reply-style`。若需正式分层则用 `student_tier`，unknown 不推定为D层；课程L2/L3、答疑服务升级层与S/A/B/C/D分开。
+先调用 `skill_read(name="service-policy")`，同轮同版本可复用；再调用 `skill_read(name="service-policy", path="references/qa.md", start_line=1, max_lines=120)`。表达遵循 `reply-style`。若需正式分层只使用宿主已核实且适用的记录；当前未提供则为 unknown，不推定为D层；课程L2/L3、答疑服务升级层与S/A/B/C/D分开。
 
 ## 触发与事实
 
@@ -27,9 +27,9 @@ description: Q06 孩子通过家长手机发来非学习分享、情绪或求助
 
 ## 工具执行
 
-先确认当前说话者与分享/情绪/求助类型；读取真实消息，语音可用 `transcribe_audio` 转写已登记或授权音频，不清楚的词标记不确定。根据实际内容具体回应，至多1个自然延伸；情绪按情绪→事实→期待，不诊断、不把一次低落固定成能力或SABCD标签。
+先确认当前说话者与分享/情绪/求助类型；读取真实消息，语音使用宿主对已登记或授权音频提供的转写与理解材料，不清楚的词标记不确定。根据实际内容具体回应，至多1个自然延伸；情绪按情绪→事实→期待，不诊断、不把一次低落固定成能力或SABCD标签。
 
-目标语音≤60秒，`generate_audio` 能生成但当前微信语音送达未接；短文字可及时承接并单列语音格式缺口，不能等待语音能力而忽略真实求助，也不称已发语音。被动分享不强制套用I01–I04当周课程要求。
+目标语音≤60秒，需要生成时先 skill_read(name="generate-reading-audio")；实际开放的 `generate_audio` 能生成素材，但当前微信语音送达未接；短文字可及时承接并单列语音格式缺口，不能等待语音能力而忽略真实求助，也不称已发语音。被动分享不强制套用I01–I04当周课程要求。
 
 真实困扰需温和鼓励联系可信赖、合适的成人，并在当前家庭通道能够且适合的范围内提醒监护人；若困扰涉及该监护人，选择其他可靠成人/适当专业支持。存在当下危险优先即时安全行动与相应帮助，不能等普通10分钟SLA或声称已替孩子报警/外呼。未执行的通知只记待落实。
 
@@ -37,9 +37,9 @@ description: Q06 孩子通过家长手机发来非学习分享、情绪或求助
 
 孩子消息后10分钟内回应是目标，真实危险立即优先。已回应、语音已送达、成人已知情、困扰已解决不能合并为一个成功；无反馈不能说孩子情绪已好转。
 
-当前问题用 `reply_to_message(event_id, body)` 交付（每条文字≤50字），实际要求查看已有高光且素材可用时才 `reply_with_highlights`，随后 `finish_event(event_id, day)` 核验。平台accepted只是受理，最终sent才记已发；unknown不盲目重试。普通回复不为完成动作而强行重排当天计划。
+当前问题用 `send_message(body=body)` 交付（每条文字≤50字）；实际要求查看已有高光且素材可用时，同次传入已核实的 highlight_ids。当前 event_id 与接收家庭由宿主绑定，交付后由宿主核验并收尾。平台accepted只是受理，最终sent才记已发；unknown不盲目重试。普通回复不为完成动作而强行重排当天计划。
 完成、实质回应、明确解决分开记录；未兑现后续事项仍保留缺口，不能用一段安慰话宣布全部闭环。
 
 ## 案例
 
-原文没有标注本动作的专属完整案例；按需读 [examples.md](references/examples.md)：`service_reference(name="respond-child-sharing", path="references/examples.md", start_line=1, max_lines=120)`。其中仅为结构说明，不是知识库标准答案。
+原文没有标注本动作的专属完整案例；按需读 [examples.md](references/examples.md)：`skill_read(name="respond-child-sharing", path="references/examples.md", start_line=1, max_lines=120)`。其中仅为结构说明，不是知识库标准答案。

@@ -13,7 +13,7 @@ description: Q04 明确退费申请或投诉时先承接，再整理事实与学
 
 ## 依赖
 
-先调用 `service_skill(name="service-policy")`，同轮同版本可复用；再调用 `service_reference(name="service-policy", path="references/qa.md", start_line=1, max_lines=120)`。表达遵循 `reply-style`。若需正式分层则用 `student_tier`，unknown 不推定为D层；课程L2/L3、答疑服务升级层与S/A/B/C/D分开。
+先调用 `skill_read(name="service-policy")`，同轮同版本可复用；再调用 `skill_read(name="service-policy", path="references/qa.md", start_line=1, max_lines=120)`。表达遵循 `reply-style`。若需正式分层只使用宿主已核实且适用的记录；当前未提供则为 unknown，不推定为D层；课程L2/L3、答疑服务升级层与S/A/B/C/D分开。
 
 ## 触发与事实
 
@@ -21,7 +21,7 @@ description: Q04 明确退费申请或投诉时先承接，再整理事实与学
 
 ## 工具执行
 
-先接住情绪和诉求，不要求用户重复证明“真的要退”，原因可选，不以继续学习、挽留或填写额外信息作为办理前置。用 `conversation_read` 核验诉求原话和时间，`daily_context`、`learning_query` 取必要学情；只收集处理必需信息。
+先接住情绪和诉求，不要求用户重复证明“真的要退”，原因可选，不以继续学习、挽留或填写额外信息作为办理前置。用 `conversation_read` 核验诉求原话和时间，结合宿主已装载上下文与 `learning_query` 取必要学情；只收集处理必需信息。
 
 整理诉求原话、时间线、课程/订单事实、已查依据、争议点、用户期待及已尝试处理。缺订单、退款状态/政策工具则如实列未知；政策若需知识库，使用 `knowledge_search` / `knowledge_read` 查当前适用版本，不从FAQ示例估算金额、资格或到账期。
 
@@ -31,9 +31,9 @@ description: Q04 明确退费申请或投诉时先承接，再整理事实与学
 
 及时承接；情绪回应已送达不等于真人已受理，真人受理不等于退款成功。Q04的完成需对应交付与实际交接证据；缺人工/退款能力保留blocked或部分完成。感谢也不证明退款已办妥。
 
-当前问题用 `reply_to_message(event_id, body)` 交付（每条文字≤50字），实际要求查看已有高光且素材可用时才 `reply_with_highlights`，随后 `finish_event(event_id, day)` 核验。平台accepted只是受理，最终sent才记已发；unknown不盲目重试。普通回复不为完成动作而强行重排当天计划。
+当前问题用 `send_message(body=body)` 交付（每条文字≤50字）；实际要求查看已有高光且素材可用时，同次传入已核实的 highlight_ids。当前 event_id 与接收家庭由宿主绑定，交付后由宿主核验并收尾。平台accepted只是受理，最终sent才记已发；unknown不盲目重试。普通回复不为完成动作而强行重排当天计划。
 完成、实质回应、明确解决分开记录；未兑现后续事项仍保留缺口，不能用一段安慰话宣布全部闭环。
 
 ## 案例
 
-原文没有标注本动作的专属完整案例；按需读 [examples.md](references/examples.md)：`service_reference(name="handle-refund-complaint", path="references/examples.md", start_line=1, max_lines=120)`。其中仅为结构说明，不是知识库标准答案。
+原文没有标注本动作的专属完整案例；按需读 [examples.md](references/examples.md)：`skill_read(name="handle-refund-complaint", path="references/examples.md", start_line=1, max_lines=120)`。其中仅为结构说明，不是知识库标准答案。

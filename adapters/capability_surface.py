@@ -26,8 +26,8 @@ def guidance():
     return delivery+('公共读取入口：skill_read()查看目录，skill_read(name=名称)装载实际正文并登记原业务版本回执，'
             'skill_read(name=名称,path=references/文件,start_line,max_lines)分页读取附属材料。'
             'workflow_read(view=context|tasks|cases|refresh)分别取得当前变更上下文、排期、事项或刷新当前任务资料。context可选purpose=inspect|amend|fulfill，默认inspect；fulfill必须传真实task_id。'
-            'memory_read()读取当前有效的分主体记忆与遗忘规则；明确遗忘或媒体许可变更前memory_read(for_update=true)取得原并发令牌。'
-            '普通记忆仍由夜间整理；旧库不删除，但不把旧未治理记录重新当作当前有效偏好。')
+            'memory_read()按实际配置读取记忆；治理能力可用时，明确遗忘或媒体许可变更前用memory_read(for_update=true)取得原并发令牌。'
+            '记忆模式以实际配置为准。')+surface.memory_guidance()
 
 def route(name,args):
     if not isinstance(args,dict):raise ValueError('object_arguments_required')
@@ -85,7 +85,7 @@ def install(server):
     server.base_mcp.TOOLS += [
       ('skill_read','按需读取服务Skill目录、已发布正文或references分页。省略参数列目录；name读正文；name+path读附属材料。家长查看、调整或要求本轮完成已有安排时，先读name=manage-service-arrangements；完整履行已有事项走workflow_fulfill，普通回复不完成原事项。沿用原业务版本审计。',schema({'name':string,'path':string,'start_line':{'type':'integer','minimum':1},'max_lines':{'type':'integer','minimum':1,'maximum':120}})),
       ('workflow_read','读取当前家庭工作流。context返回事务上下文及并发令牌：purpose默认inspect只查看；amend才开放修改，fulfill需task_id且只开放履行该实际事项。tasks排期，cases持续事项，refresh重新装载当前任务事实。读取本身不发送。',schema({'view':{'type':'string','enum':['context','tasks','cases','refresh']},'purpose':{'type':'string','enum':['inspect','amend','fulfill']},'task_id':{'type':'string','description':'仅context且purpose=fulfill时必填；沿用本轮实际排期中的ID。'}})),
-      ('memory_read','读取当前家庭有效记忆、主体与遗忘规则。for_update=true仅在明确遗忘或媒体许可变更时读取原话证据和提交令牌；普通偏好夜间整理。',schema({'for_update':{'type':'boolean'}})),
+      ('memory_read','读取当前家庭记忆；实际来源、写入及夜间整理范围见当前配置说明。for_update=true仅用于明确遗忘或媒体许可变更的上下文，不证明已修改。'+surface.memory_guidance(),schema({'for_update':{'type':'boolean'}})),
     ]
     if __import__('delivery_capability').enabled():server.base_mcp.TOOLS.append(__import__('delivery_capability').definition(schema,definitions))
     # Update technical tool descriptions without rewriting teacher Skill prose.

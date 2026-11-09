@@ -13,7 +13,7 @@ metadata:
 
 ## 看清今天完成了什么、可以接上哪一课
 
-使用本次实时装载的 `facts.learning_context`：`family` 提供称呼与身份，`candidate` 对应本次事项，`learning.completed_lesson` 是今天完成的新课，`learning.overdue_lessons` 是仍待补读的历史课节，`learning.suggested_lesson` 是其中较早的一课。`course` 是这节待补课的正文和读取结果，`context` 提供近期原话、约定和联系限制，`entry` 是入口可用状态，`as_of` 是读取时的业务时间。整包由本次实际查询生成；资料缺失或事实变化时，用 `learning_context()` 刷新。
+使用本次实时装载的 `facts.learning_context`：`family` 提供称呼与身份，`candidate` 对应本次事项，`learning.completed_lesson` 是今天完成的新课，`learning.overdue_lessons` 是仍待补读的历史课节，`learning.suggested_lesson` 是其中较早的一课。`course` 是这节待补课的正文和读取结果，`context` 提供近期原话、约定和联系限制，`entry` 是入口可用状态，`as_of` 是读取时的业务时间。整包由本次实际查询生成；资料缺失或事实变化时，用 `workflow_read(view="refresh")` 刷新。
 
 先区分已完成的新课与待补的课，再选择一个补读对象。一般沿用 `suggested_lesson`；家庭已有明确补读约定时，优先照顾约定中仍待补的课，涉及另一课的情节再按需读取对应正文。已有正文可以直接使用。
 
@@ -44,7 +44,7 @@ metadata:
 
 ## 交付这一次邀请
 
-调用 `deliver_proactive(candidate_ids=[task.candidate_id], body=邀请正文, execution_token=task.execution_token)` 提交，候选引用和执行令牌使用任务提供的原值。选中表情包时，同次增加 `emoji_refs=[{"asset_id":素材标识,"version":素材版本}]`，两个值沿用本次检索结果。
+调用 `send_message(candidate_ids=[task.candidate_id], body=邀请正文, execution_token=task.execution_token)` 提交，候选引用和执行令牌使用任务提供的原值。选中表情包时，同次增加 `emoji_refs=[{"asset_id":素材标识,"version":素材版本}]`，两个值沿用本次检索结果。
 
 课程链接或二维码只有实际接口提供时才可引用；入口不可用时，正文只作补读邀请。表情包用于表达关心，不充当课程入口。
 

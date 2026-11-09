@@ -11,7 +11,7 @@ description: 按家庭来信处理请假、改期和补读咨询；按系统任�
 
 ## 系统唤起主动督学
 
-沿用 service-policy。使用 daily_context、action_candidates 和正式 student_tier 获取事实，不根据家长一句描述自行生成可发送候选。
+沿用 service-policy。使用宿主本轮装载的学情、候选与已核实档案；需要补充时用 learning_query 或 conversation_read，正式分层未提供则保持未知，不根据家长一句描述自行生成可发送候选。
 
 | 动作 | 适用事实 | 加载的独立Skill |
 |---|---|---|
@@ -20,4 +20,4 @@ description: 按家庭来信处理请假、改期和补读咨询；按系统任�
 | S06 | 课程序列前后已完而中间缺课 | prevent-lesson-skipping |
 | S07 | 正式阈值确认上周偏低、本周零完课、周三入口 | rebuild-reading-rhythm |
 
-用 service_skill(name) 读取匹配动作正文，再按其候选与工具核验执行；没有候选/稳定课节ID/排期能力要保留具体缺口，不能借S01、S09或高光代发。多个动作涉及同一缺课时沿用共享计数、合并和家长约束。
+用 skill_read(name) 读取匹配动作正文，再按其候选与工具核验执行；没有候选/稳定课节ID/排期能力要保留具体缺口，不能借S01、S09或高光代发。多个动作涉及同一缺课时沿用共享计数、合并和家长约束。

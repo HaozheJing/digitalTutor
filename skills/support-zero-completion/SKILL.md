@@ -13,7 +13,7 @@ metadata:
 
 ## 读懂本次资料
 
-直接使用已装载的 `facts.learning_context`：`family` 是称呼和身份；`learning` 是本次已核实的应学日期、逐课状态与待补课节；`suggested_lesson` 和 `course` 对应一节建议先读的课及其实时正文；`context` 是近期原话、学习约定和联系限制；`as_of` 标明业务时间。整包在本次执行时实时查询生成。已有材料直接使用；整包缺失或收到事实变化提示时，调用 `learning_context()` 刷新。
+直接使用已装载的 `facts.learning_context`：`family` 是称呼和身份；`learning` 是本次已核实的应学日期、逐课状态与待补课节；`suggested_lesson` 和 `course` 对应一节建议先读的课及其实时正文；`context` 是近期原话、学习约定和联系限制；`as_of` 标明业务时间。整包在本次执行时实时查询生成。已有材料直接使用；整包缺失或收到事实变化提示时，调用 `workflow_read(view="refresh")` 刷新。
 
 只按资料覆盖的范围说话。连续两个应学日未完课，不等于整周没学，也不等于孩子没有打开过课程。已开始的课可以接着读。无课、记录缺失和零完课分别处理；本次候选不适用或家庭明确暂停联系时结束事项，必要事实缺失时保留缺口。
 
@@ -41,6 +41,6 @@ metadata:
 
 ## 交付本次关怀
 
-通过 `deliver_proactive(candidate_ids=[task.candidate_id], body=关怀正文, execution_token=task.execution_token)` 提交，沿用任务提供的候选和执行令牌。接口会即时复核最新学情、联系限制和重复交付；已有回执就沿用，事实变化时先刷新，按实际返回处理。
+通过 `send_message(candidate_ids=[task.candidate_id], body=关怀正文, execution_token=task.execution_token)` 提交，沿用任务提供的候选和执行令牌。接口会即时复核最新学情、联系限制和重复交付；已有回执就沿用，事实变化时先刷新，按实际返回处理。
 
 若尚未交付，且已明确不需联系，用 `service_task_finish(task_id=task.id, execution_token=task.execution_token, outcome="no_contact", reason=简短依据)` 结束；必要事实缺失时用 `blocked`。消息受理或送达只说明这次联系的结果，家长回应、明确约定和实际完课分别以真实记录为准。

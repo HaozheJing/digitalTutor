@@ -6,7 +6,7 @@ original_call = base_mcp.call
 string = {'type': 'string'}
 schema = base_mcp.schema
 base_mcp.TOOLS += [
- ('service_catalog','读取35个服务动作与Skill、共享约束、知识和案例的路由，以及真实执行接口缺口；挂载不代表已执行',schema({'action_id':string})),
+ ('service_catalog','读取36个来源动作及节日补充动作与Skill、共享约束、知识和案例的路由，以及真实执行接口缺口；挂载不代表已执行',schema({'action_id':string})),
  ('knowledge_search','实时检索OpenViking：faq/product查业务知识，emoji按当前沟通场景检索已审核表情及正反例；表情可不选，最多一张，仅本轮检索命中可发送',schema({'query':string,'scope':{'type':'string','enum':['faq','product','emoji']},'limit':{'type':'integer','minimum':1,'maximum':5}},['query'])),
  ('student_tier','读取绑定孩子的S/A/B/C/D服务层级及来源时效；未配置、失效或无法核实时返回unknown，不从完课率推算',schema()),
  ('service_reference','分页读取指定服务Skill的references资料，案例事实与政策须另核验；先service_skill查看可用路径',schema({'name':string,'path':string,'start_line':{'type':'integer','minimum':1},'max_lines':{'type':'integer','minimum':1,'maximum':120}},['name','path'])),

@@ -29,11 +29,23 @@ def current_instructions(text):
         text=text.replace('发送前check_proactive，再deliver_proactive。','使用send_message交付，宿主在发送前核验条件。')
         text=text.replace('或调用check_proactive','或重复执行宿主发前检查')
         text=text.replace('inspect_festival_image','宿主成图检查').replace('finish_event','宿主事件收尾')
-    for old,new in [('workflow_context/commit','workflow_read(view=context,purpose=amend)与workflow_commit'),('workflow_context','workflow_read(view=context)'),('workflow_recheck','workflow_read(view=refresh)'),('preference_context','memory_read(for_update=true)'),('service_skill','skill_read'),('service_reference','skill_read(name=名称,path=references/文件)'),('service_catalog','skill_read()')]:text=text.replace(old,new)
+    for old,new in [('workflow_context和workflow_commit修订任务','workflow_read(view=context,purpose=amend)和workflow_commit修订任务'),('workflow_context/commit','workflow_read(view=context,purpose=amend)与workflow_commit'),('workflow_context','workflow_read(view=context)'),('workflow_recheck','workflow_read(view=refresh)'),('preference_context','memory_read(for_update=true)'),('service_skill','skill_read'),('service_reference','skill_read(name=名称,path=references/文件)'),('service_catalog','skill_read()')]:text=text.replace(old,new)
     if __import__('delivery_capability').enabled():
         for old in ('reply_to_message','deliver_message','deliver_proactive','deliver_festival','send_image'):text=text.replace(old,'send_message')
     text=text.replace('不创建新的service_schedule、不调用save_plan','不创建新的排期').replace('不创建新的service_schedule，不调用save_plan','不创建新的排期')
     return text
+
+def memory_guidance():
+    """Describe actual memory configuration without enabling or scheduling anything."""
+    memory = __import__('preference_memory')
+    if not memory.enabled():
+        return ('治理记忆未启用，夜间整理未启用；memory_read读取旧库记录，不将其当作已治理偏好。'
+                '若本轮实际开放memory_remember，仅允许有精确当前原话证据的speaker.self_reported_name；不支持任意偏好、儿童档案或监护关系写入。')
+    nightly = memory.settings().get('slow_enabled') is True
+    return ('治理记忆已启用，memory_read读取有效治理记录与遗忘规则，不回退旧未治理记录；memory_remember不用于本轮写入。'
+            + ('夜间整理已启用，普通记忆由独立夜间流程处理。' if nightly else '夜间整理未启用，不承诺普通记忆将自动提取或保存。')
+            + '明确遗忘或媒体许可变更需memory_read(for_update=true)及有效上下文，再preference_commit；普通家庭会话不调用夜间维护工具。')
+
 
 def guidance():
     if not enabled():return ''
@@ -43,7 +55,7 @@ def guidance():
           '课程精确读取使用knowledge_read(target={level,week,day},parts=[资料类型])，同版本已装载正文不重读。较长材料用evidence_read按引用和分页读取，旧快照不代表当前事实或授权。'
           '候选、发前核验、完课规划材料、语音理解、节日成图检查和事件收尾由宿主执行并审计；主动资料变化用workflow_read(view=refresh)取得新事实与执行令牌。'
           '被动对话按需learning_query/knowledge_read，历史原话用conversation_read。generate_image返回宿主实际检查结果，模型判断是否重做；检查未完成不能发送。'
-          '普通assistant文字不代表交付；以实际sent回执为准，unknown不得盲目重试。普通记忆由独立夜间agent整理。'
+          '普通assistant文字不代表交付；以实际sent回执为准，unknown不得盲目重试。'
           +__import__('capability_surface').guidance()+__import__('skill_capabilities').guidance())
     more=('知识工具：course_knowledge已合并到course_read，可传class_type/lesson_no精确定位，或uri读取；不要再调用旧名。'
           '材料分页统一evidence_read(ref={kind:material|context,id:引用},section/path/offset)，保留材料引用和版本；历史快照不授权。' if enabled('knowledge') else '')

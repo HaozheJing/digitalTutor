@@ -1,6 +1,6 @@
 # 答疑共用标准
 
-来源为服务打样 4.2–4.6，FAQ 正文由 OpenViking 管理。旧 Skill 名按知识结果的 `current_skill_routes` 或 `service_catalog.knowledge_skill_routes` 路由；知识更新和 Skill 发布分别审核。
+来源为服务打样 4.2–4.6，FAQ 正文由 OpenViking 管理。旧 Skill 名按知识结果的 `current_skill_routes` 或 `skill_read().knowledge_skill_routes` 路由；知识更新和 Skill 发布分别审核。
 
 - 按说话者、所问事项、风险和现有证据选择 Q 动作。明确投诉或退款请求直接进入适用流程，不要求重复说明动机。
 - FAQ 查 `knowledge_search(scope=faq)`，产品查 product 范围，课程查对应知识文档。每项业务结论单独核验审核状态、版本、课程及年级。空结果、失效条目、仅有导航或未审核的政策资料都不能支持确定答复。一般未命中走 Q05 核实，效果疑虑或投诉按 Q03/Q04 办理。

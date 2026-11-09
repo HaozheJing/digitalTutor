@@ -13,7 +13,7 @@ description: I05 节日或家庭已确认考试节点的轻量关怀；按自然
 
 ## 依赖
 
-先调用 `service_skill(name="service-policy")`，同轮同版本可复用；再调用 `service_reference(name="service-policy", path="references/interaction.md", start_line=1, max_lines=120)`。表达遵循 `reply-style`。若需正式分层则用 `student_tier`，unknown 不推定为D层；课程L2/L3、答疑服务升级层与S/A/B/C/D分开。
+先调用 `skill_read(name="service-policy")`，同轮同版本可复用；再调用 `skill_read(name="service-policy", path="references/interaction.md", start_line=1, max_lines=120)`。表达遵循 `reply-style`。若需正式分层只使用宿主已核实且适用的记录；当前未提供则为 unknown，不推定为D层；课程L2/L3、答疑服务升级层与S/A/B/C/D分开。
 
 ## 事实、触发与频率
 
@@ -21,7 +21,7 @@ description: I05 节日或家庭已确认考试节点的轻量关怀；按自然
 
 ## 工具执行
 
-`daily_context` 读取真实昵称与节点，`action_candidates` 获取对应候选；主动发送前读 `proactive-service` 并 `check_proactive(candidate_id)`。只有eligible才 `deliver_proactive(candidate_ids, body)`，沿用共享频控、同日合并和暂停；节点不存在、未知或已送达就不发。
+使用宿主已装载的真实昵称、节点和候选；主动资料变化时 workflow_read(view="refresh")，条件核验由宿主执行。仅当前 eligible 且获准的候选可通过 send_message 沿用本任务候选与令牌交付，继续遵守频控、同日合并及暂停；节点不存在、未知或已送达就不发。
 
 文字中带有合适的阅读元素，引用具体课程时必须有当前课程依据；不保证考试成绩、不借关怀催课。私聊文字本身是I05允许形式，有已有匹配贺卡时才能随实际能力发图；缺图不调用生图，也不谎称卡已做好。普通关怀不强行添加高光能力比较。
 
@@ -31,4 +31,4 @@ description: I05 节日或家庭已确认考试节点的轻量关怀；按自然
 
 ## 案例
 
-原文没有标注本动作的专属完整案例；按需读 [examples.md](references/examples.md)：`service_reference(name="care-calendar-day", path="references/examples.md", start_line=1, max_lines=120)`。其中仅为结构说明，不是知识库标准答案。
+原文没有标注本动作的专属完整案例；按需读 [examples.md](references/examples.md)：`skill_read(name="care-calendar-day", path="references/examples.md", start_line=1, max_lines=120)`。其中仅为结构说明，不是知识库标准答案。

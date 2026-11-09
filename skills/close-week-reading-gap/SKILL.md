@@ -13,7 +13,7 @@ metadata:
 
 ## 看清本周已完成什么、今天还可以接上什么
 
-使用本次实时装载的 `facts.learning_context`：`family` 提供称呼与身份，`candidate` 对应本次事项，`learning.current_week` 提供截至当前的本周应学课程和逐课状态，`suggested_lesson` 是已核实的今日唯一未完课节，`schedule` 是今日课表，`course` 是这节课的正文与读取结果，`context` 提供近期交流、已有约定和联系限制，`as_of` 标明业务时间。每次执行都重新查询并装载；已有材料直接使用，整包缺失或事实变化时用 `learning_context()` 刷新。
+使用本次实时装载的 `facts.learning_context`：`family` 提供称呼与身份，`candidate` 对应本次事项，`learning.current_week` 提供截至当前的本周应学课程和逐课状态，`suggested_lesson` 是已核实的今日唯一未完课节，`schedule` 是今日课表，`course` 是这节课的正文与读取结果，`context` 提供近期交流、已有约定和联系限制，`as_of` 标明业务时间。每次执行都重新查询并装载；已有材料直接使用，整包缺失或事实变化时用 `workflow_read(view="refresh")` 刷新。
 
 把本周课程与历史欠课分清楚。本周只差今天这一课，不等于所有课程都已补齐，也不等于每一天都按时完成。只按实际完成记录表达肯定，不把尚未到期的课程算作已完成。今天这课已经开始时，邀请接着读；还没开始时，再邀请开启。候选不适用时结束事项，课表、逐课状态或对应课程材料不足时保留缺口。
 
@@ -33,7 +33,7 @@ metadata:
 
 交付前再读一遍口信，核对课数、计数单位和时间范围是否一致。几节课仍是课数，本周仍是本周；不能把“四节课”写成“四周”，或把本周剩一课说成全部欠课只剩一课。发现错字和前后不一致先修正，再提交。
 
-调用 `deliver_proactive(candidate_ids=[candidate.id], body=邀请正文, execution_token=task.execution_token)` 提交，其中 `candidate` 是本次资料包里的 S08 候选，候选引用与执行令牌使用原值。选中表情包时，同次增加 `emoji_refs=[{"asset_id":素材标识,"version":素材版本}]`，两个值沿用本次检索结果。课程链接或二维码只有实际接口提供时才可引用。
+调用 `send_message(candidate_ids=[candidate.id], body=邀请正文, execution_token=task.execution_token)` 提交，其中 `candidate` 是本次资料包里的 S08 候选，候选引用与执行令牌使用原值。选中表情包时，同次增加 `emoji_refs=[{"asset_id":素材标识,"version":素材版本}]`，两个值沿用本次检索结果。课程链接或二维码只有实际接口提供时才可引用。
 
 接口会即时复核最新学情、联系限制和重复交付。要求修正文案时按原因修正，事实变化时刷新资料；`accepted` 是受理，`sent` 才是确认送达，已有回执不重复发送。消息送达不等于孩子已完成这一课。
 

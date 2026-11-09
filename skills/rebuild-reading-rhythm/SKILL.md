@@ -13,7 +13,7 @@ metadata:
 
 ## 看清上周读了什么、本周可以怎样接上
 
-先结合本次事项了解这个家庭。用 `family_profile()` 确认称呼、身份、班型与期次；用 `learning_query(day=task.day)` 查看 `weekly_learning.previous_week` 和 `weekly_learning.current_week` 的统计范围、完课数量与逐课状态；用 `daily_context(day=task.day)` 了解近期交流、已有约定和联系限制，需要核实原话时再用 `conversation_read(source_id)`。用 `action_candidates(day=task.day)` 取得本次 S07 候选及当前状态，保留接口返回的候选引用。
+先结合本次宿主装载资料确认家庭称呼、身份、班型与期次；用 `learning_query(day=task.day)` 查看 `weekly_learning.previous_week` 和 `weekly_learning.current_week` 的范围、完课数量与逐课状态。结合本轮上下文了解近期交流、已有约定与联系限制，必要时用 `conversation_read(source_id)` 核实原话。沿用本任务 S07 候选引用，资料变化时 `workflow_read(view="refresh")` 刷新，由宿主重新核验。
 
 这些查询帮助理解家庭，不是必须逐条照做的固定顺序。根据已经掌握的信息决定先看什么、还缺什么，可以分多轮查询；同一轮已读到且仍然适用的事实直接使用，事实变化时再查。不必为了少调用一次工具，把需要了解的事情略过去。
 
@@ -21,7 +21,7 @@ metadata:
 
 从实际学情和家庭安排出发，选择值得回顾或适合接着读的内容。可以回顾上周已经完成的课程，也可以了解本周几节课的联系，再选一个适合这个家庭的起点；家庭已有明确安排时先照顾约定，不固定从某一节课切入。
 
-用 `course_browse` 浏览目录、`course_search` 查找相关材料，再按需要用 `course_read` 读取摘要、概览或正文；也可以用 `course_knowledge(class_type, lesson_no)` 直接读某课正文。读一节还是几节，由本次要了解的事情决定。涉及具体情节、阅读方法或练习时读对应正文，介绍后续安排时用 `course_schedule` 核对实际课表。已有对应正文可以直接使用，不把本周课程当成上周已经学过的内容。
+用 `knowledge_browse(scope="curriculum")` 浏览正式目录、`knowledge_search(query=问题,scope="curriculum")` 找到候选，再按正式 curriculum_ref 用 `knowledge_read(target={level,week,day},parts=["course"])` 读取对应正文。读一节还是几节取决于本次问题；涉及情节、方法和练习须核对原文，后续安排用 `course_schedule` 核对实际课表。已有同版本正文可复用，不把本周课程当成上周已学事实。
 
 ## 写一条有温度、让人愿意继续的邀请
 
@@ -49,7 +49,7 @@ metadata:
 
 交付前通读整条消息：称呼、代词和收尾都面向同一个人，时间建议能在家庭原话或已有约定里找到依据。没有依据的安排删去后，仍可以自然地邀请继续阅读。
 
-调用 `deliver_proactive(candidate_ids=[candidate.id], body=邀请正文, execution_token=task.execution_token)` 提交。其中 `candidate` 是本次 `action_candidates(day=task.day)` 返回的 S07 候选，使用接口给出的原引用；执行令牌使用任务提供的原值，不自行生成。选中表情包时，同次增加 `emoji_refs=[{"asset_id":素材标识,"version":素材版本}]`，两个值沿用本次检索结果。
+调用 `send_message(candidate_ids=[candidate.id], body=邀请正文, execution_token=task.execution_token)` 提交。其中 `candidate` 是本次宿主提供的 S07 候选，使用接口给出的原引用；执行令牌使用任务提供的原值，不自行生成。选中表情包时，同次增加 `emoji_refs=[{"asset_id":素材标识,"version":素材版本}]`，两个值沿用本次检索结果。
 
 接口要求修正文案时按原因修正；事实变化时按需要重新查询相关资料。`accepted` 是受理，`sent` 才是确认送达，已有发送回执不重复发送。成功交付后的结果由宿主登记，不把消息送达当成孩子已经开始或完成阅读。
 
@@ -57,7 +57,7 @@ metadata:
 
 
 ## 第一批查询接口迁移说明（开发候选）
-旧 course_* 和 conversation_window_read 调用片段仅供历史理解；当前模型入口如下：
+当前模型查询入口如下；旧实现仅作兼容保留，不是本轮调用指令：
 - knowledge_browse(scope="curriculum") 查看正式书目；book_id 查看书内课次映射。简称由智能体判断，不登记别名。
 - knowledge_read(target={level:"L2",week:全课程周,day:周内日},parts=["reading_qa"或"course"]) 精确读取；各部分缺失分别处理。书内课次使用 target={book_id,book_lesson_no}。
 - knowledge_search(query=问题,scope="curriculum"或"faq"或"product") 返回候选，须用 knowledge_read(target={document_id}) 读取后判断依据。不得将未审核FAQ作为正式政策。

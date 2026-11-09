@@ -13,9 +13,9 @@ description: H01 首日完课高光；按最新服务动作打样核验事实、
 
 ## 依赖与适用事实
 
-先调用 `service_skill(name="service-policy")` 取得跨动作禁忌、分层、频控、合并及回执规则，再调用 `service_reference(name="service-policy", path="references/highlights.md")` 取得高光四要素和素材规则。主动触达同时加载 `proactive-service`，组织家长文案加载 `reply-style`。
+先调用 `skill_read(name="service-policy")` 取得跨动作禁忌、分层、频控、合并及回执规则，再调用 `skill_read(name="service-policy", path="references/highlights.md")` 取得高光四要素和素材规则。主动触达同时加载 `proactive-service`，组织家长文案加载 `reply-style`。
 
-本动作不以儿童 S/A/B/C/D 服务层排除资格；需要分层事实时通过 `student_tier` 获取，unknown 不猜层。四要素中缺金句、比较基线或能力证据时明确缺口，宁可只陈述可核验事实。用户要求使用已有高光图片接口，不调用生图；mock 旧图中的其他名字不作为当前 UID 的文字事实。
+本动作不以儿童 S/A/B/C/D 服务层排除资格；需要分层事实时只使用宿主已核实且适用的记录，当前未提供则为 unknown，不猜层。四要素中缺金句、比较基线或能力证据时明确缺口，宁可只陈述可核验事实。用户要求使用已有高光图片接口，不调用生图；mock 旧图中的其他名字不作为当前 UID 的文字事实。
 
 专属取证：当前 UID、班期、开课日、首课 ID/内容、真实完成时间；若写具体表现，补充对应答题或互动原始证据。
 
@@ -27,9 +27,9 @@ description: H01 首日完课高光；按最新服务动作打样核验事实、
 
 ## 取证与执行工具
 
-1. `daily_context(day)` 查询业务日期及当前学情，再用 `action_candidates(day)` 找到本动作候选；读取 `check_proactive(candidate_id)` 的证据、时间窗、去重范围及当前联系约束，补齐下列专属事实。
+1. 使用宿主本轮装载的业务日期、学情、真实候选、证据、时间窗、去重范围及联系约束，补齐下列专属事实。活动任务资料变化时用 `workflow_read(view="refresh")` 刷新；候选生成和发送前核验由宿主执行，不自行创造候选。
 2. 以本动作事实组织共享四要素。只有 eligible 才执行；not_due 保留真实窗口，unknown/blocked 记录具体缺口；already_delivered 关闭主动重复。不得编造候选、素材 ID 或外部执行回执。
-3. 主动交付使用 `deliver_proactive(candidate_ids, body)`，按真实候选合并正文。家长当前请求查看或重看时，用 `highlight_lookup` 取得当前可见素材，再 `reply_with_highlights(event_id, body, highlight_ids)` 向绑定微信发已有图片；被动重看按当前事件去重，不能借此伪装新的主动高光。
+3. 当前任务为 highlight 时，由宿主交付绑定的原文与原图，模型不另发一份。其他获准主动任务才使用 `send_message(candidate_ids=candidate_ids, body=body, execution_token=本任务令牌)`，按真实候选交付。家长当前请求查看或重看时，先 `skill_read(name="highlight-growth-video")` 取得已有高光读取能力，再用 `highlight_lookup` 核实当前可见素材，最后 `send_message(body=body, highlight_ids=highlight_ids)`；被动重看按当前事件去重，不能伪装新的主动高光。
 4. 检查工具返回的文字/图片及其他附件最终状态；按共享规则登记已发、等待、阻断或部分完成。unknown 不盲目重试。
 
 取首课真实内容亮点与孩子实际参与；没有具体作答时只说完成了首课，不杜撰独立阅读、正确率或金句。与 S02 同一完课事实合并为一次鼓励。
@@ -44,4 +44,4 @@ description: H01 首日完课高光；按最新服务动作打样核验事实、
 
 ## 案例
 
-文案组织时读取 [源文档短例与边界模拟](references/examples.md)，工具调用为 `service_reference(name="highlight-course-start", path="references/examples.md")`。原文输出形式和实现改写分开保留；无本动作专属长案例时，不把其他动作案例移来冒充。
+文案组织时读取 [源文档短例与边界模拟](references/examples.md)，工具调用为 `skill_read(name="highlight-course-start", path="references/examples.md")`。原文输出形式和实现改写分开保留；无本动作专属长案例时，不把其他动作案例移来冒充。

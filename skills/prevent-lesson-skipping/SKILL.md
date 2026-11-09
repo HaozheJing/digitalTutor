@@ -13,7 +13,7 @@ metadata:
 
 ## 读懂本次资料
 
-直接使用已装载的 `facts.learning_context`：`family` 提供称呼和身份；`learning.preceding_lesson` 与 `learning.completed_lesson` 是缺口前后已完成的课程，后者对应本次完课事件；`learning.gap_lessons` 是中间仍未完成的课节；`learning.suggested_lesson` 和 `course` 对应一节建议先接上的课及其正文；`context` 提供近期原话、学习约定和联系限制；`as_of` 标明业务时间。整包在本次执行时实时查询生成，已有材料直接使用；整包缺失或收到事实变化提示时，调用 `learning_context()` 刷新。
+直接使用已装载的 `facts.learning_context`：`family` 提供称呼和身份；`learning.preceding_lesson` 与 `learning.completed_lesson` 是缺口前后已完成的课程，后者对应本次完课事件；`learning.gap_lessons` 是中间仍未完成的课节；`learning.suggested_lesson` 和 `course` 对应一节建议先接上的课及其正文；`context` 提供近期原话、学习约定和联系限制；`as_of` 标明业务时间。整包在本次执行时实时查询生成，已有材料直接使用；整包缺失或收到事实变化提示时，调用 `workflow_read(view="refresh")` 刷新。
 
 把“已完成”和“待补读”分清楚，已开始的中间课就邀请接着读。只依据实际完成记录肯定这次阅读，不把它说成每节都坚持、答题特别好或能力已经提升。缺口已补齐、任务不再适用或家庭明确暂停联系时结束事项；课节无法核实就保留缺口，不猜哪节漏了。
 
@@ -43,6 +43,6 @@ metadata:
 
 ## 交付这一次邀请
 
-通过 `deliver_proactive(candidate_ids=[task.candidate_id], body=邀请正文, execution_token=task.execution_token)` 提交，沿用任务提供的候选和执行令牌。接口即时复核最新缺课状态、联系限制和重复发送；事实变化时先刷新，已有发送回执就沿用，按实际返回处理。
+通过 `send_message(candidate_ids=[task.candidate_id], body=邀请正文, execution_token=task.execution_token)` 提交，沿用任务提供的候选和执行令牌。接口即时复核最新缺课状态、联系限制和重复发送；事实变化时先刷新，已有发送回执就沿用，按实际返回处理。
 
 若尚未交付，且已明确不需联系，用 `service_task_finish(task_id=task.id, execution_token=task.execution_token, outcome="no_contact", reason=简短依据)` 结束；必要事实缺失时用 `blocked`。本次消息的送达、家庭回应和缺课实际补齐分别以真实记录为准。
