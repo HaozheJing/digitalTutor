@@ -1,18 +1,47 @@
-"""Pinned S01 guide cards and receipt-grounded conversation context; no answer key."""
+"""Pinned S01 guide cards and receipt-grounded conversation context and registered answer references."""
 from pathlib import Path
 from contextlib import closing
 import hashlib,json,sqlite3
 import sql_tools as s,test_mode as tm
 REGISTRY=Path(__file__).with_suffix('.json')
 PREFIX='https://experiment.invalid/reading-guide/'
-GUIDANCE=('已送达导读单中的问题可能是孩子当前回答的对象。结合孩子原话、题号、课次与发送日期理解，不把短答案当作无来由的新话题；'
-          '若多张导读单都可能对应，先确认是哪一题，不硬套最近一张。标准答案尚未接入，不凭模型记忆判对错、打分或声称标准答案已核验。'
-          '这是孩子在回应已发的问题，先接住这次选择或理由；标准答案待接入时不作对错判定、评分，也不用“答得真好、真准”等话暗示已经判对。'
-          '确需解释时可以按需读取对应课程正文，说明实际资料依据；未经业务审核的材料不升级为已核验答案，不凭一条描述编造原因。'
-          '孩子只提交人物、选项或答案时，只承接这个选择，不据此夸读得细、认真、观察仔细或理解到位；题号说清楚不证明阅读表现。'
-          '这种作答不自动转为讲解或训练：不追加回读、找依据、解释理由、复述、举一反三、另一题或汇报，也不改成可以、试试等建议。'
-          '只有孩子明确提问或求助才补充相应解释；答案待接入时，不用书中结论间接判对。所选业务Skill的自然延伸或讲解流程也遵循这一区分。'
-          '不向家庭讲内部答案接入流程。图片发送不代表孩子完成阅读或作答，图上进度是素材序号。')
+GUIDANCE=('已送达导读单中的问题可能是孩子当前回答的对象。结合孩子原话、题号、课次与发送日期理解；多张都可能对应时先确认，不硬套最近一张。'
+          '阅读答案已可按课次查询：优先使用该导读单answer_reference.read_args调用knowledge_read；registered_not_read仅表示目录已登记，不代表本轮已读取或题目已匹配。'
+          '实际读到reading_qa后，对照原题、题号、课次及来源版本，给当前这题简短反馈；题意不一致先澄清，开放题尊重合理表达，不机械套唯一答案。'
+          '尚未读到、缺失或匹配不明时不凭模型记忆判对错，不把来源参考答案称为已独立审核的评分标准，也不自动打分或更新完课。'
+          '不把人物名字、选项或题号推成读得细、认真或理解到位。孩子只作答时不追加回读、找依据、复述、另一题或汇报，也不换成可以、试试等建议。'
+          '孩子明确提问或求助时再补相应解释。不向家庭讲内部接入流程。图片发送不代表孩子完成阅读或作答，图上进度是素材序号。')
+CATALOG=Path(__file__).resolve().parents[1]/'knowledge/curriculum/L2/catalog.json'
+
+
+def answer_reference(asset):
+    """Expose a registered document selector, never infer an answer or a read receipt."""
+    unavailable={'status':'not_available','read_args':None,'question_match_status':'not_checked'}
+    try:
+        catalog=json.loads(CATALOG.read_text())
+        matches=[x for x in catalog['lessons'] if x['level']==asset.get('class_type') and type(asset.get('lesson_no')) is int and x['global_lesson_no']==asset['lesson_no']]
+        if len(matches)!=1:return unavailable
+        lesson=matches[0];ident=lesson.get('resources',{}).get('reading_qa')
+        documents=[x for x in catalog['documents'] if x['document_id']==ident and x['kind']=='reading_qa']
+        if len(documents)!=1:return unavailable
+        return {'status':'registered_not_read','document_id':ident,
+                'curriculum_ref':{k:lesson[k] for k in ('lesson_id','level','week','day')},
+                'read_args':{'target':{'document_id':ident}},
+                'question_match_status':'requires_comparison',
+                'known_wording_difference':any(x.get('lesson_no')==asset['lesson_no'] for x in catalog.get('question_wording_differences',[])),
+                'usage':'来源参考答案；读取后核对实际原题，不是自动评分规则或学情事实。'}
+    except (OSError,ValueError,KeyError,TypeError):
+        return unavailable
+
+
+def answer_context(asset):
+    reference=answer_reference(asset)
+    return {'answer_reference':reference,'answer_status':reference['status'],
+            'questions':[{**q,'answer_status':reference['status'],
+                          'answer_ref':reference.get('document_id'),
+                          'question_match_status':reference['question_match_status']}
+                         for q in asset.get('questions',[])]}
+
 
 def required():
     return __import__('service_workflow').planning_contract('remind-reading').get('required_reading_guide') is True
@@ -37,13 +66,13 @@ def select(schedule):
     return {'status':'ready','asset':rows[0]}
 
 def public(asset):
-    return {k:v for k,v in asset.items() if k not in ('path','size','transcription')}
+    return {**{k:v for k,v in asset.items() if k not in ('path','size','transcription')},**answer_context(asset)}
 
 def planned(schedule,day):
     if not required():return {'status':'not_required'}
     value=select(schedule)
     if value['status']!='ready':return value
-    return {'status':'ready','card':public(value['asset']),'delivery_status':'not_sent','delivery_owner':'host_after_invitation','answer_status':'pending','guidance':'本次文字后程序会配发对应原图；正文仍只作阅读邀请，不重复图中题目或追加作答要求。只有图片分件sent后才认为图已送达。'}
+    return {'status':'ready','card':public(value['asset']),'delivery_status':'not_sent','delivery_owner':'host_after_invitation','answer_status':answer_reference(value['asset'])['status'],'guidance':'本次文字后程序会配发对应原图；正文仍只作阅读邀请，不重复图中题目或追加作答要求。只有图片分件sent后才认为图已送达。'}
 
 def bind(c,key,day,asset):
     import experiment_runtime as er
@@ -90,7 +119,7 @@ def history(day):
             image_status=part[1] if part else 'not_sent';asset=json.loads(card)
             item={'action_key':key,'day':date,'created_at':at,'asset_id':asset['id'],'sha256':asset['sha256'],'lesson_no':asset['lesson_no'],'book':asset['book'],'image_status':image_status,'delivery_status':status,'image_part_id':part[0] if part else None}
             if image_status=='sent':
-                item.update(questions=asset['questions'],recommended_pages=asset['recommended_pages'],answer_status='pending',printed_progress_is_child_completion=False);sent.append(item)
+                item.update(**answer_context(asset),recommended_pages=asset['recommended_pages'],printed_progress_is_child_completion=False);sent.append(item)
             else:pending.append(item)
         if not rows:return None
-        return {'sent_guides':sent[:3],'earlier_sent_count':max(0,len(sent)-3),'pending_guides':pending[:3],'guidance':GUIDANCE,'answer_key_status':'pending'}
+        return {'sent_guides':sent[:3],'earlier_sent_count':max(0,len(sent)-3),'pending_guides':pending[:3],'guidance':GUIDANCE,'answer_key_status':('registered_not_read' if any(x['answer_status']=='registered_not_read' for x in sent) else 'not_available')}

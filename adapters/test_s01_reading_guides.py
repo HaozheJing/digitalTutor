@@ -48,6 +48,42 @@ class GuideTests(unittest.TestCase):
             self.assertEqual(guides.select({'status':'scheduled','class_type':c,'lesson_no':n})['status'],'unavailable')
         self.assertEqual(guides.select({'status':'no_lesson'})['status'],'unavailable')
 
+    def test_registered_answer_projection_never_claims_a_read_or_mutates_cards(self):
+        import query_contract
+        raw=guides.REGISTRY.read_bytes()
+        with patch.object(query_contract,'live_call',side_effect=AssertionError('projection must not read cloud answers')):
+            for n in range(1,21):
+                asset=guides.select({'status':'scheduled','class_type':'L2','lesson_no':n})['asset']
+                original=copy.deepcopy(asset)
+                result=guides.public(asset);reference=result['answer_reference']
+                self.assertEqual(reference['status'],'registered_not_read')
+                self.assertEqual(reference['question_match_status'],'requires_comparison')
+                self.assertEqual(reference['curriculum_ref']['week'],(n-1)//5+1)
+                self.assertEqual(reference['curriculum_ref']['day'],(n-1)%5+1)
+                self.assertNotIn('body',reference)
+                self.assertEqual(asset,original)
+        self.assertEqual(guides.REGISTRY.read_bytes(),raw)
+
+    def test_missing_or_ambiguous_answer_mapping_stays_unavailable(self):
+        from pathlib import Path
+        catalog=json.loads(guides.CATALOG.read_text())
+        local=self.root/'answer-catalog.json'
+        asset=json.loads(guides.REGISTRY.read_text())['assets'][0]
+        with patch.object(guides,'CATALOG',local):
+            self.assertEqual(guides.answer_reference(asset)['status'],'not_available')
+            catalog['lessons'].append(copy.deepcopy(catalog['lessons'][0]))
+            local.write_text(json.dumps(catalog))
+            self.assertEqual(guides.answer_reference(asset)['status'],'not_available')
+        for fields in [{'class_type':'L3'},{'lesson_no':None},{'lesson_no':True},{'lesson_no':999}]:
+            self.assertIsNone(guides.answer_reference({**asset,**fields})['read_args'])
+
+    def test_wording_difference_requires_comparison_not_automatic_grading(self):
+        asset=guides.select({'status':'scheduled','class_type':'L2','lesson_no':12})['asset']
+        reference=guides.answer_reference(asset)
+        self.assertTrue(reference['known_wording_difference'])
+        self.assertEqual(reference['status'],'registered_not_read')
+        self.assertEqual(reference['question_match_status'],'requires_comparison')
+
     def test_tampered_hash_size_or_path_is_rejected(self):
         asset=json.loads(guides.REGISTRY.read_text())['assets'][0]
         for fields in [{'sha256':'0'*64},{'size':1},{'path':'config/workbench.json'},{'path':'assets/reading-guides/missing.png'}]:
@@ -60,7 +96,11 @@ class GuideTests(unittest.TestCase):
         self.receipt(6);self.assertEqual(self.finish(result)['status'],'done')
         history=guides.history('2025-10-13');self.assertEqual(history['sent_guides'][0]['questions'][0]['text'],'三个饲养场主分别叫什么？')
         self.assertEqual(history['sent_guides'][0]['image_status'],'sent')
-        self.assertEqual(history['answer_key_status'],'pending')
+        self.assertEqual(history['answer_key_status'],'registered_not_read')
+        reference=history['sent_guides'][0]['answer_reference']
+        self.assertEqual(reference['read_args'],{'target':{'document_id':'weeks-W01-Day1-reading-qa'}})
+        self.assertEqual(reference['question_match_status'],'requires_comparison')
+        self.assertEqual(history['sent_guides'][0]['questions'][0]['answer_status'],'registered_not_read')
         self.assertIn('reading_guides',b.context('2025-10-13'))
         with patch.object(w,'http_send') as send:
             w.flush();w.flush();send.assert_not_called()

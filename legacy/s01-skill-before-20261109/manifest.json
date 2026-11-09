@@ -1,0 +1,11 @@
+{
+  "base": "12c8305858fa74524e2deabfbff1bb3bf0031da5",
+  "purpose": "Preserved originals only; no automatic rollback",
+  "original_sha256": {
+    "adapters/s01_reading_guides.py": "74fea234e5e10b1a2d724be1f02a56aa759b47ac849f67beee18a1e2f8c5f281",
+    "adapters/test_s01_reading_guides.py": "402c5b9d1b44f18c953d8a9ff59d908ef1b1566a78b559cf375c2665f74dec3a",
+    "skills/explain-reading-content/SKILL.md": "1426b10b30cfb0d5b0f1c8340585230a0659feb05a6006ae4988c753d703f6e7",
+    "skills/remind-reading/SKILL.md": "4d5042226e0ab96b6dbac5dc7f599e9d332a643596f882e908bcd57a67c1c2e2",
+    "skills/respond-child-sharing/SKILL.md": "f6b6f81068ab2b9714d8d9285be03c526c5e4e159dc3fe06453478e3fc03c8c3"
+  }
+}
