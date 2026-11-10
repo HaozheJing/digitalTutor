@@ -68,8 +68,8 @@ def deliver(day, body):
             reason=preparation(trace,current['schedule'],day)
             if reason:return {'status':'needs_revision','reason':reason}
             actual=body.strip()
-            from message_text import parts
-            try:parts(actual)
+            from message_text import MAX_BUBBLES, parts
+            try:text_parts=parts(actual)
             except ValueError as error:return {'status':'needs_revision','reason':str(error)}
             import s01_reading_guides as guides
             guide=None
@@ -79,6 +79,14 @@ def deliver(day, body):
                 if not (__import__('experiment_runtime').manifest() or __import__('manual_workbench').verify() or __import__('family_lab_bridge').verify()):return {'status':'skipped','reason':'导读单真实渠道尚未配置','evidence':{'status':'unknown'}}
                 __import__('preference_memory').guard_media(c,6)
                 guide=selected['asset']
+            from emoji_assets import SELECTED
+            emoji_count=len(SELECTED.get())
+            text_limit=MAX_BUBBLES-int(guide is not None)-emoji_count
+            if len(text_parts)>text_limit:
+                attachments='导读单1张' if guide is not None else '导读单0张'
+                return {'status':'needs_revision','reason':(
+                    f'本次晨邀有{len(text_parts)}条文字、{attachments}、独立表情{emoji_count}张，整组最多{MAX_BUBBLES}个气泡。'
+                    f'请将文字合并为最多{text_limit}条，每条不超过50字，再提交整组。')}
             __import__('service_workflow').bind_delivery(c,key)
             c.execute('INSERT INTO deliveries VALUES(?,?,?,?,?)',(key,actual,'queued',at.isoformat(),'test_wechat_pending'))
             w.queue_text(c,key,actual)
