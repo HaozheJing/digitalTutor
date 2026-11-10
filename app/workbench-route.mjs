@@ -56,7 +56,7 @@ export function workbenchHandler({root, run, busy, mutate, state, token}) {
     }
     send(200,run('workbench.py',['plan',day]));return true;
    }
-   if(req.method!=='POST'||!['clock','reset','clear-context','execute','highlights','automatic','advance','replan','skills-publish','simulate-completion','completion-events','course-completion','service-ledger','alert-reply','alert-resolve'].map(x=>'/workbench/api/'+x).includes(req.url)){
+   if(req.method!=='POST'||!['clock','reset','clear-context','new-conversation','execute','highlights','automatic','advance','replan','skills-publish','simulate-completion','completion-events','course-completion','service-ledger','alert-reply','alert-resolve'].map(x=>'/workbench/api/'+x).includes(req.url)){
     send(404,{error:'入口不存在'});return true;
    }
    if((!machine&&req.headers['x-workbench']!=='1')||!String(req.headers['content-type']).startsWith('application/json')){
@@ -84,6 +84,11 @@ export function workbenchHandler({root, run, busy, mutate, state, token}) {
    if(req.url.endsWith('/service-ledger')){
     if(input.ledger_run_id!==undefined&&!/^[a-f0-9]{32}$/.test(input.ledger_run_id)){send(400,{error:'轮次编号无效'});return true;}
     send(200,run('service_ledger.py',[JSON.stringify(input)]));return true;
+   }
+   if(req.url.endsWith('/new-conversation')&&(!input.lab_run_id||!input.family_id||
+       typeof input.expected_context!=='string'||!Number.isSafeInteger(input.expected_seq)||
+       !/^[a-f0-9-]{32,36}$/.test(input.request_id||''))){
+    send(400,{error:'请刷新家庭会话后再操作'});return true;
    }
    const publishing=req.url.endsWith('/skills-publish');
    if(req.url.endsWith('/execute')&&(typeof input.task_id!=='string'||!/^service-[a-zA-Z0-9-]{1,150}$/.test(input.task_id))){

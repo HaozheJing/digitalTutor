@@ -34,29 +34,80 @@ def idle(c, receipt_complete=False):
                 raise ValueError(reason)
 
 
-def clear_context():
-    """Archive first; preserve business receipts/plans and pause future execution."""
-    ident=uuid.uuid4().hex
-    archive=Path(s.DB).parent/'test-archives'/(ident+'.sqlite')
-    archive.parent.mkdir(parents=True,exist_ok=True)
-    with closing(sqlite3.connect(s.DB)) as c:
-        idle(c)
-        with closing(sqlite3.connect(archive)) as dest:c.backup(dest)
-        with c:
-            c.execute('BEGIN IMMEDIATE');idle(c)
-            c.execute('UPDATE messages SET visible=0')
-            c.execute("UPDATE memories SET status='archived' WHERE status='active'")
-            state=tm.state();state['auto_highlights']=False
+def family_boundary(c, state, request):
+    """Validate ownership and take a consistent outgoing-message cutoff for this family."""
+    import family_lab_bridge as bridge
+    cfg, lab = bridge.connection()
+    if (not cfg or cfg['run_id'] != request.get('lab_run_id')
+            or state['run_id'] != request.get('run_id') or state['uid'] != request.get('family_id')):
+        raise ValueError('家庭或轮次已变化，请刷新')
+    scope = (cfg['run_id'], cfg['family_id'])
+    with closing(sqlite3.connect(Path(cfg['control_db']).resolve().as_uri()+'?mode=ro', uri=True)) as control:
+        control.execute('BEGIN')
+        f = control.execute("""SELECT busy, inbox_seq, projected_seq FROM families JOIN runs
+            ON runs.id=families.run_id WHERE runs.active=1 AND run_id=? AND family_id=?""", scope).fetchone()
+        if not f or f[0] or f[1] != f[2] or f[1] != request.get('expected_seq'):
+            raise ValueError('有新来信或消息正在处理，请刷新后再试')
+        for table, condition, reason in [
+            ('model_attempts',"status IN ('queued','running')",'请等当前模型回复完成'),
+            ('outbox',"status IN ('queued','submitting','accepted','unknown')",'请先等当前消息取得最终回执'),
+            ('cases',"status='open'",'请先处理当前家庭的待办人工事项')]:
+            if control.execute('SELECT 1 FROM '+table+' WHERE run_id=? AND family_id=? AND '+condition+' LIMIT 1', scope).fetchone():
+                raise ValueError(reason)
+        return control.execute('SELECT COALESCE(MAX(rowid),0) FROM outbox WHERE run_id=? AND family_id=?',scope).fetchone()[0]
+
+
+def clear_context(request=None):
+    import re
+    request = request or {}
+    scoped = 'lab_run_id' in request
+    ident = request.get('request_id') if scoped else uuid.uuid4().hex
+    if not isinstance(ident,str) or not re.fullmatch(r'[a-f0-9-]{32,36}',ident):
+        raise ValueError('清理请求编号无效')
+    archive = Path(s.DB).parent/'test-archives'/(ident+'.sqlite')
+    archive.parent.mkdir(parents=True, exist_ok=True)
+    with closing(sqlite3.connect(s.DB)) as c, c:
+        c.execute('BEGIN IMMEDIATE')
+        state = json.loads(c.execute("SELECT value FROM metadata WHERE key='test_mode'").fetchone()[0])
+        result = {'status':'context_cleared','archive_id':ident,'context_id':ident,
+                  'as_of':state['as_of'],'run_id':state['run_id']}
+        if scoped:
+            if request.get('family_id')!=state['uid'] or request.get('run_id')!=state['run_id']:
+                raise ValueError('家庭或轮次已变化，请刷新')
+            if state.get('conversation_id') == ident:
+                return {**result, 'replayed':True}
+            if request.get('expected_context') != state.get('conversation_id',''):
+                raise ValueError('会话已经切换，请刷新')
+            state['conversation_outbox_cursor'] = family_boundary(c, state, request)
+        idle(c, receipt_complete=scoped)
+        tables = {r[0] for r in c.execute("SELECT name FROM sqlite_master WHERE type='table'")}
+        if scoped and c.execute("SELECT 1 FROM events WHERE kind='passive' AND status='waiting_service_hours' LIMIT 1").fetchone():
+            raise ValueError('有尚未处理的来信，请处理完后再清理')
+        # The writer lock keeps the backup and session boundary on the same revision.
+        with closing(sqlite3.connect(s.DB)) as source, closing(sqlite3.connect(archive)) as dest:
+            source.backup(dest)
+        archive.chmod(0o600)
+        c.execute('UPDATE messages SET visible=0 WHERE visible=1')
+        c.execute("UPDATE memories SET status='archived' WHERE status='active'")
+        if 'message_hook_inbound' in tables:
+            c.execute("UPDATE message_hook_inbound SET handled=1 WHERE handled=0 AND source_id IN (SELECT source_id FROM messages WHERE visible=0)")
+        if 'memory_candidates' in tables:
+            c.execute("UPDATE memory_candidates SET status='archived' WHERE status IN ('candidate','reported','confirmed')")
+        if 'memory_checkpoints' in tables:
+            c.execute("UPDATE memory_checkpoints SET seq=COALESCE((SELECT MAX(seq) FROM memory_journal j WHERE j.scope=memory_checkpoints.scope),seq)")
+        if not scoped:
+            state['auto_highlights']=False
             state.pop('manual_service_task_id',None)
-            state['context_reset_at']=s.now()
-            state['context_delivery_rowid']=c.execute('SELECT COALESCE(MAX(rowid),0) FROM deliveries').fetchone()[0]
-            if c.execute("SELECT 1 FROM sqlite_master WHERE name='service_skill_reads'").fetchone():
-                c.execute('DELETE FROM service_skill_reads WHERE run_id=?',(state['run_id'],))
-            c.execute("UPDATE metadata SET value=? WHERE key='test_mode'",(s.encoded(state),))
-            c.execute("DELETE FROM metadata WHERE key='active_service_task'")
-            c.execute("DELETE FROM task_state WHERE id='chat-gate'")
-    return {'status':'context_cleared','archive_id':ident,'as_of':state['as_of'],
-            'run_id':state['run_id'],'auto_highlights':False}
+        if 'test_outbox' in tables:
+            state['context_part_rowid']=c.execute('SELECT COALESCE(MAX(rowid),0) FROM test_outbox').fetchone()[0]
+        state.update(conversation_id=ident, context_reset_at=s.now(),
+                     context_delivery_rowid=c.execute('SELECT COALESCE(MAX(rowid),0) FROM deliveries').fetchone()[0])
+        if 'service_skill_reads' in tables:
+            c.execute('DELETE FROM service_skill_reads WHERE run_id=?',(state['run_id'],))
+        c.execute("UPDATE metadata SET value=? WHERE key='test_mode'",(s.encoded(state),))
+        c.execute("DELETE FROM metadata WHERE key='active_service_task'")
+        c.execute("DELETE FROM task_state WHERE id='chat-gate'")
+    return {**result,'auto_highlights':state.get('auto_highlights',False)}
 
 
 def execute(task_id):
@@ -82,6 +133,6 @@ def execute(task_id):
 
 if __name__=='__main__':
     try:
-        value=clear_context() if sys.argv[1]=='clear-context' else execute(sys.argv[2])
+        value=clear_context(json.loads(sys.stdin.read() or '{}') if '--request' in sys.argv else {}) if sys.argv[1]=='clear-context' else execute(sys.argv[2])
     except ValueError as e:value={'status':'rejected','error':str(e)}
     print(s.encoded(value))

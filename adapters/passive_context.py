@@ -37,7 +37,9 @@ def scope_data():
     data = tm.fixture_data(state, include_events=False)
     if data['uid'] != state['uid']: raise ValueError('passive_family_binding_mismatch')
     import course_service
-    scope = digest([state['run_id'], state['uid'], data['enrollments'], course_service.binding(state['uid'])])
+    identity = [state['run_id'], state['uid'], data['enrollments'], course_service.binding(state['uid'])]
+    if state.get('conversation_id'): identity.append(state['conversation_id'])
+    scope = digest(identity)
     return scope, state, data
 
 def enabled():
@@ -196,8 +198,11 @@ def entry(day):
             c.row_factory=None
         if c.execute("SELECT 1 FROM sqlite_master WHERE name='operator_alerts'").fetchone():
             human=[dict(zip(('id','status','category','reason'),r)) for r in c.execute("SELECT a.id,COALESCE(d.status,a.status),a.category,a.reason FROM operator_alerts a LEFT JOIN deliveries d ON d.action_key=a.action_key WHERE a.run_id=? AND a.uid=? AND COALESCE(d.status,a.status) NOT IN ('sent','resolved','dismissed')",(state['run_id'],state['uid']))]
+        from constraint_evidence import for_conversation
+        contact = for_conversation(c,state,s.read('SELECT * FROM contact_constraints WHERE day=?',(day,)))
+        constraints = for_conversation(c,state,constraints)
     return {'business_day':day,'business_time':state['as_of'],'identity':identity,'enrollments':data['enrollments'],
-            **history,'contact_constraints':s.read('SELECT * FROM contact_constraints WHERE day=?',(day,)),
+            **history,'contact_constraints':contact,
             'voice_understanding':voice,'human_pending':human,'workflow_constraints':constraints,'legacy_constraints':legacy,
             'working_materials':materials(True),
             'material_policy':('当前学情按需learning_query查询；' if __import__('tool_surface').enabled('context') else '当前学情按需learning_query/learning_context查询；')+'1小时内且无变化信号可复用，过期/发生变化会退出本轮材料。知识按发布版本复用。不要从历史回合快照推断当前状态。旧对话需用conversation_read或conversation_window_read。安排变化用workflow_context实时查询，发送由宿主复核。'}

@@ -34,9 +34,9 @@ export function apply(ctx){
  const gate=(mode='read')=>run('sql_tools.py',['gate','--mode',mode]);
  ctx.systemPrompt.context({name:'tutor-live-context',order:500,required:true,interpolate:false,text:()=>JSON.stringify(run('task_context.py',['runtime']))});
  const state=root+'/runtime/service-session.json';const saved=existsSync(state)?JSON.parse(readFileSync(state)):{};let sessionId=saved.sessionId||null;
- if(testState()&&saved.testRunId!==testState().run_id)sessionId=null;
+ const startup=testState();if(startup&&(saved.testRunId!==startup.run_id||(saved.contextId||'')!==(startup.conversation_id||'')))sessionId=null;
  const bindFamily=id=>{if(governed&&existsSync(root+'/config/tool-surface.json')&&JSON.parse(readFileSync(root+'/config/tool-surface.json')).identity===true)run('family_session.py',[id]);return id;};
- let creating;const ensure=()=>sessionId?Promise.resolve(bindFamily(sessionId)):(creating??=ctx.sessionController.create({cwd:root,agentPreset:'standard'}).then(s=>{sessionId=s.sessionId;writeFileSync(state,JSON.stringify({...s,testRunId:testState()?.run_id}));return bindFamily(sessionId);}).finally(()=>creating=null));
+ let creating;const ensure=()=>sessionId?Promise.resolve(bindFamily(sessionId)):(creating??=ctx.sessionController.create({cwd:root,agentPreset:'standard'}).then(s=>{sessionId=s.sessionId;writeFileSync(state,JSON.stringify({...s,testRunId:testState()?.run_id,contextId:testState()?.conversation_id||''}));return bindFamily(sessionId);}).finally(()=>creating=null));
  const passive=m=>m.source?.kind==='user'&&!String(m.source?.rpcId||'').startsWith('lab-run-');
  const requests=new Map(),serviceRequests=new Map(),passiveRequests=new Map(),memoryRequests=new Map();let generation=0,draining=false,ready=false,lastError=null,lastPoll=null,modelBusy=0;
  const surface=governed?installWorkingSurface(ctx,{root,serviceRequests,passiveRequests,checkpoint:(taskId,requestId)=>run('context_lifecycle.py',[taskId,requestId])}):{clean(){}};
@@ -212,11 +212,13 @@ export function apply(ctx){
     if(action==='replan')return run('agent_plan.py',['request','plan']);
     if(action==='advance')return run('clock_execution.py',['advance',input.as_of+':00+08:00']);
     if(action==='execute')return run('console_control.py',['execute',input.task_id]);
-    if(action==='clear-context'){
-     const result=run('console_control.py',['clear-context']);
+    if(action==='clear-context'||action==='new-conversation'){
+     const result=run('console_control.py',['clear-context','--request'],JSON.stringify(input));
      if(result.status==='rejected')return result;
-     writeFileSync(root+'/runtime/session-before-'+result.archive_id+'.json',JSON.stringify({sessionId,testRunId:testState().run_id}));
-     sessionId=null;await ensure();return result;
+     if(result.replayed&&sessionId&&JSON.parse(readFileSync(state)).contextId===result.context_id)return result;
+     const previous=sessionId;sessionId=null;
+     writeFileSync(root+'/runtime/session-before-'+result.archive_id+'.json',JSON.stringify({sessionId:previous,testRunId:testState().run_id}));
+     await ensure();return result;
     }
     const result=run('clock_execution.py',['activate',action==='reset'?testState().as_of:input.as_of+':00+08:00']);
     if(result.status==='rejected')return result;

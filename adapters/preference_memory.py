@@ -175,6 +175,9 @@ def active(c, sc, keys=None,subject=None):
         if subject is not None and row['subject']!=subject:continue
         if keys is not None and row['key'] not in keys: continue
         if stamp(row['valid_from']) > now or (row['expires_at'] and stamp(row['expires_at']) <= now): continue
+        # Keep confirmed contact preferences in force without quoting archived chat.
+        if row.get('source_id') and c.execute('SELECT 1 FROM messages WHERE source_id=? AND visible=0',(row['source_id'],)).fetchone():
+            row.pop('quote',None)
         result.append({**dict(row), 'evidence_kind': 'parent_report_about_child' if row['subject']=='child' else 'explicit_parent_statement',
                        'effect': 'child_service_preference' if row['subject']=='child' else ('planning_advisory' if row['key']=='contact.window' else 'response_preference')})
     return result
@@ -323,11 +326,14 @@ def collect(c, sc):
            ('task','service_tasks','id',['id','kind','skill','status','day','run_at','result','run_id','uid']),
            ('delivery','deliveries','action_key',['action_key','body','status','created_at','source']),
            ('receipt','test_outbox','id',['id','status','message_type','updated_at'])]
+    mode=c.execute("SELECT value FROM metadata WHERE key='test_mode'").fetchone()
+    delivery_floor=json.loads(mode[0]).get('context_delivery_rowid',0) if mode else 0
     for kind,table,pk,wanted in specs:
         if not c.execute('SELECT 1 FROM sqlite_master WHERE name=?',(table,)).fetchone(): continue
         columns={r[1] for r in c.execute('PRAGMA table_info('+table+')')}
         selected=[x for x in wanted if x in columns]
-        for row in c.execute('SELECT '+','.join(selected)+' FROM '+table).fetchall():
+        where,params=(' WHERE rowid>?',(delivery_floor,)) if kind=='delivery' else ('',())
+        for row in c.execute('SELECT '+','.join(selected)+' FROM '+table+where,params).fetchall():
             value=dict(row);ident=str(value[pk])
             value['evidence_environment']='experiment_simulation' if (s.R/'config/experiment.json').is_file() else 'bound_runtime'
             if 'source' in value:value['evidence_origin']=value['source']

@@ -119,8 +119,11 @@ class Workbench:
         with contextlib.closing(sqlite3.connect(db.as_uri()+'?mode=ro',uri=True)) as c:
             c.row_factory=sqlite3.Row
             tables={x[0] for x in c.execute("SELECT name FROM sqlite_master WHERE type='table'")}
+            c.execute('BEGIN')
+            session = json.loads(c.execute("SELECT value FROM metadata WHERE key='test_mode'").fetchone()[0])
+            context_id = session.get('conversation_id','')
             def rows(sql):return [dict(x) for x in c.execute(sql)]
-            data={'family':family,'messages':rows('SELECT * FROM messages ORDER BY rowid DESC LIMIT 100')[::-1],
+            data={'family':family,'context_id':context_id,'messages':rows('SELECT * FROM messages WHERE visible=1 ORDER BY rowid DESC LIMIT 100')[::-1],
               'tasks':rows('SELECT * FROM service_tasks ORDER BY due_at DESC LIMIT 100'),
               'plans':rows('SELECT * FROM service_plan_versions ORDER BY created_at DESC LIMIT 8'),
               'learning_events':rows('SELECT * FROM completion_events ORDER BY completed_at') if 'completion_events' in tables else [],
@@ -139,7 +142,7 @@ class Workbench:
                 voices={x[0]:json.loads(x[1]) for x in c.execute('SELECT source_id,result FROM voice_inputs WHERE result IS NOT NULL')}
                 for message in data['messages']:
                     if message['source_id'] in voices:message['voice_understanding']=voices[message['source_id']]
-        data['outbox']=self.lab.read('SELECT * FROM outbox WHERE run_id=? AND family_id=? ORDER BY created',(family['run_id'],fid))
+        data['outbox']=self.lab.read('SELECT * FROM outbox WHERE run_id=? AND family_id=? AND rowid>? ORDER BY created',(family['run_id'],fid,session.get('conversation_outbox_cursor',0)))
         data['notes']=self.lab.read("SELECT * FROM ingress WHERE run_id=? AND family_id=? AND kind='note' ORDER BY received",(family['run_id'],fid))
         data['cases']=self.lab.read('SELECT c.*,d.ai_body,d.edited_body,d.revision AS draft_revision,d.family_epoch AS draft_epoch FROM cases c LEFT JOIN drafts d ON d.case_id=c.id WHERE c.run_id=? AND c.family_id=? ORDER BY c.first_wait',(family['run_id'],fid))
         return data
@@ -148,6 +151,9 @@ class Workbench:
         run=self.lab.current()
         if v.get('run_id')!=run['id']:raise ValueError('轮次已变化，请刷新')
         fid=v.get('family_id','F01');family=self.family(fid)
+        if path=='clear-context':
+            from family_context_reset import reset
+            return reset(self,family,v)
         if path=='contacts-refresh':return self.contacts.refresh()
         if path=='contacts-bind':return self.contacts.apply(run['id'],v.get('mapping'),v.get('versions'))
         if v.get('case_id'):

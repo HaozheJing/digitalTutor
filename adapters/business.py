@@ -80,7 +80,9 @@ def context(day):
         if guides:value['reading_guides']=guides
         value['student_tier_status']='通过student_tier读取SABCD；未知时用中性服务，不自行分层。'
         value['actions']=candidates(day)
-        value['contact_constraints']=s.read('SELECT * FROM contact_constraints WHERE day=?',(day,))
+        with closing(sqlite3.connect(s.DB)) as c:
+            from constraint_evidence import for_conversation
+            value['contact_constraints']=for_conversation(c,test_mode.state(),s.read('SELECT * FROM contact_constraints WHERE day=?',(day,)))
         policy=s.read("SELECT body FROM proactive_settings WHERE key='contact'")
         value['contact_policy']=json.loads(policy[0]['body']) if policy else {}
         if test_mode.state().get('agent_planning'):

@@ -118,12 +118,13 @@ def owner(c):
     raise ValueError('需要当前原生规划、执行或真实对话上下文')
 
 def facts(c, state, skills=()):
+    from constraint_evidence import for_conversation
     import service_content
     return {'run_id': state['run_id'], 'uid': state['uid'],
         'message_cursor': c.execute("SELECT COALESCE(MAX(rowid),0) FROM messages WHERE speaker='user' AND visible=1").fetchone()[0],
         'learning': tm.snapshot(),
-        'constraints': rows(c, 'SELECT * FROM contact_constraints ORDER BY day') + rows(c,
-            'SELECT * FROM service_workflow_constraints WHERE run_id=? AND uid=? ORDER BY id', (state['run_id'], state['uid'])),
+        'constraints': for_conversation(c, state, rows(c, 'SELECT * FROM contact_constraints ORDER BY day') + rows(c,
+            'SELECT * FROM service_workflow_constraints WHERE run_id=? AND uid=? ORDER BY id', (state['run_id'], state['uid']))),
         'legacy_constraints': rows(c, 'SELECT * FROM service_case_constraints WHERE run_id=? AND uid=?', (state['run_id'], state['uid'])),
         'skills': {name: service_content.bundle_digest(name) for name in sorted(set(skills))}}
 

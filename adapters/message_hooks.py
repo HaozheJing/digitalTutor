@@ -143,9 +143,11 @@ def begin(owner_type, owner_id):
                   (token, scope(c), owner_type, owner_id, cursor(c), time.time(), 'active'))
         prior = []
         if c.execute("SELECT 1 FROM sqlite_master WHERE name='test_outbox_parts'").fetchone():
+            state = c.execute("SELECT value FROM metadata WHERE key='test_mode'").fetchone()
+            boundary = json.loads(state[0]).get('context_part_rowid',0) if state else 0
             prior = [dict(zip(('action_key','body','status'), r)) for r in c.execute('''SELECT p.action_key,o.body,o.status FROM test_outbox_parts p
                 JOIN test_outbox o ON o.id=p.operation_id JOIN message_hook_deliveries h ON h.action_key=p.action_key
-                ORDER BY o.rowid DESC LIMIT 20''')]
+                WHERE o.rowid>? ORDER BY o.rowid DESC LIMIT 20''',(boundary,))]
         audit(c, 'generation', {'token': token, 'owner_type': owner_type, 'owner_id': owner_id, 'cursor': cursor(c)})
     __import__('family_lab_bridge').begin(token,owner_type,owner_id)
     return {'ready': True, 'token': token, 'prompt': '\n工程发送授权 generation_token=' + token +
