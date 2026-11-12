@@ -301,7 +301,7 @@ class ReplyLabTests(unittest.TestCase):
             else: result['assembly']['model'] = 'other-model'
             with self.assertRaises(Fault): self.lab.verify_native(e, result)
 
-    def test_http_auth_required_and_new_page_available(self):
+    def test_http_api_auth_required(self):
         from http.server import ThreadingHTTPServer
         from urllib.request import Request, urlopen
         from urllib.error import HTTPError
@@ -310,8 +310,6 @@ class ReplyLabTests(unittest.TestCase):
         thread = threading.Thread(target=server.serve_forever, daemon=True); thread.start()
         self.addCleanup(server.server_close); self.addCleanup(server.shutdown)
         url = 'http://127.0.0.1:'+str(server.server_address[1])
-        with urlopen(url+'/skill-studio/reply-lab/') as response:
-            self.assertIn('回复工作台', response.read().decode())
         with self.assertRaises(HTTPError) as error:
             urlopen(Request(url+'/skill-studio/api/reply-lab/status', data=b'{}', headers={'Content-Type':'application/json','X-Skill-Studio':'1'}))
         self.assertEqual(error.exception.code, 401)

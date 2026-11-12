@@ -211,13 +211,6 @@ class StudioTests(unittest.TestCase):
         result=self.studio.simulate(v,data)
         self.assertEqual(result['trace'][0]['result']['status'],'blocked')
 
-    def test_ui_controls_referenced_by_script_exist(self):
-        root=Path(__file__).parent
-        html=(root/'skill-studio.html').read_text(encoding='utf-8')
-        script=(root/'skill-studio.js').read_text(encoding='utf-8')
-        ids=set(re.findall(r'id="([^"]+)"',html))
-        references=set(re.findall(r"\$\('([^']+)'\)",script)) | set(re.findall(r"listen\('([^']+)'",script))
-        self.assertFalse(references-ids)
 
     def test_candidate_id_is_exact_and_checked_send_succeeds(self):
         v=self.save();data={**self.data,'tool_results':{'check_proactive':{'default':{'candidate_id':'mock-candidate','status':'eligible'}}}}

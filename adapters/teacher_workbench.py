@@ -243,9 +243,6 @@ class TeacherStudio(legacy.Studio):
 
     def dispatch(self,actor,path,data=None):
         data=data or {}
-        if path.startswith('p0/'):
-            from p0_acceptance import dispatch
-            return dispatch(self,actor,path[len('p0/'):],data)
         if path.startswith('reply-lab/'):
             # Lazily initialized under the existing server lock. Track B may
             # provide a trusted native runner; clients cannot select a URL.
@@ -273,7 +270,6 @@ def handler(studio):
         def do_GET(self):
             pages={'/skill-studio/':('teacher-workbench.html','text/html; charset=utf-8'),'/skill-studio/app.js':('teacher-workbench.js','text/javascript; charset=utf-8'),'/skill-studio/style.css':('teacher-workbench.css','text/css; charset=utf-8')}
             pages.update({'/skill-studio/reply-lab/':('reply-lab.html','text/html; charset=utf-8'),'/skill-studio/reply-lab/app.js':('reply-lab.js','text/javascript; charset=utf-8'),'/skill-studio/reply-lab/style.css':('reply-lab.css','text/css; charset=utf-8')})
-            pages.update({'/skill-studio/p0/':('p0-acceptance.html','text/html; charset=utf-8'),'/skill-studio/p0/app.js':('p0-acceptance.js','text/javascript; charset=utf-8'),'/skill-studio/p0/style.css':('p0-acceptance.css','text/css; charset=utf-8')})
             if self.path not in pages:self.send(404,{'error':'入口不存在。'});return
             name,mime=pages[self.path];self.send(200,(Path(__file__).parent/name).read_text(encoding='utf8'),mime)
         def do_POST(self):

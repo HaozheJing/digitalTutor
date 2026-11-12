@@ -4,3 +4,13 @@ __pycache__/
 *-results.json
 *-report.json
 runtime-baseline.json
+
+# Archived private runtime and recovery records
+legacy/cleanup-20261112/runtime/
+legacy/cleanup-20261112/before/
+legacy/cleanup-20261112/verification/
+config/*.json
+
+# Demo cleanup recovery records
+legacy/demo-code-cleanup-20261112/before/
+legacy/demo-code-cleanup-20261112/verification/
