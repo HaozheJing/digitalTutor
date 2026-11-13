@@ -11,6 +11,23 @@ legacy/cleanup-20261112/before/
 legacy/cleanup-20261112/verification/
 config/*.json
 
+# Private deployment files; publish placeholder examples in docs instead.
+config/*.conf
+config/*.env
+config/*.yaml
+config/*.yml
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+private/
+private-*/
+secrets/
+docs/private/
+
 # Demo cleanup recovery records
 legacy/demo-code-cleanup-20261112/before/
 legacy/demo-code-cleanup-20261112/verification/

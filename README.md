@@ -1,8 +1,10 @@
 # digitalTutor
 
-基于 DeepSeek Harness（DSH）的 Linux 阅读辅导智能体。当前项目位于 /home/ubuntu/digitalTutor-fastloop-dev-20261107，依赖 @deepseek-ai/dsh 0.2.1-rc.2。
+基于 DeepSeek Harness（DSH）的 Linux 阅读辅导智能体。主业务代码位于本仓库根目录，依赖 @deepseek-ai/dsh 0.2.1-rc.2。
 
 从 [文档入口](docs/README.md) 开始阅读，[目录说明](docs/DIRECTORIES.md) 列出各目录职责，[开发指引](docs/development.md) 按维护任务定位代码。
+
+完整技术说明见 [开发者接手指南](docs/DEVELOPER-GUIDE.md)。公开文档提供架构、接口和配置字段；真实账号、API 密钥、部署地址及联系人路由由项目负责人通过公司私有文档交接，配置方式见 [部署配置与凭据边界](docs/reference/deployment-configuration.md)。
 
 | 内容 | 位置 |
 | --- | --- |

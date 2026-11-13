@@ -1,0 +1,2 @@
+# Use consistent line endings for Markdown documentation.
+*.md text eol=lf

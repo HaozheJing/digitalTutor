@@ -2,6 +2,8 @@
 
 当前主代码为基于 DeepSeek Harness 的 fastloop Linux 实现。仓库层级见 [目录说明](DIRECTORIES.md)，环境要求见 [配置说明](../config/README.md)。
 
+准备运行环境前，先读 [部署配置与凭据边界](reference/deployment-configuration.md)，通过公司私有交接获取实际配置。公开仓库不提供可直接连接现有服务的账号或密钥。
+
 ## 按维护任务查代码
 
 | 维护任务 | 主要入口 |

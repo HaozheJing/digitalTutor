@@ -1,12 +1,13 @@
 # 项目文档
 
-接手开发时先读目录说明和开发指引，再按业务问题阅读设计与接口约定。
+首次接手建议按“开发者接手指南 → 目录说明 → 部署配置 → 开发指引”的顺序阅读，再按业务问题查阅设计与接口约定。本文档集公开维护，不保存真实凭据或私有部署信息。
 
 | 文档 | 内容 |
 | --- | --- |
 | [开发者技术说明与接手指南](DEVELOPER-GUIDE.md) | 仓库全貌、技术路线、运行链路、数据模型、配置、测试和维护说明 |
 | [目录说明](DIRECTORIES.md) | Linux 项目的目录职责与入口 |
 | [开发指引](development.md) | 按任务查代码、启动配置和离线回归 |
+| [部署配置与凭据边界](reference/deployment-configuration.md) | 公开配置示例、OpenViking 接入方式，以及私有交接内容的范围 |
 | [服务流程](design/service-flow.md) | 来信、主动服务、事项和记忆 |
 | [服务方法与人格](design/service-method.md) | Skill 分类、服务方法和表达规范 |
 | [知识库设计](design/knowledge.md) | OpenViking 层级、资料来源和覆盖范围 |
